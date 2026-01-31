@@ -1,0 +1,163 @@
+% Auto-generated tables for IEEE TKDE Paper Section VI
+% Generated: 2026-01-29 17:53:22
+
+% === table_vii_summary ===
+\begin{table}[htbp]
+\centering
+\caption{Summary Performance Across All Experiments (G-Mean)}
+\label{tab:summary_all}
+\footnotesize
+\begin{tabular}{lcccccc}
+\toprule
+& \multicolumn{2}{c}{\textbf{EXP-500}} & \multicolumn{2}{c}{\textbf{EXP-1000}} & \multicolumn{2}{c}{\textbf{EXP-2000}} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+\textbf{Model} & Mean & Std & Mean & Std & Mean & Std \\
+\midrule
+\textit{Binary only (n=42):} & & & & & & \\
+ROSE\_CE & 0.894 & 0.110 & 0.896 & 0.110 & -- & -- \\
+ROSE & 0.894 & 0.110 & 0.894 & 0.110 & -- & -- \\
+ARF & 0.879 & 0.139 & 0.880 & 0.138 & -- & -- \\
+\textbf{EGIS} & 0.858 & 0.123 & 0.868 & 0.112 & 0.905 & 0.082 \\
+SRP & 0.871 & 0.149 & 0.864 & 0.152 & -- & -- \\
+ACDWM & 0.860 & 0.093 & 0.818 & 0.078 & -- & -- \\
+HAT & 0.817 & 0.149 & 0.821 & 0.145 & -- & -- \\
+ERulesD2S & 0.597 & 0.100 & 0.592 & 0.096 & -- & -- \\
+\midrule
+\textit{All datasets (n=48):} & & & & & & \\
+\textbf{EGIS} & 0.856 & 0.124 & 0.866 & 0.114 & 0.904 & 0.085 \\
+ARF & 0.862 & 0.140 & 0.873 & 0.131 & -- & -- \\
+ROSE & 0.855 & 0.170 & 0.855 & 0.170 & -- & -- \\
+SRP & 0.846 & 0.165 & 0.848 & 0.152 & -- & -- \\
+HAT & 0.767 & 0.231 & 0.770 & 0.230 & -- & -- \\
+ERulesD2S & 0.562 & 0.137 & 0.556 & 0.136 & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% === table_viii_drift ===
+\begin{table}[htbp]
+\centering
+\caption{Performance by Drift Type (G-Mean, EXP-1000 Configuration)}
+\label{tab:drift_performance}
+\footnotesize
+\begin{tabular}{lcccccccc}
+\toprule
+\textbf{Drift Type} & \textbf{EGIS} & \textbf{ARF} & \textbf{SRP} & \textbf{ROSE} & \textbf{ROSE\_CE} & \textbf{HAT} & \textbf{ACDWM} & \textbf{ERulesD2S} \\
+\midrule
+Abrupt (16) & 0.861 & 0.861 & 0.834 & 0.854 & 0.858 & 0.737 & 0.808 & 0.556 \\
+Gradual (11) & 0.865 & 0.869 & 0.845 & 0.843 & 0.847 & 0.758 & 0.819 & 0.547 \\
+Noisy (8) & 0.851 & 0.863 & 0.835 & 0.888 & 0.891 & 0.794 & 0.804 & 0.583 \\
+Stationary (9) & 0.866 & 0.878 & 0.853 & 0.830 & 0.833 & 0.750 & 0.838 & 0.500 \\
+Real (4) & 0.912 & 0.938 & 0.923 & 0.885 & 0.886 & 0.929 & 0.854 & 0.650 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% === table_ix_ranking ===
+\begin{table}[htbp]
+\centering
+\caption{Complete Model Ranking Based on Friedman Test}
+\label{tab:complete_ranking}
+\footnotesize
+\begin{tabular}{clcccc}
+\toprule
+\textbf{Rank} & \textbf{Model} & \textbf{Avg Rank} & \textbf{Mean G-Mean} & \textbf{Std} & \textbf{Wins} \\
+\midrule
+1 & ROSE\_CE & 2.27 & 0.859 & 0.166 & 16 \\
+2 & ROSE & 3.23 & 0.855 & 0.170 & 0 \\
+3 & ARF & 3.27 & 0.873 & 0.131 & 7 \\
+4 & SRP & 3.83 & 0.848 & 0.152 & 8 \\
+5 & \textbf{EGIS} & 4.15 & 0.866 & 0.114 & 8 \\
+6 & HAT & 5.61 & 0.770 & 0.230 & 4 \\
+7 & ACDWM & 6.14 & 0.699 & 0.301 & 5 \\
+8 & ERulesD2S & 7.50 & 0.556 & 0.136 & 0 \\
+\midrule
+\multicolumn{6}{l}{\textit{Friedman Test: $\chi^2$(7) = 172.7, p < 0.001}} \\
+\multicolumn{6}{l}{\textit{Critical Distance (Nemenyi, $\alpha$=0.05): CD = 1.52}} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% === table_xi_wilcoxon ===
+\begin{table}[htbp]
+\centering
+\caption{Statistical Significance Tests (Pairwise Wilcoxon with Bonferroni)}
+\label{tab:stat_tests}
+\footnotesize
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Comparison} & \textbf{p-value} & \textbf{Adj. p} & \textbf{Sig.} & \textbf{Mean $\Delta$} & \textbf{Effect} \\
+\midrule
+EGIS vs ARF & 0.1312 & 0.9184 & No & -0.006 & -0.08 (n) \\
+EGIS vs SRP & 0.1421 & 0.9949 & No & +0.009 & -0.04 (n) \\
+EGIS vs HAT & 0.0380 & 0.2657 & No & +0.089 & 0.23 (s) \\
+EGIS vs ROSE\_Original & 0.0011 & 0.0080 & Yes & +0.001 & -0.09 (n) \\
+EGIS vs ROSE\_ChunkEval & 0.0011 & 0.0080 & Yes & +0.001 & -0.09 (n) \\
+EGIS vs ACDWM & 0.1214 & 0.8501 & No & +0.121 & 0.23 (s) \\
+EGIS vs ERulesD2S & <0.0001 & <0.0001 & Yes & +0.294 & 0.87 (l) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% === table_xii_penalty ===
+\begin{table}[htbp]
+\centering
+\caption{EGIS Complexity Penalty Effect Analysis}
+\label{tab:penalty_effect}
+\footnotesize
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Chunk} & \textbf{No Penalty} & \textbf{With Penalty} & \textbf{$\Delta$} & \textbf{p-value} & \textbf{Sig.} & \textbf{Effect} \\
+\textbf{Size} & \textbf{($\gamma$=0.0)} & \textbf{($\gamma$=0.1)} & \textbf{G-Mean} & & & \textbf{Size} \\
+\midrule
+500 & 0.856±0.123 & 0.855±0.121 & +0.001 & 0.216 & Yes & 0.02 \\
+1000 & 0.866±0.112 & 0.866±0.112 & -0.001 & 0.646 & Yes & -0.01 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% === table_xiii_complexity ===
+\begin{table}[htbp]
+\centering
+\caption{EGIS Rule Complexity by Configuration}
+\label{tab:complexity}
+\footnotesize
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Config} & \textbf{Avg Rules} & \textbf{Total Cond.} & \textbf{Cond/Rule} & \textbf{AND ops} & \textbf{OR ops} \\
+\midrule
+EXP-500 & 15.0±6.6 & 86.9±74.7 & 5.30±3.65 & 68.3 & 3.6 \\
+EXP-1000 & 19.7±11.6 & 121.7±103.3 & 5.67±3.35 & 98.6 & 3.3 \\
+EXP-2000 & 22.8±13.8 & 135.1±114.3 & 5.30±2.56 & 110.0 & 2.3 \\
+EXP-500-P & 13.6±6.4 & 70.2±63.4 & 4.64±2.63 & 54.9 & 1.8 \\
+EXP-1000-P & 19.6±11.7 & 121.1±104.0 & 5.66±3.32 & 98.2 & 3.3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% === table_xiv_transitions ===
+\begin{table}[htbp]
+\centering
+\caption{Transition Metrics by Drift Type (EGIS)}
+\label{tab:transitions}
+\footnotesize
+\begin{tabular}{lccc}
+\toprule
+\textbf{Drift Type} & \textbf{TCS} & \textbf{RIR} & \textbf{AMS} \\
+\midrule
+Abrupt & 0.234±0.103 & 0.247±0.179 & 0.286±0.094 \\
+Gradual & 0.212±0.083 & 0.204±0.145 & 0.284±0.084 \\
+Noisy & 0.228±0.085 & 0.221±0.155 & 0.302±0.064 \\
+Stationary & 0.213±0.111 & 0.216±0.186 & 0.268±0.098 \\
+Real & 0.212±0.083 & 0.212±0.148 & 0.263±0.058 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
