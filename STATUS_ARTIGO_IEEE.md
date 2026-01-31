@@ -2,7 +2,67 @@
 
 **Ultima atualizacao**: 2026-01-30
 **Branch**: main
-**Ultimo commit**: `dd21d12` - Fix TABLE VII: remove ACDWM/CDCMS from multiclass block
+**Ultimo commit**: `26b18df` - Add paper status documentation
+
+---
+
+## 0. CHECKPOINT DE SESSAO (30/01/2026)
+
+### O que foi feito nesta sessao
+1. **Corrigida TABLE VII** (`main.tex` linhas 619-647): removidos ACDWM e CDCMS do bloco "All datasets (n=48)" — sao modelos binary-only
+2. **Atualizados valores EGIS** no bloco binary da TABLE VII: de 0.898/0.893 para **0.858/0.868** (dados reais do CSV)
+3. **Atualizado texto** nos paragrafos antes e depois da TABLE VII para refletir novos valores
+4. **`generate_paper_tables.py`**: corrigido `MULTICLASS_MODELS` (ROSE_Original em vez de ROSE_ChunkEval); segundo bloco agora calcula media sobre 48 datasets (nao apenas 6 multiclass)
+5. **Regeneradas todas as tabelas** em `paper/tables/*.tex`
+6. **Paper compilado** com sucesso (22 paginas, sem erros)
+
+### O que ficou pendente (FAZER NA PROXIMA SESSAO)
+
+**PRIORIDADE 1 — Inconsistencias numericas no texto do paper:**
+
+A TABLE VIII (drift type, inline, linha 675) e varios paragrafos do paper ainda usam o valor antigo **0.898** para EGIS. O valor real no CSV para EGIS EXP-500-NP binary e **0.858**. Linhas afetadas:
+- **Linha 675**: TABLE VIII Overall = 0.898 (deveria ser ~0.858)
+- **Linha 669-674**: valores por drift type na TABLE VIII (todos possivelmente errados)
+- **Linha 680**: texto "EGIS achieves G-Mean of 0.898 overall"
+- **Linha 914**: Discussion "ensemble methods achieve higher G-Mean (0.88-0.91) than EGIS (0.80)"
+- **Linha 918**: "EGIS maintains consistent performance (G-Mean = 0.80-0.81)"
+- **Linha 920**: "EGIS outperforms ERulesD2S by 22.5 percentage points (0.803 vs 0.578)"
+- **Linha 981**: Conclusion "average G-Mean of 0.80-0.81"
+- **Linha 981**: "0.803 vs 0.578" e "22.5 percentage points"
+- **Linha 985**: Conclusion RQ3 "G-Mean of 0.898 overall"
+
+**PRIORIDADE 2 — CDCMS nao existe no CSV:**
+
+CDCMS **nao aparece** em `paper_data/consolidated_results.csv`. No entanto o paper o referencia em:
+- TABLE VIII (linha 667): coluna CDCMS com valores
+- TABLE VII bloco binary (removido nesta sessao, mas texto ao redor pode mencionar)
+- Linha 651: "CDCMS (31-10)" em referencia ao WLD
+- TABLE de Wilcoxon inline (linha 780-797): nao mencionado mas verificar
+
+Opcoes: (a) re-coletar dados CDCMS e adicionar ao CSV, ou (b) remover CDCMS de todo o paper.
+
+**PRIORIDADE 3 — Valores corretos para usar (do CSV real):**
+
+```
+EGIS binary (42 datasets):
+  EXP-500-NP:  0.858 ± 0.123
+  EXP-500-P:   0.858 ± 0.121
+  EXP-1000-NP: 0.868 ± 0.112
+  EXP-1000-P:  0.869 ± 0.112
+  EXP-2000-NP: 0.905 ± 0.082 (apenas 28 datasets)
+
+EGIS EXP-500-NP binary, por drift_type:
+  abrupt:     0.860 (n=14)
+  gradual:    0.855 (n=9)
+  noisy:      0.845 (n=8)
+  real:       0.890 (n=4)
+  stationary: 0.855 (n=7)
+  Overall:    0.858
+
+Modelos no CSV: ACDWM, ARF, EGIS, ERulesD2S, HAT, ROSE_ChunkEval, ROSE_Original, SRP
+Modelos AUSENTES do CSV: CDCMS
+Configs disponiveis: EXP-500-NP, EXP-500-P, EXP-1000-NP, EXP-1000-P, EXP-2000-NP
+```
 
 ---
 
@@ -49,7 +109,7 @@ A TABLE VII (corrigida) agora mostra EGIS com **0.858 (EXP-500)** e **0.868 (EXP
 
 Porem, a TABLE VIII (Performance by Drift Type, linha 675) ainda mostra EGIS Overall = **0.898**. Esta e a tabela inline de drift por tipo que usa EXP-500.
 
-**Possivel causa**: TABLE VII usa a media de EGIS sobre TODAS as configs (EXP-500, EXP-1000, EXP-2000 onde disponivel), enquanto TABLE VIII usa apenas EXP-500. Precisa verificar se 0.898 esta correto para EXP-500 only ou se tambem precisa atualizacao.
+**CONFIRMADO**: O valor 0.898 esta INCORRETO. O CSV mostra EGIS EXP-500-NP binary overall = **0.858**. A TABLE VIII inteira precisa ser atualizada. Os valores por drift type tambem estao errados (ver checkpoint acima para valores corretos).
 
 Textos que referenciam 0.898 e podem estar inconsistentes:
 - Linha 680: "EGIS achieves G-Mean of 0.898 overall"
@@ -87,7 +147,7 @@ Varias tabelas no main.tex sao **inline** (hardcoded) e nao usam `\input`. O scr
 
 ### 2.5. BAIXO - CDCMS ausente do bloco binary na TABLE VII
 
-O script `generate_paper_tables.py` nao gera CDCMS no bloco binary porque CDCMS nao aparece em `consolidated_results.csv` com os model names esperados, ou nao esta em `MODELS_ORDER`. A TABLE VII inline anterior tinha CDCMS (0.843) mas a versao corrigida removeu. Verificar se CDCMS deveria estar no bloco binary (42 datasets) e se os dados existem.
+**CONFIRMADO**: CDCMS **nao existe** em `consolidated_results.csv`. Nenhuma variante de nome (CDC, cdc, CDCMS) foi encontrada. Os valores de CDCMS que estavam no paper (0.843, etc.) foram provavelmente inseridos manualmente de outra fonte. Decisao necessaria: re-coletar dados CDCMS ou remover do paper inteiro.
 
 ---
 
@@ -173,6 +233,21 @@ python -c "import pandas as pd; df=pd.read_csv('paper_data/consolidated_results.
 
 | Data | Commit | Descricao |
 |------|--------|-----------|
+| 2026-01-30 | `26b18df` | Add paper status documentation |
 | 2026-01-30 | `dd21d12` | Fix TABLE VII: remover ACDWM/CDCMS do bloco multiclass, atualizar valores |
 | 2026-01-29 | `496a624` | Fix constant AMS (0.25 placeholder) in transition metrics |
 | 2026-01-29 | `9da3cf7` | Adicionar scripts Python e configuracoes YAML |
+
+---
+
+## 7. Resumo para Prompt de Retomada
+
+Ao retomar o trabalho com Claude Code, use o seguinte prompt para contexto:
+
+> Estou trabalhando no artigo IEEE TKDE sobre EGIS (paper/main.tex).
+> Leia o arquivo STATUS_ARTIGO_IEEE.md para entender o estado atual,
+> as inconsistencias pendentes e as regras de ouro. A principal tarefa
+> pendente e: (1) atualizar TABLE VIII e todos os textos do paper que
+> referenciam valores antigos de EGIS (0.898 deve ser 0.858 para EXP-500),
+> (2) decidir o que fazer com CDCMS (ausente do CSV mas citado no paper),
+> (3) alinhar Discussion e Conclusion com os dados corretos.
