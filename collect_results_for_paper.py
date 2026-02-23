@@ -86,7 +86,9 @@ MODEL_FILES = {
     'ROSE_Original': 'rose_original_results.csv',
     'ROSE_ChunkEval': 'rose_chunk_eval_results.csv',
     'ACDWM': 'acdwm_results.csv',
-    'ERulesD2S': 'erulesd2s_results.csv'
+    'ERulesD2S': 'erulesd2s_results.csv',
+    # CDCMS results are in a separate directory (cdcms_results/chunk_metrics.json)
+    # Handled by extract_cdcms_results() below, not via extract_model_results()
 }
 
 # Dataset metadata
@@ -157,6 +159,9 @@ DATASET_METADATA = {
     'AssetNegotiation_F3': {'drift_type': 'real', 'batch': 'batch_3'},
     'AssetNegotiation_F4': {'drift_type': 'real', 'batch': 'batch_3'},
 }
+
+# Datasets excluded from all analyses (removed from paper)
+EXCLUDED_DATASETS = ['CovType', 'IntelLabSensors', 'PokerHand', 'Shuttle']
 
 # Transition metrics weights
 W_INSTABILITY = 0.6
@@ -257,6 +262,64 @@ def extract_model_results(run_dir: Path, model: str, filename: str) -> Optional[
 
     except Exception as e:
         logger.warning(f"Error reading {result_file}: {e}")
+        return None
+
+
+def extract_cdcms_results(dataset_dir: Path) -> Optional[Dict]:
+    """Extract CDCMS results from cdcms_results/chunk_metrics.json.
+
+    CDCMS results are stored outside run_1/, in dataset_dir/cdcms_results/.
+    The JSON format is a LIST of per-chunk objects:
+      [{"chunk": 0, "holdout_gmean": null, ...}, {"chunk": 1, "holdout_gmean": 0.89, ...}, ...]
+
+    Uses holdout_gmean for fair comparison with EGIS evaluation methodology.
+    Falls back to prequential_gmean if all holdout values are null.
+    """
+    metrics_file = dataset_dir / "cdcms_results" / "chunk_metrics.json"
+
+    if not metrics_file.exists():
+        return None
+
+    try:
+        with open(metrics_file, 'r') as f:
+            data = json.load(f)
+
+        if isinstance(data, list):
+            # Real format: list of per-chunk dicts
+            holdout_gmeans = []
+            prequential_gmeans = []
+            for chunk_obj in data:
+                h = chunk_obj.get('holdout_gmean')
+                if h is not None and not np.isnan(h):
+                    holdout_gmeans.append(float(h))
+                p = chunk_obj.get('prequential_gmean')
+                if p is not None and not np.isnan(p):
+                    prequential_gmeans.append(float(p))
+
+            # Prefer holdout (comparable to EGIS), fallback to prequential
+            per_chunk_gmeans = holdout_gmeans if holdout_gmeans else prequential_gmeans
+        elif isinstance(data, dict):
+            # Legacy/hypothetical dict format
+            per_chunk_gmeans = []
+            for cm in data.get('chunk_metrics', []):
+                g = cm.get('holdout_gmean', cm.get('prequential_gmean'))
+                if g is not None and not np.isnan(g):
+                    per_chunk_gmeans.append(float(g))
+        else:
+            return None
+
+        if not per_chunk_gmeans:
+            return None
+
+        return {
+            'gmean_mean': float(np.mean(per_chunk_gmeans)),
+            'gmean_std': float(np.std(per_chunk_gmeans)),
+            'gmean_per_chunk': per_chunk_gmeans,
+            'n_chunks': len(per_chunk_gmeans)
+        }
+
+    except Exception as e:
+        logger.warning(f"Error reading CDCMS results {metrics_file}: {e}")
         return None
 
 
@@ -502,6 +565,11 @@ def process_experiment_config(config_name: str, config: Dict, base_dir: Path) ->
                 continue
 
             dataset_name = dataset_dir.name
+
+            # Skip excluded datasets
+            if dataset_name in EXCLUDED_DATASETS:
+                continue
+
             run_dir = dataset_dir / "run_1"
 
             if not run_dir.exists():
@@ -548,6 +616,23 @@ def process_experiment_config(config_name: str, config: Dict, base_dir: Path) ->
                         'gmean_std': model_results['gmean_std'],
                         'n_chunks': model_results['n_chunks']
                     })
+
+            # Extract CDCMS results (stored in dataset_dir/cdcms_results/, not run_1/)
+            cdcms_results = extract_cdcms_results(dataset_dir)
+            if cdcms_results:
+                all_results.append({
+                    'config': config_name,
+                    'config_label': config['label'],
+                    'chunk_size': config['chunk_size'],
+                    'penalty': config['penalty'],
+                    'batch': batch_name,
+                    'dataset': dataset_name,
+                    'drift_type': drift_type,
+                    'model': 'CDCMS',
+                    'gmean_mean': cdcms_results['gmean_mean'],
+                    'gmean_std': cdcms_results['gmean_std'],
+                    'n_chunks': cdcms_results['n_chunks']
+                })
 
             # Parse rules (skip transition metrics calculation for speed)
             # Transition metrics can be calculated separately if needed
