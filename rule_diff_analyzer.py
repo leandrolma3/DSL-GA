@@ -32,8 +32,8 @@ def parse_rules_history(file_path):
 
     # Regex patterns (sem alterações)
     chunk_header_re = re.compile(r"^-+ Chunk (\d+) \(Trained\)")
-    train_perf_re = re.compile(r"^\s*Train Perf \(Chunk \d+\): TrainAcc=([-\d.]+)")
-    test_perf_re = re.compile(r"Test Perf \(Chunk \d+\): TestAcc=([-\d.]+),\s*TestF1=([-\d.]+)")
+    train_perf_re = re.compile(r"^\s*Train Perf \(Chunk \d+\): TrainGmean=([-\d.]+)")
+    test_perf_re = re.compile(r"Test Perf \(Chunk \d+\): TestGmean=([-\d.]+),\s*TestF1=([-\d.]+)")
     fitness_re = re.compile(r"^\s*Fitness:\s*([-\d.]+)", re.IGNORECASE)
     default_class_re = re.compile(r"^\s*Default Class:\s*(\S+)", re.IGNORECASE)
     rule_start_re = re.compile(r"^\s*(\d+):\s*IF (.*)")
@@ -54,7 +54,7 @@ def parse_rules_history(file_path):
                 if chunk_match:
                     if current_chunk != -1: # Salva chunk anterior
                         chunks_data[current_chunk].setdefault('fitness', float('nan')); chunks_data[current_chunk].setdefault('default_class', 'Unknown')
-                        chunks_data[current_chunk].setdefault('train_acc', float('nan')); chunks_data[current_chunk].setdefault('test_acc_next', float('nan'))
+                        chunks_data[current_chunk].setdefault('train_gmean', float('nan')); chunks_data[current_chunk].setdefault('test_gmean_next', float('nan'))
                         chunks_data[current_chunk].setdefault('test_f1_next', float('nan')); chunks_data[current_chunk]['rules'] = dict(rules_by_class)
                         if parsing_state == "PARSING_RULE": logging.warning(f"Chunk boundary while parsing rule in chunk {current_chunk}."); current_rule_condition_lines = []
                     # Inicia novo chunk
@@ -63,7 +63,7 @@ def parse_rules_history(file_path):
                     # Tenta extrair Test Perf da mesma linha
                     test_match = test_perf_re.search(raw_line)
                     if test_match:
-                         try: chunks_data[current_chunk]['test_acc_next'] = float(test_match.group(1)); chunks_data[current_chunk]['test_f1_next'] = float(test_match.group(2)); logging.debug(f"  Parsed Test Perf: TestAcc={test_match.group(1)}, TestF1={test_match.group(2)}")
+                         try: chunks_data[current_chunk]['test_gmean_next'] = float(test_match.group(1)); chunks_data[current_chunk]['test_f1_next'] = float(test_match.group(2)); logging.debug(f"  Parsed Test Perf: TestGmean={test_match.group(1)}, TestF1={test_match.group(2)}")
                          except (ValueError, IndexError) as e: logging.warning(f"L{line_num+1}: Could not parse test perf: {e}")
                     else: logging.warning(f"L{line_num+1}: Test Perf data not found in header line.")
                     continue
@@ -72,8 +72,8 @@ def parse_rules_history(file_path):
                 if parsing_state == "IN_CHUNK_HEADER":
                      train_match = train_perf_re.search(line)
                      if train_match:
-                         try: chunks_data[current_chunk]['train_acc'] = float(train_match.group(1)); logging.debug(f"  Parsed Train Perf: TrainAcc={train_match.group(1)}")
-                         except(ValueError, IndexError): logging.warning(f"L{line_num+1}: Invalid TrainAcc value {train_match.group(1)}")
+                         try: chunks_data[current_chunk]['train_gmean'] = float(train_match.group(1)); logging.debug(f"  Parsed Train Perf: TrainGmean={train_match.group(1)}")
+                         except(ValueError, IndexError): logging.warning(f"L{line_num+1}: Invalid TrainGmean value {train_match.group(1)}")
                          continue # Continua esperando '---' ou outra meta
                      elif separator_re.match(line):
                           parsing_state = "IN_CHUNK_META"; continue # Muda estado APÓS separador
@@ -148,13 +148,13 @@ def parse_rules_history(file_path):
             # --- Fim do Arquivo: Salva o último chunk ---
             if current_chunk != -1:
                 chunks_data[current_chunk].setdefault('fitness', float('nan')); chunks_data[current_chunk].setdefault('default_class', 'Unknown')
-                chunks_data[current_chunk].setdefault('train_acc', float('nan')); chunks_data[current_chunk].setdefault('test_acc_next', float('nan'))
+                chunks_data[current_chunk].setdefault('train_gmean', float('nan')); chunks_data[current_chunk].setdefault('test_gmean_next', float('nan'))
                 chunks_data[current_chunk].setdefault('test_f1_next', float('nan')); chunks_data[current_chunk]['rules'] = dict(rules_by_class)
 
         if not chunks_data: logging.warning(f"No chunks successfully parsed from file: {file_path}"); return None
         logging.info(f"Successfully parsed {len(chunks_data)} chunks from {file_path}")
         # Log para verificar performance parseada
-        for chk_idx, chk_data in chunks_data.items(): logging.debug(f"Chunk {chk_idx} Parsed Perf: Train={chk_data.get('train_acc')}, TestAcc={chk_data.get('test_acc_next')}, TestF1={chk_data.get('test_f1_next')}")
+        for chk_idx, chk_data in chunks_data.items(): logging.debug(f"Chunk {chk_idx} Parsed Perf: Train={chk_data.get('train_gmean')}, TestGmean={chk_data.get('test_gmean_next')}, TestF1={chk_data.get('test_f1_next')}")
         return chunks_data
 
     except FileNotFoundError: logging.error(f"History file not found: {file_path}"); return None
@@ -206,12 +206,12 @@ def compare_chunk_rules(chunk_data_i, chunk_data_i_plus_1, similarity_threshold=
 def generate_diff_report(diff_results, chunk_data_i, chunk_data_i_plus_1, chunk_i_index):
     # ... (código como antes) ...
     report_lines = []; report_lines.append("\n" + "="*70); report_lines.append(f"--- Diff Chunk {chunk_i_index} -> Chunk {chunk_i_index + 1} ---"); report_lines.append("="*70)
-    train_acc_i = chunk_data_i.get('train_acc', float('nan')); test_acc_next = chunk_data_i.get('test_acc_next', float('nan')); test_f1_next = chunk_data_i.get('test_f1_next', float('nan'))
+    train_gmean_i = chunk_data_i.get('train_gmean', float('nan')); test_gmean_next = chunk_data_i.get('test_gmean_next', float('nan')); test_f1_next = chunk_data_i.get('test_f1_next', float('nan'))
     fit_i = chunk_data_i.get('fitness', float('nan')); fit_i_plus_1 = chunk_data_i_plus_1.get('fitness', float('nan'))
     dc_i = chunk_data_i.get('default_class', 'N/A'); dc_i_plus_1 = chunk_data_i_plus_1.get('default_class', 'N/A')
     report_lines.append(f"Performance:")
-    report_lines.append(f"  - Train Acc (Chunk {chunk_i_index}):      {train_acc_i:.4f}")
-    report_lines.append(f"  - Test Acc (Chunk {chunk_i_index+1}):     {test_acc_next:.4f}")
+    report_lines.append(f"  - Train G-Mean (Chunk {chunk_i_index}):   {train_gmean_i:.4f}")
+    report_lines.append(f"  - Test G-Mean (Chunk {chunk_i_index+1}):  {test_gmean_next:.4f}")
     report_lines.append(f"  - Test F1 (Chunk {chunk_i_index+1}):      {test_f1_next:.4f}")
     report_lines.append(f"Fitness:       {fit_i:.6f} -> {fit_i_plus_1:.6f}")
     report_lines.append(f"Default Class: {dc_i} -> {dc_i_plus_1}"); report_lines.append("-"*70)
@@ -277,14 +277,14 @@ def plot_evolution_matrix(df_matrix, source_file_name, save_path=None):
 def print_performance_summary(parsed_data):
     # ... (código como antes) ...
     if not parsed_data: return
-    train_accs = [data.get('train_acc', np.nan) for data in parsed_data.values()]; test_accs = [data.get('test_acc_next', np.nan) for data in parsed_data.values()]; test_f1s = [data.get('test_f1_next', np.nan) for data in parsed_data.values()]
-    avg_train_acc, std_train_acc = (np.nanmean(train_accs), np.nanstd(train_accs)) if not np.all(np.isnan(train_accs)) else (np.nan, np.nan)
-    avg_test_acc, std_test_acc = (np.nanmean(test_accs), np.nanstd(test_accs)) if not np.all(np.isnan(test_accs)) else (np.nan, np.nan)
+    train_gmeans = [data.get('train_gmean', np.nan) for data in parsed_data.values()]; test_gmeans = [data.get('test_gmean_next', np.nan) for data in parsed_data.values()]; test_f1s = [data.get('test_f1_next', np.nan) for data in parsed_data.values()]
+    avg_train_gm, std_train_gm = (np.nanmean(train_gmeans), np.nanstd(train_gmeans)) if not np.all(np.isnan(train_gmeans)) else (np.nan, np.nan)
+    avg_test_gm, std_test_gm = (np.nanmean(test_gmeans), np.nanstd(test_gmeans)) if not np.all(np.isnan(test_gmeans)) else (np.nan, np.nan)
     avg_test_f1, std_test_f1 = (np.nanmean(test_f1s), np.nanstd(test_f1s)) if not np.all(np.isnan(test_f1s)) else (np.nan, np.nan)
-    count = sum(1 for data in parsed_data.values() if not np.isnan(data.get('train_acc', np.nan))) # Conta chunks com dados válidos
+    count = sum(1 for data in parsed_data.values() if not np.isnan(data.get('train_gmean', np.nan))) # Conta chunks com dados válidos
     print("\n" + "="*70); print("Overall Performance Summary (from History File)"); print("="*70)
-    print(f"Avg Train Accuracy: {avg_train_acc:.4f} +/- {std_train_acc:.4f} (over {count} chunks with data)")
-    print(f"Avg Test Accuracy:  {avg_test_acc:.4f} +/- {std_test_acc:.4f} (over {count} chunks with data)")
+    print(f"Avg Train G-Mean:   {avg_train_gm:.4f} +/- {std_train_gm:.4f} (over {count} chunks with data)")
+    print(f"Avg Test G-Mean:    {avg_test_gm:.4f} +/- {std_test_gm:.4f} (over {count} chunks with data)")
     print(f"Avg Test F1:        {avg_test_f1:.4f} +/- {std_test_f1:.4f} (over {count} chunks with data)")
     print("="*70 + "\n")
 
@@ -336,9 +336,9 @@ def main():
             with open(report_path, 'w', encoding='utf-8') as f:
                 f.write("\n".join(all_reports))
                 # Adiciona sumário de performance ao final
-                train_accs = [data.get('train_acc', np.nan) for data in parsed_data.values()]; test_accs = [data.get('test_acc_next', np.nan) for data in parsed_data.values()]; test_f1s = [data.get('test_f1_next', np.nan) for data in parsed_data.values()]
-                avg_train_acc, std_train_acc = (np.nanmean(train_accs), np.nanstd(train_accs)) if not np.all(np.isnan(train_accs)) else (np.nan, np.nan); avg_test_acc, std_test_acc = (np.nanmean(test_accs), np.nanstd(test_accs)) if not np.all(np.isnan(test_accs)) else (np.nan, np.nan); avg_test_f1, std_test_f1 = (np.nanmean(test_f1s), np.nanstd(test_f1s)) if not np.all(np.isnan(test_f1s)) else (np.nan, np.nan); count = sum(1 for data in parsed_data.values() if not np.isnan(data.get('train_acc', np.nan)))
-                f.write("\n\n" + "="*70 + "\nOverall Performance Summary (from History File)\n" + "="*70 + "\n"); f.write(f"Avg Train Accuracy: {avg_train_acc:.4f} +/- {std_train_acc:.4f} (over {count} chunks)\n"); f.write(f"Avg Test Accuracy:  {avg_test_acc:.4f} +/- {std_test_acc:.4f} (over {count} chunks)\n"); f.write(f"Avg Test F1:        {avg_test_f1:.4f} +/- {std_test_f1:.4f} (over {count} chunks)\n"); f.write("="*70 + "\n")
+                train_gmeans = [data.get('train_gmean', np.nan) for data in parsed_data.values()]; test_gmeans = [data.get('test_gmean_next', np.nan) for data in parsed_data.values()]; test_f1s = [data.get('test_f1_next', np.nan) for data in parsed_data.values()]
+                avg_train_gm, std_train_gm = (np.nanmean(train_gmeans), np.nanstd(train_gmeans)) if not np.all(np.isnan(train_gmeans)) else (np.nan, np.nan); avg_test_gm, std_test_gm = (np.nanmean(test_gmeans), np.nanstd(test_gmeans)) if not np.all(np.isnan(test_gmeans)) else (np.nan, np.nan); avg_test_f1, std_test_f1 = (np.nanmean(test_f1s), np.nanstd(test_f1s)) if not np.all(np.isnan(test_f1s)) else (np.nan, np.nan); count = sum(1 for data in parsed_data.values() if not np.isnan(data.get('train_gmean', np.nan)))
+                f.write("\n\n" + "="*70 + "\nOverall Performance Summary (from History File)\n" + "="*70 + "\n"); f.write(f"Avg Train G-Mean:   {avg_train_gm:.4f} +/- {std_train_gm:.4f} (over {count} chunks)\n"); f.write(f"Avg Test G-Mean:    {avg_test_gm:.4f} +/- {std_test_gm:.4f} (over {count} chunks)\n"); f.write(f"Avg Test F1:        {avg_test_f1:.4f} +/- {std_test_f1:.4f} (over {count} chunks)\n"); f.write("="*70 + "\n")
             logging.info(f"Combined diff report saved to: {report_path}")
         except Exception as e: logging.error(f"Failed to save text report: {e}")
         if df_matrix is not None: # Salva CSV e Plot da matriz

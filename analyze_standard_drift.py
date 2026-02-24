@@ -86,10 +86,11 @@ def detect_performance_drifts(chunk_metrics: List[Dict], threshold: float = 0.10
 
 
     # Use the test accuracy from the first transition (chunk 0 -> chunk 1) as the initial reference
-    previous_accuracy = sorted_metrics[0].get('test_accuracy')
+    # Support both 'test_accuracy' and 'test_gmean' field names
+    previous_accuracy = sorted_metrics[0].get('test_accuracy') or sorted_metrics[0].get('test_gmean')
     if previous_accuracy is None and len(sorted_metrics) > 1:
-         previous_accuracy = sorted_metrics[1].get('test_accuracy')
-         logger.warning("First chunk test accuracy missing, using second as baseline.")
+         previous_accuracy = sorted_metrics[1].get('test_accuracy') or sorted_metrics[1].get('test_gmean')
+         logger.warning("First chunk test accuracy/gmean missing, using second as baseline.")
 
     if previous_accuracy is None:
          logger.warning("Could not establish a baseline test accuracy.")
@@ -98,7 +99,7 @@ def detect_performance_drifts(chunk_metrics: List[Dict], threshold: float = 0.10
 
     # Start checking from the second metric entry (representing test on chunk 2)
     for i in range(1, len(sorted_metrics)):
-        current_accuracy = sorted_metrics[i].get('test_accuracy')
+        current_accuracy = sorted_metrics[i].get('test_accuracy') or sorted_metrics[i].get('test_gmean')
         current_train_chunk_index = sorted_metrics[i].get('chunk') # Train chunk index is i
 
         # Check if data is valid for comparison
@@ -176,21 +177,21 @@ def plot_periodic_accuracy_with_detected_drifts(
         if periodic_accuracies:
             try:
                 global_counts_test, accuracies_test = zip(*periodic_accuracies)
-                ax.plot(global_counts_test, [acc * 100 for acc in accuracies_test], marker='.', linestyle='-', markersize=4, label=f'Periodic Test Accuracy (Run {run_number})', zorder=5)
+                ax.plot(global_counts_test, [acc * 100 for acc in accuracies_test], marker='.', linestyle='-', markersize=4, label=f'Periodic Test G-Mean (Run {run_number})', zorder=5)
                 plot_generated = True
             except Exception as e: logger.error(f"Error plotting periodic test accuracy: {e}")
         else: logger.warning(f"[{experiment_id}-Run{run_number}] No periodic test accuracy data.")
 
-        # Plot Final Train Accuracy
+        # Plot Final Train Accuracy/G-mean
         if chunk_metrics:
             try:
                 train_acc_x = [(m.get('chunk', idx) + 1) * chunk_size for idx, m in enumerate(chunk_metrics)]
-                train_acc_y = [m.get('train_accuracy', np.nan) * 100 for m in chunk_metrics]
+                train_acc_y = [(m.get('train_accuracy') or m.get('train_gmean', np.nan)) * 100 for m in chunk_metrics]
                 valid_indices = [i for i, y in enumerate(train_acc_y) if not np.isnan(y)]
                 if valid_indices:
-                     ax.plot(np.array(train_acc_x)[valid_indices], np.array(train_acc_y)[valid_indices], marker='o', linestyle=':', markersize=5, label='Train Accuracy (End of Chunk)', color='orange', zorder=4)
+                     ax.plot(np.array(train_acc_x)[valid_indices], np.array(train_acc_y)[valid_indices], marker='o', linestyle=':', markersize=5, label='Train G-mean (End of Chunk)', color='orange', zorder=4)
                      plot_generated = True
-                else: logger.warning(f"[{experiment_id}-Run{run_number}] No valid train accuracy data.")
+                else: logger.warning(f"[{experiment_id}-Run{run_number}] No valid train accuracy/gmean data.")
             except Exception as e: logger.error(f"Error plotting train accuracy: {e}")
         else: logger.warning(f"[{experiment_id}-Run{run_number}] No chunk metrics data for train accuracy.")
 
@@ -220,8 +221,8 @@ def plot_periodic_accuracy_with_detected_drifts(
             drift_label_added = True
 
         ax.set_xlabel("Total Instances Processed (Test Phases)")
-        ax.set_ylabel("Accuracy (%)")
-        ax.set_title(f"Periodic Test & Final Train Accuracy: {experiment_id} (Run {run_number})")
+        ax.set_ylabel("G-Mean (%)")
+        ax.set_title(f"Periodic Test & Final Train G-Mean: {experiment_id} (Run {run_number})")
         ax.grid(True, which='both', linestyle='--', linewidth=0.5)
         ax.set_ylim(0, 105)
         handles, labels = ax.get_legend_handles_labels()
@@ -259,10 +260,15 @@ def main():
     # Load Necessary Data
     run_config = load_json_file(os.path.join(run_dir, "run_config.json"))
     chunk_metrics = load_json_file(os.path.join(run_dir, "chunk_metrics.json"))
+    # Try periodic_accuracy.json first, then fall back to periodic_gmean.json
     periodic_accuracy = load_json_file(os.path.join(run_dir, "periodic_accuracy.json"))
+    if periodic_accuracy is None:
+        periodic_accuracy = load_json_file(os.path.join(run_dir, "periodic_gmean.json"))
+        if periodic_accuracy:
+            logger.info("Using periodic_gmean.json instead of periodic_accuracy.json")
 
     if not run_config or not chunk_metrics or not periodic_accuracy:
-        logger.error("Essential result files (run_config, chunk_metrics, periodic_accuracy) not found or invalid. Exiting.")
+        logger.error("Essential result files (run_config, chunk_metrics, periodic_gmean/accuracy) not found or invalid. Exiting.")
         return
 
     # Extract info from config

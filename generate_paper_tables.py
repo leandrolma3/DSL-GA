@@ -54,14 +54,14 @@ MODEL_DISPLAY_NAMES = {
     'ARF': 'ARF',
     'SRP': 'SRP',
     'HAT': 'HAT',
-    'ROSE_Original': 'ROSE',
-    'ROSE_ChunkEval': 'ROSE\\_CE',
+    'ROSE': 'ROSE',
     'ACDWM': 'ACDWM',
-    'ERulesD2S': 'ERulesD2S'
+    'ERulesD2S': 'eRulesD2S',
+    'CDCMS': 'CDCMS'
 }
 
 # Preferred model order
-MODELS_ORDER = ['EGIS', 'ARF', 'SRP', 'ROSE_Original', 'ROSE_ChunkEval', 'HAT', 'ACDWM', 'ERulesD2S']
+MODELS_ORDER = ['EGIS', 'ARF', 'SRP', 'HAT', 'ROSE', 'ACDWM', 'ERulesD2S', 'CDCMS']
 
 # Configuration display names
 CONFIG_DISPLAY = {
@@ -170,7 +170,7 @@ def generate_table_summary_performance(df_results: pd.DataFrame) -> str:
 
     MULTICLASS_DATASETS = ['LED_Abrupt_Simple', 'LED_Gradual_Simple', 'LED_Stationary',
                            'WAVEFORM_Abrupt_Simple', 'WAVEFORM_Gradual_Simple', 'WAVEFORM_Stationary']
-    MULTICLASS_MODELS = ['EGIS', 'ARF', 'SRP', 'HAT', 'ROSE_Original', 'ERulesD2S']
+    MULTICLASS_MODELS = ['EGIS', 'ARF', 'SRP', 'HAT', 'ROSE', 'ERulesD2S']
 
     configs = ['EXP-500-NP', 'EXP-1000-NP', 'EXP-2000-NP']
 
