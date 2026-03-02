@@ -267,42 +267,67 @@ def generate_table_by_drift_type(df_results: pd.DataFrame) -> str:
 # =============================================================================
 
 def generate_table_complete_ranking(df_results: pd.DataFrame, stats_results: Dict) -> str:
-    """Generate Table IX: Complete Model Ranking Based on Friedman Test."""
+    """Generate Table IX: Complete Model Ranking Based on Friedman Test (binary datasets)."""
     logger.info("Generating Table IX: Complete Model Ranking")
 
-    # Find the best configuration for ranking
-    best_config = None
-    for config in stats_results.get('overall', {}).get('configurations', []):
-        if config['config_label'] == 'EXP-1000-NP':
-            best_config = config
-            break
+    # Primarily use binary-only data; fall back to overall if binary_only doesn't exist
+    binary_configs = stats_results.get('binary_only', {}).get('configurations', [])
+    overall_configs = stats_results.get('overall', {}).get('configurations', [])
+    configs_source = binary_configs if binary_configs else overall_configs
+    source_label = 'binary_only' if binary_configs else 'overall'
+    logger.info(f"Ranking table using '{source_label}' data ({len(configs_source)} configurations)")
 
-    if not best_config:
-        # Use first available
-        configs = stats_results.get('overall', {}).get('configurations', [])
-        if configs:
-            best_config = configs[0]
+    # Find the best EGIS config by looking for the lowest EGIS rank
+    best_config = None
+    best_egis_rank = float('inf')
+    for config in configs_source:
+        avg_ranks = config.get('average_rankings', {})
+        egis_rank = avg_ranks.get('EGIS', float('inf'))
+        if egis_rank < best_egis_rank:
+            best_egis_rank = egis_rank
+            best_config = config
 
     if not best_config:
         logger.warning("No configuration data found for ranking table")
         return "% No data available for ranking table\n"
+
+    logger.info(f"Best EGIS config: {best_config.get('config_label', 'unknown')} (EGIS rank={best_egis_rank:.2f})")
 
     # Get rankings and sort
     avg_ranks = best_config.get('average_rankings', {})
     model_summary = best_config.get('model_summary', {})
     wins_count = best_config.get('wins_count', {})
     friedman = best_config.get('friedman_test', {})
+    egis_wld = best_config.get('egis_wld', {})
 
     sorted_models = sorted(avg_ranks.items(), key=lambda x: x[1])
 
-    latex = """\\begin{table}[htbp]
+    # Determine if W/L/D data is available
+    has_wld = bool(egis_wld)
+    config_label_display = best_config.get('config_label', '')
+
+    caption = f"Complete Model Ranking Based on Friedman Test (Binary Datasets, {config_label_display})"
+
+    if has_wld:
+        latex = f"""\\begin{{table}}[htbp]
 \\centering
-\\caption{Complete Model Ranking Based on Friedman Test}
-\\label{tab:complete_ranking}
+\\caption{{{caption}}}
+\\label{{tab:complete_ranking}}
 \\footnotesize
-\\begin{tabular}{clcccc}
+\\begin{{tabular}}{{clccccccc}}
 \\toprule
-\\textbf{Rank} & \\textbf{Model} & \\textbf{Avg Rank} & \\textbf{Mean G-Mean} & \\textbf{Std} & \\textbf{Wins} \\\\
+\\textbf{{Rank}} & \\textbf{{Model}} & \\textbf{{Avg Rank}} & \\textbf{{Mean G-Mean}} & \\textbf{{Std}} & \\textbf{{Wins}} & \\textbf{{W}} & \\textbf{{L}} & \\textbf{{D}} \\\\
+\\midrule
+"""
+    else:
+        latex = f"""\\begin{{table}}[htbp]
+\\centering
+\\caption{{{caption}}}
+\\label{{tab:complete_ranking}}
+\\footnotesize
+\\begin{{tabular}}{{clcccc}}
+\\toprule
+\\textbf{{Rank}} & \\textbf{{Model}} & \\textbf{{Avg Rank}} & \\textbf{{Mean G-Mean}} & \\textbf{{Std}} & \\textbf{{Wins}} \\\\
 \\midrule
 """
 
@@ -316,7 +341,14 @@ def generate_table_complete_ranking(df_results: pd.DataFrame, stats_results: Dic
         std_gmean = perf.get('std', 0)
         wins = wins_count.get(model, 0)
 
-        latex += f'{idx} & {model_name} & {rank:.2f} & {mean_gmean:.3f} & {std_gmean:.3f} & {wins} \\\\\n'
+        if has_wld:
+            wld = egis_wld.get(model, {})
+            w = wld.get('wins', '--')
+            l_val = wld.get('losses', '--')
+            d = wld.get('ties', '--')
+            latex += f'{idx} & {model_name} & {rank:.2f} & {mean_gmean:.3f} & {std_gmean:.3f} & {wins} & {w} & {l_val} & {d} \\\\\n'
+        else:
+            latex += f'{idx} & {model_name} & {rank:.2f} & {mean_gmean:.3f} & {std_gmean:.3f} & {wins} \\\\\n'
 
     # Add Friedman test info
     chi_sq = friedman.get('statistic', 0)
@@ -324,9 +356,10 @@ def generate_table_complete_ranking(df_results: pd.DataFrame, stats_results: Dic
     df = friedman.get('df', 0)
     cd = best_config.get('critical_distance', 0)
 
+    n_cols = 9 if has_wld else 6
     latex += f"""\\midrule
-\\multicolumn{{6}}{{l}}{{\\textit{{Friedman Test: $\\chi^2$({df}) = {chi_sq:.1f}, p < 0.001}}}} \\\\
-\\multicolumn{{6}}{{l}}{{\\textit{{Critical Distance (Nemenyi, $\\alpha$=0.05): CD = {cd:.2f}}}}} \\\\
+\\multicolumn{{{n_cols}}}{{l}}{{\\textit{{Friedman Test: $\\chi^2$({df}) = {chi_sq:.1f}, p < 0.001}}}} \\\\
+\\multicolumn{{{n_cols}}}{{l}}{{\\textit{{Critical Distance (Nemenyi, $\\alpha$=0.05): CD = {cd:.2f}}}}} \\\\
 """
 
     latex += generate_table_footer()
@@ -338,12 +371,19 @@ def generate_table_complete_ranking(df_results: pd.DataFrame, stats_results: Dic
 # =============================================================================
 
 def generate_table_wilcoxon(stats_results: Dict) -> str:
-    """Generate Table XI: Pairwise Wilcoxon Tests with Bonferroni Correction."""
+    """Generate Table XI: Pairwise Wilcoxon Tests with Bonferroni Correction (binary datasets)."""
     logger.info("Generating Table XI: Pairwise Wilcoxon Tests")
+
+    # Primarily use binary-only data; fall back to overall if binary_only doesn't exist
+    binary_configs = stats_results.get('binary_only', {}).get('configurations', [])
+    overall_configs = stats_results.get('overall', {}).get('configurations', [])
+    configs_source = binary_configs if binary_configs else overall_configs
+    source_label = 'binary_only' if binary_configs else 'overall'
+    logger.info(f"Wilcoxon table using '{source_label}' data ({len(configs_source)} configurations)")
 
     # Find configuration with pairwise tests
     best_config = None
-    for config in stats_results.get('overall', {}).get('configurations', []):
+    for config in configs_source:
         if config.get('pairwise_tests'):
             best_config = config
             break
@@ -353,15 +393,16 @@ def generate_table_wilcoxon(stats_results: Dict) -> str:
         return "% No pairwise test data available\n"
 
     tests = best_config['pairwise_tests']
+    config_label_display = best_config.get('config_label', '')
 
-    latex = """\\begin{table}[htbp]
+    latex = f"""\\begin{{table}}[htbp]
 \\centering
-\\caption{Statistical Significance Tests (Pairwise Wilcoxon with Bonferroni)}
-\\label{tab:stat_tests}
+\\caption{{Statistical Significance Tests (Pairwise Wilcoxon with Bonferroni, Binary Datasets, {config_label_display})}}
+\\label{{tab:stat_tests}}
 \\footnotesize
-\\begin{tabular}{lccccc}
+\\begin{{tabular}}{{lccccc}}
 \\toprule
-\\textbf{Comparison} & \\textbf{p-value} & \\textbf{Adj. p} & \\textbf{Sig.} & \\textbf{Mean $\\Delta$} & \\textbf{Effect} \\\\
+\\textbf{{Comparison}} & \\textbf{{p-value}} & \\textbf{{Adj. p}} & \\textbf{{Sig.}} & \\textbf{{Mean $\\Delta$}} & \\textbf{{Effect}} \\\\
 \\midrule
 """
 

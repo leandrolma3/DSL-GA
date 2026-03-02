@@ -74,6 +74,11 @@ EXPERIMENT_CONFIGS = {
         'chunk_size': 2000,
         'penalty': 0.1,
         'label': 'EXP-2000-P'
+    },
+    'chunk_500_penalty_03': {
+        'chunk_size': 500,
+        'penalty': 0.3,
+        'label': 'EXP-500-P03'
     }
 }
 
@@ -83,8 +88,7 @@ MODEL_FILES = {
     'ARF': 'river_ARF_results.csv',
     'SRP': 'river_SRP_results.csv',
     'HAT': 'river_HAT_results.csv',
-    'ROSE_Original': 'rose_original_results.csv',
-    'ROSE_ChunkEval': 'rose_chunk_eval_results.csv',
+    'ROSE': 'rose_original_results.csv',
     'ACDWM': 'acdwm_results.csv',
     'ERulesD2S': 'erulesd2s_results.csv',
     # CDCMS results are in a separate directory (cdcms_results/chunk_metrics.json)

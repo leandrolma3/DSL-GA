@@ -99,28 +99,39 @@ MODELS_ORDER = ['EGIS', 'ARF', 'SRP', 'HAT', 'ROSE', 'ACDWM', 'ERulesD2S', 'CDCM
 # FIGURE 3: CRITICAL DIFFERENCE DIAGRAM
 # =============================================================================
 
-def generate_critical_difference_diagram(stats_results: Dict, output_file: Path):
-    """Generate Critical Difference diagram for Nemenyi post-hoc test."""
-    logger.info("Generating Figure 3: Critical Difference Diagram")
+def _find_best_egis_config(configurations: List[Dict]) -> Optional[Dict]:
+    """Find the configuration with the lowest EGIS rank among those with ranking data.
 
-    if not PLOTTING_AVAILABLE:
-        logger.warning("Plotting not available")
-        return
+    Args:
+        configurations: List of configuration dicts from statistical_results.json.
 
-    # Find configuration with ranking data
+    Returns:
+        The config dict with the best (lowest) EGIS average rank, or None.
+    """
     best_config = None
-    for config in stats_results.get('overall', {}).get('configurations', []):
-        if config.get('average_rankings'):
+    best_egis_rank = float('inf')
+    for config in configurations:
+        avg_ranks = config.get('average_rankings')
+        if not avg_ranks:
+            continue
+        egis_rank = avg_ranks.get('EGIS', float('inf'))
+        if egis_rank < best_egis_rank:
+            best_egis_rank = egis_rank
             best_config = config
-            break
+    return best_config
 
-    if not best_config:
-        logger.warning("No ranking data available for CD diagram")
-        return
 
-    avg_ranks = best_config['average_rankings']
-    cd = best_config.get('critical_distance', 1.0)
-    n_datasets = best_config.get('n_datasets', 52)
+def _render_cd_diagram(config: Dict, output_file: Path, title_suffix: str = ""):
+    """Render and save a single Critical Difference diagram from a config dict.
+
+    Args:
+        config: A configuration dict containing average_rankings, critical_distance, n_datasets.
+        output_file: Path to write the PDF figure.
+        title_suffix: Extra text appended to the diagram title (e.g. " - Binary Only").
+    """
+    avg_ranks = config['average_rankings']
+    cd = config.get('critical_distance', 1.0)
+    n_datasets = config.get('n_datasets', 0)
 
     # Sort models by rank
     sorted_models = sorted(avg_ranks.items(), key=lambda x: x[1])
@@ -186,12 +197,78 @@ def generate_critical_difference_diagram(stats_results: Dict, output_file: Path)
     ax.axhline(y=-0.5, color='gray', linestyle='-', linewidth=0.5)
 
     # Title
-    ax.set_title(f'Critical Difference Diagram (n={n_datasets} datasets)', fontsize=12, fontweight='bold')
+    title = f'Critical Difference Diagram (n={n_datasets} datasets)'
+    if title_suffix:
+        title += f' {title_suffix}'
+    ax.set_title(title, fontsize=12, fontweight='bold')
 
     plt.tight_layout()
     plt.savefig(output_file, format='pdf', dpi=300, bbox_inches='tight')
     plt.close()
     logger.info(f"Saved: {output_file}")
+
+
+def generate_critical_difference_diagram(stats_results: Dict, output_file: Path):
+    """Generate Critical Difference diagrams for Nemenyi post-hoc test.
+
+    Produces up to three diagrams:
+      - fig_critical_difference.pdf       : binary-only analysis (PRIMARY)
+      - fig_critical_difference_all48.pdf  : all-48 datasets (complementary)
+      - fig_critical_difference_multiclass.pdf : multiclass-only (if available)
+
+    The primary diagram uses binary_only data. The best EGIS configuration
+    is selected as the one with the lowest EGIS average rank.
+    """
+    logger.info("Generating Figure 3: Critical Difference Diagrams")
+
+    if not PLOTTING_AVAILABLE:
+        logger.warning("Plotting not available")
+        return
+
+    output_dir = output_file.parent
+    generated_any = False
+
+    # ---- PRIMARY: binary-only CD diagram ----
+    binary_configs = stats_results.get('binary_only', {}).get('configurations', [])
+    if binary_configs:
+        best_binary = _find_best_egis_config(binary_configs)
+        if best_binary:
+            binary_output = output_dir / 'fig_critical_difference.pdf'
+            _render_cd_diagram(best_binary, binary_output, title_suffix="- Binary Only")
+            generated_any = True
+        else:
+            logger.warning("No ranking data in binary_only configurations")
+    else:
+        logger.warning("No binary_only configurations found in statistical results")
+
+    # ---- COMPLEMENTARY: all-48 datasets CD diagram ----
+    overall_configs = stats_results.get('overall', {}).get('configurations', [])
+    if overall_configs:
+        best_overall = _find_best_egis_config(overall_configs)
+        if best_overall:
+            overall_output = output_dir / 'fig_critical_difference_all48.pdf'
+            _render_cd_diagram(best_overall, overall_output, title_suffix="- All Datasets")
+            generated_any = True
+        else:
+            logger.warning("No ranking data in overall configurations")
+    else:
+        logger.warning("No overall configurations found in statistical results")
+
+    # ---- OPTIONAL: multiclass-only CD diagram ----
+    multiclass_configs = stats_results.get('multiclass_only', {}).get('configurations', [])
+    if multiclass_configs:
+        best_multiclass = _find_best_egis_config(multiclass_configs)
+        if best_multiclass:
+            multiclass_output = output_dir / 'fig_critical_difference_multiclass.pdf'
+            _render_cd_diagram(best_multiclass, multiclass_output, title_suffix="- Multiclass Only")
+            generated_any = True
+        else:
+            logger.warning("No ranking data in multiclass_only configurations")
+    else:
+        logger.info("No multiclass_only section in statistical results (skipping)")
+
+    if not generated_any:
+        logger.warning("No CD diagrams were generated (no ranking data available)")
 
 
 # =============================================================================
@@ -530,8 +607,8 @@ def main():
 
     # Generate figures
     figures = [
-        ('fig3_critical_difference', lambda: generate_critical_difference_diagram(
-            stats_results, OUTPUT_DIR / 'fig3_critical_difference.pdf')),
+        ('fig3_critical_difference_diagrams', lambda: generate_critical_difference_diagram(
+            stats_results, OUTPUT_DIR / 'fig_critical_difference.pdf')),
         ('fig4_transition_evolution', lambda: generate_transition_evolution_plot(
             df_transitions, OUTPUT_DIR / 'fig4_transition_evolution.pdf')),
         ('fig5_performance_boxplots', lambda: generate_performance_boxplots(

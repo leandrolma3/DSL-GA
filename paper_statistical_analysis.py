@@ -47,6 +47,13 @@ OUTPUT_DIR = Path("paper_data")
 # Datasets excluded from all analyses
 EXCLUDED_DATASETS = ['CovType', 'IntelLabSensors', 'PokerHand', 'Shuttle']
 
+# Multiclass datasets (excluded from binary-only analysis)
+MULTICLASS_DATASETS = [
+    'LED_Abrupt_Simple', 'LED_Gradual_Simple', 'LED_Stationary',
+    'RBF_Stationary',
+    'WAVEFORM_Abrupt_Simple', 'WAVEFORM_Gradual_Simple', 'WAVEFORM_Stationary'
+]
+
 # Significance level
 ALPHA = 0.05
 
@@ -481,6 +488,117 @@ def perform_egis_penalty_analysis(df_results: pd.DataFrame) -> Dict:
 
 
 # =============================================================================
+# BINARY-ONLY ANALYSIS (Primary analysis for paper)
+# =============================================================================
+
+def perform_binary_only_analysis(df_results: pd.DataFrame) -> Dict:
+    """
+    Perform statistical analysis on binary datasets only.
+
+    This is the PRIMARY analysis for the paper, as it provides a fair comparison
+    across all 8 models (ACDWM and CDCMS are binary-only and should not be
+    penalized with G-Mean=0 on multiclass datasets).
+    """
+    logger.info("Performing BINARY-ONLY statistical analysis (primary for paper)...")
+
+    # Filter to binary datasets only
+    df_binary = df_results[~df_results['dataset'].isin(MULTICLASS_DATASETS)].copy()
+    n_binary = df_binary['dataset'].nunique()
+    logger.info(f"Binary-only analysis: {n_binary} datasets (excluded {len(MULTICLASS_DATASETS)} multiclass)")
+
+    results = {
+        'timestamp': datetime.now().isoformat(),
+        'analysis_type': 'binary_only',
+        'n_binary_datasets': n_binary,
+        'excluded_multiclass': MULTICLASS_DATASETS,
+        'configurations': []
+    }
+
+    for config_label in df_binary['config_label'].unique():
+        config_df = df_binary[df_binary['config_label'] == config_label]
+
+        # Pivot to get models as columns
+        pivot = config_df.pivot_table(
+            index='dataset',
+            columns='model',
+            values='gmean_mean',
+            aggfunc='mean'
+        )
+
+        # Filter to models with sufficient data
+        valid_models = [m for m in MODELS_ORDER if m in pivot.columns]
+        pivot = pivot[valid_models].dropna(how='all')
+
+        if len(valid_models) < 2 or len(pivot) < 5:
+            logger.warning(f"Insufficient data for binary-only config {config_label}")
+            continue
+
+        # Fill missing values with 0 (for failed models like ERulesD2S)
+        pivot = pivot.fillna(0)
+
+        # Friedman test
+        friedman_result = friedman_test(pivot)
+
+        # Nemenyi critical distance
+        cd = nemenyi_critical_distance(len(valid_models), len(pivot))
+
+        # Pairwise Wilcoxon tests (if EGIS present)
+        if 'EGIS' in valid_models:
+            pairwise_results = pairwise_wilcoxon_with_bonferroni(pivot, 'EGIS')
+        else:
+            pairwise_results = []
+
+        # Model performance summary
+        model_summary = {}
+        for model in valid_models:
+            model_data = pivot[model]
+            model_summary[model] = {
+                'mean': float(model_data.mean()),
+                'std': float(model_data.std()),
+                'median': float(model_data.median()),
+                'min': float(model_data.min()),
+                'max': float(model_data.max()),
+                'n_datasets': int((model_data > 0).sum())
+            }
+
+        # Rankings
+        rankings = calculate_model_rankings(pivot)
+        avg_rankings = rankings.mean().to_dict()
+
+        # Count wins for each model
+        wins_count = {}
+        for model in valid_models:
+            wins_count[model] = int((rankings[model] == 1).sum())
+
+        # Win/Loss/Draw vs each model (for EGIS)
+        wld_stats = {}
+        if 'EGIS' in valid_models:
+            for other_model in valid_models:
+                if other_model == 'EGIS':
+                    continue
+                wld = count_wins_ties_losses(pivot, 'EGIS', other_model)
+                wld_stats[other_model] = wld
+
+        config_results = {
+            'config_label': config_label,
+            'n_datasets': len(pivot),
+            'n_models': len(valid_models),
+            'models': valid_models,
+            'friedman_test': friedman_result,
+            'critical_distance': float(cd),
+            'pairwise_tests': pairwise_results,
+            'model_summary': model_summary,
+            'average_rankings': avg_rankings,
+            'wins_count': wins_count,
+            'egis_wld': wld_stats
+        }
+
+        results['configurations'].append(config_results)
+
+    return results
+
+
+# =============================================================================
 # MAIN FUNCTION
 # =============================================================================
 
@@ -509,10 +627,12 @@ def main():
     overall_results = perform_overall_analysis(df_results)
     stratified_results = perform_stratified_analysis(df_results)
     penalty_results = perform_egis_penalty_analysis(df_results)
+    binary_only_results = perform_binary_only_analysis(df_results)
 
     # Combine all results
     all_results = {
         'overall': overall_results,
+        'binary_only': binary_only_results,
         'stratified': stratified_results,
         'penalty_comparison': penalty_results,
         'metadata': {
@@ -521,7 +641,8 @@ def main():
             'n_total_records': len(df_results),
             'n_unique_datasets': df_results['dataset'].nunique(),
             'models_analyzed': list(df_results['model'].unique()),
-            'configurations': list(df_results['config_label'].unique())
+            'configurations': list(df_results['config_label'].unique()),
+            'multiclass_datasets_excluded_in_binary': MULTICLASS_DATASETS
         }
     }
 
@@ -591,6 +712,55 @@ def generate_summary_report(results: Dict, output_file: Path):
                            f"(adj={test['adjusted_p_value']:.4f}){sig_marker}, "
                            f"Δ={test['mean_difference']:+.4f}, δ={test['cliffs_delta']:.3f} ({test['effect_interpretation']})")
 
+    # Binary-only analysis (PRIMARY for paper)
+    lines.append("\n" + "-" * 80)
+    lines.append("1b. BINARY-ONLY ANALYSIS (PRIMARY FOR PAPER)")
+    lines.append("-" * 80)
+
+    binary_data = results.get('binary_only', {})
+    if binary_data:
+        lines.append(f"\nBinary datasets: {binary_data.get('n_binary_datasets', '?')}")
+        lines.append(f"Excluded multiclass: {binary_data.get('excluded_multiclass', [])}")
+
+        for config in binary_data.get('configurations', []):
+            lines.append(f"\n--- Configuration: {config['config_label']} (Binary-Only) ---")
+            lines.append(f"Datasets: {config['n_datasets']}, Models: {config['n_models']}")
+
+            # Friedman test
+            friedman = config['friedman_test']
+            lines.append(f"\nFriedman Test:")
+            lines.append(f"  Chi-square: {friedman['statistic']:.3f}")
+            lines.append(f"  p-value: {friedman['p_value']:.6f}")
+            lines.append(f"  Significant: {friedman['significant']}")
+
+            # Critical Distance
+            lines.append(f"\nNemenyi Critical Distance (alpha=0.05): {config['critical_distance']:.3f}")
+
+            # Average Rankings
+            lines.append("\nAverage Rankings (lower is better):")
+            sorted_ranks = sorted(config['average_rankings'].items(), key=lambda x: x[1])
+            for rank, (model, avg_rank) in enumerate(sorted_ranks, 1):
+                wins = config['wins_count'].get(model, 0)
+                perf = config['model_summary'].get(model, {})
+                gmean = perf.get('mean', 0)
+                std = perf.get('std', 0)
+                lines.append(f"  {rank}. {model:20s}: {avg_rank:.2f} (G-Mean: {gmean:.4f}+/-{std:.4f}, Wins: {wins})")
+
+            # Win/Loss/Draw stats
+            if config.get('egis_wld'):
+                lines.append("\nEGIS Win/Loss/Draw:")
+                for other_model, wld in config['egis_wld'].items():
+                    lines.append(f"  vs {other_model:15s}: {wld['wins']}/{wld['losses']}/{wld['ties']}")
+
+            # Pairwise tests
+            if config['pairwise_tests']:
+                lines.append("\nPairwise Wilcoxon Tests (EGIS vs others, Bonferroni corrected):")
+                for test in config['pairwise_tests']:
+                    sig_marker = "*" if test['significant_bonferroni'] else ""
+                    lines.append(f"  {test['comparison']:30s}: p={test['raw_p_value']:.4f} "
+                               f"(adj={test['adjusted_p_value']:.4f}){sig_marker}, "
+                               f"delta={test['mean_difference']:+.4f}, d={test['cliffs_delta']:.3f} ({test['effect_interpretation']})")
+
     # Stratified analysis
     lines.append("\n" + "-" * 80)
     lines.append("2. PERFORMANCE BY DRIFT TYPE")
@@ -637,7 +807,43 @@ def print_key_findings(results: Dict):
     print("KEY STATISTICAL FINDINGS")
     print("=" * 60)
 
-    # Best configuration
+    # Binary-only analysis (PRIMARY)
+    binary_data = results.get('binary_only', {})
+    if binary_data:
+        print(f"\n--- BINARY-ONLY ANALYSIS (PRIMARY) ---")
+        print(f"Binary datasets: {binary_data.get('n_binary_datasets', '?')}")
+
+        best_config = None
+        best_rank = float('inf')
+        for config in binary_data.get('configurations', []):
+            if 'EGIS' in config['average_rankings']:
+                rank = config['average_rankings']['EGIS']
+                if rank < best_rank:
+                    best_rank = rank
+                    best_config = config
+
+        if best_config:
+            print(f"\nBest EGIS Config (Binary): {best_config['config_label']}")
+            print(f"  EGIS Average Rank: {best_rank:.2f}")
+            print(f"  Friedman chi2: {best_config['friedman_test']['statistic']:.1f}")
+            print(f"  Critical Distance: {best_config['critical_distance']:.3f}")
+
+            print("\n  All model rankings:")
+            sorted_ranks = sorted(best_config['average_rankings'].items(), key=lambda x: x[1])
+            for model, rank in sorted_ranks:
+                perf = best_config['model_summary'].get(model, {})
+                print(f"    {model:15s}: rank={rank:.2f}, G-Mean={perf.get('mean', 0):.4f}")
+
+            if best_config.get('egis_wld'):
+                print("\n  EGIS Win/Loss/Draw:")
+                for other_model, wld in best_config['egis_wld'].items():
+                    print(f"    vs {other_model:15s}: {wld['wins']}/{wld['losses']}/{wld['ties']}")
+
+            sig_count = sum(1 for t in best_config['pairwise_tests'] if t['significant_bonferroni'])
+            print(f"\n  Significant differences (Bonferroni): {sig_count}/{len(best_config['pairwise_tests'])}")
+
+    # All-48 analysis (complementary)
+    print(f"\n--- ALL-48 ANALYSIS (COMPLEMENTARY) ---")
     best_config = None
     best_rank = float('inf')
     for config in results['overall'].get('configurations', []):
@@ -648,12 +854,11 @@ def print_key_findings(results: Dict):
                 best_config = config
 
     if best_config:
-        print(f"\nBest EGIS Configuration: {best_config['config_label']}")
+        print(f"Best EGIS Configuration: {best_config['config_label']}")
         print(f"  Average Rank: {best_rank:.2f}")
         print(f"  Friedman p-value: {best_config['friedman_test']['p_value']:.6f}")
         print(f"  Critical Distance: {best_config['critical_distance']:.3f}")
 
-        # Significant differences
         sig_count = sum(1 for t in best_config['pairwise_tests'] if t['significant_bonferroni'])
         print(f"  Significant differences (Bonferroni): {sig_count}/{len(best_config['pairwise_tests'])}")
 

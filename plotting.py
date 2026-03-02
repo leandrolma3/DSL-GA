@@ -193,9 +193,20 @@ def plot_ga_evolution(history, chunk_index, dataset_name, run_number=1, ax=None,
     # Ensure other keys exist and have the correct length, providing defaults if missing
     avg_fitness = history.get('avg_fitness', [np.nan] * num_generations)
     std_fitness = history.get('std_fitness', [0] * num_generations)
-    best_accuracy = history.get('best_accuracy', [np.nan] * num_generations)
-    avg_accuracy = history.get('avg_accuracy', [np.nan] * num_generations)
-    std_accuracy = history.get('std_accuracy', [0] * num_generations)
+    best_accuracy = history.get('best_gmean', [np.nan] * num_generations)
+    avg_accuracy = history.get('avg_gmean', [np.nan] * num_generations)
+    std_accuracy = history.get('std_gmean', [0] * num_generations)
+
+    # Sanitize -Infinity and NaN: replace non-finite values with np.nan
+    def _sanitize(values, default=np.nan):
+        return [default if (v is None or not np.isfinite(v)) else v for v in values]
+
+    avg_fitness = _sanitize(avg_fitness)
+    std_fitness = _sanitize(std_fitness, default=0)
+    history['best_fitness'] = _sanitize(history['best_fitness'])
+    best_accuracy = _sanitize(best_accuracy)
+    avg_accuracy = _sanitize(avg_accuracy)
+    std_accuracy = _sanitize(std_accuracy, default=0)
 
     # Pad shorter lists if necessary (though ideally they should match)
     if len(avg_fitness) != num_generations: avg_fitness.extend([np.nan]*(num_generations-len(avg_fitness)))
@@ -232,15 +243,15 @@ def plot_ga_evolution(history, chunk_index, dataset_name, run_number=1, ax=None,
 
     # --- Plot Accuracy (only if standalone plot was created) ---
     if ax_accuracy is not None: # Check if ax_accuracy exists
-        ax_accuracy.plot(generations, best_accuracy, label='Best Accuracy', color='red')
-        ax_accuracy.plot(generations, avg_accuracy, label='Avg Accuracy', color='orange')
+        ax_accuracy.plot(generations, best_accuracy, label='Best G-Mean', color='red')
+        ax_accuracy.plot(generations, avg_accuracy, label='Avg G-Mean', color='orange')
         lower_bound_acc = np.array(avg_accuracy) - np.array(std_accuracy)
         upper_bound_acc = np.array(avg_accuracy) + np.array(std_accuracy)
         ax_accuracy.fill_between(generations, np.maximum(0, lower_bound_acc), np.minimum(1, upper_bound_acc),
-                                   color='orange', alpha=0.2, label='Std Dev Accuracy')
-        ax_accuracy.set_title('Accuracy Evolution (on Train Data)')
+                                   color='orange', alpha=0.2, label='Std Dev G-Mean')
+        ax_accuracy.set_title('G-Mean Evolution (on Train Data)')
         ax_accuracy.set_xlabel('Generations')
-        ax_accuracy.set_ylabel('Accuracy')
+        ax_accuracy.set_ylabel('G-Mean')
         ax_accuracy.legend()
         ax_accuracy.grid(True, linestyle=':')
         ax_accuracy.set_ylim(0, 1.05)

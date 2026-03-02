@@ -601,11 +601,12 @@ def hierarchical_hill_climbing(
                 logger.warning(f"       ✗ {op_name} falhou: {e}")
 
     # 5. Retorna top-K variantes
-    num_variants = min(level_config['num_variants_base'], len(all_variants))
+    # OTIMIZAÇÃO FASE 1.3: Limitar a 8 variantes máximo para reduzir custo HC (-3-5%)
+    max_variants_to_return = min(8, level_config['num_variants_base'], len(all_variants))
 
-    logger.info(f"     Total gerado: {len(all_variants)} variantes, retornando {num_variants}")
+    logger.info(f"     Total gerado: {len(all_variants)} variantes, retornando {max_variants_to_return} (limite: 8)")
 
-    return all_variants[:num_variants] if all_variants else []
+    return all_variants[:max_variants_to_return] if all_variants else []
 
 
 # ============================================================================

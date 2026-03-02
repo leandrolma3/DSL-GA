@@ -51,6 +51,8 @@ class Individual:
         self.creation_chunk_index = -1
         self.rules = {class_label: [] for class_label in self.classes}
         self.covered_classes: Set[Any] = set()
+        # OTIMIZAÇÃO FASE 1.4: Flag de proteção para evitar deep copy desnecessário de elite
+        self.is_protected = False
 
 
         # # Determina classe padrão

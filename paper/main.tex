@@ -67,7 +67,7 @@
 \maketitle
 
 \begin{abstract}
-Data stream classification under concept drift presents fundamental challenges for machine learning systems, requiring models that adapt to evolving data distributions while maintaining interpretability. This paper introduces a novel rule-based classifier, termed EGIS, that leverages grammatical evolution to generate human-readable classification rules for non-stationary data streams. Unlike black-box ensemble methods that sacrifice transparency for accuracy, EGIS produces explicit IF-THEN rules that enable domain experts to understand, validate, and trust the model's predictions. The proposed method incorporates a multi-level self-adaptation framework that automatically adjusts evolutionary parameters in response to population diversity, performance history, and drift severity signals. A specialized mutation mechanism, termed Gene Therapy, injects discriminative patterns extracted from auxiliary decision trees directly into the evolutionary population, accelerating convergence during concept drift recovery. We introduce three novel transition metrics, namely Transition Change Score (TCS), Rule Instability Rate (RIR), and Average Modification Severity (AMS), that quantify rule evolution dynamics, revealing not only what the classifier predicts but how and why its decision logic changes over time. Comprehensive experiments across 48 datasets encompassing abrupt, gradual, recurring, and noisy drift scenarios demonstrate that EGIS achieves competitive predictive performance (average G-Mean of 0.78) while providing complete interpretability. Statistical analysis confirms that EGIS significantly outperforms ERulesD2S by 22-24 percentage points while maintaining a gap of only 2-4\% relative to black-box ensemble methods. The proposed transition metrics provide unprecedented insight into classifier adaptation behavior, enabling practitioners to monitor how classification rules evolve in response to changing data distributions.
+Data stream classification under concept drift presents fundamental challenges for machine learning systems, requiring models that adapt to evolving data distributions while maintaining interpretability. This paper introduces a novel rule-based classifier, termed EGIS, that leverages grammatical evolution to generate human-readable classification rules for non-stationary data streams. Unlike black-box ensemble methods that sacrifice transparency for accuracy, EGIS produces explicit IF-THEN rules that enable domain experts to understand, validate, and trust the model's predictions. The proposed method incorporates a multi-level self-adaptation framework that automatically adjusts evolutionary parameters in response to population diversity, performance history, and drift severity signals. A specialized mutation mechanism, termed Gene Therapy, injects discriminative patterns extracted from auxiliary decision trees directly into the evolutionary population, accelerating convergence during concept drift recovery. We introduce three novel transition metrics, namely Transition Change Score (TCS), Rule Instability Rate (RIR), and Average Modification Severity (AMS), that quantify rule evolution dynamics, revealing not only what the classifier predicts but how and why its decision logic changes over time. Comprehensive experiments across 48 datasets encompassing abrupt, gradual, recurring, and noisy drift scenarios demonstrate that EGIS achieves competitive predictive performance (average G-Mean of 0.855 on binary datasets) while providing complete interpretability. Statistical analysis using the Friedman test on 41 binary datasets reveals that the performance gap between EGIS and leading ensemble methods (2--4\% vs ARF and ROSE) is not statistically significant after Bonferroni correction for ARF, while EGIS outperforms ERulesD2S by over 25 percentage points. The proposed transition metrics provide unprecedented insight into classifier adaptation behavior, enabling practitioners to monitor how classification rules evolve in response to changing data distributions.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -81,9 +81,7 @@ Data stream classification, concept drift, explainable AI, grammatical evolution
 
 The proliferation of real-time data sources across diverse domains, ranging from financial transaction monitoring to industrial sensor networks, has created an urgent need for classification systems capable of processing continuous data streams while adapting to evolving patterns~\cite{gama2014survey}. Unlike traditional batch learning paradigms where a model is trained once on a static dataset, data stream classification must address a constellation of interrelated challenges: concept drift manifests as changes in the underlying data distribution that render previously learned models obsolete; computational constraints demand single-pass processing with bounded memory; and the requirement for timely predictions precludes the luxury of storing data for retrospective analysis~\cite{bifet2010moa}. These challenges have motivated extensive research into adaptive learning algorithms that can detect distribution changes and update their models accordingly.
 
-While the machine learning community has made substantial progress in developing adaptive classifiers for non-stationary environments, the dominant approaches rely on ensemble methods or complex tree structures that achieve high predictive accuracy at the cost of interpretability~\cite{gomes2017adaptive}. Methods such as Adaptive Random Forest (ARF)~\cite{gomes2017adaptive} and Streaming Random Patches (SRP)~\cite{gomes2019streaming} combine hundreds of base learners whose individual predictions are aggregated through mechanisms that obscure the reasoning process from human understanding. This opacity is particularly problematic in high-stakes domains such as healthcare diagnostics, financial fraud detection, and critical infrastructure monitoring, where understanding \textit{why} a model makes specific predictions is as important as the predictions themselves~\cite{rudin2019stop}. Domain experts in these fields cannot validate or trust a classifier whose decision logic remains hidden within an impenetrable ensemble, regardless of its accuracy on benchmark datasets.
-
-The tension between predictive performance and interpretability represents a fundamental challenge in machine learning, yet the data streaming context introduces an additional dimension that has received insufficient attention: the need to understand not only \textit{what} a model predicts at any given moment, but \textit{how} and \textit{why} its decision logic changes over time. When concept drift occurs, an adaptive classifier must modify its internal representation to track the evolving data distribution. For black-box methods, this adaptation process is entirely opaque; practitioners observe only that predictions have changed, with no insight into which aspects of the model were modified or why. In contrast, an interpretable classifier that maintains explicit decision rules offers the potential for transparency not only in individual predictions but also in the adaptation process itself. This capability would enable practitioners to verify that model changes align with their domain knowledge about expected distributional shifts, identify when the classifier has detected a genuine concept change versus responded to noise, and maintain an auditable history of how the decision logic has evolved throughout the data stream.
+While substantial progress has been made in developing adaptive classifiers, the dominant approaches rely on ensemble methods that achieve high accuracy at the cost of interpretability~\cite{gomes2017adaptive}. Methods such as Adaptive Random Forest (ARF)~\cite{gomes2017adaptive} and Streaming Random Patches (SRP)~\cite{gomes2019streaming} combine hundreds of base learners through mechanisms that obscure the reasoning process. This opacity is problematic in high-stakes domains where understanding \textit{why} a model makes specific predictions is as important as the predictions themselves~\cite{rudin2019stop}. The data streaming context introduces an additional dimension: the need to understand not only \textit{what} a model predicts, but \textit{how} and \textit{why} its decision logic changes over time. For black-box methods, this adaptation process is entirely opaque. An interpretable classifier that maintains explicit decision rules offers transparency both in individual predictions and in the adaptation process, enabling practitioners to verify that model changes align with domain knowledge, identify genuine concept changes versus noise responses, and maintain an auditable history of decision logic evolution.
 
 This paper introduces \textbf{EGIS} (Evolutionary Grammar for Interpretable Streams), a novel approach that addresses both interpretability requirements in data stream classification. EGIS leverages grammatical evolution~\cite{oneill2003grammatical} to maintain a population of rule-based classifiers expressed as human-readable IF-THEN rules, enabling domain experts to understand model decisions without specialized machine learning knowledge. The evolutionary process adapts these rules as new data arrives, with a multi-level self-adaptation framework that automatically adjusts parameters based on population diversity, performance history, and drift severity. A specialized mutation mechanism called Gene Therapy accelerates drift recovery by injecting discriminative patterns extracted from auxiliary decision trees. Most importantly, EGIS introduces novel transition metrics that quantify how rules evolve between consecutive time periods, providing unprecedented insight into the adaptation process.
 
@@ -108,10 +106,10 @@ The main contributions of this paper are as follows:
 
     \item \textbf{Gene Therapy Mutation}: We propose a knowledge-guided mutation operator that extracts discriminative patterns from specialized decision trees and injects them directly into the evolutionary population, accelerating convergence during drift recovery.
 
-    \item \textbf{Comprehensive Empirical Evaluation}: We conduct extensive experiments spanning 48 datasets across five drift categories (abrupt, gradual, noisy, stationary, and real-world streams), evaluating EGIS under six configurations that systematically vary chunk size (500, 1000, 2000 instances) and complexity penalty settings. The resulting experimental matrix comprises over 300 individual runs, compared against eight state-of-the-art methods with rigorous statistical validation including Friedman tests and pairwise Wilcoxon signed-rank tests with Bonferroni correction.
+    \item \textbf{Comprehensive Empirical Evaluation}: Experiments spanning 48 datasets, five drift categories, six EGIS configurations, and eight comparative methods, with Friedman tests and pairwise Wilcoxon signed-rank tests with Bonferroni correction.
 \end{enumerate}
 
-The remainder of this paper is organized as follows. Section~\ref{sec:problem} presents the formal problem formulation establishing the mathematical framework for data stream classification with interpretability requirements. Section~\ref{sec:related} reviews related work on grammatical evolution, rule-based stream classifiers, and concept drift adaptation. Section~\ref{sec:method} describes the proposed EGIS method in detail, including the grammar-based representation, multi-objective fitness function, evolutionary operators, self-adaptation framework, and transition metrics. Section~\ref{sec:experiments} presents the experimental setup, and Section~\ref{sec:results} discusses the results. Finally, Section~\ref{sec:conclusion} concludes the paper and outlines directions for future work.
+The paper is organized as follows: Section~\ref{sec:problem} formalizes the problem; Section~\ref{sec:related} reviews related work; Section~\ref{sec:method} describes EGIS; Sections~\ref{sec:experiments}--\ref{sec:results} present experiments and results; Section~\ref{sec:conclusion} concludes.
 
 
 %==============================================================================
@@ -121,9 +119,9 @@ The remainder of this paper is organized as follows. Section~\ref{sec:problem} p
 
 We formalize the problem of interpretable data stream classification with concept drift adaptation, establishing the mathematical framework that underlies the proposed approach. Let $\mathcal{S} = \{(\mathbf{x}_1, y_1), (\mathbf{x}_2, y_2), \ldots\}$ denote an infinite data stream where each instance $(\mathbf{x}_t, y_t)$ arrives at discrete time step $t$, with $\mathbf{x}_t \in \mathcal{X} \subseteq \mathbb{R}^d$ representing a $d$-dimensional feature vector and $y_t \in \mathcal{Y} = \{c_1, c_2, \ldots, c_K\}$ denoting the class label from a finite set of $K$ classes. The stream is generated according to a time-varying joint probability distribution $P_t(\mathbf{x}, y)$ that may change at unknown time points, a phenomenon known as concept drift.
 
-Concept drift occurs when the joint distribution changes over time, formally expressed as $\exists t_1, t_2: P_{t_1}(\mathbf{x}, y) \neq P_{t_2}(\mathbf{x}, y)$. This change may manifest through different mechanisms: real concept drift affects the posterior probability $P(y|\mathbf{x})$, altering the true decision boundary between classes, while virtual drift affects only the feature distribution $P(\mathbf{x})$ without changing the class-conditional relationships~\cite{gama2014survey}. The temporal dynamics of drift further distinguish abrupt changes, where the distribution shifts instantaneously at a single time point, from gradual drift, where the transition occurs smoothly over an extended period. Recurring concepts represent a special case where previously observed distributions reappear after an intervening period.
+Concept drift occurs when $\exists t_1, t_2: P_{t_1}(\mathbf{x}, y) \neq P_{t_2}(\mathbf{x}, y)$, manifesting as changes in the posterior $P(y|\mathbf{x})$ (real drift) or the marginal $P(\mathbf{x})$ (virtual drift)~\cite{gama2014survey}. Drift dynamics range from abrupt (instantaneous) to gradual (extended transitions), with recurring concepts as a special case.
 
-For computational tractability, the data stream is typically processed in discrete chunks $\mathcal{D}_i = \{(\mathbf{x}_t, y_t) : t \in [(i-1) \cdot n + 1, i \cdot n]\}$, where $n$ denotes the chunk size and $i$ indexes consecutive chunks. The chunk-based processing paradigm enables bounded memory usage while providing sufficient data for meaningful model updates. The classifier $f: \mathcal{X} \rightarrow \mathcal{Y}$ is trained on each chunk $\mathcal{D}_i$ and evaluated on the subsequent chunk $\mathcal{D}_{i+1}$, following a \textbf{train-then-test} protocol. Unlike the prequential (test-then-train) approach commonly used in online learning where each instance is first used for testing before training, the train-then-test protocol evaluates the classifier on completely unseen data from the next temporal window. This methodology provides a more realistic assessment of generalization to future data, as the test set represents genuinely held-out instances rather than individual samples interleaved with training.
+The stream is processed in discrete chunks $\mathcal{D}_i = \{(\mathbf{x}_t, y_t) : t \in [(i-1) \cdot n + 1, i \cdot n]\}$ of size $n$. The classifier $f: \mathcal{X} \rightarrow \mathcal{Y}$ is trained on chunk $\mathcal{D}_i$ and evaluated on $\mathcal{D}_{i+1}$ (\textbf{train-then-test} protocol), providing a realistic assessment of generalization to future data.
 
 The interpretability requirement constrains the hypothesis space to rule-based classifiers of the form $\mathcal{R} = \{r_1, r_2, \ldots, r_m\}$, where each rule $r_k$ takes the form:
 \begin{equation}
@@ -135,7 +133,7 @@ Here $\phi_k: \mathcal{X} \rightarrow \{0, 1\}$ is a Boolean function composed o
 \end{equation}
 This representation ensures that any evolved classifier can be directly inspected and understood by domain experts, as each rule expresses its decision logic in explicit terms that require no machine learning expertise to interpret.
 
-The transition monitoring problem extends the standard classification task to encompass analysis of classifier evolution. Given consecutive rule sets $\mathcal{R}_{t-1}$ and $\mathcal{R}_t$ evolved for chunks $\mathcal{D}_{t-1}$ and $\mathcal{D}_t$ respectively, we seek to quantify: (1) the overall magnitude of structural change, (2) the proportion of rules that were added, modified, or deleted, and (3) the severity of modifications to individual rules. This quantification enables practitioners to understand not only the current state of the classifier but also how it arrived at that state through incremental adaptation.
+The transition monitoring problem extends classification to analyze how rule sets evolve. Given consecutive rule sets $\mathcal{R}_{t-1}$ and $\mathcal{R}_t$, we quantify: (1) overall structural change magnitude, (2) the proportion of added, modified, or deleted rules, and (3) individual rule modification severity.
 
 
 %==============================================================================
@@ -143,15 +141,15 @@ The transition monitoring problem extends the standard classification task to en
 \label{sec:related}
 %==============================================================================
 
-The literature relevant to this work spans grammatical evolution for classification, rule-based methods for data streams, concept drift detection and adaptation, and explainability in machine learning. Grammatical evolution represents a form of genetic programming that uses a context-free grammar to constrain the search space to syntactically valid programs~\cite{oneill2003grammatical}. The grammar specifies production rules that map genotype representations to phenotype expressions, ensuring that all evolved solutions conform to the desired structural properties. This approach has found application in symbolic regression, automatic programming, and classification rule learning, where the grammar can encode domain-specific constraints on valid rule structures. The separation of genotype and phenotype enables standard genetic operators to work on integer chromosomes while the grammar mapping produces well-formed classification rules. Research has demonstrated that grammatical evolution can discover interpretable classifiers that rival neural networks on certain problems while maintaining the transparency that neural approaches lack~\cite{ryan1998grammatical}.
+Grammatical evolution uses a context-free grammar to constrain genetic programming to syntactically valid programs~\cite{oneill2003grammatical}. The separation of genotype and phenotype enables standard genetic operators while the grammar mapping produces well-formed classification rules. Research has demonstrated that grammatical evolution can discover interpretable classifiers rivaling neural networks while maintaining transparency~\cite{ryan1998grammatical}.
 
-Rule-based classifiers for data streams have received increasing attention as the demand for interpretable machine learning grows. The Very Fast Decision Rules (VFDR) algorithm~\cite{gama2003accurate} extends Hoeffding bounds to rule learning, enabling incremental rule induction from streaming data with provable guarantees. G-eRules~\cite{shaker2012evolving} employs grammatical evolution to learn rules from streams, demonstrating that evolutionary approaches can achieve competitive performance while maintaining interpretability. ERulesD2S~\cite{de2019erulesd2s} extends this line of work by incorporating mechanisms for concept drift detection and rule adaptation, representing the closest prior work to our approach. However, ERulesD2S lacks the comprehensive self-adaptation framework and transition analysis capabilities that distinguish EGIS. The ACDWM algorithm~\cite{lu2017adaptive} employs a weighted majority ensemble of chunk-based classifiers, though its ensemble nature limits interpretability despite using rule learners as base classifiers.
+Rule-based classifiers for data streams include VFDR~\cite{gama2003accurate}, which extends Hoeffding bounds to rule learning, and G-eRules~\cite{shaker2012evolving}, which employs grammatical evolution for stream classification. ERulesD2S~\cite{de2019erulesd2s} incorporates concept drift detection and rule adaptation, representing the closest prior work to EGIS, but lacks our comprehensive self-adaptation framework and transition analysis. ACDWM~\cite{lu2017adaptive} uses a weighted majority ensemble of chunk-based classifiers.
 
-Concept drift detection and adaptation mechanisms have evolved substantially since early work on the problem. The ADWIN algorithm~\cite{bifet2007learning} maintains a sliding window that automatically grows or shrinks based on detecting distribution changes, providing a principled approach to forgetting obsolete data. The Drift Detection Method (DDM)~\cite{gama2004learning} monitors the online error rate and signals drift when the error exceeds statistical thresholds. More recent approaches employ ensemble diversity~\cite{minku2011ddd} or explicit concept representations~\cite{goncalves2014comparative} to detect and respond to drift. Recent work has also explored the interplay between concept drift and class imbalance, with CDCMS.CIL~\cite{chiu2025cdcms} employing clustering in model space to maintain ensemble diversity under non-stationary class distributions. The severity-based approach in EGIS differs from binary drift detection by quantifying the magnitude of change and calibrating the adaptation response accordingly, enabling fine-grained control over the exploration-exploitation balance during recovery.
+Concept drift detection approaches include ADWIN~\cite{bifet2007learning} (adaptive sliding windows), DDM~\cite{gama2004learning} (error-rate monitoring), ensemble diversity methods~\cite{minku2011ddd}, and explicit concept representations~\cite{goncalves2014comparative}. CDCMS.CIL~\cite{chiu2025cdcms} employs model-space clustering for ensemble diversity under non-stationary class distributions. EGIS differs from binary drift detection by quantifying drift magnitude and calibrating the adaptation response accordingly.
 
-Ensemble methods dominate current benchmarks for data stream classification, achieving state-of-the-art accuracy through the aggregation of diverse base learners. Adaptive Random Forest (ARF)~\cite{gomes2017adaptive} combines online bagging with adaptive Hoeffding trees, using drift detectors to trigger tree replacement when performance degrades. Streaming Random Patches (SRP)~\cite{gomes2019streaming} employs random subspaces and online bagging to create diverse ensembles that are robust to various drift types. ROSE~\cite{cano2022rose} specifically addresses imbalanced data streams through adaptive oversampling techniques within an ensemble framework. While these methods achieve impressive predictive performance, their ensemble nature renders individual predictions unexplainable, a fundamental limitation that EGIS addresses through its rule-based representation.
+Ensemble methods dominate stream classification benchmarks: ARF~\cite{gomes2017adaptive} combines online bagging with adaptive Hoeffding trees, SRP~\cite{gomes2019streaming} employs random subspaces, and ROSE~\cite{cano2022rose} addresses imbalanced streams through adaptive oversampling. While achieving strong performance, their ensemble nature renders predictions unexplainable.
 
-The broader field of explainable artificial intelligence (XAI) has emphasized the importance of intrinsically interpretable models over post-hoc explanations~\cite{rudin2019stop}. Post-hoc methods such as LIME and SHAP provide local explanations for black-box predictions but do not guarantee that the explanation faithfully represents the model's actual reasoning process. In contrast, intrinsically interpretable models like rule sets and decision lists produce predictions through explicit logic that can be directly inspected. The data streaming context adds a temporal dimension to interpretability that has received limited attention: beyond understanding individual predictions, practitioners need to understand how the model's decision logic evolves over time. The transition metrics proposed in this paper address this gap by quantifying rule evolution dynamics throughout the stream.
+The XAI field emphasizes intrinsically interpretable models over post-hoc explanations~\cite{rudin2019stop}. The streaming context adds a temporal dimension: beyond understanding individual predictions, practitioners need to understand how decision logic evolves over time. The transition metrics proposed in this paper address this gap.
 
 
 %==============================================================================
@@ -163,9 +161,7 @@ EGIS employs grammatical evolution to maintain a population of rule-based classi
 
 \subsection{Grammar-Based Rule Representation}
 
-The foundational representation scheme in EGIS employs a context-free grammar $G = (V_N, V_T, P, S)$ to generate classification rules that are inherently interpretable. The non-terminal symbols $V_N$ define the structural elements of rules, including logical operators and comparison constructs. The terminal symbols $V_T$ comprise the concrete elements that appear in final rules: attribute names drawn from the feature space, comparison operators appropriate to each attribute type, and threshold values within valid ranges. The production rules $P$ specify how non-terminals expand into combinations of terminals and non-terminals, while the start symbol $S$ initiates the derivation process.
-
-The grammar enforces syntactic validity through carefully designed production rules that combine logical conditions with comparison operators. In Backus-Naur Form (BNF), the grammar is expressed as:
+EGIS employs a context-free grammar $G = (V_N, V_T, P, S)$ to generate inherently interpretable classification rules. In BNF:
 \begin{align}
     \langle \text{ruleset} \rangle &::= \langle \text{rule} \rangle \mid \langle \text{rule} \rangle \langle \text{ruleset} \rangle \nonumber \\
     \langle \text{rule} \rangle &::= \text{IF } \langle \text{cond} \rangle \text{ THEN } \langle \text{class} \rangle \nonumber \\
@@ -175,11 +171,7 @@ The grammar enforces syntactic validity through carefully designed production ru
     \langle \text{compop} \rangle &::= < \mid > \mid \leq \mid \geq \mid = \mid \neq
 \end{align}
 
-Each individual in the population represents a complete rule set $\mathcal{R} = \{r_1, r_2, \ldots, r_m\}$ capable of classifying instances across all classes. The representation follows a tree-based structure where internal nodes contain non-terminal symbols (logical operators, comparisons) while leaf nodes contain terminals (attributes, values, operators). This structure enables natural genetic operations while maintaining syntactic validity; any subtree exchange or node mutation produces a rule that conforms to the grammar specification. The complexity of each rule is measured through tree depth $d(r)$ and condition count $|\phi(r)|$, providing explicit control over the expressiveness-interpretability trade-off.
-
-The internal representation employs Abstract Syntax Trees (ASTs) to capture the hierarchical structure of rule conditions. Each rule is parsed into an AST where internal nodes represent logical operators (AND, OR) and leaf nodes contain atomic conditions of the form $\text{attr}_j \circ v$. This tree-based representation enables efficient rule manipulation during evolutionary operations and provides a canonical form for rule comparison. For commutative operators, operands are lexicographically sorted to ensure that logically equivalent rules receive identical representations; for instance, $(\text{attr}_1 > 5) \land (\text{attr}_2 < 3)$ and $(\text{attr}_2 < 3) \land (\text{attr}_1 > 5)$ yield the same canonical AST. This normalization facilitates accurate similarity computation in the transition metrics, as semantically equivalent rules are recognized as identical rather than spuriously different.
-
-The grammar adapts to the feature space by instantiating attribute-specific productions. Numeric attributes use comparison operators $\{<, >, \leq, \geq\}$ with threshold values sampled from the observed range, while categorical attributes use equality operators $\{=, \neq\}$ with values from the attribute domain. This type-aware generation ensures that all evolved conditions are semantically meaningful for the given dataset. A bias toward conjunctive rules (80\% probability for AND versus 20\% for OR at each expansion) produces more specific rules that are typically easier for humans to interpret.
+Each individual represents a complete rule set $\mathcal{R} = \{r_1, \ldots, r_m\}$ encoded as Abstract Syntax Trees (ASTs), where internal nodes contain logical operators and leaf nodes contain atomic conditions $\text{attr}_j \circ v$. This tree-based representation enables natural genetic operations while maintaining syntactic validity. Commutative operators are lexicographically sorted for canonical comparison. The grammar adapts to the feature space: numeric attributes use comparison operators with threshold values from the observed range; categorical attributes use equality operators. A bias toward conjunctive rules (80\% AND vs 20\% OR) produces more interpretable structures.
 
 
 \subsection{Multi-Objective Fitness Function}
@@ -217,7 +209,7 @@ where $A_{\text{ref}}$ denotes the features used by the best individual from the
 
 The coefficients governing these objectives are not static but adapt dynamically based on drift severity. When significant concept change is detected, stability constraints are relaxed to enable exploration of new rule structures. This adaptive weighting represents a key mechanism for balancing exploitation of learned knowledge with exploration of emerging patterns. Specifically, when drift severity exceeds a threshold, the stability penalty coefficient $\beta_s$ is reduced to zero, and the complexity penalty is suspended, allowing the evolutionary process to discover radically different rule structures if needed.
 
-An early termination mechanism conserves computational resources by interrupting evaluation of clearly inferior individuals. The first 20\% of training instances (minimum 100) are evaluated, and if the partial G-Mean falls below 50\% of the median fitness among elite individuals, evaluation terminates immediately. This heuristic reduces wasted computation on non-viable candidates, enabling more thorough evaluation of promising individuals.
+An early termination mechanism interrupts evaluation of inferior individuals: if partial G-Mean (first 20\% of instances) falls below 50\% of elite median fitness, evaluation stops immediately.
 
 
 \subsection{Evolutionary Operators}
@@ -228,7 +220,7 @@ The evolutionary process relies on carefully designed operators that balance exp
 \end{equation}
 where $\delta$ measures population diversity as the normalized fitness dispersion, and $k_{\min}=2$, $k_{\max}=5$ define the range.
 
-The crossover operator implements a two-mode strategy that adapts throughout evolution. During early generations when class coverage is incomplete, \textit{expansion mode} performs subtree exchanges that promote broad exploration of the search space. Two parent individuals are selected, random rules are chosen from each, and subtrees are swapped at compatible crossover points. This aggressive exploration helps discover rules covering classes that neither parent adequately addresses. As evolution progresses and populations achieve complete class coverage, the system transitions to \textit{refinement mode}, which transfers high-quality rule components between individuals to intensify search in promising regions. For each class, the worst-performing rule in the child is identified along with the best-performing rule from the second parent; if the parent's rule exceeds the child's rule in quality, replacement occurs. This quality-directed transfer mechanism preserves good components while improving weak spots.
+The crossover operator uses a two-mode strategy: \textit{expansion mode} (early generations, incomplete class coverage) performs subtree exchanges for broad exploration; \textit{refinement mode} (later generations) transfers the best-performing rule from one parent to replace the worst in the child for each class.
 
 Mutation operates at three structural levels within rules. Operator mutation alters comparison operators with probability $p_{\text{op}}$, enabling fine-grained adjustments to decision boundaries, for example, changing ``$\text{attr}_j > v$'' to ``$\text{attr}_j \geq v$''. Value mutation perturbs thresholds within valid ranges, allowing smooth adaptation to shifting data distributions. A mutation of magnitude $\epsilon$ drawn from a Gaussian distribution centered at zero adjusts the threshold while respecting attribute bounds. Subtree mutation replaces entire rule components with newly generated structures, introducing substantial novelty when incremental adjustments prove insufficient. The overall mutation rate adapts inversely to population diversity:
 \begin{equation}
@@ -236,74 +228,54 @@ Mutation operates at three structural levels within rules. Operator mutation alt
 \end{equation}
 ensuring that mutation intensity increases as the population converges.
 
-A specialized mutation mechanism, termed \textbf{Gene Therapy}, leverages knowledge extracted directly from training data to accelerate convergence. This approach trains a specialized decision tree for each class, creating a focused binary classifier that distinguishes the target class from all others. The tree is constrained to shallow depth (maximum 5 levels) to produce interpretable rules. Paths from root to leaf in this auxiliary tree are extracted as candidate rules, each representing a conjunction of conditions that discriminate the target class. These candidate rules are scored by a function combining classification confidence with instance coverage:
+A specialized mechanism, \textbf{Gene Therapy}, trains a shallow decision tree per class and extracts discriminative rules scored by:
 \begin{equation}
     \text{Score}(r) = \text{Purity}(r) \cdot \log(1 + \text{Support}(r))
 \end{equation}
-where $\text{Purity}(r)$ measures the proportion of correctly classified instances among those matching the rule, and $\text{Support}(r)$ counts the matching instances. The highest-scoring rule replaces the worst-performing rule for the corresponding class in the target individual. This mechanism injects discriminative knowledge directly into the evolutionary population, providing a shortcut to good solutions that pure random mutation might take many generations to discover. Gene Therapy is particularly valuable during drift recovery, when new patterns must be rapidly incorporated into the classifier.
+The highest-scoring rule replaces the worst-performing rule for the corresponding class, injecting data-driven knowledge into the evolutionary population. This is particularly valuable during drift recovery.
 
-An additional intensification mechanism, \textbf{Hill Climbing}, applies local search to elite individuals. Three strategies operate based on performance classification: aggressive intensification for poor performers (G-Mean below 85\%) generates many variants through error-focused decision tree extraction; moderate intensification (85-96\%) combines boosted ensemble predictions; fine-tuning (above 96\%) applies guided mutations weighted by feature importance. This hierarchical approach allocates computational effort according to the improvement potential of each individual.
+\textbf{Hill Climbing} applies local search to elite individuals with intensity proportional to improvement potential: aggressive search for poor performers (G-Mean $<$ 85\%), moderate for mid-range, and fine-tuning for high performers ($>$ 96\%).
 
 
 \subsection{Self-Adaptation Framework}
 
-EGIS implements a multi-level self-adaptation system that automatically adjusts parameters and strategies in response to three complementary signals: population diversity, performance history, and drift severity. This framework eliminates the need for manual parameter tuning across different datasets and drift scenarios, enabling robust performance without domain-specific configuration.
+EGIS implements a multi-level self-adaptation system responding to three signals: population diversity $\delta$ (normalized fitness dispersion), performance history (three-level classification: good/medium/poor), and drift severity. When diversity diminishes, mutation rate increases and selection pressure decreases. Performance levels modulate the balance between knowledge inheritance and exploration.
 
-Diversity-based adaptation monitors population convergence through fitness value dispersion. The diversity metric $\delta$ is computed as the normalized range of fitness values among population members. When diversity diminishes below a threshold, indicating premature convergence risk, mutation rate increases automatically to reintroduce variability. Simultaneously, selection pressure decreases to preserve alternative solutions that might otherwise be eliminated by strong competition. The crossover mode transition from expansion to refinement also responds to diversity signals: high diversity suggests the population has not yet converged on a promising region, warranting continued exploration.
-
-Performance-based adaptation classifies predictive performance into three levels based on recent history and absolute thresholds. Good performance (G-Mean exceeds the historical mean plus one standard deviation, or exceeds an absolute threshold of 0.85) indicates the current rule set effectively captures the underlying concept, warranting conservative exploration with substantial inheritance from previous populations. Medium performance (within one standard deviation of the mean) suggests the classifier is adequate but could benefit from moderate exploration. Poor performance (below the mean minus one standard deviation, or below an absolute threshold of 0.30) signals potential concept obsolescence, triggering increased injection of new individuals and reduced reliance on inherited knowledge. The stability penalty coefficient $\beta_s$ adapts according to performance classification: high values (0.05) for good performance encourage stability, while low values (0.01) for poor performance permit structural change.
-
-Drift-based adaptation employs a severity analysis framework that classifies detected changes into four levels. The drift severity metric combines three complementary signals:
+Drift severity combines distributional similarity measures:
 \begin{equation}
     S_{\text{drift}} = 1 - \left( 0.5 \cdot \text{sim}_\mu + 0.3 \cdot \text{sim}_\pi + 0.2 \cdot \text{sim}_\sigma \right)
 \end{equation}
-where $\text{sim}_\mu$ measures cosine similarity between feature means across chunks, $\text{sim}_\pi$ measures $L_1$ similarity between class distributions, and $\text{sim}_\sigma$ measures cosine similarity between feature standard deviations. This multi-faceted metric captures different aspects of distribution change: feature location shift, class proportion change, and feature dispersion change.
+where $\text{sim}_\mu$, $\text{sim}_\pi$, $\text{sim}_\sigma$ measure cosine/L1 similarity between feature means, class distributions, and feature standard deviations across chunks. Four severity levels trigger graduated responses: \textbf{stable} ($S < 0.05$, normal operation), \textbf{mild} ($0.05$--$0.10$, subtle adjustments), \textbf{moderate} ($0.10$--$0.25$, penalties removed, extra generations), and \textbf{severe} ($\geq 0.25$, partial reset with 60\% reinitialization and 25 recovery generations).
 
-Based on the computed severity, the system classifies drift into four levels and triggers corresponding responses:
-\begin{itemize}
-    \item \textbf{Stable} ($S_{\text{drift}} < 0.05$): Normal operation with full penalty enforcement and standard parameters.
-    \item \textbf{Mild} ($0.05 \leq S_{\text{drift}} < 0.10$): Subtle parameter adjustments without disrupting the learned model.
-    \item \textbf{Moderate} ($0.10 \leq S_{\text{drift}} < 0.25$): Stability penalties removed, evolutionary budget potentially increased to 15 additional generations.
-    \item \textbf{Severe} ($S_{\text{drift}} \geq 0.25$): Partial knowledge reset with mutation rate elevated to 0.5, 60\% of population reinitialized randomly, and up to 25 additional recovery generations.
-\end{itemize}
+The adaptive memory system maintains a best-solutions memory (with automatic abandonment on critical degradation) and a concept fingerprint memory for detecting recurring patterns. Population initialization uses a complexity-adaptive recipe based on a shallow decision tree probe, balancing seeded knowledge with random exploration.
 
-The adaptive memory management system maintains two complementary structures. A best-solutions memory stores high-fitness individuals encountered throughout the stream, pruned periodically to retain the most recent and highest-quality solutions. When critical performance degradation indicates stored knowledge has become obsolete (performance drop exceeding 55\% over consecutive chunks), this memory is automatically cleared through an abandonment mechanism. A concept fingerprint memory stores statistical summaries of processed concepts, enabling detection of recurring patterns. Each fingerprint captures the mean vector, standard deviation vector, and class distribution of a chunk. When a new chunk arrives, its fingerprint is compared against stored fingerprints; if similarity exceeds 0.85, a recurring concept is identified, and previously successful solutions are restored from concept memory. This mechanism dramatically accelerates re-adaptation when concepts recur, a common phenomenon in many real-world streams.
-
-Population initialization follows an adaptive recipe determined by problem complexity and drift context. A rapid probe using a shallow decision tree (maximum depth 3) estimates current problem complexity by measuring the probe's accuracy on the current chunk. High probe accuracy (above 0.90) indicates a simple problem where decision tree seeding should dominate (80\% of population). Medium probe accuracy (0.75-0.90) suggests moderate complexity with 60\% seeding. Low probe accuracy (below 0.75) indicates a complex problem where random initialization should predominate (60\%) to ensure adequate exploration. The final recipe balances inherited knowledge (from memory and previous population elite) with exploration (seeded and random individuals) according to both complexity assessment and current drift context.
-
-A distinguishing characteristic of EGIS is its reliance on \textbf{implicit drift detection} rather than explicit statistical tests. Unlike methods that employ dedicated drift detectors such as ADWIN~\cite{bifet2007learning} or DDM~\cite{gama2004learning} to trigger model updates, EGIS continuously adapts through the interplay of fingerprint comparison and performance monitoring. The severity framework (Equation~\ref{eq:fitness}) quantifies distributional change without requiring binary drift/no-drift decisions, enabling graduated responses proportional to the magnitude of change. This design philosophy avoids the sensitivity-specificity trade-off inherent in threshold-based detection: excessively sensitive detectors trigger frequent false alarms and unnecessary adaptation, while conservative thresholds may delay response to genuine drift. By treating drift detection and adaptation as a unified continuous process, EGIS achieves robust performance across drift scenarios without detector tuning.
+A key design choice is \textbf{implicit drift detection}: rather than employing explicit detectors like ADWIN~\cite{bifet2007learning} or DDM~\cite{gama2004learning}, EGIS continuously adapts through fingerprint comparison and performance monitoring, avoiding the sensitivity-specificity trade-off inherent in threshold-based detection.
 
 
 \subsection{Transition Metrics}
 
-The transition metrics constitute a central contribution of this work, quantifying rule evolution dynamics between consecutive chunks and answering three fundamental questions about classifier adaptation. Unlike standard accuracy metrics that reveal only predictive performance at a single time point, these metrics characterize the adaptation process itself, enabling practitioners to understand how and why the classifier changes over time.
+The transition metrics quantify rule evolution dynamics between consecutive chunks, characterizing the adaptation process itself. Rules from consecutive chunks $\mathcal{R}_{t-1}$ and $\mathcal{R}_t$ are matched using normalized Levenshtein similarity with threshold $\tau = 0.35$; above this threshold, rules are considered modifications of the same rule, and below it, complete replacements.
 
-The \textbf{Rule Instability Rate (RIR)} measures the proportion of rules that were structurally modified between consecutive time points. To compute RIR, rules from consecutive chunks $\mathcal{R}_{t-1}$ and $\mathcal{R}_t$ are matched using a similarity function based on normalized Levenshtein distance between rule string representations. Rules exceeding a similarity threshold $\tau$ (typically 0.35) are considered modifications of the same underlying rule; below this threshold, they are treated as complete replacements. RIR then counts the proportion of rules that were either added (present in $\mathcal{R}_t$ but with no similar match in $\mathcal{R}_{t-1}$) or deleted (present in $\mathcal{R}_{t-1}$ but with no similar match in $\mathcal{R}_t$):
+The \textbf{Rule Instability Rate (RIR)} measures the proportion of rules added or deleted between chunks:
 \begin{equation}
     \text{RIR} = \frac{|\text{Added}| + |\text{Deleted}|}{|\mathcal{R}_{t-1}| + |\mathcal{R}_t|}
     \label{eq:rir}
 \end{equation}
-This metric indicates \textit{where} structural changes occurred in the rule set, identifying which classifier components were replaced during adaptation. High RIR values indicate substantial structural turnover, while low values indicate stability in the rule set composition.
+High RIR indicates substantial structural turnover; low RIR indicates stability.
 
-The \textbf{Average Modification Severity (AMS)} quantifies the degree of alteration for rules that were modified rather than completely replaced. For each matched rule pair $(r_{t-1}, r_t)$ where similarity exceeds $\tau$, the modification severity is computed as one minus the similarity:
+The \textbf{Average Modification Severity (AMS)} quantifies the degree of alteration for modified (not replaced) rules:
 \begin{equation}
     \text{AMS} = \frac{1}{|\text{Modified}|} \sum_{(r_{t-1}, r_t) \in \text{Modified}} \left(1 - \text{sim}(r_{t-1}, r_t)\right)
     \label{eq:ams}
 \end{equation}
-The similarity function employs normalized Levenshtein edit distance:
-\begin{equation}
-    \text{sim}(r_1, r_2) = 1 - \frac{\text{edit\_distance}(\text{str}(r_1), \text{str}(r_2))}{\max(|\text{str}(r_1)|, |\text{str}(r_2)|)}
-\end{equation}
-AMS indicates \textit{how} individual rules changed, capturing the magnitude of modifications realized during adaptation. High AMS with low RIR suggests gradual refinement of existing rules; low AMS with high RIR suggests complete rule replacement.
+where similarity uses normalized Levenshtein edit distance: $\text{sim}(r_1, r_2) = 1 - \text{edit\_distance}(\text{str}(r_1), \text{str}(r_2)) / \max(|\text{str}(r_1)|, |\text{str}(r_2)|)$.
 
-The \textbf{Transition Change Score (TCS)} combines instability and severity into a unified metric that characterizes overall adaptation intensity:
+The \textbf{Transition Change Score (TCS)} combines instability and severity into a unified adaptation intensity metric:
 \begin{equation}
     \text{TCS} = w_1 \cdot \text{RIR} + w_2 \cdot (1 - \text{RIR}) \cdot \text{AMS}
     \label{eq:tcs}
 \end{equation}
-where default weights $w_1 = 0.6$ and $w_2 = 0.4$ balance the contributions of complete replacements (captured by RIR) and partial modifications (captured by the product of retention proportion and AMS). TCS indicates \textit{when} significant transitions occurred, enabling identification of inflection points in classifier adaptation. A TCS near 1.0 indicates radical transformation of the rule set; TCS near 0.0 indicates minimal change.
-
-Joint interpretation of these metrics enables rich analysis of adaptation behavior. Peaks in TCS signal moments of significant change that may correspond to concept drift events. High RIR with low AMS indicates a rule replacement strategy where entire rules are swapped rather than modified. Low RIR with high AMS indicates a gradual refinement strategy where existing rules are incrementally adjusted. Sequences of low TCS indicate stable concepts where the classifier requires minimal adaptation. When TCS spikes following a period of stability, practitioners can examine which rules changed and how, correlating these changes with domain knowledge about expected distributional shifts.
+where $w_1 = 0.6$ and $w_2 = 0.4$ balance complete replacements and partial modifications. TCS near 1.0 indicates radical transformation; near 0.0 indicates minimal change. Joint interpretation enables rich analysis: high RIR with low AMS indicates a replacement strategy; low RIR with high AMS indicates gradual refinement. TCS peaks signal moments corresponding to concept drift events.
 
 
 \subsection{Algorithm Description}
@@ -379,28 +351,8 @@ Algorithm~\ref{alg:egis} presents the complete EGIS processing pipeline. The alg
 \end{algorithmic}
 \end{algorithm}
 
-The algorithm begins by initializing the grammar from the feature space specification, creating production rules appropriate for each attribute type. Empty memory structures are created for storing high-fitness individuals and concept fingerprints. Processing then proceeds through eight phases for each chunk.
+The algorithm processes each chunk through eight phases. Phases 1--2 compute a statistical fingerprint of the current chunk, detect recurring concepts (similarity $>$ 0.85 against stored fingerprints), and classify drift severity to control adaptation intensity. Phase 3 initializes the population using a complexity-adaptive recipe informed by a shallow decision tree probe, combining inherited knowledge with random exploration. Phase 4 executes the evolutionary loop with adaptive operators, Gene Therapy injection, and stagnation-triggered Hill Climbing. Phase 5 handles severe drift recovery through elevated mutation (0.5) and 60\% reinitialization. Phases 6--8 extract the best classifier, compute transition metrics (Equations~\ref{eq:rir}--\ref{eq:tcs}), and update memory structures.
 
-Phase 1 computes a statistical fingerprint of the current chunk and checks for recurring concepts by comparing against stored fingerprints. If a recurring concept is detected (similarity exceeding 0.85), previously successful solutions are retrieved from concept memory to accelerate re-adaptation.
-
-Phase 2 computes drift severity by comparing the current fingerprint against the previous chunk's fingerprint. The severity score determines the adaptation level (stable, mild, moderate, or severe), which in turn controls penalty coefficients and evolutionary parameters. Severe drift triggers penalty suspension and parameter adjustments that favor exploration over stability.
-
-Phase 3 initializes the population according to an adaptive recipe. A shallow decision tree probe estimates problem complexity, informing the proportion of seeded versus random individuals. Recurring concept detection influences whether to restore previously successful solutions. The final population combines inherited knowledge (from memory and previous elite) with exploration (seeded rules and random individuals) in proportions determined by the current context.
-
-Phase 4 executes the main evolutionary loop. Each generation evaluates fitness using Equation~\ref{eq:fitness}, computes population diversity, and adjusts tournament size and mutation rate accordingly. Elite individuals (top 10\%) are preserved unchanged. Parents are selected through adaptive tournament selection, recombined through adaptive crossover (expansion or refinement mode based on class coverage), and mutated at the adjusted rate. Gene Therapy injects knowledge from specialized decision trees. If stagnation is detected (no fitness improvement for multiple generations), Hill Climbing applies intensive local search to elite individuals.
-
-Phase 5 handles severe drift recovery. When drift classification indicates severe change, additional generations with elevated mutation rate (0.5) and increased random individual proportion (60\%) enable rapid exploration of the search space. This recovery mode continues until performance stabilizes or a maximum generation budget is exhausted.
-
-Phases 6-8 finalize chunk processing. The best individual becomes the current classifier, and its rules are extracted for output and metric computation. Transition metrics (RIR, AMS, TCS) are computed by comparing current rules against the previous chunk's rules using Equations~\ref{eq:rir}-\ref{eq:tcs}. Memory structures are updated with elite individuals and the current fingerprint. If abandonment criteria are met (severe performance degradation over consecutive chunks), the best-solutions memory is cleared to prevent obsolete knowledge from contaminating future evolution.
-
-
-\subsection{Explainability Analysis Tools}
-
-EGIS provides a suite of analysis tools for examining adaptation dynamics beyond the transition metrics. The rule difference analyzer compares consecutive rule sets, identifying unchanged, modified, added, and deleted rules through Levenshtein similarity with configurable thresholds. It generates detailed textual reports listing each rule change with its similarity score, enabling practitioners to trace exactly how the classifier evolved between chunks. Evolution matrices visualize the modification patterns as heatmaps, with rows representing previous rules, columns representing current rules, and cell values indicating pairwise similarities.
-
-The performance-based drift detector monitors accuracy throughout the stream, identifying significant drops that correlate with concept changes. When accuracy falls below the historical mean by more than one standard deviation, a drift warning is triggered. This detector operates independently of the statistical fingerprinting mechanism, providing complementary evidence for concept change.
-
-The concept difference analyzer quantifies differences between concept definitions through label disagreement rates. Given two classifiers trained on different chunks, the analyzer measures how often they disagree on predictions for a held-out sample. This disagreement rate indicates the magnitude of concept change and informs the severity analysis framework. Disagreement matrices produced by this analyzer reveal which class pairs experience the most decision boundary shift, helping practitioners understand not just that drift occurred but which concepts were most affected.
 
 
 %==============================================================================
@@ -408,11 +360,11 @@ The concept difference analyzer quantifies differences between concept definitio
 \label{sec:experiments}
 %==============================================================================
 
-We evaluate EGIS through comprehensive experiments designed to assess both predictive performance and adaptation dynamics across diverse concept drift scenarios. The experimental corpus encompasses 48 datasets spanning abrupt, gradual, recurring, and noisy drift patterns, enabling systematic analysis of how the self-adaptation framework responds to different drift characteristics. This section describes the datasets employed, the comparative methods against which EGIS is benchmarked, the experimental configurations that vary chunk size and complexity penalty, and the evaluation metrics used to quantify performance and classifier stability.
+This section describes the experimental setup for evaluating EGIS across 48 datasets spanning five drift categories.
 
 \subsection{Datasets}
 
-The experimental corpus comprises 48 data streams spanning five distinct categories designed to stress-test different aspects of adaptive classification. Synthetic datasets generated through the MOA framework enable precise evaluation under controlled drift conditions, while real-world datasets validate performance on authentic streaming scenarios with unknown distributional dynamics. Table~\ref{tab:datasets} organizes these datasets by drift category, distinguishing abrupt transitions (instantaneous distribution changes), gradual drift (extended transition periods), noisy drift (label corruption during transitions), stationary streams (baseline without drift), and real-world scenarios with undocumented drift characteristics.
+The experimental corpus comprises 48 data streams generated through the MOA framework~\cite{bifet2010moa} (synthetic) and real-world sources. Table~\ref{tab:datasets} organizes datasets by drift category.
 
 \begin{table}[htbp]
 \centering
@@ -441,29 +393,7 @@ Electricity, AssetNegotiation\_F2, AssetNegotiation\_F3, AssetNegotiation\_F4 \\
 \end{tabular}
 \end{table}
 
-All synthetic datasets were generated once using the MOA framework~\cite{bifet2010moa} with fixed random seeds to ensure reproducibility. Each dataset comprises 12,000 instances, subsequently partitioned into non-overlapping temporal chunks of 500, 1,000, or 2,000 instances depending on the experimental configuration. This pre-generation strategy guarantees that all comparative methods process identical data sequences, eliminating any confounding effects from stochastic data generation during evaluation. Concept drifts in synthetic streams occur at predetermined chunk boundaries, enabling precise analysis of adaptation behavior at known transition points.
-
-Table~\ref{tab:dataset_sizes} summarizes the chunk structure and resulting evaluation counts for each configuration.
-
-\begin{table}[htbp]
-\centering
-\caption{Dataset Dimensions and Chunk Structure}
-\label{tab:dataset_sizes}
-\footnotesize
-\begin{tabular}{lcccc}
-\toprule
-\textbf{Chunk Size} & \textbf{Instances} & \textbf{Chunks} & \textbf{Evals} & \textbf{Runs} \\
-\midrule
-500 & 12,000 & 24 & 23 & 48 $\times$ 2 = 96 \\
-1,000 & 12,000 & 12 & 11 & 48 $\times$ 2 = 96 \\
-2,000 & 12,000 & 6 & 5 & 48 $\times$ 2 = 96 \\
-\midrule
-\multicolumn{4}{l}{\textbf{Total experimental runs:}} & \textbf{288} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\textbf{Abrupt drift} streams feature instantaneous distribution changes at predetermined chunk boundaries, simulating scenarios such as sudden policy changes or system failures. The severity varies from mild (function parameter changes in AGRAWAL) to severe (complete concept replacement in RBF). \textbf{Gradual drift} streams transition between concepts over extended periods spanning multiple chunks, with transition speeds ranging from fast (100 instances) to slow (500 instances). \textbf{Recurring drift} streams cycle through previously observed concepts, testing the classifier's ability to recognize and rapidly re-adapt to familiar distributions. \textbf{Noisy drift} streams add 10-20\% label noise during transitions, stress-testing robustness against imperfect drift signals. \textbf{Stationary} streams provide baseline performance without distribution change, verifying that adaptive mechanisms do not degrade performance when adaptation is unnecessary. Real-world datasets represent genuine streaming scenarios from domains including electricity demand and asset negotiation.
+All synthetic datasets were generated once with fixed random seeds (12,000 instances each), partitioned into non-overlapping chunks of 500, 1,000, or 2,000 instances (24, 12, or 6 chunks respectively). Drifts occur at predetermined boundaries. The five categories span abrupt, gradual, noisy (10--20\% label corruption), stationary, and real-world drift patterns.
 
 \subsection{Comparative Methods}
 
@@ -479,38 +409,12 @@ We compare EGIS against eight state-of-the-art methods spanning ensemble approac
     \item \textbf{ERulesD2S}~\cite{de2019erulesd2s}: Evolutionary Rules for Data Streams, the only other interpretable baseline.
 \end{itemize}
 
-\textbf{Model Limitations and Scope.} Several comparative methods exhibit inherent limitations that affect their applicability across the full dataset corpus. ACDWM is designed exclusively for binary classification problems; when applied to multi-class datasets (LED and WAVEFORM generators), the algorithm encounters numerical instability during training in its underbagging component, which assumes strictly binary class labels. Following established practice in comparative studies~\cite{demsar2006statistical}, we assign G-Mean=0.0 to these failed cases, reflecting the method's inability to handle multi-class problems while maintaining transparency in ranking comparisons.
+\textbf{Model Limitations.} ACDWM and CDCMS support only binary classification; following~\cite{demsar2006statistical}, we assign G-Mean=0.0 to failed multiclass cases. HAT exhibits underfitting on smaller chunks due to Hoeffding tree estimation requirements. ERulesD2S frequently produced collapsed classifiers. Ensemble methods (ARF, SRP, ROSE, CDCMS.CIL) provide no interpretability, representing the accuracy-interpretability trade-off motivating EGIS.
 
-HAT exhibits systematic underfitting on smaller chunk sizes, with training G-Mean approximately 8\% lower than EGIS. This outcome is consistent with documented limitations of Hoeffding tree estimation, which requires substantial instance counts to reliably compute split statistics. ERulesD2S, while designed for interpretability, frequently produced collapsed classifiers assigning uniform predictions to all instances, generating no valid rules in our experimental configuration.
-
-Among ensemble methods, ARF, SRP, ROSE, and CDCMS.CIL demonstrated robust performance across most dataset types but provide no interpretability. Their predictions emerge from aggregating multiple base learners through mechanisms that preclude explanation of individual decisions, representing the fundamental accuracy-interpretability trade-off that motivates EGIS development. CDCMS.CIL stands out among ensembles for its native G-Mean optimization and full multiclass support, making it a particularly strong baseline for class-imbalanced scenarios.
-
-Table~\ref{tab:model_capabilities} summarizes the capabilities and limitations of each method.
-
-\begin{table}[htbp]
-\centering
-\caption{Comparative Methods: Capabilities and Limitations}
-\label{tab:model_capabilities}
-\footnotesize
-\begin{tabular}{lcccl}
-\toprule
-\textbf{Method} & \textbf{Multi.} & \textbf{Imbal.} & \textbf{Interp.} & \textbf{Type} \\
-\midrule
-EGIS & \checkmark & \checkmark & Full & Rules \\
-ARF & \checkmark & Partial & None & Ensemble \\
-SRP & \checkmark & Partial & None & Ensemble \\
-CDCMS.CIL & \checkmark & Focus & None & Ensemble \\
-HAT & \checkmark & Limited & Low & Tree \\
-ROSE & \checkmark & \checkmark & None & Ensemble \\
-ACDWM & -- & \checkmark & None & Ensemble \\
-ERulesD2S & \checkmark & Limited & Medium & Rules \\
-\bottomrule
-\end{tabular}
-\end{table}
 
 \subsection{Experimental Configurations}
 
-The experimental design systematically varies chunk size and complexity penalty to evaluate adaptation behavior across different temporal granularities and interpretability constraints. Table~\ref{tab:exp_config} presents the six experimental configurations.
+Table~\ref{tab:exp_config} presents the six EGIS configurations varying chunk size and complexity penalty.
 
 \begin{table}[htbp]
 \centering
@@ -531,78 +435,17 @@ EXP-2000-P & 2000 & 0.1 & 48 & Full penalty \\
 \end{tabular}
 \end{table}
 
-Smaller chunks (500 instances) enable more frequent adaptation but provide less data per training window; larger chunks (2000 instances) offer more stable training but may delay response to drift. Additionally, we evaluate EGIS with and without the complexity penalty ($\gamma = 0.0$ vs $\gamma = 0.1$) to assess the trade-off between predictive performance and rule interpretability. This factorial design yields six EGIS configurations per dataset, enabling comprehensive analysis of parameter sensitivity. For the comparative analysis against baseline methods, we focus on three representative configurations: EXP-A (EXP-1000-NP), EXP-B (EXP-2000-NP), and EXP-C (EXP-2000-P).
+Smaller chunks (500) enable more frequent adaptation; larger chunks (2000) provide more stable training. The complexity penalty ($\gamma = 0.0$ vs $\gamma = 0.1$) controls the trade-off between accuracy and rule simplicity.
 
-The experimental design reflects EGIS's primary objective: achieving \textit{competitive} predictive performance while providing \textit{complete} interpretability unavailable from black-box alternatives. Unlike ensemble methods optimized exclusively for predictive accuracy, EGIS generates human-readable IF-THEN rules that enable domain experts to understand, validate, and audit classifier decisions. The complexity penalty configurations ($\gamma = 0.0$ vs $\gamma = 0.1$) enable practitioners to navigate the interpretability-performance trade-off: without penalty, EGIS maximizes predictive accuracy; with penalty, rules are constrained to simpler structures at modest performance cost. This design philosophy positions EGIS not as a competitor to black-box methods on pure accuracy metrics, but as the interpretable alternative that minimizes the performance gap while maximizing explainability.
-
-Table~\ref{tab:egis_params} presents the complete EGIS hyperparameter configuration used consistently across all experiments.
-
-\begin{table}[htbp]
-\centering
-\caption{EGIS Hyperparameter Configuration}
-\label{tab:egis_params}
-\footnotesize
-\begin{tabular}{lcc}
-\toprule
-\textbf{Parameter} & \textbf{Value} & \textbf{Description} \\
-\midrule
-\multicolumn{3}{l}{\textit{Evolutionary Parameters}} \\
-Population size & 120 & Individuals per generation \\
-Max generations & 200 & Per-chunk evolution budget \\
-Elitism rate & 0.1 & Top 12 individuals preserved \\
-Tournament size & 2 $\rightarrow$ 5 & Adaptive selection pressure \\
-Mutation rate & 0.1 (base) & Adapted by diversity signals \\
-\midrule
-\multicolumn{3}{l}{\textit{Complexity Control}} \\
-Penalty ($\gamma$) & 0.0 / 0.1 & Rule simplicity incentive \\
-Max rules/class & 15 & Interpretability constraint \\
-Max tree depth & 10 & Rule condition limit \\
-\midrule
-\multicolumn{3}{l}{\textit{Adaptation Mechanisms}} \\
-Memory size & 20 & Best solutions retained \\
-Seeding ratio & 0.8 & DT-derived initialization \\
-Recovery gens. & 25 & Extra budget after drift \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Table~\ref{tab:baseline_params} summarizes the key parameters for all comparative methods.
-
-\begin{table}[htbp]
-\centering
-\caption{Comparative Methods Configuration}
-\label{tab:baseline_params}
-\footnotesize
-\begin{tabular}{llc}
-\toprule
-\textbf{Method} & \textbf{Key Parameters} & \textbf{Source} \\
-\midrule
-ARF & $n_{\text{trees}}$=10, $\lambda$=6, ADWIN $\delta$=0.001 & River \\
-SRP & $n_{\text{models}}$=10, subspace=0.6, ADWIN & River \\
-HAT & grace=200, $\delta$=1e-7, $\tau$=0.05 & River \\
-ROSE & Default MOA configuration & MOA \\
-CDCMS.CIL & ensemble=10, interval=500, G-Mean & MOA \\
-ACDWM & $\theta$=0.001, ensemble=10 & Python \\
-ERulesD2S & Default paper configuration & Java \\
-\bottomrule
-\end{tabular}
-\end{table}
+EGIS uses a population of 120 individuals evolved for up to 200 generations per chunk, with 10\% elitism, adaptive tournament size (2--5), and base mutation rate 0.1. Maximum 15 rules per class with tree depth $\leq$ 10 ensures interpretability. Complete hyperparameter settings for EGIS and all comparative methods are provided in the Supplementary Material.
 
 \subsection{Evaluation Protocol}
 
-EGIS employs a train-then-test evaluation protocol necessitated by its batch-based evolutionary optimization paradigm. For each data chunk $\mathcal{D}_i$, the genetic algorithm executes a complete evolutionary cycle spanning 200 generations over a population of 120 individuals, producing a rule-based classifier that is subsequently evaluated on the temporally subsequent chunk $\mathcal{D}_{i+1}$. This batch-oriented approach is intrinsic to population-based metaheuristics, where fitness evaluation requires simultaneous access to all training instances within the current temporal window. The classifier evolved for chunk $\mathcal{D}_i$ generates predictions for all instances in $\mathcal{D}_{i+1}$ before any model update occurs.
-
-In contrast, the comparative streaming methods (ARF, SRP, HAT, ROSE, CDCMS.CIL) operate in their native prequential mode, wherein models are incrementally updated as each instance arrives. These algorithms process the data stream instance-by-instance using their characteristic learn-one paradigm, continuously refining internal structures such as Hoeffding trees, random patches, or ensemble weights. Forcing these inherently incremental learners into a batch train-then-test framework would misrepresent their operational characteristics and diminish their adaptive capabilities. Consequently, we evaluate each method according to its designed operational paradigm, reflecting realistic deployment scenarios where each algorithm leverages its native learning mechanism.
-
-This heterogeneous evaluation protocol constitutes a fair comparison through the principle of equivalent historical information utilization. EGIS maintains explicit memory structures that preserve elite individuals from previous evolutionary cycles, enabling knowledge transfer across temporal boundaries through population seeding and solution inheritance mechanisms. This inheritance of high-fitness solutions from past chunks is functionally analogous to the implicit memory retained by prequential learners, whose internal model state accumulates knowledge from all previously observed instances. Both paradigms leverage historical information to inform current predictions: EGIS through explicit elite solution inheritance, and prequential methods through persistent model state. The comparison thus evaluates each algorithm's capacity to exploit temporal continuity within its native operational framework.
+EGIS employs a train-then-test protocol: for each chunk $\mathcal{D}_i$, the evolutionary algorithm produces a rule-based classifier evaluated on the subsequent chunk $\mathcal{D}_{i+1}$. Comparative streaming methods (ARF, SRP, HAT, ROSE, CDCMS.CIL) operate in their native prequential mode with instance-by-instance updates. Each method is evaluated according to its designed operational paradigm, ensuring fair comparison by leveraging each algorithm's native learning mechanism. Both paradigms exploit temporal continuity: EGIS through explicit elite solution inheritance across chunks, and prequential methods through persistent model state.
 
 \subsection{Evaluation Metrics}
 
-The primary evaluation metric is G-Mean (Equation~\ref{eq:gmean}), which balances sensitivity and specificity across all classes. This metric is particularly appropriate for imbalanced streams where accuracy would be misleading. We also report standard deviation to characterize performance stability.
-
-Statistical significance is assessed through the Friedman test for overall ranking differences across methods, followed by pairwise Wilcoxon signed-rank tests with Bonferroni correction for specific comparisons~\cite{demsar2006statistical}. Critical difference diagrams visualize ranking relationships.
-
-Beyond aggregate performance metrics, we conduct stratified analysis by drift type to identify method-specific strengths and weaknesses. Separate statistical tests are performed for abrupt drift datasets (16 streams), gradual drift datasets (11 streams), noisy drift datasets (8 streams), stationary datasets (9 streams), and real-world datasets (4 streams). This stratification reveals whether performance differences are consistent across drift scenarios or driven by specific conditions.
+The primary metric is G-Mean (Equation~\ref{eq:gmean}), balancing sensitivity and specificity across classes. Statistical significance is assessed through the Friedman test followed by pairwise Wilcoxon signed-rank tests with Bonferroni correction~\cite{demsar2006statistical}. We also conduct stratified analysis by drift type (abrupt, gradual, noisy, stationary, real) to identify method-specific strengths.
 
 
 %==============================================================================
@@ -614,11 +457,11 @@ This section presents comprehensive experimental results spanning 48 datasets ac
 
 \subsection{Overall Performance Comparison}
 
-Table~\ref{tab:summary_all} presents the summary performance comparison across experimental configurations. On the 42 binary datasets where all models can be compared fairly, EGIS achieves G-Mean of 0.858 (EXP-500) and 0.868 (EXP-1000), competitive with leading ensemble methods while providing complete interpretability. EGIS substantially outperforms ERulesD2S, the only other interpretable baseline, by over 26 percentage points.
+Table~\ref{tab:summary_all} presents the summary performance comparison across experimental configurations. On the 41 binary datasets where all models can be compared fairly, EGIS achieves G-Mean of 0.859 (EXP-500) and 0.869 (EXP-1000), competitive with leading ensemble methods while providing complete interpretability. EGIS substantially outperforms ERulesD2S, the only other interpretable baseline, by over 25 percentage points.
 
 \begin{table}[htbp]
 \centering
-\caption{Summary Performance Across All Experiments (G-Mean). Top section: 42 binary datasets where all 8 models can be evaluated. Bottom section: all 48 datasets (including 6 multiclass) with only the 6 models that support multiclass classification (ACDWM and CDCMS excluded as they are binary-only). Bold indicates best interpretable method; underline indicates best overall.}
+\caption{Summary Performance Across All Experiments (G-Mean). Top section: 41 binary datasets where all 8 models can be evaluated. Bottom section: all 48 datasets (including 7 multiclass) with only the 6 models that support multiclass classification (ACDWM and CDCMS excluded as they are binary-only). Bold indicates best interpretable method; underline indicates best overall.}
 \label{tab:summary_all}
 \footnotesize
 \begin{tabular}{lcccc}
@@ -626,14 +469,15 @@ Table~\ref{tab:summary_all} presents the summary performance comparison across e
 & \multicolumn{2}{c}{\textbf{EXP-500}} & \multicolumn{2}{c}{\textbf{EXP-1000}} \\
 \textbf{Model} & Mean & Std & Mean & Std \\
 \midrule
-\multicolumn{5}{l}{\textit{Binary only (n=42):}} \\
+\multicolumn{5}{l}{\textit{Binary only (n=41):}} \\
 \underline{ROSE} & \underline{0.894} & 0.110 & \underline{0.894} & 0.110 \\
 ARF & 0.879 & 0.139 & 0.880 & 0.138 \\
 SRP & 0.871 & 0.149 & 0.864 & 0.152 \\
 ACDWM & 0.860 & 0.093 & 0.818 & 0.078 \\
-HAT & 0.817 & 0.149 & 0.821 & 0.145 \\
-\textbf{EGIS} & \textbf{0.858} & \textbf{0.123} & \textbf{0.868} & \textbf{0.112} \\
-ERulesD2S & 0.597 & 0.100 & 0.592 & 0.096 \\
+CDCMS & 0.846 & 0.150 & 0.841 & 0.150 \\
+HAT & 0.815 & 0.148 & 0.819 & 0.144 \\
+\textbf{EGIS} & \textbf{0.859} & \textbf{0.123} & \textbf{0.869} & \textbf{0.112} \\
+ERulesD2S & 0.605 & 0.086 & 0.599 & 0.083 \\
 \midrule
 \multicolumn{5}{l}{\textit{All datasets (n=48):}} \\
 ARF & 0.862 & 0.140 & \underline{0.873} & 0.131 \\
@@ -646,11 +490,9 @@ ERulesD2S & 0.562 & 0.137 & 0.556 & 0.136 \\
 \end{tabular}
 \end{table}
 
-The most significant finding is EGIS's substantial improvement over ERulesD2S, the only other interpretable baseline, with a performance gap of over 26 percentage points (0.858 vs 0.597 on binary datasets). This demonstrates that the proposed self-adaptation framework and Gene Therapy mechanism yield dramatically better rule evolution than prior evolutionary approaches. On the 42 binary datasets, EGIS achieves competitive G-Mean in EXP-500 (0.858) and EXP-1000 (0.868), demonstrating that interpretability does not require sacrificing predictive accuracy. When all 48 datasets are considered (including 6 multiclass, evaluated only on the 6 models that support multiclass), EGIS achieves the highest mean G-Mean among interpretable methods (0.856 in EXP-500, 0.866 in EXP-1000), closely matching ensemble methods such as ARF (0.862, 0.873).
+The most significant finding is EGIS's substantial improvement over ERulesD2S, the only other interpretable baseline, with a performance gap of over 25 percentage points (0.859 vs 0.605 on binary datasets). This demonstrates that the proposed self-adaptation framework and Gene Therapy mechanism yield dramatically better rule evolution than prior evolutionary approaches. On the 41 binary datasets, EGIS achieves competitive G-Mean in EXP-500 (0.859) and EXP-1000 (0.869), demonstrating that interpretability does not require sacrificing predictive accuracy. When all 48 datasets are considered (including 7 multiclass, evaluated only on the 6 models that support multiclass), EGIS achieves the highest mean G-Mean among interpretable methods (0.856 in EXP-500, 0.866 in EXP-1000), closely matching ensemble methods such as ARF (0.862, 0.873).
 
-Table~\ref{tab:binary_comparison} presents the complete performance comparison across all 42 binary datasets with G-Mean values for each model. The table is organized by drift type (Abrupt, Gradual, Noisy, Stationary, Real) and includes Win/Lose/Draw statistics comparing EGIS against each baseline method. EGIS achieves the highest number of wins against eRulesD2S (41-0) and CDCMS (31-10), demonstrating superior performance among interpretable approaches. Against ensemble methods, EGIS shows competitive results with balanced win/loss ratios: 19/22 against ARF and 22/19 against ROSE, while maintaining complete interpretability.
-
-\input{tables/table_binary_comparison}
+The complete per-dataset G-Mean comparison across all 41 binary datasets for each model is provided in the Supplementary Material (Table~S1). EGIS wins against all 41 datasets versus eRulesD2S and 21/17/3 (W/L/D) versus CDCMS. Against ensemble methods, EGIS shows 11/30/0 against ARF and 7/32/2 against ROSE; however, as shown in Table~\ref{tab:stat_tests}, these differences are not statistically significant after Bonferroni correction (p=0.044 and p$<$0.001, respectively---only ROSE reaches significance).
 
 \subsection{Performance by Drift Type}
 
@@ -666,18 +508,18 @@ Table~\ref{tab:drift_performance} presents EGIS performance stratified by drift 
 \toprule
 \textbf{Type} & \textbf{EGIS} & \textbf{ARF} & \textbf{HAT} & \textbf{SRP} & \textbf{ROSE} & \textbf{eRules} & \textbf{CDCMS} & \textbf{ACDWM} \\
 \midrule
-Abrupt (14) & 0.899 & 0.863 & 0.776 & 0.857 & 0.888 & 0.600 & 0.810 & 0.861 \\
-Gradual (9) & 0.896 & 0.888 & 0.832 & 0.875 & 0.900 & 0.607 & 0.856 & 0.859 \\
-Noisy (8) & 0.886 & 0.855 & 0.793 & 0.847 & 0.888 & 0.593 & 0.816 & 0.849 \\
-Stationary (7) & 0.897 & 0.889 & 0.844 & 0.890 & 0.910 & 0.554 & 0.886 & 0.860 \\
-Real (4) & 0.921 & 0.941 & 0.927 & 0.929 & 0.885 & 0.649 & 0.924 & 0.882 \\
+Abrupt (14) & 0.860 & 0.863 & 0.776 & 0.857 & 0.888 & 0.600 & 0.813 & 0.861 \\
+Gradual (9) & 0.855 & 0.888 & 0.832 & 0.875 & 0.900 & 0.607 & 0.859 & 0.859 \\
+Noisy (8) & 0.846 & 0.855 & 0.793 & 0.847 & 0.888 & 0.593 & 0.818 & 0.849 \\
+Stationary (6) & 0.862 & 0.883 & 0.835 & 0.877 & 0.901 & 0.602 & 0.889 & 0.860 \\
+Real (4) & 0.890 & 0.941 & 0.927 & 0.929 & 0.885 & 0.649 & 0.926 & 0.882 \\
 \midrule
-\textbf{Overall (42)} & \textbf{0.898} & 0.879 & 0.817 & 0.872 & 0.894 & 0.597 & 0.843 & 0.860 \\
+\textbf{Overall (41)} & \textbf{0.859} & 0.878 & 0.815 & 0.869 & 0.892 & 0.605 & 0.846 & 0.860 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-On the 42 binary datasets evaluated in Table~\ref{tab:drift_performance}, EGIS achieves G-Mean of 0.898 overall, with consistent performance across all drift categories. Real-world datasets achieve the highest performance (0.921), likely due to well-defined class boundaries in the AssetNegotiation and Electricity streams. Abrupt drift (0.899) and gradual drift (0.896) yield similar results, indicating robust adaptation regardless of drift speed. Stationary datasets (0.897) confirm that EGIS does not over-adapt when drift is absent. The slightly lower noisy drift performance (0.886) reflects the additional challenge of learning from corrupted labels.
+On the 41 binary datasets evaluated in Table~\ref{tab:drift_performance}, EGIS achieves G-Mean of 0.859 overall, with consistent performance across all drift categories. Real-world datasets achieve the highest performance (0.890), likely due to well-defined class boundaries in the AssetNegotiation and Electricity streams. Stationary datasets (0.862) and abrupt drift (0.860) yield similar results, confirming robust adaptation. The slightly lower noisy drift performance (0.846) reflects the additional challenge of learning from corrupted labels.
 
 \subsection{Rule Complexity Analysis}
 
@@ -685,7 +527,7 @@ Table~\ref{tab:complexity_detailed} presents interpretability metrics for EGIS a
 
 \begin{table}[htbp]
 \centering
-\caption{EGIS Rule Complexity by Configuration. Avg Rules = mean number of rules in the final classifier; Cond/Rule = average conditions per rule (a proxy for individual rule complexity); AND/OR ops = total logical operators across all rules. Configurations with complexity penalty ($\gamma$=0.1) produce simpler rules with fewer conditions and operators, demonstrating the effectiveness of the penalty mechanism without sacrificing accuracy (see Table~\ref{tab:penalty_effect}).}
+\caption{EGIS Rule Complexity by Configuration}
 \label{tab:complexity_detailed}
 \scriptsize
 \begin{tabular}{lcccc}
@@ -708,7 +550,7 @@ To demonstrate the concrete interpretability of EGIS, Table~\ref{tab:rule_exampl
 
 \begin{table}[htbp]
 \centering
-\caption{Examples of Rules Extracted by EGIS. Rules are shown with their original attribute names where available. Simple rules (1-2 conditions) enable immediate interpretation; medium rules (3-5 conditions) capture nuanced patterns; complex rules (6+ conditions) handle difficult decision boundaries while remaining inspectable.}
+\caption{Representative Rules Extracted by EGIS}
 \label{tab:rule_examples}
 \footnotesize
 \begin{tabular}{p{1.2cm}p{5.5cm}c}
@@ -732,139 +574,67 @@ AGRAWAL & IF salary $\in$ (48849, 119828] AND salary $\leq$ 100160 AND age $>$ 3
 \end{tabular}
 \end{table}
 
-The simple rules demonstrate that EGIS can capture fundamental patterns with minimal conditions when the decision boundary permits. For instance, the Electricity rule ``IF nswprice $>$ 0.0912 THEN Class 1'' directly indicates that higher NSW electricity prices predict upward price movement---an insight immediately actionable by domain experts. The AGRAWAL rule ``IF salary $\leq$ 24833 THEN Class 0'' captures a clear income threshold separating customer categories.
+These rules demonstrate EGIS's interpretability across complexity levels. Simple rules like ``IF nswprice $>$ 0.0912 THEN Class 1'' are immediately actionable. Even the most complex rules (8 conditions) remain fully inspectable---a capability impossible with ensemble approaches.
 
-Medium complexity rules balance expressiveness with interpretability. The AGRAWAL rule combining salary ranges with age thresholds shows how EGIS captures interaction effects between attributes while remaining human-readable. Domain experts can validate whether such combinations make business sense (e.g., older customers with moderate salaries belonging to a specific segment).
-
-Even the most complex rules remain interpretable compared to black-box alternatives. The 8-condition AGRAWAL rule, while lengthy, explicitly enumerates the conditions under which a prediction is made. A domain expert can trace through each condition, verify its plausibility, and identify potential issues---capabilities impossible with ensemble or neural approaches.
-
-Figure~\ref{fig:rule_evolution} visualizes how individual rules evolve over time during concept drift. The diagram tracks rule creation, modification, and deletion events across consecutive chunks, illustrating the dynamic nature of rule-based adaptation. During stable periods, rules persist with minor threshold adjustments; during drift events, substantial rule replacement occurs as the classifier adapts to new concept boundaries.
+Figures~\ref{fig:rule_evolution} and~\ref{fig:transition_matrix} visualize rule evolution and transition analysis. Individual rules persist with minor adjustments during stable periods, while drift events trigger substantial replacement.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\columnwidth]{figures/fig6_rule_evolution.pdf}
-\caption{Rule evolution visualization showing rule lifecycle events across consecutive chunks for a representative dataset. Blue regions indicate stable rules persisting between chunks; yellow indicates modified rules (threshold adjustments); red indicates deleted rules that no longer contribute to classification; green indicates newly created rules addressing changed concept boundaries. Vertical dashed lines mark known concept drift points. The visualization demonstrates how EGIS adapts its rule set structure in response to distributional changes, with more extensive rule turnover during drift events.}
+\caption{Rule evolution showing lifecycle events (creation, modification, deletion) across consecutive chunks. Drift points (vertical lines) trigger increased rule turnover.}
 \label{fig:rule_evolution}
 \end{figure}
-
-Figure~\ref{fig:transition_matrix} presents a comprehensive transition analysis for two representative datasets: STAGGER\_Abrupt\_Chain (abrupt drift) and SEA\_Gradual\_Simple\_Slow (gradual drift). The composite visualization combines transition metrics evolution, rule evolution matrices, and rule component heatmaps, revealing how EGIS adapts differently to each drift type.
 
 \begin{figure*}[htbp]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/fig_transition_matrix_2x3.pdf}
-\caption{Composite transition analysis for two representative datasets (EXP-500). Top row: STAGGER\_Abrupt\_Chain (abrupt drift with two concept changes). Bottom row: SEA\_Gradual\_Simple\_Slow (gradual drift). Left column: Transition metrics evolution (TCS, RIR, AMS) over time, with vertical dashed lines marking drift points. Center column: Rule evolution matrix showing counts of unchanged, modified, new, and deleted rules at each chunk transition. Right column: Rule components heatmap tracking the evolution of logical operators, comparison operators, numeric thresholds, features, and categorical values across chunks. Together, these visualizations reveal how EGIS adapts differently to abrupt versus gradual drift: abrupt drift triggers coordinated rule replacement (high RIR spikes), while gradual drift produces smoother, more incremental adaptation patterns.}
+\caption{Composite transition analysis for STAGGER\_Abrupt\_Chain (top) and SEA\_Gradual\_Simple\_Slow (bottom). Left: transition metrics (TCS, RIR, AMS) over time. Center: rule evolution counts (unchanged/modified/new/deleted). Right: rule components heatmap. Abrupt drift triggers rule replacement (RIR spikes), while gradual drift produces smoother adaptation.}
 \label{fig:transition_matrix}
 \end{figure*}
 
-The transition dynamics in Figure~\ref{fig:transition_matrix} reveal complementary adaptation patterns between RIR and AMS. At concept drift points, RIR exhibits pronounced spikes indicating substantial rule replacement, while AMS shows variable behavior: transitions with high RIR and low AMS indicate complete rule substitution (incompatible rules are discarded and replaced entirely), whereas transitions with elevated AMS alongside moderate RIR indicate that some retained rules undergo significant refinement to adapt to the new concept. Between drift events, both metrics remain low, confirming stable rule sets during stationary periods. This complementary relationship---where AMS captures the \textit{degree} of modification for rules that survive transitions, while RIR captures the \textit{proportion} of rules replaced---provides a complete picture of EGIS's adaptation strategy, which combines rule replacement for radical concept changes with rule refinement for incremental adjustments.
+Figure~\ref{fig:transition_matrix} reveals complementary adaptation patterns: at drift points, RIR spikes indicate substantial rule replacement, while AMS captures the degree of modification for retained rules. Between drift events, both metrics remain low, confirming stable rule sets during stationary periods.
 
 \subsection{Statistical Significance Analysis}
 
-The Friedman test reveals significant differences among methods ($\chi^2(7) = 144.0$, $p < 0.001$), with a critical difference of CD = 1.46 for the Nemenyi post-hoc test. Figure~\ref{fig:cd_diagram} presents the critical difference diagram showing statistically significant groupings among methods.
+The Friedman test on 41 binary datasets reveals significant differences among the eight methods ($\chi^2(7) = 145.8$, $p < 0.001$), with a Nemenyi critical difference of CD~=~1.64. Figure~\ref{fig:cd_diagram} presents the critical difference diagram showing statistically significant groupings among methods.
 
-Table~\ref{tab:friedman_ranking} presents the complete model ranking based on the Friedman test across all 48 datasets. EGIS achieves the best average rank (2.12) with 38 wins out of 48 datasets, substantially outperforming all baseline methods. The ranking reveals clear performance tiers: EGIS leads significantly, followed by ensemble methods (ROSE, ARF, SRP) with similar ranks (4.27-4.88), and interpretable baseline ERulesD2S in last position (5.75).
+Table~\ref{tab:complete_ranking} presents the complete model ranking based on the Friedman test across 41 binary datasets (the primary comparison, as ACDWM and CDCMS are binary-only methods that would be unfairly penalized on multiclass datasets). ROSE achieves the best average rank (2.39), followed by ARF (2.93), SRP (3.66), and EGIS (3.68). EGIS ranks fourth overall but is the best interpretable method, with a rank gap to ARF (0.75) that falls well within the critical distance (CD~=~1.64), indicating no statistically significant difference. The ranking reveals clear performance tiers: ensemble methods (ROSE, ARF, SRP) and EGIS form a competitive group, followed by CDCMS (4.49) and HAT (4.98), with ACDWM (6.27) and ERulesD2S (7.61) significantly behind.
 
 \input{tables/table_ix_ranking}
 
 Table~\ref{tab:stat_tests} presents pairwise Wilcoxon signed-rank test results with Bonferroni correction.
 
-\begin{figure*}[htbp]
+\begin{figure}[htbp]
 \centering
-\subfloat[Binary datasets (n=42, 7 models). ROSE achieves the best average rank (2.60), followed by EGIS and ARF (both 2.83), demonstrating that EGIS achieves statistical parity with leading ensemble methods.\label{fig:cd_binary}]{\includegraphics[width=0.95\textwidth]{figures/fig_critical_difference.pdf}}
-\\[0.5em]
-\subfloat[Multiclass datasets (n=6, 6 models: EGIS, ARF, SRP, HAT, ROSE, ERulesD2S). ACDWM is excluded due to binary-only design.\label{fig:cd_multiclass}]{\includegraphics[width=0.95\textwidth]{figures/fig_critical_difference_multiclass.pdf}}
-\caption{Critical difference diagrams (Nemenyi post-hoc test following Friedman test, $\alpha = 0.05$). Methods connected by a horizontal bar are not significantly different. Lower average rank indicates better performance.}
+\includegraphics[width=0.95\columnwidth]{figures/fig_critical_difference.pdf}
+\caption{Critical difference diagram on 41 binary datasets (Nemenyi, $\alpha = 0.05$). Connected methods are not significantly different. See Supplementary Material for multiclass analysis.}
 \label{fig:cd_diagram}
-\end{figure*}
+\end{figure}
 
-\begin{table}[htbp]
-\centering
-\caption{Statistical Significance Tests (Pairwise Wilcoxon). Pairwise Wilcoxon signed-rank tests compare EGIS against each baseline using G-Mean across 42 binary datasets, with Bonferroni correction for multiple comparisons. A p-value $< 0.05$ indicates a statistically significant difference. Effect size is measured by Cliff's $\delta$, where values $> 0.474$ indicate large effects, $> 0.330$ medium, and $> 0.147$ small.}
-\label{tab:stat_tests}
-\footnotesize
-\begin{tabular}{lcccc}
-\toprule
-\textbf{Comparison} & \textbf{p-value} & \textbf{Sig.} & \textbf{Effect} & \textbf{Interp.} \\
-\midrule
-EGIS vs ERulesD2S & $<$0.0001 & Yes & 0.91 & Large \\
-EGIS vs HAT & $<$0.0001 & Yes & 0.73 & Large \\
-EGIS vs ACDWM & $<$0.0001 & Yes & 0.72 & Large \\
-EGIS vs SRP & $<$0.0001 & Yes & 0.67 & Large \\
-EGIS vs ARF & $<$0.0001 & Yes & 0.64 & Large \\
-EGIS vs ROSE & $<$0.0001 & Yes & 0.63 & Large \\
-\bottomrule
-\end{tabular}
-\end{table}
+\input{tables/table_xi_wilcoxon}
 
-All pairwise comparisons show statistically significant differences with large effect sizes (Cliff's $\delta > 0.47$). The effect size for EGIS vs ERulesD2S ($\delta = 0.91$) indicates a very large practical difference, confirming that the proposed mechanisms substantially advance interpretable stream classification. EGIS ranks first among all methods with an average Friedman rank of 2.12, achieving the best performance on 38 out of 48 datasets.
+Pairwise Wilcoxon tests with Bonferroni correction (Table~\ref{tab:stat_tests}) reveal that only two comparisons are statistically significant: EGIS vs ERulesD2S (Cliff's $\delta = 0.84$, large effect, adjusted p $<$ 0.0001) and EGIS vs ROSE ($\delta = -0.18$, small effect, adjusted p = 0.0006). The comparison with ERulesD2S confirms that EGIS dramatically advances interpretable stream classification. Against the top ensemble methods ARF ($\delta = -0.17$, small) and SRP ($\delta = -0.12$, negligible), the differences are \textit{not} statistically significant after Bonferroni correction, indicating that EGIS achieves statistical parity with these black-box methods while providing complete interpretability. The comparisons with HAT ($\delta = 0.18$, small), ACDWM ($\delta = 0.13$, negligible), and CDCMS ($\delta = 0.03$, negligible) are also not significant.
 
 \subsection{Transition Metrics Analysis}
 
 Table~\ref{tab:transitions} presents the transition metrics by drift type, quantifying how EGIS's adaptation behavior varies with drift characteristics.
 
-\begin{table}[htbp]
-\centering
-\caption{Transition Metrics by Drift Type and Configuration (EGIS). TCS = Transition Change Score quantifying overall adaptation intensity; RIR = Rule Instability Rate measuring proportion of replaced rules; AMS = Average Modification Severity for retained rules; N = number of datasets.}
-\label{tab:transitions}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{clcccc}
-\toprule
-\textbf{Chunk} & \textbf{Drift Type} & \textbf{TCS} & \textbf{RIR} & \textbf{AMS} & \textbf{N} \\
-\midrule
-500 & Abrupt & $0.969 \pm 0.141$ & $0.723 \pm 0.187$ & $0.246 \pm 0.167$ & 21 \\
-500 & Gradual & $0.981 \pm 0.093$ & $0.709 \pm 0.144$ & $0.271 \pm 0.139$ & 14 \\
-500 & Noisy & $0.975 \pm 0.120$ & $0.718 \pm 0.168$ & $0.257 \pm 0.155$ & 8 \\
-500 & Stationary & $0.957 \pm 0.156$ & $0.672 \pm 0.227$ & $0.285 \pm 0.223$ & 9 \\
-500 & Real & $0.996 \pm 0.017$ & $0.715 \pm 0.176$ & $0.281 \pm 0.176$ & 8 \\
-\midrule
-1000 & Abrupt & $0.968 \pm 0.150$ & $0.707 \pm 0.214$ & $0.261 \pm 0.187$ & 21 \\
-1000 & Gradual & $0.975 \pm 0.132$ & $0.689 \pm 0.177$ & $0.286 \pm 0.142$ & 14 \\
-1000 & Noisy & $0.970 \pm 0.145$ & $0.705 \pm 0.195$ & $0.265 \pm 0.175$ & 8 \\
-1000 & Stationary & $0.942 \pm 0.194$ & $0.668 \pm 0.240$ & $0.274 \pm 0.214$ & 9 \\
-1000 & Real & $1.000 \pm 0.000$ & $0.742 \pm 0.188$ & $0.258 \pm 0.188$ & 8 \\
-\bottomrule
-\end{tabular}
-\end{table}
+\input{tables/table_xiv_transitions}
 
-The transition metrics reveal meaningful patterns in adaptation behavior. Real-world datasets trigger the highest transition activity (TCS = 0.231, RIR = 0.261), reflecting the complexity and unpredictability of authentic streaming scenarios. Abrupt drift shows elevated RIR (0.222), indicating more frequent rule replacement during sudden distribution changes. Gradual drift yields the lowest values (TCS = 0.203, RIR = 0.206), reflecting smoother adaptation that modifies existing rules rather than replacing them wholesale. Stationary streams show similar values to gradual drift, confirming that EGIS does not over-adapt when drift is absent.
+The transition metrics reveal meaningful patterns in adaptation behavior. Abrupt drift triggers the highest transition activity (TCS = 0.248, RIR = 0.273), reflecting the need for substantial rule replacement during sudden distribution changes. Noisy drift shows similarly elevated values (TCS = 0.246, RIR = 0.255), as noise-corrupted boundaries require frequent recalibration. Gradual and stationary scenarios yield lower values (TCS = 0.228--0.229, RIR = 0.233--0.248), reflecting smoother adaptation. Real-world datasets show the lowest TCS (0.216) and RIR (0.216), suggesting that real drift patterns, while complex, may involve less radical restructuring than synthetic abrupt changes.
 
-The RIR values (0.21-0.26) indicate that approximately 21-26\% of rules change between consecutive chunks, with higher turnover during real-world and abrupt drift scenarios. This pattern is consistent with the Gene Therapy mechanism, which injects complete discriminative rules during drift recovery.
+The RIR values (0.22--0.27) indicate that approximately 22--27\% of rules change between consecutive chunks, with higher turnover during abrupt and noisy drift scenarios. This pattern is consistent with the Gene Therapy mechanism, which injects complete discriminative rules during drift recovery.
 
-Figure~\ref{fig:tcs_timeseries} presents the Transition Change Score (TCS) time series by drift type, revealing characteristic adaptation patterns. Abrupt drift scenarios show distinct TCS peaks at drift points, while gradual drift exhibits smoother transitions. Stationary streams maintain consistently low TCS values, confirming that EGIS does not over-adapt when drift is absent.
-
-\begin{figure*}[htbp]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/fig_tcs_timeseries.png}
-\caption{Transition Change Score (TCS) time series by drift type for EXP-500 configuration. TCS values range from 0 (no change) to 1 (complete rule set replacement). Abrupt drift scenarios (red) show characteristic spikes at known drift points; gradual drift (blue) exhibits smoother transitions; stationary streams (green) maintain consistently low TCS values, confirming appropriate adaptation behavior.}
-\label{fig:tcs_timeseries}
-\end{figure*}
-
-Figure~\ref{fig:rir_ams_scatter} illustrates the distribution of all three transition metrics---Rule Instability Rate (RIR), Average Modification Severity (AMS), and Transition Change Score (TCS)---across drift types using violin plots. The visualization reveals that EGIS employs different adaptation strategies depending on drift characteristics: abrupt drift scenarios exhibit higher RIR distributions (more rule replacements), while gradual and stationary scenarios show relatively higher AMS (more rule modifications). TCS, as a composite metric, captures the overall adaptation intensity. Real-world datasets display the widest distributions, reflecting the diversity of underlying drift patterns.
+Figure~\ref{fig:rir_ams_scatter} shows the distribution of all three transition metrics across drift types. Abrupt drift exhibits higher RIR (more rule replacements), while gradual scenarios show relatively higher AMS (more modifications). Real-world datasets display the widest distributions, reflecting diverse underlying drift patterns.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\columnwidth]{figures/fig_violin_rir_ams_tcs.pdf}
-\caption{Violin plots of Rule Instability Rate (RIR, blue), Average Modification Severity (AMS, green), and Transition Change Score (TCS, orange) by drift type for EXP-500 configuration. Each violin shows the full distribution of per-transition metric values across all datasets of that drift category. RIR consistently dominates over AMS across all drift types, confirming that EGIS primarily adapts through rule replacement rather than threshold modification. TCS captures the composite adaptation intensity, combining both rule replacement and modification effects. Wider distributions in Real-world scenarios reflect heterogeneous drift patterns.}
+\caption{Violin plots of RIR (blue), AMS (green), and TCS (orange) by drift type (EXP-500). RIR consistently dominates AMS, confirming adaptation primarily through rule replacement. Wider distributions in real-world scenarios reflect heterogeneous drift patterns.}
 \label{fig:rir_ams_scatter}
 \end{figure}
 
-The patterns observed in Figures~\ref{fig:tcs_timeseries} and~\ref{fig:rir_ams_scatter} for EXP-500 are consistent with EXP-1000 results shown in Table~\ref{tab:transitions}. The larger chunk size in EXP-1000 produces slightly lower TCS variability (0.942-1.000 vs 0.957-0.996 for EXP-500) while maintaining similar RIR patterns (0.668-0.742 vs 0.672-0.723), confirming that adaptation behavior is robust across chunk size configurations.
-
-Figure~\ref{fig:evolution_heatmaps} presents rule evolution heatmaps for representative datasets from each drift category, visualizing how feature importance changes over time. In abrupt drift scenarios (SEA\_Abrupt\_Simple), distinct shifts in feature importance are visible at drift points. Gradual drift (SEA\_Gradual\_Simple\_Slow) shows smoother transitions in feature usage. Stationary streams maintain stable feature importance patterns, while real-world datasets (Electricity) exhibit more complex, irregular patterns reflecting unknown underlying drift dynamics.
-
-\begin{figure*}[htbp]
-\centering
-\subfloat[Abrupt drift (SEA\_Abrupt\_Simple)]{\includegraphics[width=0.48\textwidth]{figures/fig_evolution_abrupt.pdf}}
-\hfill
-\subfloat[Gradual drift (SEA\_Gradual\_Simple\_Slow)]{\includegraphics[width=0.48\textwidth]{figures/fig_evolution_gradual.pdf}}
-\\[0.5em]
-\subfloat[Stationary (SEA\_Stationary)]{\includegraphics[width=0.48\textwidth]{figures/fig_evolution_stationary.pdf}}
-\hfill
-\subfloat[Real-world (Electricity)]{\includegraphics[width=0.48\textwidth]{figures/fig_evolution_real.pdf}}
-\caption{Rule evolution heatmaps showing feature importance over time for different drift types. Darker colors indicate higher feature usage in the evolved rule set. Distinct patterns emerge for each drift category.}
-\label{fig:evolution_heatmaps}
-\end{figure*}
+The patterns observed in Figure~\ref{fig:rir_ams_scatter} for EXP-500 are consistent across all configurations (see Supplementary Material for detailed evolution heatmaps and TCS time series across drift types and chunk sizes).
 
 \subsection{EGIS Configuration Analysis}
 
@@ -872,119 +642,64 @@ Table~\ref{tab:penalty_effect} examines the effect of the complexity penalty on 
 
 \begin{table}[htbp]
 \centering
-\caption{EGIS Complexity Penalty Effect on Performance. The penalty parameter $\gamma$ controls the trade-off between predictive accuracy and rule simplicity in the fitness function. G-Mean values are mean$\pm$std across all 48 datasets. $\Delta$ shows the performance difference (positive indicates penalty improves performance). P-values from paired Wilcoxon signed-rank tests indicate no statistically significant difference, confirming that simpler rules can be obtained without sacrificing accuracy.}
+\caption{EGIS Complexity Penalty Effect (G-Mean, mean$\pm$std, 48 datasets)}
 \label{tab:penalty_effect}
 \footnotesize
 \begin{tabular}{lcccc}
 \toprule
 \textbf{Chunk} & \textbf{$\gamma$=0.0} & \textbf{$\gamma$=0.1} & \textbf{$\Delta$} & \textbf{p-value} \\
 \midrule
-500 & 0.803$\pm$0.223 & 0.802$\pm$0.223 & +0.001 & 0.108 \\
-1000 & 0.810$\pm$0.225 & 0.811$\pm$0.224 & -0.001 & 0.929 \\
+500 & 0.856$\pm$0.123 & 0.855$\pm$0.121 & +0.001 & 0.115 \\
+1000 & 0.866$\pm$0.112 & 0.866$\pm$0.112 & -0.001 & 0.646 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The complexity penalty ($\gamma$=0.1) has negligible effect on predictive performance (differences $<$ 0.2\%, not statistically significant). This result is encouraging for practitioners who prioritize interpretability: enabling the penalty produces simpler rules (4.78 vs 5.44 conditions per rule) without sacrificing accuracy. The chunk size has a more noticeable effect, with EXP-1000 achieving slightly higher performance (0.810-0.811) than EXP-500 (0.802-0.803), likely due to more training data per evolutionary cycle.
+The complexity penalty ($\gamma$=0.1) has negligible effect on predictive performance (differences $<$ 0.2\%, not statistically significant). This result is encouraging for practitioners who prioritize interpretability: enabling the penalty produces simpler rules (4.78 vs 5.44 conditions per rule) without sacrificing accuracy. The chunk size has a more noticeable effect, with EXP-1000 achieving slightly higher performance (0.866) than EXP-500 (0.856), likely due to more training data per evolutionary cycle.
 
-Figure~\ref{fig:chunk_size_effect} presents the sensitivity analysis of EGIS performance to chunk size across different drift types. Larger chunks (1000-2000 instances) provide more stable training but may delay response to drift, while smaller chunks (500 instances) enable faster adaptation at the cost of noisier estimates. The results indicate that chunk size 1000 offers a balanced trade-off across most drift scenarios.
-
-\begin{figure*}[htbp]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/fig_chunk_size_effect.pdf}
-\caption{Chunk size sensitivity analysis showing EGIS performance (G-Mean) across configurations. Larger chunks improve performance on stationary and gradual drift, while smaller chunks benefit abrupt drift adaptation.}
-\label{fig:chunk_size_effect}
-\end{figure*}
-
-Figure~\ref{fig:config_comparison} compares the overall configuration effects, showing how different combinations of chunk size and penalty settings affect performance and interpretability metrics across drift types. The barplot reveals that the penalty setting has minimal impact on accuracy while significantly improving rule simplicity.
-
-\begin{figure*}[htbp]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/fig_config_comparison.pdf}
-\caption{Configuration comparison showing the combined effect of chunk size and complexity penalty on EGIS performance. Error bars indicate standard deviation across datasets.}
-\label{fig:config_comparison}
-\end{figure*}
-
-To validate the consistency of our findings, Table~\ref{tab:binary_comparison_1000} presents the complete performance comparison using chunk size 1000. The results are consistent with Table~\ref{tab:binary_comparison}, confirming that EGIS maintains competitive performance across different temporal granularities. Notable differences include improved performance on gradual drift datasets with larger chunks, and slight decreases on abrupt drift scenarios where faster adaptation is beneficial.
-
-\input{tables/table_binary_comparison_1000}
+Sensitivity analysis across chunk sizes (500, 1000, 2000) and penalty settings confirms that EGIS performance is robust to configuration choices. Larger chunks (1000--2000) provide marginally higher G-Mean on stationary and gradual drift scenarios, while smaller chunks (500) enable faster adaptation to abrupt changes. Complete configuration comparisons and per-dataset results for all chunk sizes are provided in the Supplementary Material.
 
 \subsection{Discussion: The Interpretability-Performance Trade-off}
 
-Our experiments reveal a nuanced picture of the interpretability-performance trade-off. On the subset of datasets where all methods are evaluated, ensemble methods (ROSE, ARF) achieve higher G-Mean (0.88-0.91) than EGIS (0.80), representing a gap of 8-11 percentage points. However, this comparison must consider several factors:
+Our experiments reveal a nuanced picture of the interpretability-performance trade-off in data stream classification.
+
+\textbf{Statistical Parity with Ensemble Methods}: On 41 binary datasets, EGIS (rank 3.68) falls within the Nemenyi critical distance of ARF (2.93) and SRP (3.66), meaning these differences are \textit{not} statistically significant. Only ROSE (2.39) shows a significant advantage (adjusted p=0.0006). EGIS loses more often than it wins against ROSE (7W/32L) and ARF (11W/30L), but the performance gaps are small (Cliff's $\delta$ = -0.18 and -0.17, both small effects), confirming competitive rather than dominant performance.
 
 \textbf{Complete Interpretability}: EGIS produces explicit IF-THEN rules that domain experts can directly inspect, validate, and audit. Ensemble methods aggregate predictions from hundreds of base learners through mechanisms that preclude explanation of individual decisions.
 
-\textbf{Consistent Performance}: EGIS maintains consistent performance across the full corpus of 48 datasets (G-Mean = 0.80-0.81), while comparative methods were evaluated only on subsets due to implementation constraints.
+\textbf{Dramatic Improvement Over Interpretable Baselines}: EGIS outperforms ERulesD2S by over 25 percentage points (0.855 vs 0.598, Cliff's $\delta$ = 0.84, large effect). This improvement stems from the comprehensive self-adaptation framework, the Gene Therapy mechanism for knowledge injection, and the adaptive memory management system.
 
-\textbf{Dramatic Improvement Over Interpretable Baselines}: The comparison with ERulesD2S is particularly instructive. Both methods employ evolutionary approaches to generate interpretable rules, yet EGIS outperforms ERulesD2S by 22.5 percentage points (0.803 vs 0.578). This improvement stems from the comprehensive self-adaptation framework, the Gene Therapy mechanism for knowledge injection, and the adaptive memory management system.
+\textbf{Transition Transparency}: Unlike black-box methods where adaptation is opaque, EGIS's transition metrics quantify exactly how the classifier changes over time. Practitioners can observe that approximately 22--27\% of rules change between chunks, with higher turnover during abrupt drift events (RIR = 0.273).
 
-\textbf{Transition Transparency}: Unlike black-box methods where adaptation is opaque, EGIS's transition metrics quantify exactly how the classifier changes over time. Practitioners can observe that approximately 21-26\% of rules change between chunks, with higher turnover during drift events.
+These results position EGIS as the method of choice when explainability requirements preclude black-box alternatives, achieving competitive performance while providing complete transparency into the adaptation process. Extended per-dataset results and additional visualizations are provided in the Supplementary Material.
 
-The results demonstrate that the proposed mechanisms substantially advance the state of the art in interpretable stream classification, positioning EGIS as the method of choice when explainability requirements preclude black-box alternatives.
+\subsection{Visual Analysis}
 
-\subsection{Visualization of Results}
-
-Figure~\ref{fig:boxplots} presents the performance distribution across datasets for each model in the EXP-500 configuration. EGIS exhibits a wide performance range reflecting its evaluation across all 48 datasets including challenging real-world streams, while consistently outperforming ERulesD2S.
+Figure~\ref{fig:boxplots} presents the performance distribution across datasets for each model. EGIS exhibits competitive median performance with ensemble methods while consistently outperforming ERulesD2S across all datasets.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\columnwidth]{figures/fig5_performance_boxplots.pdf}
-\caption{Performance distribution by model (G-Mean) for EXP-500 configuration. Box plots show median (center line), interquartile range (box), and outliers (points). EGIS is evaluated across all 48 datasets including challenging multiclass streams, while comparative methods are evaluated on subsets where their implementations support the data characteristics. The wider distribution for EGIS reflects this broader evaluation scope rather than higher variability on comparable datasets.}
+\caption{Performance distribution by model (G-Mean, EXP-500). EGIS is evaluated across all 48 datasets; binary-only methods (ACDWM, CDCMS) on 41 datasets.}
 \label{fig:boxplots}
 \end{figure}
 
-Figure~\ref{fig:heatmap} presents a heatmap of performance by drift type and model, revealing model-specific strengths. On the 42 binary datasets, EGIS achieves consistent performance across all drift categories (0.886-0.921), with real-world streams showing the highest G-Mean (0.921) among the four binary real-world datasets. When including all datasets, EGIS maintains competitive performance across the full corpus.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.95\columnwidth]{figures/fig7_drift_heatmap.pdf}
-\caption{Performance heatmap by drift type and model (G-Mean) for the 42 binary datasets in EXP-500 configuration. Darker blue colors indicate higher G-Mean values. Rows represent drift categories (Abrupt, Gradual, Noisy, Stationary, Real); columns represent classification methods. The heatmap reveals that EGIS achieves consistent performance across all drift categories, comparable to ensemble methods (ARF, ROSE, SRP), while dramatically outperforming the interpretable baseline ERulesD2S (lightest column).}
-\label{fig:heatmap}
-\end{figure}
-
-Figure~\ref{fig:metrics_by_drift} provides a detailed breakdown of performance metrics by drift type across all models, enabling direct visual comparison of model behavior under different drift scenarios. The barplot reveals that EGIS maintains consistent performance across all drift categories, while some ensemble methods show greater variability.
-
-\begin{figure*}[htbp]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/fig_metrics_by_drift.pdf}
-\caption{Performance comparison by drift type showing G-Mean for each model across Abrupt, Gradual, Noisy, Stationary, and Real-world drift categories. The grouped bar chart enables direct visual comparison of model behavior under different drift scenarios. EGIS (blue) maintains consistent performance across all categories, while ensemble methods (ARF, SRP, ROSE) show greater variability. ERulesD2S consistently underperforms across all drift types, highlighting the advancement achieved by EGIS among interpretable methods.}
-\label{fig:metrics_by_drift}
-\end{figure*}
-
-Figure~\ref{fig:performance_over_time} presents the per-chunk G-Mean evolution for all models on two representative datasets: STAGGER\_Abrupt\_Chain (with two concept changes) and SEA\_Abrupt\_Simple (with one concept change). This visualization, following the evaluation methodology of Krawczyk et al.~\cite{shaker2012evolving}, reveals how each model responds to drift events in real time. EGIS shows rapid recovery after drift points, with performance dipping briefly at concept changes before stabilizing at competitive levels. ACDWM exhibits slower recovery, particularly after the first drift in STAGGER, while ensemble methods (ARF, SRP) maintain more stable performance due to their diversity mechanisms. The interpretable baseline eRulesD2S shows consistently lower performance throughout the stream, with limited ability to track concept changes.
-
-\begin{figure*}[htbp]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/fig_performance_over_time.pdf}
-\caption{G-Mean evolution over stream instances for all models on STAGGER\_Abrupt\_Chain (left) and SEA\_Abrupt\_Simple (right) in EXP-500 configuration. Vertical red dashed lines with labeled boxes indicate known concept drift points. Each model is distinguished by unique markers and line styles for clarity. The x-axis is normalized to instances processed to enable fair comparison across models with different chunk sizes. ROSE is shown with prequential (cumulative) evaluation. EGIS (blue, circles) demonstrates rapid adaptation at drift points while maintaining competitive inter-drift performance.}
-\label{fig:performance_over_time}
-\end{figure*}
-
-Figure~\ref{fig:tcs_comparison} synthesizes the TCS analysis across all configurations, showing how adaptation intensity varies by drift type and chunk size. The comparative view confirms that larger chunks reduce TCS variability while smaller chunks enable more responsive adaptation to sudden changes.
-
-\begin{figure*}[htbp]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/fig_tcs_comparison.pdf}
-\caption{TCS (Transition Change Score) comparison across all drift types and configurations. Box plots show distribution of transition scores, revealing adaptation patterns for each scenario. Higher TCS values indicate more extensive rule set restructuring. Real-world datasets exhibit the highest median TCS, reflecting unpredictable drift patterns requiring more aggressive adaptation. Stationary datasets show the lowest TCS with tight distributions, confirming that EGIS appropriately limits adaptation when no drift is present. The comparison between chunk sizes 500 and 1000 reveals that larger chunks produce more stable TCS distributions.}
-\label{fig:tcs_comparison}
-\end{figure*}
-
+Per-chunk G-Mean evolution analysis on representative datasets (STAGGER\_Abrupt\_Chain, SEA\_Abrupt\_Simple) confirms that EGIS shows rapid recovery after drift points, with performance dipping briefly at concept changes before stabilizing at competitive levels (see Supplementary Material for temporal evolution plots).
 
 %==============================================================================
 \section{Conclusion}
 \label{sec:conclusion}
 %==============================================================================
 
-This paper introduced EGIS, an evolutionary grammar-based approach for explainable data stream classification. Through comprehensive experiments across 48 datasets spanning five drift categories and comparisons against eight state-of-the-art methods, we addressed the research questions posed in the introduction.
+This paper introduced EGIS, an evolutionary grammar-based approach for explainable data stream classification. Through comprehensive experiments across 48 datasets spanning five drift categories and comparisons against seven state-of-the-art methods, we addressed the research questions posed in the introduction.
 
-Regarding RQ1, EGIS achieves consistent predictive performance (average G-Mean of 0.80-0.81) while providing complete interpretability through explicit IF-THEN rules. EGIS substantially outperforms ERulesD2S, the only other interpretable baseline, by 22.5 percentage points (0.803 vs 0.578), demonstrating that the proposed mechanisms dramatically advance the state of the art in interpretable stream classification. The Friedman test confirms EGIS ranks first among all methods (average rank 2.12) with statistically significant improvements over all baselines (Cliff's $\delta > 0.63$).
+Regarding RQ1, EGIS achieves competitive predictive performance (G-Mean of 0.855) while providing complete interpretability through explicit IF-THEN rules. On 41 binary datasets, EGIS ranks fourth (average rank 3.68) but falls within the Nemenyi critical distance (CD~=~1.64) of ensemble leaders ROSE (2.39) and ARF (2.93), indicating no statistically significant difference from ARF or SRP. Crucially, EGIS outperforms ERulesD2S, the only other interpretable baseline, by over 25 percentage points (0.855 vs 0.598), demonstrating that the proposed mechanisms dramatically advance the state of the art in interpretable stream classification.
 
-Regarding RQ2, the novel transition metrics (TCS, RIR) successfully quantify rule evolution dynamics, revealing where structural changes occur (RIR indicates 21-26\% rule turnover) and when significant transitions happen (TCS peaks during drift events). Real-world datasets trigger highest transition activity (TCS = 0.231), while stationary streams show minimal adaptation (TCS = 0.206). These metrics provide unprecedented insight into classifier adaptation behavior, enabling practitioners to understand not only what the model predicts but how its decision logic evolves over time.
+Regarding RQ2, the novel transition metrics (TCS, RIR, AMS) successfully quantify rule evolution dynamics. TCS captures composite adaptation intensity, with abrupt drift scenarios showing the highest values (TCS~=~0.248) and real-world datasets the lowest (TCS~=~0.216). RIR indicates that 22--27\% of rules are replaced between consecutive chunks, with higher turnover during abrupt drift (RIR~=~0.273). These metrics provide unprecedented insight into classifier adaptation behavior, enabling practitioners to understand not only what the model predicts but how its decision logic evolves over time.
 
-Regarding RQ3, the multi-level self-adaptation framework demonstrates robust performance across different drift types. On binary datasets, EGIS achieves G-Mean of 0.898 overall with consistent performance across all categories (abrupt: 0.899, gradual: 0.896, stationary: 0.897, real: 0.921), with the severity-based response appropriately modulating adaptation intensity. The complexity penalty ($\gamma$=0.1) produces simpler rules (4.78 vs 5.44 conditions per rule) with negligible performance impact ($<$0.2\%).
+Regarding RQ3, the multi-level self-adaptation framework demonstrates robust performance across different drift types, with consistent behavior across abrupt, gradual, noisy, stationary, and real-world scenarios. The complexity penalty ($\gamma$=0.1) produces simpler rules (4.78 vs 5.44 conditions per rule) with negligible performance impact ($<$0.2\%, not statistically significant), confirming that interpretability can be enhanced without sacrificing accuracy.
 
-Future work will explore several directions. First, extending EGIS to handle concept drift in the feature space itself, where attributes may become unavailable or new attributes may appear. Second, developing visualization tools that leverage the transition metrics to create intuitive dashboards for monitoring classifier evolution. Third, investigating approaches to improve performance on real-world datasets where unknown drift patterns and class imbalance present additional challenges.
+Future work will explore several directions. First, extending EGIS to handle concept drift in the feature space itself, where attributes may become unavailable or new attributes may appear. Second, developing visualization tools that leverage the transition metrics to create intuitive dashboards for monitoring classifier evolution. Third, investigating hybrid approaches that combine EGIS's interpretability with ensemble diversity mechanisms to close the remaining performance gap with black-box methods.
 
 %==============================================================================
 \bibliographystyle{IEEEtran}

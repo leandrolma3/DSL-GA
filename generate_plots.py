@@ -56,7 +56,7 @@ def plot_periodic_accuracy_with_drift_info(
     if periodic_test_accuracies and periodic_test_accuracies[0]:
         try:
             global_counts_test, accuracies_test = zip(*periodic_test_accuracies)
-            ax.plot(global_counts_test, [acc * 100 for acc in accuracies_test], marker='.', linestyle='-', markersize=4, label=f'Periodic Test Accuracy (Run {run_number})', zorder=5)
+            ax.plot(global_counts_test, [acc * 100 for acc in accuracies_test], marker='.', linestyle='-', markersize=4, label=f'Periodic Test G-Mean (Run {run_number})', zorder=5)
         except ValueError:
             logging.warning(f"[{stream_name}-Run{run_number}] Could not unpack periodic_test_accuracies.")
             global_counts_test = []
@@ -86,14 +86,14 @@ def plot_periodic_accuracy_with_drift_info(
             train_chunk_index_from_metrics = m.get('chunk', idx)
             x_pos = (train_chunk_index_from_metrics + 1) * chunk_size
             train_acc_x_positions.append(x_pos)
-            train_acc_y_values.append(m.get('train_accuracy', np.nan) * 100)
+            train_acc_y_values.append(m.get('train_gmean', np.nan) * 100)
 
         valid_indices = [i for i, y_val in enumerate(train_acc_y_values) if not np.isnan(y_val)]
         if valid_indices:
             plotted_train_x = np.array(train_acc_x_positions)[valid_indices]
             plotted_train_y = np.array(train_acc_y_values)[valid_indices]
             ax.plot(plotted_train_x, plotted_train_y,
-                    marker='o', linestyle=':', markersize=7, label='Train Accuracy (End of Chunk)', color='darkorange', zorder=4)
+                    marker='o', linestyle=':', markersize=7, label='Train G-Mean (End of Chunk)', color='darkorange', zorder=4)
 
             for i_val_idx in valid_indices:
                 train_chunk_idx_for_label = chunk_train_metrics[i_val_idx].get('chunk', i_val_idx)
@@ -110,61 +110,55 @@ def plot_periodic_accuracy_with_drift_info(
         else:
             logging.warning(f"[{stream_name}-Run{run_number}] No valid train accuracy data.")
 
-    # Add Drift Markers (lógica mantida, mas usa y_pos_drift_text recalculado)
-    concept_sequence = stream_definition.get('concept_sequence', [])
-    drift_type = stream_definition.get('drift_type', 'abrupt')
-    gradual_width_chunks = stream_definition.get('gradual_drift_width_chunks', 0)
-    current_train_chunk_idx_for_concept_start = 0 
-    previous_concept_id = None
-    drift_labels_added_to_legend = set()
+    # Add Drift Markers (only if stream_definition is available)
+    if stream_definition:
+        concept_sequence = stream_definition.get('concept_sequence', [])
+        drift_type = stream_definition.get('drift_type', 'abrupt')
+        gradual_width_chunks = stream_definition.get('gradual_drift_width_chunks', 0)
+        current_train_chunk_idx_for_concept_start = 0
+        previous_concept_id = None
+        drift_labels_added_to_legend = set()
 
-    for i_stage, stage in enumerate(concept_sequence):
-        concept_id = str(stage['concept_id'])
-        duration_chunks = stage['duration_chunks']
-        
-        if i_stage > 0 and previous_concept_id is not None:
-            drift_line_location = current_train_chunk_idx_for_concept_start * chunk_size
-            old_id = previous_concept_id
-            new_id = concept_id
-            severity = 0.0
-            pair_key_str = f"{min(str(old_id), str(new_id))}_vs_{max(str(old_id), str(new_id))}"
-            try:
-                severity = concept_differences.get(dataset_type.upper(), {}).get(pair_key_str, 0.0)
-            except Exception as e:
-                logging.warning(f"Could not get severity for {old_id}->{new_id} for dataset {dataset_type.upper()}: {e}")
-            
-            drift_label = f'Drift: {old_id} \u2192 {new_id} ({severity:.1f}%)'
-            label_for_legend_entry = drift_label if drift_label not in drift_labels_added_to_legend else None
-            
-            text_drift_x_offset = chunk_size * 0.05 # Pequeno deslocamento para o texto não ficar sobre a linha
-            
-            if drift_type == 'abrupt':
-                ax.axvline(x=drift_line_location, color='red', linestyle='--', linewidth=1.5, label=label_for_legend_entry, zorder=3)
-                ax.text(drift_line_location + text_drift_x_offset, y_pos_drift_text, f'{severity:.1f}%', 
-                        color='red', ha='left', va='center', fontsize=8, 
-                        bbox=dict(facecolor='white', alpha=0.7, edgecolor='red', pad=1.5, boxstyle='round,pad=0.3'))
-            elif drift_type == 'gradual' and gradual_width_chunks > 0:
-                transition_end_instance = drift_line_location + (gradual_width_chunks * chunk_size)
-                ax.axvspan(drift_line_location, transition_end_instance, color='salmon', alpha=0.2, label=label_for_legend_entry, zorder=1)
-                text_x_pos = drift_line_location + (gradual_width_chunks * chunk_size) / 2
-                ax.text(text_x_pos, y_pos_drift_text, f'{severity:.1f}% (Gradual)', 
-                        color='darkred', ha='center', va='center', fontsize=8,
-                        bbox=dict(facecolor='white', alpha=0.7, edgecolor='darkred', pad=1.5, boxstyle='round,pad=0.3'))
-            
-            # # --- Adicione este debug ---
-            # print("--- DEBUG DRIFT MARKER ---")
-            # print(f"Transition to Chunk: {current_train_chunk_idx_for_concept_start}")
-            # print(f"Drift Type: {drift_type}")
-            # print(f"Gradual Width: {gradual_width_chunks}")
-            # print(f"Severity: {severity}")
-            # print(f"Drawing from instance {drift_line_location} to {drift_line_location + (gradual_width_chunks * chunk_size)}")
-            # # ---------------------------
+        for i_stage, stage in enumerate(concept_sequence):
+            concept_id = str(stage['concept_id'])
+            duration_chunks = stage['duration_chunks']
 
+            if i_stage > 0 and previous_concept_id is not None:
+                drift_line_location = current_train_chunk_idx_for_concept_start * chunk_size
+                old_id = previous_concept_id
+                new_id = concept_id
+                severity = 0.0
+                pair_key_str = f"{min(str(old_id), str(new_id))}_vs_{max(str(old_id), str(new_id))}"
+                if concept_differences:
+                    try:
+                        severity = concept_differences.get(dataset_type.upper(), {}).get(pair_key_str, 0.0)
+                    except Exception as e:
+                        logging.warning(f"Could not get severity for {old_id}->{new_id} for dataset {dataset_type.upper()}: {e}")
 
-            if label_for_legend_entry: drift_labels_added_to_legend.add(drift_label)
+                severity_text = f'{severity:.1f}%' if concept_differences else 'Drift'
+                drift_label = f'Drift: {old_id} \u2192 {new_id} ({severity_text})'
+                label_for_legend_entry = drift_label if drift_label not in drift_labels_added_to_legend else None
 
-        previous_concept_id = concept_id
-        current_train_chunk_idx_for_concept_start += duration_chunks
+                text_drift_x_offset = chunk_size * 0.05
+
+                if drift_type == 'abrupt':
+                    ax.axvline(x=drift_line_location, color='red', linestyle='--', linewidth=1.5, label=label_for_legend_entry, zorder=3)
+                    ax.text(drift_line_location + text_drift_x_offset, y_pos_drift_text, severity_text,
+                            color='red', ha='left', va='center', fontsize=8,
+                            bbox=dict(facecolor='white', alpha=0.7, edgecolor='red', pad=1.5, boxstyle='round,pad=0.3'))
+                elif drift_type == 'gradual' and gradual_width_chunks > 0:
+                    transition_end_instance = drift_line_location + (gradual_width_chunks * chunk_size)
+                    ax.axvspan(drift_line_location, transition_end_instance, color='salmon', alpha=0.2, label=label_for_legend_entry, zorder=1)
+                    text_x_pos = drift_line_location + (gradual_width_chunks * chunk_size) / 2
+                    gradual_text = f'{severity_text} (Gradual)' if concept_differences else 'Gradual Drift'
+                    ax.text(text_x_pos, y_pos_drift_text, gradual_text,
+                            color='darkred', ha='center', va='center', fontsize=8,
+                            bbox=dict(facecolor='white', alpha=0.7, edgecolor='darkred', pad=1.5, boxstyle='round,pad=0.3'))
+
+                if label_for_legend_entry: drift_labels_added_to_legend.add(drift_label)
+
+            previous_concept_id = concept_id
+            current_train_chunk_idx_for_concept_start += duration_chunks
 
     # Marcadores e Texto para Chunks de Teste
     if global_counts_test and chunk_size > 0:
@@ -196,8 +190,8 @@ def plot_periodic_accuracy_with_drift_info(
                         bbox=dict(facecolor='white', alpha=0.0, edgecolor='none', pad=1)) # Transparente
 
     ax.set_xlabel("Total Instances Processed (Cumulative in Test Phases)")
-    ax.set_ylabel("Accuracy (%)")
-    ax.set_title(f"Periodic Test & Final Train Accuracy w/ Drifts: {stream_name} (Run {run_number})", fontsize=14)
+    ax.set_ylabel("G-Mean (%)")
+    ax.set_title(f"Periodic Test & Final Train G-Mean w/ Drifts: {stream_name} (Run {run_number})", fontsize=14)
     ax.grid(True, which='major', linestyle='--', linewidth=0.5) # Apenas grades principais
     ax.grid(True, which='minor', linestyle=':', linewidth=0.3, alpha=0.7) # Grades menores mais suaves
     ax.minorticks_on() # Ligar minor ticks para que a grade menor apareça
@@ -257,7 +251,7 @@ def generate_plots_for_run(run_dir: str, output_dir: Union[str, None] = None, di
     try:
         # Load all necessary JSON files
         with open(os.path.join(run_dir, "run_config.json"), 'r') as f: run_config = json.load(f)
-        with open(os.path.join(run_dir, "periodic_accuracy.json"), 'r') as f: periodic_accuracy = json.load(f)
+        with open(os.path.join(run_dir, "periodic_gmean.json"), 'r') as f: periodic_accuracy = json.load(f)
         with open(os.path.join(run_dir, "ga_history_per_chunk.json"), 'r') as f: ga_history = json.load(f)
         with open(os.path.join(run_dir, "rule_details_per_chunk.json"), 'r') as f: rule_details = json.load(f)
         with open(os.path.join(run_dir, "attribute_usage_per_chunk.json"), 'r') as f: attribute_usage = json.load(f)
@@ -268,8 +262,27 @@ def generate_plots_for_run(run_dir: str, output_dir: Union[str, None] = None, di
 
     # Extract info needed for plots
     stream_name = run_config.get('experiment_id', 'UnknownExperiment'); run_number = run_config.get('run_number', 0)
-    chunk_size = run_config.get('chunk_size', 500); stream_definition = run_config.get('stream_definition', {})
+    chunk_size = run_config.get('chunk_size', 500); stream_definition = run_config.get('stream_definition')
     dataset_type = run_config.get('dataset_type', 'UnknownType'); all_attributes = run_config.get('attributes')
+
+    # Fallback: load stream_definition from lookup file when missing in run_config
+    if not stream_definition:
+        _sd_lookup_path = os.path.join(os.path.dirname(__file__), "paper_data", "stream_definitions.json")
+        if os.path.exists(_sd_lookup_path):
+            try:
+                with open(_sd_lookup_path, 'r', encoding='utf-8') as _f_sd:
+                    _sd_lookup = json.load(_f_sd)
+                stream_definition = _sd_lookup.get(stream_name, {})
+                if stream_definition:
+                    logger.info(f"Loaded stream_definition for '{stream_name}' from lookup file.")
+                else:
+                    logger.warning(f"Stream '{stream_name}' not found in stream_definitions.json.")
+            except Exception as e_sd:
+                logger.warning(f"Failed to load stream_definitions.json: {e_sd}")
+                stream_definition = {}
+        else:
+            logger.warning(f"stream_definitions.json not found at {_sd_lookup_path}. Drift markers will be missing.")
+            stream_definition = {}
 
     # --- Generate Plots (Saving to plot_output_dir) ---
 
@@ -277,7 +290,7 @@ def generate_plots_for_run(run_dir: str, output_dir: Union[str, None] = None, di
     # <<< MODIFIED: Use plot_output_dir >>>
     plot_path_periodic = os.path.join(plot_output_dir, f"Plot_AccuracyPeriodic_{stream_name}_Run{run_number}.png")
     # <<< END MODIFICATION >>>
-    if periodic_accuracy and chunk_metrics and stream_definition and chunk_size and diff_data:
+    if periodic_accuracy and chunk_metrics and chunk_size:
         plot_periodic_accuracy_with_drift_info(periodic_accuracy, chunk_metrics, stream_definition, chunk_size, diff_data, dataset_type, stream_name, run_number, plot_path_periodic)
     else: logger.warning("Insufficient data for periodic accuracy plot with drift info.")
 

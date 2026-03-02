@@ -11,6 +11,7 @@ from typing import List, Tuple, Dict, Any
 import pandas as pd
 import Levenshtein
 from sklearn.model_selection import train_test_split
+from scipy.spatial.distance import cosine  # FASE 2: Para similaridade de fingerprints
 
 # Importa operadores específicos para o helper _generate_valid_leaf_for_pruning
 from constants import (
@@ -337,3 +338,234 @@ def evaluate_chunk_periodically(
 
 
     return periodic_results
+
+
+# --- FASE 2: FUNÇÕES DE CONCEPT FINGERPRINTING ---
+# Implementado conforme OTIMIZACOES_MEMORY_FASE2.md
+
+def calculate_concept_fingerprint(data: List[Dict], target: List[Any], attributes: List[str]) -> Dict[str, Any]:
+    """
+    Calcula a assinatura estatística (fingerprint) de um conceito baseado nos dados de um chunk.
+
+    A fingerprint captura características estatísticas do conceito que permitem detectar
+    quando o mesmo conceito retorna em chunks futuros.
+
+    Args:
+        data: Lista de instâncias (dicionários) do chunk
+        target: Lista de classes correspondentes
+        attributes: Lista de atributos numéricos para calcular estatísticas
+
+    Returns:
+        Dicionário com a fingerprint contendo:
+        - 'mean': vetor de médias de cada atributo numérico
+        - 'std': vetor de desvios padrão de cada atributo numérico
+        - 'class_distribution': distribuição de classes (vetor de probabilidades)
+        - 'num_instances': número de instâncias no chunk
+    """
+    if not data or not target:
+        logging.warning("calculate_concept_fingerprint: dados vazios, retornando fingerprint vazia")
+        return {
+            'mean': np.array([]),
+            'std': np.array([]),
+            'class_distribution': np.array([]),
+            'num_instances': 0
+        }
+
+    try:
+        # Converte dados para array numpy para estatísticas
+        # Filtra apenas atributos numéricos que existem em todos os exemplos
+        numeric_data = []
+        for instance in data:
+            row = []
+            for attr in attributes:
+                if attr in instance:
+                    val = instance[attr]
+                    # Tenta converter para numérico
+                    if isinstance(val, (int, float)):
+                        row.append(float(val))
+                    else:
+                        # Se não for numérico, usa 0 como default
+                        row.append(0.0)
+                else:
+                    row.append(0.0)
+            numeric_data.append(row)
+
+        data_array = np.array(numeric_data)
+
+        # Calcula médias e desvios padrão
+        mean_vec = np.mean(data_array, axis=0)
+        std_vec = np.std(data_array, axis=0)
+
+        # Calcula distribuição de classes
+        target_array = np.array(target)
+        unique_classes = np.unique(target_array)
+
+        # Cria distribuição normalizada de classes
+        class_counts = np.bincount(target_array.astype(int))
+        class_distribution = class_counts / len(target_array)
+
+        fingerprint = {
+            'mean': mean_vec,
+            'std': std_vec,
+            'class_distribution': class_distribution,
+            'num_instances': len(data)
+        }
+
+        logging.debug(f"Fingerprint calculada: {len(data)} instâncias, {len(unique_classes)} classes")
+        return fingerprint
+
+    except Exception as e:
+        logging.error(f"Erro ao calcular concept fingerprint: {e}")
+        return {
+            'mean': np.array([]),
+            'std': np.array([]),
+            'class_distribution': np.array([]),
+            'num_instances': 0
+        }
+
+
+def fingerprint_similarity(fp1: Dict[str, Any], fp2: Dict[str, Any]) -> float:
+    """
+    Calcula a similaridade entre duas fingerprints de conceito.
+
+    Usa uma combinação ponderada de:
+    - Similaridade de médias (cosine similarity)
+    - Similaridade de distribuição de classes (L1 distance invertida)
+    - Similaridade de desvios padrão (cosine similarity)
+
+    Args:
+        fp1: Primeira fingerprint
+        fp2: Segunda fingerprint
+
+    Returns:
+        Score de similaridade entre 0.0 (completamente diferentes) e 1.0 (idênticos)
+    """
+    try:
+        # Verifica se fingerprints são válidas
+        if (fp1['num_instances'] == 0 or fp2['num_instances'] == 0 or
+            len(fp1['mean']) == 0 or len(fp2['mean']) == 0):
+            return 0.0
+
+        # 1. Similaridade de médias (50% do peso)
+        # Cosine similarity retorna valor entre -1 e 1, convertemos para 0-1
+        mean_sim = 0.0
+        if len(fp1['mean']) > 0 and len(fp2['mean']) > 0:
+            # Evita divisão por zero no cosine
+            if np.all(fp1['mean'] == 0) and np.all(fp2['mean'] == 0):
+                mean_sim = 1.0
+            elif np.all(fp1['mean'] == 0) or np.all(fp2['mean'] == 0):
+                mean_sim = 0.0
+            else:
+                cos_dist = cosine(fp1['mean'], fp2['mean'])
+                # cosine distance é 1 - cosine_similarity, então invertemos
+                mean_sim = 1.0 - cos_dist
+                # Garante que está no range [0, 1]
+                mean_sim = max(0.0, min(1.0, mean_sim))
+
+        # 2. Similaridade de distribuição de classes (30% do peso)
+        # L1 distance normalizada, invertida para virar similaridade
+        class_sim = 0.0
+        if len(fp1['class_distribution']) > 0 and len(fp2['class_distribution']) > 0:
+            # Garante que ambos têm o mesmo tamanho
+            max_len = max(len(fp1['class_distribution']), len(fp2['class_distribution']))
+            cd1 = np.zeros(max_len)
+            cd2 = np.zeros(max_len)
+            cd1[:len(fp1['class_distribution'])] = fp1['class_distribution']
+            cd2[:len(fp2['class_distribution'])] = fp2['class_distribution']
+
+            # L1 distance varia de 0 (idêntico) a 2 (máxima diferença)
+            l1_dist = np.sum(np.abs(cd1 - cd2))
+            # Converte para similaridade (0-1)
+            class_sim = 1.0 - (l1_dist / 2.0)
+            class_sim = max(0.0, min(1.0, class_sim))
+
+        # 3. Similaridade de desvios padrão (20% do peso)
+        std_sim = 0.0
+        if len(fp1['std']) > 0 and len(fp2['std']) > 0:
+            # Evita divisão por zero no cosine
+            if np.all(fp1['std'] == 0) and np.all(fp2['std'] == 0):
+                std_sim = 1.0
+            elif np.all(fp1['std'] == 0) or np.all(fp2['std'] == 0):
+                std_sim = 0.0
+            else:
+                cos_dist = cosine(fp1['std'], fp2['std'])
+                std_sim = 1.0 - cos_dist
+                std_sim = max(0.0, min(1.0, std_sim))
+
+        # Combinação ponderada
+        total_similarity = 0.5 * mean_sim + 0.3 * class_sim + 0.2 * std_sim
+
+        logging.debug(f"Fingerprint similarity: mean={mean_sim:.3f}, class={class_sim:.3f}, std={std_sim:.3f} -> total={total_similarity:.3f}")
+
+        return total_similarity
+
+    except Exception as e:
+        logging.error(f"Erro ao calcular similaridade de fingerprints: {e}")
+        return 0.0
+
+
+def detect_recurring_concept(
+    current_fingerprint: Dict[str, Any],
+    concept_memory: Dict[str, Dict],
+    similarity_threshold: float = 0.85
+) -> Tuple[bool, str]:
+    """
+    Detecta se o conceito atual (representado por sua fingerprint) corresponde a algum
+    conceito já conhecido armazenado na memória.
+
+    Args:
+        current_fingerprint: Fingerprint do chunk atual
+        concept_memory: Dicionário de conceitos conhecidos {concept_id: {'fingerprint': ..., 'memory': ...}}
+        similarity_threshold: Limiar de similaridade para considerar match (default: 0.85)
+
+    Returns:
+        Tupla (is_recurring, concept_id):
+        - is_recurring: True se detectou conceito recorrente
+        - concept_id: ID do conceito que deu match, ou '' se não houve match
+    """
+    if not concept_memory or current_fingerprint['num_instances'] == 0:
+        logging.debug(f"[FASE 2] detect_recurring: memory vazia ou fingerprint inválida")
+        return (False, '')
+
+    best_match_id = ''
+    best_similarity = 0.0
+
+    # Lista para armazenar todas as similaridades para diagnóstico
+    all_similarities = []
+
+    try:
+        # Compara com todos os conceitos conhecidos
+        for concept_id, concept_data in concept_memory.items():
+            known_fingerprint = concept_data.get('fingerprint', {})
+
+            if known_fingerprint.get('num_instances', 0) == 0:
+                continue
+
+            # Calcula similaridade
+            similarity = fingerprint_similarity(current_fingerprint, known_fingerprint)
+            all_similarities.append((concept_id, similarity))
+
+            # Atualiza melhor match
+            if similarity > best_similarity:
+                best_similarity = similarity
+                best_match_id = concept_id
+
+        # NOVO: Log de todas as similaridades calculadas (nível WARNING para diagnóstico)
+        if all_similarities:
+            logging.warning(f"[FASE 2] Similaridades calculadas:")
+            for cid, sim in sorted(all_similarities, key=lambda x: x[1], reverse=True):
+                logging.warning(f"[FASE 2]   {cid}: {sim:.4f}")
+
+        # Verifica se o melhor match supera o threshold
+        if best_similarity >= similarity_threshold:
+            logging.warning(f"[FASE 2] ✓ MATCH: '{best_match_id}' (sim={best_similarity:.4f} >= {similarity_threshold:.2f})")
+            logging.info(f"✓ CONCEITO RECORRENTE DETECTADO: '{best_match_id}' (similaridade: {best_similarity:.3f})")
+            return (True, best_match_id)
+        else:
+            logging.warning(f"[FASE 2] ✗ NO MATCH: melhor '{best_match_id}' (sim={best_similarity:.4f} < {similarity_threshold:.2f})")
+            logging.debug(f"Nenhum match forte encontrado (melhor: {best_match_id} com {best_similarity:.3f})")
+            return (False, '')
+
+    except Exception as e:
+        logging.error(f"[FASE 2] ERRO em detect_recurring_concept: {e}", exc_info=True)
+        return (False, '')

@@ -26,6 +26,16 @@ import hill_climbing_v2  # Hill Climbing Hierárquico v2.0
 from collections import Counter
 
 # ============================================================================
+# DEBUG LAYER 1 - Diagnóstico de Cache e Early Stop
+# ============================================================================
+DEBUG_LAYER1 = True  # Ativar para diagnóstico detalhado
+
+def debug_print(msg):
+    """Helper para debug logging condicional"""
+    if DEBUG_LAYER1:
+        logging.warning(f"[DEBUG L1] {msg}")
+
+# ============================================================================
 # SEEDING ADAPTATIVO (Fase 3): Estimativa de Complexidade
 # ============================================================================
 
@@ -147,6 +157,8 @@ def evaluate_individual_fitness_parallel(worker_args):
         gmean_bonus_coefficient_ga = constant_args['gmean_bonus_coefficient']
         class_coverage_coefficient = constant_args['class_coverage_coefficient']
 
+        # LAYER 1 PARALELO: Extrair early_stop_threshold
+        early_stop_threshold = constant_args.get('early_stop_threshold', None)
 
         metrics = fitness_module.calculate_fitness(
             individual, train_data, train_target,
@@ -159,7 +171,8 @@ def evaluate_individual_fitness_parallel(worker_args):
             reference_features,
             previous_used_features,
             previous_operator_info,
-            reduce_change_penalties
+            reduce_change_penalties,
+            early_stop_threshold=early_stop_threshold  # LAYER 1 PARALELO: Passar threshold
         )
 
         # Extrai os valores para o retorno da função
@@ -514,7 +527,23 @@ def initialize_population(
         logging.info("Estratégia de reset ativada. Usando 'Seeding Multi-Profundidade'.")
 
         # --- SEEDING ADAPTATIVO (Fase 3): Ajusta parâmetros baseado em complexidade ---
-        if enable_adaptive_seeding_config:
+        # PRIORIDADE 1: Seeding forçado para drift detectado (sobrescreve tudo)
+        if drift_severity == 'SEVERE':
+            dt_seeding_ratio_on_init_config = 0.90  # Seeding agressivo 90%
+            dt_rule_injection_ratio_config = 0.95   # Injection agressivo 95%
+            dt_seeding_depths = [4, 7, 10, 13]      # Multiplas profundidades
+            logging.info(f"  -> SEVERE DRIFT DETECTED: Seeding AGRESSIVO ativado (90% seeding, 95% injection)")
+            logging.info(f"     PRIORIDADE MAXIMA - Seeding adaptativo DESABILITADO para este chunk")
+
+        elif drift_severity == 'MODERATE':
+            dt_seeding_ratio_on_init_config = 0.70  # Seeding moderado 70%
+            dt_rule_injection_ratio_config = 0.75   # Injection moderado 75%
+            dt_seeding_depths = [5, 8, 10]          # Profundidades balanceadas
+            logging.info(f"  -> MODERATE DRIFT DETECTED: Seeding MODERADO ativado (70% seeding, 75% injection)")
+            logging.info(f"     PRIORIDADE ALTA - Seeding adaptativo DESABILITADO para este chunk")
+
+        # PRIORIDADE 2: Seeding adaptativo (apenas se drift nao detectado)
+        elif enable_adaptive_seeding_config:
             logging.info("  -> SEEDING ADAPTATIVO ATIVADO: Estimando complexidade do chunk...")
             complexity_level, probe_score, adaptive_profile = estimate_chunk_complexity(train_data, train_target)
 
@@ -522,12 +551,6 @@ def initialize_population(
             dt_seeding_ratio_on_init_config = adaptive_profile['dt_seeding_ratio']
             dt_rule_injection_ratio_config = adaptive_profile['dt_rule_injection_ratio']
             dt_seeding_depths = adaptive_profile['dt_seeding_depths']
-
-            # CORREÇÃO: Aumenta seeding intensivo para 85% em drift SEVERE
-            if drift_severity == 'SEVERE':
-                dt_seeding_ratio_on_init_config = 0.85
-                dt_rule_injection_ratio_config = 0.90
-                logging.info(f"  -> SEVERE DRIFT DETECTED: Seeding INTENSIVO ativado (85% seeding, 90% injection)")
 
             logging.info(f"     Parâmetros adaptativos: seeding_ratio={dt_seeding_ratio_on_init_config}, "
                         f"injection_ratio={dt_rule_injection_ratio_config}, depths={dt_seeding_depths}")
@@ -790,69 +813,325 @@ def run_genetic_algorithm(
     history = {'best_fitness': [], 'avg_fitness': [], 'std_fitness': [], 'best_gmean': [], 'avg_gmean': [], 'std_gmean': [], 'diversity': [], 'avg_rule_activation': []}
     generation = 0
 
+    # OTIMIZAÇÃO FASE 1.1 (CORRIGIDA): Cache de fitness com SHA256
+    # Ganho esperado: -10-20% (elite + duplicatas, se hit rate > 30%)
+
+    # LAYER 1 PARALELO: Inicializar cache compartilhado para modo paralelo
+    from multiprocessing import Manager
+    manager = Manager()
+    shared_cache = manager.dict()  # Cache compartilhado entre workers
+
+    # Manter fitness_cache local para modo serial (compatibilidade)
+    fitness_cache = {}  # {hash_sha256: {'fitness': ..., 'gmean': ..., 'rules_string': ...}}
+    cache_hits_total = 0
+    cache_misses_total = 0
+    cache_collisions_total = 0  # Contador de colisões SHA256 (improvável)
+
+    def hash_individual(individual):
+        """
+        Gera hash único baseado na estrutura completa de regras.
+        USA SHA256 para evitar colisões (vs Python's hash()).
+        """
+        import hashlib
+        rules_string = individual.get_rules_as_string()
+        hash_string = f"{rules_string}|{individual.default_class}"
+        # SHA256 retorna hash seguro de 64 caracteres hexadecimais
+        hash_val = hashlib.sha256(hash_string.encode('utf-8')).hexdigest()
+
+        # DEBUG: Log hash gerado
+        if generation == 1 and len(fitness_cache) < 3:  # Apenas primeiras gerações para não poluir
+            debug_print(f"Hash gerado: {hash_val[:16]}... (rules_len={len(rules_string)})")
+
+        return hash_val
+
     # --- Loop de Gerações ---
     for generation in range(max_generations):
         gen_start_time = time.time()
         fitness_values = []; gmean_values = []
         activation_rates = []
+        # OTIMIZAÇÃO FASE 1.2 (CORRIGIDA): Calcular threshold para early stopping
+        # Usa MEDIANA do top-12 (elite) como baseline, não o pior
+        early_stop_threshold = 0.0
+        if generation > 0 and len(population) >= 12:
+            sorted_pop = sorted(population, key=lambda x: getattr(x, 'gmean', 0.0), reverse=True)
+            # Pegar top 12 (elite)
+            elite_gmeans = [ind.gmean for ind in sorted_pop[:12] if hasattr(ind, 'gmean') and ind.gmean > 0]
+
+            if elite_gmeans:
+                median_elite_gmean = np.median(elite_gmeans)
+                early_stop_threshold = median_elite_gmean
+
+                if early_stop_threshold > 0.1:  # Só usa threshold se for razoável
+                    # Log a cada 10 gerações ou se threshold mudou significativamente
+                    if generation % 10 == 1 or generation <= 2:
+                        logging.warning(f"   [EARLY STOP] Gen {generation+1}: threshold={early_stop_threshold:.3f} (50%={early_stop_threshold*0.50:.3f}, mediana top-12)")
+                else:
+                    if generation <= 2:
+                        logging.warning(f"   [EARLY STOP] Gen {generation+1}: threshold={early_stop_threshold:.3f} BAIXO (<0.1, não usando)")
+
         # Empacota args para worker (já estava correto)
         constant_args_for_worker = {
-            'train_data': train_data, 
+            'train_data': train_data,
             'train_target': train_target,
             'classes': classes,
             'class_coverage_coefficient': class_coverage_coefficient_ga,
             'gmean_bonus_coefficient': gmean_bonus_coefficient_ga,
-            'regularization_coefficient': regularization_coefficient, 
-            'feature_penalty_coefficient': feature_penalty_coefficient, 
-            'reference_features': reference_features, 
-            'beta': beta, 
-            'previous_used_features': previous_used_features, 
-            'gamma': gamma, 
-            'operator_penalty_coefficient': operator_penalty_coefficient, 
-            'threshold_penalty_coefficient': threshold_penalty_coefficient, 
-            'previous_operator_info': previous_operator_info, 
-            'operator_change_coefficient': operator_change_coefficient, 
-            'attributes': attributes, 
+            'regularization_coefficient': regularization_coefficient,
+            'feature_penalty_coefficient': feature_penalty_coefficient,
+            'reference_features': reference_features,
+            'beta': beta,
+            'previous_used_features': previous_used_features,
+            'gamma': gamma,
+            'operator_penalty_coefficient': operator_penalty_coefficient,
+            'threshold_penalty_coefficient': threshold_penalty_coefficient,
+            'previous_operator_info': previous_operator_info,
+            'operator_change_coefficient': operator_change_coefficient,
+            'attributes': attributes,
             'categorical_features': categorical_features,
             'class_weights': class_weights,
             'reduce_change_penalties': reduce_change_penalties_flag,
-            'gmean_bonus_coefficient':gmean_bonus_coefficient_ga
+            'gmean_bonus_coefficient':gmean_bonus_coefficient_ga,
+            'early_stop_threshold': early_stop_threshold,  # OTIMIZAÇÃO FASE 1.2
+            'shared_cache': shared_cache  # LAYER 1 PARALELO: Cache compartilhado
         }
 
         # --- Avaliação (Paralela ou Serial) ---
         if parallel_enabled and workers_to_use > 1 and len(population) > 1: # type: ignore
-            # ... (lógica do pool.map como antes) ...
+            # LAYER 1 PARALELO: Cache e Early Stop no modo paralelo
             logging.debug(f"Gen {generation+1}: Starting parallel fitness evaluation with {workers_to_use} workers.")
-            fitness_score, gmean, activation_rate = 0.0, 0.0, 0.0
-            map_iterable = [(ind, constant_args_for_worker) for ind in population]
-            try:
-                with multiprocessing.Pool(processes=workers_to_use) as pool: results = pool.map(evaluate_individual_fitness_parallel, map_iterable)
-                valid_results = 0
-                for i, individual in enumerate(population):
-                    fitness_score, gmean, activation_rate = results[i]
-                    individual.fitness = fitness_score
-                    fitness_values.append(fitness_score)
-                    individual.gmean = gmean
-                    gmean_values.append(gmean)
-                    activation_rates.append(activation_rate)
-                    if fitness_score > -float('inf'): valid_results += 1
-                if valid_results < len(population): logging.warning(f"Gen {generation+1}: Only {valid_results}/{len(population)} individuals evaluated successfully in parallel.")
-                if valid_results == 0: logging.error(f"Gen {generation+1}: Parallel eval failed for all. Stopping."); break
-            except Exception as pool_e: logging.error(f"Error during parallel fitness eval: {pool_e}", exc_info=True); logging.error("Stopping GA run."); break
+
+            # LAYER 1: Pre-filtrar cache
+            individuals_to_evaluate = []
+            cache_hits = 0
+            cache_misses = 0
+            early_stopped_count = 0
+
+            # DEBUG: Log inicial da geração
+            if generation <= 2:
+                debug_print(f"Gen {generation+1}: Avaliando {len(population)} individuos (cache size={len(shared_cache)})")
+
+            for individual in population:
+                # Verificar cache
+                ind_hash = hash_individual(individual)
+
+                # DEBUG: Log cache lookup (apenas primeiras gerações)
+                if generation <= 2 and cache_hits + cache_misses < 5:
+                    debug_print(f"Gen {generation+1}: Procurando hash {ind_hash[:16]}... no cache")
+
+                cache_hit = False
+                if ind_hash in shared_cache:
+                    cached = shared_cache[ind_hash]
+                    current_rules = individual.get_rules_as_string()
+
+                    if 'rules_string' in cached and cached['rules_string'] == current_rules:
+                        # CACHE HIT
+                        individual.fitness = cached['fitness']
+                        individual.gmean = cached['gmean']
+                        fitness_values.append(cached['fitness'])
+                        gmean_values.append(cached['gmean'])
+                        activation_rates.append(cached['activation_rate'])
+                        cache_hits += 1
+                        cache_hit = True
+
+                        # DEBUG: Log cache hit
+                        if generation <= 2 and cache_hits <= 3:
+                            debug_print(f"Gen {generation+1}: CACHE HIT #{cache_hits} - hash {ind_hash[:16]}...")
+                    else:
+                        # Colisão detectada
+                        logging.warning(f"Gen {generation+1}: Cache collision detected! Hash: {ind_hash[:16]}...")
+                        cache_collisions_total += 1
+
+                if not cache_hit:
+                    # CACHE MISS: adiciona para avaliar
+                    individuals_to_evaluate.append(individual)
+                    cache_misses += 1
+
+                    # DEBUG: Log cache miss
+                    if generation <= 2 and cache_misses <= 3:
+                        debug_print(f"Gen {generation+1}: CACHE MISS #{cache_misses} - avaliando hash {ind_hash[:16]}...")
+
+            # Avaliar indivíduos com cache miss
+            valid_results = 0
+            if individuals_to_evaluate:
+                map_iterable = [(ind, constant_args_for_worker) for ind in individuals_to_evaluate]
+                try:
+                    with multiprocessing.Pool(processes=workers_to_use) as pool:
+                        results = pool.map(evaluate_individual_fitness_parallel, map_iterable)
+
+                    # Processar resultados
+                    for i, individual in enumerate(individuals_to_evaluate):
+                        fitness_score, gmean, activation_rate = results[i]
+                        individual.fitness = fitness_score
+                        individual.gmean = gmean
+                        fitness_values.append(fitness_score)
+                        gmean_values.append(gmean)
+                        activation_rates.append(activation_rate)
+
+                        # Verificar se foi early stopped
+                        if fitness_score == -float('inf') and gmean > 0:
+                            early_stopped_count += 1
+
+                            # DEBUG: Log early stopped
+                            if generation <= 5 and early_stopped_count <= 5:
+                                debug_print(f"Gen {generation+1}: EARLY STOPPED individual #{early_stopped_count} (gmean={gmean:.3f})")
+
+                        # Armazenar no cache
+                        ind_hash = hash_individual(individual)
+                        shared_cache[ind_hash] = {
+                            'fitness': fitness_score,
+                            'gmean': gmean,
+                            'activation_rate': activation_rate,
+                            'rules_string': individual.get_rules_as_string()
+                        }
+
+                        if fitness_score > -float('inf'):
+                            valid_results += 1
+
+                    if valid_results < len(individuals_to_evaluate):
+                        logging.warning(f"Gen {generation+1}: Only {valid_results}/{len(individuals_to_evaluate)} individuals evaluated successfully in parallel.")
+                    if valid_results == 0:
+                        logging.error(f"Gen {generation+1}: Parallel eval failed for all. Stopping.")
+                        break
+                except Exception as pool_e:
+                    logging.error(f"Error during parallel fitness eval: {pool_e}", exc_info=True)
+                    logging.error("Stopping GA run.")
+                    break
+
+            # Atualizar contadores globais
+            cache_hits_total += cache_hits
+            cache_misses_total += cache_misses
+
+            # DEBUG: Resumo da geração
+            if generation <= 3:
+                debug_print(f"Gen {generation+1}: cache_hits={cache_hits}, cache_misses={cache_misses}, early_stopped={early_stopped_count}")
+
+            # Log do cache e early stopping
+            if cache_hits > 0 or cache_misses > 0:
+                hit_rate = (cache_hits / (cache_hits + cache_misses)) * 100 if (cache_hits + cache_misses) > 0 else 0
+                logging.warning(f"   [CACHE] Gen {generation+1}: Hits={cache_hits}/{cache_hits + cache_misses} ({hit_rate:.1f}%)")
+            else:
+                # DEBUG: Por que não teve cache?
+                if generation <= 3:
+                    debug_print(f"Gen {generation+1}: PROBLEMA - Nenhuma operação de cache (hits=0, misses=0)")
+
+            if early_stopped_count > 0:
+                early_stop_pct = (early_stopped_count / len(individuals_to_evaluate)) * 100 if individuals_to_evaluate else 0
+                logging.warning(f"   [EARLY STOP] Gen {generation+1}: Descartados={early_stopped_count}/{len(individuals_to_evaluate)} ({early_stop_pct:.1f}%)")
+            else:
+                # DEBUG: Por que não teve early stop?
+                if generation >= 2 and generation <= 5:
+                    debug_print(f"Gen {generation+1}: Nenhum early stop (threshold pode estar muito alto)")
+
+
         else: # Execução Serial
              # ... (lógica serial como antes) ...
             if generation == 0: logging.info(f"Gen {generation+1}: Running fitness evaluation serially.")
             valid_individuals_count = 0
+            cache_hits = 0
+            cache_misses = 0
+            early_stopped_count = 0  # Contador de indivíduos descartados
+
+            # DEBUG: Log inicial da geração
+            if generation <= 2:
+                debug_print(f"Gen {generation+1}: Avaliando {len(population)} indivíduos (cache size={len(fitness_cache)})")
+
             for individual in population:
-                worker_args = (individual, constant_args_for_worker)
-                fitness_score, gmean, activation_rate = evaluate_individual_fitness_parallel(worker_args)
-                individual.fitness = fitness_score
-                individual.gmean = gmean
-                fitness_values.append(fitness_score)
-                gmean_values.append(gmean)
-                activation_rates.append(activation_rate)
-                if fitness_score > -float('inf'): valid_individuals_count += 1
+                # OTIMIZAÇÃO FASE 1.1: Verifica cache antes de avaliar
+                ind_hash = hash_individual(individual)
+
+                # DEBUG: Log cache lookup (apenas primeiras gerações)
+                if generation <= 2 and cache_hits + cache_misses < 5:
+                    debug_print(f"Gen {generation+1}: Procurando hash {ind_hash[:16]}... no cache")
+
+                # Tentar usar cache
+                cache_hit = False
+                if ind_hash in fitness_cache:
+                    # VALIDAR: Verificar se é realmente o mesmo indivíduo (evitar colisão)
+                    cached = fitness_cache[ind_hash]
+                    current_rules = individual.get_rules_as_string()
+
+                    if 'rules_string' in cached and cached['rules_string'] == current_rules:
+                        # CACHE HIT REAL: Mesmo hash E mesmas regras
+                        individual.fitness = cached['fitness']
+                        individual.gmean = cached['gmean']
+                        fitness_values.append(cached['fitness'])
+                        gmean_values.append(cached['gmean'])
+                        activation_rates.append(cached['activation_rate'])
+                        cache_hits += 1
+                        cache_hit = True
+                        if cached['fitness'] > -float('inf'): valid_individuals_count += 1
+
+                        # DEBUG: Log cache hit
+                        if generation <= 2 and cache_hits <= 3:
+                            debug_print(f"Gen {generation+1}: CACHE HIT #{cache_hits} - hash {ind_hash[:16]}...")
+                    else:
+                        # COLISÃO DETECTADA (improvável com SHA256!)
+                        logging.warning(f"Gen {generation+1}: Cache collision detected! Hash: {ind_hash[:16]}...")
+                        cache_collisions_total += 1
+
+                if not cache_hit:
+                    # CACHE MISS (ou colisão): Avalia e armazena
+                    worker_args = (individual, constant_args_for_worker)
+                    fitness_score, gmean, activation_rate = evaluate_individual_fitness_parallel(worker_args)
+                    individual.fitness = fitness_score
+                    individual.gmean = gmean
+                    fitness_values.append(fitness_score)
+                    gmean_values.append(gmean)
+                    activation_rates.append(activation_rate)
+                    cache_misses += 1
+
+                    # DEBUG: Log cache miss
+                    if generation <= 2 and cache_misses <= 3:
+                        debug_print(f"Gen {generation+1}: CACHE MISS #{cache_misses} - avaliando e armazenando hash {ind_hash[:16]}...")
+
+                    # Verificar se foi early stopped
+                    if fitness_score == -float('inf') and gmean > 0:
+                        early_stopped_count += 1
+
+                        # DEBUG: Log early stopped
+                        if generation <= 5 and early_stopped_count <= 5:
+                            debug_print(f"Gen {generation+1}: EARLY STOPPED individual #{early_stopped_count} (gmean={gmean:.3f})")
+
+                    # Armazena no cache (com rules_string para validação)
+                    fitness_cache[ind_hash] = {
+                        'fitness': fitness_score,
+                        'gmean': gmean,
+                        'activation_rate': activation_rate,
+                        'rules_string': individual.get_rules_as_string()  # Para validação
+                    }
+                    if fitness_score > -float('inf'): valid_individuals_count += 1
+
+            # Atualiza contadores globais
+            cache_hits_total += cache_hits
+            cache_misses_total += cache_misses
+
+            # DEBUG: Resumo da geração
+            if generation <= 3:
+                debug_print(f"Gen {generation+1}: cache_hits={cache_hits}, cache_misses={cache_misses}, early_stopped={early_stopped_count}")
+
+            # Log do cache e early stopping (WARNING para diagnóstico)
+            if cache_hits > 0 or cache_misses > 0:
+                hit_rate = (cache_hits / (cache_hits + cache_misses)) * 100 if (cache_hits + cache_misses) > 0 else 0
+                logging.warning(f"   [CACHE] Gen {generation+1}: Hits={cache_hits}/{cache_hits + cache_misses} ({hit_rate:.1f}%)")
+            else:
+                # DEBUG: Por que não teve cache?
+                if generation <= 3:
+                    debug_print(f"Gen {generation+1}: PROBLEMA - Nenhuma operação de cache (hits=0, misses=0)")
+
+            if early_stopped_count > 0:
+                early_stop_pct = (early_stopped_count / len(population)) * 100
+                logging.warning(f"   [EARLY STOP] Gen {generation+1}: Descartados={early_stopped_count}/{len(population)} ({early_stop_pct:.1f}%)")
+            else:
+                # DEBUG: Por que não teve early stop?
+                if generation >= 2 and generation <= 5:  # Apenas após gen 2 (quando threshold existe)
+                    debug_print(f"Gen {generation+1}: Nenhum early stop (threshold pode estar muito alto)")
+
             if valid_individuals_count == 0: logging.error(f"Gen {generation+1}: Serial evaluation failed for all. Stopping."); break
+
+        # Limpa cache periodicamente para evitar crescimento ilimitado
+        if generation % 10 == 0 and generation > 0:
+            logging.debug(f"Gen {generation+1}: Limpando fitness cache ({len(fitness_cache)} entradas)")
+            fitness_cache.clear()
 
         # --- Métricas, Melhor Global, Parada Antecipada, Adaptação ---
         # ... (código como antes) ...
@@ -972,8 +1251,13 @@ def run_genetic_algorithm(
             tournament_size = get_dynamic_tournament_size(bfg, afg, wfg, min_ts, max_ts)
         else: mutation_rate, tournament_size = 0.1, initial_tournament_size
         #crossover_type = get_dynamic_crossover_type(generation, max_generations)
-        gen_end_time = time.time(); 
+        gen_end_time = time.time();
         log_message = ( f"\rGen {generation + 1}/{max_generations} - BestFit: {best_fitness_gen:.4f} (G-mean: {best_gmean_gen:.3f}) | AvgFit: {avg_fitness:.4f} (G-mean: {avg_gmean:.3f}) | (Diversity: {diversity_score:.3f}) | (RuleAct: {avg_rule_activation:.1f}) | Mut: {mutation_rate:.3f} | Tourn: {tournament_size} | Stagn: {no_improvement_count} | Time: {gen_end_time - gen_start_time:.2f}s" ); print(log_message, end="")
+
+        # LOGGING EXPLICATIVO: Resumo a cada 10 gerações + primeira e últimas 3 gerações
+        if (generation % 10 == 0) or (generation <= 2) or (generation >= max_generations - 3):
+            logging.warning(f"")
+            logging.warning(f"   [GEN {generation+1}] Best: Fit={best_fitness_gen:.4f}, Gmean={best_gmean_gen:.3f} | Avg: Fit={avg_fitness:.4f}, Gmean={avg_gmean:.3f} | Div={diversity_score:.3f} | Stag={no_improvement_count}")
 
         # --- Elitismo Híbrido Unificado: Prioriza G-mean com um nicho para o campeão de Fitness ---
         num_elite_slots = int(elitism_rate * population_size)
@@ -1010,8 +1294,11 @@ def run_genetic_algorithm(
             # <<< PASSO 4: Selecionar os N melhores do pool final para sobreviver >>>
             final_elites = final_candidate_list[:num_elite_slots]
             
-            # Adiciona cópias dos elites à nova população
-            new_population.extend(copy.deepcopy(ind) for ind in final_elites)
+            # OTIMIZAÇÃO FASE 1.4: Usar referências diretas em vez de deep copy para elite
+            # Elite não muda entre gerações, então deep copy é desperdício
+            for elite in final_elites:
+                elite.is_protected = True  # Marca como protegido
+                new_population.append(elite)  # Usa referência direta (sem copy)
             
             # <<< PASSO 5: Logging aprimorado para a nova estratégia >>>
             if final_elites:
@@ -1094,38 +1381,51 @@ def run_genetic_algorithm(
             force_gene_therapy_flag = True # Ativa a terapia para a próxima geração
             effective_mutation_rate = mutation_rate * 2.0
 
-            # --- Hill Climbing Hierárquico v2.0 ---
-            elite_gmean = best_individual_overall.gmean if best_individual_overall else 0.0
+            # OTIMIZAÇÃO FASE 1.3: HC apenas a cada 3 gerações de estagnação (economiza tempo)
+            # Exemplo: estagnação gens 11, 12, 13, 14 → HC apenas em 11, 14, 17...
+            should_apply_hc = ((no_improvement_count - STAGNATION_THRESHOLD) % 3 == 0)
 
-            # Prepara kwargs para HC hierárquico
-            hc_kwargs = {
-                'value_ranges': value_ranges,
-                'max_depth': max_depth,
-                'attributes': attributes,
-                'category_values': category_values,
-                'categorical_features': categorical_features,
-                'classes': classes,
-                'max_rules_per_class': max_rules_per_class,
-                'train_data': train_data,
-                'train_target': train_target
-            }
+            if should_apply_hc:
+                # --- Hill Climbing Hierárquico v2.0 ---
+                elite_gmean = best_individual_overall.gmean if best_individual_overall else 0.0
+                logging.warning(f"")
+                logging.warning(f"   [HC] Aplicando Hill Climbing (estagnação={no_improvement_count}, elite_gmean={elite_gmean:.3f})")
+            else:
+                logging.warning(f"   [HC] PULANDO Hill Climbing (economia tempo, próximo em +{3 - ((no_improvement_count - STAGNATION_THRESHOLD) % 3)} ger)")
+                elite_gmean = None  # Flag para pular HC
 
-            # Chama HC hierárquico
-            hc_variants = hill_climbing_v2.hierarchical_hill_climbing(
-                elite=population[0],
-                population=population,
-                best_ever_memory=best_ever_memory,
-                gmean=elite_gmean,
-                no_improvement_count=no_improvement_count,
-                hc_enable_adaptive=hc_enable_adaptive,
-                hc_gmean_threshold=hc_gmean_threshold,
-                hc_hierarchical_enabled=hc_hierarchical_enabled,
-                **hc_kwargs
-            )
+            # Aplicar HC apenas se should_apply_hc é True
+            hc_variants = []
+            if should_apply_hc and elite_gmean is not None:
+                # Prepara kwargs para HC hierárquico
+                hc_kwargs = {
+                    'value_ranges': value_ranges,
+                    'max_depth': max_depth,
+                    'attributes': attributes,
+                    'category_values': category_values,
+                    'categorical_features': categorical_features,
+                    'classes': classes,
+                    'max_rules_per_class': max_rules_per_class,
+                    'train_data': train_data,
+                    'train_target': train_target
+                }
+
+                # Chama HC hierárquico
+                hc_variants = hill_climbing_v2.hierarchical_hill_climbing(
+                    elite=population[0],
+                    population=population,
+                    best_ever_memory=best_ever_memory,
+                    gmean=elite_gmean,
+                    no_improvement_count=no_improvement_count,
+                    hc_enable_adaptive=hc_enable_adaptive,
+                    hc_gmean_threshold=hc_gmean_threshold,
+                    hc_hierarchical_enabled=hc_hierarchical_enabled,
+                    **hc_kwargs
+                )
 
             # CORREÇÃO 1: Avalia variantes HC ANTES de injetar
             if hc_variants:
-                logging.info(f"     Avaliando {len(hc_variants)} variantes HC geradas...")
+                logging.warning(f"   [HC] Geradas {len(hc_variants)} variantes, avaliando...")
 
                 elite_fitness = population[0].fitness
                 elite_gmean_val = population[0].gmean
@@ -1179,9 +1479,9 @@ def run_genetic_algorithm(
                             f"gmean={hc_variant.gmean:.3f} < {elite_gmean_val-tolerance:.3f} (tolerância)"
                         )
 
-                logging.info(
-                    f"     Resultado: {len(evaluated_variants)}/{len(hc_variants)} variantes aprovadas "
-                    f"({100*len(evaluated_variants)/len(hc_variants):.1f}% taxa de aprovação)"
+                approval_rate = (100*len(evaluated_variants)/len(hc_variants)) if len(hc_variants) > 0 else 0
+                logging.warning(
+                    f"   [HC] Aprovadas: {len(evaluated_variants)}/{len(hc_variants)} variantes ({approval_rate:.1f}%)"
                 )
 
                 # Insere APENAS variantes aprovadas na população
@@ -1197,7 +1497,8 @@ def run_genetic_algorithm(
                         new_population.append(hc_variant)
                         logging.debug(f"       HC variant #{i+1} adicionado ao final da população")
             else:
-                logging.info("     Nenhuma variante HC gerada.")
+                if should_apply_hc:
+                    logging.warning("   [HC] Nenhuma variante gerada (HC retornou vazio)")
 
             # REMOVED: no_improvement_count = 0 # NÃO reseta o contador (permite early stopping funcionar)
 
@@ -1242,6 +1543,18 @@ def run_genetic_algorithm(
     # --- Fim do Loop ---
     # ... (código como antes) ...
     print(); logging.info(f"GA run finished after {generation + 1} generations.")
+
+    # Log cache statistics (FASE 1.1 diagnostics) - WARNING para visibilidade
+    total_cache_ops = cache_hits_total + cache_misses_total
+    if total_cache_ops > 0:
+        cache_hit_rate = (cache_hits_total / total_cache_ops) * 100
+        logging.warning(f"")
+        logging.warning(f"[CACHE FINAL] Hits={cache_hits_total}, Misses={cache_misses_total}, Hit Rate={cache_hit_rate:.1f}%")
+        if cache_collisions_total > 0:
+            logging.warning(f"[CACHE FINAL] SHA256 collisions detected: {cache_collisions_total} (IMPROVÁVEL!)")
+        else:
+            logging.warning(f"[CACHE FINAL] Zero collisions (SHA256 funcionando perfeitamente)")
+
     if best_individual_overall is None and population: logging.warning("Best overall not updated, returning best from final pop."); population.sort(key=lambda ind: ind.fitness, reverse=True); best_individual_overall = copy.deepcopy(population[0])
     elif best_individual_overall is None: logging.error("GA run failed to produce any valid best individual.")
     return best_individual_overall, population, history

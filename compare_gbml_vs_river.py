@@ -33,6 +33,7 @@ from shared_evaluation import (
 )
 from baseline_river import create_river_model, run_river_baselines
 from gbml_evaluator import create_gbml_from_config
+from baseline_acdwm import ACDWMEvaluator
 
 # Configuração de logging
 logging.basicConfig(
@@ -57,6 +58,8 @@ def run_full_comparison(
     output_dir: str = 'comparison_results',
     run_gbml: bool = True,
     run_river: bool = True,
+    run_acdwm: bool = False,
+    acdwm_path: str = 'ACDWM',
     force_regenerate: bool = False
 ) -> Dict:
     """
@@ -72,6 +75,8 @@ def run_full_comparison(
         output_dir: Diretório para salvar resultados
         run_gbml: Se True, executa GBML
         run_river: Se True, executa River
+        run_acdwm: Se True, executa ACDWM
+        acdwm_path: Caminho para o repositório ACDWM
         force_regenerate: Se True, força regeneração de chunks
 
     Returns:
@@ -192,6 +197,68 @@ def run_full_comparison(
         logger.info("\n[3/5] GBML desabilitado (run_gbml=False)")
 
     # ========================================================================
+    # PASSO 3.5: EXECUTAR ACDWM (SE SOLICITADO)
+    # ========================================================================
+    acdwm_results = None
+
+    if run_acdwm:
+        logger.info("\n[3.5/5] Executando ACDWM...")
+
+        try:
+            # Prepara chunks no formato train-then-test
+            chunks_train_test = []
+            for i in range(len(chunks) - 1):
+                X_train, y_train = chunks[i]
+                X_test, y_test = chunks[i + 1]
+                chunks_train_test.append((X_train, y_train, X_test, y_test))
+
+            # Cria evaluator ACDWM
+            acdwm_evaluator = ACDWMEvaluator(
+                acdwm_path=acdwm_path,
+                classes=classes,
+                evaluation_mode='train-then-test',
+                theta=0.001
+            )
+
+            # Executa avaliação
+            acdwm_chunk_results = acdwm_evaluator.evaluate_train_then_test(chunks_train_test)
+
+            # Converte para DataFrame no mesmo formato de GBML/River
+            acdwm_data = []
+            for i, result in enumerate(acdwm_chunk_results):
+                row = {
+                    'train_chunk': i,
+                    'test_chunk': i + 1,
+                    'chunk': i + 1,
+                    'model': 'ACDWM',
+                    'accuracy': result['accuracy'],
+                    'f1_weighted': result['f1_weighted'],
+                    'f1_macro': result.get('f1_macro', result['f1_weighted']),
+                    'gmean': result['gmean'],
+                    'model_type': 'ACDWM',
+                    'n_rules': None,
+                    'n_nodes': None,
+                    'n_features_used': None,
+                    'memory_size': None,
+                    'n_models': result['train_info'].get('ensemble_size', None)
+                }
+                acdwm_data.append(row)
+
+            acdwm_results = pd.DataFrame(acdwm_data)
+
+            # Salva resultados
+            acdwm_path_csv = os.path.join(experiment_dir, 'acdwm_results.csv')
+            acdwm_results.to_csv(acdwm_path_csv, index=False)
+            logger.info(f"✓ Resultados ACDWM salvos em: {acdwm_path_csv}")
+
+        except Exception as e:
+            logger.error(f"✗ Erro ao executar ACDWM: {e}", exc_info=True)
+            acdwm_results = None
+
+    else:
+        logger.info("\n[3.5/5] ACDWM desabilitado (run_acdwm=False)")
+
+    # ========================================================================
     # PASSO 4: EXECUTAR RIVER (SE SOLICITADO)
     # ========================================================================
     river_results = {}
@@ -229,6 +296,9 @@ def run_full_comparison(
 
         if gbml_results is not None:
             all_results.append(gbml_results)
+
+        if acdwm_results is not None:
+            all_results.append(acdwm_results)
 
         for model_name, df in river_results.items():
             if df is not None:
@@ -269,6 +339,7 @@ def run_full_comparison(
 
     return {
         'gbml_results': gbml_results,
+        'acdwm_results': acdwm_results,
         'river_results': river_results,
         'experiment_dir': experiment_dir,
         'stream_name': stream_name,
@@ -374,6 +445,10 @@ if __name__ == "__main__":
                        help='Não executar GBML')
     parser.add_argument('--no-river', action='store_true',
                        help='Não executar River')
+    parser.add_argument('--acdwm', action='store_true',
+                       help='Incluir ACDWM na comparação')
+    parser.add_argument('--acdwm-path', type=str, default='ACDWM',
+                       help='Caminho para o repositório ACDWM')
     parser.add_argument('--force', action='store_true',
                        help='Forçar regeneração de chunks')
 
@@ -399,6 +474,8 @@ if __name__ == "__main__":
         output_dir=args.output,
         run_gbml=not args.no_gbml,
         run_river=not args.no_river,
+        run_acdwm=args.acdwm,
+        acdwm_path=args.acdwm_path,
         force_regenerate=args.force
     )
 

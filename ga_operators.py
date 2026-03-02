@@ -182,6 +182,14 @@ def crossover(
     Orquestrador do Crossover Adaptativo.
     Verifica a "maturidade" dos pais e escolhe o modo de operação apropriado.
     """
+    # OTIMIZAÇÃO FASE 1.4: Copiar pai se ele for protegido (elite)
+    if getattr(parent1, 'is_protected', False):
+        parent1 = copy.deepcopy(parent1)
+        parent1.is_protected = False
+    if getattr(parent2, 'is_protected', False):
+        parent2 = copy.deepcopy(parent2)
+        parent2.is_protected = False
+
     child = Individual(max_rules_per_class, max_depth, attributes, value_ranges,
                        category_values, categorical_features, classes)
     

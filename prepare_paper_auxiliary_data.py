@@ -740,7 +740,11 @@ def section_7_complexity(df_rules, out):
 
     # Average per config (across all chunks and datasets)
     out.append("### Overall Complexity per Config\n")
-    out.append("| Config | Avg Rules | Avg Cond/Rule | Avg AND/chunk | Avg OR/chunk | Avg Total Cond/chunk | N chunks |")
+    out.append("**Note**: 'N chunk records' counts the number of per-chunk RulesHistory entries available.")
+    out.append("For 4 datasets (AGRAWAL_Stationary, RBF_Gradual_Severe_Noise, SEA_Gradual_Simple_Fast,")
+    out.append("WAVEFORM_Abrupt_Simple), some configs have fewer records than expected due to incomplete")
+    out.append("RulesHistory logging (I/O interruption). Avg values remain correct for recorded chunks.\n")
+    out.append("| Config | Avg Rules | Avg Cond/Rule | Avg AND/chunk | Avg OR/chunk | Avg Total Cond/chunk | N chunk records |")
     out.append("|---|---|---|---|---|---|---|")
 
     for cfg in EGIS_CONFIGS:

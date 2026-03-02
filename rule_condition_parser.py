@@ -5,7 +5,7 @@ sys.setrecursionlimit(5000)
 from pyparsing import (
     Word, nums, alphas, alphanums, oneOf, opAssoc, infixNotation, Forward,
     Literal, Group, Suppress, ParseException, ParserElement, srange, ParseResults,
-    pyparsing_common
+    pyparsing_common, Regex, Optional, Combine
 )
 
 
@@ -20,11 +20,18 @@ attribute_named_part = Word(alphas + "_", alphanums + "_")
 attribute_numeric_part = Word(nums)
 attribute = (attribute_named_part | attribute_numeric_part).setName("attribute")
 
-raw_number = pyparsing_common.number
-def ensure_float_action(tokens):
-    try: return float(tokens[0])
-    except Exception as e: raise ParseException(f"Invalid numeric value for ensure_float: {tokens[0]} - {e}")
-numeric_value = raw_number.copy().setParseAction(ensure_float_action).setName("numeric_value")
+# Support for special float values (-inf, inf, nan) and signed numbers
+_special_float = (
+    Literal("-inf").setParseAction(lambda: float('-inf')) |
+    Literal("inf").setParseAction(lambda: float('inf')) |
+    Literal("nan").setParseAction(lambda: float('nan'))
+)
+
+# Regex for signed numbers: optional sign followed by digits with optional decimal
+_signed_number = Regex(r'[+-]?(\d+\.?\d*|\.\d+)([eE][+-]?\d+)?')
+_signed_number.setParseAction(lambda t: float(t[0]))
+
+numeric_value = (_special_float | _signed_number).setName("numeric_value")
 
 comparison_operator = oneOf("<= >= < > == !=").setName("comparison_operator")
 atomic_condition = Group(attribute + comparison_operator + numeric_value).setName("atomic_condition")
@@ -174,6 +181,14 @@ if __name__ == "__main__":
         "((attrA > 1 AND attrB < 2) OR (attrC == 3.0))",
         "(attrA > 1 AND (attrB < 2 OR attrC == 3.0))"
     ]
+    # Tests for negative numbers and special floats
+    test_conditions.extend([
+        "(age < -inf)",                  # -inf support
+        "(attr > inf)",                  # inf support
+        "(x <= -1.5)",                   # negative number
+        "((0 <= -3.2) AND (1 > 2.5))",  # negative in expression
+        "(x > -1.5e2)",                  # negative scientific notation
+    ])
     # Adicionar erros no final
     test_conditions.extend([
         "(car > 1.A408)",

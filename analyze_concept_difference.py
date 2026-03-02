@@ -211,7 +211,7 @@ CONCEPT_FUNCTIONS: Dict[str, Callable] = {
     "WAVEFORM": get_waveform_label,
 }
 
-def load_config(config_path: str = 'config.yaml') -> Dict:
+def load_config(config_path: str = 'config_test_single.yaml') -> Dict:
     if not os.path.exists(config_path): raise FileNotFoundError(f"Config file not found: {config_path}")
     with open(config_path, 'r') as f: config = yaml.safe_load(f)
     if 'drift_analysis' not in config: raise KeyError("'drift_analysis' section not found.")
@@ -295,7 +295,7 @@ def convert_results_for_json(results_dict: Dict) -> Dict:
             serializable_results[dataset_name] = serializable_data
     return serializable_results
 
-def main(config_path: str = 'config.yaml'):
+def main(config_path: str = 'config_test_single.yaml'):
     """Função principal refatorada para analisar apenas datasets configurados para isso."""
     config = load_config(config_path)
     n_samples = config.get('severity_samples', 10000)

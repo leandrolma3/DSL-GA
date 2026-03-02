@@ -85,6 +85,53 @@ def load_config(config_path="config.yaml"):
 # logging.basicConfig(level=log_level, format='%(asctime)s [%(levelname)-8s] %(module)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 
 # --- Funções Auxiliares ---
+
+def load_chunks_from_csv(chunks_dir: str) -> List[Tuple[List[Dict], List]]:
+    """
+    Carrega chunks de arquivos CSV pre-gerados.
+
+    Args:
+        chunks_dir: Diretorio contendo os arquivos chunk_*.csv
+
+    Returns:
+        Lista de tuples (X_chunk, y_chunk) no formato River
+    """
+    from pathlib import Path
+    import glob
+
+    chunks_path = Path(chunks_dir)
+    if not chunks_path.exists():
+        raise FileNotFoundError(f"Chunks directory not found: {chunks_dir}")
+
+    # Encontrar todos os arquivos chunk_*.csv ordenados pelo numero
+    csv_files = sorted(
+        chunks_path.glob("chunk_*.csv"),
+        key=lambda x: int(x.stem.split('_')[1])
+    )
+
+    if not csv_files:
+        raise FileNotFoundError(f"No chunk_*.csv files found in: {chunks_dir}")
+
+    chunks = []
+    for csv_file in csv_files:
+        df = pd.read_csv(csv_file)
+
+        # Identificar coluna target
+        target_col = 'target' if 'target' in df.columns else df.columns[-1]
+
+        # Separar features e labels
+        X_df = df.drop(columns=[target_col])
+        y_list = df[target_col].tolist()
+
+        # Converter para formato River (list of dicts)
+        X_list = X_df.to_dict('records')
+
+        chunks.append((X_list, y_list))
+
+    logging.info(f"Loaded {len(chunks)} chunks from {chunks_dir}")
+    return chunks
+
+
 def print_individual_rules_summary(individual):
     if individual is None:
         return "Individual is None.\n"
@@ -268,7 +315,8 @@ def run_experiment(
     run_number: int,
     config: Dict,
     base_results_dir: str,
-    is_drift_simulation: bool # <<< Novo parâmetro flag >>>
+    is_drift_simulation: bool, # <<< Novo parâmetro flag >>>
+    config_file_path: str = 'config.yaml' # <<< ADICIONADO: Path do arquivo de config >>>
     ) -> Union[Dict, None]: # Ou Dict | None para Python 3.10+
     """
     Runs a single full experiment for a given stream definition,
@@ -341,6 +389,9 @@ def run_experiment(
     concept_diff_data = None
     diff_file_path = config.get('drift_analysis', {}).get('heatmap_save_directory', 'results/concept_heatmaps')
     diff_file_path = os.path.join(diff_file_path, "concept_differences.json") # Assuming this is where it's saved by analyze_concept_difference.py
+    # Make path absolute relative to script directory to handle execution from different locations
+    if not os.path.isabs(diff_file_path):
+        diff_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), diff_file_path)
     if os.path.exists(diff_file_path):
         try:
             with open(diff_file_path, 'r') as f_diff:
@@ -353,35 +404,64 @@ def run_experiment(
         logger.warning(f"Concept difference data file not found at {diff_file_path}. Penalty reduction based on drift severity might be affected.")
 
 
+    # <<< SUPORTE A CHUNKS PRE-GERADOS >>>
+    use_pregenerated = exp_s.get('use_pregenerated_chunks', False)
+    pregenerated_base_dir = exp_s.get('pregenerated_chunks_base_dir', None)
+
     if is_drift_simulation:
-        stream_definition = data_handling.get_stream_definition(experiment_id, config)
-        if not stream_definition:
-            logger.error(f"Could not retrieve stream definition for '{experiment_id}'. Stopping run.")
-            return None
-        dataset_type = stream_definition.get('dataset_type')
-        if not dataset_type:
-             logger.error(f"Stream definition for '{experiment_id}' missing 'dataset_type'. Stopping run.")
-             return None
-        logger.info(f"Drift Simulation Mode - Base Type: {dataset_type}")
+        if use_pregenerated and pregenerated_base_dir:
+            # Para chunks pre-gerados, inferir dataset_type do experiment_id
+            # Ex: "SEA_Abrupt_Simple" -> "SEA", "AGRAWAL_Abrupt_Chain_Long" -> "AGRAWAL"
+            # Datasets reais: "Electricity", "Shuttle", etc. permanecem como estao
+            known_real_datasets = ['Electricity', 'Shuttle', 'CovType', 'PokerHand', 'IntelLabSensors',
+                                   'AssetNegotiation_F2', 'AssetNegotiation_F3', 'AssetNegotiation_F4']
+            if experiment_id in known_real_datasets or experiment_id.startswith('AssetNegotiation'):
+                dataset_type = experiment_id
+            else:
+                # Extrair tipo base (parte antes do primeiro underscore)
+                dataset_type = experiment_id.split('_')[0]
+            logger.info(f"Pre-generated Chunks Mode - Inferred Base Type: {dataset_type}")
+        else:
+            stream_definition = data_handling.get_stream_definition(experiment_id, config)
+            if not stream_definition:
+                logger.error(f"Could not retrieve stream definition for '{experiment_id}'. Stopping run.")
+                return None
+            dataset_type = stream_definition.get('dataset_type')
+            if not dataset_type:
+                 logger.error(f"Stream definition for '{experiment_id}' missing 'dataset_type'. Stopping run.")
+                 return None
+            logger.info(f"Drift Simulation Mode - Base Type: {dataset_type}")
     else:
         # No modo padrão, o experiment_id É o tipo de dataset
         dataset_type = experiment_id
         logger.info(f"Standard Mode - Dataset Type: {dataset_type}")
 
-    try:
-        # <<< MODIFIED: Pass stream_name to the updated data handling function >>>
-        chunks = data_handling.generate_dataset_chunks(
-            stream_or_dataset_name=experiment_id, # Passa o ID
-            chunk_size=chunk_size,
-            num_chunks=num_chunks,
-            max_instances=max_instances,
-            run_number=run_number,
-            results_dir=run_results_dir,
-            config_path=config.get('config_path', 'config.yaml') # Pass config path if needed
-        )
-    except Exception as e:
-        logger.error(f"Failed data generation for '{experiment_id}': {e}", exc_info=True)
-        return None
+    if use_pregenerated and pregenerated_base_dir:
+        # Carregar chunks de arquivos CSV pre-gerados
+        chunks_dir = os.path.join(pregenerated_base_dir, experiment_id)
+        logger.info(f"Loading pre-generated chunks from: {chunks_dir}")
+        try:
+            chunks = load_chunks_from_csv(chunks_dir)
+            logger.info(f"Loaded {len(chunks)} pre-generated chunks successfully")
+        except Exception as e:
+            logger.error(f"Failed to load pre-generated chunks for '{experiment_id}': {e}", exc_info=True)
+            return None
+    else:
+        # Gerar chunks dinamicamente (comportamento original)
+        try:
+            # <<< MODIFIED: Pass stream_name to the updated data handling function >>>
+            chunks = data_handling.generate_dataset_chunks(
+                stream_or_dataset_name=experiment_id, # Passa o ID
+                chunk_size=chunk_size,
+                num_chunks=num_chunks,
+                max_instances=max_instances,
+                run_number=run_number,
+                results_dir=run_results_dir,
+                config_path=config_file_path # <<< FIX: Usa o caminho real do arquivo de config >>>
+            )
+        except Exception as e:
+            logger.error(f"Failed data generation for '{experiment_id}': {e}", exc_info=True)
+            return None
     if not chunks or len(chunks) < 2:
         logger.error(f"Insufficient chunks for '{experiment_id}'.")
         return None
@@ -487,10 +567,104 @@ def run_experiment(
     current_max_depth = int(ga_p.get('initial_max_depth', 4)) # Add try-except if needed
     current_reg_coeff = float(fit_p.get('initial_regularization_coefficient', 0.001)) # Add try-except if needed
 
+    # FASE 2: MEMORY RECORRENTE - Estrutura para armazenar memória por conceito
+    # concept_memory = {
+    #     'c1': {'fingerprint': {...}, 'memory': [ind1, ind2, ...], 'last_seen_chunk': 0},
+    #     'c2': {'fingerprint': {...}, 'memory': [ind3, ind4, ...], 'last_seen_chunk': 3},
+    # }
+    concept_memory = {}
+    current_concept_id = None  # ID do conceito atual (detectado ou novo)
+
     # --- Process Chunks Sequentially ---
     num_chunks_to_process = len(chunks) - 1
-    for i in range(num_chunks_to_process):
+
+    # --- RESUME CHECKPOINT LOGIC ---
+    resume_enabled = config.get('experiment_settings', {}).get('resume_from_checkpoint', False)
+    start_chunk = 0
+
+    if resume_enabled:
+        chunk_data_dir = os.path.join(run_results_dir, "chunk_data")
+        partial_metrics_path = os.path.join(run_results_dir, "chunk_metrics_partial.json")
+
+        # Verificar se há checkpoints existentes
+        if os.path.exists(chunk_data_dir):
+            try:
+                existing_checkpoints = [f for f in os.listdir(chunk_data_dir)
+                                       if f.startswith('best_individual_trained_on_chunk_')
+                                       and f.endswith('.pkl')]
+
+                if existing_checkpoints:
+                    # Extrair números dos chunks processados
+                    chunk_nums = sorted([int(f.split('_')[-1].replace('.pkl', ''))
+                                        for f in existing_checkpoints])
+                    last_completed_chunk = max(chunk_nums)
+                    start_chunk = last_completed_chunk + 1
+
+                    if start_chunk >= num_chunks_to_process:
+                        logger.warning(f"[RESUME] All {num_chunks_to_process} chunks already processed for {experiment_id}.")
+                        logger.warning(f"[RESUME] Will proceed to final save phase.")
+                    else:
+                        logger.warning(f"[RESUME] Detected {len(chunk_nums)} chunks already processed")
+                        logger.warning(f"[RESUME] Last completed: chunk {last_completed_chunk}")
+                        logger.warning(f"[RESUME] Resuming from: chunk {start_chunk}")
+
+                    # Carregar último indivíduo para seeding
+                    last_ind_path = os.path.join(chunk_data_dir,
+                                                 f"best_individual_trained_on_chunk_{last_completed_chunk}.pkl")
+                    try:
+                        with open(last_ind_path, 'rb') as f_ckpt:
+                            best_ind_prev_chunk = pickle.load(f_ckpt)
+                        logger.info(f"[RESUME] Loaded checkpoint individual from chunk {last_completed_chunk}")
+                    except Exception as e_load:
+                        logger.warning(f"[RESUME] Could not load checkpoint individual: {e_load}. Starting fresh.")
+                        start_chunk = 0
+                        best_ind_prev_chunk = None
+
+                    # Carregar métricas parciais (se existirem)
+                    if os.path.exists(partial_metrics_path) and start_chunk > 0:
+                        try:
+                            with open(partial_metrics_path, 'r') as f_pm:
+                                loaded_metrics = json.load(f_pm)
+                            all_performance_metrics = loaded_metrics
+                            historical_gmean = [m.get('test_gmean', 0.0) for m in loaded_metrics]
+                            # Também carregar best_individuals_history dos arquivos pkl
+                            for ck_num in chunk_nums:
+                                ck_path = os.path.join(chunk_data_dir, f"best_individual_trained_on_chunk_{ck_num}.pkl")
+                                try:
+                                    with open(ck_path, 'rb') as f_ind:
+                                        ind = pickle.load(f_ind)
+                                    best_individuals_history.append(ind)
+                                except:
+                                    best_individuals_history.append(None)
+                            logger.info(f"[RESUME] Loaded {len(loaded_metrics)} partial metrics")
+                            logger.info(f"[RESUME] Loaded {len(best_individuals_history)} individuals from checkpoints")
+                        except Exception as e_pm:
+                            logger.warning(f"[RESUME] Could not load partial metrics: {e_pm}. Metrics will be incomplete.")
+            except Exception as e_resume:
+                logger.warning(f"[RESUME] Error during checkpoint detection: {e_resume}. Starting fresh.")
+                start_chunk = 0
+    # --- END RESUME CHECKPOINT LOGIC ---
+
+    # LOGGING: Timestamp início do experimento
+    experiment_start_time = time.time()
+    logger.warning(f"")
+    logger.warning(f"{'#'*70}")
+    logger.warning(f"EXPERIMENTO INICIADO")
+    logger.warning(f"{'#'*70}")
+    logger.warning(f"Timestamp: {time.strftime('%Y-%m-%d %H:%M:%S')}")
+    logger.warning(f"Total de chunks a processar: {num_chunks_to_process}")
+    if start_chunk > 0:
+        logger.warning(f"[RESUME] Iniciando do chunk: {start_chunk} (chunks 0-{start_chunk-1} já processados)")
+    logger.warning(f"")
+
+    for i in range(start_chunk, num_chunks_to_process):
         chunk_start_time = time.time()
+        logger.warning(f"")
+        logger.warning(f"{'='*70}")
+        logger.warning(f"CHUNK {i} - INÍCIO")
+        logger.warning(f"{'='*70}")
+        logger.warning(f"Timestamp: {time.strftime('%Y-%m-%d %H:%M:%S')}")
+        logger.warning(f"Train: Chunk {i} | Test: Chunk {i+1}")
         logging.info(f"===== Processing Chunk {i} (Train) / Chunk {i+1} (Test) =====")
         train_data_chunk, train_target_chunk = chunks[i]
         test_data_chunk, test_target_chunk = chunks[i + 1]
@@ -537,6 +711,129 @@ def run_experiment(
 
         logging.debug(f"Value Ranges (Chunk {i}): {value_ranges}")
         logging.debug(f"Category Values (Chunk {i}): {category_values}")
+
+        # FASE 2: Calcular fingerprint do chunk atual e detectar conceito recorrente
+        logger.warning(f"")
+        logger.warning(f"[FASE 2] Chunk {i} - Calculando concept fingerprint...")
+        try:
+            chunk_fingerprint = utils.calculate_concept_fingerprint(
+                data=train_data_chunk,
+                target=train_target_chunk,
+                attributes=numeric_features  # Usa apenas features numéricas para estatísticas
+            )
+            logger.warning(f"[FASE 2]   ✓ Fingerprint calculada: {chunk_fingerprint['num_instances']} instâncias")
+            logger.warning(f"[FASE 2]   - Mean shape: {chunk_fingerprint['mean'].shape}")
+            logger.warning(f"[FASE 2]   - Std shape: {chunk_fingerprint['std'].shape}")
+            logger.warning(f"[FASE 2]   - Class distribution shape: {chunk_fingerprint['class_distribution'].shape}")
+        except Exception as e:
+            logger.error(f"[FASE 2]   ✗ ERRO ao calcular fingerprint: {e}", exc_info=True)
+            # Fallback: cria fingerprint vazia para não quebrar execução
+            chunk_fingerprint = {'mean': np.array([]), 'std': np.array([]), 'class_distribution': np.array([]), 'num_instances': 0}
+
+        # Detectar se é um conceito recorrente
+        mem_p = config.get('memory_params', {})
+        fingerprint_threshold = mem_p.get('concept_fingerprint_similarity_threshold', 0.85)
+
+        logger.warning(f"[FASE 2] Chunk {i} - Detectando conceito recorrente...")
+        logger.warning(f"[FASE 2]   Conceitos conhecidos: {list(concept_memory.keys())}")
+        logger.warning(f"[FASE 2]   Threshold similaridade: {fingerprint_threshold:.2f}")
+
+        try:
+            is_recurring, matched_concept_id = utils.detect_recurring_concept(
+                current_fingerprint=chunk_fingerprint,
+                concept_memory=concept_memory,
+                similarity_threshold=fingerprint_threshold
+            )
+        except Exception as e:
+            logger.error(f"[FASE 2]   ✗ ERRO ao detectar recorrência: {e}", exc_info=True)
+            is_recurring = False
+            matched_concept_id = None
+
+        # Atualizar current_concept_id
+        if is_recurring:
+            # Conceito recorrente detectado - usar o ID do conceito conhecido
+            current_concept_id = matched_concept_id
+            logger.warning(f"[FASE 2]   ✓ CONCEITO RECORRENTE: '{current_concept_id}'")
+            logging.info(f"📌 Chunk {i}: RECUPERANDO memória do conceito '{current_concept_id}' (recorrente)")
+
+            # VALIDACAO CRUZADA: Testar se o match e realmente valido
+            # Carregar memoria do conceito para validacao
+            match_validation_passed = True  # Assume valido por padrao
+
+            if current_concept_id in concept_memory:
+                stored_memory = concept_memory[current_concept_id].get('memory', [])
+
+                # Se tem memoria E tem test data, fazer validacao
+                if stored_memory and test_data_chunk:
+                    logger.warning(f"[FASE 2] Validando match com amostra do test set...")
+
+                    try:
+                        # Usar primeiros 20% do test set para validacao
+                        validation_sample_size = max(1, len(test_data_chunk) // 5)
+                        validation_data = test_data_chunk[:validation_sample_size]
+                        validation_target = test_target_chunk[:validation_sample_size]
+
+                        # Pegar melhor individuo da memoria
+                        best_memory_individual = max(stored_memory, key=lambda ind: getattr(ind, 'gmean', 0.0))
+
+                        # Avaliar no validation set
+                        predictions = [best_memory_individual._predict(inst) for inst in validation_data]
+
+                        # Calcular G-mean de validacao
+                        from sklearn.metrics import confusion_matrix
+
+                        cm = confusion_matrix(validation_target, predictions, labels=classes)
+                        recalls = []
+                        for cls_idx in range(len(classes)):
+                            tp = cm[cls_idx, cls_idx]
+                            fn = cm[cls_idx, :].sum() - tp
+                            recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+                            recalls.append(recall)
+
+                        validation_gmean = float(np.prod(recalls) ** (1.0 / len(recalls)))
+
+                        logger.warning(f"[FASE 2]   Validation G-mean: {validation_gmean:.4f}")
+
+                        # Rejeitar match se validacao ruim (< 0.70)
+                        if validation_gmean < 0.70:
+                            match_validation_passed = False
+                            logger.warning(f"[FASE 2]   ✗ MATCH REJEITADO: validation G-mean {validation_gmean:.4f} < 0.70")
+                            logger.warning(f"[FASE 2]   → Tratando como NOVO CONCEITO")
+                            is_recurring = False  # Forcar tratamento como novo conceito
+                        else:
+                            logger.warning(f"[FASE 2]   ✓ MATCH VALIDADO: validation G-mean {validation_gmean:.4f} >= 0.70")
+
+                    except Exception as val_e:
+                        logger.warning(f"[FASE 2]   ⚠ Erro na validacao: {val_e}")
+                        logger.warning(f"[FASE 2]   → Mantendo match (validacao falhou, assumindo valido)")
+
+            # Restaurar best_ever_memory do conceito recorrente (apenas se match validado)
+            if is_recurring and match_validation_passed:
+                logger.warning(f"[FASE 2] Chunk {i} - Restaurando memória de '{current_concept_id}'")
+                if current_concept_id in concept_memory:
+                    stored_memory = concept_memory[current_concept_id].get('memory', [])
+                    logger.warning(f"[FASE 2]   → {len(stored_memory)} indivíduos disponíveis na memória")
+                    if stored_memory:
+                        best_ever_memory = [copy.deepcopy(ind) for ind in stored_memory]
+                        logger.warning(f"[FASE 2]   ✓ {len(best_ever_memory)} indivíduos restaurados com sucesso")
+                        logging.info(f"   → {len(best_ever_memory)} indivíduos restaurados da memória do conceito '{current_concept_id}'")
+                    else:
+                        logger.warning(f"[FASE 2]   ⚠ Memória vazia para conceito '{current_concept_id}'")
+        else:
+            # Novo conceito - criar ID único
+            current_concept_id = f"concept_{i}"
+            logger.warning(f"[FASE 2]   ✓ NOVO CONCEITO: '{current_concept_id}'")
+            logging.info(f"🆕 Chunk {i}: NOVO conceito detectado (ID: '{current_concept_id}')")
+
+            # Inicializar entrada na concept_memory
+            logger.warning(f"[FASE 2] Chunk {i} - Criando entrada para novo conceito '{current_concept_id}'")
+            concept_memory[current_concept_id] = {
+                'fingerprint': chunk_fingerprint,
+                'memory': [],
+                'last_seen_chunk': i
+            }
+            logger.warning(f"[FASE 2]   ✓ Conceito '{current_concept_id}' inicializado")
+
         # for attr in numeric_features:
         #     min_val, max_val = 0, 0
         #     try:
@@ -630,12 +927,22 @@ def run_experiment(
             else:
                 logger.info(f"Concept transition (severity: {drift_severity_numeric:.2%}) below threshold. Penalties normal for train chunk {i}.") # [main.py]
 
-        # Classificar severidade do drift para ajustes adicionais
+        # Classificar severidade do drift para ajustes adicionais e GA
         is_severe_drift = False
-        if drift_transition_detected and drift_severity_numeric >= 0.25:
-            is_severe_drift = True
-            logger.warning(f"SEVERE DRIFT detected (severity: {drift_severity_numeric:.2%}) for chunk {i}. Activating severe drift countermeasures.")
-        
+        drift_severity = 'STABLE'  # Default
+
+        if drift_transition_detected:
+            if drift_severity_numeric >= 0.25:
+                is_severe_drift = True
+                drift_severity = 'SEVERE'
+                logger.warning(f"SEVERE DRIFT detected (severity: {drift_severity_numeric:.2%}) for chunk {i}. Activating severe drift countermeasures.")
+            elif drift_severity_numeric >= 0.10:
+                drift_severity = 'MODERATE'
+                logger.info(f"MODERATE DRIFT detected (severity: {drift_severity_numeric:.2%}) for chunk {i}.")
+            elif drift_severity_numeric > 0.0:
+                drift_severity = 'MILD'
+                logger.info(f"MILD DRIFT detected (severity: {drift_severity_numeric:.2%}) for chunk {i}.")
+
         # Combinar com performance_label para ambos os modos (como antes)
         if performance_label == 'bad': # [main.py]
             if not reduce_change_penalties_flag: # Evitar log duplo
@@ -658,10 +965,11 @@ def run_experiment(
         # 2. Performance label == 'bad' (ambos os modos)
 
         if reduce_change_penalties_flag: # Se esta flag estiver True, indica necessidade de mais esforço
-            # PRIORIDADE 1: Drift severo → dobrar gerações
+            # PRIORIDADE 1: Drift severo → manter gerações padrão (NÃO dobrar para evitar timeout)
             if is_severe_drift:
-                current_max_generations_for_ga = int(default_max_generations * 2.0)
-                logger.info(f"Recovery mode (SEVERE DRIFT): DOUBLING max_generations to {current_max_generations_for_ga} for chunk {i}")
+                current_max_generations_for_ga = default_max_generations  # Manter 200
+                logger.info(f"Recovery mode (SEVERE DRIFT): Using default max_generations {current_max_generations_for_ga} for chunk {i}")
+                logger.info(f"  -> Seeding agressivo (90%) será ativado em ga.py para compensar")
             # PRIORIDADE 2: Configuração manual de recovery
             elif recovery_max_generations is not None:
                 current_max_generations_for_ga = recovery_max_generations
@@ -881,7 +1189,8 @@ def run_experiment(
                         best_ever_memory = survivors
             # <<< END NEW: Active Memory Pruning >>>
 
-            # Adicionar o melhor indivíduo atual à memória (fazendo uma cópia)
+            # FASE 2: Salvar memória por conceito ao invés de memória global
+            # Adicionar o melhor indivíduo atual à memória do conceito (fazendo uma cópia)
             best_ever_memory.append(copy.deepcopy(best_individual))
 
             # Ordenar a memória:
@@ -891,7 +1200,19 @@ def run_experiment(
 
             # Truncar a memória para o tamanho máximo
             if len(best_ever_memory) > max_memory_size: # max_memory_size vem do config.memory_params
-                best_ever_memory = best_ever_memory[:max_memory_size]                 
+                best_ever_memory = best_ever_memory[:max_memory_size]
+
+            # FASE 2: Salvar memória do conceito atual na concept_memory
+            logger.warning(f"[FASE 2] Chunk {i} - Salvando memória do conceito '{current_concept_id}'")
+            if current_concept_id and current_concept_id in concept_memory:
+                # Atualizar memória do conceito
+                logger.warning(f"[FASE 2]   → Salvando {len(best_ever_memory)} indivíduos")
+                concept_memory[current_concept_id]['memory'] = [copy.deepcopy(ind) for ind in best_ever_memory]
+                concept_memory[current_concept_id]['last_seen_chunk'] = i
+                logger.warning(f"[FASE 2]   ✓ Memória do conceito '{current_concept_id}' atualizada (last_seen: {i})")
+                logging.info(f"💾 Memória do conceito '{current_concept_id}' atualizada com {len(best_ever_memory)} indivíduos")
+            else:
+                logger.error(f"[FASE 2]   ✗ ERRO: current_concept_id '{current_concept_id}' não existe em concept_memory!")                 
         else:
             logging.error(f"GA did not return a best individual for chunk {i}. Stopping run.")
             return None # Stop if GA provides no result
@@ -954,6 +1275,30 @@ def run_experiment(
         all_performance_metrics.append(perf_metrics)
         historical_gmean.append(test_gmean) # Use overall test accuracy here
 
+        # CHECKPOINT: Salva métricas parciais a cada chunk processado (para resume)
+        partial_metrics_path = os.path.join(run_results_dir, "chunk_metrics_partial.json")
+        try:
+            with open(partial_metrics_path, 'w') as f_partial:
+                json.dump(make_json_serializable(all_performance_metrics), f_partial, indent=2)
+            logger.debug(f"[CHECKPOINT] Partial metrics saved ({len(all_performance_metrics)} chunks)")
+        except Exception as e_partial:
+            logger.warning(f"[CHECKPOINT] Could not save partial metrics: {e_partial}")
+
+        # LOGGING: Final do chunk com timing
+        chunk_end_time = time.time()
+        chunk_duration = chunk_end_time - chunk_start_time
+
+        logger.warning(f"")
+        logger.warning(f"{'='*70}")
+        logger.warning(f"CHUNK {i} - FINAL")
+        logger.warning(f"{'='*70}")
+        logger.warning(f"Tempo total: {chunk_duration:.1f}s ({chunk_duration/60:.1f}min)")
+        logger.warning(f"Train G-mean: {train_gmean:.4f}")
+        logger.warning(f"Test G-mean:  {test_gmean:.4f}")
+        logger.warning(f"Test F1:      {test_f1:.4f}")
+        logger.warning(f"Delta:        {test_gmean - train_gmean:+.4f}")
+        logger.warning(f"Best Fitness: {best_individual.fitness:.4f}")
+
         logging.info(f"Chunk {i} Results: TrainGmean{train_gmean:.4f}, TestGmean={test_gmean:.4f}, TestF1={test_f1:.4f}")
         logging.info(f"Chunk {i}: Best Individual Fitness={best_individual.fitness:.4f}")
 
@@ -968,20 +1313,31 @@ def run_experiment(
             if performance_drop > 0.20:  # Queda > 20%
                 drift_severity = 'SEVERE'
                 logger.warning(f"🔴 SEVERE DRIFT detected: {previous_gmean:.3f} → {current_gmean:.3f} (drop: {performance_drop:.1%})")
-                # CORREÇÃO: Mantém top 10% da memory ao invés de limpar tudo
-                if best_ever_memory:
-                    original_size = len(best_ever_memory)
-                    keep_size = max(1, original_size // 10)  # Mantém pelo menos 1, no máximo 10%
-                    best_ever_memory = sorted(best_ever_memory, key=lambda ind: ind.fitness, reverse=True)[:keep_size]
-                    logger.info(f"   → Memory REDUCED to top {keep_size} individuals (was {original_size}) - kept top 10%")
+                # FASE 2: NÃO abandonar memória se for conceito recorrente
+                # Conceitos recorrentes podem ter queda inicial mas se recuperam rápido
+                if not is_recurring:
+                    # CORREÇÃO: Mantém top 10% da memory ao invés de limpar tudo
+                    if best_ever_memory:
+                        original_size = len(best_ever_memory)
+                        keep_size = max(1, original_size // 10)  # Mantém pelo menos 1, no máximo 10%
+                        best_ever_memory = sorted(best_ever_memory, key=lambda ind: ind.fitness, reverse=True)[:keep_size]
+                        logger.info(f"   → Memory REDUCED to top {keep_size} individuals (was {original_size}) - kept top 10%")
+                else:
+                    logger.warning(f"[FASE 2]   → Memory PRESERVADA (conceito recorrente '{current_concept_id}')")
+                    logger.info(f"   → Memory PRESERVADA (conceito recorrente '{current_concept_id}')")
 
             elif performance_drop > 0.10:  # Queda > 10%
                 drift_severity = 'MODERATE'
                 logger.warning(f"🟡 MODERATE DRIFT detected: {previous_gmean:.3f} → {current_gmean:.3f} (drop: {performance_drop:.1%})")
-                # Reduz best_ever_memory pela metade (mantém apenas os melhores)
-                if best_ever_memory:
-                    best_ever_memory = sorted(best_ever_memory, key=lambda ind: ind.fitness, reverse=True)[:len(best_ever_memory)//2]
-                    logger.info(f"   → Memory reduced to top {len(best_ever_memory)} individuals")
+                # FASE 2: NÃO abandonar memória se for conceito recorrente
+                if not is_recurring:
+                    # Reduz best_ever_memory pela metade (mantém apenas os melhores)
+                    if best_ever_memory:
+                        best_ever_memory = sorted(best_ever_memory, key=lambda ind: ind.fitness, reverse=True)[:len(best_ever_memory)//2]
+                        logger.info(f"   → Memory reduced to top {len(best_ever_memory)} individuals")
+                else:
+                    logger.warning(f"[FASE 2]   → Memory PRESERVADA (conceito recorrente '{current_concept_id}')")
+                    logger.info(f"   → Memory PRESERVADA (conceito recorrente '{current_concept_id}')")
 
             elif performance_drop > 0.05:  # Queda > 5%
                 drift_severity = 'MILD'
@@ -1010,9 +1366,8 @@ def run_experiment(
         rule_info_history.append(rule_info)
 
         best_individuals_history.append(copy.deepcopy(best_individual))
-        best_ever_memory.append(copy.deepcopy(best_individual))
-        best_ever_memory.sort(key=lambda ind: ind.fitness, reverse=True)
-        best_ever_memory = best_ever_memory[:max_memory_size]
+        # FASE 2: Código de memory management movido para antes (linhas 946-964)
+        # para integrar com concept_memory. Duplicata removida.
 
         if best_individuals_history:
             last_saved_ind = best_individuals_history[-1]
@@ -1086,6 +1441,22 @@ def run_experiment(
         # --- End of Chunk Loop ---
 
     # --- Post-Experiment ---
+    experiment_end_time = time.time()
+    total_duration = experiment_end_time - experiment_start_time
+
+    logger.warning(f"")
+    logger.warning(f"{'#'*70}")
+    logger.warning(f"EXPERIMENTO FINALIZADO")
+    logger.warning(f"{'#'*70}")
+    logger.warning(f"Tempo total: {total_duration:.1f}s ({total_duration/3600:.2f}h)")
+    logger.warning(f"Média por chunk: {total_duration/num_chunks_to_process:.1f}s")
+    logger.warning(f"Chunks processados: {num_chunks_to_process}")
+    if historical_gmean:
+        logger.warning(f"Avg Test G-mean: {np.mean(historical_gmean):.4f}")
+        logger.warning(f"Std Test G-mean: {np.std(historical_gmean):.4f}")
+    logger.warning(f"Timestamp final: {time.strftime('%Y-%m-%d %H:%M:%S')}")
+    logger.warning(f"")
+
     logging.info(f"Finished processing {num_chunks_to_process} chunk transitions for run {run_number}.")
 
 # --- Plotting (Existing Plots + New Periodic Accuracy Plot) ---
@@ -1468,7 +1839,7 @@ def display_feature_usage_summary(all_datasets_summaries):
 if __name__ == "__main__":
     # --- Setup Inicial ---
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    config_file_path = os.path.join(script_dir, "config.yaml")
+    config_file_path = os.path.join(script_dir, "config_test_drift_recovery.yaml") # <<< AJUSTADO PARA FASE 1 >>>
 
     # --- Configuração do Logging ---
     # Carrega a config SOMENTE AQUI para determinar o nível de log
@@ -1528,7 +1899,7 @@ if __name__ == "__main__":
             logger.error("Run mode is 'standard' but the 'standard_experiments' list is missing or empty in config.yaml. Exiting.")
             exit(1)
         logger.info(f"Running in STANDARD mode. Found {len(stream_names_to_run)} experiments to run.")
-        
+
     elif run_mode == 'drift_simulation':
         stream_names_to_run = exp_settings.get('drift_simulation_experiments', [])
         is_drift_mode = True
@@ -1536,9 +1907,23 @@ if __name__ == "__main__":
             logger.error("Run mode is 'drift_simulation' but the 'drift_simulation_experiments' list is missing or empty in config.yaml. Exiting.")
             exit(1)
         logger.info(f"Running in DRIFT SIMULATION mode. Found {len(stream_names_to_run)} experiments to run.")
-        
+
+    elif run_mode == 'unified_pregenerated':
+        # <<< NOVO MODO: Usa chunks pre-gerados com lista unificada de experimentos >>>
+        stream_names_to_run = exp_settings.get('unified_experiments', [])
+        is_drift_mode = True  # Todos os datasets usam o mesmo pipeline
+        if not stream_names_to_run:
+            logger.error("Run mode is 'unified_pregenerated' but the 'unified_experiments' list is missing or empty in config.yaml. Exiting.")
+            exit(1)
+        pregenerated_dir = exp_settings.get('pregenerated_chunks_base_dir', None)
+        if not pregenerated_dir:
+            logger.error("Run mode is 'unified_pregenerated' but 'pregenerated_chunks_base_dir' is not specified. Exiting.")
+            exit(1)
+        logger.info(f"Running in UNIFIED PREGENERATED mode. Found {len(stream_names_to_run)} experiments to run.")
+        logger.info(f"Pre-generated chunks directory: {pregenerated_dir}")
+
     else:
-        logger.error(f"Invalid 'run_mode' in config: '{run_mode}'. Must be 'standard' or 'drift_simulation'. Exiting.")
+        logger.error(f"Invalid 'run_mode' in config: '{run_mode}'. Must be 'standard', 'drift_simulation', or 'unified_pregenerated'. Exiting.")
         exit(1)
     # --- <<< FIM DA MODIFICAÇÃO >>> ---
 
@@ -1546,9 +1931,32 @@ if __name__ == "__main__":
     all_datasets_summaries = [] # Armazena resumos por TIPO de dataset base
     overall_start_time = time.time()
 
+    # --- RESUME: Configuração para skip de datasets completos ---
+    resume_enabled_main = exp_settings.get('resume_from_checkpoint', False)
+    data_params_main = config.get('data_params', {})
+    expected_chunks_main = data_params_main.get('num_chunks', 24) - 1  # num_chunks_to_process
+
     # Itera sobre os NOMES DOS FLUXOS definidos no config
     for stream_name in stream_names_to_run:
         stream_start_time = time.time()
+
+        # --- RESUME: Verificar se dataset já está completo ---
+        if resume_enabled_main:
+            run_results_dir_check = os.path.join(base_results_dir_main, stream_name, f"run_1")
+            metrics_file_check = os.path.join(run_results_dir_check, "chunk_metrics.json")
+
+            if os.path.exists(metrics_file_check):
+                try:
+                    with open(metrics_file_check, 'r') as f_check:
+                        existing_metrics_check = json.load(f_check)
+                    if len(existing_metrics_check) >= expected_chunks_main:
+                        logger.info(f"[RESUME] SKIPPING '{stream_name}': Already complete ({len(existing_metrics_check)}/{expected_chunks_main} chunks)")
+                        continue  # Pula para o próximo dataset
+                    else:
+                        logger.info(f"[RESUME] '{stream_name}': Partial ({len(existing_metrics_check)}/{expected_chunks_main} chunks), will resume")
+                except Exception as e_check:
+                    logger.warning(f"[RESUME] Could not read metrics for '{stream_name}': {e_check}. Will process/resume.")
+        # --- END RESUME CHECK ---
 
         # <<< LINHA CORRIGIDA >>>
         logger.info(f"====== Processing Experiment ID: {stream_name} (Runs: {num_runs}) ======")
@@ -1576,7 +1984,8 @@ if __name__ == "__main__":
                 run_number=i + 1,
                 config=config, # type: ignore
                 base_results_dir=base_results_dir_main,
-                is_drift_simulation=is_drift_mode # Passa o flag do modo
+                is_drift_simulation=is_drift_mode, # Passa o flag do modo
+                config_file_path=config_file_path # <<< FIX: Passa o caminho real do config >>>
             )
             # <<< FIM DA MODIFICAÇÃO >>>
 
