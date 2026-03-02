@@ -122,7 +122,10 @@ def _find_best_egis_config(configurations: List[Dict]) -> Optional[Dict]:
 
 
 def _render_cd_diagram(config: Dict, output_file: Path, title_suffix: str = ""):
-    """Render and save a single Critical Difference diagram from a config dict.
+    """Render and save a single Critical Difference diagram in standard Demsar format.
+
+    Horizontal axis shows average ranks. Models are listed on left/right sides.
+    Thick horizontal bars connect groups of models that are not significantly different.
 
     Args:
         config: A configuration dict containing average_rankings, critical_distance, n_datasets.
@@ -135,72 +138,105 @@ def _render_cd_diagram(config: Dict, output_file: Path, title_suffix: str = ""):
 
     # Sort models by rank
     sorted_models = sorted(avg_ranks.items(), key=lambda x: x[1])
-    models = [m for m, r in sorted_models]
+    n_models = len(sorted_models)
     ranks = [r for m, r in sorted_models]
+    min_rank = 1
+    max_rank = n_models
 
-    # Create figure
-    fig, ax = plt.subplots(figsize=(8, 4))
+    # Create figure - wider for better readability
+    fig, ax = plt.subplots(figsize=(10, 4))
 
-    # Plot parameters
-    n_models = len(models)
-    y_positions = np.arange(n_models)
-    max_rank = max(ranks) + 1
-    min_rank = min(ranks) - 0.5
+    # Parameters
+    half = n_models // 2
+    text_offset = 0.25
+    line_y_spacing = 0.12
 
-    # Draw horizontal lines for each model
-    for i, (model, rank) in enumerate(sorted_models):
-        color = MODEL_COLORS.get(model, '#333333')
+    # Draw the rank axis at the top
+    ax.set_xlim(min_rank - 0.5, max_rank + 0.5)
+    ax.set_ylim(-0.5 - n_models * line_y_spacing, 1.0)
+
+    # Rank axis
+    ax.plot([min_rank, max_rank], [0.6, 0.6], 'k-', linewidth=1.5)
+    for r in range(min_rank, max_rank + 1):
+        ax.plot([r, r], [0.57, 0.63], 'k-', linewidth=1.5)
+        ax.text(r, 0.68, str(r), ha='center', va='bottom', fontsize=11, fontweight='bold')
+
+    # CD bar above axis
+    cd_start = min_rank
+    cd_end = min_rank + cd
+    ax.plot([cd_start, cd_end], [0.85, 0.85], 'k-', linewidth=2.5)
+    ax.plot([cd_start, cd_start], [0.82, 0.88], 'k-', linewidth=2.5)
+    ax.plot([cd_end, cd_end], [0.82, 0.88], 'k-', linewidth=2.5)
+    ax.text((cd_start + cd_end) / 2, 0.92, f'CD = {cd:.2f}', ha='center',
+            va='bottom', fontsize=11, fontweight='bold')
+
+    # Place models: top half on left side, bottom half on right side
+    for idx, (model, rank) in enumerate(sorted_models):
         display_name = MODEL_DISPLAY_NAMES.get(model, model)
+        is_egis = (model == 'EGIS')
+        fw = 'bold' if is_egis else 'normal'
+        fs = 12 if is_egis else 11
 
-        # Model name on left
-        ax.text(min_rank - 0.3, i, display_name, ha='right', va='center',
-               fontsize=10, fontweight='bold' if model == 'EGIS' else 'normal')
+        if idx < half:
+            # Left side (best models): name on far left, line going right to rank
+            y_pos = 0.45 - idx * line_y_spacing
+            ax.plot([rank, rank], [0.57, y_pos], 'k-', linewidth=1.0)
+            ax.plot([min_rank - 0.4, rank], [y_pos, y_pos], 'k-', linewidth=1.0)
+            ax.text(min_rank - 0.45, y_pos, f'{display_name} ({rank:.2f})',
+                    ha='right', va='center', fontsize=fs, fontweight=fw)
+        else:
+            # Right side (worst models): name on far right, line going left to rank
+            y_pos = 0.45 - (idx - half) * line_y_spacing
+            ax.plot([rank, rank], [0.57, y_pos], 'k-', linewidth=1.0)
+            ax.plot([rank, max_rank + 0.4], [y_pos, y_pos], 'k-', linewidth=1.0)
+            ax.text(max_rank + 0.45, y_pos, f'({rank:.2f}) {display_name}',
+                    ha='left', va='center', fontsize=fs, fontweight=fw)
 
-        # Rank point
-        ax.scatter(rank, i, s=100, c=color, zorder=5, edgecolors='black', linewidths=1)
+    # Find and draw cliques (groups of models not significantly different)
+    # A clique is a maximal set of consecutive models where first - last < CD
+    cliques = []
+    for i in range(n_models):
+        for j in range(i + 1, n_models):
+            rank_i = sorted_models[i][1]
+            rank_j = sorted_models[j][1]
+            if rank_j - rank_i < cd:
+                # Check if this extends an existing clique
+                extended = False
+                for c in cliques:
+                    if c[0] == i and c[1] == j - 1:
+                        c[1] = j
+                        extended = True
+                        break
+                if not extended:
+                    cliques.append([i, j])
 
-        # Rank value on right
-        ax.text(rank + 0.2, i, f'{rank:.2f}', ha='left', va='center', fontsize=9)
+    # Remove subsets - keep only maximal cliques
+    maximal_cliques = []
+    for c in cliques:
+        is_subset = False
+        for other in cliques:
+            if c != other and other[0] <= c[0] and other[1] >= c[1]:
+                is_subset = True
+                break
+        if not is_subset:
+            maximal_cliques.append(c)
 
-    # Draw CD bar at top
-    cd_y = n_models - 0.3
-    ax.plot([1, 1 + cd], [cd_y, cd_y], 'k-', linewidth=2)
-    ax.plot([1, 1], [cd_y - 0.1, cd_y + 0.1], 'k-', linewidth=2)
-    ax.plot([1 + cd, 1 + cd], [cd_y - 0.1, cd_y + 0.1], 'k-', linewidth=2)
-    ax.text((1 + 1 + cd) / 2, cd_y + 0.3, f'CD = {cd:.2f}', ha='center', fontsize=9)
+    # Draw clique bars below the model lines
+    bar_y_start = -0.15
+    bar_spacing = 0.08
+    for bar_idx, (start, end) in enumerate(maximal_cliques):
+        rank_start = sorted_models[start][1]
+        rank_end = sorted_models[end][1]
+        bar_y = bar_y_start - bar_idx * bar_spacing
+        ax.plot([rank_start, rank_end], [bar_y, bar_y], 'k-', linewidth=4.0)
 
-    # Draw connections between non-significantly different models
-    # Models within CD of each other are connected
-    connections = []
-    for i in range(len(sorted_models)):
-        for j in range(i + 1, len(sorted_models)):
-            model_i, rank_i = sorted_models[i]
-            model_j, rank_j = sorted_models[j]
-            if abs(rank_i - rank_j) < cd:
-                connections.append((i, j, rank_i, rank_j))
-
-    # Draw connection lines
-    for i, j, rank_i, rank_j in connections:
-        y_offset = -0.5 - (j - i) * 0.15
-        ax.plot([rank_i, rank_j], [y_offset, y_offset], 'k-', linewidth=2, alpha=0.5)
-        ax.plot([rank_i, rank_i], [i, y_offset], 'k--', linewidth=0.5, alpha=0.3)
-        ax.plot([rank_j, rank_j], [j, y_offset], 'k--', linewidth=0.5, alpha=0.3)
-
-    # Format axes
-    ax.set_xlim(min_rank - 2, max_rank + 0.5)
-    ax.set_ylim(-1.5, n_models + 0.5)
-    ax.set_xlabel('Average Rank', fontsize=11)
+    # Clean up axes
     ax.set_yticks([])
-
-    # Add grid
-    ax.grid(True, axis='x', alpha=0.3)
-    ax.axhline(y=-0.5, color='gray', linestyle='-', linewidth=0.5)
-
-    # Title
-    title = f'Critical Difference Diagram (n={n_datasets} datasets)'
-    if title_suffix:
-        title += f' {title_suffix}'
-    ax.set_title(title, fontsize=12, fontweight='bold')
+    ax.set_xticks([])
+    ax.spines['top'].set_visible(False)
+    ax.spines['bottom'].set_visible(False)
+    ax.spines['left'].set_visible(False)
+    ax.spines['right'].set_visible(False)
 
     plt.tight_layout()
     plt.savefig(output_file, format='pdf', dpi=300, bbox_inches='tight')
@@ -228,13 +264,20 @@ def generate_critical_difference_diagram(stats_results: Dict, output_file: Path)
     output_dir = output_file.parent
     generated_any = False
 
-    # ---- PRIMARY: binary-only CD diagram ----
+    # ---- PRIMARY: binary-only CD diagram (use EXP-500-NP as primary config) ----
     binary_configs = stats_results.get('binary_only', {}).get('configurations', [])
     if binary_configs:
-        best_binary = _find_best_egis_config(binary_configs)
-        if best_binary:
+        # Use EXP-500-NP as the primary configuration for the paper
+        target_binary = None
+        for cfg in binary_configs:
+            if cfg.get('config_label') == 'EXP-500-NP':
+                target_binary = cfg
+                break
+        if target_binary is None:
+            target_binary = _find_best_egis_config(binary_configs)
+        if target_binary:
             binary_output = output_dir / 'fig_critical_difference.pdf'
-            _render_cd_diagram(best_binary, binary_output, title_suffix="- Binary Only")
+            _render_cd_diagram(target_binary, binary_output, title_suffix="")
             generated_any = True
         else:
             logger.warning("No ranking data in binary_only configurations")

@@ -51,6 +51,8 @@ MULTICLASS_DATASETS = [
 
 MODELS = ["EGIS", "ARF", "SRP", "HAT", "ROSE", "ACDWM", "ERulesD2S", "CDCMS"]
 
+DRIFT_TYPE_ORDER = ["abrupt", "gradual", "noisy", "stationary", "real"]
+
 
 def escape_latex(s):
     """Escape LaTeX special characters in a string."""
@@ -209,6 +211,118 @@ def generate_s1_experimental_details():
     return "\n".join(lines)
 
 
+def generate_perdataset_table_2000(consolidated_csv_path):
+    """Generate a per-dataset G-Mean longtable for EXP-2000-NP from consolidated_results.csv.
+
+    Returns a list of LaTeX lines.
+    """
+    import statistics as stat
+
+    rows = load_csv(consolidated_csv_path)
+
+    # Filter: config_label == EXP-2000-NP, binary only
+    filtered = [
+        r for r in rows
+        if r["config_label"] == "EXP-2000-NP" and r["dataset"] not in MULTICLASS_DATASETS
+    ]
+
+    # Build lookup: dataset -> model -> gmean_mean
+    data = {}
+    drift_map = {}
+    for r in filtered:
+        ds = r["dataset"]
+        model = r["model"]
+        try:
+            val = float(r["gmean_mean"])
+        except (ValueError, KeyError):
+            val = None
+        data.setdefault(ds, {})[model] = val
+        drift_map[ds] = r.get("drift_type", "unknown")
+
+    # Group datasets by drift type
+    drift_groups = defaultdict(list)
+    for ds in sorted(data.keys()):
+        dt = drift_map.get(ds, "unknown")
+        drift_groups[dt].append(ds)
+
+    lines = []
+    # Header
+    model_cols = " & ".join([f"\\textbf{{{m}}}" for m in MODELS])
+    col_spec = "l" + "c" * len(MODELS)
+    lines.append(f"\\begin{{longtable}}{{{col_spec}}}")
+    lines.append(
+        r"\caption{Per-Dataset G-Mean: Binary Datasets, Chunk Size 2000 (EXP-2000-NP)}"
+        r"\label{tab:s_binary_2000} \\"
+    )
+    lines.append(r"\toprule")
+    lines.append(f"\\textbf{{Dataset}} & {model_cols} \\\\")
+    lines.append(r"\midrule")
+    lines.append(r"\endfirsthead")
+    lines.append(r"\toprule")
+    lines.append(f"\\textbf{{Dataset}} & {model_cols} \\\\")
+    lines.append(r"\midrule")
+    lines.append(r"\endhead")
+
+    all_vals = {m: [] for m in MODELS}
+
+    for dt in DRIFT_TYPE_ORDER:
+        if dt not in drift_groups:
+            continue
+        # Drift type group header
+        ncols = 1 + len(MODELS)
+        lines.append(
+            f"\\midrule \\multicolumn{{{ncols}}}{{l}}"
+            f"{{\\textit{{{dt.capitalize()} Drift}}}} \\\\"
+        )
+        lines.append(r"\midrule")
+
+        for ds in drift_groups[dt]:
+            row_vals = []
+            for m in MODELS:
+                v = data[ds].get(m)
+                if v is not None:
+                    row_vals.append(v)
+                    all_vals[m].append(v)
+                else:
+                    row_vals.append(None)
+
+            # Find best (highest) value in this row
+            valid = [v for v in row_vals if v is not None]
+            best_val = max(valid) if valid else None
+
+            cells = []
+            for v in row_vals:
+                if v is None:
+                    cells.append("--")
+                elif best_val is not None and abs(v - best_val) < 1e-9:
+                    cells.append(f"\\textbf{{{v:.3f}}}")
+                else:
+                    cells.append(f"{v:.3f}")
+
+            ds_escaped = escape_latex(ds)
+            cells_str = " & ".join(cells)
+            lines.append(f"{ds_escaped} & {cells_str} \\\\")
+
+    # Summary row: Mean +/- Std
+    lines.append(r"\midrule")
+    summary_cells = []
+    for m in MODELS:
+        vals = all_vals[m]
+        if vals:
+            mn = stat.mean(vals)
+            sd = stat.stdev(vals) if len(vals) > 1 else 0.0
+            summary_cells.append(f"{mn:.3f}$\\pm${sd:.3f}")
+        else:
+            summary_cells.append("--")
+    summary_str = " & ".join(summary_cells)
+    lines.append(f"\\textbf{{Mean $\\pm$ Std}} & {summary_str} \\\\")
+
+    lines.append(r"\bottomrule")
+    lines.append(r"\end{longtable}")
+
+    return lines
+
+
 def generate_s2_performance_tables():
     """S2: Complete Performance Tables (per-dataset G-Mean)."""
     lines = []
@@ -237,6 +351,17 @@ def generate_s2_performance_tables():
             lines.append(content)
             lines.append("\\clearpage")
             lines.append("")
+
+    # Generate chunk 2000 per-dataset table programmatically
+    consolidated_csv = PAPER_DATA / "consolidated_results.csv"
+    if consolidated_csv.exists():
+        lines.append(r"\subsection{Per-Dataset G-Mean: Binary Datasets, Chunk Size 2000}")
+        lines.append(r"\label{sec:s2_exp_2000_np}")
+        lines.append("")
+        table_lines = generate_perdataset_table_2000(consolidated_csv)
+        lines.extend(table_lines)
+        lines.append("\\clearpage")
+        lines.append("")
 
     # Generate summary table from consolidated_results.csv
     lines.append(r"\subsection{Summary Statistics by Configuration and Model}")
@@ -297,14 +422,14 @@ def generate_s3_statistical_analysis():
     overall = stats.get("overall", {})
     configs = overall.get("configurations", [])
 
-    # Find best EGIS config
+    # Use primary config EXP-500-NP for consistency with main paper
     best = None
-    best_rank = float("inf")
     for c in configs:
-        r = c.get("average_rankings", {}).get("EGIS", float("inf"))
-        if r < best_rank:
-            best_rank = r
+        if c.get("config_label") == "EXP-500-NP":
             best = c
+            break
+    if best is None and configs:
+        best = configs[0]  # fallback
 
     if best:
         ft = best["friedman_test"]
@@ -318,7 +443,7 @@ def generate_s3_statistical_analysis():
         lines.append("")
         lines.append(r"\begin{table}[htbp]")
         lines.append(r"\centering")
-        lines.append(f"\\caption{{Model Ranking on All {n} Datasets ({best['config_label']})}}")
+        lines.append(f"\\caption{{Model Ranking on All {n} Datasets (EXP-500-NP)}}")
         lines.append(r"\label{tab:s_ranking_all48}")
         lines.append(r"\footnotesize")
         lines.append(r"\begin{tabular}{clcc}")
@@ -351,7 +476,7 @@ def generate_s3_statistical_analysis():
             lines.append(r"\includegraphics[width=0.95\textwidth]{figures/fig_critical_difference_all48.pdf}")
             lines.append(
                 f"\\caption{{Critical difference diagram for all {n} datasets "
-                f"({best['config_label']}). Methods connected by a horizontal bar "
+                f"(EXP-500-NP). Methods connected by a horizontal bar "
                 f"are not significantly different (Nemenyi, $\\alpha = 0.05$).}}"
             )
             lines.append(r"\label{fig:s_cd_all48}")
@@ -417,7 +542,7 @@ def generate_s4_transition_metrics():
     lines.append(r"\label{sec:s4}")
     lines.append(
         r"This section provides detailed transition metric analysis across all "
-        r"configurations, extending the EXP-2000-NP results presented in the main paper."
+        r"configurations, extending the EXP-500-NP results presented in the main paper."
     )
     lines.append("")
 
@@ -609,8 +734,8 @@ def generate_s5_config_analysis():
     return "\n".join(lines)
 
 
-def generate_s6_per_dataset(include_s6):
-    """S6: Per-Dataset Visual Analysis (~336 pages)."""
+def generate_s6_per_dataset(include_s6, s6_figures_dir="paper/figures/case_studies"):
+    """S6: Per-Dataset Visual Analysis with composite 2x2 case study figures."""
     lines = []
     lines.append(r"\section{Per-Dataset Visual Analysis}")
     lines.append(r"\label{sec:s6}")
@@ -624,102 +749,86 @@ def generate_s6_per_dataset(include_s6):
         return "\n".join(lines)
 
     lines.append(
-        r"This section presents detailed visualizations for each of the 48 datasets across "
-        r"all 7 EGIS configurations. For each dataset-configuration combination, four plots "
-        r"are shown: (1) rule evolution matrix, (2) attribute usage over time, "
-        r"(3) rule components heatmap, and (4) accuracy with detected drift points."
+        r"This section presents detailed case study visualizations for each of the 48 datasets "
+        r"across three no-penalty EGIS configurations (EXP-500-NP, EXP-1000-NP, EXP-2000-NP). "
+        r"Each figure is a composite 2$\times$2 panel showing: (a) rule evolution counts (stacked area), "
+        r"(b) rule complexity over time (dual-axis line plot), (c) transition metrics (TCS, RIR, AMS) "
+        r"over chunk transitions, and (d) rule turnover proportions (normalized stacked bar). "
+        r"Drift annotations are shown where applicable."
     )
     lines.append("")
 
-    for config_dir in sorted(CONFIGS):
-        config_path = PER_DATASET / config_dir
-        if not config_path.exists():
-            continue
+    # Get dataset list from consolidated_results.csv
+    consolidated_csv = PAPER_DATA / "consolidated_results.csv"
+    if not consolidated_csv.exists():
+        lines.append(r"\textit{consolidated\_results.csv not found.}")
+        return "\n".join(lines)
 
-        label = CONFIG_LABELS.get(config_dir, config_dir)
-        lines.append(f"\\subsection{{{escape_latex(label)}}}")
-        lines.append(f"\\label{{sec:s6_{config_dir}}}")
+    rows = load_csv(consolidated_csv)
+
+    # Collect unique datasets with their drift_type
+    dataset_drift = {}
+    for r in rows:
+        ds = r["dataset"]
+        dt = r.get("drift_type", "unknown")
+        if ds not in dataset_drift:
+            dataset_drift[ds] = dt
+
+    # Organize by drift type
+    drift_groups = defaultdict(list)
+    for ds in sorted(dataset_drift.keys()):
+        drift_groups[dataset_drift[ds]].append(ds)
+
+    drift_type_titles = {
+        "abrupt": "Abrupt Drift Datasets",
+        "gradual": "Gradual Drift Datasets",
+        "noisy": "Noisy Drift Datasets",
+        "stationary": "Stationary Datasets",
+        "real": "Real-World Datasets",
+    }
+
+    np_configs = [
+        ("EXP-500-NP", 500),
+        ("EXP-1000-NP", 1000),
+        ("EXP-2000-NP", 2000),
+    ]
+
+    subsection_counter = 0
+    for dt in DRIFT_TYPE_ORDER:
+        if dt not in drift_groups:
+            continue
+        subsection_counter += 1
+        title = drift_type_titles.get(dt, f"{dt.capitalize()} Datasets")
+        lines.append(f"\\subsection{{{title}}}")
+        lines.append(f"\\label{{sec:s6_{dt}}}")
         lines.append("")
 
-        datasets = sorted([d.name for d in config_path.iterdir() if d.is_dir()])
-        for dataset in datasets:
-            ds_path = config_path / dataset
-            plots_dir = ds_path / "plots"
+        for ds in drift_groups[dt]:
+            ds_escaped = escape_latex(ds)
+            dt_display = dt.capitalize() if dt != "real" else "real-world"
 
-            # Check for the 4 key plots
-            rule_evo = ds_path / "rule_evolution_matrix.png"
-            attr_usage = None
-            heatmap = None
-            accuracy = None
-
-            if plots_dir.exists():
-                for f in plots_dir.iterdir():
-                    fname = f.name
-                    if fname.startswith("Plot_AttributeUsage_"):
-                        attr_usage = f
-                    elif fname.startswith("Plot_RuleComponents_Heatmap_"):
-                        heatmap = f
-                    elif fname.startswith("Plot_AccuracyPeriodic_DetectedDrifts_"):
-                        accuracy = f
-
-            # Only include if at least the rule evolution matrix exists
-            if not rule_evo.exists():
-                continue
-
-            ds_escaped = escape_latex(dataset)
             lines.append(f"\\subsubsection{{{ds_escaped}}}")
-            lines.append("")
-            lines.append(r"\begin{figure}[htbp]")
+            lines.append(r"\begin{figure*}[htbp]")
             lines.append(r"\centering")
 
-            # Build relative paths from paper/ directory
-            rel_base = os.path.relpath(ds_path, PAPER).replace("\\", "/")
-            rel_plots = os.path.relpath(plots_dir, PAPER).replace("\\", "/") if plots_dir.exists() else None
-
-            subfig_count = 0
-            if rule_evo.exists():
+            for i, (config_label, chunk_size) in enumerate(np_configs):
+                # Path relative to paper/ directory
+                fig_path = f"figures/case_studies/{config_label}/{ds}.pdf"
+                newline = r"\\" if i < len(np_configs) - 1 else ""
                 lines.append(
-                    f"\\subfloat[Rule Evolution Matrix]"
-                    f"{{\\includegraphics[width=0.48\\textwidth]{{{rel_base}/rule_evolution_matrix.png}}}}"
+                    f"\\subfloat[{config_label} (chunk={chunk_size})]"
+                    f"{{\\includegraphics[width=0.95\\textwidth,height=0.27\\textheight,keepaspectratio]{{{fig_path}}}}}{newline}"
                 )
-                subfig_count += 1
-
-            if attr_usage and attr_usage.exists():
-                if subfig_count % 2 == 1:
-                    lines.append(r"\hfill")
-                lines.append(
-                    f"\\subfloat[Attribute Usage]"
-                    f"{{\\includegraphics[width=0.48\\textwidth]{{{rel_plots}/{attr_usage.name}}}}}"
-                )
-                subfig_count += 1
-                if subfig_count % 2 == 0:
-                    lines.append(r"\\[0.5em]")
-
-            if heatmap and heatmap.exists():
-                if subfig_count % 2 == 1:
-                    lines.append(r"\hfill")
-                lines.append(
-                    f"\\subfloat[Rule Components]"
-                    f"{{\\includegraphics[width=0.48\\textwidth]{{{rel_plots}/{heatmap.name}}}}}"
-                )
-                subfig_count += 1
-                if subfig_count % 2 == 0:
-                    lines.append(r"\\[0.5em]")
-
-            if accuracy and accuracy.exists():
-                if subfig_count % 2 == 1:
-                    lines.append(r"\hfill")
-                lines.append(
-                    f"\\subfloat[Accuracy \\& Drifts]"
-                    f"{{\\includegraphics[width=0.48\\textwidth]{{{rel_plots}/{accuracy.name}}}}}"
-                )
-                subfig_count += 1
 
             lines.append(
-                f"\\caption{{Detailed analysis of {ds_escaped} under {escape_latex(label)} configuration.}}"
+                f"\\caption{{Case study: {ds_escaped} ({dt_display} drift). "
+                f"Composite 2$\\times$2 panels show rule evolution counts, rule complexity, "
+                f"transition metrics, and rule turnover proportions for each chunk configuration.}}"
             )
-            lines.append(f"\\label{{fig:s6_{config_dir}_{dataset.lower()}}}")
-            lines.append(r"\end{figure}")
+            # Label: sanitize dataset name for LaTeX label
+            label_ds = ds.lower().replace("-", "_")
+            lines.append(f"\\label{{fig:s6_{label_ds}}}")
+            lines.append(r"\end{figure*}")
             lines.append(r"\clearpage")
             lines.append("")
 
@@ -792,11 +901,14 @@ def main():
                         help="Output .tex file path")
     parser.add_argument("--include-s6", action="store_true",
                         help="Include per-dataset plots (S6, ~336 pages)")
+    parser.add_argument("--s6-figures-dir", default="paper/figures/case_studies",
+                        help="Directory containing case study figures for S6")
     args = parser.parse_args()
 
     print("Generating Supplementary Material...")
     print(f"  Output: {args.output}")
     print(f"  Include S6 per-dataset plots: {args.include_s6}")
+    print(f"  S6 figures dir: {args.s6_figures_dir}")
 
     sections = [
         generate_preamble(),
@@ -805,7 +917,7 @@ def main():
         generate_s3_statistical_analysis(),
         generate_s4_transition_metrics(),
         generate_s5_config_analysis(),
-        generate_s6_per_dataset(args.include_s6),
+        generate_s6_per_dataset(args.include_s6, s6_figures_dir=args.s6_figures_dir),
         generate_s7_rule_evolution(),
         generate_postamble(),
     ]

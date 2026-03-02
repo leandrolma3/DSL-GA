@@ -393,9 +393,21 @@ def check_narrative_consistency(tex):
     wins_38 = re.search(r'38\s+wins', tex)
     check(wins_38 is None, "No inflated '38 wins' claim")
 
-    # Check no rank 2.12
+    # Check no outdated rank values
     rank_212 = re.search(r'rank.*?2\.12', tex)
     check(rank_212 is None, "No inflated rank 2.12 claim")
+    # Check EGIS is not directly attributed rank 3.68 (old EXP-2000-NP value)
+    # Note: SRP legitimately has rank 3.68 in EXP-500-NP, so we only flag direct attribution
+    rank_368_egis = re.search(r'EGIS\s*\(?(?:rank\s*)?3\.68|EGIS\s+\(3\.68\)', tex, re.IGNORECASE)
+    check(rank_368_egis is None, "No outdated EGIS rank 3.68 (SRP has 3.68, EGIS should be 4.45)")
+
+    # Check EGIS rank 4.45 appears (EXP-500-NP binary_only)
+    rank_445 = re.search(r'rank\s+4\.45', tex)
+    check(rank_445 is not None, "EGIS rank 4.45 mentioned (EXP-500-NP binary_only)")
+
+    # Check chi2 = 123.1 (EXP-500-NP)
+    chi2_123 = re.search(r'123\.1', tex)
+    check(chi2_123 is not None, "Friedman chi2 = 123.1 mentioned (EXP-500-NP)")
 
     # Check G-Mean values are in realistic range
     gmean_vals = re.findall(r'G-Mean\s+(?:of\s+)?([\d.]+)', tex)
@@ -406,34 +418,70 @@ def check_narrative_consistency(tex):
 
 
 def check_penalty_table(tex):
-    """Check penalty effect table values."""
+    """Check penalty effect table values against the 4-row format."""
     print("\n=== Checking Penalty Effect Table ===")
 
-    json_path = DATA_DIR / "statistical_results.json"
-    if not json_path.exists():
-        return
-
-    data = load_json(json_path)
-
-    # Find penalty comparison in by_chunk_size
-    if "by_chunk_size" not in data:
-        check(False, "by_chunk_size section exists", warn_only=True)
-        return
-
-    # Check that penalty table values match the paper
-    penalty_vals = re.findall(
-        r'(\d+)\s*&\s*([\d.]+)\$\\pm\$([\d.]+)\s*&\s*([\d.]+)\$\\pm\$([\d.]+)',
+    # Match rows: chunk & NP_mean$\pm$NP_std & P_mean$\pm$P_std & gamma & delta & p-value
+    penalty_rows = re.findall(
+        r'(\d+)\s*&\s*([\d.]+)\$\\pm\$([\d.]+)\s*&\s*([\d.]+)\$\\pm\$([\d.]+)\s*&\s*([\d.]+)',
         tex
     )
-    for chunk, np_mean, np_std, p_mean, p_std in penalty_vals:
+    check(len(penalty_rows) == 4, f"Penalty table has 4 data rows (found {len(penalty_rows)})")
+
+    chunks_found = set()
+    for chunk, np_mean, np_std, p_mean, p_std, gamma in penalty_rows:
+        chunks_found.add(int(chunk))
         check(
             0.80 < float(np_mean) < 0.92,
-            f"Penalty table chunk {chunk}: NP mean {np_mean} in range"
+            f"Penalty chunk={chunk} gamma={gamma}: NP mean {np_mean} in range"
         )
         check(
             0.80 < float(p_mean) < 0.92,
-            f"Penalty table chunk {chunk}: P mean {p_mean} in range"
+            f"Penalty chunk={chunk} gamma={gamma}: P mean {p_mean} in range"
         )
+        check(
+            float(np_mean) >= float(p_mean) - 0.01,
+            f"Penalty chunk={chunk} gamma={gamma}: NP >= P (NP has no penalty)"
+        )
+
+    check({500, 1000, 2000}.issubset(chunks_found),
+          f"Penalty table covers chunks 500, 1000, 2000 (found {sorted(chunks_found)})")
+
+
+def check_expanded_tables(tex):
+    """Check that tables were properly expanded in Phase 2."""
+    print("\n=== Checking Expanded Tables (Phase 2) ===")
+
+    # tab:exp_config should have 7 config rows (EXP-500-NP through EXP-2000-P)
+    exp_rows = re.findall(r'EXP-\d+-(?:NP|P03|P)\b', tex)
+    unique_configs = set(exp_rows)
+    expected_configs = {"EXP-500-NP", "EXP-500-P", "EXP-500-P03",
+                        "EXP-1000-NP", "EXP-1000-P",
+                        "EXP-2000-NP", "EXP-2000-P"}
+    check(
+        expected_configs.issubset(unique_configs),
+        f"All 7 configs mentioned in paper (found {len(unique_configs & expected_configs)}/7)"
+    )
+
+    # tab:summary_all should mention EXP-2000
+    check("EXP-2000" in tex, "EXP-2000 mentioned in paper (summary table expanded)")
+
+    # tab:complexity_detailed should have 7 data rows
+    # Format: "EXP-500-NP ($\gamma$=0.0) & 15.0$\pm$5.1 ..."
+    complexity_lines = re.findall(
+        r'EXP-\d+-(?:NP|P03|P)\b.*?\$\\pm\$.*?&.*?\$\\pm\$',
+        tex
+    )
+    check(
+        len(complexity_lines) >= 7,
+        f"Complexity table has >= 7 config rows (found {len(complexity_lines)})"
+    )
+
+    # Check text mentions "seven" configurations
+    check(
+        "seven" in tex.lower(),
+        "Paper mentions 'seven' experimental configurations"
+    )
 
 
 def check_no_emojis(tex):
@@ -488,6 +536,7 @@ def main():
     check_ranking_table()
     check_narrative_consistency(main_tex)
     check_penalty_table(main_tex)
+    check_expanded_tables(main_tex)
     check_no_emojis(main_tex)
     check_page_count()
 

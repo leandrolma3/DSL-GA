@@ -243,6 +243,76 @@ Electricity & 0.774 & 0.891 & 0.856 & 0.854 & \textbf{0.905} & 0.638 & 0.830 \\
 \end{table*}
 \clearpage
 
+\subsection{Per-Dataset G-Mean: Binary Datasets, Chunk Size 2000}
+\label{sec:s2_exp_2000_np}
+
+\begin{longtable}{lcccccccc}
+\caption{Per-Dataset G-Mean: Binary Datasets, Chunk Size 2000 (EXP-2000-NP)}\label{tab:s_binary_2000} \\
+\toprule
+\textbf{Dataset} & \textbf{EGIS} & \textbf{ARF} & \textbf{SRP} & \textbf{HAT} & \textbf{ROSE} & \textbf{ACDWM} & \textbf{ERulesD2S} & \textbf{CDCMS} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Dataset} & \textbf{EGIS} & \textbf{ARF} & \textbf{SRP} & \textbf{HAT} & \textbf{ROSE} & \textbf{ACDWM} & \textbf{ERulesD2S} & \textbf{CDCMS} \\
+\midrule
+\endhead
+\midrule \multicolumn{9}{l}{\textit{Abrupt Drift}} \\
+\midrule
+AGRAWAL\_Abrupt\_Chain\_Long & 0.761 & 0.745 & 0.746 & 0.678 & \textbf{0.830} & 0.647 & 0.525 & 0.596 \\
+AGRAWAL\_Abrupt\_Simple\_Mild & 0.833 & 0.835 & 0.701 & 0.653 & \textbf{0.900} & 0.747 & 0.537 & 0.595 \\
+AGRAWAL\_Abrupt\_Simple\_Severe & 0.852 & 0.825 & 0.919 & 0.699 & \textbf{0.925} & 0.747 & 0.543 & 0.680 \\
+HYPERPLANE\_Abrupt\_Simple & 0.789 & 0.834 & 0.773 & 0.878 & 0.863 & 0.690 & 0.533 & \textbf{0.913} \\
+RANDOMTREE\_Abrupt\_Recurring & \textbf{0.674} & 0.541 & 0.515 & 0.547 & 0.654 & 0.602 & 0.542 & 0.503 \\
+RANDOMTREE\_Abrupt\_Simple & \textbf{0.661} & 0.552 & 0.529 & 0.551 & 0.659 & 0.645 & 0.547 & 0.530 \\
+RBF\_Abrupt\_Blip & 0.864 & 0.904 & \textbf{0.917} & 0.837 & 0.896 & 0.752 & 0.513 & 0.846 \\
+RBF\_Abrupt\_Severe & 0.784 & \textbf{0.894} & 0.893 & 0.813 & 0.870 & 0.684 & 0.512 & 0.799 \\
+SEA\_Abrupt\_Chain & 0.959 & 0.976 & 0.964 & 0.926 & \textbf{0.977} & 0.786 & 0.635 & 0.924 \\
+SEA\_Abrupt\_Recurring & 0.965 & \textbf{0.976} & 0.900 & 0.944 & 0.975 & 0.808 & 0.624 & 0.941 \\
+SEA\_Abrupt\_Simple & 0.959 & 0.977 & 0.978 & 0.948 & \textbf{0.979} & 0.814 & 0.631 & 0.945 \\
+SINE\_Abrupt\_Simple & 0.975 & 0.986 & \textbf{0.987} & 0.973 & 0.980 & 0.822 & 0.642 & 0.984 \\
+STAGGER\_Abrupt\_Chain & 0.848 & \textbf{0.996} & 0.992 & 0.791 & 0.922 & 0.707 & 0.755 & 0.944 \\
+STAGGER\_Abrupt\_Recurring & 0.800 & 0.997 & 0.990 & 0.801 & \textbf{0.997} & 0.667 & 0.767 & 0.952 \\
+\midrule \multicolumn{9}{l}{\textit{Gradual Drift}} \\
+\midrule
+HYPERPLANE\_Gradual\_Simple & 0.770 & 0.829 & 0.768 & 0.878 & 0.863 & 0.691 & 0.530 & \textbf{0.913} \\
+RANDOMTREE\_Gradual\_Simple & 0.687 & 0.545 & 0.489 & 0.556 & 0.669 & \textbf{0.689} & 0.537 & 0.556 \\
+RBF\_Gradual\_Moderate & 0.849 & 0.892 & \textbf{0.904} & 0.815 & 0.889 & 0.738 & 0.526 & 0.836 \\
+RBF\_Gradual\_Severe & 0.851 & \textbf{0.902} & 0.900 & 0.821 & 0.894 & 0.737 & 0.527 & 0.862 \\
+SEA\_Gradual\_Recurring & 0.942 & 0.957 & 0.906 & 0.920 & \textbf{0.960} & 0.795 & 0.617 & 0.908 \\
+SEA\_Gradual\_Simple\_Fast & 0.974 & 0.976 & 0.956 & 0.946 & \textbf{0.980} & 0.819 & 0.633 & 0.952 \\
+SEA\_Gradual\_Simple\_Slow & 0.976 & 0.976 & 0.976 & 0.950 & \textbf{0.981} & 0.822 & 0.624 & 0.942 \\
+SINE\_Gradual\_Recurring & 0.909 & \textbf{0.952} & 0.952 & 0.931 & 0.943 & 0.781 & 0.625 & 0.895 \\
+STAGGER\_Gradual\_Chain & 0.765 & \textbf{0.949} & 0.940 & 0.738 & 0.920 & 0.637 & 0.760 & 0.882 \\
+\midrule \multicolumn{9}{l}{\textit{Noisy Drift}} \\
+\midrule
+AGRAWAL\_Abrupt\_Simple\_Severe\_Noise & 0.898 & 0.852 & 0.863 & 0.668 & \textbf{0.940} & 0.754 & 0.539 & 0.592 \\
+HYPERPLANE\_Gradual\_Noise & 0.764 & 0.818 & 0.759 & 0.850 & 0.848 & 0.681 & 0.530 & \textbf{0.871} \\
+RANDOMTREE\_Gradual\_Noise & \textbf{0.698} & 0.515 & 0.486 & 0.534 & 0.690 & 0.676 & 0.553 & 0.561 \\
+RBF\_Abrupt\_Blip\_Noise & 0.874 & 0.896 & \textbf{0.905} & 0.832 & 0.886 & 0.752 & 0.516 & 0.841 \\
+RBF\_Gradual\_Severe\_Noise & 0.862 & 0.888 & \textbf{0.902} & 0.816 & 0.877 & 0.747 & 0.530 & 0.823 \\
+SEA\_Abrupt\_Chain\_Noise & 0.960 & 0.968 & 0.934 & 0.923 & \textbf{0.971} & 0.783 & 0.619 & 0.915 \\
+SINE\_Abrupt\_Recurring\_Noise & 0.786 & 0.981 & \textbf{0.982} & 0.946 & 0.973 & 0.658 & 0.635 & 0.885 \\
+STAGGER\_Abrupt\_Chain\_Noise & 0.847 & \textbf{0.991} & 0.976 & 0.773 & 0.922 & 0.707 & 0.760 & 0.872 \\
+\midrule \multicolumn{9}{l}{\textit{Stationary Drift}} \\
+\midrule
+AGRAWAL\_Stationary & \textbf{1.000} & 0.941 & 0.998 & 0.984 & 0.997 & 0.833 & 0.526 & \textbf{1.000} \\
+HYPERPLANE\_Stationary & 0.713 & 0.814 & 0.760 & 0.879 & 0.852 & 0.666 & 0.524 & \textbf{0.899} \\
+RANDOMTREE\_Stationary & 0.622 & 0.577 & 0.539 & 0.368 & 0.594 & \textbf{0.641} & 0.517 & 0.511 \\
+SEA\_Stationary & 0.979 & 0.980 & 0.956 & 0.952 & \textbf{0.984} & 0.824 & 0.642 & 0.953 \\
+SINE\_Stationary & 0.972 & 0.987 & \textbf{0.988} & 0.972 & 0.982 & 0.821 & 0.641 & 0.974 \\
+STAGGER\_Stationary & \textbf{1.000} & 0.998 & 0.996 & 0.805 & 0.999 & 0.833 & 0.766 & \textbf{1.000} \\
+\midrule \multicolumn{9}{l}{\textit{Real Drift}} \\
+\midrule
+AssetNegotiation\_F2 & 0.975 & 0.960 & 0.970 & 0.949 & \textbf{0.982} & 0.824 & 0.621 & 0.939 \\
+AssetNegotiation\_F3 & \textbf{0.998} & 0.968 & 0.923 & 0.969 & 0.992 & 0.832 & 0.764 & 0.965 \\
+AssetNegotiation\_F4 & 0.916 & 0.948 & 0.937 & 0.937 & 0.662 & 0.796 & 0.561 & \textbf{0.962} \\
+Electricity & 0.744 & 0.888 & 0.877 & 0.867 & 0.905 & 0.678 & 0.606 & \textbf{0.918} \\
+\midrule
+\textbf{Mean $\pm$ Std} & 0.855$\pm$0.108 & 0.878$\pm$0.140 & 0.862$\pm$0.153 & 0.820$\pm$0.148 & 0.892$\pm$0.111 & 0.740$\pm$0.069 & 0.598$\pm$0.082 & 0.839$\pm$0.153 \\
+\bottomrule
+\end{longtable}
+\clearpage
+
 \subsection{Summary Statistics by Configuration and Model}
 \label{sec:s2_summary}
 
@@ -295,27 +365,27 @@ The main paper presents statistical analysis on the 41 binary datasets as the pr
 \subsection{All-48 Datasets Friedman Ranking}
 \label{sec:s3_all48}
 
-On all 48 datasets, the Friedman test yields $\chi^2(7) = 168.0$ ($p < 0.001$) with Nemenyi critical distance CD~=~1.52.
+On all 48 datasets, the Friedman test yields $\chi^2(7) = 140.3$ ($p < 0.001$) with Nemenyi critical distance CD~=~1.52.
 
 \begin{table}[htbp]
 \centering
-\caption{Model Ranking on All 48 Datasets (EXP-2000-NP)}
+\caption{Model Ranking on All 48 Datasets (EXP-500-NP)}
 \label{tab:s_ranking_all48}
 \footnotesize
 \begin{tabular}{clcc}
 \toprule
 \textbf{Rank} & \textbf{Model} & \textbf{Avg Rank} & \textbf{Mean G-Mean} \\
 \midrule
-1 & ROSE & 2.42 & 0.855 \\
-2 & ARF & 2.88 & 0.870 \\
-3 & SRP & 3.44 & 0.850 \\
-4 & \textbf{EGIS} & 3.62 & 0.855 \\
-5 & CDCMS & 4.92 & 0.716 \\
-6 & HAT & 4.98 & 0.772 \\
-7 & ACDWM & 6.44 & 0.632 \\
-8 & ERulesD2S & 7.31 & 0.556 \\
+1 & ROSE & 2.44 & 0.855 \\
+2 & ARF & 2.81 & 0.862 \\
+3 & SRP & 3.46 & 0.846 \\
+4 & \textbf{EGIS} & 4.28 & 0.856 \\
+5 & CDCMS & 5.05 & 0.723 \\
+6 & ACDWM & 5.31 & 0.735 \\
+7 & HAT & 5.42 & 0.767 \\
+8 & ERulesD2S & 7.23 & 0.562 \\
 \midrule
-\multicolumn{4}{l}{\textit{Friedman: $\chi^2(7) = 168.0$, p < 0.001, CD = 1.52}} \\
+\multicolumn{4}{l}{\textit{Friedman: $\chi^2(7) = 140.3$, p < 0.001, CD = 1.52}} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -323,7 +393,7 @@ On all 48 datasets, the Friedman test yields $\chi^2(7) = 168.0$ ($p < 0.001$) w
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/fig_critical_difference_all48.pdf}
-\caption{Critical difference diagram for all 48 datasets (EXP-2000-NP). Methods connected by a horizontal bar are not significantly different (Nemenyi, $\alpha = 0.05$).}
+\caption{Critical difference diagram for all 48 datasets (EXP-500-NP). Methods connected by a horizontal bar are not significantly different (Nemenyi, $\alpha = 0.05$).}
 \label{fig:s_cd_all48}
 \end{figure}
 
@@ -370,7 +440,7 @@ EXP-500-NP & CDCMS & 0.5908 & 1.0000 & No & 0.030 & negligible \\
 
 \section{Extended Transition Metrics}
 \label{sec:s4}
-This section provides detailed transition metric analysis across all configurations, extending the EXP-2000-NP results presented in the main paper.
+This section provides detailed transition metric analysis across all configurations, extending the EXP-500-NP results presented in the main paper.
 
 \subsection{Transition Metrics by Configuration}
 \label{sec:s4_by_config}
@@ -519,7 +589,551 @@ This section provides detailed analysis of how EGIS performance varies across ch
 
 \section{Per-Dataset Visual Analysis}
 \label{sec:s6}
-\textit{Per-dataset plots are available in the online supplementary archive. Each dataset has four visualizations: rule evolution matrix, attribute usage, rule components heatmap, and accuracy with detected drifts.}
+This section presents detailed case study visualizations for each of the 48 datasets across three no-penalty EGIS configurations (EXP-500-NP, EXP-1000-NP, EXP-2000-NP). Each figure is a composite 2$\times$2 panel showing: (a) rule evolution counts (stacked area), (b) rule complexity over time (dual-axis line plot), (c) transition metrics (TCS, RIR, AMS) over chunk transitions, and (d) rule turnover proportions (normalized stacked bar). Drift annotations are shown where applicable.
+
+\subsection{Abrupt Drift Datasets}
+\label{sec:s6_abrupt}
+
+\subsubsection{AGRAWAL\_Abrupt\_Chain\_Long}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/AGRAWAL_Abrupt_Chain_Long.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/AGRAWAL_Abrupt_Chain_Long.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/AGRAWAL_Abrupt_Chain_Long.pdf}}
+\caption{Case study: AGRAWAL\_Abrupt\_Chain\_Long (Abrupt drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_agrawal_abrupt_chain_long}
+\end{figure*}
+\clearpage
+
+\subsubsection{AGRAWAL\_Abrupt\_Simple\_Mild}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/AGRAWAL_Abrupt_Simple_Mild.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/AGRAWAL_Abrupt_Simple_Mild.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/AGRAWAL_Abrupt_Simple_Mild.pdf}}
+\caption{Case study: AGRAWAL\_Abrupt\_Simple\_Mild (Abrupt drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_agrawal_abrupt_simple_mild}
+\end{figure*}
+\clearpage
+
+\subsubsection{AGRAWAL\_Abrupt\_Simple\_Severe}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/AGRAWAL_Abrupt_Simple_Severe.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/AGRAWAL_Abrupt_Simple_Severe.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/AGRAWAL_Abrupt_Simple_Severe.pdf}}
+\caption{Case study: AGRAWAL\_Abrupt\_Simple\_Severe (Abrupt drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_agrawal_abrupt_simple_severe}
+\end{figure*}
+\clearpage
+
+\subsubsection{HYPERPLANE\_Abrupt\_Simple}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/HYPERPLANE_Abrupt_Simple.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/HYPERPLANE_Abrupt_Simple.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/HYPERPLANE_Abrupt_Simple.pdf}}
+\caption{Case study: HYPERPLANE\_Abrupt\_Simple (Abrupt drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_hyperplane_abrupt_simple}
+\end{figure*}
+\clearpage
+
+\subsubsection{LED\_Abrupt\_Simple}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/LED_Abrupt_Simple.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/LED_Abrupt_Simple.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/LED_Abrupt_Simple.pdf}}
+\caption{Case study: LED\_Abrupt\_Simple (Abrupt drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_led_abrupt_simple}
+\end{figure*}
+\clearpage
+
+\subsubsection{RANDOMTREE\_Abrupt\_Recurring}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/RANDOMTREE_Abrupt_Recurring.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/RANDOMTREE_Abrupt_Recurring.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/RANDOMTREE_Abrupt_Recurring.pdf}}
+\caption{Case study: RANDOMTREE\_Abrupt\_Recurring (Abrupt drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_randomtree_abrupt_recurring}
+\end{figure*}
+\clearpage
+
+\subsubsection{RANDOMTREE\_Abrupt\_Simple}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/RANDOMTREE_Abrupt_Simple.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/RANDOMTREE_Abrupt_Simple.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/RANDOMTREE_Abrupt_Simple.pdf}}
+\caption{Case study: RANDOMTREE\_Abrupt\_Simple (Abrupt drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_randomtree_abrupt_simple}
+\end{figure*}
+\clearpage
+
+\subsubsection{RBF\_Abrupt\_Blip}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/RBF_Abrupt_Blip.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/RBF_Abrupt_Blip.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/RBF_Abrupt_Blip.pdf}}
+\caption{Case study: RBF\_Abrupt\_Blip (Abrupt drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_rbf_abrupt_blip}
+\end{figure*}
+\clearpage
+
+\subsubsection{RBF\_Abrupt\_Severe}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/RBF_Abrupt_Severe.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/RBF_Abrupt_Severe.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/RBF_Abrupt_Severe.pdf}}
+\caption{Case study: RBF\_Abrupt\_Severe (Abrupt drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_rbf_abrupt_severe}
+\end{figure*}
+\clearpage
+
+\subsubsection{SEA\_Abrupt\_Chain}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/SEA_Abrupt_Chain.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/SEA_Abrupt_Chain.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/SEA_Abrupt_Chain.pdf}}
+\caption{Case study: SEA\_Abrupt\_Chain (Abrupt drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_sea_abrupt_chain}
+\end{figure*}
+\clearpage
+
+\subsubsection{SEA\_Abrupt\_Recurring}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/SEA_Abrupt_Recurring.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/SEA_Abrupt_Recurring.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/SEA_Abrupt_Recurring.pdf}}
+\caption{Case study: SEA\_Abrupt\_Recurring (Abrupt drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_sea_abrupt_recurring}
+\end{figure*}
+\clearpage
+
+\subsubsection{SEA\_Abrupt\_Simple}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/SEA_Abrupt_Simple.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/SEA_Abrupt_Simple.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/SEA_Abrupt_Simple.pdf}}
+\caption{Case study: SEA\_Abrupt\_Simple (Abrupt drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_sea_abrupt_simple}
+\end{figure*}
+\clearpage
+
+\subsubsection{SINE\_Abrupt\_Simple}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/SINE_Abrupt_Simple.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/SINE_Abrupt_Simple.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/SINE_Abrupt_Simple.pdf}}
+\caption{Case study: SINE\_Abrupt\_Simple (Abrupt drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_sine_abrupt_simple}
+\end{figure*}
+\clearpage
+
+\subsubsection{STAGGER\_Abrupt\_Chain}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/STAGGER_Abrupt_Chain.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/STAGGER_Abrupt_Chain.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/STAGGER_Abrupt_Chain.pdf}}
+\caption{Case study: STAGGER\_Abrupt\_Chain (Abrupt drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_stagger_abrupt_chain}
+\end{figure*}
+\clearpage
+
+\subsubsection{STAGGER\_Abrupt\_Recurring}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/STAGGER_Abrupt_Recurring.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/STAGGER_Abrupt_Recurring.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/STAGGER_Abrupt_Recurring.pdf}}
+\caption{Case study: STAGGER\_Abrupt\_Recurring (Abrupt drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_stagger_abrupt_recurring}
+\end{figure*}
+\clearpage
+
+\subsubsection{WAVEFORM\_Abrupt\_Simple}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/WAVEFORM_Abrupt_Simple.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/WAVEFORM_Abrupt_Simple.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/WAVEFORM_Abrupt_Simple.pdf}}
+\caption{Case study: WAVEFORM\_Abrupt\_Simple (Abrupt drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_waveform_abrupt_simple}
+\end{figure*}
+\clearpage
+
+\subsection{Gradual Drift Datasets}
+\label{sec:s6_gradual}
+
+\subsubsection{HYPERPLANE\_Gradual\_Simple}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/HYPERPLANE_Gradual_Simple.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/HYPERPLANE_Gradual_Simple.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/HYPERPLANE_Gradual_Simple.pdf}}
+\caption{Case study: HYPERPLANE\_Gradual\_Simple (Gradual drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_hyperplane_gradual_simple}
+\end{figure*}
+\clearpage
+
+\subsubsection{LED\_Gradual\_Simple}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/LED_Gradual_Simple.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/LED_Gradual_Simple.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/LED_Gradual_Simple.pdf}}
+\caption{Case study: LED\_Gradual\_Simple (Gradual drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_led_gradual_simple}
+\end{figure*}
+\clearpage
+
+\subsubsection{RANDOMTREE\_Gradual\_Simple}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/RANDOMTREE_Gradual_Simple.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/RANDOMTREE_Gradual_Simple.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/RANDOMTREE_Gradual_Simple.pdf}}
+\caption{Case study: RANDOMTREE\_Gradual\_Simple (Gradual drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_randomtree_gradual_simple}
+\end{figure*}
+\clearpage
+
+\subsubsection{RBF\_Gradual\_Moderate}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/RBF_Gradual_Moderate.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/RBF_Gradual_Moderate.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/RBF_Gradual_Moderate.pdf}}
+\caption{Case study: RBF\_Gradual\_Moderate (Gradual drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_rbf_gradual_moderate}
+\end{figure*}
+\clearpage
+
+\subsubsection{RBF\_Gradual\_Severe}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/RBF_Gradual_Severe.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/RBF_Gradual_Severe.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/RBF_Gradual_Severe.pdf}}
+\caption{Case study: RBF\_Gradual\_Severe (Gradual drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_rbf_gradual_severe}
+\end{figure*}
+\clearpage
+
+\subsubsection{SEA\_Gradual\_Recurring}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/SEA_Gradual_Recurring.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/SEA_Gradual_Recurring.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/SEA_Gradual_Recurring.pdf}}
+\caption{Case study: SEA\_Gradual\_Recurring (Gradual drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_sea_gradual_recurring}
+\end{figure*}
+\clearpage
+
+\subsubsection{SEA\_Gradual\_Simple\_Fast}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/SEA_Gradual_Simple_Fast.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/SEA_Gradual_Simple_Fast.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/SEA_Gradual_Simple_Fast.pdf}}
+\caption{Case study: SEA\_Gradual\_Simple\_Fast (Gradual drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_sea_gradual_simple_fast}
+\end{figure*}
+\clearpage
+
+\subsubsection{SEA\_Gradual\_Simple\_Slow}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/SEA_Gradual_Simple_Slow.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/SEA_Gradual_Simple_Slow.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/SEA_Gradual_Simple_Slow.pdf}}
+\caption{Case study: SEA\_Gradual\_Simple\_Slow (Gradual drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_sea_gradual_simple_slow}
+\end{figure*}
+\clearpage
+
+\subsubsection{SINE\_Gradual\_Recurring}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/SINE_Gradual_Recurring.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/SINE_Gradual_Recurring.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/SINE_Gradual_Recurring.pdf}}
+\caption{Case study: SINE\_Gradual\_Recurring (Gradual drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_sine_gradual_recurring}
+\end{figure*}
+\clearpage
+
+\subsubsection{STAGGER\_Gradual\_Chain}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/STAGGER_Gradual_Chain.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/STAGGER_Gradual_Chain.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/STAGGER_Gradual_Chain.pdf}}
+\caption{Case study: STAGGER\_Gradual\_Chain (Gradual drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_stagger_gradual_chain}
+\end{figure*}
+\clearpage
+
+\subsubsection{WAVEFORM\_Gradual\_Simple}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/WAVEFORM_Gradual_Simple.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/WAVEFORM_Gradual_Simple.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/WAVEFORM_Gradual_Simple.pdf}}
+\caption{Case study: WAVEFORM\_Gradual\_Simple (Gradual drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_waveform_gradual_simple}
+\end{figure*}
+\clearpage
+
+\subsection{Noisy Drift Datasets}
+\label{sec:s6_noisy}
+
+\subsubsection{AGRAWAL\_Abrupt\_Simple\_Severe\_Noise}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/AGRAWAL_Abrupt_Simple_Severe_Noise.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/AGRAWAL_Abrupt_Simple_Severe_Noise.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/AGRAWAL_Abrupt_Simple_Severe_Noise.pdf}}
+\caption{Case study: AGRAWAL\_Abrupt\_Simple\_Severe\_Noise (Noisy drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_agrawal_abrupt_simple_severe_noise}
+\end{figure*}
+\clearpage
+
+\subsubsection{HYPERPLANE\_Gradual\_Noise}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/HYPERPLANE_Gradual_Noise.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/HYPERPLANE_Gradual_Noise.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/HYPERPLANE_Gradual_Noise.pdf}}
+\caption{Case study: HYPERPLANE\_Gradual\_Noise (Noisy drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_hyperplane_gradual_noise}
+\end{figure*}
+\clearpage
+
+\subsubsection{RANDOMTREE\_Gradual\_Noise}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/RANDOMTREE_Gradual_Noise.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/RANDOMTREE_Gradual_Noise.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/RANDOMTREE_Gradual_Noise.pdf}}
+\caption{Case study: RANDOMTREE\_Gradual\_Noise (Noisy drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_randomtree_gradual_noise}
+\end{figure*}
+\clearpage
+
+\subsubsection{RBF\_Abrupt\_Blip\_Noise}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/RBF_Abrupt_Blip_Noise.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/RBF_Abrupt_Blip_Noise.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/RBF_Abrupt_Blip_Noise.pdf}}
+\caption{Case study: RBF\_Abrupt\_Blip\_Noise (Noisy drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_rbf_abrupt_blip_noise}
+\end{figure*}
+\clearpage
+
+\subsubsection{RBF\_Gradual\_Severe\_Noise}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/RBF_Gradual_Severe_Noise.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/RBF_Gradual_Severe_Noise.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/RBF_Gradual_Severe_Noise.pdf}}
+\caption{Case study: RBF\_Gradual\_Severe\_Noise (Noisy drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_rbf_gradual_severe_noise}
+\end{figure*}
+\clearpage
+
+\subsubsection{SEA\_Abrupt\_Chain\_Noise}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/SEA_Abrupt_Chain_Noise.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/SEA_Abrupt_Chain_Noise.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/SEA_Abrupt_Chain_Noise.pdf}}
+\caption{Case study: SEA\_Abrupt\_Chain\_Noise (Noisy drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_sea_abrupt_chain_noise}
+\end{figure*}
+\clearpage
+
+\subsubsection{SINE\_Abrupt\_Recurring\_Noise}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/SINE_Abrupt_Recurring_Noise.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/SINE_Abrupt_Recurring_Noise.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/SINE_Abrupt_Recurring_Noise.pdf}}
+\caption{Case study: SINE\_Abrupt\_Recurring\_Noise (Noisy drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_sine_abrupt_recurring_noise}
+\end{figure*}
+\clearpage
+
+\subsubsection{STAGGER\_Abrupt\_Chain\_Noise}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/STAGGER_Abrupt_Chain_Noise.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/STAGGER_Abrupt_Chain_Noise.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/STAGGER_Abrupt_Chain_Noise.pdf}}
+\caption{Case study: STAGGER\_Abrupt\_Chain\_Noise (Noisy drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_stagger_abrupt_chain_noise}
+\end{figure*}
+\clearpage
+
+\subsection{Stationary Datasets}
+\label{sec:s6_stationary}
+
+\subsubsection{AGRAWAL\_Stationary}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/AGRAWAL_Stationary.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/AGRAWAL_Stationary.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/AGRAWAL_Stationary.pdf}}
+\caption{Case study: AGRAWAL\_Stationary (Stationary drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_agrawal_stationary}
+\end{figure*}
+\clearpage
+
+\subsubsection{HYPERPLANE\_Stationary}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/HYPERPLANE_Stationary.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/HYPERPLANE_Stationary.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/HYPERPLANE_Stationary.pdf}}
+\caption{Case study: HYPERPLANE\_Stationary (Stationary drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_hyperplane_stationary}
+\end{figure*}
+\clearpage
+
+\subsubsection{LED\_Stationary}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/LED_Stationary.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/LED_Stationary.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/LED_Stationary.pdf}}
+\caption{Case study: LED\_Stationary (Stationary drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_led_stationary}
+\end{figure*}
+\clearpage
+
+\subsubsection{RANDOMTREE\_Stationary}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/RANDOMTREE_Stationary.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/RANDOMTREE_Stationary.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/RANDOMTREE_Stationary.pdf}}
+\caption{Case study: RANDOMTREE\_Stationary (Stationary drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_randomtree_stationary}
+\end{figure*}
+\clearpage
+
+\subsubsection{RBF\_Stationary}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/RBF_Stationary.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/RBF_Stationary.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/RBF_Stationary.pdf}}
+\caption{Case study: RBF\_Stationary (Stationary drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_rbf_stationary}
+\end{figure*}
+\clearpage
+
+\subsubsection{SEA\_Stationary}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/SEA_Stationary.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/SEA_Stationary.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/SEA_Stationary.pdf}}
+\caption{Case study: SEA\_Stationary (Stationary drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_sea_stationary}
+\end{figure*}
+\clearpage
+
+\subsubsection{SINE\_Stationary}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/SINE_Stationary.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/SINE_Stationary.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/SINE_Stationary.pdf}}
+\caption{Case study: SINE\_Stationary (Stationary drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_sine_stationary}
+\end{figure*}
+\clearpage
+
+\subsubsection{STAGGER\_Stationary}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/STAGGER_Stationary.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/STAGGER_Stationary.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/STAGGER_Stationary.pdf}}
+\caption{Case study: STAGGER\_Stationary (Stationary drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_stagger_stationary}
+\end{figure*}
+\clearpage
+
+\subsubsection{WAVEFORM\_Stationary}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/WAVEFORM_Stationary.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/WAVEFORM_Stationary.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/WAVEFORM_Stationary.pdf}}
+\caption{Case study: WAVEFORM\_Stationary (Stationary drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_waveform_stationary}
+\end{figure*}
+\clearpage
+
+\subsection{Real-World Datasets}
+\label{sec:s6_real}
+
+\subsubsection{AssetNegotiation\_F2}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/AssetNegotiation_F2.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/AssetNegotiation_F2.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/AssetNegotiation_F2.pdf}}
+\caption{Case study: AssetNegotiation\_F2 (real-world drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_assetnegotiation_f2}
+\end{figure*}
+\clearpage
+
+\subsubsection{AssetNegotiation\_F3}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/AssetNegotiation_F3.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/AssetNegotiation_F3.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/AssetNegotiation_F3.pdf}}
+\caption{Case study: AssetNegotiation\_F3 (real-world drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_assetnegotiation_f3}
+\end{figure*}
+\clearpage
+
+\subsubsection{AssetNegotiation\_F4}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/AssetNegotiation_F4.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/AssetNegotiation_F4.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/AssetNegotiation_F4.pdf}}
+\caption{Case study: AssetNegotiation\_F4 (real-world drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_assetnegotiation_f4}
+\end{figure*}
+\clearpage
+
+\subsubsection{Electricity}
+\begin{figure*}[htbp]
+\centering
+\subfloat[EXP-500-NP (chunk=500)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-500-NP/Electricity.pdf}}\\
+\subfloat[EXP-1000-NP (chunk=1000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-1000-NP/Electricity.pdf}}\\
+\subfloat[EXP-2000-NP (chunk=2000)]{\includegraphics[width=0.95\textwidth,height=0.27\textheight,keepaspectratio]{figures/case_studies/EXP-2000-NP/Electricity.pdf}}
+\caption{Case study: Electricity (real-world drift). Composite 2$\times$2 panels show rule evolution counts, rule complexity, transition metrics, and rule turnover proportions for each chunk configuration.}
+\label{fig:s6_electricity}
+\end{figure*}
+\clearpage
+
 
 \section{Rule Evolution Details}
 \label{sec:s7}
