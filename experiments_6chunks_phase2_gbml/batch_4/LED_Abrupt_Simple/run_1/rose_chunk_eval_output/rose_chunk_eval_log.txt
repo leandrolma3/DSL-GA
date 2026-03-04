@@ -1,0 +1,37 @@
+ROSE_ChunkEval (avaliacao por chunk)
+Evaluator: WindowAUCMultiClassImbalancedPerformanceEvaluator
+Chunk size: 1000
+N_classes: 10
+
+Command: java -Xmx4g -javaagent:rose_jars/sizeofag-1.0.4.jar -cp rose_jars/ROSE-1.0.jar:rose_jars/MOA-dependencies.jar moa.DoTask EvaluateInterleavedTestThenTrain -e (WindowAUCMultiClassImbalancedPerformanceEvaluator) -s (ArffFileStream -f /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_6chunks_phase2_gbml/batch_4/LED_Abrupt_Simple/run_1/rose_arff/LED_Abrupt_Simple.arff) -l (moa.classifiers.meta.imbalanced.ROSE) -f 1000 -d /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_6chunks_phase2_gbml/batch_4/LED_Abrupt_Simple/run_1/rose_chunk_eval_output/rose_chunk_eval_results.csv
+
+STDOUT:
+learning evaluation instances,evaluation time (cpu seconds),model cost (RAM-Hours),classified instances,PMAUC,WMAUC,EWMAUC,Accuracy,Kappa,G-Mean,Classes,CM[0][0],CM[0][1],CM[0][2],CM[0][3],CM[0][4],CM[0][5],CM[0][6],CM[0][7],CM[0][8],CM[0][9],CM[1][0],CM[1][1],CM[1][2],CM[1][3],CM[1][4],CM[1][5],CM[1][6],CM[1][7],CM[1][8],CM[1][9],CM[2][0],CM[2][1],CM[2][2],CM[2][3],CM[2][4],CM[2][5],CM[2][6],CM[2][7],CM[2][8],CM[2][9],CM[3][0],CM[3][1],CM[3][2],CM[3][3],CM[3][4],CM[3][5],CM[3][6],CM[3][7],CM[3][8],CM[3][9],CM[4][0],CM[4][1],CM[4][2],CM[4][3],CM[4][4],CM[4][5],CM[4][6],CM[4][7],CM[4][8],CM[4][9],CM[5][0],CM[5][1],CM[5][2],CM[5][3],CM[5][4],CM[5][5],CM[5][6],CM[5][7],CM[5][8],CM[5][9],CM[6][0],CM[6][1],CM[6][2],CM[6][3],CM[6][4],CM[6][5],CM[6][6],CM[6][7],CM[6][8],CM[6][9],CM[7][0],CM[7][1],CM[7][2],CM[7][3],CM[7][4],CM[7][5],CM[7][6],CM[7][7],CM[7][8],CM[7][9],CM[8][0],CM[8][1],CM[8][2],CM[8][3],CM[8][4],CM[8][5],CM[8][6],CM[8][7],CM[8][8],CM[8][9],CM[9][0],CM[9][1],CM[9][2],CM[9][3],CM[9][4],CM[9][5],CM[9][6],CM[9][7],CM[9][8],CM[9][9],model training instances,model serialized size (bytes)
+1000.0,0.93049291,2.346126170878402E-7,1000.0,0.9869717584003298,0.9999999999999999,0.9999999999999999,0.894,0.8819083608880491,0.0,10.0,51.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.0,0.0,0.0,49.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,46.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,59.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,47.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,59.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,43.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,42.0,0.0,0.0,4.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,51.0,1000.0,997800.0
+2000.0,1.644943249,4.196558321651175E-7,2000.0,0.9881006289308176,0.9999999999999999,0.9999999999999999,0.9,0.8886810935969365,0.0,10.0,53.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,0.0,0.0,46.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,59.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,46.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,53.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,45.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,57.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,42.0,2000.0,1001160.0
+3000.0,3.18236349,1.014754752857267E-6,3000.0,0.9139445215131442,0.9999999999999999,0.9999999999999999,0.684,0.6475715898090195,0.6144523616893576,10.0,5.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,9.0,0.0,0.0,36.0,0.0,1.0,4.0,1.0,0.0,4.0,0.0,0.0,3.0,0.0,41.0,3.0,0.0,0.0,2.0,2.0,4.0,0.0,0.0,2.0,4.0,30.0,0.0,3.0,1.0,6.0,0.0,4.0,0.0,4.0,0.0,0.0,39.0,0.0,0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,37.0,5.0,0.0,1.0,6.0,2.0,0.0,1.0,0.0,0.0,1.0,48.0,0.0,1.0,0.0,1.0,8.0,3.0,4.0,2.0,0.0,1.0,44.0,5.0,5.0,18.0,0.0,4.0,1.0,0.0,0.0,5.0,0.0,32.0,5.0,4.0,2.0,0.0,1.0,2.0,4.0,0.0,1.0,2.0,30.0,3000.0,1496296.0
+4000.0,4.261116264,1.4276192298888703E-6,4000.0,0.9369728990009039,0.9999999999999999,0.9999999999999999,0.716,0.6843223824323182,0.7099705290510544,10.0,43.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,8.0,1.0,1.0,43.0,2.0,1.0,6.0,0.0,0.0,7.0,0.0,0.0,2.0,0.0,38.0,1.0,0.0,0.0,1.0,0.0,5.0,1.0,0.0,1.0,2.0,37.0,0.0,4.0,0.0,5.0,1.0,3.0,1.0,2.0,0.0,0.0,40.0,2.0,0.0,0.0,1.0,2.0,0.0,1.0,0.0,2.0,0.0,37.0,3.0,0.0,0.0,3.0,3.0,0.0,0.0,1.0,0.0,9.0,32.0,0.0,7.0,1.0,0.0,2.0,1.0,7.0,0.0,1.0,0.0,28.0,0.0,0.0,3.0,0.0,2.0,4.0,0.0,1.0,7.0,0.0,24.0,4.0,2.0,0.0,0.0,6.0,1.0,5.0,0.0,2.0,3.0,36.0,4000.0,1479408.0
+5000.0,5.021115154,1.647938205685338E-6,5000.0,0.9540990676364989,0.9999999999999999,0.9999999999999999,0.762,0.7353155750102315,0.7507513435014637,10.0,40.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,7.0,0.0,3.0,42.0,1.0,2.0,2.0,0.0,0.0,5.0,0.0,0.0,0.0,0.0,48.0,4.0,0.0,1.0,0.0,0.0,2.0,0.0,0.0,0.0,1.0,29.0,1.0,1.0,0.0,2.0,0.0,1.0,0.0,4.0,0.0,0.0,42.0,3.0,1.0,0.0,1.0,6.0,1.0,0.0,1.0,1.0,1.0,36.0,6.0,1.0,0.0,6.0,3.0,0.0,0.0,0.0,0.0,3.0,40.0,0.0,4.0,0.0,0.0,0.0,4.0,4.0,0.0,0.0,0.0,47.0,0.0,2.0,3.0,0.0,3.0,2.0,0.0,0.0,2.0,0.0,33.0,3.0,3.0,0.0,0.0,4.0,6.0,1.0,0.0,1.0,3.0,24.0,5000.0,1120576.0
+
+
+STDERR:
+
+{M}assive {O}nline {A}nalysis
+Version:  21.07 July 2021
+Copyright: (C) 2007-2021 University of Waikato, Hamilton, New Zealand
+Web: http://moa.cms.waikato.ac.nz/
+
+- 0.00s [running] Preparing option stream...                                   
+\ 0.70s [running] 16.34% Evaluating learner...                                 
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by sizeof.agent.SizeOfAgent (file:/content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/rose_jars/MOA-dependencies.jar) to field java.util.HashMap.table
+WARNING: Please consider reporting this to the maintainers of sizeof.agent.SizeOfAgent
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+| 1.53s [running] 38.16% Evaluating learner...                                 
+/ 2.41s [running] 49.07% Evaluating learner...                                 
+- 3.35s [running] 65.43% Evaluating learner...                                 
+\ 4.31s [running] 81.80% Evaluating learner...                                 
+                                                                               
+Task completed in 5.14s (CPU time)
+

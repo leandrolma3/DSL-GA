@@ -1,0 +1,29 @@
+=== STDOUT ===
+
+
+=== STDERR ===
+
+{M}assive {O}nline {A}nalysis
+Version:  20.07 July 2020
+Copyright: (C) 2007-2020 University of Waikato, Hamilton, New Zealand
+Web: http://moa.cms.waikato.ac.nz/
+
+- 0.00s [running] Preparing option stream...                                   
+                                                                               
+Task failed. Reason: 
+java.lang.NumberFormatException: For input string: "nan"
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:651)
+	at java.base/java.lang.Double.valueOf(Double.java:614)
+	at com.yahoo.labs.samoa.instances.ArffLoader.readInstanceDense(ArffLoader.java:163)
+	at com.yahoo.labs.samoa.instances.ArffLoader.readInstance(ArffLoader.java:130)
+	at com.yahoo.labs.samoa.instances.Instances.readInstance(Instances.java:477)
+	at moa.streams.ArffFileStream.readNextInstanceFromFile(ArffFileStream.java:157)
+	at moa.streams.ArffFileStream.restart(ArffFileStream.java:148)
+	at moa.streams.ArffFileStream.prepareForUseImpl(ArffFileStream.java:94)
+	at moa.options.AbstractOptionHandler.prepareForUse(AbstractOptionHandler.java:86)
+	at moa.options.OptionsHandler.prepareClassOptions(OptionsHandler.java:149)
+	at moa.options.AbstractOptionHandler.prepareClassOptions(AbstractOptionHandler.java:151)
+	at moa.tasks.AbstractTask.doTask(AbstractTask.java:52)
+	at moa.tasks.TaskThread.run(TaskThread.java:76)

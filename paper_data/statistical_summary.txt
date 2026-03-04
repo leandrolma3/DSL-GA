@@ -1,0 +1,369 @@
+================================================================================
+STATISTICAL ANALYSIS SUMMARY REPORT
+IEEE TKDE Paper - Section VI Results and Discussion
+================================================================================
+
+Generated: 2026-03-02 14:43:46
+
+--------------------------------------------------------------------------------
+1. OVERALL PERFORMANCE ANALYSIS
+--------------------------------------------------------------------------------
+
+--- Configuration: EXP-500-NP ---
+Datasets: 48, Models: 8
+
+Friedman Test:
+  Chi-square: 140.287
+  p-value: 0.000000
+  Significant: True
+
+Nemenyi Critical Distance (alpha=0.05): 1.516
+
+Average Rankings (lower is better):
+  1. ROSE                : 2.44 (G-Mean: 0.8551±0.1702, Wins: 14)
+  2. ARF                 : 2.81 (G-Mean: 0.8624±0.1402, Wins: 8)
+  3. SRP                 : 3.46 (G-Mean: 0.8464±0.1648, Wins: 9)
+  4. EGIS                : 4.28 (G-Mean: 0.8561±0.1238, Wins: 7)
+  5. CDCMS               : 5.05 (G-Mean: 0.7226±0.3327, Wins: 5)
+  6. ACDWM               : 5.31 (G-Mean: 0.7348±0.3186, Wins: 4)
+  7. HAT                 : 5.42 (G-Mean: 0.7667±0.2310, Wins: 0)
+  8. ERulesD2S           : 7.23 (G-Mean: 0.5616±0.1371, Wins: 0)
+
+Pairwise Wilcoxon Tests (EGIS vs others, Bonferroni corrected):
+  EGIS vs ARF                   : p=0.1339 (adj=0.9371), Δ=-0.0063, δ=-0.083 (negligible)
+  EGIS vs SRP                   : p=0.1450 (adj=1.0000), Δ=+0.0096, δ=-0.040 (negligible)
+  EGIS vs HAT                   : p=0.0333 (adj=0.2332), Δ=+0.0893, δ=0.232 (small)
+  EGIS vs ROSE                  : p=0.0012 (adj=0.0083)*, Δ=+0.0010, δ=-0.089 (negligible)
+  EGIS vs ACDWM                 : p=0.1166 (adj=0.8161), Δ=+0.1213, δ=0.234 (small)
+  EGIS vs ERulesD2S             : p=0.0000 (adj=0.0000)*, Δ=+0.2945, δ=0.870 (large)
+  EGIS vs CDCMS                 : p=0.0401 (adj=0.2805), Δ=+0.1334, δ=0.162 (small)
+
+--- Configuration: EXP-1000-NP ---
+Datasets: 48, Models: 8
+
+Friedman Test:
+  Chi-square: 157.807
+  p-value: 0.000000
+  Significant: True
+
+Nemenyi Critical Distance (alpha=0.05): 1.516
+
+Average Rankings (lower is better):
+  1. ROSE                : 2.42 (G-Mean: 0.8551±0.1702, Wins: 14)
+  2. ARF                 : 2.83 (G-Mean: 0.8726±0.1309, Wins: 8)
+  3. SRP                 : 3.54 (G-Mean: 0.8478±0.1521, Wins: 8)
+  4. EGIS                : 3.64 (G-Mean: 0.8657±0.1137, Wins: 7)
+  5. CDCMS               : 5.03 (G-Mean: 0.7187±0.3312, Wins: 5)
+  6. HAT                 : 5.25 (G-Mean: 0.7698±0.2297, Wins: 0)
+  7. ACDWM               : 6.00 (G-Mean: 0.6989±0.3006, Wins: 5)
+  8. ERulesD2S           : 7.29 (G-Mean: 0.5558±0.1358, Wins: 0)
+
+Pairwise Wilcoxon Tests (EGIS vs others, Bonferroni corrected):
+  EGIS vs ARF                   : p=0.2036 (adj=1.0000), Δ=-0.0069, δ=-0.076 (negligible)
+  EGIS vs SRP                   : p=0.9473 (adj=1.0000), Δ=+0.0179, δ=0.010 (negligible)
+  EGIS vs HAT                   : p=0.0022 (adj=0.0154)*, Δ=+0.0959, δ=0.255 (small)
+  EGIS vs ROSE                  : p=0.0003 (adj=0.0022)*, Δ=+0.0106, δ=-0.069 (negligible)
+  EGIS vs ACDWM                 : p=0.0000 (adj=0.0000)*, Δ=+0.1668, δ=0.455 (medium)
+  EGIS vs ERulesD2S             : p=0.0000 (adj=0.0000)*, Δ=+0.3099, δ=0.931 (large)
+  EGIS vs CDCMS                 : p=0.0032 (adj=0.0221)*, Δ=+0.1470, δ=0.205 (small)
+
+--- Configuration: EXP-2000-NP ---
+Datasets: 48, Models: 8
+
+Friedman Test:
+  Chi-square: 168.042
+  p-value: 0.000000
+  Significant: True
+
+Nemenyi Critical Distance (alpha=0.05): 1.516
+
+Average Rankings (lower is better):
+  1. ROSE                : 2.42 (G-Mean: 0.8551±0.1702, Wins: 15)
+  2. ARF                 : 2.88 (G-Mean: 0.8695±0.1333, Wins: 7)
+  3. SRP                 : 3.44 (G-Mean: 0.8499±0.1504, Wins: 9)
+  4. EGIS                : 3.62 (G-Mean: 0.8551±0.1097, Wins: 7)
+  5. CDCMS               : 4.92 (G-Mean: 0.7162±0.3309, Wins: 6)
+  6. HAT                 : 4.98 (G-Mean: 0.7721±0.2289, Wins: 0)
+  7. ACDWM               : 6.44 (G-Mean: 0.6320±0.2714, Wins: 2)
+  8. ERulesD2S           : 7.31 (G-Mean: 0.5555±0.1335, Wins: 0)
+
+Pairwise Wilcoxon Tests (EGIS vs others, Bonferroni corrected):
+  EGIS vs ARF                   : p=0.0938 (adj=0.6563), Δ=-0.0144, δ=-0.135 (negligible)
+  EGIS vs SRP                   : p=0.6880 (adj=1.0000), Δ=+0.0052, δ=-0.054 (negligible)
+  EGIS vs HAT                   : p=0.0070 (adj=0.0488)*, Δ=+0.0830, δ=0.185 (small)
+  EGIS vs ROSE                  : p=0.0008 (adj=0.0053)*, Δ=+0.0000, δ=-0.122 (negligible)
+  EGIS vs ACDWM                 : p=0.0000 (adj=0.0000)*, Δ=+0.2232, δ=0.655 (large)
+  EGIS vs ERulesD2S             : p=0.0000 (adj=0.0000)*, Δ=+0.2996, δ=0.933 (large)
+  EGIS vs CDCMS                 : p=0.0095 (adj=0.0663), Δ=+0.1389, δ=0.154 (small)
+
+--------------------------------------------------------------------------------
+1b. BINARY-ONLY ANALYSIS (PRIMARY FOR PAPER)
+--------------------------------------------------------------------------------
+
+Binary datasets: 41
+Excluded multiclass: ['LED_Abrupt_Simple', 'LED_Gradual_Simple', 'LED_Stationary', 'RBF_Stationary', 'WAVEFORM_Abrupt_Simple', 'WAVEFORM_Gradual_Simple', 'WAVEFORM_Stationary']
+
+--- Configuration: EXP-500-NP (Binary-Only) ---
+Datasets: 41, Models: 8
+
+Friedman Test:
+  Chi-square: 123.058
+  p-value: 0.000000
+  Significant: True
+
+Nemenyi Critical Distance (alpha=0.05): 1.640
+
+Average Rankings (lower is better):
+  1. ROSE                : 2.41 (G-Mean: 0.8923+/-0.1109, Wins: 12)
+  2. ARF                 : 2.85 (G-Mean: 0.8776+/-0.1405, Wins: 8)
+  3. SRP                 : 3.68 (G-Mean: 0.8691+/-0.1498, Wins: 7)
+  4. EGIS                : 4.45 (G-Mean: 0.8591+/-0.1247, Wins: 4)
+  5. CDCMS               : 4.65 (G-Mean: 0.8460+/-0.1518, Wins: 5)
+  6. ACDWM               : 4.95 (G-Mean: 0.8603+/-0.0929, Wins: 4)
+  7. HAT                 : 5.49 (G-Mean: 0.8149+/-0.1502, Wins: 0)
+  8. ERulesD2S           : 7.51 (G-Mean: 0.6050+/-0.0866, Wins: 0)
+
+EGIS Win/Loss/Draw:
+  vs ARF            : 11/30/0
+  vs SRP            : 13/28/0
+  vs HAT            : 26/13/2
+  vs ROSE           : 7/32/2
+  vs ACDWM          : 24/17/0
+  vs ERulesD2S      : 41/0/0
+  vs CDCMS          : 21/17/3
+
+Pairwise Wilcoxon Tests (EGIS vs others, Bonferroni corrected):
+  EGIS vs ARF                   : p=0.0757 (adj=0.5298), delta=-0.0184, d=-0.172 (small)
+  EGIS vs SRP                   : p=0.0825 (adj=0.5773), delta=-0.0100, d=-0.116 (negligible)
+  EGIS vs HAT                   : p=0.0274 (adj=0.1921), delta=+0.0442, d=0.180 (small)
+  EGIS vs ROSE                  : p=0.0001 (adj=0.0006)*, delta=-0.0332, d=-0.184 (small)
+  EGIS vs ACDWM                 : p=0.9535 (adj=1.0000), delta=-0.0011, d=0.133 (negligible)
+  EGIS vs ERulesD2S             : p=0.0000 (adj=0.0000)*, delta=+0.2541, d=0.843 (large)
+  EGIS vs CDCMS                 : p=0.5908 (adj=1.0000), delta=+0.0131, d=0.030 (negligible)
+
+--- Configuration: EXP-1000-NP (Binary-Only) ---
+Datasets: 41, Models: 8
+
+Friedman Test:
+  Chi-square: 136.168
+  p-value: 0.000000
+  Significant: True
+
+Nemenyi Critical Distance (alpha=0.05): 1.640
+
+Average Rankings (lower is better):
+  1. ROSE                : 2.41 (G-Mean: 0.8923+/-0.1109, Wins: 11)
+  2. ARF                 : 2.88 (G-Mean: 0.8786+/-0.1395, Wins: 8)
+  3. EGIS                : 3.70 (G-Mean: 0.8692+/-0.1133, Wins: 4)
+  4. SRP                 : 3.76 (G-Mean: 0.8618+/-0.1524, Wins: 7)
+  5. CDCMS               : 4.62 (G-Mean: 0.8414+/-0.1520, Wins: 5)
+  6. HAT                 : 5.29 (G-Mean: 0.8191+/-0.1462, Wins: 0)
+  7. ACDWM               : 5.76 (G-Mean: 0.8182+/-0.0781, Wins: 5)
+  8. ERulesD2S           : 7.59 (G-Mean: 0.5994+/-0.0841, Wins: 0)
+
+EGIS Win/Loss/Draw:
+  vs ARF            : 12/29/0
+  vs SRP            : 21/20/0
+  vs HAT            : 31/10/0
+  vs ROSE           : 7/33/1
+  vs ACDWM          : 35/6/0
+  vs ERulesD2S      : 41/0/0
+  vs CDCMS          : 27/12/2
+
+Pairwise Wilcoxon Tests (EGIS vs others, Bonferroni corrected):
+  EGIS vs ARF                   : p=0.1633 (adj=1.0000), delta=-0.0094, d=-0.133 (negligible)
+  EGIS vs SRP                   : p=0.8778 (adj=1.0000), delta=+0.0074, d=-0.055 (negligible)
+  EGIS vs HAT                   : p=0.0007 (adj=0.0052)*, delta=+0.0501, d=0.197 (small)
+  EGIS vs ROSE                  : p=0.0000 (adj=0.0000)*, delta=-0.0231, d=-0.179 (small)
+  EGIS vs ACDWM                 : p=0.0000 (adj=0.0000)*, delta=+0.0510, d=0.402 (medium)
+  EGIS vs ERulesD2S             : p=0.0000 (adj=0.0000)*, delta=+0.2699, d=0.926 (large)
+  EGIS vs CDCMS                 : p=0.0929 (adj=0.6505), delta=+0.0279, d=0.084 (negligible)
+
+--- Configuration: EXP-2000-NP (Binary-Only) ---
+Datasets: 41, Models: 8
+
+Friedman Test:
+  Chi-square: 145.808
+  p-value: 0.000000
+  Significant: True
+
+Nemenyi Critical Distance (alpha=0.05): 1.640
+
+Average Rankings (lower is better):
+  1. ROSE                : 2.39 (G-Mean: 0.8923+/-0.1109, Wins: 13)
+  2. ARF                 : 2.93 (G-Mean: 0.8777+/-0.1402, Wins: 7)
+  3. SRP                 : 3.66 (G-Mean: 0.8621+/-0.1528, Wins: 7)
+  4. EGIS                : 3.68 (G-Mean: 0.8550+/-0.1085, Wins: 4)
+  5. CDCMS               : 4.49 (G-Mean: 0.8385+/-0.1534, Wins: 6)
+  6. HAT                 : 4.98 (G-Mean: 0.8200+/-0.1484, Wins: 0)
+  7. ACDWM               : 6.27 (G-Mean: 0.7399+/-0.0686, Wins: 2)
+  8. ERulesD2S           : 7.61 (G-Mean: 0.5984+/-0.0824, Wins: 0)
+
+EGIS Win/Loss/Draw:
+  vs ARF            : 12/27/2
+  vs SRP            : 20/20/1
+  vs HAT            : 30/10/1
+  vs ROSE           : 8/32/1
+  vs ACDWM          : 39/2/0
+  vs ERulesD2S      : 41/0/0
+  vs CDCMS          : 24/15/2
+
+Pairwise Wilcoxon Tests (EGIS vs others, Bonferroni corrected):
+  EGIS vs ARF                   : p=0.0437 (adj=0.3062), delta=-0.0228, d=-0.200 (small)
+  EGIS vs SRP                   : p=0.5811 (adj=1.0000), delta=-0.0071, d=-0.135 (negligible)
+  EGIS vs HAT                   : p=0.0061 (adj=0.0428)*, delta=+0.0349, d=0.115 (negligible)
+  EGIS vs ROSE                  : p=0.0000 (adj=0.0002)*, delta=-0.0373, d=-0.248 (small)
+  EGIS vs ACDWM                 : p=0.0000 (adj=0.0000)*, delta=+0.1151, d=0.611 (large)
+  EGIS vs ERulesD2S             : p=0.0000 (adj=0.0000)*, delta=+0.2566, d=0.930 (large)
+  EGIS vs CDCMS                 : p=0.2247 (adj=1.0000), delta=+0.0165, d=0.002 (negligible)
+
+--------------------------------------------------------------------------------
+2. PERFORMANCE BY DRIFT TYPE
+--------------------------------------------------------------------------------
+
+--- ABRUPT (16 datasets) ---
+
+  EXP-500-NP:
+    ROSE                : Rank=2.31, G-Mean=0.8536
+    ARF                 : Rank=2.94, G-Mean=0.8566
+    SRP                 : Rank=3.88, G-Mean=0.8375
+    EGIS                : Rank=4.00, G-Mean=0.8540
+    ACDWM               : Rank=4.88, G-Mean=0.7538
+
+  EXP-1000-NP:
+    ROSE                : Rank=2.38, G-Mean=0.8536
+    ARF                 : Rank=2.62, G-Mean=0.8606
+    EGIS                : Rank=3.31, G-Mean=0.8614
+    SRP                 : Rank=3.62, G-Mean=0.8345
+    CDCMS               : Rank=5.38, G-Mean=0.7033
+
+  EXP-2000-NP:
+    ROSE                : Rank=2.12, G-Mean=0.8536
+    ARF                 : Rank=2.69, G-Mean=0.8472
+    SRP                 : Rank=3.50, G-Mean=0.8270
+    EGIS                : Rank=3.62, G-Mean=0.8366
+    HAT                 : Rank=4.94, G-Mean=0.7457
+
+--- GRADUAL (11 datasets) ---
+
+  EXP-500-NP:
+    ARF                 : Rank=2.18, G-Mean=0.8600
+    ROSE                : Rank=2.36, G-Mean=0.8426
+    SRP                 : Rank=3.18, G-Mean=0.8439
+    EGIS                : Rank=4.73, G-Mean=0.8541
+    HAT                 : Rank=5.36, G-Mean=0.7565
+
+  EXP-1000-NP:
+    ROSE                : Rank=2.27, G-Mean=0.8426
+    ARF                 : Rank=2.55, G-Mean=0.8688
+    SRP                 : Rank=3.55, G-Mean=0.8448
+    EGIS                : Rank=3.82, G-Mean=0.8651
+    CDCMS               : Rank=5.09, G-Mean=0.7042
+
+  EXP-2000-NP:
+    ROSE                : Rank=2.36, G-Mean=0.8426
+    ARF                 : Rank=2.55, G-Mean=0.8715
+    SRP                 : Rank=3.45, G-Mean=0.8453
+    EGIS                : Rank=3.73, G-Mean=0.8566
+    HAT                 : Rank=5.00, G-Mean=0.7664
+
+--- NOISY (8 datasets) ---
+
+  EXP-500-NP:
+    ROSE                : Rank=2.62, G-Mean=0.8884
+    ARF                 : Rank=3.12, G-Mean=0.8547
+    SRP                 : Rank=3.38, G-Mean=0.8472
+    EGIS                : Rank=4.38, G-Mean=0.8456
+    ACDWM               : Rank=4.50, G-Mean=0.8490
+
+  EXP-1000-NP:
+    ROSE                : Rank=2.50, G-Mean=0.8884
+    ARF                 : Rank=3.00, G-Mean=0.8631
+    SRP                 : Rank=3.38, G-Mean=0.8354
+    EGIS                : Rank=3.88, G-Mean=0.8507
+    CDCMS               : Rank=4.88, G-Mean=0.8103
+
+  EXP-2000-NP:
+    ROSE                : Rank=2.38, G-Mean=0.8884
+    ARF                 : Rank=3.00, G-Mean=0.8637
+    SRP                 : Rank=3.25, G-Mean=0.8509
+    EGIS                : Rank=3.75, G-Mean=0.8358
+    CDCMS               : Rank=4.62, G-Mean=0.7949
+
+--- STATIONARY (9 datasets) ---
+
+  EXP-500-NP:
+    ROSE                : Rank=2.44, G-Mean=0.8300
+    SRP                 : Rank=2.89, G-Mean=0.8283
+    ARF                 : Rank=3.22, G-Mean=0.8474
+    EGIS                : Rank=3.94, G-Mean=0.8565
+    CDCMS               : Rank=5.06, G-Mean=0.5925
+
+  EXP-1000-NP:
+    ROSE                : Rank=2.44, G-Mean=0.8300
+    ARF                 : Rank=3.22, G-Mean=0.8778
+    SRP                 : Rank=3.33, G-Mean=0.8527
+    EGIS                : Rank=3.72, G-Mean=0.8664
+    CDCMS               : Rank=4.94, G-Mean=0.5933
+
+  EXP-2000-NP:
+    ROSE                : Rank=2.78, G-Mean=0.8300
+    SRP                 : Rank=3.11, G-Mean=0.8611
+    ARF                 : Rank=3.33, G-Mean=0.8801
+    EGIS                : Rank=3.44, G-Mean=0.8797
+    CDCMS               : Rank=4.67, G-Mean=0.5930
+
+--- REAL (4 datasets) ---
+
+  EXP-500-NP:
+    ARF                 : Rank=2.50, G-Mean=0.9414
+    ROSE                : Rank=2.75, G-Mean=0.8853
+    SRP                 : Rank=4.00, G-Mean=0.9286
+    CDCMS               : Rank=4.00, G-Mean=0.9259
+    HAT                 : Rank=4.25, G-Mean=0.9274
+
+  EXP-1000-NP:
+    ROSE                : Rank=2.75, G-Mean=0.8853
+    ARF                 : Rank=3.25, G-Mean=0.9385
+    HAT                 : Rank=3.50, G-Mean=0.9286
+    EGIS                : Rank=3.75, G-Mean=0.9125
+    SRP                 : Rank=4.00, G-Mean=0.9230
+
+  EXP-2000-NP:
+    ROSE                : Rank=3.00, G-Mean=0.8853
+    ARF                 : Rank=3.25, G-Mean=0.9410
+    CDCMS               : Rank=3.25, G-Mean=0.9461
+    EGIS                : Rank=3.50, G-Mean=0.9085
+    HAT                 : Rank=4.00, G-Mean=0.9308
+
+--------------------------------------------------------------------------------
+3. EGIS COMPLEXITY PENALTY EFFECT
+--------------------------------------------------------------------------------
+
+--- Chunk Size: 500 ---
+  Without Penalty (γ=0.0): 0.8561 ± 0.1225
+  With Penalty (γ=0.1):    0.8549 ± 0.1211
+  Difference:              +0.0012
+  Wilcoxon p-value:        0.1154
+  Significant:             False
+  Effect Size:             0.022 (negligible)
+
+--- Chunk Size: 1000 ---
+  Without Penalty (γ=0.0): 0.8657 ± 0.1125
+  With Penalty (γ=0.1):    0.8663 ± 0.1124
+  Difference:              -0.0006
+  Wilcoxon p-value:        0.6465
+  Significant:             False
+  Effect Size:             -0.006 (negligible)
+
+--- Chunk Size: 2000 ---
+  Without Penalty (γ=0.0): 0.8551 ± 0.1086
+  With Penalty (γ=0.1):    0.8472 ± 0.1127
+  Difference:              +0.0079
+  Wilcoxon p-value:        0.0013
+  Significant:             True
+  Effect Size:             0.051 (negligible)
+
+================================================================================
+END OF REPORT
+================================================================================

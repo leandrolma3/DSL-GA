@@ -1,0 +1,143 @@
+===============================================================================
+  COMECE AQUI: Guia Rapido para Executar no Colab via SSH
+===============================================================================
+
+Host SSH: logged-minerals-axis-infrastructure.trycloudflare.com
+
+===============================================================================
+
+PASSO 1: Montar Google Drive (NO NOTEBOOK COLAB - UMA VEZ)
+-----------------------------------------------------------
+
+Abra o notebook Colab no navegador e execute:
+
+    from google.colab import drive
+    drive.mount('/content/drive')
+
+Autorize quando solicitado. Nao feche o notebook!
+
+===============================================================================
+
+PASSO 2: Upload de Arquivos (NO POWERSHELL)
+--------------------------------------------
+
+Execute:
+
+    upload_files.bat logged-minerals-axis-infrastructure.trycloudflare.com
+
+NOTA: Voce precisara digitar a senha 'root' varias vezes durante o upload.
+
+===============================================================================
+
+PASSO 3: Conectar via SSH (NO POWERSHELL)
+------------------------------------------
+
+    ssh logged-minerals-axis-infrastructure.trycloudflare.com
+
+Digite a senha: root
+
+===============================================================================
+
+PASSO 4: Setup do Ambiente (DENTRO DO SSH)
+-------------------------------------------
+
+    cd /root/DSL-AG-hybrid
+    python3 setup_colab_remote.py
+
+Isso vai configurar o Drive e criar os scripts necessarios.
+
+===============================================================================
+
+PASSO 5: Executar Experimento (DENTRO DO SSH)
+----------------------------------------------
+
+    /root/run_experiment.sh python3 compare_gbml_vs_river.py \
+        --stream RBF_Abrupt_Severe \
+        --chunks 3
+
+Ou experimento de teste (1 chunk):
+
+    /root/run_experiment.sh python3 compare_gbml_vs_river.py \
+        --stream RBF_Abrupt_Severe \
+        --chunks 1
+
+===============================================================================
+
+PASSO 6: Acessar Resultados
+----------------------------
+
+Opcao 1: Google Drive Web
+    https://drive.google.com
+    -> MyDrive/DSL-AG-hybrid/experiments/ssh_session_TIMESTAMP/
+
+Opcao 2: Via SSH (ver log)
+    tail -50 /content/drive/MyDrive/DSL-AG-hybrid/experiments/ssh_session_*/logs/*.log
+
+===============================================================================
+
+RESUMO SUPER RAPIDO
+===================
+
+# 1. No Colab (navegador - UMA VEZ):
+from google.colab import drive
+drive.mount('/content/drive')
+
+# 2. No PowerShell:
+upload_files.bat logged-minerals-axis-infrastructure.trycloudflare.com
+
+# 3. No PowerShell:
+ssh logged-minerals-axis-infrastructure.trycloudflare.com
+
+# 4. Dentro do SSH:
+cd /root/DSL-AG-hybrid
+python3 setup_colab_remote.py
+/root/run_experiment.sh python3 compare_gbml_vs_river.py --stream RBF_Abrupt_Severe --chunks 1
+
+# 5. Ver resultados:
+tail -50 /content/drive/MyDrive/DSL-AG-hybrid/experiments/ssh_session_*/logs/*.log
+
+===============================================================================
+
+DOCUMENTACAO COMPLETA
+=====================
+
+- PASSOS_MANUAIS.md           Guia detalhado passo a passo
+- README_WORKFLOW_SSH.md       Tutorial completo
+- QUICK_REFERENCE_SSH.txt      Referencia rapida
+
+===============================================================================
+
+SCRIPTS DISPONIVEIS
+===================
+
+- upload_files.bat             Upload de arquivos via SCP
+- setup_colab_remote.py        Setup do Drive (executa no Colab)
+- colab_workflow.ps1           Workflow automatizado (requer chave SSH)
+- test_simple.ps1              Teste de validacao
+
+===============================================================================
+
+PROBLEMAS COMUNS
+================
+
+PROBLEMA: Drive nao esta montado
+SOLUCAO: No notebook Colab execute:
+         from google.colab import drive
+         drive.mount('/content/drive')
+
+PROBLEMA: Arquivo nao encontrado
+SOLUCAO: Verifique upload: ssh HOST "ls /root/DSL-AG-hybrid"
+         Refaca upload se necessario
+
+PROBLEMA: ModuleNotFoundError
+SOLUCAO: Instale dependencias via SSH:
+         pip install -q river scikit-learn pyyaml matplotlib seaborn pandas numpy
+
+===============================================================================
+
+Data: 2025-10-18
+Autor: Claude Code
+
+Boa sorte com seus experimentos!
+
+===============================================================================

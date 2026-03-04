@@ -1,0 +1,706 @@
+Rule Diff Analysis Report
+Source File: RulesHistory_AssetNegotiation_F3_Run1.txt
+Similarity Threshold: 0.35
+
+======================================================================
+--- Diff Chunk 0 -> Chunk 1 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 0):      nan
+  - Test Acc (Chunk 1):     nan
+  - Test F1 (Chunk 1):      nan
+Fitness:       1.100000 -> 1.298400
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 > 0.6048) AND (x_3 > 0.4007)) THEN Class 0
+  + New: IF ((x_2 > 0.6014) AND (x_3 > 0.4020)) THEN Class 0
+    (Similarity: 0.89)
+
+  Deleted Rules:
+  - IF (x_2 <= 0.6048) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 > 0.6048) AND (x_3 <= 0.4007)) THEN Class 1
+  + New: IF ((x_2 > 0.6014) AND (x_3 <= 0.4020)) THEN Class 1
+    (Similarity: 0.89)
+
+======================================================================
+--- Diff Chunk 1 -> Chunk 2 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 1):      nan
+  - Test Acc (Chunk 2):     nan
+  - Test F1 (Chunk 2):      nan
+Fitness:       1.298400 -> 1.296600
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((x_3 <= 0.3992) AND (x_2 <= 0.6073)) AND (x_2 <= 0.0207)) THEN Class 0
+  + IF (((x_3 <= 0.3992) AND (x_2 <= 0.6073)) AND (x_2 > 0.0207)) THEN Class 0
+  + IF (x_3 > 0.3992) THEN Class 0
+
+  Deleted Rules:
+  - IF ((x_2 > 0.6014) AND (x_3 > 0.4020)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((x_3 <= 0.3992) AND (x_2 > 0.6073)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((x_2 > 0.6014) AND (x_3 <= 0.4020)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 2 -> Chunk 3 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 2):      nan
+  - Test Acc (Chunk 3):     nan
+  - Test F1 (Chunk 3):      nan
+Fitness:       1.296600 -> 1.285600
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((x_3 <= 0.4004) AND (x_2 <= 0.5999)) THEN Class 0
+  + IF ((x_3 > 0.4004) AND (x_1 <= 0.0168)) THEN Class 0
+  + IF ((x_3 > 0.4004) AND (x_1 > 0.0168)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((x_3 <= 0.3992) AND (x_2 <= 0.6073)) AND (x_2 <= 0.0207)) THEN Class 0
+  - IF (((x_3 <= 0.3992) AND (x_2 <= 0.6073)) AND (x_2 > 0.0207)) THEN Class 0
+  - IF (x_3 > 0.3992) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF (((x_3 <= 0.4004) AND (x_2 > 0.5999)) AND (x_2 <= 0.6406)) THEN Class 1
+  + IF (((x_3 <= 0.4004) AND (x_2 > 0.5999)) AND (x_2 > 0.6406)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((x_3 <= 0.3992) AND (x_2 > 0.6073)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 3 -> Chunk 4 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 3):      nan
+  - Test Acc (Chunk 4):     nan
+  - Test F1 (Chunk 4):      nan
+Fitness:       1.285600 -> 1.298400
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_3 <= 0.4004) AND (x_2 <= 0.5999)) THEN Class 0
+  + New: IF ((x_3 <= 0.3987) AND (x_2 <= 0.6001)) THEN Class 0
+    (Similarity: 0.78)
+
+  Deleted Rules:
+  - IF ((x_3 > 0.4004) AND (x_1 <= 0.0168)) THEN Class 0
+  - IF ((x_3 > 0.4004) AND (x_1 > 0.0168)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((x_3 <= 0.3987) AND (x_2 > 0.6001)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((x_3 <= 0.4004) AND (x_2 > 0.5999)) AND (x_2 <= 0.6406)) THEN Class 1
+  - IF (((x_3 <= 0.4004) AND (x_2 > 0.5999)) AND (x_2 > 0.6406)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 4 -> Chunk 5 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 4):      nan
+  - Test Acc (Chunk 5):     nan
+  - Test F1 (Chunk 5):      nan
+Fitness:       1.298400 -> 1.285600
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_3 <= 0.3987) AND (x_2 <= 0.6001)) THEN Class 0
+  + New: IF ((x_3 <= 0.3979) AND (x_2 <= 0.5984)) THEN Class 0
+    (Similarity: 0.84)
+
+  New Rules:
+  + IF ((x_3 > 0.3979) AND (x_1 <= 0.0203)) THEN Class 0
+  + IF ((x_3 > 0.3979) AND (x_1 > 0.0203)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF (((x_3 <= 0.3979) AND (x_2 > 0.5984)) AND (x_2 <= 0.6240)) THEN Class 1
+  + IF (((x_3 <= 0.3979) AND (x_2 > 0.5984)) AND (x_2 > 0.6240)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((x_3 <= 0.3987) AND (x_2 > 0.6001)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 5 -> Chunk 6 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 5):      nan
+  - Test Acc (Chunk 6):     nan
+  - Test F1 (Chunk 6):      nan
+Fitness:       1.285600 -> 1.100000
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_3 <= 0.3979) AND (x_2 <= 0.5984)) THEN Class 0
+  + New: IF ((x_3 <= 0.3993) AND (x_2 <= 0.6002)) THEN Class 0
+    (Similarity: 0.84)
+  - Old: IF ((x_3 > 0.3979) AND (x_1 <= 0.0203)) THEN Class 0
+  + New: IF ((x_3 > 0.3993) AND (x_1 <= 0.0205)) THEN Class 0
+    (Similarity: 0.92)
+  - Old: IF ((x_3 > 0.3979) AND (x_1 > 0.0203)) THEN Class 0
+  + New: IF ((x_3 > 0.3993) AND (x_1 > 0.0205)) THEN Class 0
+    (Similarity: 0.91)
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((x_3 <= 0.3979) AND (x_2 > 0.5984)) AND (x_2 <= 0.6240)) THEN Class 1
+  + New: IF (((x_3 <= 0.3993) AND (x_2 > 0.6002)) AND (x_2 <= 0.6141)) THEN Class 1
+    (Similarity: 0.86)
+  - Old: IF (((x_3 <= 0.3979) AND (x_2 > 0.5984)) AND (x_2 > 0.6240)) THEN Class 1
+  + New: IF (((x_3 <= 0.3993) AND (x_2 > 0.6002)) AND (x_2 > 0.6141)) THEN Class 1
+    (Similarity: 0.86)
+
+======================================================================
+--- Diff Chunk 6 -> Chunk 7 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 6):      nan
+  - Test Acc (Chunk 7):     nan
+  - Test F1 (Chunk 7):      nan
+Fitness:       1.100000 -> 1.295600
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_3 <= 0.3993) AND (x_2 <= 0.6002)) THEN Class 0
+  + New: IF ((x_3 <= 0.3906) AND (x_2 <= 0.6026)) THEN Class 0
+    (Similarity: 0.89)
+  - Old: IF ((x_3 > 0.3993) AND (x_1 <= 0.0205)) THEN Class 0
+  + New: IF ((x_3 > 0.3906) AND (x_1 <= 0.0117)) THEN Class 0
+    (Similarity: 0.86)
+  - Old: IF ((x_3 > 0.3993) AND (x_1 > 0.0205)) THEN Class 0
+  + New: IF ((x_3 > 0.3906) AND (x_1 > 0.0117)) THEN Class 0
+    (Similarity: 0.86)
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((x_3 <= 0.3993) AND (x_2 > 0.6002)) AND (x_2 <= 0.6141)) THEN Class 1
+  + New: IF (((x_3 <= 0.3906) AND (x_2 > 0.6026)) AND (x_2 <= 0.6182)) THEN Class 1
+    (Similarity: 0.90)
+  - Old: IF (((x_3 <= 0.3993) AND (x_2 > 0.6002)) AND (x_2 > 0.6141)) THEN Class 1
+  + New: IF (((x_3 <= 0.3906) AND (x_2 > 0.6026)) AND (x_2 > 0.6182)) THEN Class 1
+    (Similarity: 0.89)
+
+======================================================================
+--- Diff Chunk 7 -> Chunk 8 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 7):      nan
+  - Test Acc (Chunk 8):     nan
+  - Test F1 (Chunk 8):      nan
+Fitness:       1.295600 -> 1.295400
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((x_3 <= 0.3859) AND (x_2 <= 0.6006)) AND (x_2 <= 0.0156)) THEN Class 0
+  + IF (((x_3 <= 0.3859) AND (x_2 <= 0.6006)) AND (x_2 > 0.0156)) THEN Class 0
+  + IF (x_3 > 0.3859) THEN Class 0
+
+  Deleted Rules:
+  - IF ((x_3 <= 0.3906) AND (x_2 <= 0.6026)) THEN Class 0
+  - IF ((x_3 > 0.3906) AND (x_1 <= 0.0117)) THEN Class 0
+  - IF ((x_3 > 0.3906) AND (x_1 > 0.0117)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((x_3 <= 0.3906) AND (x_2 > 0.6026)) AND (x_2 <= 0.6182)) THEN Class 1
+  + New: IF (((x_3 <= 0.3859) AND (x_2 > 0.6006)) AND (x_1 <= 0.0420)) THEN Class 1
+    (Similarity: 0.84)
+  - Old: IF (((x_3 <= 0.3906) AND (x_2 > 0.6026)) AND (x_2 > 0.6182)) THEN Class 1
+  + New: IF (((x_3 <= 0.3859) AND (x_2 > 0.6006)) AND (x_1 > 0.0420)) THEN Class 1
+    (Similarity: 0.84)
+
+======================================================================
+--- Diff Chunk 8 -> Chunk 9 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 8):      nan
+  - Test Acc (Chunk 9):     nan
+  - Test F1 (Chunk 9):      nan
+Fitness:       1.295400 -> 1.100000
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF (((x_3 <= 0.3859) AND (x_2 <= 0.6006)) AND (x_2 <= 0.0156)) THEN Class 0
+  + New: IF (((x_2 > 0.6027) AND (x_3 > 0.4020)) AND (x_1 <= 0.0648)) THEN Class 0
+    (Similarity: 0.71)
+  - Old: IF (((x_3 <= 0.3859) AND (x_2 <= 0.6006)) AND (x_2 > 0.0156)) THEN Class 0
+  + New: IF (((x_2 > 0.6027) AND (x_3 > 0.4020)) AND (x_1 > 0.0648)) THEN Class 0
+    (Similarity: 0.71)
+
+  New Rules:
+  + IF ((x_2 <= 0.6027) AND (x_1 <= 0.0133)) THEN Class 0
+  + IF ((x_2 <= 0.6027) AND (x_1 > 0.0133)) THEN Class 0
+
+  Deleted Rules:
+  - IF (x_3 > 0.3859) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((x_2 > 0.6027) AND (x_3 <= 0.4020)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((x_3 <= 0.3859) AND (x_2 > 0.6006)) AND (x_1 <= 0.0420)) THEN Class 1
+  - IF (((x_3 <= 0.3859) AND (x_2 > 0.6006)) AND (x_1 > 0.0420)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 9 -> Chunk 10 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 9):      nan
+  - Test Acc (Chunk 10):     nan
+  - Test F1 (Chunk 10):      nan
+Fitness:       1.100000 -> 1.297000
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 <= 0.6027) AND (x_1 <= 0.0133)) THEN Class 0
+  + New: IF ((x_2 <= 0.6012) AND (x_1 <= 0.0312)) THEN Class 0
+    (Similarity: 0.86)
+
+  New Rules:
+  + IF ((x_2 <= 0.6012) AND (x_3 <= 0.0484)) THEN Class 0
+  + IF (x_2 <= 0.0284) THEN Class 0
+
+  Deleted Rules:
+  - IF (((x_2 > 0.6027) AND (x_3 > 0.4020)) AND (x_1 <= 0.0648)) THEN Class 0
+  - IF (((x_2 > 0.6027) AND (x_3 > 0.4020)) AND (x_1 > 0.0648)) THEN Class 0
+  - IF ((x_2 <= 0.6027) AND (x_1 > 0.0133)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 > 0.6027) AND (x_3 <= 0.4020)) THEN Class 1
+  + New: IF ((x_2 > 0.6012) AND (x_3 <= 0.4123)) THEN Class 1
+    (Similarity: 0.89)
+
+======================================================================
+--- Diff Chunk 10 -> Chunk 11 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 10):      nan
+  - Test Acc (Chunk 11):     nan
+  - Test F1 (Chunk 11):      nan
+Fitness:       1.297000 -> 1.298400
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 <= 0.6012) AND (x_3 <= 0.0484)) THEN Class 0
+  + New: IF ((x_2 > 0.6130) AND (x_3 > 0.4003)) THEN Class 0
+    (Similarity: 0.70)
+
+  Deleted Rules:
+  - IF ((x_2 <= 0.6012) AND (x_1 <= 0.0312)) THEN Class 0
+  - IF (x_2 <= 0.0284) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 > 0.6012) AND (x_3 <= 0.4123)) THEN Class 1
+  + New: IF ((x_2 > 0.6130) AND (x_3 <= 0.4003)) THEN Class 1
+    (Similarity: 0.86)
+
+======================================================================
+--- Diff Chunk 11 -> Chunk 12 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 11):      nan
+  - Test Acc (Chunk 12):     nan
+  - Test F1 (Chunk 12):      nan
+Fitness:       1.298400 -> 1.287000
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 > 0.6130) AND (x_3 > 0.4003)) THEN Class 0
+  + New: IF ((x_2 <= 0.6166) AND (x_3 <= 0.0386)) THEN Class 0
+    (Similarity: 0.73)
+
+  New Rules:
+  + IF ((x_2 <= 0.6166) AND (x_4 <= 0.0306)) THEN Class 0
+  + IF (x_2 <= 0.0203) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 > 0.6130) AND (x_3 <= 0.4003)) THEN Class 1
+  + New: IF ((x_2 > 0.6166) AND (x_3 <= 0.4011)) THEN Class 1
+    (Similarity: 0.89)
+
+======================================================================
+--- Diff Chunk 12 -> Chunk 13 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 12):      nan
+  - Test Acc (Chunk 13):     nan
+  - Test F1 (Chunk 13):      nan
+Fitness:       1.287000 -> 1.100000
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 <= 0.6166) AND (x_3 <= 0.0386)) THEN Class 0
+  + New: IF ((x_2 <= 0.6010) AND (x_1 <= 0.0227)) THEN Class 0
+    (Similarity: 0.81)
+
+  New Rules:
+  + IF (((x_2 > 0.6010) AND (x_3 > 0.4024)) AND (x_1 <= 0.0396)) THEN Class 0
+  + IF (((x_2 > 0.6010) AND (x_3 > 0.4024)) AND (x_1 > 0.0396)) THEN Class 0
+  + IF ((x_2 <= 0.6010) AND (x_1 > 0.0227)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((x_2 <= 0.6166) AND (x_4 <= 0.0306)) THEN Class 0
+  - IF (x_2 <= 0.0203) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 > 0.6166) AND (x_3 <= 0.4011)) THEN Class 1
+  + New: IF ((x_2 > 0.6010) AND (x_3 <= 0.4024)) THEN Class 1
+    (Similarity: 0.86)
+
+======================================================================
+--- Diff Chunk 13 -> Chunk 14 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 13):      nan
+  - Test Acc (Chunk 14):     nan
+  - Test F1 (Chunk 14):      nan
+Fitness:       1.100000 -> 1.295600
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 <= 0.6010) AND (x_1 <= 0.0227)) THEN Class 0
+  + New: IF ((x_3 <= 0.3932) AND (x_2 <= 0.6022)) THEN Class 0
+    (Similarity: 0.78)
+  - Old: IF ((x_2 <= 0.6010) AND (x_1 > 0.0227)) THEN Class 0
+  + New: IF ((x_3 > 0.3932) AND (x_1 > 0.0162)) THEN Class 0
+    (Similarity: 0.72)
+
+  New Rules:
+  + IF ((x_3 > 0.3932) AND (x_1 <= 0.0162)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((x_2 > 0.6010) AND (x_3 > 0.4024)) AND (x_1 <= 0.0396)) THEN Class 0
+  - IF (((x_2 > 0.6010) AND (x_3 > 0.4024)) AND (x_1 > 0.0396)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF (((x_3 <= 0.3932) AND (x_2 > 0.6022)) AND (x_2 <= 0.6147)) THEN Class 1
+  + IF (((x_3 <= 0.3932) AND (x_2 > 0.6022)) AND (x_2 > 0.6147)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((x_2 > 0.6010) AND (x_3 <= 0.4024)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 14 -> Chunk 15 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 14):      nan
+  - Test Acc (Chunk 15):     nan
+  - Test F1 (Chunk 15):      nan
+Fitness:       1.295600 -> 1.297000
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_3 <= 0.3932) AND (x_2 <= 0.6022)) THEN Class 0
+  + New: IF ((x_2 <= 0.6028) AND (x_1 <= 0.0240)) THEN Class 0
+    (Similarity: 0.76)
+
+  New Rules:
+  + IF ((x_2 <= 0.6028) AND (x_3 <= 0.0488)) THEN Class 0
+  + IF (x_2 <= 0.0226) THEN Class 0
+
+  Deleted Rules:
+  - IF ((x_3 > 0.3932) AND (x_1 <= 0.0162)) THEN Class 0
+  - IF ((x_3 > 0.3932) AND (x_1 > 0.0162)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((x_2 > 0.6028) AND (x_3 <= 0.4027)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((x_3 <= 0.3932) AND (x_2 > 0.6022)) AND (x_2 <= 0.6147)) THEN Class 1
+  - IF (((x_3 <= 0.3932) AND (x_2 > 0.6022)) AND (x_2 > 0.6147)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 15 -> Chunk 16 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 15):      nan
+  - Test Acc (Chunk 16):     nan
+  - Test F1 (Chunk 16):      nan
+Fitness:       1.297000 -> 1.297000
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 <= 0.6028) AND (x_1 <= 0.0240)) THEN Class 0
+  + New: IF ((x_2 <= 0.6091) AND (x_1 <= 0.0242)) THEN Class 0
+    (Similarity: 0.92)
+  - Old: IF ((x_2 <= 0.6028) AND (x_3 <= 0.0488)) THEN Class 0
+  + New: IF ((x_2 <= 0.6091) AND (x_3 <= 0.0355)) THEN Class 0
+    (Similarity: 0.86)
+  - Old: IF (x_2 <= 0.0226) THEN Class 0
+  + New: IF (x_2 <= 0.0144) THEN Class 0
+    (Similarity: 0.80)
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 > 0.6028) AND (x_3 <= 0.4027)) THEN Class 1
+  + New: IF ((x_2 > 0.6091) AND (x_3 <= 0.4015)) THEN Class 1
+    (Similarity: 0.89)
+
+======================================================================
+--- Diff Chunk 16 -> Chunk 17 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 16):      nan
+  - Test Acc (Chunk 17):     nan
+  - Test F1 (Chunk 17):      nan
+Fitness:       1.297000 -> 1.298400
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 <= 0.6091) AND (x_3 <= 0.0355)) THEN Class 0
+  + New: IF ((x_2 > 0.5986) AND (x_3 > 0.4003)) THEN Class 0
+    (Similarity: 0.68)
+
+  Deleted Rules:
+  - IF ((x_2 <= 0.6091) AND (x_1 <= 0.0242)) THEN Class 0
+  - IF (x_2 <= 0.0144) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 > 0.6091) AND (x_3 <= 0.4015)) THEN Class 1
+  + New: IF ((x_2 > 0.5986) AND (x_3 <= 0.4003)) THEN Class 1
+    (Similarity: 0.83)
+
+======================================================================
+--- Diff Chunk 17 -> Chunk 18 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 17):      nan
+  - Test Acc (Chunk 18):     nan
+  - Test F1 (Chunk 18):      nan
+Fitness:       1.298400 -> 1.298400
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 > 0.5986) AND (x_3 > 0.4003)) THEN Class 0
+  + New: IF ((x_2 > 0.6072) AND (x_3 > 0.3995)) THEN Class 0
+    (Similarity: 0.77)
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 > 0.5986) AND (x_3 <= 0.4003)) THEN Class 1
+  + New: IF ((x_2 > 0.6072) AND (x_3 <= 0.3995)) THEN Class 1
+    (Similarity: 0.78)
+
+======================================================================
+--- Diff Chunk 18 -> Chunk 19 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 18):      nan
+  - Test Acc (Chunk 19):     nan
+  - Test F1 (Chunk 19):      nan
+Fitness:       1.298400 -> 1.296600
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((x_2 > 0.5988) AND (x_3 > 0.4019)) AND (x_2 <= 0.6127)) THEN Class 0
+  + IF (((x_2 > 0.5988) AND (x_3 > 0.4019)) AND (x_2 > 0.6127)) THEN Class 0
+  + IF (x_2 <= 0.5988) THEN Class 0
+
+  Deleted Rules:
+  - IF ((x_2 > 0.6072) AND (x_3 > 0.3995)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 > 0.6072) AND (x_3 <= 0.3995)) THEN Class 1
+  + New: IF ((x_2 > 0.5988) AND (x_3 <= 0.4019)) THEN Class 1
+    (Similarity: 0.78)
+
+======================================================================
+--- Diff Chunk 19 -> Chunk 20 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 19):      nan
+  - Test Acc (Chunk 20):     nan
+  - Test F1 (Chunk 20):      nan
+Fitness:       1.296600 -> 1.296600
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF (x_2 <= 0.5988) THEN Class 0
+  + New: IF (x_3 > 0.3985) THEN Class 0
+    (Similarity: 0.67)
+
+  New Rules:
+  + IF ((x_3 <= 0.3985) AND (x_2 <= 0.5964)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((x_2 > 0.5988) AND (x_3 > 0.4019)) AND (x_2 <= 0.6127)) THEN Class 0
+  - IF (((x_2 > 0.5988) AND (x_3 > 0.4019)) AND (x_2 > 0.6127)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF (((x_3 <= 0.3985) AND (x_2 > 0.5964)) AND (x_2 <= 0.6133)) THEN Class 1
+  + IF (((x_3 <= 0.3985) AND (x_2 > 0.5964)) AND (x_2 > 0.6133)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((x_2 > 0.5988) AND (x_3 <= 0.4019)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 20 -> Chunk 21 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 20):      nan
+  - Test Acc (Chunk 21):     nan
+  - Test F1 (Chunk 21):      nan
+Fitness:       1.296600 -> 1.287600
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_3 <= 0.3985) AND (x_2 <= 0.5964)) THEN Class 0
+  + New: IF ((x_2 <= 0.6002) AND (x_0 <= 0.0270)) THEN Class 0
+    (Similarity: 0.73)
+
+  New Rules:
+  + IF ((x_2 <= 0.6002) AND (x_3 <= 0.0238)) THEN Class 0
+
+  Deleted Rules:
+  - IF (x_3 > 0.3985) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((x_2 > 0.6002) AND (x_3 <= 0.3977)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((x_3 <= 0.3985) AND (x_2 > 0.5964)) AND (x_2 <= 0.6133)) THEN Class 1
+  - IF (((x_3 <= 0.3985) AND (x_2 > 0.5964)) AND (x_2 > 0.6133)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 21 -> Chunk 22 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 21):      nan
+  - Test Acc (Chunk 22):     nan
+  - Test F1 (Chunk 22):      nan
+Fitness:       1.287600 -> 1.298400
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 <= 0.6002) AND (x_0 <= 0.0270)) THEN Class 0
+  + New: IF ((x_2 > 0.6097) AND (x_3 > 0.4057)) THEN Class 0
+    (Similarity: 0.73)
+
+  Deleted Rules:
+  - IF ((x_2 <= 0.6002) AND (x_3 <= 0.0238)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((x_2 > 0.6002) AND (x_3 <= 0.3977)) THEN Class 1
+  + New: IF ((x_2 > 0.6097) AND (x_3 <= 0.4057)) THEN Class 1
+    (Similarity: 0.86)
+
+======================================================================
+Overall Performance Summary (from History File)
+======================================================================
+Avg Train Accuracy: nan +/- nan (over 0 chunks)
+Avg Test Accuracy:  nan +/- nan (over 0 chunks)
+Avg Test F1:        nan +/- nan (over 0 chunks)
+======================================================================

@@ -409,7 +409,9 @@ We compare EGIS against eight state-of-the-art methods spanning ensemble approac
     \item \textbf{ERulesD2S}~\cite{de2019erulesd2s}: Evolutionary Rules for Data Streams, the only other interpretable baseline.
 \end{itemize}
 
-\textbf{Model Limitations.} ACDWM and CDCMS support only binary classification; following~\cite{demsar2006statistical}, we assign G-Mean=0.0 to failed multiclass cases. HAT exhibits underfitting on smaller chunks due to Hoeffding tree estimation requirements. ERulesD2S frequently produced collapsed classifiers. Ensemble methods (ARF, SRP, ROSE, CDCMS.CIL) provide no interpretability, representing the accuracy-interpretability trade-off motivating EGIS.
+\noindent\textbf{Implementation details.} HAT, ARF, and SRP use River~0.21+ with default parameters (ARF and SRP: \texttt{n\_models=10}). ROSE executes via the MOA Java CLI with default settings. ACDWM uses the DWMIL library ($\theta$=0.001, err=G-Mean, binary only). ERulesD2S uses MOA/JCLEC4 (population=25, generations=50, rules/class=5). CDCMS uses the CDCMS\_CIL\_GMean variant.
+
+\textbf{Model Limitations.} ACDWM supports only binary classification; CDCMS also failed on multiclass datasets. Following~\cite{demsar2006statistical}, we assign G-Mean=0.0 to failed cases. ERulesD2S frequently produced collapsed classifiers. Ensemble methods provide no interpretability, representing the trade-off motivating EGIS.
 
 
 \subsection{Experimental Configurations}
@@ -586,18 +588,18 @@ Figures~\ref{fig:case_rbf} and~\ref{fig:case_stagger} present detailed case stud
 \begin{figure*}[htbp]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/fig_case_rbf_gradual.pdf}
-\caption{Case study: RBF\_Gradual\_Moderate (EXP-500-NP). (a) Rule evolution counts showing unchanged, modified, new, and deleted rules per transition. (b) Rule complexity over time (total rules, conditions per rule). (c) Transition metrics (TCS, RIR, AMS) over chunk transitions; the shaded region indicates the gradual drift period. (d) Rule turnover proportions per transition.}
+\caption{Case study: RBF\_Gradual\_Moderate (EXP-500-NP). (a) Per-chunk test accuracy with detected drifts marked. (b) Rule evolution counts showing unchanged, modified, new, and deleted rules per transition. (c) Rule complexity over time (total rules, conditions per rule). (d) Transition metrics (TCS, RIR, AMS); the shaded region indicates the gradual drift period.}
 \label{fig:case_rbf}
 \end{figure*}
 
 \begin{figure*}[htbp]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/fig_case_stagger_abrupt.pdf}
-\caption{Case study: STAGGER\_Abrupt\_Chain (EXP-500-NP). (a) Rule evolution counts. (b) Rule complexity over time. (c) Transition metrics with drift points (dashed vertical lines) at chunks 8 and 16. (d) Rule turnover proportions. TCS and RIR spike at drift points, confirming that EGIS responds to abrupt concept changes through substantial rule replacement.}
+\caption{Case study: STAGGER\_Abrupt\_Chain (EXP-500-NP). (a) Per-chunk test accuracy with detected drifts. (b) Rule evolution counts. (c) Rule complexity over time. (d) Transition metrics with drift points (dashed vertical lines) at chunks 8 and 16. TCS and RIR spike at drift points, confirming rapid rule replacement.}
 \label{fig:case_stagger}
 \end{figure*}
 
-The case studies in Figures~\ref{fig:case_rbf}--\ref{fig:case_stagger} reveal complementary adaptation patterns. In the gradual drift scenario (RBF\_Gradual\_Moderate), rule changes are distributed smoothly across the drift period, with moderate TCS and RIR values. In contrast, STAGGER\_Abrupt\_Chain exhibits sharp TCS and RIR spikes at drift points, indicating rapid rule replacement. Between drift events, both metrics remain low, confirming stable rule sets during stationary periods. These contrasting patterns demonstrate that EGIS automatically calibrates its adaptation intensity to the severity and type of concept drift.
+The case studies in Figures~\ref{fig:case_rbf}--\ref{fig:case_stagger} reveal complementary adaptation patterns. Panel~(a) shows that EGIS maintains competitive accuracy throughout both scenarios, with brief dips at drift points followed by rapid recovery. In the gradual drift scenario (RBF\_Gradual\_Moderate), rule changes are distributed smoothly across the drift period, with moderate TCS and RIR values. In contrast, STAGGER\_Abrupt\_Chain exhibits sharp TCS and RIR spikes at drift points, indicating rapid rule replacement. Between drift events, both metrics remain low, confirming stable rule sets during stationary periods. These contrasting patterns demonstrate that EGIS automatically calibrates its adaptation intensity to the severity and type of concept drift.
 
 \subsection{Statistical Significance Analysis}
 
@@ -692,7 +694,7 @@ Figure~\ref{fig:boxplots} presents the performance distribution across datasets 
 \label{fig:boxplots}
 \end{figure}
 
-Per-chunk G-Mean evolution analysis on representative datasets (STAGGER\_Abrupt\_Chain, SEA\_Abrupt\_Simple) confirms that EGIS shows rapid recovery after drift points, with performance dipping briefly at concept changes before stabilizing at competitive levels (see Supplementary Material for temporal evolution plots).
+Per-chunk G-Mean evolution, visible in panel~(a) of Figures~\ref{fig:case_rbf}--\ref{fig:case_stagger}, confirms rapid recovery after drift points: accuracy dips briefly at concept changes before stabilizing at competitive levels. Extended per-dataset temporal evolution plots are provided in the Supplementary Material.
 
 %==============================================================================
 \section{Conclusion}

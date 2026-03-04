@@ -1,0 +1,1452 @@
+Rule Diff Analysis Report
+Source File: RulesHistory_Shuttle_Run1.txt
+Similarity Threshold: 0.35
+
+======================================================================
+--- Diff Chunk 0 -> Chunk 1 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 0):      nan
+  - Test Acc (Chunk 1):     nan
+  - Test F1 (Chunk 1):      nan
+Fitness:       1.096120 -> 1.094213
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((attr_0 <= 53.5000) AND (attr_6 > 28.5000)) AND (attr_1 <= -4.5000)) THEN Class 1
+  + New: IF (((attr_6 > 11.0000) AND (attr_0 > 54.5000)) AND (attr_8 <= 3.0000)) THEN Class 1
+    (Similarity: 0.81)
+
+  New Rules:
+  + IF (((attr_6 > 11.0000) AND (attr_0 <= 54.5000)) AND (attr_6 > 25.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((attr_1 < -185.9544) AND (attr_5 < 1499.6570)) AND ((attr_1 < -268.7180) AND (attr_4 > 25.1841))) OR (((attr_6 > 32.3948) OR (attr_5 < 961.9053)) AND (attr_1 < -242.4751))) OR (((attr_2 < 92.9709) AND ((attr_2 >= 92.2503) AND (attr_8 > 46.5029))) AND ((attr_0 >= 96.6422) AND ((attr_7 > -207.3935) AND (attr_6 >= 24.0339))))) AND (((((attr_7 > -13.1962) AND (attr_1 <= 19.4919)) OR (attr_7 <= 20.3340)) AND (attr_6 < 41.9767)) AND (attr_0 < 77.1125))) THEN Class 1
+  - IF ((((attr_0 <= 58.8265) AND (attr_6 > 28.5000)) AND (attr_1 > -4.5000)) AND (attr_6 <= 30.5000)) THEN Class 1
+  - IF ((((attr_7 < -86.8508) AND (((attr_3 >= -54.2682) AND ((attr_0 >= 61.1084) AND (attr_1 > -147.8608))) OR (((attr_4 >= 189.0841) AND (attr_3 < -16.4714)) AND ((attr_8 <= -118.7877) AND (attr_1 <= -99.2563))))) AND (((attr_2 <= 99.7333) AND (((attr_5 <= 3195.4558) AND (((attr_0 > 70.9726) AND (attr_4 <= 171.4933)) AND (attr_7 > -164.2766))) AND ((((attr_7 <= 36.1510) AND (attr_1 <= 12.0130)) AND ((attr_4 > 90.8303) AND (attr_8 < -194.6862))) OR (((attr_2 < 106.9324) AND (attr_7 < -64.3232)) AND ((attr_1 <= -126.5055) OR (attr_7 < -176.1963)))))) AND ((((((attr_8 <= -202.3257) AND (attr_5 >= 4130.2996)) AND (attr_1 <= -235.2061)) AND (((attr_7 < 7.3473) AND (attr_1 < -162.1291)) AND ((attr_8 <= -89.7968) AND (attr_3 >= -50.5217)))) AND ((attr_7 >= 50.2433) OR (((attr_5 >= 3923.2104) AND (attr_5 < 2353.5702)) OR (attr_1 > -33.5646)))) OR ((((attr_1 >= -34.4024) AND ((attr_1 <= -68.8335) AND (attr_3 <= -35.2266))) OR (attr_3 > -61.5341)) AND (((attr_7 <= -181.6602) AND (attr_0 >= 72.7681)) AND (((attr_1 >= -53.0426) AND (attr_2 > 92.8963)) AND (attr_5 <= 4054.5310))))))) AND (((attr_3 > -65.3680) AND (attr_0 >= 51.2810)) OR (attr_6 < 15.6892))) THEN Class 1
+
+=== Class 2 ===
+
+  Deleted Rules:
+  - IF ((((attr_0 <= 73.0000) AND (attr_1 > -5.5000)) AND (attr_1 > 4.5000)) AND (attr_8 > 1.0000)) THEN Class 2
+
+=== Class 3 ===
+
+  Deleted Rules:
+  - IF (((attr_0 <= 89.9046) AND (attr_2 >= 103.9720)) AND (((attr_1 >= -269.5772) OR (((attr_2 >= 98.8084) AND ((((((((attr_8 >= 41.6076) AND ((attr_5 < 3485.3145) OR (attr_8 < -63.8687))) AND (((attr_6 > 39.9301) AND (attr_7 >= -145.8332)) AND ((attr_5 > 4403.7218) OR (attr_5 <= 2718.3521)))) AND ((attr_1 >= -54.2519) OR (attr_4 <= 48.9203))) AND ((attr_3 >= -61.2123) OR (attr_4 <= 25.1593))) OR (((attr_8 <= -188.3368) AND ((attr_6 < 37.5187) AND ((attr_4 > 95.0396) AND ((attr_0 < 62.3361) AND ((attr_8 <= -241.3643) AND (attr_5 >= 3421.4427)))))) AND (((attr_1 >= -120.1302) AND ((((attr_0 > 43.2731) AND (attr_6 > 59.1717)) AND (attr_4 > 244.2314)) AND (attr_5 > 4238.7405))) OR ((attr_6 > 50.2060) AND (attr_5 > 4120.2447))))) AND (attr_3 > -70.4069)) AND (attr_2 >= 98.8615))) AND ((attr_7 >= 35.5099) AND (((attr_8 > 38.4989) OR (((((attr_3 >= -22.5097) AND ((attr_3 >= -43.1055) AND (attr_4 > 118.9309))) AND (attr_5 <= 2395.3641)) AND (((((attr_7 <= -200.7051) AND ((attr_8 > -228.1905) AND (attr_1 < -138.2110))) OR (((attr_1 <= -31.8154) AND (attr_5 <= 668.8570)) OR (attr_0 < 65.6558))) AND (((attr_5 >= 2957.6148) OR (attr_2 > 103.6278)) AND (((attr_1 >= -225.0762) AND (attr_0 >= 77.1851)) AND ((attr_8 <= -135.6708) AND (attr_5 > 2405.0351))))) OR ((((attr_4 < 5.6489) OR (attr_3 > -61.4288)) AND (attr_4 <= 209.4533)) AND (attr_0 < 92.3647)))) OR (((attr_4 <= 64.4126) AND ((attr_0 <= 55.8047) AND ((((attr_4 >= 43.3647) AND (attr_0 <= 77.0487)) OR ((attr_7 >= 63.1459) AND (attr_4 >= 8.9886))) OR ((attr_3 < -38.2053) AND (attr_0 >= 58.1311))))) AND (attr_5 > 2562.4202)))) AND (attr_7 < 83.1811))))) AND ((attr_0 < 77.3682) AND (((attr_2 >= 102.4300) AND ((attr_4 > 90.4276) AND (((attr_7 > 13.0556) AND (attr_6 <= 18.6938)) AND ((((attr_3 < -78.8837) AND (attr_1 < -275.3123)) AND ((attr_4 <= 157.8962) AND (attr_2 > 81.1731))) AND (((attr_0 < 85.2018) OR (attr_5 > 1899.1578)) AND (attr_7 > 24.7081)))))) OR (attr_3 <= -52.5742))))) THEN Class 3
+  - IF ((attr_0 <= 73.0000) AND (attr_1 <= -5.5000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF (((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) THEN Class 4
+  + New: IF (((attr_6 > 11.0000) AND (attr_0 <= 54.5000)) AND (attr_6 <= 25.5000)) THEN Class 4
+    (Similarity: 0.84)
+
+  New Rules:
+  + IF (((attr_6 > 11.0000) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+
+  Deleted Rules:
+  - IF ((((((attr_0 <= 73.0000) AND (attr_1 > -5.5000)) AND (attr_1 <= 4.5000)) AND (attr_0 > 53.5000)) AND (attr_4 <= 53.0000)) AND (attr_4 <= -23.0000)) THEN Class 4
+  - IF ((((((attr_0 <= 73.0000) AND (attr_1 > -5.5000)) AND (attr_1 <= 4.5000)) AND (attr_0 > 53.5000)) AND (attr_4 <= 53.0000)) AND (attr_4 > -23.0000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 16.0000)) AND (attr_0 <= 55.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 16.0000)) AND (attr_2 <= 78.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 16.0000)) AND (attr_3 <= -1.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 16.0000)) AND (attr_5 <= -9.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 16.0000)) AND (attr_6 <= 22.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 16.0000)) AND (attr_7 <= 46.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 16.0000)) AND (attr_8 <= 7.0000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_6 <= 8.5000) THEN Class 5
+  + New: IF (attr_6 <= 11.0000) THEN Class 5
+    (Similarity: 0.84)
+
+  Deleted Rules:
+  - IF (attr_0 > 73.0000) THEN Class 5
+
+======================================================================
+--- Diff Chunk 1 -> Chunk 2 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 1):      nan
+  - Test Acc (Chunk 2):     nan
+  - Test F1 (Chunk 2):      nan
+Fitness:       1.094213 -> 1.100000
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((attr_6 > 11.0000) AND (attr_0 <= 54.5000)) AND (attr_6 > 25.5000)) THEN Class 1
+  + New: IF (((attr_0 <= 71.0000) AND (attr_1 <= -4.5000)) AND (attr_0 <= 62.5716)) THEN Class 1
+    (Similarity: 0.80)
+
+  New Rules:
+  + IF ((attr_0 <= 54.5000) AND (attr_6 <= 27.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((attr_6 > 11.0000) AND (attr_0 > 54.5000)) AND (attr_8 <= 3.0000)) THEN Class 1
+
+=== Class 3 ===
+
+  New Rules:
+  + IF (((attr_0 <= 71.0000) AND (attr_1 <= -4.5000)) AND (attr_0 > 48.0000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF (((attr_6 > 11.0000) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+  + New: IF ((((attr_0 <= 71.0000) AND (attr_1 > -4.5000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+    (Similarity: 0.65)
+  - Old: IF (((attr_6 > 11.0000) AND (attr_0 <= 54.5000)) AND (attr_6 <= 25.5000)) THEN Class 4
+  + New: IF (((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+    (Similarity: 0.87)
+
+=== Class 5 ===
+
+  Unchanged Rules:
+    IF (attr_6 <= 11.0000) THEN Class 5
+
+  New Rules:
+  + IF ((attr_0 > 71.0000) AND (attr_1 > -2.5000)) THEN Class 5
+
+======================================================================
+--- Diff Chunk 2 -> Chunk 3 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 2):      nan
+  - Test Acc (Chunk 3):     nan
+  - Test F1 (Chunk 3):      nan
+Fitness:       1.100000 -> 1.110506
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((attr_0 <= 54.5000) AND (attr_6 <= 27.5000)) THEN Class 1
+  + New: IF ((attr_0 <= 54.5000) AND (attr_0 > 52.5000)) THEN Class 1
+    (Similarity: 0.89)
+
+  Deleted Rules:
+  - IF (((attr_0 <= 71.0000) AND (attr_1 <= -4.5000)) AND (attr_0 <= 62.5716)) THEN Class 1
+
+=== Class 3 ===
+
+  New Rules:
+  + IF ((attr_6 > 7.5000) AND (attr_1 <= -7.5000)) THEN Class 3
+
+  Deleted Rules:
+  - IF (((attr_0 <= 71.0000) AND (attr_1 <= -4.5000)) AND (attr_0 > 48.0000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF (((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+  + New: IF (((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 65.5000)) THEN Class 4
+    (Similarity: 0.90)
+
+  Deleted Rules:
+  - IF ((((attr_0 <= 71.0000) AND (attr_1 > -4.5000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_6 <= 11.0000) THEN Class 5
+  + New: IF (attr_6 <= 7.5000) THEN Class 5
+    (Similarity: 0.84)
+
+  Deleted Rules:
+  - IF ((attr_0 > 71.0000) AND (attr_1 > -2.5000)) THEN Class 5
+
+======================================================================
+--- Diff Chunk 3 -> Chunk 4 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 3):      nan
+  - Test Acc (Chunk 4):     nan
+  - Test F1 (Chunk 4):      nan
+Fitness:       1.110506 -> 1.086384
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((attr_0 <= 54.5000) AND (attr_0 > 52.5000)) THEN Class 1
+  + New: IF ((attr_0 <= 54.5000) AND (attr_8 > 31.0000)) THEN Class 1
+    (Similarity: 0.91)
+
+  New Rules:
+  + IF (((attr_0 <= 54.5000) AND (attr_4 > 7.0000)) AND (attr_2 <= 40.4974)) THEN Class 1
+  + IF (((attr_0 <= 54.5000) AND (attr_4 > 7.0000)) AND (attr_2 <= 75.5000)) THEN Class 1
+  + IF (((attr_0 <= 54.5000) AND (attr_4 > 7.0000)) AND (attr_4 <= 11.0000)) THEN Class 1
+  + IF (((attr_0 <= 54.5000) AND (attr_4 > 7.0000)) AND (attr_5 <= -24.5000)) THEN Class 1
+  + IF (((attr_0 <= 54.5000) AND (attr_4 > 7.0000)) AND (attr_6 <= 27.5000)) THEN Class 1
+  + IF (((attr_0 <= 54.5000) AND (attr_4 > 7.0000)) AND (attr_7 <= 27.5000)) THEN Class 1
+  + IF (((attr_0 <= 63.9829) AND (attr_4 > 7.0000)) AND (attr_6 <= 38.1466)) THEN Class 1
+  + IF ((attr_0 <= 54.5000) AND (attr_4 <= 7.0000)) THEN Class 1
+  + IF ((attr_4 < -28.6847) OR (attr_6 < 20.0272)) THEN Class 1
+  + IF (attr_6 > -4.5325) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF (((attr_6 > 6.5000) AND (attr_1 > -18.0000)) AND (attr_7 > 100.5000)) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF ((attr_6 > 7.5000) AND (attr_1 <= -7.5000)) THEN Class 3
+  + New: IF ((attr_6 > 6.5000) AND (attr_1 <= -18.0000)) THEN Class 3
+    (Similarity: 0.91)
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF (((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 65.5000)) THEN Class 4
+  + New: IF (((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+    (Similarity: 0.87)
+
+  New Rules:
+  + IF (((((attr_6 > 6.5000) AND (attr_1 > -18.0000)) AND (attr_7 <= 100.5000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_5 <= -16.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_7 <= 45.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_8 <= 7.0000)) THEN Class 4
+
+=== Class 5 ===
+
+  New Rules:
+  + IF (((attr_2 < 54.5514) AND (((attr_2 >= 31.4601) AND ((attr_8 > 77.4175) AND (((((attr_3 >= -2923.6385) AND (((((((attr_5 < -28.9727) AND (attr_2 < 67.0560)) OR ((attr_7 > 85.7630) OR (attr_8 < 67.8997))) AND (((attr_2 < 77.2471) AND (attr_8 <= 75.5080)) OR ((attr_6 >= 52.7655) OR (attr_5 >= -65.1409)))) AND (((attr_8 < 31.4053) OR (attr_3 >= -322.6137)) OR (attr_3 >= -2399.9091))) AND (attr_0 <= 85.4008)) AND ((attr_1 > -853.9751) AND ((attr_0 > 94.5379) AND (((attr_7 > 115.0581) AND (attr_6 >= 49.9070)) AND ((attr_1 > -155.7780) AND ((attr_5 > 1.3824) AND (attr_6 < 34.5054)))))))) AND (((attr_1 < -461.7184) AND ((attr_2 <= 33.4043) AND (((attr_2 >= 84.5275) OR (((attr_2 >= 80.9470) AND (attr_2 <= 42.0153)) AND (attr_5 < -50.7736))) AND ((((attr_4 <= -7.8664) AND (attr_4 >= -8.8379)) AND (attr_8 <= 38.5282)) AND (attr_6 <= 12.9656))))) AND (attr_0 >= 65.8865))) AND ((((((attr_3 > -1658.3004) AND ((((attr_4 < 56.0325) AND (attr_0 <= 97.6503)) AND (attr_3 <= -2035.5932)) OR ((attr_6 < 7.2206) AND (attr_1 >= -544.7471)))) AND (((((attr_0 >= 88.9044) AND (attr_7 >= 39.1196)) OR ((attr_1 >= -128.7989) AND (attr_7 >= 102.8519))) AND (((attr_8 >= 67.3217) AND (attr_4 < 14.0095)) AND (attr_3 < -999.3061))) AND (attr_6 >= 54.9884))) OR (attr_5 < -6.7462)) AND (((attr_2 >= 68.6232) OR ((attr_1 <= -352.7338) AND (((attr_2 > 57.2412) AND (attr_1 > -580.6482)) AND (((attr_1 > -180.1639) AND (attr_6 <= 7.1767)) AND (attr_1 > -798.0158))))) AND (attr_3 < -3488.1907))) AND (attr_8 <= 87.2352))) OR ((attr_6 > 25.5227) AND (((attr_3 < -2733.2520) OR (attr_8 <= 73.3811)) AND (attr_7 > 74.0524)))))) AND (attr_2 >= 100.9510))) AND (((attr_0 < 45.7047) AND ((attr_4 <= 3.5339) AND (attr_3 < -2340.0730))) AND (((attr_4 <= 13.5640) AND (attr_6 <= 7.0549)) OR ((((attr_1 > -937.3220) AND (attr_7 >= 61.1770)) AND ((attr_4 >= 4.7728) AND ((attr_0 >= 55.0940) AND ((attr_1 <= -247.5921) AND (attr_0 <= 55.9285))))) OR (attr_1 >= -876.5354))))) THEN Class 5
+  + IF ((attr_0 > 74.0000) AND (attr_4 > 1.0000)) THEN Class 5
+  + IF ((attr_0 > 74.0000) AND (attr_7 <= 87.0000)) THEN Class 5
+  + IF ((attr_0 > 74.0000) AND (attr_8 <= 83.0000)) THEN Class 5
+  + IF ((attr_6 <= 6.5000) AND (attr_0 <= 77.5000)) THEN Class 5
+  + IF ((attr_6 <= 6.5000) AND (attr_0 > 77.5000)) THEN Class 5
+  + IF ((attr_6 <= 6.5000) AND (attr_4 > 1.0000)) THEN Class 5
+  + IF ((attr_6 <= 6.5000) AND (attr_7 <= 87.0000)) THEN Class 5
+  + IF ((attr_6 <= 6.5000) AND (attr_8 <= 83.0000)) THEN Class 5
+
+  Deleted Rules:
+  - IF (attr_6 <= 7.5000) THEN Class 5
+
+======================================================================
+--- Diff Chunk 4 -> Chunk 5 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 4):      nan
+  - Test Acc (Chunk 5):     nan
+  - Test F1 (Chunk 5):      nan
+Fitness:       1.086384 -> 1.115326
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((attr_0 <= 54.5000) AND (attr_4 > 7.0000)) AND (attr_5 <= -24.5000)) THEN Class 1
+  + New: IF (((attr_6 > 11.0000) AND (attr_1 > -5.5000)) AND (attr_0 <= 54.5000)) THEN Class 1
+    (Similarity: 0.81)
+
+  New Rules:
+  + IF ((((attr_6 > 11.0000) AND (attr_1 > -5.5000)) AND (attr_0 > 54.5000)) AND (attr_4 > 53.0000)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((attr_0 <= 54.5000) AND (attr_4 > 7.0000)) AND (attr_2 <= 40.4974)) THEN Class 1
+  - IF (((attr_0 <= 54.5000) AND (attr_4 > 7.0000)) AND (attr_2 <= 75.5000)) THEN Class 1
+  - IF (((attr_0 <= 54.5000) AND (attr_4 > 7.0000)) AND (attr_4 <= 11.0000)) THEN Class 1
+  - IF (((attr_0 <= 54.5000) AND (attr_4 > 7.0000)) AND (attr_6 <= 27.5000)) THEN Class 1
+  - IF (((attr_0 <= 54.5000) AND (attr_4 > 7.0000)) AND (attr_7 <= 27.5000)) THEN Class 1
+  - IF (((attr_0 <= 63.9829) AND (attr_4 > 7.0000)) AND (attr_6 <= 38.1466)) THEN Class 1
+  - IF ((attr_0 <= 54.5000) AND (attr_4 <= 7.0000)) THEN Class 1
+  - IF ((attr_0 <= 54.5000) AND (attr_8 > 31.0000)) THEN Class 1
+  - IF ((attr_4 < -28.6847) OR (attr_6 < 20.0272)) THEN Class 1
+  - IF (attr_6 > -4.5325) THEN Class 1
+
+=== Class 2 ===
+
+  Deleted Rules:
+  - IF (((attr_6 > 6.5000) AND (attr_1 > -18.0000)) AND (attr_7 > 100.5000)) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF ((attr_6 > 6.5000) AND (attr_1 <= -18.0000)) THEN Class 3
+  + New: IF ((attr_6 > 11.0000) AND (attr_1 <= -5.5000)) THEN Class 3
+    (Similarity: 0.86)
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_8 <= 7.0000)) THEN Class 4
+  + New: IF ((((attr_6 > 11.0000) AND (attr_1 > -5.5000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+    (Similarity: 0.83)
+
+  Deleted Rules:
+  - IF (((((attr_6 > 6.5000) AND (attr_1 > -18.0000)) AND (attr_7 <= 100.5000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_5 <= -16.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_7 <= 45.5000)) THEN Class 4
+  - IF (((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+
+=== Class 5 ===
+
+  New Rules:
+  + IF (attr_6 <= 11.0000) THEN Class 5
+
+  Deleted Rules:
+  - IF (((attr_2 < 54.5514) AND (((attr_2 >= 31.4601) AND ((attr_8 > 77.4175) AND (((((attr_3 >= -2923.6385) AND (((((((attr_5 < -28.9727) AND (attr_2 < 67.0560)) OR ((attr_7 > 85.7630) OR (attr_8 < 67.8997))) AND (((attr_2 < 77.2471) AND (attr_8 <= 75.5080)) OR ((attr_6 >= 52.7655) OR (attr_5 >= -65.1409)))) AND (((attr_8 < 31.4053) OR (attr_3 >= -322.6137)) OR (attr_3 >= -2399.9091))) AND (attr_0 <= 85.4008)) AND ((attr_1 > -853.9751) AND ((attr_0 > 94.5379) AND (((attr_7 > 115.0581) AND (attr_6 >= 49.9070)) AND ((attr_1 > -155.7780) AND ((attr_5 > 1.3824) AND (attr_6 < 34.5054)))))))) AND (((attr_1 < -461.7184) AND ((attr_2 <= 33.4043) AND (((attr_2 >= 84.5275) OR (((attr_2 >= 80.9470) AND (attr_2 <= 42.0153)) AND (attr_5 < -50.7736))) AND ((((attr_4 <= -7.8664) AND (attr_4 >= -8.8379)) AND (attr_8 <= 38.5282)) AND (attr_6 <= 12.9656))))) AND (attr_0 >= 65.8865))) AND ((((((attr_3 > -1658.3004) AND ((((attr_4 < 56.0325) AND (attr_0 <= 97.6503)) AND (attr_3 <= -2035.5932)) OR ((attr_6 < 7.2206) AND (attr_1 >= -544.7471)))) AND (((((attr_0 >= 88.9044) AND (attr_7 >= 39.1196)) OR ((attr_1 >= -128.7989) AND (attr_7 >= 102.8519))) AND (((attr_8 >= 67.3217) AND (attr_4 < 14.0095)) AND (attr_3 < -999.3061))) AND (attr_6 >= 54.9884))) OR (attr_5 < -6.7462)) AND (((attr_2 >= 68.6232) OR ((attr_1 <= -352.7338) AND (((attr_2 > 57.2412) AND (attr_1 > -580.6482)) AND (((attr_1 > -180.1639) AND (attr_6 <= 7.1767)) AND (attr_1 > -798.0158))))) AND (attr_3 < -3488.1907))) AND (attr_8 <= 87.2352))) OR ((attr_6 > 25.5227) AND (((attr_3 < -2733.2520) OR (attr_8 <= 73.3811)) AND (attr_7 > 74.0524)))))) AND (attr_2 >= 100.9510))) AND (((attr_0 < 45.7047) AND ((attr_4 <= 3.5339) AND (attr_3 < -2340.0730))) AND (((attr_4 <= 13.5640) AND (attr_6 <= 7.0549)) OR ((((attr_1 > -937.3220) AND (attr_7 >= 61.1770)) AND ((attr_4 >= 4.7728) AND ((attr_0 >= 55.0940) AND ((attr_1 <= -247.5921) AND (attr_0 <= 55.9285))))) OR (attr_1 >= -876.5354))))) THEN Class 5
+  - IF ((attr_0 > 74.0000) AND (attr_4 > 1.0000)) THEN Class 5
+  - IF ((attr_0 > 74.0000) AND (attr_7 <= 87.0000)) THEN Class 5
+  - IF ((attr_0 > 74.0000) AND (attr_8 <= 83.0000)) THEN Class 5
+  - IF ((attr_6 <= 6.5000) AND (attr_0 <= 77.5000)) THEN Class 5
+  - IF ((attr_6 <= 6.5000) AND (attr_0 > 77.5000)) THEN Class 5
+  - IF ((attr_6 <= 6.5000) AND (attr_4 > 1.0000)) THEN Class 5
+  - IF ((attr_6 <= 6.5000) AND (attr_7 <= 87.0000)) THEN Class 5
+  - IF ((attr_6 <= 6.5000) AND (attr_8 <= 83.0000)) THEN Class 5
+
+======================================================================
+--- Diff Chunk 5 -> Chunk 6 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 5):      nan
+  - Test Acc (Chunk 6):     nan
+  - Test F1 (Chunk 6):      nan
+Fitness:       1.115326 -> 1.108614
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_6 > 11.0000) AND (attr_1 > -5.5000)) AND (attr_0 > 54.5000)) AND (attr_4 > 53.0000)) THEN Class 1
+  + New: IF ((((attr_6 > 10.0000) AND (attr_1 > -6.0000)) AND (attr_0 > 54.5000)) AND (attr_4 > 53.0000)) THEN Class 1
+    (Similarity: 0.97)
+  - Old: IF (((attr_6 > 11.0000) AND (attr_1 > -5.5000)) AND (attr_0 <= 54.5000)) THEN Class 1
+  + New: IF (((attr_6 > 10.0000) AND (attr_1 > -6.0000)) AND (attr_0 <= 54.5000)) THEN Class 1
+    (Similarity: 0.96)
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF ((attr_6 > 11.0000) AND (attr_1 <= -5.5000)) THEN Class 3
+  + New: IF ((attr_6 > 10.0000) AND (attr_1 <= -6.0000)) THEN Class 3
+    (Similarity: 0.93)
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_6 > 11.0000) AND (attr_1 > -5.5000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+  + New: IF ((((attr_6 > 10.0000) AND (attr_1 > -6.0000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+    (Similarity: 0.97)
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_6 <= 11.0000) THEN Class 5
+  + New: IF (attr_6 <= 10.0000) THEN Class 5
+    (Similarity: 0.95)
+
+======================================================================
+--- Diff Chunk 6 -> Chunk 7 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 6):      nan
+  - Test Acc (Chunk 7):     nan
+  - Test F1 (Chunk 7):      nan
+Fitness:       1.108614 -> 1.108277
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_6 > 10.0000) AND (attr_1 > -6.0000)) AND (attr_0 > 54.5000)) AND (attr_4 > 53.0000)) THEN Class 1
+  + New: IF ((((attr_6 > 10.0000) AND (attr_1 > -9.5000)) AND (attr_0 > 54.5000)) AND (attr_4 > 53.0000)) THEN Class 1
+    (Similarity: 0.98)
+
+  New Rules:
+  + IF ((((attr_6 > 10.0000) AND (attr_1 > -9.5000)) AND (attr_0 <= 54.5000)) AND (attr_8 <= 35.0000)) THEN Class 1
+  + IF ((((attr_6 > 10.0000) AND (attr_1 > -9.5000)) AND (attr_0 <= 54.5000)) AND (attr_8 > 35.0000)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((attr_6 > 10.0000) AND (attr_1 > -6.0000)) AND (attr_0 <= 54.5000)) THEN Class 1
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF ((attr_6 > 10.0000) AND (attr_1 <= -6.0000)) THEN Class 3
+  + New: IF ((attr_6 > 10.0000) AND (attr_1 <= -9.5000)) THEN Class 3
+    (Similarity: 0.95)
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_6 > 10.0000) AND (attr_1 > -6.0000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+  + New: IF ((((attr_6 > 10.0000) AND (attr_1 > -9.5000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+    (Similarity: 0.98)
+
+=== Class 5 ===
+
+  Unchanged Rules:
+    IF (attr_6 <= 10.0000) THEN Class 5
+
+======================================================================
+--- Diff Chunk 7 -> Chunk 8 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 7):      nan
+  - Test Acc (Chunk 8):     nan
+  - Test F1 (Chunk 8):      nan
+Fitness:       1.108277 -> 1.018936
+Default Class: 1 -> 7
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  New Rules:
+  + IF (((attr_0 <= 53.5000) AND (attr_1 > -4.5000)) AND (attr_3 <= -5.5000)) THEN Class 1
+  + IF (((attr_0 <= 53.5000) AND (attr_1 > -4.5000)) AND (attr_3 > -5.5000)) THEN Class 1
+  + IF (((attr_0 <= 53.5000) AND (attr_1 > -4.5000)) AND (attr_5 <= -24.5000)) THEN Class 1
+  + IF (((attr_0 <= 53.5000) AND (attr_1 > -4.5000)) AND (attr_7 <= 27.5000)) THEN Class 1
+  + IF ((attr_0 > 53.5000) AND (attr_8 <= 3.0000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((attr_6 > 10.0000) AND (attr_1 > -9.5000)) AND (attr_0 <= 54.5000)) AND (attr_8 <= 35.0000)) THEN Class 1
+  - IF ((((attr_6 > 10.0000) AND (attr_1 > -9.5000)) AND (attr_0 <= 54.5000)) AND (attr_8 > 35.0000)) THEN Class 1
+  - IF ((((attr_6 > 10.0000) AND (attr_1 > -9.5000)) AND (attr_0 > 54.5000)) AND (attr_4 > 53.0000)) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF ((((((((((attr_5 < 459.7521) OR (attr_7 >= 116.1390)) AND ((attr_8 > 34.1174) AND (attr_1 <= -1883.8983))) AND (attr_6 > 59.2097)) AND (((attr_2 >= 93.4956) AND ((attr_3 < 7.4687) OR (attr_8 < 84.6381))) AND ((attr_4 < 49.1887) OR ((attr_1 < -1558.2212) AND (attr_8 > 84.2394))))) AND (((((attr_4 < -33.8502) OR (attr_6 < 42.7909)) AND (attr_1 < -1821.1496)) AND (((attr_0 >= 71.3576) AND (attr_5 <= 178.0495)) OR ((attr_6 < 33.8078) AND (attr_1 >= -1334.5642)))) AND (((attr_6 > 63.5526) AND (attr_2 > 98.3352)) AND ((attr_2 >= 89.4579) OR ((attr_5 >= 387.4865) AND (attr_1 <= -2590.9726)))))) AND (((attr_3 <= -0.1532) AND (attr_2 >= 94.5526)) AND (attr_5 >= 820.0091))) AND (((attr_1 <= -2836.3965) AND ((attr_8 >= 32.5511) AND ((((attr_5 >= 672.4345) AND (attr_8 >= 50.7642)) AND ((attr_5 <= 96.5239) AND (attr_0 <= 65.2994))) AND (((attr_2 >= 91.8242) AND (attr_6 >= 19.4241)) AND (attr_2 > 91.1901))))) AND (attr_1 < -1873.8305))) AND (((((((attr_7 <= 67.4592) AND (attr_5 <= 789.4847)) AND (((attr_7 > 81.0042) AND (attr_6 < 12.0822)) AND (attr_7 < 84.9411))) OR ((((attr_3 < 25.9102) AND (attr_7 < 68.4988)) AND (attr_5 > 700.4296)) AND (((attr_6 <= 54.4224) AND (attr_4 <= 51.1861)) AND (attr_7 >= 44.9065)))) AND (attr_0 <= 74.2330)) OR (attr_5 >= 174.3703)) AND ((((attr_2 <= 92.4138) AND ((attr_2 <= 86.7659) OR (attr_8 <= 85.5102))) OR ((((attr_3 <= -10.3484) AND ((attr_6 <= 29.1274) AND (attr_1 > -1039.9361))) AND (((attr_6 >= 32.3208) AND (attr_0 >= 72.2806)) AND (attr_4 > 52.5261))) OR (attr_3 > 5.1235))) AND (attr_0 > 97.8030)))) AND (attr_6 >= 52.1425)) THEN Class 2
+  + IF ((((((attr_6 >= 48.2734) AND (((attr_1 >= -1446.3626) AND (attr_8 < 36.8164)) AND (attr_8 > 28.0150))) AND (((((((attr_0 >= 55.8722) AND (attr_3 < -28.5261)) AND ((attr_8 > 14.2609) OR (attr_0 >= 56.0547))) AND (attr_1 >= -2600.4623)) AND (attr_6 <= 42.8106)) AND ((((attr_4 > -11.1769) OR ((attr_4 <= 13.8651) AND (attr_2 > 106.9371))) OR (attr_4 <= -11.3643)) OR ((((attr_6 <= 62.0807) AND (attr_3 >= -12.1847)) OR ((attr_1 >= -566.3748) AND (attr_2 >= 99.5384))) AND (((attr_8 < 73.2876) AND (attr_4 >= 10.7172)) AND ((attr_7 > 88.7074) AND (attr_6 <= 56.7996)))))) AND (attr_4 >= 8.6003))) AND (attr_5 > 582.7856)) AND ((attr_5 >= 124.6154) AND (((attr_2 <= 98.2707) AND ((((((attr_6 >= 20.7124) OR (attr_6 <= 47.7501)) AND (attr_8 <= 56.6297)) AND ((attr_7 < 102.2225) AND (attr_0 > 94.7376))) AND ((((attr_2 <= 77.8339) AND (attr_7 >= 74.4368)) AND (attr_8 < 106.9409)) AND (attr_5 < 367.8320))) AND (attr_4 <= 39.3861))) AND ((attr_8 < 76.8241) OR ((attr_6 > 50.5680) AND (((attr_0 > 54.5352) OR (((attr_4 < -28.4587) AND (attr_7 < 39.2566)) AND (attr_5 <= 368.9482))) AND (attr_5 > 138.0942))))))) AND (attr_4 <= 53.8191)) THEN Class 2
+  + IF (((attr_6 < 45.2585) AND ((((attr_1 < -525.2285) AND (((attr_1 > -1774.8064) AND (((attr_4 > -9.0173) OR ((attr_6 < 11.2694) AND ((((((attr_1 > -1456.4477) OR (attr_2 < 86.6682)) AND (attr_5 >= 378.2899)) AND (attr_0 < 59.6076)) AND ((((attr_8 > 84.6976) OR (attr_7 >= 92.4597)) AND ((attr_0 <= 96.0170) AND (attr_6 <= 44.1712))) AND (attr_5 <= 639.0930))) AND (attr_8 < 47.9959)))) AND ((((attr_1 > -894.0516) OR (attr_7 > 101.1824)) OR ((((((attr_8 < 83.7454) AND (attr_0 < 53.0310)) AND ((attr_0 < 74.6115) AND (attr_4 >= 46.3042))) AND (((attr_4 >= 3.8202) AND (attr_1 <= -1135.7083)) AND (attr_6 < 25.9429))) OR (attr_2 <= 89.9328)) AND ((attr_7 < 109.5848) OR (attr_8 <= 26.7620)))) AND ((((((attr_6 <= 51.4428) AND ((attr_8 < 52.3451) OR (attr_3 >= -11.2207))) AND (((attr_8 >= 86.7253) OR (attr_0 >= 94.9149)) AND (attr_1 < -2736.0877))) OR ((attr_6 <= 18.7015) AND (attr_3 > 26.6273))) AND ((attr_2 >= 106.1372) AND ((attr_6 < 35.8474) AND (((attr_2 <= 104.9320) AND (attr_0 >= 44.8202)) AND ((attr_6 >= 17.6591) AND (attr_2 >= 100.4743)))))) OR ((((attr_8 <= 89.9151) AND (attr_1 <= -3460.2772)) AND (attr_1 > -1322.9113)) AND ((attr_4 < 44.2709) AND (attr_8 < 113.3678))))))) AND ((attr_0 <= 79.8003) AND (attr_2 <= 107.4957)))) OR (attr_8 < 98.2532)) AND ((((((((attr_8 > 41.2168) AND (attr_5 < 437.7537)) AND (((attr_1 > -1924.2868) OR (((((attr_1 >= -3165.5529) OR (attr_7 > 56.6802)) AND ((attr_5 > 555.4428) AND (attr_0 >= 65.4213))) OR (((attr_7 > 101.0406) OR (attr_3 < 5.3069)) AND ((attr_7 <= 97.0560) OR (attr_5 > 791.2111)))) AND (attr_6 < 31.1731))) OR ((attr_6 < 33.4842) AND (((attr_5 <= 292.2643) AND (attr_4 > -10.0758)) AND (((attr_6 <= 53.2104) AND (attr_1 >= -1073.9904)) AND ((attr_2 > 107.5061) AND (attr_8 >= 20.4039))))))) AND (attr_4 <= 4.3576)) OR (attr_2 < 92.5403)) AND (attr_7 >= 102.8355)) AND ((attr_4 > 2.3598) AND (attr_6 >= 20.3359))) AND (((attr_2 < 105.1123) AND ((attr_0 < 95.4808) AND (attr_3 > 16.4120))) AND (attr_1 >= -3627.5160))))) AND (((attr_4 >= -9.5545) AND (((attr_8 <= 86.8680) AND ((attr_5 >= 476.6802) AND (attr_2 >= 103.6184))) AND ((attr_0 > 81.0878) AND (attr_8 >= 18.2369)))) AND (attr_2 < 106.6005))) THEN Class 2
+  + IF (((attr_6 > 9.0000) AND (attr_1 >= -17.5000)) AND (attr_0 > 58.5000)) THEN Class 2
+  + IF ((attr_3 >= 14.0914) AND (((attr_7 <= 49.2418) AND ((attr_7 <= 40.1838) AND (attr_8 <= 98.3209))) AND ((attr_1 < -2542.6826) OR (attr_7 >= 78.1823)))) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF ((((((attr_7 <= 87.7702) AND ((attr_3 < -30.9670) OR (attr_5 < 564.2693))) OR ((attr_2 < 90.3096) OR (attr_6 < 30.6579))) AND ((((attr_5 < 864.9216) AND ((attr_8 >= 15.7375) AND (attr_2 <= 83.7395))) AND ((attr_0 > 71.9157) AND (((attr_1 <= -2030.8259) AND (((attr_0 > 86.5322) AND (attr_3 >= 27.2366)) AND ((attr_2 >= 82.9122) AND (attr_7 < 111.1035)))) OR ((((attr_2 >= 79.1571) OR (attr_7 > 87.8766)) AND (attr_3 >= -7.2831)) AND ((attr_3 > 14.3853) AND ((attr_5 >= 309.7320) AND (attr_2 < 78.2809))))))) AND ((attr_6 >= 23.0870) AND ((attr_7 < 108.0940) OR (attr_5 > 891.6290))))) AND (attr_8 >= 113.1556)) OR ((attr_6 <= 54.9208) AND (((((attr_3 > -31.2756) AND ((attr_1 >= -1496.3011) AND ((((attr_3 >= 18.7452) AND (attr_8 <= 40.3765)) AND ((attr_0 <= 71.5146) AND (attr_8 < 42.5160))) AND (((attr_8 <= 14.6747) AND (attr_0 >= 55.7821)) AND ((attr_1 < -3513.0719) AND (attr_4 <= 47.2432)))))) AND (attr_7 >= 114.7381)) AND (((((((attr_6 < 36.6348) AND (attr_1 < -1381.0921)) AND ((attr_5 <= 236.4017) AND (attr_5 > 388.4195))) AND ((attr_0 < 66.2485) AND ((attr_0 <= 44.6505) OR (attr_1 < -3487.1258)))) AND (((attr_2 <= 96.7226) AND (attr_2 > 93.8128)) AND ((attr_1 >= -3447.4967) AND ((attr_0 > 73.2495) AND (attr_5 > 889.8822))))) AND (((((attr_5 <= 329.5860) AND (attr_6 >= 29.4673)) AND ((attr_1 > -2966.2288) AND (attr_1 < -3418.9421))) AND (attr_5 > 252.5019)) AND (attr_6 <= 49.8832))) AND (attr_0 < 74.2952))) AND ((((((attr_6 > 32.3702) AND (((attr_4 < -27.5361) OR (attr_5 >= 431.6659)) AND ((attr_6 < 43.5623) AND (attr_2 > 93.3153)))) OR (((attr_8 <= 70.3819) AND ((attr_1 > -2568.0911) OR (attr_8 < 105.4773))) AND ((attr_3 > -4.4521) OR ((attr_2 >= 100.4794) AND (attr_7 < 36.8950))))) AND (attr_5 <= 933.0055)) OR (attr_1 > -3351.1271)) AND ((attr_4 > 42.8667) AND ((attr_3 < -33.5381) AND ((attr_0 >= 58.7002) AND (attr_7 > 104.3843)))))))) THEN Class 3
+  + IF ((((attr_6 <= 56.4413) OR (attr_5 >= 787.8927)) AND ((attr_5 <= 354.3438) AND (attr_2 >= 86.0547))) AND (attr_2 < 99.6529)) THEN Class 3
+  + IF ((attr_3 >= 1.8403) AND ((((attr_0 >= 58.1044) AND ((attr_6 >= 59.4918) AND (attr_6 < 47.7867))) OR (attr_0 >= 62.7722)) AND ((attr_2 > 101.8492) AND (attr_4 < -11.3534)))) THEN Class 3
+  + IF ((attr_8 <= 56.0841) AND (attr_1 > -1582.1986)) THEN Class 3
+
+  Deleted Rules:
+  - IF ((attr_6 > 10.0000) AND (attr_1 <= -9.5000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_6 > 10.0000) AND (attr_1 > -9.5000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+  + New: IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_4 <= -8.0000)) THEN Class 4
+    (Similarity: 0.84)
+
+  New Rules:
+  + IF ((((((attr_6 > 9.0000) AND (attr_1 > -17.5000)) AND (attr_0 <= 58.5000)) AND (attr_0 > 53.5000)) AND (attr_4 <= 53.0000)) AND (attr_3 > -3.5000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_0 > 55.5000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_1 <= -0.5000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_2 <= 77.5000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_3 <= -2.5000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_5 <= -9.0000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_6 <= 22.5000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_7 <= 45.5000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_8 <= 7.0000)) THEN Class 4
+  + IF (((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_6 <= 10.0000) THEN Class 5
+  + New: IF (attr_6 <= 9.0000) THEN Class 5
+    (Similarity: 0.89)
+
+======================================================================
+--- Diff Chunk 8 -> Chunk 9 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 8):      nan
+  - Test Acc (Chunk 9):     nan
+  - Test F1 (Chunk 9):      nan
+Fitness:       1.018936 -> 0.998262
+Default Class: 7 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((attr_0 <= 53.5000) AND (attr_1 > -4.5000)) AND (attr_7 <= 27.5000)) THEN Class 1
+  + New: IF (((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_7 <= 28.5000)) THEN Class 1
+    (Similarity: 0.97)
+  - Old: IF ((attr_0 > 53.5000) AND (attr_8 <= 3.0000)) THEN Class 1
+  + New: IF ((attr_0 > 54.5000) AND (attr_8 <= 3.0000)) THEN Class 1
+    (Similarity: 0.98)
+
+  Deleted Rules:
+  - IF (((attr_0 <= 53.5000) AND (attr_1 > -4.5000)) AND (attr_3 <= -5.5000)) THEN Class 1
+  - IF (((attr_0 <= 53.5000) AND (attr_1 > -4.5000)) AND (attr_3 > -5.5000)) THEN Class 1
+  - IF (((attr_0 <= 53.5000) AND (attr_1 > -4.5000)) AND (attr_5 <= -24.5000)) THEN Class 1
+
+=== Class 2 ===
+
+  Modified Rules:
+  - Old: IF (((attr_6 > 9.0000) AND (attr_1 >= -17.5000)) AND (attr_0 > 58.5000)) THEN Class 2
+  + New: IF (((attr_6 > 9.0000) AND (attr_1 >= -34.0000)) AND (attr_0 > 57.5000)) THEN Class 2
+    (Similarity: 0.94)
+
+  New Rules:
+  + IF (((attr_6 > 9.0000) AND (attr_1 > -34.0000)) AND (attr_0 > 57.5000)) THEN Class 2
+
+  Deleted Rules:
+  - IF ((((((((((attr_5 < 459.7521) OR (attr_7 >= 116.1390)) AND ((attr_8 > 34.1174) AND (attr_1 <= -1883.8983))) AND (attr_6 > 59.2097)) AND (((attr_2 >= 93.4956) AND ((attr_3 < 7.4687) OR (attr_8 < 84.6381))) AND ((attr_4 < 49.1887) OR ((attr_1 < -1558.2212) AND (attr_8 > 84.2394))))) AND (((((attr_4 < -33.8502) OR (attr_6 < 42.7909)) AND (attr_1 < -1821.1496)) AND (((attr_0 >= 71.3576) AND (attr_5 <= 178.0495)) OR ((attr_6 < 33.8078) AND (attr_1 >= -1334.5642)))) AND (((attr_6 > 63.5526) AND (attr_2 > 98.3352)) AND ((attr_2 >= 89.4579) OR ((attr_5 >= 387.4865) AND (attr_1 <= -2590.9726)))))) AND (((attr_3 <= -0.1532) AND (attr_2 >= 94.5526)) AND (attr_5 >= 820.0091))) AND (((attr_1 <= -2836.3965) AND ((attr_8 >= 32.5511) AND ((((attr_5 >= 672.4345) AND (attr_8 >= 50.7642)) AND ((attr_5 <= 96.5239) AND (attr_0 <= 65.2994))) AND (((attr_2 >= 91.8242) AND (attr_6 >= 19.4241)) AND (attr_2 > 91.1901))))) AND (attr_1 < -1873.8305))) AND (((((((attr_7 <= 67.4592) AND (attr_5 <= 789.4847)) AND (((attr_7 > 81.0042) AND (attr_6 < 12.0822)) AND (attr_7 < 84.9411))) OR ((((attr_3 < 25.9102) AND (attr_7 < 68.4988)) AND (attr_5 > 700.4296)) AND (((attr_6 <= 54.4224) AND (attr_4 <= 51.1861)) AND (attr_7 >= 44.9065)))) AND (attr_0 <= 74.2330)) OR (attr_5 >= 174.3703)) AND ((((attr_2 <= 92.4138) AND ((attr_2 <= 86.7659) OR (attr_8 <= 85.5102))) OR ((((attr_3 <= -10.3484) AND ((attr_6 <= 29.1274) AND (attr_1 > -1039.9361))) AND (((attr_6 >= 32.3208) AND (attr_0 >= 72.2806)) AND (attr_4 > 52.5261))) OR (attr_3 > 5.1235))) AND (attr_0 > 97.8030)))) AND (attr_6 >= 52.1425)) THEN Class 2
+  - IF ((((((attr_6 >= 48.2734) AND (((attr_1 >= -1446.3626) AND (attr_8 < 36.8164)) AND (attr_8 > 28.0150))) AND (((((((attr_0 >= 55.8722) AND (attr_3 < -28.5261)) AND ((attr_8 > 14.2609) OR (attr_0 >= 56.0547))) AND (attr_1 >= -2600.4623)) AND (attr_6 <= 42.8106)) AND ((((attr_4 > -11.1769) OR ((attr_4 <= 13.8651) AND (attr_2 > 106.9371))) OR (attr_4 <= -11.3643)) OR ((((attr_6 <= 62.0807) AND (attr_3 >= -12.1847)) OR ((attr_1 >= -566.3748) AND (attr_2 >= 99.5384))) AND (((attr_8 < 73.2876) AND (attr_4 >= 10.7172)) AND ((attr_7 > 88.7074) AND (attr_6 <= 56.7996)))))) AND (attr_4 >= 8.6003))) AND (attr_5 > 582.7856)) AND ((attr_5 >= 124.6154) AND (((attr_2 <= 98.2707) AND ((((((attr_6 >= 20.7124) OR (attr_6 <= 47.7501)) AND (attr_8 <= 56.6297)) AND ((attr_7 < 102.2225) AND (attr_0 > 94.7376))) AND ((((attr_2 <= 77.8339) AND (attr_7 >= 74.4368)) AND (attr_8 < 106.9409)) AND (attr_5 < 367.8320))) AND (attr_4 <= 39.3861))) AND ((attr_8 < 76.8241) OR ((attr_6 > 50.5680) AND (((attr_0 > 54.5352) OR (((attr_4 < -28.4587) AND (attr_7 < 39.2566)) AND (attr_5 <= 368.9482))) AND (attr_5 > 138.0942))))))) AND (attr_4 <= 53.8191)) THEN Class 2
+  - IF (((attr_6 < 45.2585) AND ((((attr_1 < -525.2285) AND (((attr_1 > -1774.8064) AND (((attr_4 > -9.0173) OR ((attr_6 < 11.2694) AND ((((((attr_1 > -1456.4477) OR (attr_2 < 86.6682)) AND (attr_5 >= 378.2899)) AND (attr_0 < 59.6076)) AND ((((attr_8 > 84.6976) OR (attr_7 >= 92.4597)) AND ((attr_0 <= 96.0170) AND (attr_6 <= 44.1712))) AND (attr_5 <= 639.0930))) AND (attr_8 < 47.9959)))) AND ((((attr_1 > -894.0516) OR (attr_7 > 101.1824)) OR ((((((attr_8 < 83.7454) AND (attr_0 < 53.0310)) AND ((attr_0 < 74.6115) AND (attr_4 >= 46.3042))) AND (((attr_4 >= 3.8202) AND (attr_1 <= -1135.7083)) AND (attr_6 < 25.9429))) OR (attr_2 <= 89.9328)) AND ((attr_7 < 109.5848) OR (attr_8 <= 26.7620)))) AND ((((((attr_6 <= 51.4428) AND ((attr_8 < 52.3451) OR (attr_3 >= -11.2207))) AND (((attr_8 >= 86.7253) OR (attr_0 >= 94.9149)) AND (attr_1 < -2736.0877))) OR ((attr_6 <= 18.7015) AND (attr_3 > 26.6273))) AND ((attr_2 >= 106.1372) AND ((attr_6 < 35.8474) AND (((attr_2 <= 104.9320) AND (attr_0 >= 44.8202)) AND ((attr_6 >= 17.6591) AND (attr_2 >= 100.4743)))))) OR ((((attr_8 <= 89.9151) AND (attr_1 <= -3460.2772)) AND (attr_1 > -1322.9113)) AND ((attr_4 < 44.2709) AND (attr_8 < 113.3678))))))) AND ((attr_0 <= 79.8003) AND (attr_2 <= 107.4957)))) OR (attr_8 < 98.2532)) AND ((((((((attr_8 > 41.2168) AND (attr_5 < 437.7537)) AND (((attr_1 > -1924.2868) OR (((((attr_1 >= -3165.5529) OR (attr_7 > 56.6802)) AND ((attr_5 > 555.4428) AND (attr_0 >= 65.4213))) OR (((attr_7 > 101.0406) OR (attr_3 < 5.3069)) AND ((attr_7 <= 97.0560) OR (attr_5 > 791.2111)))) AND (attr_6 < 31.1731))) OR ((attr_6 < 33.4842) AND (((attr_5 <= 292.2643) AND (attr_4 > -10.0758)) AND (((attr_6 <= 53.2104) AND (attr_1 >= -1073.9904)) AND ((attr_2 > 107.5061) AND (attr_8 >= 20.4039))))))) AND (attr_4 <= 4.3576)) OR (attr_2 < 92.5403)) AND (attr_7 >= 102.8355)) AND ((attr_4 > 2.3598) AND (attr_6 >= 20.3359))) AND (((attr_2 < 105.1123) AND ((attr_0 < 95.4808) AND (attr_3 > 16.4120))) AND (attr_1 >= -3627.5160))))) AND (((attr_4 >= -9.5545) AND (((attr_8 <= 86.8680) AND ((attr_5 >= 476.6802) AND (attr_2 >= 103.6184))) AND ((attr_0 > 81.0878) AND (attr_8 >= 18.2369)))) AND (attr_2 < 106.6005))) THEN Class 2
+  - IF ((attr_3 >= 14.0914) AND (((attr_7 <= 49.2418) AND ((attr_7 <= 40.1838) AND (attr_8 <= 98.3209))) AND ((attr_1 < -2542.6826) OR (attr_7 >= 78.1823)))) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF (((((attr_2 <= 83.6509) AND (((attr_1 <= -2902.9371) OR ((((attr_0 < 54.1668) AND (attr_3 < 14.8852)) AND (attr_8 >= 108.3389)) AND ((attr_8 > 31.0579) OR ((attr_8 <= 60.4742) AND (attr_8 > 71.3930))))) AND ((attr_8 < 44.4077) AND (((attr_4 >= -23.1374) AND ((attr_7 < 55.7147) AND (attr_2 >= 104.2824))) AND (attr_6 >= 19.5246))))) AND (((((attr_7 > 104.0165) AND (((attr_5 <= -405.0974) OR (attr_6 > 24.7361)) AND ((attr_8 <= 94.2413) AND (attr_7 <= 61.1996)))) AND ((((attr_6 >= 45.6532) AND (attr_8 < 42.3343)) AND (attr_5 > -2128.9830)) AND (((attr_0 >= 65.7425) AND (attr_7 <= 87.4087)) AND (attr_5 <= -1403.8462)))) AND (((attr_1 <= -3143.3102) AND (((attr_0 > 91.0896) AND (attr_4 > 44.2819)) OR (attr_2 < 94.3901))) AND (attr_1 >= -2066.3855))) AND (attr_0 >= 77.5643))) AND (attr_3 > -7.6249)) AND ((((((attr_7 >= 102.6537) AND ((((attr_2 < 102.7353) AND (attr_5 > -1191.6687)) AND ((attr_5 >= -910.0575) AND (attr_0 >= 94.0607))) AND ((attr_2 >= 99.8110) AND (attr_6 >= 36.5510)))) AND (((((attr_7 <= 77.6900) AND (attr_0 > 80.2201)) AND (attr_7 > 39.3049)) AND (attr_0 > 94.1099)) AND ((((attr_6 < 53.8641) AND (attr_7 < 61.3123)) AND ((attr_7 < 69.4458) AND (attr_3 > -8.0246))) AND ((attr_6 < 17.3823) AND (attr_1 < -3262.5481))))) AND (((((attr_5 >= -214.6255) AND (attr_6 >= 52.1929)) AND (attr_3 <= 6.0903)) AND ((attr_1 > -2809.0498) AND ((attr_6 >= 23.8414) AND (attr_4 < 52.7840)))) AND (((attr_7 >= 100.9240) AND (attr_6 < 22.0174)) AND (((attr_8 >= 33.6555) AND (attr_3 <= 28.3651)) AND ((attr_3 >= -6.9027) AND ((attr_5 <= -2131.6943) AND (attr_3 < -10.8165))))))) AND ((((((attr_3 > 3.7069) AND (attr_7 < 98.8921)) AND ((attr_6 > 13.1718) AND ((attr_2 < 105.1182) OR (attr_7 < 112.1330)))) OR (attr_3 >= 13.7298)) AND ((attr_2 > 89.6761) OR ((attr_5 > -1437.7707) AND (attr_0 >= 85.5525)))) AND (((attr_6 <= 32.1225) OR ((attr_4 >= 18.7534) AND ((attr_8 < 78.3416) AND ((attr_6 <= 50.5628) AND (attr_4 > 22.5136))))) AND (attr_1 > -3415.7171)))) AND (attr_0 > 85.0016))) THEN Class 3
+  + IF ((attr_6 > 66.9946) AND (attr_1 <= -34.0000)) THEN Class 3
+
+  Deleted Rules:
+  - IF ((((((attr_7 <= 87.7702) AND ((attr_3 < -30.9670) OR (attr_5 < 564.2693))) OR ((attr_2 < 90.3096) OR (attr_6 < 30.6579))) AND ((((attr_5 < 864.9216) AND ((attr_8 >= 15.7375) AND (attr_2 <= 83.7395))) AND ((attr_0 > 71.9157) AND (((attr_1 <= -2030.8259) AND (((attr_0 > 86.5322) AND (attr_3 >= 27.2366)) AND ((attr_2 >= 82.9122) AND (attr_7 < 111.1035)))) OR ((((attr_2 >= 79.1571) OR (attr_7 > 87.8766)) AND (attr_3 >= -7.2831)) AND ((attr_3 > 14.3853) AND ((attr_5 >= 309.7320) AND (attr_2 < 78.2809))))))) AND ((attr_6 >= 23.0870) AND ((attr_7 < 108.0940) OR (attr_5 > 891.6290))))) AND (attr_8 >= 113.1556)) OR ((attr_6 <= 54.9208) AND (((((attr_3 > -31.2756) AND ((attr_1 >= -1496.3011) AND ((((attr_3 >= 18.7452) AND (attr_8 <= 40.3765)) AND ((attr_0 <= 71.5146) AND (attr_8 < 42.5160))) AND (((attr_8 <= 14.6747) AND (attr_0 >= 55.7821)) AND ((attr_1 < -3513.0719) AND (attr_4 <= 47.2432)))))) AND (attr_7 >= 114.7381)) AND (((((((attr_6 < 36.6348) AND (attr_1 < -1381.0921)) AND ((attr_5 <= 236.4017) AND (attr_5 > 388.4195))) AND ((attr_0 < 66.2485) AND ((attr_0 <= 44.6505) OR (attr_1 < -3487.1258)))) AND (((attr_2 <= 96.7226) AND (attr_2 > 93.8128)) AND ((attr_1 >= -3447.4967) AND ((attr_0 > 73.2495) AND (attr_5 > 889.8822))))) AND (((((attr_5 <= 329.5860) AND (attr_6 >= 29.4673)) AND ((attr_1 > -2966.2288) AND (attr_1 < -3418.9421))) AND (attr_5 > 252.5019)) AND (attr_6 <= 49.8832))) AND (attr_0 < 74.2952))) AND ((((((attr_6 > 32.3702) AND (((attr_4 < -27.5361) OR (attr_5 >= 431.6659)) AND ((attr_6 < 43.5623) AND (attr_2 > 93.3153)))) OR (((attr_8 <= 70.3819) AND ((attr_1 > -2568.0911) OR (attr_8 < 105.4773))) AND ((attr_3 > -4.4521) OR ((attr_2 >= 100.4794) AND (attr_7 < 36.8950))))) AND (attr_5 <= 933.0055)) OR (attr_1 > -3351.1271)) AND ((attr_4 > 42.8667) AND ((attr_3 < -33.5381) AND ((attr_0 >= 58.7002) AND (attr_7 > 104.3843)))))))) THEN Class 3
+  - IF ((((attr_6 <= 56.4413) OR (attr_5 >= 787.8927)) AND ((attr_5 <= 354.3438) AND (attr_2 >= 86.0547))) AND (attr_2 < 99.6529)) THEN Class 3
+  - IF ((attr_3 >= 1.8403) AND ((((attr_0 >= 58.1044) AND ((attr_6 >= 59.4918) AND (attr_6 < 47.7867))) OR (attr_0 >= 62.7722)) AND ((attr_2 > 101.8492) AND (attr_4 < -11.3534)))) THEN Class 3
+  - IF ((attr_8 <= 56.0841) AND (attr_1 > -1582.1986)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_1 <= -0.5000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 14.5000)) AND (attr_1 > 0.5000)) THEN Class 4
+    (Similarity: 0.88)
+  - Old: IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_7 <= 45.5000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 14.5000)) AND (attr_7 <= 46.5000)) THEN Class 4
+    (Similarity: 0.91)
+  - Old: IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_8 <= 7.0000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 14.5000)) AND (attr_8 <= 7.0000)) THEN Class 4
+    (Similarity: 0.91)
+  - Old: IF (((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+  + New: IF (((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 14.5000)) THEN Class 4
+    (Similarity: 0.88)
+
+  New Rules:
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 14.5000)) AND (attr_4 <= 1.0000)) THEN Class 4
+  + IF (((attr_0 > 54.5000) AND (attr_4 > 53.0000)) AND (attr_6 > 14.5000)) THEN Class 4
+
+  Deleted Rules:
+  - IF ((((((attr_6 > 9.0000) AND (attr_1 > -17.5000)) AND (attr_0 <= 58.5000)) AND (attr_0 > 53.5000)) AND (attr_4 <= 53.0000)) AND (attr_3 > -3.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_0 > 55.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_2 <= 77.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_3 <= -2.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_4 <= -8.0000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_5 <= -9.0000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_6 <= 22.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Unchanged Rules:
+    IF (attr_6 <= 9.0000) THEN Class 5
+
+=== Class 7 ===
+
+  New Rules:
+  + IF (attr_1 < -457.5634) THEN Class 7
+
+======================================================================
+--- Diff Chunk 9 -> Chunk 10 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 9):      nan
+  - Test Acc (Chunk 10):     nan
+  - Test F1 (Chunk 10):      nan
+Fitness:       0.998262 -> 1.094127
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_7 <= 28.5000)) THEN Class 1
+  + New: IF (((attr_0 <= 69.5000) AND (attr_1 <= -4.5000)) AND (attr_2 > 92.7909)) THEN Class 1
+    (Similarity: 0.83)
+
+  New Rules:
+  + IF (((((attr_0 <= 69.5000) AND (attr_1 > -4.5000)) AND (attr_0 <= 54.5000)) AND (attr_4 > -6.0000)) AND (attr_3 <= -5.5000)) THEN Class 1
+  + IF ((((attr_0 <= 54.5000) AND (attr_7 <= 85.5000)) AND (attr_1 > -4.5000)) AND (attr_3 <= -4.5000)) THEN Class 1
+  + IF ((((attr_0 <= 54.5000) AND (attr_7 <= 85.5000)) AND (attr_1 > -4.5000)) AND (attr_7 <= 28.5000)) THEN Class 1
+  + IF ((((attr_0 <= 54.5000) AND (attr_7 <= 85.5000)) AND (attr_1 > 479.2999)) AND (attr_3 <= -4.5000)) THEN Class 1
+  + IF ((((attr_0 <= 65.2765) AND (attr_7 <= 85.5000)) AND (attr_1 > -4.5000)) AND (attr_1 <= -2.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((attr_0 > 54.5000) AND (attr_8 <= 3.0000)) THEN Class 1
+
+=== Class 2 ===
+
+  Deleted Rules:
+  - IF (((attr_6 > 9.0000) AND (attr_1 > -34.0000)) AND (attr_0 > 57.5000)) THEN Class 2
+  - IF (((attr_6 > 9.0000) AND (attr_1 >= -34.0000)) AND (attr_0 > 57.5000)) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF (((attr_0 <= 69.5000) AND (attr_1 <= -4.5000)) AND (attr_2 <= 77.5000)) THEN Class 3
+
+  Deleted Rules:
+  - IF (((((attr_2 <= 83.6509) AND (((attr_1 <= -2902.9371) OR ((((attr_0 < 54.1668) AND (attr_3 < 14.8852)) AND (attr_8 >= 108.3389)) AND ((attr_8 > 31.0579) OR ((attr_8 <= 60.4742) AND (attr_8 > 71.3930))))) AND ((attr_8 < 44.4077) AND (((attr_4 >= -23.1374) AND ((attr_7 < 55.7147) AND (attr_2 >= 104.2824))) AND (attr_6 >= 19.5246))))) AND (((((attr_7 > 104.0165) AND (((attr_5 <= -405.0974) OR (attr_6 > 24.7361)) AND ((attr_8 <= 94.2413) AND (attr_7 <= 61.1996)))) AND ((((attr_6 >= 45.6532) AND (attr_8 < 42.3343)) AND (attr_5 > -2128.9830)) AND (((attr_0 >= 65.7425) AND (attr_7 <= 87.4087)) AND (attr_5 <= -1403.8462)))) AND (((attr_1 <= -3143.3102) AND (((attr_0 > 91.0896) AND (attr_4 > 44.2819)) OR (attr_2 < 94.3901))) AND (attr_1 >= -2066.3855))) AND (attr_0 >= 77.5643))) AND (attr_3 > -7.6249)) AND ((((((attr_7 >= 102.6537) AND ((((attr_2 < 102.7353) AND (attr_5 > -1191.6687)) AND ((attr_5 >= -910.0575) AND (attr_0 >= 94.0607))) AND ((attr_2 >= 99.8110) AND (attr_6 >= 36.5510)))) AND (((((attr_7 <= 77.6900) AND (attr_0 > 80.2201)) AND (attr_7 > 39.3049)) AND (attr_0 > 94.1099)) AND ((((attr_6 < 53.8641) AND (attr_7 < 61.3123)) AND ((attr_7 < 69.4458) AND (attr_3 > -8.0246))) AND ((attr_6 < 17.3823) AND (attr_1 < -3262.5481))))) AND (((((attr_5 >= -214.6255) AND (attr_6 >= 52.1929)) AND (attr_3 <= 6.0903)) AND ((attr_1 > -2809.0498) AND ((attr_6 >= 23.8414) AND (attr_4 < 52.7840)))) AND (((attr_7 >= 100.9240) AND (attr_6 < 22.0174)) AND (((attr_8 >= 33.6555) AND (attr_3 <= 28.3651)) AND ((attr_3 >= -6.9027) AND ((attr_5 <= -2131.6943) AND (attr_3 < -10.8165))))))) AND ((((((attr_3 > 3.7069) AND (attr_7 < 98.8921)) AND ((attr_6 > 13.1718) AND ((attr_2 < 105.1182) OR (attr_7 < 112.1330)))) OR (attr_3 >= 13.7298)) AND ((attr_2 > 89.6761) OR ((attr_5 > -1437.7707) AND (attr_0 >= 85.5525)))) AND (((attr_6 <= 32.1225) OR ((attr_4 >= 18.7534) AND ((attr_8 < 78.3416) AND ((attr_6 <= 50.5628) AND (attr_4 > 22.5136))))) AND (attr_1 > -3415.7171)))) AND (attr_0 > 85.0016))) THEN Class 3
+  - IF ((attr_6 > 66.9946) AND (attr_1 <= -34.0000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 14.5000)) AND (attr_4 <= 1.0000)) THEN Class 4
+  + New: IF ((((attr_0 <= 69.5000) AND (attr_1 > -4.5000)) AND (attr_0 <= 54.5000)) AND (attr_4 <= -6.0000)) THEN Class 4
+    (Similarity: 0.83)
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 14.5000)) AND (attr_1 > 0.5000)) THEN Class 4
+  + New: IF ((((attr_0 > 52.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_0 > 55.5000)) THEN Class 4
+    (Similarity: 0.88)
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 14.5000)) AND (attr_7 <= 46.5000)) THEN Class 4
+  + New: IF ((((attr_0 > 52.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_7 <= 47.0000)) THEN Class 4
+    (Similarity: 0.89)
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 14.5000)) AND (attr_8 <= 7.0000)) THEN Class 4
+  + New: IF ((((attr_0 > 52.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_8 <= 7.0000)) THEN Class 4
+    (Similarity: 0.91)
+  - Old: IF (((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 14.5000)) THEN Class 4
+  + New: IF (((attr_0 > 52.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+    (Similarity: 0.88)
+
+  New Rules:
+  + IF (((((attr_0 <= 69.5000) AND (attr_1 > -4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) AND (attr_1 <= -0.5000)) THEN Class 4
+  + IF (((((attr_0 <= 69.5000) AND (attr_1 > -4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) AND (attr_1 > -0.5000)) THEN Class 4
+  + IF ((((attr_0 > 52.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_3 <= -2.5000)) THEN Class 4
+  + IF ((((attr_0 > 52.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_5 <= -12.5000)) THEN Class 4
+  + IF ((((attr_0 > 52.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_6 <= 21.5000)) THEN Class 4
+
+  Deleted Rules:
+  - IF (((attr_0 > 54.5000) AND (attr_4 > 53.0000)) AND (attr_6 > 14.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_6 <= 9.0000) THEN Class 5
+  + New: IF (attr_6 <= 12.5000) THEN Class 5
+    (Similarity: 0.84)
+
+  New Rules:
+  + IF ((attr_0 > 69.5000) AND (attr_5 > -4.5000)) THEN Class 5
+
+=== Class 7 ===
+
+  Deleted Rules:
+  - IF (attr_1 < -457.5634) THEN Class 7
+
+======================================================================
+--- Diff Chunk 10 -> Chunk 11 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 10):      nan
+  - Test Acc (Chunk 11):     nan
+  - Test F1 (Chunk 11):      nan
+Fitness:       1.094127 -> 1.096705
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((attr_0 <= 69.5000) AND (attr_1 <= -4.5000)) AND (attr_2 > 92.7909)) THEN Class 1
+  + New: IF (((attr_6 > 12.5000) AND (attr_1 <= -4.5000)) AND (attr_6 >= 42.0000)) THEN Class 1
+    (Similarity: 0.84)
+
+  New Rules:
+  + IF ((attr_0 <= 53.5000) AND (attr_8 > 38.0000)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((attr_0 <= 69.5000) AND (attr_1 > -4.5000)) AND (attr_0 <= 54.5000)) AND (attr_4 > -6.0000)) AND (attr_3 <= -5.5000)) THEN Class 1
+  - IF ((((attr_0 <= 54.5000) AND (attr_7 <= 85.5000)) AND (attr_1 > -4.5000)) AND (attr_3 <= -4.5000)) THEN Class 1
+  - IF ((((attr_0 <= 54.5000) AND (attr_7 <= 85.5000)) AND (attr_1 > -4.5000)) AND (attr_7 <= 28.5000)) THEN Class 1
+  - IF ((((attr_0 <= 54.5000) AND (attr_7 <= 85.5000)) AND (attr_1 > 479.2999)) AND (attr_3 <= -4.5000)) THEN Class 1
+  - IF ((((attr_0 <= 65.2765) AND (attr_7 <= 85.5000)) AND (attr_1 > -4.5000)) AND (attr_1 <= -2.5000)) THEN Class 1
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF (((attr_0 <= 69.5000) AND (attr_1 <= -4.5000)) AND (attr_2 <= 77.5000)) THEN Class 3
+  + New: IF (((attr_6 > 12.5000) AND (attr_1 <= -4.5000)) AND (attr_6 > 42.0000)) THEN Class 3
+    (Similarity: 0.85)
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF (((((attr_0 <= 69.5000) AND (attr_1 > -4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) AND (attr_1 > -0.5000)) THEN Class 4
+  + New: IF (((((attr_6 > 12.5000) AND (attr_1 > -4.5000)) AND (attr_0 <= 53.5000)) AND (attr_0 > 52.5000)) AND (attr_7 > 31.5000)) THEN Class 4
+    (Similarity: 0.87)
+  - Old: IF ((((attr_0 <= 69.5000) AND (attr_1 > -4.5000)) AND (attr_0 <= 54.5000)) AND (attr_4 <= -6.0000)) THEN Class 4
+  + New: IF ((((attr_6 > 12.5000) AND (attr_1 > -4.5000)) AND (attr_0 > 53.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+    (Similarity: 0.90)
+  - Old: IF (((attr_0 > 52.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+  + New: IF (((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 12.5000)) THEN Class 4
+    (Similarity: 0.88)
+
+  Deleted Rules:
+  - IF (((((attr_0 <= 69.5000) AND (attr_1 > -4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) AND (attr_1 <= -0.5000)) THEN Class 4
+  - IF ((((attr_0 > 52.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_0 > 55.5000)) THEN Class 4
+  - IF ((((attr_0 > 52.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_3 <= -2.5000)) THEN Class 4
+  - IF ((((attr_0 > 52.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_5 <= -12.5000)) THEN Class 4
+  - IF ((((attr_0 > 52.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_6 <= 21.5000)) THEN Class 4
+  - IF ((((attr_0 > 52.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_7 <= 47.0000)) THEN Class 4
+  - IF ((((attr_0 > 52.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_8 <= 7.0000)) THEN Class 4
+
+=== Class 5 ===
+
+  Unchanged Rules:
+    IF (attr_6 <= 12.5000) THEN Class 5
+
+  Deleted Rules:
+  - IF ((attr_0 > 69.5000) AND (attr_5 > -4.5000)) THEN Class 5
+
+=== Class 6 ===
+
+  New Rules:
+  + IF (((((attr_7 <= 57.4707) AND (((attr_1 < -1.5470) AND (attr_7 >= 60.1145)) AND ((((attr_1 >= -3.5281) OR ((((attr_8 <= 47.3388) AND (attr_4 >= 59.3050)) OR ((attr_1 >= -15.8635) AND (attr_3 < -10.4548))) AND (((((((attr_4 >= 7.8143) AND (attr_8 > 104.4612)) AND (attr_7 > 107.4480)) AND (attr_8 < 96.2482)) OR (attr_8 >= 16.3571)) AND (((((attr_2 <= 94.3586) AND (attr_4 <= -15.6236)) OR ((attr_2 >= 82.5075) AND (attr_0 >= 95.5468))) AND (attr_1 < -32.9469)) AND (attr_8 < 30.9744))) AND (attr_4 < 7.7863)))) AND ((attr_4 > -10.8522) OR (attr_0 < 77.6463))) OR (attr_6 > 16.7700)))) AND ((attr_1 <= -26.8275) AND ((attr_6 < 52.6134) AND (((attr_2 < 98.9101) OR ((attr_1 >= 2.0795) AND (attr_0 <= 84.2567))) OR (attr_3 <= 2.8804))))) AND ((((attr_4 < -9.5653) OR ((attr_5 > 29.1666) AND ((((attr_8 <= 48.9951) AND ((attr_6 <= 34.3280) AND (attr_3 >= -1.5014))) AND (((attr_0 < 92.6127) AND (attr_8 < 16.9425)) AND (((attr_1 < -31.7158) AND (((((attr_4 <= -18.4876) AND (attr_1 > -9.4498)) AND ((attr_3 >= -13.6373) AND (attr_1 < -10.0965))) AND ((attr_8 < 22.8370) OR (attr_5 <= 58.7910))) AND (attr_8 <= 52.9992))) AND ((((((attr_8 >= 67.4173) AND (attr_7 <= 70.2935)) AND ((attr_4 >= -12.0021) AND (attr_7 >= 107.8698))) OR (((attr_0 >= 97.3637) AND (attr_8 > 45.7150)) AND (attr_7 >= 47.9028))) AND ((((attr_5 < 88.8517) OR (attr_4 >= 3.8448)) AND ((attr_3 < 4.0543) OR (attr_0 <= 75.5842))) AND (((attr_5 <= 3.7985) AND (attr_8 > 19.6144)) AND ((attr_7 >= 41.0688) AND (attr_6 > 53.8995))))) AND (attr_8 > 56.6837))))) OR (attr_6 <= 56.0902)))) AND (((attr_2 < 99.1781) AND (attr_1 >= 0.7343)) AND ((((attr_1 >= -14.1532) AND (attr_8 <= 36.0132)) OR (((attr_5 <= -16.1402) AND ((attr_5 < 70.8944) AND (attr_0 <= 58.2115))) AND ((attr_6 < 52.9033) AND (attr_5 > 34.8588)))) AND ((attr_0 <= 83.1080) OR ((attr_7 > 48.4902) AND (attr_1 <= 5.4229)))))) AND (((((attr_5 < -33.4730) AND (((attr_6 >= 9.8131) OR (((((((attr_7 >= 52.5848) OR (attr_0 >= 44.8627)) AND ((attr_6 > 18.3680) AND (attr_1 < -8.2203))) AND (((attr_1 < -10.7491) OR (attr_7 < 87.7685)) AND ((attr_8 < 104.6957) AND (attr_0 < 83.0999)))) AND (attr_0 > 80.9266)) AND ((attr_7 > 85.2026) AND (attr_4 >= 8.3853))) AND ((((((attr_6 > 8.9516) AND (attr_3 >= -9.5976)) AND (attr_2 >= 100.7844)) AND (attr_3 < -0.3556)) OR ((attr_1 <= -25.9220) AND (attr_5 > 64.9892))) AND (attr_2 <= 80.6952)))) OR (attr_7 <= 109.6330))) AND (attr_2 >= 95.1333)) AND (((attr_3 > -9.4971) OR (attr_6 >= 48.0099)) AND (attr_6 <= 33.6663))) AND (attr_8 <= 88.3950)))) AND (attr_0 <= 64.7296)) THEN Class 6
+
+======================================================================
+--- Diff Chunk 11 -> Chunk 12 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 11):      nan
+  - Test Acc (Chunk 12):     nan
+  - Test F1 (Chunk 12):      nan
+Fitness:       1.096705 -> 1.100000
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((attr_0 <= 53.5000) AND (attr_8 > 38.0000)) THEN Class 1
+  + New: IF ((attr_0 <= 54.5000) AND (attr_7 <= 28.5000)) THEN Class 1
+    (Similarity: 0.87)
+
+  New Rules:
+  + IF ((attr_0 <= 54.5000) AND (attr_2 <= 75.5000)) THEN Class 1
+  + IF ((attr_0 > 54.5000) AND (attr_8 <= 3.0000)) THEN Class 1
+  + IF ((attr_2 > 110.4112) AND (attr_3 < 653.1314)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((attr_6 > 12.5000) AND (attr_1 <= -4.5000)) AND (attr_6 >= 42.0000)) THEN Class 1
+
+=== Class 3 ===
+
+  Deleted Rules:
+  - IF (((attr_6 > 12.5000) AND (attr_1 <= -4.5000)) AND (attr_6 > 42.0000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF (((((attr_6 > 12.5000) AND (attr_1 > -4.5000)) AND (attr_0 <= 53.5000)) AND (attr_0 > 52.5000)) AND (attr_7 > 31.5000)) THEN Class 4
+  + New: IF (((((attr_6 > 12.5000) AND (attr_0 <= 59.5000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) AND (attr_7 > 44.5000)) THEN Class 4
+    (Similarity: 0.88)
+  - Old: IF ((((attr_6 > 12.5000) AND (attr_1 > -4.5000)) AND (attr_0 > 53.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_4 <= -13.0000)) THEN Class 4
+    (Similarity: 0.86)
+
+  New Rules:
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_0 <= 55.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_1 <= -0.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_2 <= 77.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_3 <= -0.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_5 <= -15.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_6 <= 21.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_7 <= 45.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_8 <= 5.0000)) THEN Class 4
+
+  Deleted Rules:
+  - IF (((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 12.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Unchanged Rules:
+    IF (attr_6 <= 12.5000) THEN Class 5
+
+=== Class 6 ===
+
+  New Rules:
+  + IF ((attr_6 > 12.5000) AND (attr_0 > 59.5000)) THEN Class 6
+
+  Deleted Rules:
+  - IF (((((attr_7 <= 57.4707) AND (((attr_1 < -1.5470) AND (attr_7 >= 60.1145)) AND ((((attr_1 >= -3.5281) OR ((((attr_8 <= 47.3388) AND (attr_4 >= 59.3050)) OR ((attr_1 >= -15.8635) AND (attr_3 < -10.4548))) AND (((((((attr_4 >= 7.8143) AND (attr_8 > 104.4612)) AND (attr_7 > 107.4480)) AND (attr_8 < 96.2482)) OR (attr_8 >= 16.3571)) AND (((((attr_2 <= 94.3586) AND (attr_4 <= -15.6236)) OR ((attr_2 >= 82.5075) AND (attr_0 >= 95.5468))) AND (attr_1 < -32.9469)) AND (attr_8 < 30.9744))) AND (attr_4 < 7.7863)))) AND ((attr_4 > -10.8522) OR (attr_0 < 77.6463))) OR (attr_6 > 16.7700)))) AND ((attr_1 <= -26.8275) AND ((attr_6 < 52.6134) AND (((attr_2 < 98.9101) OR ((attr_1 >= 2.0795) AND (attr_0 <= 84.2567))) OR (attr_3 <= 2.8804))))) AND ((((attr_4 < -9.5653) OR ((attr_5 > 29.1666) AND ((((attr_8 <= 48.9951) AND ((attr_6 <= 34.3280) AND (attr_3 >= -1.5014))) AND (((attr_0 < 92.6127) AND (attr_8 < 16.9425)) AND (((attr_1 < -31.7158) AND (((((attr_4 <= -18.4876) AND (attr_1 > -9.4498)) AND ((attr_3 >= -13.6373) AND (attr_1 < -10.0965))) AND ((attr_8 < 22.8370) OR (attr_5 <= 58.7910))) AND (attr_8 <= 52.9992))) AND ((((((attr_8 >= 67.4173) AND (attr_7 <= 70.2935)) AND ((attr_4 >= -12.0021) AND (attr_7 >= 107.8698))) OR (((attr_0 >= 97.3637) AND (attr_8 > 45.7150)) AND (attr_7 >= 47.9028))) AND ((((attr_5 < 88.8517) OR (attr_4 >= 3.8448)) AND ((attr_3 < 4.0543) OR (attr_0 <= 75.5842))) AND (((attr_5 <= 3.7985) AND (attr_8 > 19.6144)) AND ((attr_7 >= 41.0688) AND (attr_6 > 53.8995))))) AND (attr_8 > 56.6837))))) OR (attr_6 <= 56.0902)))) AND (((attr_2 < 99.1781) AND (attr_1 >= 0.7343)) AND ((((attr_1 >= -14.1532) AND (attr_8 <= 36.0132)) OR (((attr_5 <= -16.1402) AND ((attr_5 < 70.8944) AND (attr_0 <= 58.2115))) AND ((attr_6 < 52.9033) AND (attr_5 > 34.8588)))) AND ((attr_0 <= 83.1080) OR ((attr_7 > 48.4902) AND (attr_1 <= 5.4229)))))) AND (((((attr_5 < -33.4730) AND (((attr_6 >= 9.8131) OR (((((((attr_7 >= 52.5848) OR (attr_0 >= 44.8627)) AND ((attr_6 > 18.3680) AND (attr_1 < -8.2203))) AND (((attr_1 < -10.7491) OR (attr_7 < 87.7685)) AND ((attr_8 < 104.6957) AND (attr_0 < 83.0999)))) AND (attr_0 > 80.9266)) AND ((attr_7 > 85.2026) AND (attr_4 >= 8.3853))) AND ((((((attr_6 > 8.9516) AND (attr_3 >= -9.5976)) AND (attr_2 >= 100.7844)) AND (attr_3 < -0.3556)) OR ((attr_1 <= -25.9220) AND (attr_5 > 64.9892))) AND (attr_2 <= 80.6952)))) OR (attr_7 <= 109.6330))) AND (attr_2 >= 95.1333)) AND (((attr_3 > -9.4971) OR (attr_6 >= 48.0099)) AND (attr_6 <= 33.6663))) AND (attr_8 <= 88.3950)))) AND (attr_0 <= 64.7296)) THEN Class 6
+
+======================================================================
+--- Diff Chunk 12 -> Chunk 13 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 12):      nan
+  - Test Acc (Chunk 13):     nan
+  - Test F1 (Chunk 13):      nan
+Fitness:       1.100000 -> 1.100000
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((attr_0 > 54.5000) AND (attr_8 <= 3.0000)) THEN Class 1
+
+  New Rules:
+  + IF ((((attr_6 > 11.0000) AND (attr_1 > -25.4387)) AND (attr_0 <= 54.5000)) AND (attr_7 > 25.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((attr_0 <= 54.5000) AND (attr_2 <= 75.5000)) THEN Class 1
+  - IF ((attr_0 <= 54.5000) AND (attr_7 <= 28.5000)) THEN Class 1
+  - IF ((attr_2 > 110.4112) AND (attr_3 < 653.1314)) THEN Class 1
+
+=== Class 3 ===
+
+  New Rules:
+  + IF (((attr_6 > 11.0000) AND (attr_1 <= -4.5000)) AND (attr_4 <= 28.0000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_5 <= -15.5000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 11.0000)) AND (attr_5 <= -11.5000)) THEN Class 4
+    (Similarity: 0.93)
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_7 <= 45.5000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 11.0000)) AND (attr_7 <= 46.5000)) THEN Class 4
+    (Similarity: 0.93)
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_8 <= 5.0000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 11.0000)) AND (attr_8 <= 7.0000)) THEN Class 4
+    (Similarity: 0.93)
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_4 <= -13.0000)) THEN Class 4
+  + New: IF ((((attr_6 > 11.0000) AND (attr_1 > -4.5000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+    (Similarity: 0.84)
+
+  New Rules:
+  + IF (((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 11.0000)) THEN Class 4
+
+  Deleted Rules:
+  - IF (((((attr_6 > 12.5000) AND (attr_0 <= 59.5000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) AND (attr_7 > 44.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_0 <= 55.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_1 <= -0.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_2 <= 77.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_3 <= -0.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_6 <= 21.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_6 <= 12.5000) THEN Class 5
+  + New: IF (attr_6 <= 11.0000) THEN Class 5
+    (Similarity: 0.89)
+
+  New Rules:
+  + IF (attr_0 > 69.5000) THEN Class 5
+
+=== Class 6 ===
+
+  Deleted Rules:
+  - IF ((attr_6 > 12.5000) AND (attr_0 > 59.5000)) THEN Class 6
+
+======================================================================
+--- Diff Chunk 13 -> Chunk 14 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 13):      nan
+  - Test Acc (Chunk 14):     nan
+  - Test F1 (Chunk 14):      nan
+Fitness:       1.100000 -> 1.099633
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((attr_0 > 54.5000) AND (attr_8 <= 3.0000)) THEN Class 1
+  + New: IF ((attr_6 > 12.5000) AND (attr_0 <= 54.5000)) THEN Class 1
+    (Similarity: 0.84)
+
+  New Rules:
+  + IF (((attr_6 > 12.5000) AND (attr_0 > 54.5000)) AND (attr_8 <= 3.0000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((attr_6 > 11.0000) AND (attr_1 > -25.4387)) AND (attr_0 <= 54.5000)) AND (attr_7 > 25.5000)) THEN Class 1
+
+=== Class 3 ===
+
+  Deleted Rules:
+  - IF (((attr_6 > 11.0000) AND (attr_1 <= -4.5000)) AND (attr_4 <= 28.0000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF (((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 11.0000)) THEN Class 4
+  + New: IF (((attr_6 > 12.5000) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+    (Similarity: 0.84)
+
+  Deleted Rules:
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 11.0000)) AND (attr_5 <= -11.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 11.0000)) AND (attr_7 <= 46.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 11.0000)) AND (attr_8 <= 7.0000)) THEN Class 4
+  - IF ((((attr_6 > 11.0000) AND (attr_1 > -4.5000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_6 <= 11.0000) THEN Class 5
+  + New: IF (attr_6 <= 12.5000) THEN Class 5
+    (Similarity: 0.89)
+
+  Deleted Rules:
+  - IF (attr_0 > 69.5000) THEN Class 5
+
+======================================================================
+--- Diff Chunk 14 -> Chunk 15 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 14):      nan
+  - Test Acc (Chunk 15):     nan
+  - Test F1 (Chunk 15):      nan
+Fitness:       1.099633 -> 1.098023
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((attr_6 > 12.5000) AND (attr_0 <= 54.5000)) THEN Class 1
+  + New: IF ((attr_0 > 54.5000) AND (attr_8 <= 3.0000)) THEN Class 1
+    (Similarity: 0.84)
+
+  New Rules:
+  + IF (((((attr_6 > 12.5000) AND (attr_2 > 75.5000)) AND (attr_1 > -4.5000)) AND (attr_0 <= 54.5000)) AND (attr_4 > 53.0000)) THEN Class 1
+  + IF ((attr_1 < 898.5851) AND (attr_6 >= 20.4977)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((attr_6 > 12.5000) AND (attr_0 > 54.5000)) AND (attr_8 <= 3.0000)) THEN Class 1
+
+=== Class 3 ===
+
+  New Rules:
+  + IF ((((attr_6 > 12.5000) AND (attr_2 > 75.5000)) AND (attr_1 <= -4.5000)) AND (attr_4 <= 45.0000)) THEN Class 3
+  + IF ((((attr_6 > 60.6255) AND (attr_2 > 75.5000)) AND (attr_1 <= -4.5000)) AND (attr_4 <= 45.0000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF (((attr_6 > 12.5000) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+  + New: IF (((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) THEN Class 4
+    (Similarity: 0.83)
+
+  New Rules:
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) AND (attr_0 > 55.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) AND (attr_1 > 0.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) AND (attr_2 <= 77.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) AND (attr_3 <= -0.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) AND (attr_4 <= -9.0000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) AND (attr_5 <= -7.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) AND (attr_7 <= 48.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) AND (attr_8 <= 7.0000)) THEN Class 4
+
+=== Class 5 ===
+
+  Unchanged Rules:
+    IF (attr_6 <= 12.5000) THEN Class 5
+
+  New Rules:
+  + IF ((((((attr_8 < 90.9628) AND (attr_8 > 111.5329)) AND (((((((attr_0 <= 70.9832) AND (attr_3 >= -3.3953)) AND (attr_1 <= 831.6197)) AND (attr_7 >= 111.5461)) AND ((attr_1 > 542.9707) OR (((attr_3 <= 6.0157) AND (((attr_7 < 97.9436) AND (attr_5 <= 1191.1343)) OR (((((attr_6 >= 48.8717) OR (attr_8 >= 107.0775)) AND ((attr_8 >= 75.8713) AND (attr_3 < 3.0612))) AND (((attr_1 <= 625.7284) AND (attr_2 > 100.0322)) AND ((attr_5 >= 1058.7119) AND (attr_0 <= 83.8117)))) AND (attr_2 <= 79.7382)))) AND ((attr_3 > -0.3103) AND ((attr_4 >= 51.3321) AND ((attr_4 < -23.9406) AND (attr_5 > 1425.6563))))))) AND (attr_4 >= 17.7269)) AND ((((((((((attr_7 <= 87.5450) AND ((attr_8 > 23.8252) AND (attr_7 > 52.1508))) AND (attr_1 >= 380.3879)) AND (attr_5 < 1026.0855)) AND (((((attr_0 < 65.1855) AND (attr_5 > 1135.9476)) AND (attr_6 >= 25.0804)) AND (attr_5 > 300.0643)) AND (attr_6 >= 28.4019))) OR (((attr_7 >= 90.5515) AND (attr_5 >= 479.7932)) AND (attr_2 >= 87.5645))) AND (((attr_2 < 108.9376) AND ((((attr_8 > 103.3680) AND (attr_4 >= 43.7862)) OR (attr_6 >= 54.6849)) AND ((((attr_4 > 5.0641) AND (attr_3 < -3.0494)) AND ((attr_0 <= 78.4439) AND (attr_1 > 254.9273))) OR (((attr_6 > 25.9771) AND (attr_5 < 688.3501)) OR ((attr_3 > 3.1163) AND (attr_2 <= 87.1798)))))) AND (attr_5 > 817.4569))) AND ((((((attr_5 > 920.1145) AND (((attr_8 < 40.1844) AND (attr_7 < 116.3407)) AND ((attr_1 <= 435.6744) AND (attr_8 >= 99.6245)))) OR ((attr_6 <= 18.0457) AND (attr_6 > 41.9011))) AND ((attr_2 < 96.9899) AND (attr_4 >= -34.0183))) AND (((attr_1 > 472.0124) OR (((attr_7 > 114.4680) AND ((attr_4 <= 55.6262) OR (attr_3 > 0.4447))) AND (((attr_1 > 437.7398) AND (attr_7 < 97.4116)) AND (attr_6 > 34.3039)))) AND ((((attr_4 > 33.4269) AND ((attr_8 <= 85.8115) AND (attr_0 > 73.7374))) OR (((attr_4 >= -3.0016) AND (attr_5 > 823.1668)) AND ((attr_3 <= -1.8064) AND (attr_4 >= 35.5670)))) AND (attr_6 <= 18.8745)))) AND (attr_2 <= 102.7379))) AND ((attr_6 > 8.2126) OR ((((((((attr_0 >= 67.7741) AND (attr_1 < 332.8935)) OR ((attr_7 > 87.7763) AND (attr_2 <= 81.0300))) AND (attr_4 > 8.7981)) AND (((attr_0 <= 66.4773) AND ((attr_3 > 3.2839) AND (attr_6 < 63.5225))) OR (((attr_5 > 753.5803) AND (attr_5 < 296.1333)) AND (attr_5 >= 359.1719)))) AND (((attr_0 >= 52.8560) OR (((attr_4 < 49.8245) OR (attr_7 > 82.3315)) AND ((attr_7 <= 71.0870) AND (attr_2 <= 83.7302)))) AND (attr_5 < 225.7590))) AND (attr_0 >= 92.7970)) AND ((attr_2 < 94.8076) AND ((attr_3 > 3.1402) AND ((attr_0 < 55.5504) AND (attr_4 > 41.9291))))))) AND (attr_4 >= 40.9721)))) AND (((((attr_0 < 52.2637) AND (((((attr_2 > 80.9782) AND (attr_0 > 72.0916)) AND ((attr_6 >= 46.0801) AND (((attr_5 >= 283.4224) AND ((attr_0 < 67.7578) AND ((attr_1 >= 921.1748) AND (attr_3 >= 0.5030)))) AND (((attr_6 <= 43.0706) OR ((attr_2 < 89.7499) AND (attr_5 < 1140.9278))) AND (((attr_5 >= 743.6442) AND (attr_2 > 97.2612)) OR ((attr_0 <= 48.1482) AND (attr_1 > 194.6497))))))) OR (attr_6 < 15.6478)) AND (attr_8 <= 83.4983))) AND (((((attr_2 > 99.4056) AND (((((attr_1 <= 899.0384) AND ((attr_4 < -30.3970) OR (attr_6 > 24.7856))) AND (attr_2 < 90.9332)) OR ((attr_6 <= 36.8119) AND (((attr_6 > 18.2258) AND (attr_0 <= 84.9043)) AND (attr_6 > 23.3925)))) AND (attr_3 < 3.2807))) OR (attr_1 > 365.7281)) AND ((attr_8 <= 48.5503) AND (((attr_4 < -1.8180) OR ((((attr_4 <= 23.7576) AND ((attr_6 >= 62.5762) OR (attr_7 >= 61.7618))) OR (attr_3 > 4.9900)) OR (attr_6 <= 48.5134))) AND ((attr_2 > 97.6057) AND (attr_6 >= 18.3589))))) AND (attr_0 <= 56.7586))) AND (((attr_6 <= 42.6603) OR (attr_7 < 57.5716)) AND ((attr_3 < 0.3883) AND (attr_8 >= 74.4158)))) AND (attr_6 <= 21.6025))) AND (attr_5 > 550.7263)) OR ((((attr_3 <= -2.1258) AND ((attr_3 <= -2.8374) AND (((attr_7 <= 75.7199) AND (((((((attr_3 > -4.6076) AND (attr_2 <= 82.8797)) AND ((attr_0 >= 64.3096) OR (attr_4 < 54.4171))) AND (attr_8 <= 23.4885)) AND (attr_2 < 103.0439)) AND (attr_8 > 82.3606)) AND (((((((attr_1 <= 781.8866) AND ((attr_8 < 70.9157) AND (attr_6 <= 8.9753))) AND ((attr_1 < 863.7880) AND ((attr_1 < 455.0807) AND (attr_4 < 29.6817)))) AND ((attr_0 <= 80.9308) AND (((attr_4 >= -31.5666) AND (attr_2 <= 79.6910)) AND ((attr_6 < 27.8340) OR (attr_5 < 1393.8806))))) AND ((((attr_7 < 71.0864) OR ((attr_4 < 27.6027) AND (attr_8 > 92.1555))) AND (attr_0 < 98.4373)) OR (attr_6 < 8.9177))) AND ((attr_7 >= 56.0586) OR ((attr_7 > 58.1438) AND (attr_4 > 56.8846)))) AND (attr_4 <= 19.3712)))) AND ((attr_2 > 92.3563) AND ((attr_0 < 63.1274) AND ((((((attr_7 >= 58.2856) AND (attr_8 >= 71.1664)) AND (attr_0 <= 64.0376)) AND (attr_1 <= 868.4981)) AND ((((((attr_0 > 48.6390) AND (attr_2 > 97.2107)) AND ((attr_8 > 103.1356) AND (attr_1 <= 452.2398))) AND (attr_6 < 21.5785)) AND (attr_7 > 68.5279)) AND ((attr_1 < 899.3925) AND ((attr_6 <= 19.7115) AND (((attr_1 < 558.8647) AND (attr_1 >= 129.9146)) AND (attr_0 <= 96.4483)))))) AND ((attr_0 <= 96.1822) AND (attr_7 >= 33.1249)))))))) AND (attr_0 > 73.4562)) OR ((attr_1 >= 645.3998) AND ((((attr_2 < 104.0299) AND (((attr_2 > 83.7996) AND (attr_8 > 94.5339)) AND (((attr_5 >= 736.9777) AND ((((((attr_0 <= 49.9759) AND (attr_4 > -4.6653)) AND ((attr_7 >= 37.8375) OR (attr_4 > 48.4940))) AND (attr_0 <= 66.9925)) AND (attr_6 > 15.5536)) AND (((attr_1 >= 864.5291) AND (((attr_0 > 76.5674) AND (attr_8 >= 48.1238)) AND (attr_3 >= 5.2691))) OR (((((attr_8 < 52.7382) AND (attr_0 >= 94.3754)) OR ((attr_4 < -3.9771) AND (attr_5 > 897.9631))) AND ((attr_7 <= 34.2009) AND (attr_5 <= 1380.8539))) AND (attr_8 <= 70.4436))))) AND (attr_2 > 100.7761)))) AND ((attr_4 >= -0.2648) AND ((((attr_6 > 12.6000) AND (attr_8 < 87.2618)) AND ((attr_7 > 105.2329) AND ((attr_5 > 1390.4578) AND (attr_3 <= -5.6070)))) OR (((((((((attr_7 > 63.8402) AND (attr_7 <= 66.9988)) AND (attr_5 >= 153.2722)) OR (((attr_4 > -11.1858) AND (attr_4 <= -33.9847)) AND (attr_7 > 93.7910))) AND ((attr_3 <= 0.6270) AND (attr_1 <= 893.9999))) AND (((attr_1 > 460.6409) AND ((attr_1 < 832.6385) AND ((attr_6 > 43.6220) AND (attr_7 >= 71.4839)))) AND ((((attr_2 > 84.0794) AND (attr_0 < 74.6286)) AND (attr_6 >= 17.7096)) OR ((attr_6 < 39.1574) OR ((attr_0 > 67.4396) AND (attr_1 < 538.7642)))))) AND ((((attr_4 < -15.0760) AND (((attr_0 <= 47.0793) AND (attr_4 > -2.2987)) AND ((attr_3 < -0.7265) AND (attr_1 >= 551.7166)))) OR (attr_3 <= 4.8155)) OR (attr_5 <= 1345.0518))) AND (attr_1 > 735.3458)) AND ((((attr_4 <= 16.6362) AND ((attr_3 > -4.9895) AND (attr_6 >= 53.9359))) AND ((attr_6 >= 18.2623) AND ((attr_1 >= 285.5930) OR (((attr_5 > 990.1225) AND (attr_7 <= 36.4353)) AND (attr_4 < 8.8563))))) AND ((attr_7 <= 81.8192) AND ((((attr_7 < 35.7686) OR ((attr_7 <= 39.5834) OR ((attr_1 < 572.8870) AND (attr_4 < 43.7435)))) OR (attr_8 > 104.8115)) OR (((((attr_7 < 55.9263) AND (attr_3 > -4.5804)) AND ((attr_7 >= 112.3894) AND (attr_8 < 22.1172))) AND (((attr_1 <= 593.4762) AND (attr_6 > 16.8526)) AND (attr_1 <= 898.4449))) AND (attr_7 < 85.6678))))))))) OR ((((((attr_8 > 98.2943) OR ((attr_7 < 58.4974) AND (attr_0 <= 79.2561))) AND (attr_8 <= 16.3216)) OR (attr_1 > 317.4467)) OR ((((attr_3 > 1.9764) AND (attr_0 <= 48.4612)) OR ((((attr_0 >= 58.8641) AND (attr_3 > 3.4706)) AND ((((attr_1 <= 196.6184) AND (attr_4 < 29.0577)) AND (attr_4 >= 60.0342)) AND ((attr_0 < 92.6940) OR ((((attr_4 >= 16.4336) AND (attr_7 < 52.1781)) AND ((attr_1 <= 358.5409) AND (attr_4 <= 13.9070))) AND (((attr_3 >= -4.1787) AND (attr_7 <= 89.6377)) AND (attr_8 < 95.9900)))))) AND (((attr_6 <= 50.3164) OR (((attr_4 >= -7.6881) AND (attr_7 < 112.3946)) AND (attr_3 > -0.0105))) AND (((attr_2 > 83.7643) OR ((attr_0 >= 46.9177) OR (attr_8 >= 25.4350))) AND (attr_4 >= 31.7353))))) AND (attr_1 <= 710.5833))) AND (((attr_1 <= 161.1943) OR (attr_5 > 530.0788)) AND (attr_4 <= 50.7342))))))) THEN Class 5
+  + IF ((attr_6 > 41.4104) AND (((attr_8 >= 84.7994) AND ((((attr_8 < 73.1385) AND (attr_1 >= 691.6509)) AND (attr_5 <= 834.0483)) AND (((((((attr_0 <= 55.5646) AND (attr_1 < 623.8054)) OR (attr_7 <= 38.6889)) OR (((attr_1 <= 137.5059) AND (((((attr_4 < -28.9340) AND ((attr_6 < 19.2714) OR (attr_5 <= 733.1715))) AND (attr_6 > 42.3679)) OR (((attr_3 > -3.3200) OR (attr_7 <= 118.8801)) AND ((attr_0 < 50.9572) AND (attr_4 > -21.2212)))) OR ((((attr_5 > 1373.8850) AND (attr_0 > 46.7536)) OR (attr_1 <= 431.0515)) AND (attr_0 < 90.4402)))) AND (((attr_4 < 49.1634) AND (((((attr_7 < 83.6805) AND (attr_5 < 401.6292)) AND (attr_8 <= 94.7599)) AND ((attr_3 < 4.1780) OR ((attr_0 >= 95.5957) AND (attr_5 < 525.3598)))) AND (((attr_3 < 5.4594) OR ((attr_4 > 49.5841) AND (attr_2 <= 107.5196))) OR ((attr_3 > -5.5438) AND ((attr_3 >= 1.5567) AND (attr_1 < 159.9652)))))) AND (attr_1 < 98.3120)))) OR (attr_4 <= 11.5404)) AND ((attr_2 < 107.7727) OR (attr_8 >= 78.9351))) AND (attr_8 > 29.7186)))) AND (attr_3 > 3.4116))) THEN Class 5
+  + IF (attr_0 > 68.5000) THEN Class 5
+
+=== Class 6 ===
+
+  New Rules:
+  + IF ((attr_6 > 12.5000) AND (attr_2 <= 75.5000)) THEN Class 6
+
+======================================================================
+--- Diff Chunk 15 -> Chunk 16 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 15):      nan
+  - Test Acc (Chunk 16):     nan
+  - Test F1 (Chunk 16):      nan
+Fitness:       1.098023 -> 1.089594
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((((attr_6 > 12.5000) AND (attr_2 > 75.5000)) AND (attr_1 > -4.5000)) AND (attr_0 <= 54.5000)) AND (attr_4 > 53.0000)) THEN Class 1
+  + New: IF ((((((attr_0 <= 71.0000) AND (attr_6 <= 68.5000)) AND (attr_7 <= 98.0000)) AND (attr_0 > 54.5000)) AND (attr_4 > 53.0000)) AND (attr_7 > 25.0000)) THEN Class 1
+    (Similarity: 0.70)
+
+  New Rules:
+  + IF ((((attr_0 <= 71.0000) AND (attr_6 <= 68.5000)) AND (attr_7 <= 98.0000)) AND (attr_0 <= 54.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((attr_0 > 54.5000) AND (attr_8 <= 3.0000)) THEN Class 1
+  - IF ((attr_1 < 898.5851) AND (attr_6 >= 20.4977)) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF (((attr_0 <= 71.0000) AND (attr_6 <= 68.5000)) AND (attr_7 > 98.0000)) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF ((attr_0 <= 71.0000) AND (attr_6 > 68.5000)) THEN Class 3
+
+  Deleted Rules:
+  - IF ((((attr_6 > 12.5000) AND (attr_2 > 75.5000)) AND (attr_1 <= -4.5000)) AND (attr_4 <= 45.0000)) THEN Class 3
+  - IF ((((attr_6 > 60.6255) AND (attr_2 > 75.5000)) AND (attr_1 <= -4.5000)) AND (attr_4 <= 45.0000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) AND (attr_4 <= -9.0000)) THEN Class 4
+  + New: IF (((((attr_0 <= 71.0000) AND (attr_6 <= 68.5000)) AND (attr_7 <= 98.0000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+    (Similarity: 0.69)
+
+  Deleted Rules:
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) AND (attr_0 > 55.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) AND (attr_1 > 0.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) AND (attr_2 <= 77.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) AND (attr_3 <= -0.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) AND (attr_5 <= -7.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) AND (attr_7 <= 48.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) AND (attr_8 <= 7.0000)) THEN Class 4
+  - IF (((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 20.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_0 > 68.5000) THEN Class 5
+  + New: IF (attr_0 > 71.0000) THEN Class 5
+    (Similarity: 0.83)
+
+  Deleted Rules:
+  - IF ((((((attr_8 < 90.9628) AND (attr_8 > 111.5329)) AND (((((((attr_0 <= 70.9832) AND (attr_3 >= -3.3953)) AND (attr_1 <= 831.6197)) AND (attr_7 >= 111.5461)) AND ((attr_1 > 542.9707) OR (((attr_3 <= 6.0157) AND (((attr_7 < 97.9436) AND (attr_5 <= 1191.1343)) OR (((((attr_6 >= 48.8717) OR (attr_8 >= 107.0775)) AND ((attr_8 >= 75.8713) AND (attr_3 < 3.0612))) AND (((attr_1 <= 625.7284) AND (attr_2 > 100.0322)) AND ((attr_5 >= 1058.7119) AND (attr_0 <= 83.8117)))) AND (attr_2 <= 79.7382)))) AND ((attr_3 > -0.3103) AND ((attr_4 >= 51.3321) AND ((attr_4 < -23.9406) AND (attr_5 > 1425.6563))))))) AND (attr_4 >= 17.7269)) AND ((((((((((attr_7 <= 87.5450) AND ((attr_8 > 23.8252) AND (attr_7 > 52.1508))) AND (attr_1 >= 380.3879)) AND (attr_5 < 1026.0855)) AND (((((attr_0 < 65.1855) AND (attr_5 > 1135.9476)) AND (attr_6 >= 25.0804)) AND (attr_5 > 300.0643)) AND (attr_6 >= 28.4019))) OR (((attr_7 >= 90.5515) AND (attr_5 >= 479.7932)) AND (attr_2 >= 87.5645))) AND (((attr_2 < 108.9376) AND ((((attr_8 > 103.3680) AND (attr_4 >= 43.7862)) OR (attr_6 >= 54.6849)) AND ((((attr_4 > 5.0641) AND (attr_3 < -3.0494)) AND ((attr_0 <= 78.4439) AND (attr_1 > 254.9273))) OR (((attr_6 > 25.9771) AND (attr_5 < 688.3501)) OR ((attr_3 > 3.1163) AND (attr_2 <= 87.1798)))))) AND (attr_5 > 817.4569))) AND ((((((attr_5 > 920.1145) AND (((attr_8 < 40.1844) AND (attr_7 < 116.3407)) AND ((attr_1 <= 435.6744) AND (attr_8 >= 99.6245)))) OR ((attr_6 <= 18.0457) AND (attr_6 > 41.9011))) AND ((attr_2 < 96.9899) AND (attr_4 >= -34.0183))) AND (((attr_1 > 472.0124) OR (((attr_7 > 114.4680) AND ((attr_4 <= 55.6262) OR (attr_3 > 0.4447))) AND (((attr_1 > 437.7398) AND (attr_7 < 97.4116)) AND (attr_6 > 34.3039)))) AND ((((attr_4 > 33.4269) AND ((attr_8 <= 85.8115) AND (attr_0 > 73.7374))) OR (((attr_4 >= -3.0016) AND (attr_5 > 823.1668)) AND ((attr_3 <= -1.8064) AND (attr_4 >= 35.5670)))) AND (attr_6 <= 18.8745)))) AND (attr_2 <= 102.7379))) AND ((attr_6 > 8.2126) OR ((((((((attr_0 >= 67.7741) AND (attr_1 < 332.8935)) OR ((attr_7 > 87.7763) AND (attr_2 <= 81.0300))) AND (attr_4 > 8.7981)) AND (((attr_0 <= 66.4773) AND ((attr_3 > 3.2839) AND (attr_6 < 63.5225))) OR (((attr_5 > 753.5803) AND (attr_5 < 296.1333)) AND (attr_5 >= 359.1719)))) AND (((attr_0 >= 52.8560) OR (((attr_4 < 49.8245) OR (attr_7 > 82.3315)) AND ((attr_7 <= 71.0870) AND (attr_2 <= 83.7302)))) AND (attr_5 < 225.7590))) AND (attr_0 >= 92.7970)) AND ((attr_2 < 94.8076) AND ((attr_3 > 3.1402) AND ((attr_0 < 55.5504) AND (attr_4 > 41.9291))))))) AND (attr_4 >= 40.9721)))) AND (((((attr_0 < 52.2637) AND (((((attr_2 > 80.9782) AND (attr_0 > 72.0916)) AND ((attr_6 >= 46.0801) AND (((attr_5 >= 283.4224) AND ((attr_0 < 67.7578) AND ((attr_1 >= 921.1748) AND (attr_3 >= 0.5030)))) AND (((attr_6 <= 43.0706) OR ((attr_2 < 89.7499) AND (attr_5 < 1140.9278))) AND (((attr_5 >= 743.6442) AND (attr_2 > 97.2612)) OR ((attr_0 <= 48.1482) AND (attr_1 > 194.6497))))))) OR (attr_6 < 15.6478)) AND (attr_8 <= 83.4983))) AND (((((attr_2 > 99.4056) AND (((((attr_1 <= 899.0384) AND ((attr_4 < -30.3970) OR (attr_6 > 24.7856))) AND (attr_2 < 90.9332)) OR ((attr_6 <= 36.8119) AND (((attr_6 > 18.2258) AND (attr_0 <= 84.9043)) AND (attr_6 > 23.3925)))) AND (attr_3 < 3.2807))) OR (attr_1 > 365.7281)) AND ((attr_8 <= 48.5503) AND (((attr_4 < -1.8180) OR ((((attr_4 <= 23.7576) AND ((attr_6 >= 62.5762) OR (attr_7 >= 61.7618))) OR (attr_3 > 4.9900)) OR (attr_6 <= 48.5134))) AND ((attr_2 > 97.6057) AND (attr_6 >= 18.3589))))) AND (attr_0 <= 56.7586))) AND (((attr_6 <= 42.6603) OR (attr_7 < 57.5716)) AND ((attr_3 < 0.3883) AND (attr_8 >= 74.4158)))) AND (attr_6 <= 21.6025))) AND (attr_5 > 550.7263)) OR ((((attr_3 <= -2.1258) AND ((attr_3 <= -2.8374) AND (((attr_7 <= 75.7199) AND (((((((attr_3 > -4.6076) AND (attr_2 <= 82.8797)) AND ((attr_0 >= 64.3096) OR (attr_4 < 54.4171))) AND (attr_8 <= 23.4885)) AND (attr_2 < 103.0439)) AND (attr_8 > 82.3606)) AND (((((((attr_1 <= 781.8866) AND ((attr_8 < 70.9157) AND (attr_6 <= 8.9753))) AND ((attr_1 < 863.7880) AND ((attr_1 < 455.0807) AND (attr_4 < 29.6817)))) AND ((attr_0 <= 80.9308) AND (((attr_4 >= -31.5666) AND (attr_2 <= 79.6910)) AND ((attr_6 < 27.8340) OR (attr_5 < 1393.8806))))) AND ((((attr_7 < 71.0864) OR ((attr_4 < 27.6027) AND (attr_8 > 92.1555))) AND (attr_0 < 98.4373)) OR (attr_6 < 8.9177))) AND ((attr_7 >= 56.0586) OR ((attr_7 > 58.1438) AND (attr_4 > 56.8846)))) AND (attr_4 <= 19.3712)))) AND ((attr_2 > 92.3563) AND ((attr_0 < 63.1274) AND ((((((attr_7 >= 58.2856) AND (attr_8 >= 71.1664)) AND (attr_0 <= 64.0376)) AND (attr_1 <= 868.4981)) AND ((((((attr_0 > 48.6390) AND (attr_2 > 97.2107)) AND ((attr_8 > 103.1356) AND (attr_1 <= 452.2398))) AND (attr_6 < 21.5785)) AND (attr_7 > 68.5279)) AND ((attr_1 < 899.3925) AND ((attr_6 <= 19.7115) AND (((attr_1 < 558.8647) AND (attr_1 >= 129.9146)) AND (attr_0 <= 96.4483)))))) AND ((attr_0 <= 96.1822) AND (attr_7 >= 33.1249)))))))) AND (attr_0 > 73.4562)) OR ((attr_1 >= 645.3998) AND ((((attr_2 < 104.0299) AND (((attr_2 > 83.7996) AND (attr_8 > 94.5339)) AND (((attr_5 >= 736.9777) AND ((((((attr_0 <= 49.9759) AND (attr_4 > -4.6653)) AND ((attr_7 >= 37.8375) OR (attr_4 > 48.4940))) AND (attr_0 <= 66.9925)) AND (attr_6 > 15.5536)) AND (((attr_1 >= 864.5291) AND (((attr_0 > 76.5674) AND (attr_8 >= 48.1238)) AND (attr_3 >= 5.2691))) OR (((((attr_8 < 52.7382) AND (attr_0 >= 94.3754)) OR ((attr_4 < -3.9771) AND (attr_5 > 897.9631))) AND ((attr_7 <= 34.2009) AND (attr_5 <= 1380.8539))) AND (attr_8 <= 70.4436))))) AND (attr_2 > 100.7761)))) AND ((attr_4 >= -0.2648) AND ((((attr_6 > 12.6000) AND (attr_8 < 87.2618)) AND ((attr_7 > 105.2329) AND ((attr_5 > 1390.4578) AND (attr_3 <= -5.6070)))) OR (((((((((attr_7 > 63.8402) AND (attr_7 <= 66.9988)) AND (attr_5 >= 153.2722)) OR (((attr_4 > -11.1858) AND (attr_4 <= -33.9847)) AND (attr_7 > 93.7910))) AND ((attr_3 <= 0.6270) AND (attr_1 <= 893.9999))) AND (((attr_1 > 460.6409) AND ((attr_1 < 832.6385) AND ((attr_6 > 43.6220) AND (attr_7 >= 71.4839)))) AND ((((attr_2 > 84.0794) AND (attr_0 < 74.6286)) AND (attr_6 >= 17.7096)) OR ((attr_6 < 39.1574) OR ((attr_0 > 67.4396) AND (attr_1 < 538.7642)))))) AND ((((attr_4 < -15.0760) AND (((attr_0 <= 47.0793) AND (attr_4 > -2.2987)) AND ((attr_3 < -0.7265) AND (attr_1 >= 551.7166)))) OR (attr_3 <= 4.8155)) OR (attr_5 <= 1345.0518))) AND (attr_1 > 735.3458)) AND ((((attr_4 <= 16.6362) AND ((attr_3 > -4.9895) AND (attr_6 >= 53.9359))) AND ((attr_6 >= 18.2623) AND ((attr_1 >= 285.5930) OR (((attr_5 > 990.1225) AND (attr_7 <= 36.4353)) AND (attr_4 < 8.8563))))) AND ((attr_7 <= 81.8192) AND ((((attr_7 < 35.7686) OR ((attr_7 <= 39.5834) OR ((attr_1 < 572.8870) AND (attr_4 < 43.7435)))) OR (attr_8 > 104.8115)) OR (((((attr_7 < 55.9263) AND (attr_3 > -4.5804)) AND ((attr_7 >= 112.3894) AND (attr_8 < 22.1172))) AND (((attr_1 <= 593.4762) AND (attr_6 > 16.8526)) AND (attr_1 <= 898.4449))) AND (attr_7 < 85.6678))))))))) OR ((((((attr_8 > 98.2943) OR ((attr_7 < 58.4974) AND (attr_0 <= 79.2561))) AND (attr_8 <= 16.3216)) OR (attr_1 > 317.4467)) OR ((((attr_3 > 1.9764) AND (attr_0 <= 48.4612)) OR ((((attr_0 >= 58.8641) AND (attr_3 > 3.4706)) AND ((((attr_1 <= 196.6184) AND (attr_4 < 29.0577)) AND (attr_4 >= 60.0342)) AND ((attr_0 < 92.6940) OR ((((attr_4 >= 16.4336) AND (attr_7 < 52.1781)) AND ((attr_1 <= 358.5409) AND (attr_4 <= 13.9070))) AND (((attr_3 >= -4.1787) AND (attr_7 <= 89.6377)) AND (attr_8 < 95.9900)))))) AND (((attr_6 <= 50.3164) OR (((attr_4 >= -7.6881) AND (attr_7 < 112.3946)) AND (attr_3 > -0.0105))) AND (((attr_2 > 83.7643) OR ((attr_0 >= 46.9177) OR (attr_8 >= 25.4350))) AND (attr_4 >= 31.7353))))) AND (attr_1 <= 710.5833))) AND (((attr_1 <= 161.1943) OR (attr_5 > 530.0788)) AND (attr_4 <= 50.7342))))))) THEN Class 5
+  - IF ((attr_6 > 41.4104) AND (((attr_8 >= 84.7994) AND ((((attr_8 < 73.1385) AND (attr_1 >= 691.6509)) AND (attr_5 <= 834.0483)) AND (((((((attr_0 <= 55.5646) AND (attr_1 < 623.8054)) OR (attr_7 <= 38.6889)) OR (((attr_1 <= 137.5059) AND (((((attr_4 < -28.9340) AND ((attr_6 < 19.2714) OR (attr_5 <= 733.1715))) AND (attr_6 > 42.3679)) OR (((attr_3 > -3.3200) OR (attr_7 <= 118.8801)) AND ((attr_0 < 50.9572) AND (attr_4 > -21.2212)))) OR ((((attr_5 > 1373.8850) AND (attr_0 > 46.7536)) OR (attr_1 <= 431.0515)) AND (attr_0 < 90.4402)))) AND (((attr_4 < 49.1634) AND (((((attr_7 < 83.6805) AND (attr_5 < 401.6292)) AND (attr_8 <= 94.7599)) AND ((attr_3 < 4.1780) OR ((attr_0 >= 95.5957) AND (attr_5 < 525.3598)))) AND (((attr_3 < 5.4594) OR ((attr_4 > 49.5841) AND (attr_2 <= 107.5196))) OR ((attr_3 > -5.5438) AND ((attr_3 >= 1.5567) AND (attr_1 < 159.9652)))))) AND (attr_1 < 98.3120)))) OR (attr_4 <= 11.5404)) AND ((attr_2 < 107.7727) OR (attr_8 >= 78.9351))) AND (attr_8 > 29.7186)))) AND (attr_3 > 3.4116))) THEN Class 5
+  - IF (attr_6 <= 12.5000) THEN Class 5
+
+=== Class 6 ===
+
+  Deleted Rules:
+  - IF ((attr_6 > 12.5000) AND (attr_2 <= 75.5000)) THEN Class 6
+
+======================================================================
+--- Diff Chunk 16 -> Chunk 17 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 16):      nan
+  - Test Acc (Chunk 17):     nan
+  - Test F1 (Chunk 17):      nan
+Fitness:       1.089594 -> 1.097306
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_0 <= 71.0000) AND (attr_6 <= 68.5000)) AND (attr_7 <= 98.0000)) AND (attr_0 <= 54.5000)) THEN Class 1
+  + New: IF ((((attr_0 <= 54.5000) AND (attr_7 <= 83.5000)) AND (attr_1 > 3.5000)) AND (attr_2 > 83.0000)) THEN Class 1
+    (Similarity: 0.81)
+
+  New Rules:
+  + IF (((((attr_2 <= 95.1203) AND (((((((attr_5 >= 3492.2956) AND (attr_0 <= 58.3993)) AND ((attr_3 >= 70.5094) AND ((((attr_3 < 27.9483) AND (((attr_2 <= 78.4558) AND (attr_3 <= 69.7820)) OR ((attr_7 < 112.8238) AND (attr_1 > -62.1211)))) OR (attr_6 < 56.1550)) AND (attr_8 >= 97.9392)))) AND ((((attr_2 > 101.8299) AND (((attr_3 > 26.9198) OR ((attr_1 < -12.7848) AND ((attr_6 <= 28.6546) AND (attr_7 <= 34.1101)))) AND ((attr_7 <= 111.6503) AND (attr_3 > -16.6362)))) AND ((attr_3 > 17.5864) OR (attr_5 < 7921.8058))) AND (((attr_2 <= 105.2683) OR (((attr_0 >= 78.2889) AND (attr_1 >= -59.2660)) AND ((attr_7 > 46.7166) AND (attr_8 > 36.3457)))) OR (attr_7 > 75.1131)))) AND (((attr_1 < -59.8178) AND ((attr_5 >= 8956.1517) OR (attr_6 < 63.2718))) AND (((attr_8 > 90.3460) OR ((attr_3 <= 44.4047) AND ((attr_0 >= 60.6860) OR (((attr_7 >= 115.5330) AND ((attr_6 > 23.8867) OR (attr_0 >= 59.1582))) AND (((attr_3 >= 5.7544) OR (attr_5 > 1958.3576)) AND ((attr_1 > -2.7237) AND (attr_0 > 61.3335))))))) AND ((attr_2 < 87.6849) OR ((((((attr_8 <= 36.1096) AND (attr_2 >= 75.8342)) OR ((attr_7 <= 99.6513) AND (attr_3 < -13.6881))) AND (attr_4 <= 29.5704)) AND (attr_5 >= 8996.9594)) AND (((((attr_2 > 94.3418) AND (attr_1 > -13.7563)) AND ((attr_7 >= 61.5300) AND (attr_3 <= -15.4212))) AND ((attr_3 >= 57.6526) AND ((attr_0 < 63.2627) AND (attr_6 > 13.7156)))) AND ((((attr_4 > 56.6532) AND (attr_3 > 29.7017)) AND ((attr_0 >= 59.8976) AND (attr_6 < 27.1975))) AND ((attr_7 > 95.7128) AND (attr_2 > 102.8727))))))))) AND (((attr_6 > 8.2695) AND (attr_6 <= 10.3761)) AND (((attr_4 > 26.9605) AND (attr_6 >= 56.7408)) AND (attr_6 < 52.3896)))) OR ((((attr_2 < 89.8758) AND (attr_1 >= -5.3630)) AND (attr_8 > 30.3082)) AND ((attr_1 <= -42.0860) AND (((attr_4 >= -32.9397) AND ((attr_6 < 38.8848) OR ((attr_7 <= 55.0952) AND (attr_8 <= 107.6870)))) AND (attr_5 <= 8703.4369)))))) AND (((attr_2 <= 68.9399) AND ((attr_6 <= 18.5206) AND ((((((((((attr_1 < -9.0755) AND (attr_0 > 59.9852)) AND ((attr_5 <= 4213.7535) AND (attr_0 >= 88.3172))) AND (attr_7 > 102.1742)) AND ((((attr_8 < 104.3162) AND (attr_7 < 104.4638)) OR (attr_2 < 76.1011)) AND ((attr_2 >= 86.2139) AND ((attr_1 < 1.8221) AND (attr_5 <= 9795.5188))))) AND (((attr_5 >= 1375.1302) AND (((attr_4 <= 58.6643) OR (attr_1 >= -50.7951)) AND ((attr_3 < 23.2629) AND (attr_7 >= 58.8305)))) AND (attr_1 <= -6.2559))) AND (attr_4 > 7.5630)) AND (attr_4 > -12.7099)) AND (attr_3 > -17.6828)) AND (attr_6 <= 19.0423)))) AND ((attr_2 >= 75.3641) AND (attr_7 <= 38.0946)))) OR (attr_1 < -4.3053)) AND ((((((((attr_2 <= 79.8638) AND (attr_0 < 86.0858)) AND ((((((attr_2 < 68.9370) AND (attr_7 > 73.3063)) AND (attr_4 < -3.7437)) OR ((attr_8 >= 23.4598) AND ((attr_0 <= 89.2640) AND ((attr_4 <= -15.3394) AND (attr_1 < -44.4049))))) AND (attr_2 >= 92.6478)) AND (((((attr_4 <= 23.6292) OR ((attr_0 < 72.5248) AND (((attr_7 >= 66.8592) AND (attr_1 <= -40.0792)) AND ((attr_7 < 34.2397) OR (attr_5 < 9123.0840))))) AND (((((attr_7 <= 67.6727) AND (attr_4 >= 8.7405)) AND (attr_1 >= -16.3301)) AND (attr_3 < 23.7433)) AND (attr_8 <= 26.1474))) AND ((((((attr_2 <= 77.0502) AND (attr_0 < 77.8674)) AND ((attr_6 >= 31.1728) AND (attr_8 > 53.6763))) AND (attr_5 < 3735.7579)) AND (((attr_4 >= 25.4107) AND (attr_7 > 95.9797)) AND (((attr_3 <= 65.3053) AND (attr_3 > -8.6632)) AND ((attr_1 < -29.0832) AND (attr_2 < 89.5411))))) AND (attr_6 < 13.4375))) AND (((((attr_5 <= 5221.4556) AND (attr_3 > 56.6458)) OR (attr_4 <= 6.3118)) OR ((((attr_6 <= 39.7386) AND ((attr_0 < 91.4415) AND (attr_7 > 56.5571))) OR (((attr_0 >= 72.5595) AND (attr_2 < 103.7161)) AND ((attr_1 > -46.4865) AND (attr_3 > 56.9864)))) AND (((attr_7 >= 104.5500) AND (attr_6 > 19.7754)) AND (attr_6 < 47.6867)))) AND (attr_4 < 30.6402))))) AND (((attr_8 >= 20.2973) AND ((attr_6 <= 60.3060) AND (((((((attr_8 <= 100.8691) AND (attr_4 >= 4.2545)) OR ((attr_4 > -24.2925) AND (attr_2 > 104.5697))) AND ((attr_3 > 10.5832) AND ((attr_2 >= 106.5282) OR (attr_8 >= 85.3661)))) AND (attr_0 <= 56.6225)) AND (attr_5 > 7938.6182)) OR (attr_7 <= 76.7439)))) AND ((((attr_2 > 82.4300) AND ((((((attr_7 >= 112.3127) AND (attr_8 < 26.1389)) OR ((attr_5 > 2625.0540) OR (attr_1 < -34.0261))) AND ((attr_4 > -28.9958) AND (attr_2 >= 76.1036))) OR (attr_4 >= 32.8703)) AND (attr_0 <= 45.0249))) AND ((attr_1 < -47.9301) AND (attr_2 <= 90.0041))) AND ((((attr_2 <= 70.9046) AND (attr_1 < 11.1959)) AND (attr_0 < 46.1353)) AND (((((attr_0 >= 46.7720) AND (((attr_1 < -36.7710) AND (attr_2 <= 79.5733)) OR ((attr_4 >= -11.9741) OR (attr_8 >= 94.3979)))) AND (attr_8 > 39.2028)) AND (attr_4 >= -24.9652)) AND (attr_0 < 80.0354)))))) OR (((attr_3 > 12.5814) AND (attr_2 >= 104.7068)) OR (attr_5 >= 4546.5596))) AND (attr_0 < 69.7884)) AND (attr_2 > 100.8685)) OR (attr_0 <= 42.9931))) THEN Class 1
+  + IF ((((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_1 > 3.5000)) AND (attr_6 > 39.0000)) THEN Class 1
+  + IF ((((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_1 > 3.5000)) AND (attr_7 > 40.0000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((attr_0 <= 71.0000) AND (attr_6 <= 68.5000)) AND (attr_7 <= 98.0000)) AND (attr_0 > 54.5000)) AND (attr_4 > 53.0000)) AND (attr_7 > 25.0000)) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF ((((attr_6 > 10.5000) AND (attr_1 > -5.5000)) AND (attr_1 > 4.5000)) AND (attr_6 <= 38.5000)) THEN Class 2
+
+  Deleted Rules:
+  - IF (((attr_0 <= 71.0000) AND (attr_6 <= 68.5000)) AND (attr_7 > 98.0000)) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF ((attr_0 <= 71.0000) AND (attr_6 > 68.5000)) THEN Class 3
+  + New: IF ((attr_6 > 10.5000) AND (attr_1 <= -5.5000)) THEN Class 3
+    (Similarity: 0.75)
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF (((((attr_0 <= 71.0000) AND (attr_6 <= 68.5000)) AND (attr_7 <= 98.0000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+  + New: IF (((((attr_6 > 10.5000) AND (attr_1 > -5.5000)) AND (attr_1 <= 4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+    (Similarity: 0.84)
+
+  New Rules:
+  + IF (((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_0 > 71.0000) THEN Class 5
+  + New: IF (attr_6 <= 10.5000) THEN Class 5
+    (Similarity: 0.68)
+
+======================================================================
+--- Diff Chunk 17 -> Chunk 18 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 17):      nan
+  - Test Acc (Chunk 18):     nan
+  - Test F1 (Chunk 18):      nan
+Fitness:       1.097306 -> 1.095416
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_1 > 3.5000)) AND (attr_7 > 40.0000)) THEN Class 1
+  + New: IF ((((attr_0 <= 54.5000) AND (attr_7 > 71.5000)) AND (attr_5 <= 0.5000)) AND (attr_2 <= 91.5000)) THEN Class 1
+    (Similarity: 0.86)
+  - Old: IF ((((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_1 > 3.5000)) AND (attr_6 > 39.0000)) THEN Class 1
+  + New: IF ((((attr_0 <= 54.5000) AND (attr_7 > 71.5000)) AND (attr_5 <= 0.5000)) AND (attr_4 <= 9.0000)) THEN Class 1
+    (Similarity: 0.88)
+  - Old: IF ((((attr_0 <= 54.5000) AND (attr_7 <= 83.5000)) AND (attr_1 > 3.5000)) AND (attr_2 > 83.0000)) THEN Class 1
+  + New: IF (((attr_0 <= 54.5000) AND (attr_7 <= 71.5000)) AND (attr_7 <= 28.5000)) THEN Class 1
+    (Similarity: 0.69)
+
+  New Rules:
+  + IF ((((((attr_4 < 24.0217) AND (attr_2 >= 91.9642)) AND (attr_1 >= 30.7578)) AND (attr_5 <= 44.1161)) AND (((attr_4 >= 39.4278) OR (((attr_7 > 101.8113) AND (attr_1 <= -30.0303)) OR (attr_2 >= 97.5459))) AND ((attr_8 < 48.6565) AND (attr_0 < 86.0263)))) OR ((((attr_1 < 29.7152) OR (((((attr_1 <= -37.0890) AND (attr_5 <= 92.6622)) AND ((attr_8 <= 102.3107) AND ((attr_0 > 72.4572) AND (((attr_4 <= 50.5952) AND (attr_7 < 63.3043)) AND (attr_0 <= 69.4127))))) OR ((((((((attr_7 > 118.4396) AND (((attr_3 <= 16.1939) AND (attr_4 < -8.9604)) AND (attr_2 <= 96.3347))) AND (attr_3 <= 2.9744)) OR (((((attr_8 > 86.5510) AND (attr_4 >= 43.2344)) AND ((attr_1 <= -51.8344) AND (attr_4 > 31.4551))) AND (attr_6 < 51.1413)) AND (attr_0 < 97.0336))) AND ((attr_0 < 65.4918) AND (attr_0 >= 52.9441))) OR ((((attr_3 < 1.7135) AND ((attr_0 >= 48.9316) AND ((attr_6 < 18.9488) AND ((attr_5 <= 151.7000) AND (attr_3 < -2.8284))))) OR (((attr_8 <= 59.4570) AND (attr_7 >= 67.3619)) AND ((attr_5 < 55.4304) OR (((attr_1 > -30.5097) AND (attr_5 > 73.0404)) AND ((attr_6 >= 57.9347) AND (attr_2 >= 81.4704)))))) AND ((attr_7 >= 42.2374) AND (attr_5 >= 154.7629)))) AND (((attr_2 <= 76.4078) OR (attr_1 > 19.4150)) AND (attr_6 <= 8.8254))) OR ((((((attr_4 >= 33.6545) AND ((((attr_5 >= 16.1970) AND (attr_3 < 13.6488)) AND (attr_8 <= 103.9903)) AND ((attr_5 < 96.7328) AND ((attr_6 <= 14.0630) AND (attr_5 < 87.6110))))) AND (((attr_7 >= 41.4394) AND (attr_6 <= 55.7801)) AND ((attr_6 < 54.3015) OR (attr_2 < 84.7930)))) AND (attr_7 > 82.1742)) AND (attr_4 < 51.1239)) AND ((((attr_6 > 20.0036) AND (attr_3 <= -2.4125)) AND (((attr_6 <= 53.1873) AND (attr_5 <= 147.6527)) AND (attr_1 > 41.7991))) OR (attr_0 > 81.6273))))) AND ((attr_4 < 44.0202) AND ((attr_0 < 94.7858) AND (((((attr_3 <= 5.9696) AND (attr_1 <= 37.8630)) AND ((attr_6 <= 40.9604) OR ((attr_6 <= 39.5998) AND ((attr_3 > -3.6666) AND ((attr_2 < 78.2949) AND (attr_5 >= 50.8235)))))) AND ((((attr_5 >= 137.3853) AND (attr_8 > 63.0834)) OR (attr_2 < 94.2450)) AND ((((((attr_7 <= 47.8462) AND (attr_3 < -2.9216)) OR (attr_7 >= 92.2156)) AND (attr_6 < 21.1727)) AND (attr_5 >= 4.6219)) AND (attr_1 >= -30.9126)))) AND ((attr_8 >= 65.7215) AND (attr_1 >= -50.3906))))))) AND (((attr_4 >= -20.4817) AND (attr_2 <= 81.9154)) AND ((attr_0 >= 82.2672) OR ((((attr_2 >= 91.6843) AND (((attr_4 <= -24.0903) AND (attr_8 <= 59.7888)) AND ((attr_5 >= 128.3073) AND ((attr_3 < 3.9078) AND (attr_8 < 74.5681))))) AND (((((attr_8 < 39.9780) AND (attr_6 <= 8.2064)) AND (attr_4 < 0.7114)) AND (attr_0 >= 89.5733)) OR (attr_0 < 73.2973))) AND ((attr_3 > 5.4278) AND ((((((attr_2 <= 82.3861) AND (attr_1 < 32.2218)) AND (((((attr_0 <= 43.4475) AND (attr_7 >= 89.0528)) AND ((attr_1 > 30.2943) AND (attr_3 <= 2.8446))) AND (((attr_2 < 77.5059) AND (attr_1 <= 48.9076)) AND (attr_7 > 93.3490))) AND ((((attr_6 >= 36.7851) OR (attr_1 > 18.2821)) AND ((attr_2 <= 88.2899) AND (attr_4 > -20.3904))) AND (attr_2 > 102.6661)))) AND ((attr_4 > -2.9062) AND (attr_7 <= 100.1936))) OR (attr_6 > 15.6953)) OR (attr_0 < 97.0293))))))) OR ((attr_4 >= 22.5109) AND (((((((attr_7 < 41.9820) AND (attr_4 < -4.2276)) AND ((attr_6 > 24.3448) AND (((((attr_3 < 12.9501) AND ((attr_0 >= 88.2788) OR ((attr_5 <= 133.4951) AND (attr_6 >= 13.4298)))) OR ((attr_5 < 24.8494) AND (((attr_5 < 18.4427) AND (attr_1 > 40.7315)) AND (attr_2 > 97.4084)))) OR (attr_0 >= 92.6606)) OR (((attr_6 < 24.3257) AND (attr_7 >= 108.5530)) AND (attr_5 <= 128.4627))))) AND (((attr_5 >= 157.5680) OR ((((((attr_4 >= -32.4960) AND (attr_5 < 135.4036)) AND (attr_5 >= 149.5380)) OR ((((attr_8 < 111.0670) AND (attr_1 < 36.9894)) AND ((attr_4 >= -33.9213) AND (attr_5 <= 80.7559))) OR (((attr_5 < 23.8011) AND (attr_4 <= 48.7316)) AND ((attr_7 > 89.3603) OR (attr_1 > 23.7890))))) AND ((attr_3 >= 7.3594) AND (attr_7 < 36.5340))) AND (attr_2 < 85.8356))) AND (attr_8 < 55.8845))) AND ((attr_5 > -6.1635) AND ((attr_6 > 35.4103) OR (attr_8 >= 86.6889)))) AND ((attr_8 <= 50.4078) OR (attr_3 >= -0.6071))) AND (((((((((attr_2 < 90.5175) OR (((attr_7 <= 39.5464) OR (attr_3 > -0.3802)) OR ((attr_7 >= 92.8671) AND ((attr_8 <= 22.2394) AND (attr_7 >= 103.6138))))) AND (attr_0 < 66.8079)) AND ((attr_1 >= 43.8567) AND (attr_6 > 58.9546))) AND (attr_7 >= 40.9347)) AND (attr_7 < 73.8393)) AND ((attr_2 > 91.0856) AND (attr_0 < 71.4160))) OR ((((((attr_3 <= -4.0335) OR ((attr_3 <= 5.8195) AND ((((attr_6 >= 59.7275) AND (attr_4 <= 0.1613)) AND ((attr_1 <= 31.5105) AND (attr_8 < 56.9675))) AND (attr_7 >= 77.8831)))) AND ((((attr_5 <= 87.2047) AND (attr_0 < 67.3191)) AND (attr_7 <= 80.1218)) AND ((((attr_0 <= 74.7423) AND ((attr_3 > 16.0415) AND (attr_5 > 163.3706))) AND (((attr_5 >= 52.9809) AND (attr_7 >= 42.5394)) OR (attr_3 < 10.0874))) AND (((attr_4 > 32.6491) AND (attr_3 <= 9.2855)) AND (((attr_6 > 18.1076) AND (attr_5 >= -24.6069)) AND (attr_0 <= 79.3821)))))) AND ((attr_7 <= 72.3420) AND (((attr_5 > -6.4563) AND (((attr_0 <= 99.2907) OR ((attr_5 >= 126.9936) AND (attr_2 > 91.6079))) AND (attr_6 <= 26.4431))) AND (attr_0 < 84.7771)))) AND ((((attr_5 > 124.0604) AND (attr_8 <= 26.5948)) AND (attr_6 > 42.7470)) AND (((attr_6 < 15.9467) AND ((attr_7 < 73.4767) AND ((attr_5 >= -41.1511) AND (attr_2 < 102.2459)))) AND (((attr_0 >= 53.9640) AND ((attr_3 <= -2.7814) AND (attr_1 >= 49.1642))) AND ((((attr_7 > 81.3296) AND (attr_1 > -36.6602)) AND (attr_3 >= -3.5426)) AND ((attr_2 > 104.1048) AND (((attr_7 > 57.1610) AND (attr_8 <= 37.1114)) AND ((attr_4 < 51.0092) AND (attr_4 >= -16.8271))))))))) AND (attr_3 >= 17.1910))) AND (attr_1 < 47.9834)))))) THEN Class 1
+  + IF ((((attr_0 <= 54.5000) AND (attr_7 > 71.5000)) AND (attr_5 <= 0.5000)) AND (attr_6 <= 53.5000)) THEN Class 1
+  + IF (((attr_0 <= 51.6163) AND ((((((attr_2 < 80.1248) OR (((((((attr_4 < 31.3127) AND (((attr_2 < 81.8675) AND (attr_6 < 38.4121)) AND ((attr_0 >= 92.3619) AND (attr_2 >= 86.8344)))) AND (attr_6 < 41.0485)) OR ((((attr_4 < 36.4321) OR ((attr_6 > 27.7418) AND (attr_5 >= 98.4541))) AND (((attr_6 < 32.0593) AND (attr_5 >= 168.7112)) AND ((attr_5 <= 53.2123) AND (attr_1 < 35.5871)))) AND (attr_8 < 37.7431))) AND ((attr_5 <= -39.2507) AND ((attr_4 <= 2.8750) AND ((attr_2 > 84.6464) AND (attr_1 > -33.8684))))) AND (attr_0 >= 54.8359)) AND (((((((attr_0 >= 93.2004) AND ((attr_3 >= 0.4675) OR (attr_8 > 57.7929))) OR (attr_8 <= 92.6605)) AND ((((attr_5 > -53.8511) OR (attr_3 <= 1.5089)) AND (attr_0 >= 69.3785)) AND (((attr_6 < 42.5038) AND (attr_8 > 100.9578)) OR (attr_3 < 15.8947)))) AND (attr_0 > 61.2047)) AND (attr_2 < 88.4229)) AND ((((attr_7 >= 70.9168) AND (attr_6 > 49.1095)) AND (attr_6 < 24.9112)) AND ((attr_1 <= -14.5014) AND ((attr_3 >= 8.4451) AND (((attr_8 < 26.8756) AND ((attr_5 > 168.1296) AND (attr_8 > 94.2492))) AND (attr_1 <= -9.0821)))))))) AND ((attr_0 <= 96.0726) AND (((((attr_8 < 70.6500) AND (((attr_4 >= -33.5200) AND ((attr_3 < -4.6941) OR ((attr_6 > 26.1314) AND (attr_0 > 39.3828)))) AND (((attr_1 > 34.6549) AND ((attr_5 < -35.0011) AND (attr_7 <= 75.6070))) AND (((attr_0 > 55.1632) AND (attr_4 <= 2.0745)) AND ((attr_8 >= 79.7500) AND (attr_2 <= 106.1034)))))) AND (((((attr_0 <= 91.6295) AND ((attr_4 < -22.5948) OR (attr_2 >= 77.8376))) AND (((attr_3 <= 1.3424) AND (attr_7 < 82.8960)) AND ((attr_6 < 11.0313) AND (attr_2 >= 100.1138)))) AND ((((attr_3 <= -5.9534) AND (attr_0 > 63.3251)) AND ((attr_6 <= 21.2538) OR (attr_8 <= 91.0121))) OR ((attr_7 < 111.5167) AND ((attr_7 > 110.6104) AND (attr_3 <= -5.9070))))) AND (((((attr_8 >= 41.2864) AND (attr_6 <= 56.3359)) AND (attr_5 <= -21.0748)) AND ((attr_2 < 81.5024) AND ((attr_3 >= 1.8573) AND (attr_2 >= 83.7026)))) AND ((attr_8 <= 36.9642) OR (((attr_1 <= -44.5724) AND (attr_0 <= 64.0249)) AND (attr_5 <= -38.2177)))))) AND ((((attr_1 < -31.2826) OR ((attr_4 < 39.3434) AND (((attr_0 < 96.2876) AND (attr_2 > 83.2947)) AND ((attr_0 < 66.3906) AND (attr_2 > 88.3950))))) AND (attr_6 > 35.6787)) AND (attr_7 > 116.8527))) AND (attr_0 >= 83.9218)))) AND (attr_3 > 3.9740)) AND (attr_3 < 0.9773)) AND ((((attr_0 >= 87.5185) AND ((attr_5 > 34.4129) OR (attr_7 <= 118.6875))) OR (attr_2 < 108.7347)) AND ((attr_2 >= 85.1633) AND (attr_3 > 7.7570))))) AND (attr_4 >= -16.6375)) THEN Class 1
+  + IF (((attr_0 <= 54.5000) AND (attr_7 <= 71.5000)) AND (attr_2 <= 75.5000)) THEN Class 1
+  + IF ((attr_3 <= -3.1711) AND (attr_0 <= 45.3883)) THEN Class 1
+  + IF ((attr_8 <= 28.6867) AND (attr_7 < 86.1019)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((attr_2 <= 95.1203) AND (((((((attr_5 >= 3492.2956) AND (attr_0 <= 58.3993)) AND ((attr_3 >= 70.5094) AND ((((attr_3 < 27.9483) AND (((attr_2 <= 78.4558) AND (attr_3 <= 69.7820)) OR ((attr_7 < 112.8238) AND (attr_1 > -62.1211)))) OR (attr_6 < 56.1550)) AND (attr_8 >= 97.9392)))) AND ((((attr_2 > 101.8299) AND (((attr_3 > 26.9198) OR ((attr_1 < -12.7848) AND ((attr_6 <= 28.6546) AND (attr_7 <= 34.1101)))) AND ((attr_7 <= 111.6503) AND (attr_3 > -16.6362)))) AND ((attr_3 > 17.5864) OR (attr_5 < 7921.8058))) AND (((attr_2 <= 105.2683) OR (((attr_0 >= 78.2889) AND (attr_1 >= -59.2660)) AND ((attr_7 > 46.7166) AND (attr_8 > 36.3457)))) OR (attr_7 > 75.1131)))) AND (((attr_1 < -59.8178) AND ((attr_5 >= 8956.1517) OR (attr_6 < 63.2718))) AND (((attr_8 > 90.3460) OR ((attr_3 <= 44.4047) AND ((attr_0 >= 60.6860) OR (((attr_7 >= 115.5330) AND ((attr_6 > 23.8867) OR (attr_0 >= 59.1582))) AND (((attr_3 >= 5.7544) OR (attr_5 > 1958.3576)) AND ((attr_1 > -2.7237) AND (attr_0 > 61.3335))))))) AND ((attr_2 < 87.6849) OR ((((((attr_8 <= 36.1096) AND (attr_2 >= 75.8342)) OR ((attr_7 <= 99.6513) AND (attr_3 < -13.6881))) AND (attr_4 <= 29.5704)) AND (attr_5 >= 8996.9594)) AND (((((attr_2 > 94.3418) AND (attr_1 > -13.7563)) AND ((attr_7 >= 61.5300) AND (attr_3 <= -15.4212))) AND ((attr_3 >= 57.6526) AND ((attr_0 < 63.2627) AND (attr_6 > 13.7156)))) AND ((((attr_4 > 56.6532) AND (attr_3 > 29.7017)) AND ((attr_0 >= 59.8976) AND (attr_6 < 27.1975))) AND ((attr_7 > 95.7128) AND (attr_2 > 102.8727))))))))) AND (((attr_6 > 8.2695) AND (attr_6 <= 10.3761)) AND (((attr_4 > 26.9605) AND (attr_6 >= 56.7408)) AND (attr_6 < 52.3896)))) OR ((((attr_2 < 89.8758) AND (attr_1 >= -5.3630)) AND (attr_8 > 30.3082)) AND ((attr_1 <= -42.0860) AND (((attr_4 >= -32.9397) AND ((attr_6 < 38.8848) OR ((attr_7 <= 55.0952) AND (attr_8 <= 107.6870)))) AND (attr_5 <= 8703.4369)))))) AND (((attr_2 <= 68.9399) AND ((attr_6 <= 18.5206) AND ((((((((((attr_1 < -9.0755) AND (attr_0 > 59.9852)) AND ((attr_5 <= 4213.7535) AND (attr_0 >= 88.3172))) AND (attr_7 > 102.1742)) AND ((((attr_8 < 104.3162) AND (attr_7 < 104.4638)) OR (attr_2 < 76.1011)) AND ((attr_2 >= 86.2139) AND ((attr_1 < 1.8221) AND (attr_5 <= 9795.5188))))) AND (((attr_5 >= 1375.1302) AND (((attr_4 <= 58.6643) OR (attr_1 >= -50.7951)) AND ((attr_3 < 23.2629) AND (attr_7 >= 58.8305)))) AND (attr_1 <= -6.2559))) AND (attr_4 > 7.5630)) AND (attr_4 > -12.7099)) AND (attr_3 > -17.6828)) AND (attr_6 <= 19.0423)))) AND ((attr_2 >= 75.3641) AND (attr_7 <= 38.0946)))) OR (attr_1 < -4.3053)) AND ((((((((attr_2 <= 79.8638) AND (attr_0 < 86.0858)) AND ((((((attr_2 < 68.9370) AND (attr_7 > 73.3063)) AND (attr_4 < -3.7437)) OR ((attr_8 >= 23.4598) AND ((attr_0 <= 89.2640) AND ((attr_4 <= -15.3394) AND (attr_1 < -44.4049))))) AND (attr_2 >= 92.6478)) AND (((((attr_4 <= 23.6292) OR ((attr_0 < 72.5248) AND (((attr_7 >= 66.8592) AND (attr_1 <= -40.0792)) AND ((attr_7 < 34.2397) OR (attr_5 < 9123.0840))))) AND (((((attr_7 <= 67.6727) AND (attr_4 >= 8.7405)) AND (attr_1 >= -16.3301)) AND (attr_3 < 23.7433)) AND (attr_8 <= 26.1474))) AND ((((((attr_2 <= 77.0502) AND (attr_0 < 77.8674)) AND ((attr_6 >= 31.1728) AND (attr_8 > 53.6763))) AND (attr_5 < 3735.7579)) AND (((attr_4 >= 25.4107) AND (attr_7 > 95.9797)) AND (((attr_3 <= 65.3053) AND (attr_3 > -8.6632)) AND ((attr_1 < -29.0832) AND (attr_2 < 89.5411))))) AND (attr_6 < 13.4375))) AND (((((attr_5 <= 5221.4556) AND (attr_3 > 56.6458)) OR (attr_4 <= 6.3118)) OR ((((attr_6 <= 39.7386) AND ((attr_0 < 91.4415) AND (attr_7 > 56.5571))) OR (((attr_0 >= 72.5595) AND (attr_2 < 103.7161)) AND ((attr_1 > -46.4865) AND (attr_3 > 56.9864)))) AND (((attr_7 >= 104.5500) AND (attr_6 > 19.7754)) AND (attr_6 < 47.6867)))) AND (attr_4 < 30.6402))))) AND (((attr_8 >= 20.2973) AND ((attr_6 <= 60.3060) AND (((((((attr_8 <= 100.8691) AND (attr_4 >= 4.2545)) OR ((attr_4 > -24.2925) AND (attr_2 > 104.5697))) AND ((attr_3 > 10.5832) AND ((attr_2 >= 106.5282) OR (attr_8 >= 85.3661)))) AND (attr_0 <= 56.6225)) AND (attr_5 > 7938.6182)) OR (attr_7 <= 76.7439)))) AND ((((attr_2 > 82.4300) AND ((((((attr_7 >= 112.3127) AND (attr_8 < 26.1389)) OR ((attr_5 > 2625.0540) OR (attr_1 < -34.0261))) AND ((attr_4 > -28.9958) AND (attr_2 >= 76.1036))) OR (attr_4 >= 32.8703)) AND (attr_0 <= 45.0249))) AND ((attr_1 < -47.9301) AND (attr_2 <= 90.0041))) AND ((((attr_2 <= 70.9046) AND (attr_1 < 11.1959)) AND (attr_0 < 46.1353)) AND (((((attr_0 >= 46.7720) AND (((attr_1 < -36.7710) AND (attr_2 <= 79.5733)) OR ((attr_4 >= -11.9741) OR (attr_8 >= 94.3979)))) AND (attr_8 > 39.2028)) AND (attr_4 >= -24.9652)) AND (attr_0 < 80.0354)))))) OR (((attr_3 > 12.5814) AND (attr_2 >= 104.7068)) OR (attr_5 >= 4546.5596))) AND (attr_0 < 69.7884)) AND (attr_2 > 100.8685)) OR (attr_0 <= 42.9931))) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF ((attr_6 > 11.0000) AND (attr_0 > 60.0000)) THEN Class 2
+
+  Deleted Rules:
+  - IF ((((attr_6 > 10.5000) AND (attr_1 > -5.5000)) AND (attr_1 > 4.5000)) AND (attr_6 <= 38.5000)) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF (((attr_6 > 11.0000) AND (attr_0 <= 60.0000)) AND (attr_6 > 68.0000)) THEN Class 3
+
+  Deleted Rules:
+  - IF ((attr_6 > 10.5000) AND (attr_1 <= -5.5000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF (((((attr_6 > 10.5000) AND (attr_1 > -5.5000)) AND (attr_1 <= 4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+  + New: IF (((((attr_6 > 11.0000) AND (attr_0 <= 60.0000)) AND (attr_6 <= 68.0000)) AND (attr_0 > 53.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+    (Similarity: 0.89)
+  - Old: IF (((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+  + New: IF (((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+    (Similarity: 0.99)
+
+  New Rules:
+  + IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) AND (attr_0 > 55.5000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) AND (attr_1 > 0.5000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) AND (attr_2 <= 77.5000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) AND (attr_3 <= -1.5000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) AND (attr_4 <= -2.0000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) AND (attr_5 <= -16.0000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) AND (attr_6 <= 22.5000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) AND (attr_7 <= 45.5000)) THEN Class 4
+  + IF (((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_6 <= 10.5000) THEN Class 5
+  + New: IF (attr_6 <= 11.0000) THEN Class 5
+    (Similarity: 0.89)
+
+======================================================================
+--- Diff Chunk 18 -> Chunk 19 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 18):      nan
+  - Test Acc (Chunk 19):     nan
+  - Test F1 (Chunk 19):      nan
+Fitness:       1.095416 -> 1.090001
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_0 <= 54.5000) AND (attr_7 > 71.5000)) AND (attr_5 <= 0.5000)) AND (attr_6 <= 53.5000)) THEN Class 1
+  + New: IF (((((attr_6 > 11.0000) AND (attr_1 > -4.5000)) AND (attr_1 <= 4.5000)) AND (attr_0 <= 54.5000)) AND (attr_3 > -6.5000)) THEN Class 1
+    (Similarity: 0.69)
+  - Old: IF ((((attr_0 <= 54.5000) AND (attr_7 > 71.5000)) AND (attr_5 <= 0.5000)) AND (attr_4 <= 9.0000)) THEN Class 1
+  + New: IF (((((attr_6 > 11.0000) AND (attr_1 > -4.5000)) AND (attr_1 <= 4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 <= 3.0000)) THEN Class 1
+    (Similarity: 0.69)
+  - Old: IF (((attr_0 <= 54.5000) AND (attr_7 <= 71.5000)) AND (attr_7 <= 28.5000)) THEN Class 1
+  + New: IF (((attr_6 > 11.0000) AND (attr_1 <= -4.5000)) AND (attr_8 <= 1.0000)) THEN Class 1
+    (Similarity: 0.82)
+
+  Deleted Rules:
+  - IF ((((((attr_4 < 24.0217) AND (attr_2 >= 91.9642)) AND (attr_1 >= 30.7578)) AND (attr_5 <= 44.1161)) AND (((attr_4 >= 39.4278) OR (((attr_7 > 101.8113) AND (attr_1 <= -30.0303)) OR (attr_2 >= 97.5459))) AND ((attr_8 < 48.6565) AND (attr_0 < 86.0263)))) OR ((((attr_1 < 29.7152) OR (((((attr_1 <= -37.0890) AND (attr_5 <= 92.6622)) AND ((attr_8 <= 102.3107) AND ((attr_0 > 72.4572) AND (((attr_4 <= 50.5952) AND (attr_7 < 63.3043)) AND (attr_0 <= 69.4127))))) OR ((((((((attr_7 > 118.4396) AND (((attr_3 <= 16.1939) AND (attr_4 < -8.9604)) AND (attr_2 <= 96.3347))) AND (attr_3 <= 2.9744)) OR (((((attr_8 > 86.5510) AND (attr_4 >= 43.2344)) AND ((attr_1 <= -51.8344) AND (attr_4 > 31.4551))) AND (attr_6 < 51.1413)) AND (attr_0 < 97.0336))) AND ((attr_0 < 65.4918) AND (attr_0 >= 52.9441))) OR ((((attr_3 < 1.7135) AND ((attr_0 >= 48.9316) AND ((attr_6 < 18.9488) AND ((attr_5 <= 151.7000) AND (attr_3 < -2.8284))))) OR (((attr_8 <= 59.4570) AND (attr_7 >= 67.3619)) AND ((attr_5 < 55.4304) OR (((attr_1 > -30.5097) AND (attr_5 > 73.0404)) AND ((attr_6 >= 57.9347) AND (attr_2 >= 81.4704)))))) AND ((attr_7 >= 42.2374) AND (attr_5 >= 154.7629)))) AND (((attr_2 <= 76.4078) OR (attr_1 > 19.4150)) AND (attr_6 <= 8.8254))) OR ((((((attr_4 >= 33.6545) AND ((((attr_5 >= 16.1970) AND (attr_3 < 13.6488)) AND (attr_8 <= 103.9903)) AND ((attr_5 < 96.7328) AND ((attr_6 <= 14.0630) AND (attr_5 < 87.6110))))) AND (((attr_7 >= 41.4394) AND (attr_6 <= 55.7801)) AND ((attr_6 < 54.3015) OR (attr_2 < 84.7930)))) AND (attr_7 > 82.1742)) AND (attr_4 < 51.1239)) AND ((((attr_6 > 20.0036) AND (attr_3 <= -2.4125)) AND (((attr_6 <= 53.1873) AND (attr_5 <= 147.6527)) AND (attr_1 > 41.7991))) OR (attr_0 > 81.6273))))) AND ((attr_4 < 44.0202) AND ((attr_0 < 94.7858) AND (((((attr_3 <= 5.9696) AND (attr_1 <= 37.8630)) AND ((attr_6 <= 40.9604) OR ((attr_6 <= 39.5998) AND ((attr_3 > -3.6666) AND ((attr_2 < 78.2949) AND (attr_5 >= 50.8235)))))) AND ((((attr_5 >= 137.3853) AND (attr_8 > 63.0834)) OR (attr_2 < 94.2450)) AND ((((((attr_7 <= 47.8462) AND (attr_3 < -2.9216)) OR (attr_7 >= 92.2156)) AND (attr_6 < 21.1727)) AND (attr_5 >= 4.6219)) AND (attr_1 >= -30.9126)))) AND ((attr_8 >= 65.7215) AND (attr_1 >= -50.3906))))))) AND (((attr_4 >= -20.4817) AND (attr_2 <= 81.9154)) AND ((attr_0 >= 82.2672) OR ((((attr_2 >= 91.6843) AND (((attr_4 <= -24.0903) AND (attr_8 <= 59.7888)) AND ((attr_5 >= 128.3073) AND ((attr_3 < 3.9078) AND (attr_8 < 74.5681))))) AND (((((attr_8 < 39.9780) AND (attr_6 <= 8.2064)) AND (attr_4 < 0.7114)) AND (attr_0 >= 89.5733)) OR (attr_0 < 73.2973))) AND ((attr_3 > 5.4278) AND ((((((attr_2 <= 82.3861) AND (attr_1 < 32.2218)) AND (((((attr_0 <= 43.4475) AND (attr_7 >= 89.0528)) AND ((attr_1 > 30.2943) AND (attr_3 <= 2.8446))) AND (((attr_2 < 77.5059) AND (attr_1 <= 48.9076)) AND (attr_7 > 93.3490))) AND ((((attr_6 >= 36.7851) OR (attr_1 > 18.2821)) AND ((attr_2 <= 88.2899) AND (attr_4 > -20.3904))) AND (attr_2 > 102.6661)))) AND ((attr_4 > -2.9062) AND (attr_7 <= 100.1936))) OR (attr_6 > 15.6953)) OR (attr_0 < 97.0293))))))) OR ((attr_4 >= 22.5109) AND (((((((attr_7 < 41.9820) AND (attr_4 < -4.2276)) AND ((attr_6 > 24.3448) AND (((((attr_3 < 12.9501) AND ((attr_0 >= 88.2788) OR ((attr_5 <= 133.4951) AND (attr_6 >= 13.4298)))) OR ((attr_5 < 24.8494) AND (((attr_5 < 18.4427) AND (attr_1 > 40.7315)) AND (attr_2 > 97.4084)))) OR (attr_0 >= 92.6606)) OR (((attr_6 < 24.3257) AND (attr_7 >= 108.5530)) AND (attr_5 <= 128.4627))))) AND (((attr_5 >= 157.5680) OR ((((((attr_4 >= -32.4960) AND (attr_5 < 135.4036)) AND (attr_5 >= 149.5380)) OR ((((attr_8 < 111.0670) AND (attr_1 < 36.9894)) AND ((attr_4 >= -33.9213) AND (attr_5 <= 80.7559))) OR (((attr_5 < 23.8011) AND (attr_4 <= 48.7316)) AND ((attr_7 > 89.3603) OR (attr_1 > 23.7890))))) AND ((attr_3 >= 7.3594) AND (attr_7 < 36.5340))) AND (attr_2 < 85.8356))) AND (attr_8 < 55.8845))) AND ((attr_5 > -6.1635) AND ((attr_6 > 35.4103) OR (attr_8 >= 86.6889)))) AND ((attr_8 <= 50.4078) OR (attr_3 >= -0.6071))) AND (((((((((attr_2 < 90.5175) OR (((attr_7 <= 39.5464) OR (attr_3 > -0.3802)) OR ((attr_7 >= 92.8671) AND ((attr_8 <= 22.2394) AND (attr_7 >= 103.6138))))) AND (attr_0 < 66.8079)) AND ((attr_1 >= 43.8567) AND (attr_6 > 58.9546))) AND (attr_7 >= 40.9347)) AND (attr_7 < 73.8393)) AND ((attr_2 > 91.0856) AND (attr_0 < 71.4160))) OR ((((((attr_3 <= -4.0335) OR ((attr_3 <= 5.8195) AND ((((attr_6 >= 59.7275) AND (attr_4 <= 0.1613)) AND ((attr_1 <= 31.5105) AND (attr_8 < 56.9675))) AND (attr_7 >= 77.8831)))) AND ((((attr_5 <= 87.2047) AND (attr_0 < 67.3191)) AND (attr_7 <= 80.1218)) AND ((((attr_0 <= 74.7423) AND ((attr_3 > 16.0415) AND (attr_5 > 163.3706))) AND (((attr_5 >= 52.9809) AND (attr_7 >= 42.5394)) OR (attr_3 < 10.0874))) AND (((attr_4 > 32.6491) AND (attr_3 <= 9.2855)) AND (((attr_6 > 18.1076) AND (attr_5 >= -24.6069)) AND (attr_0 <= 79.3821)))))) AND ((attr_7 <= 72.3420) AND (((attr_5 > -6.4563) AND (((attr_0 <= 99.2907) OR ((attr_5 >= 126.9936) AND (attr_2 > 91.6079))) AND (attr_6 <= 26.4431))) AND (attr_0 < 84.7771)))) AND ((((attr_5 > 124.0604) AND (attr_8 <= 26.5948)) AND (attr_6 > 42.7470)) AND (((attr_6 < 15.9467) AND ((attr_7 < 73.4767) AND ((attr_5 >= -41.1511) AND (attr_2 < 102.2459)))) AND (((attr_0 >= 53.9640) AND ((attr_3 <= -2.7814) AND (attr_1 >= 49.1642))) AND ((((attr_7 > 81.3296) AND (attr_1 > -36.6602)) AND (attr_3 >= -3.5426)) AND ((attr_2 > 104.1048) AND (((attr_7 > 57.1610) AND (attr_8 <= 37.1114)) AND ((attr_4 < 51.0092) AND (attr_4 >= -16.8271))))))))) AND (attr_3 >= 17.1910))) AND (attr_1 < 47.9834)))))) THEN Class 1
+  - IF ((((attr_0 <= 54.5000) AND (attr_7 > 71.5000)) AND (attr_5 <= 0.5000)) AND (attr_2 <= 91.5000)) THEN Class 1
+  - IF (((attr_0 <= 51.6163) AND ((((((attr_2 < 80.1248) OR (((((((attr_4 < 31.3127) AND (((attr_2 < 81.8675) AND (attr_6 < 38.4121)) AND ((attr_0 >= 92.3619) AND (attr_2 >= 86.8344)))) AND (attr_6 < 41.0485)) OR ((((attr_4 < 36.4321) OR ((attr_6 > 27.7418) AND (attr_5 >= 98.4541))) AND (((attr_6 < 32.0593) AND (attr_5 >= 168.7112)) AND ((attr_5 <= 53.2123) AND (attr_1 < 35.5871)))) AND (attr_8 < 37.7431))) AND ((attr_5 <= -39.2507) AND ((attr_4 <= 2.8750) AND ((attr_2 > 84.6464) AND (attr_1 > -33.8684))))) AND (attr_0 >= 54.8359)) AND (((((((attr_0 >= 93.2004) AND ((attr_3 >= 0.4675) OR (attr_8 > 57.7929))) OR (attr_8 <= 92.6605)) AND ((((attr_5 > -53.8511) OR (attr_3 <= 1.5089)) AND (attr_0 >= 69.3785)) AND (((attr_6 < 42.5038) AND (attr_8 > 100.9578)) OR (attr_3 < 15.8947)))) AND (attr_0 > 61.2047)) AND (attr_2 < 88.4229)) AND ((((attr_7 >= 70.9168) AND (attr_6 > 49.1095)) AND (attr_6 < 24.9112)) AND ((attr_1 <= -14.5014) AND ((attr_3 >= 8.4451) AND (((attr_8 < 26.8756) AND ((attr_5 > 168.1296) AND (attr_8 > 94.2492))) AND (attr_1 <= -9.0821)))))))) AND ((attr_0 <= 96.0726) AND (((((attr_8 < 70.6500) AND (((attr_4 >= -33.5200) AND ((attr_3 < -4.6941) OR ((attr_6 > 26.1314) AND (attr_0 > 39.3828)))) AND (((attr_1 > 34.6549) AND ((attr_5 < -35.0011) AND (attr_7 <= 75.6070))) AND (((attr_0 > 55.1632) AND (attr_4 <= 2.0745)) AND ((attr_8 >= 79.7500) AND (attr_2 <= 106.1034)))))) AND (((((attr_0 <= 91.6295) AND ((attr_4 < -22.5948) OR (attr_2 >= 77.8376))) AND (((attr_3 <= 1.3424) AND (attr_7 < 82.8960)) AND ((attr_6 < 11.0313) AND (attr_2 >= 100.1138)))) AND ((((attr_3 <= -5.9534) AND (attr_0 > 63.3251)) AND ((attr_6 <= 21.2538) OR (attr_8 <= 91.0121))) OR ((attr_7 < 111.5167) AND ((attr_7 > 110.6104) AND (attr_3 <= -5.9070))))) AND (((((attr_8 >= 41.2864) AND (attr_6 <= 56.3359)) AND (attr_5 <= -21.0748)) AND ((attr_2 < 81.5024) AND ((attr_3 >= 1.8573) AND (attr_2 >= 83.7026)))) AND ((attr_8 <= 36.9642) OR (((attr_1 <= -44.5724) AND (attr_0 <= 64.0249)) AND (attr_5 <= -38.2177)))))) AND ((((attr_1 < -31.2826) OR ((attr_4 < 39.3434) AND (((attr_0 < 96.2876) AND (attr_2 > 83.2947)) AND ((attr_0 < 66.3906) AND (attr_2 > 88.3950))))) AND (attr_6 > 35.6787)) AND (attr_7 > 116.8527))) AND (attr_0 >= 83.9218)))) AND (attr_3 > 3.9740)) AND (attr_3 < 0.9773)) AND ((((attr_0 >= 87.5185) AND ((attr_5 > 34.4129) OR (attr_7 <= 118.6875))) OR (attr_2 < 108.7347)) AND ((attr_2 >= 85.1633) AND (attr_3 > 7.7570))))) AND (attr_4 >= -16.6375)) THEN Class 1
+  - IF (((attr_0 <= 54.5000) AND (attr_7 <= 71.5000)) AND (attr_2 <= 75.5000)) THEN Class 1
+  - IF ((attr_3 <= -3.1711) AND (attr_0 <= 45.3883)) THEN Class 1
+  - IF ((attr_8 <= 28.6867) AND (attr_7 < 86.1019)) THEN Class 1
+
+=== Class 2 ===
+
+  Deleted Rules:
+  - IF ((attr_6 > 11.0000) AND (attr_0 > 60.0000)) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF (((attr_6 > 11.0000) AND (attr_0 <= 60.0000)) AND (attr_6 > 68.0000)) THEN Class 3
+  + New: IF (((attr_6 > 11.0000) AND (attr_1 <= -4.5000)) AND (attr_8 > 1.0000)) THEN Class 3
+    (Similarity: 0.90)
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF (((((attr_6 > 11.0000) AND (attr_0 <= 60.0000)) AND (attr_6 <= 68.0000)) AND (attr_0 > 53.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+  + New: IF (((((attr_6 > 11.0000) AND (attr_1 > -4.5000)) AND (attr_1 <= 4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+    (Similarity: 0.91)
+
+  Deleted Rules:
+  - IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) AND (attr_0 > 55.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) AND (attr_1 > 0.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) AND (attr_2 <= 77.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) AND (attr_3 <= -1.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) AND (attr_4 <= -2.0000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) AND (attr_5 <= -16.0000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) AND (attr_6 <= 22.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) AND (attr_7 <= 45.5000)) THEN Class 4
+  - IF (((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+  - IF (((attr_0 > 53.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+
+=== Class 5 ===
+
+  Unchanged Rules:
+    IF (attr_6 <= 11.0000) THEN Class 5
+
+=== Class 6 ===
+
+  New Rules:
+  + IF ((((attr_6 > 11.0000) AND (attr_1 > -4.5000)) AND (attr_1 > 4.5000)) AND (attr_2 <= 81.5000)) THEN Class 6
+
+======================================================================
+--- Diff Chunk 19 -> Chunk 20 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 19):      nan
+  - Test Acc (Chunk 20):     nan
+  - Test F1 (Chunk 20):      nan
+Fitness:       1.090001 -> 1.096331
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((((attr_6 > 11.0000) AND (attr_1 > -4.5000)) AND (attr_1 <= 4.5000)) AND (attr_0 <= 54.5000)) AND (attr_3 > -6.5000)) THEN Class 1
+  + New: IF ((((attr_6 > 11.0000) AND (attr_1 > -21.5000)) AND (attr_0 <= 54.5000)) AND (attr_6 > 25.5000)) THEN Class 1
+    (Similarity: 0.76)
+  - Old: IF (((((attr_6 > 11.0000) AND (attr_1 > -4.5000)) AND (attr_1 <= 4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 <= 3.0000)) THEN Class 1
+  + New: IF ((((attr_6 > 11.0000) AND (attr_1 > -21.5000)) AND (attr_0 > 54.5000)) AND (attr_4 > 53.0000)) THEN Class 1
+    (Similarity: 0.75)
+
+  Deleted Rules:
+  - IF (((attr_6 > 11.0000) AND (attr_1 <= -4.5000)) AND (attr_8 <= 1.0000)) THEN Class 1
+
+=== Class 3 ===
+
+  New Rules:
+  + IF ((attr_6 > 11.0000) AND (attr_1 <= -21.5000)) THEN Class 3
+
+  Deleted Rules:
+  - IF (((attr_6 > 11.0000) AND (attr_1 <= -4.5000)) AND (attr_8 > 1.0000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF (((((attr_6 > 11.0000) AND (attr_1 > -4.5000)) AND (attr_1 <= 4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+  + New: IF ((((attr_6 > 11.0000) AND (attr_1 > -21.5000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+    (Similarity: 0.75)
+
+  New Rules:
+  + IF ((((attr_6 > 11.0000) AND (attr_1 > -21.5000)) AND (attr_0 <= 54.5000)) AND (attr_6 <= 25.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Unchanged Rules:
+    IF (attr_6 <= 11.0000) THEN Class 5
+
+=== Class 6 ===
+
+  Deleted Rules:
+  - IF ((((attr_6 > 11.0000) AND (attr_1 > -4.5000)) AND (attr_1 > 4.5000)) AND (attr_2 <= 81.5000)) THEN Class 6
+
+======================================================================
+--- Diff Chunk 20 -> Chunk 21 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 20):      nan
+  - Test Acc (Chunk 21):     nan
+  - Test F1 (Chunk 21):      nan
+Fitness:       1.096331 -> 1.042035
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((attr_0 <= 54.5000) AND (attr_1 <= -3.5000)) THEN Class 1
+  + IF ((attr_0 <= 54.5000) AND (attr_2 <= 75.5000)) THEN Class 1
+  + IF ((attr_0 <= 54.5000) AND (attr_4 <= 7.0000)) THEN Class 1
+  + IF ((attr_0 <= 54.5000) AND (attr_5 <= -26.5000)) THEN Class 1
+  + IF ((attr_0 > 54.5000) AND (attr_8 <= 3.0000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((attr_6 > 11.0000) AND (attr_1 > -21.5000)) AND (attr_0 <= 54.5000)) AND (attr_6 > 25.5000)) THEN Class 1
+  - IF ((((attr_6 > 11.0000) AND (attr_1 > -21.5000)) AND (attr_0 > 54.5000)) AND (attr_4 > 53.0000)) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF ((attr_6 <= 14.0000) AND (attr_5 <= -0.5000)) THEN Class 2
+
+=== Class 3 ===
+
+  Deleted Rules:
+  - IF ((attr_6 > 11.0000) AND (attr_1 <= -21.5000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_6 > 11.0000) AND (attr_1 > -21.5000)) AND (attr_0 <= 54.5000)) AND (attr_6 <= 25.5000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_0 <= 57.0000)) AND (attr_8 > 3.0000)) AND (attr_6 <= 22.5000)) THEN Class 4
+    (Similarity: 0.81)
+  - Old: IF ((((attr_6 > 11.0000) AND (attr_1 > -21.5000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+  + New: IF ((((attr_6 > 14.0000) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) AND (attr_3 <= -3.5000)) THEN Class 4
+    (Similarity: 0.87)
+
+  New Rules:
+  + IF ((((attr_0 > 54.5000) AND (attr_0 <= 57.0000)) AND (attr_8 > 3.0000)) AND (attr_2 <= 77.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_0 <= 57.0000)) AND (attr_8 > 3.0000)) AND (attr_3 <= -2.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_0 <= 57.0000)) AND (attr_8 > 3.0000)) AND (attr_7 <= 45.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_0 <= 57.0000)) AND (attr_8 > 3.0000)) AND (attr_8 <= 7.0000)) THEN Class 4
+  + IF ((((attr_6 > 14.0000) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) AND (attr_3 > -3.5000)) THEN Class 4
+  + IF (((attr_0 > 54.5000) AND (attr_0 <= 57.0000)) AND (attr_8 > 3.0000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_6 <= 11.0000) THEN Class 5
+  + New: IF (attr_0 > 73.5000) THEN Class 5
+    (Similarity: 0.68)
+
+  New Rules:
+  + IF ((attr_6 <= 14.0000) AND (attr_5 > -0.5000)) THEN Class 5
+
+======================================================================
+--- Diff Chunk 21 -> Chunk 22 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 21):      nan
+  - Test Acc (Chunk 22):     nan
+  - Test F1 (Chunk 22):      nan
+Fitness:       1.042035 -> 1.095990
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((attr_0 <= 54.5000) AND (attr_5 <= -26.5000)) THEN Class 1
+  + New: IF ((attr_0 <= 54.5000) AND (attr_6 <= 26.5000)) THEN Class 1
+    (Similarity: 0.96)
+
+  Deleted Rules:
+  - IF ((attr_0 <= 54.5000) AND (attr_1 <= -3.5000)) THEN Class 1
+  - IF ((attr_0 <= 54.5000) AND (attr_2 <= 75.5000)) THEN Class 1
+  - IF ((attr_0 <= 54.5000) AND (attr_4 <= 7.0000)) THEN Class 1
+  - IF ((attr_0 > 54.5000) AND (attr_8 <= 3.0000)) THEN Class 1
+
+=== Class 2 ===
+
+  Deleted Rules:
+  - IF ((attr_6 <= 14.0000) AND (attr_5 <= -0.5000)) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF (((attr_6 > 12.5000) AND (attr_1 <= -41.0382)) AND (attr_2 <= 80.0000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_0 <= 57.0000)) AND (attr_8 > 3.0000)) AND (attr_2 <= 77.5000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 12.5000)) AND (attr_2 <= 77.5000)) THEN Class 4
+    (Similarity: 0.94)
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_0 <= 57.0000)) AND (attr_8 > 3.0000)) AND (attr_3 <= -2.5000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 12.5000)) AND (attr_5 <= -7.5000)) THEN Class 4
+    (Similarity: 0.92)
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_0 <= 57.0000)) AND (attr_8 > 3.0000)) AND (attr_6 <= 22.5000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 12.5000)) AND (attr_6 <= 21.5000)) THEN Class 4
+    (Similarity: 0.93)
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_0 <= 57.0000)) AND (attr_8 > 3.0000)) AND (attr_7 <= 45.5000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 12.5000)) AND (attr_7 <= 51.5000)) THEN Class 4
+    (Similarity: 0.92)
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_0 <= 57.0000)) AND (attr_8 > 3.0000)) AND (attr_8 <= 7.0000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 12.5000)) AND (attr_8 <= 11.0000)) THEN Class 4
+    (Similarity: 0.92)
+  - Old: IF (((attr_0 > 54.5000) AND (attr_0 <= 57.0000)) AND (attr_8 > 3.0000)) THEN Class 4
+  + New: IF (((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 12.5000)) THEN Class 4
+    (Similarity: 0.91)
+
+  New Rules:
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 49.8130)) AND (attr_6 > 12.5000)) AND (attr_8 <= 11.0000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 12.5000)) AND (attr_4 <= -8.0000)) THEN Class 4
+  + IF ((((attr_8 > 104.8220) AND (attr_8 < 15.3053)) AND ((attr_1 <= -14.5862) AND (attr_5 >= 2.0366))) AND (((((attr_3 <= -2.4904) OR (attr_4 >= 54.2398)) AND ((attr_3 >= -5.3978) AND (attr_1 > -1.8542))) AND (attr_3 >= -9.0549)) AND ((((attr_6 <= 31.8819) AND (attr_8 > 23.9703)) AND ((attr_0 >= 56.9785) AND (((((attr_7 < 106.4850) AND (attr_0 < 52.0845)) AND ((attr_5 < -2.7794) AND (attr_2 <= 96.3432))) OR (attr_5 > -8.3133)) AND (attr_6 < 37.4556)))) AND (attr_0 >= 67.4219)))) THEN Class 4
+
+  Deleted Rules:
+  - IF ((((attr_6 > 14.0000) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) AND (attr_3 <= -3.5000)) THEN Class 4
+  - IF ((((attr_6 > 14.0000) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) AND (attr_3 > -3.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_0 > 73.5000) THEN Class 5
+  + New: IF (attr_6 <= 12.5000) THEN Class 5
+    (Similarity: 0.74)
+
+  Deleted Rules:
+  - IF ((attr_6 <= 14.0000) AND (attr_5 > -0.5000)) THEN Class 5
+
+======================================================================
+Overall Performance Summary (from History File)
+======================================================================
+Avg Train Accuracy: nan +/- nan (over 0 chunks)
+Avg Test Accuracy:  nan +/- nan (over 0 chunks)
+Avg Test F1:        nan +/- nan (over 0 chunks)
+======================================================================

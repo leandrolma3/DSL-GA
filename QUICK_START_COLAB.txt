@@ -1,0 +1,248 @@
+===============================================================================
+  QUICK START: GOOGLE COLAB + GOOGLE DRIVE - DSL-AG-HYBRID
+===============================================================================
+
+🚀 INÍCIO RÁPIDO (3 Passos)
+---------------------------
+
+1️⃣ CRIE NOTEBOOK NO COLAB
+   - Acesse: https://colab.research.google.com/
+   - File → New notebook
+
+2️⃣ EXECUTE ESTAS 3 CÉLULAS:
+
+   # Célula 1: Instalar
+   !pip install -q river scikit-learn pyyaml matplotlib seaborn pandas numpy joblib
+   !git clone https://github.com/seu-repo/DSL-AG-hybrid.git
+   %cd DSL-AG-hybrid
+
+   # Célula 2: Executar
+   !python run_experiment_colab.py \
+       --stream RBF_Abrupt_Severe \
+       --chunks 3 \
+       --population 120 \
+       --max-generations 200
+
+   # Célula 3: Ver resultados
+   !tail -50 /content/drive/MyDrive/DSL-AG-hybrid/experiments/*/logs/*.log
+
+3️⃣ ACESSE RESULTADOS NO DRIVE
+   - Abra Google Drive (drive.google.com)
+   - Vá para: MyDrive/DSL-AG-hybrid/experiments/
+   - Encontre pasta com timestamp (ex: RBF_Test_20251018_143022/)
+   - Arquivos principais:
+     * logs/*.log          → Log completo
+     * results/            → CSVs, gráficos, pickles
+     * EXPERIMENT_SUMMARY.txt → Resumo
+
+===============================================================================
+
+📂 ESTRUTURA DE PASTAS NO DRIVE
+--------------------------------
+
+MyDrive/DSL-AG-hybrid/
+├── experiments/
+│   └── RBF_Test_20251018_143022/     ← Seu experimento
+│       ├── logs/
+│       │   └── experiment.log         ← Log completo em tempo real
+│       ├── results/
+│       │   ├── *.csv                  ← Dados
+│       │   ├── *.png                  ← Gráficos
+│       │   └── *.pkl                  ← Modelos salvos
+│       ├── checkpoints/
+│       │   └── chunk_*.pkl            ← Checkpoints automáticos
+│       └── EXPERIMENT_SUMMARY.txt     ← Resumo
+└── code_backup/
+    └── 20251018_143022/               ← Código usado
+
+===============================================================================
+
+🔧 COMANDOS ÚTEIS
+-----------------
+
+# Ver últimas linhas do log
+!tail -50 /content/drive/MyDrive/DSL-AG-hybrid/experiments/*/logs/*.log
+
+# Listar todos os experimentos
+!ls -lh /content/drive/MyDrive/DSL-AG-hybrid/experiments/
+
+# Monitorar em tempo real (via SSH)
+tail -f /content/drive/MyDrive/DSL-AG-hybrid/experiments/*/logs/*.log
+
+# Compactar resultados para download
+!cd /content/drive/MyDrive/DSL-AG-hybrid/experiments && \
+ zip -r resultados.zip */results */logs
+
+# Download no Colab
+from google.colab import files
+files.download('/content/drive/MyDrive/DSL-AG-hybrid/experiments/resultados.zip')
+
+===============================================================================
+
+⚙️ PARÂMETROS DO EXPERIMENTO
+----------------------------
+
+--stream NOME               Stream a executar (ex: RBF_Abrupt_Severe)
+--chunks N                  Número de chunks (padrão: 3)
+--chunk-size N              Tamanho do chunk (padrão: 6000)
+--population N              População do GA (padrão: 120)
+--max-generations N         Máximo de gerações (padrão: 200)
+--experiment-name NOME      Nome do experimento (opcional)
+--log-level NIVEL           DEBUG | INFO | WARNING | ERROR
+
+Exemplo:
+--------
+!python run_experiment_colab.py \
+    --stream RBF_Abrupt_Severe \
+    --chunks 5 \
+    --chunk-size 6000 \
+    --population 120 \
+    --max-generations 200 \
+    --experiment-name "Teste_Final_HC_Crossover" \
+    --log-level INFO
+
+===============================================================================
+
+⚠️ SOLUÇÃO DE PROBLEMAS
+-----------------------
+
+PROBLEMA: Sessão caiu, perdi os logs?
+SOLUÇÃO: NÃO! Tudo está no Drive. Vá para:
+         MyDrive/DSL-AG-hybrid/experiments/
+
+PROBLEMA: Drive não montou
+SOLUÇÃO: from google.colab import drive
+         drive.mount('/content/drive', force_remount=True)
+
+PROBLEMA: Erro "permission denied"
+SOLUÇÃO: !chmod -R 755 /content/drive/MyDrive/DSL-AG-hybrid
+
+PROBLEMA: Como retomar experimento interrompido?
+SOLUÇÃO: 1. Encontre último checkpoint: checkpoints/chunk_X.pkl
+         2. Modifique config.yaml para pular chunks já processados
+         3. Execute novamente com --chunks restantes
+
+PROBLEMA: Log não atualiza
+SOLUÇÃO: import logging
+         for handler in logging.root.handlers:
+             handler.flush()
+
+===============================================================================
+
+🎯 CHECKLIST ANTES DE EXECUTAR
+-------------------------------
+
+✅ Google Drive montado?
+   !ls /content/drive/MyDrive
+
+✅ Dependências instaladas?
+   !pip list | grep -E "river|scikit|yaml"
+
+✅ Código atualizado?
+   !git pull  # ou upload manual
+
+✅ Config.yaml correto?
+   !cat config.yaml | grep -A5 "experiment_settings"
+
+✅ Espaço no Drive? (min 5GB recomendado)
+   !df -h /content/drive
+
+===============================================================================
+
+💾 BACKUP E RECUPERAÇÃO
+-----------------------
+
+# Fazer backup manual de resultados importantes
+!cp -r /content/drive/MyDrive/DSL-AG-hybrid/experiments/IMPORTANTE_* \
+       /content/drive/MyDrive/BACKUP_EXPERIMENTOS/
+
+# Recuperar de checkpoint
+import pickle
+with open('/content/drive/.../checkpoints/chunk_3.pkl', 'rb') as f:
+    state = pickle.load(f)
+# state contém: best_individual, population, fitness_history, etc.
+
+===============================================================================
+
+📊 MONITORAMENTO EM TEMPO REAL
+-------------------------------
+
+OPÇÃO 1: Via Colab (execute em célula separada)
+--------
+import time
+log_file = "/content/drive/MyDrive/DSL-AG-hybrid/experiments/*/logs/*.log"
+while True:
+    !tail -20 {log_file}
+    time.sleep(30)  # Atualiza a cada 30s
+
+OPÇÃO 2: Via SSH (no terminal)
+--------
+tail -f /content/drive/MyDrive/DSL-AG-hybrid/experiments/*/logs/*.log
+
+OPÇÃO 3: Google Drive Web
+--------
+1. Abra drive.google.com
+2. Navegue até pasta de logs
+3. Abra .log com Google Docs
+4. Recarregue periodicamente (F5)
+
+===============================================================================
+
+🚨 SE ALGO DER ERRADO
+--------------------
+
+1. Verifique logs no Drive:
+   MyDrive/DSL-AG-hybrid/experiments/*/logs/*.log
+
+2. Verifique último checkpoint:
+   MyDrive/DSL-AG-hybrid/experiments/*/checkpoints/
+
+3. Leia EXPERIMENT_SUMMARY.txt:
+   MyDrive/DSL-AG-hybrid/experiments/*/EXPERIMENT_SUMMARY.txt
+
+4. Se precisar de ajuda:
+   - Copie mensagem de erro do log
+   - Anote qual chunk estava processando
+   - Verifique se Drive tem espaço
+
+===============================================================================
+
+📧 DICAS ADICIONAIS
+------------------
+
+💡 Executar múltiplos experimentos:
+   for stream in RBF SEA AGRAWAL; do
+       python run_experiment_colab.py --stream ${stream}_Abrupt_Severe --chunks 3
+   done
+
+💡 Notificação quando terminar:
+   !python run_experiment_colab.py ... && \
+    python -c "print('✅ EXPERIMENTO CONCLUÍDO!')"
+
+💡 Salvar tempo de execução:
+   !time python run_experiment_colab.py ...
+
+💡 Rodar em background (via nohup):
+   !nohup python run_experiment_colab.py ... > output.log 2>&1 &
+   (Note: Não recomendado no Colab, use Compute Engine para isso)
+
+===============================================================================
+
+📞 LINKS ÚTEIS
+--------------
+
+• Google Colab: https://colab.research.google.com/
+• Google Drive: https://drive.google.com/
+• Documentação completa: GUIA_GOOGLE_COLAB.md
+• Código fonte: https://github.com/seu-repo/DSL-AG-hybrid
+
+===============================================================================
+
+Versão: 1.0
+Data: 2025-10-18
+Autor: Claude Code
+
+LEMBRE-SE: Tudo é salvo automaticamente no Drive.
+            Mesmo que a sessão caia, seus dados estão seguros!
+
+===============================================================================

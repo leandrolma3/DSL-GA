@@ -1,0 +1,259 @@
+nohup: ignoring input
+2025-10-13 22:09:24 [INFO    ] comparison: ======================================================================
+2025-10-13 22:09:24 [INFO    ] comparison: COMPARAÇÃO: GBML vs River
+2025-10-13 22:09:24 [INFO    ] comparison: Stream: RBF_Abrupt_Severe
+2025-10-13 22:09:24 [INFO    ] comparison: Chunks: 1 x 6000 instâncias
+2025-10-13 22:09:24 [INFO    ] comparison: Seed: 42
+2025-10-13 22:09:24 [INFO    ] comparison: ======================================================================
+2025-10-13 22:09:24 [INFO    ] comparison: Resultados serão salvos em: comparison_results/RBF_Abrupt_Severe_seed42_20251013_220924
+2025-10-13 22:09:24 [INFO    ] comparison: 
+[1/5] Carregando configuração...
+2025-10-13 22:09:24 [INFO    ] comparison: ✓ Configuração carregada de: config.yaml
+2025-10-13 22:09:24 [INFO    ] comparison: 
+[2/5] Gerando/carregando chunks (compartilhados)...
+2025-10-13 22:09:24 [INFO    ] shared_evaluation: ChunkCache inicializado em: chunks_cache
+2025-10-13 22:09:24 [INFO    ] shared_evaluation: [CACHE MISS] Gerando chunks para 'RBF_Abrupt_Severe' (seed=42)
+2025-10-13 22:09:24 [INFO    ] data_handling_final: Full configuration loaded from config.yaml
+2025-10-13 22:09:24 [INFO    ] data_handling_final: --- Generating stream: 'RBF_Abrupt_Severe' ---
+2025-10-13 22:09:24 [INFO    ] data_handling_final: Mode: Drift Simulation
+2025-10-13 22:09:24 [INFO    ] data_handling_final: Generation for 'RBF_Abrupt_Severe' complete. Total chunks: 2.
+2025-10-13 22:09:24 [INFO    ] shared_evaluation: ✓ Chunks salvos em cache: chunks_cache/RBF_Abrupt_Severe_cs6000_nc2_seed42.pkl
+2025-10-13 22:09:24 [INFO    ] shared_evaluation: ✓ Total de 2 chunks gerados/carregados para 'RBF_Abrupt_Severe'
+2025-10-13 22:09:24 [INFO    ] shared_evaluation: ✓ Validação de 2 chunks passou!
+2025-10-13 22:09:24 [INFO    ] comparison: ✓ 2 chunks validados e prontos
+2025-10-13 22:09:24 [INFO    ] comparison:   Atributos: 10
+2025-10-13 22:09:24 [INFO    ] comparison:   Classes: [0, 1]
+2025-10-13 22:09:24 [INFO    ] comparison: 
+[3/5] Executando GBML...
+2025-10-13 22:09:24 [INFO    ] GBMLEvaluator[GBML]: Salvamento de indivíduos ativado em: comparison_results/RBF_Abrupt_Severe_seed42_20251013_220924
+2025-10-13 22:09:24 [INFO    ] GBMLEvaluator[GBML]: GBMLEvaluator inicializado para classes: [0, 1]
+2025-10-13 22:09:24 [INFO    ] GBMLEvaluator[GBML]: [PREQUENTIAL] Treinando no chunk 0 (6000 instâncias)...
+2025-10-13 22:09:24 [INFO    ] GBMLEvaluator[GBML]: Iniciando evolução GA em 6000 instâncias...
+2025-10-13 22:09:24 [INFO    ] root: Starting GA run: Pop=50, MaxGen=100, Elit=0.10, Parallel=True, InitStrategy=full_random
+2025-10-13 22:09:24 [INFO    ] root: Initializing population with strategy 'full_random' and performance 'medium'.
+2025-10-13 22:09:24 [INFO    ] root: Construindo o 'Pool de Genes' com a estratégia 'Focus Training' usando Decision Tree...
+2025-10-13 22:09:24 [INFO    ] root: Estratégia de reset ativada. Usando 'Seeding Multi-Profundidade'.
+2025-10-13 22:09:24 [INFO    ] root:   -> SEEDING ADAPTATIVO ATIVADO: Estimando complexidade do chunk...
+2025-10-13 22:09:24 [INFO    ] root:   -> Complexidade estimada: MEDIUM (DT probe acc: 0.784)
+2025-10-13 22:09:24 [INFO    ] root:      Problema MÉDIO (DT probe 75-90%) - Seeding moderado
+2025-10-13 22:09:24 [INFO    ] root:      Parâmetros adaptativos: seeding_ratio=0.6, injection_ratio=0.6, depths=[5, 8, 10]
+2025-10-13 22:09:24 [INFO    ] root:   -> Seeding Probabilístico ATIVADO: Injetando 60% das regras DT
+2025-10-13 22:09:25 [INFO    ] root: População de reset criada: 50 indivíduos (30 semeados, 20 aleatórios).
+2025-10-13 22:09:25 [INFO    ] root: Parallel enabled. Using cores: 12
+2025-10-13 22:09:58 [INFO    ] root: Gen 1: Preservando 1 elites do pool híbrido (ordenados por G-mean).
+Gen 1/100 - BestFit: 1.0668 (G-mean: 0.787) | AvgFit: 0.7338 (G-mean: 0.486) | (Diversity: 0.592) | (RuleAct: 69.3) | Mut: 0.679 | Tourn: 3 | Stagn: 0 | Time: 33.63s2025-10-13 22:10:57 [INFO    ] root: Gen 2: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 2/100 - BestFit: 1.0668 (G-mean: 0.787) | AvgFit: 0.5832 (G-mean: 0.338) | (Diversity: 0.452) | (RuleAct: 44.6) | Mut: 0.409 | Tourn: 3 | Stagn: 1 | Time: 15.34s2025-10-13 22:11:34 [INFO    ] root: Gen 3: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 3/100 - BestFit: 1.0711 (G-mean: 0.791) | AvgFit: 0.6711 (G-mean: 0.421) | (Diversity: 0.410) | (RuleAct: 52.7) | Mut: 0.520 | Tourn: 3 | Stagn: 0 | Time: 16.38s2025-10-13 22:12:14 [INFO    ] root: Gen 4: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 4/100 - BestFit: 1.0711 (G-mean: 0.791) | AvgFit: 0.6797 (G-mean: 0.428) | (Diversity: 0.413) | (RuleAct: 56.7) | Mut: 0.524 | Tourn: 3 | Stagn: 1 | Time: 15.70s2025-10-13 22:12:55 [INFO    ] root: Gen 5: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 5/100 - BestFit: 1.0711 (G-mean: 0.791) | AvgFit: 0.7576 (G-mean: 0.501) | (Diversity: 0.410) | (RuleAct: 52.6) | Mut: 0.624 | Tourn: 3 | Stagn: 2 | Time: 16.02s2025-10-13 22:13:36 [INFO    ] root: Gen 6: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 6/100 - BestFit: 1.0711 (G-mean: 0.791) | AvgFit: 0.7265 (G-mean: 0.472) | (Diversity: 0.444) | (RuleAct: 37.5) | Mut: 0.581 | Tourn: 3 | Stagn: 3 | Time: 14.87s2025-10-13 22:14:15 [INFO    ] root: Gen 7: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 7/100 - BestFit: 1.0711 (G-mean: 0.791) | AvgFit: 0.7233 (G-mean: 0.469) | (Diversity: 0.443) | (RuleAct: 45.2) | Mut: 0.579 | Tourn: 3 | Stagn: 4 | Time: 15.23s2025-10-13 22:14:52 [INFO    ] root: Gen 8: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 8/100 - BestFit: 1.0711 (G-mean: 0.791) | AvgFit: 0.6428 (G-mean: 0.393) | (Diversity: 0.428) | (RuleAct: 47.5) | Mut: 0.512 | Tourn: 3 | Stagn: 5 | Time: 14.93s2025-10-13 22:15:29 [INFO    ] root: Gen 9: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 9/100 - BestFit: 1.0825 (G-mean: 0.802) | AvgFit: 0.7343 (G-mean: 0.479) | (Diversity: 0.423) | (RuleAct: 49.8) | Mut: 0.585 | Tourn: 3 | Stagn: 0 | Time: 15.72s2025-10-13 22:16:08 [INFO    ] root: Gen 10: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 10/100 - BestFit: 1.0825 (G-mean: 0.802) | AvgFit: 0.6643 (G-mean: 0.414) | (Diversity: 0.418) | (RuleAct: 44.4) | Mut: 0.603 | Tourn: 3 | Stagn: 1 | Time: 14.55s2025-10-13 22:16:48 [INFO    ] root: Gen 11: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 11/100 - BestFit: 1.0825 (G-mean: 0.802) | AvgFit: 0.7154 (G-mean: 0.460) | (Diversity: 0.461) | (RuleAct: 49.8) | Mut: 0.580 | Tourn: 3 | Stagn: 2 | Time: 14.03s2025-10-13 22:17:26 [INFO    ] root: Gen 12: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 12/100 - BestFit: 1.0825 (G-mean: 0.802) | AvgFit: 0.7487 (G-mean: 0.493) | (Diversity: 0.457) | (RuleAct: 50.6) | Mut: 0.683 | Tourn: 3 | Stagn: 3 | Time: 14.76s2025-10-13 22:18:07 [INFO    ] root: Gen 13: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 13/100 - BestFit: 1.0825 (G-mean: 0.802) | AvgFit: 0.6840 (G-mean: 0.431) | (Diversity: 0.480) | (RuleAct: 44.1) | Mut: 0.536 | Tourn: 3 | Stagn: 4 | Time: 14.19s2025-10-13 22:18:41 [INFO    ] root: Gen 14: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 14/100 - BestFit: 1.0825 (G-mean: 0.802) | AvgFit: 0.7491 (G-mean: 0.492) | (Diversity: 0.435) | (RuleAct: 49.5) | Mut: 0.632 | Tourn: 3 | Stagn: 5 | Time: 14.59s2025-10-13 22:19:17 [INFO    ] root: Gen 15: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 15/100 - BestFit: 1.0950 (G-mean: 0.813) | AvgFit: 0.7335 (G-mean: 0.478) | (Diversity: 0.446) | (RuleAct: 52.8) | Mut: 0.611 | Tourn: 3 | Stagn: 0 | Time: 9.54s2025-10-13 22:19:50 [INFO    ] root: Gen 16: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 16/100 - BestFit: 1.0950 (G-mean: 0.813) | AvgFit: 0.8094 (G-mean: 0.548) | (Diversity: 0.413) | (RuleAct: 43.0) | Mut: 0.670 | Tourn: 3 | Stagn: 1 | Time: 9.06s2025-10-13 22:20:21 [INFO    ] root: Gen 17: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 17/100 - BestFit: 1.0950 (G-mean: 0.813) | AvgFit: 0.7603 (G-mean: 0.503) | (Diversity: 0.428) | (RuleAct: 40.4) | Mut: 0.623 | Tourn: 3 | Stagn: 2 | Time: 8.21s2025-10-13 22:20:52 [INFO    ] root: Gen 18: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 18/100 - BestFit: 1.0950 (G-mean: 0.813) | AvgFit: 0.7225 (G-mean: 0.468) | (Diversity: 0.434) | (RuleAct: 50.2) | Mut: 0.563 | Tourn: 3 | Stagn: 3 | Time: 8.13s2025-10-13 22:21:22 [INFO    ] root: Gen 19: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 19/100 - BestFit: 1.0950 (G-mean: 0.813) | AvgFit: 0.7424 (G-mean: 0.487) | (Diversity: 0.448) | (RuleAct: 53.3) | Mut: 0.624 | Tourn: 3 | Stagn: 4 | Time: 7.96s2025-10-13 22:21:53 [INFO    ] root: Gen 20: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 20/100 - BestFit: 1.0950 (G-mean: 0.813) | AvgFit: 0.7710 (G-mean: 0.514) | (Diversity: 0.418) | (RuleAct: 51.9) | Mut: 0.622 | Tourn: 3 | Stagn: 5 | Time: 8.64s2025-10-13 22:22:25 [INFO    ] root: Gen 21: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 21/100 - BestFit: 1.0950 (G-mean: 0.813) | AvgFit: 0.7393 (G-mean: 0.484) | (Diversity: 0.487) | (RuleAct: 47.7) | Mut: 0.613 | Tourn: 3 | Stagn: 6 | Time: 8.32s2025-10-13 22:22:55 [INFO    ] root: Gen 22: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 22/100 - BestFit: 1.0950 (G-mean: 0.813) | AvgFit: 0.7293 (G-mean: 0.474) | (Diversity: 0.450) | (RuleAct: 49.4) | Mut: 0.604 | Tourn: 3 | Stagn: 7 | Time: 8.14s2025-10-13 22:23:26 [INFO    ] root: Gen 23: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 23/100 - BestFit: 1.0950 (G-mean: 0.813) | AvgFit: 0.7494 (G-mean: 0.493) | (Diversity: 0.417) | (RuleAct: 51.7) | Mut: 0.622 | Tourn: 3 | Stagn: 8 | Time: 8.34s2025-10-13 22:23:58 [INFO    ] root: Gen 24: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 24/100 - BestFit: 1.0950 (G-mean: 0.813) | AvgFit: 0.8056 (G-mean: 0.547) | (Diversity: 0.448) | (RuleAct: 51.5) | Mut: 0.729 | Tourn: 2 | Stagn: 9 | Time: 8.44s2025-10-13 22:24:32 [INFO    ] root: Gen 25: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+2025-10-13 22:24:32 [INFO    ] root: 
+Estagnação detectada (10 gerações)! Ativando mecanismos de resgate...
+2025-10-13 22:24:32 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [AGGRESSIVE]
+2025-10-13 22:24:32 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.813 → EXPLORAÇÃO AGRESSIVA - Grandes mudanças estruturais
+2025-10-13 22:24:32 [INFO    ] hill_climbing_v2:      Operações: ['inject_memory_rules', 'crossover_with_memory', 'add_random_rules', 'diverse_mutation']
+2025-10-13 22:24:32 [INFO    ] hill_climbing_v2:      Variantes planejadas: 15
+2025-10-13 22:24:32 [INFO    ] hill_climbing_v2:        ✓ inject_memory_rules: 2 variantes geradas
+2025-10-13 22:24:32 [INFO    ] hill_climbing_v2:        ✓ crossover_with_memory: 3 variantes geradas
+2025-10-13 22:24:32 [INFO    ] hill_climbing_v2:        ✓ add_random_rules: 3 variantes geradas
+2025-10-13 22:24:34 [INFO    ] hill_climbing_v2:        ✓ diverse_mutation: 4 variantes geradas
+2025-10-13 22:24:34 [INFO    ] hill_climbing_v2:      Total gerado: 12 variantes, retornando 12
+2025-10-13 22:24:34 [INFO    ] root:      Avaliando 12 variantes HC geradas...
+2025-10-13 22:24:35 [INFO    ] root:        ✓ HC variant #8 APROVADO: fitness=1.0952 (elite=1.0950), gmean=0.813 (elite=0.813)
+2025-10-13 22:24:36 [INFO    ] root:      Resultado: 1/12 variantes aprovadas (8.3% taxa de aprovação)
+Gen 25/100 - BestFit: 1.0950 (G-mean: 0.813) | AvgFit: 0.6596 (G-mean: 0.408) | (Diversity: 0.447) | (RuleAct: 44.9) | Mut: 0.504 | Tourn: 3 | Stagn: 10 | Time: 7.84s2025-10-13 22:25:26 [INFO    ] root: Gen 26: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 26/100 - BestFit: 1.0952 (G-mean: 0.813) | AvgFit: 0.4328 (G-mean: 0.192) | (Diversity: 0.648) | (RuleAct: 13.9) | Mut: 0.269 | Tourn: 4 | Stagn: 0 | Time: 3.96s2025-10-13 22:25:43 [INFO    ] root: Gen 27: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 27/100 - BestFit: 1.0952 (G-mean: 0.813) | AvgFit: 0.6976 (G-mean: 0.445) | (Diversity: 0.442) | (RuleAct: 45.7) | Mut: 0.628 | Tourn: 3 | Stagn: 1 | Time: 9.32s2025-10-13 22:26:15 [INFO    ] root: Gen 28: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 28/100 - BestFit: 1.0952 (G-mean: 0.813) | AvgFit: 0.7876 (G-mean: 0.529) | (Diversity: 0.419) | (RuleAct: 46.8) | Mut: 0.639 | Tourn: 3 | Stagn: 2 | Time: 8.39s2025-10-13 22:26:46 [INFO    ] root: Gen 29: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 29/100 - BestFit: 1.0952 (G-mean: 0.813) | AvgFit: 0.7340 (G-mean: 0.478) | (Diversity: 0.428) | (RuleAct: 47.5) | Mut: 0.586 | Tourn: 3 | Stagn: 3 | Time: 8.34s2025-10-13 22:27:14 [INFO    ] root: Gen 30: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 30/100 - BestFit: 1.0952 (G-mean: 0.813) | AvgFit: 0.7483 (G-mean: 0.491) | (Diversity: 0.421) | (RuleAct: 48.6) | Mut: 0.599 | Tourn: 3 | Stagn: 4 | Time: 7.74s2025-10-13 22:27:42 [INFO    ] root: Gen 31: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 31/100 - BestFit: 1.0952 (G-mean: 0.813) | AvgFit: 0.8168 (G-mean: 0.557) | (Diversity: 0.405) | (RuleAct: 54.7) | Mut: 0.739 | Tourn: 2 | Stagn: 5 | Time: 8.13s2025-10-13 22:28:14 [INFO    ] root: Gen 32: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 32/100 - BestFit: 1.0952 (G-mean: 0.813) | AvgFit: 0.6961 (G-mean: 0.443) | (Diversity: 0.514) | (RuleAct: 57.5) | Mut: 0.565 | Tourn: 3 | Stagn: 6 | Time: 7.24s2025-10-13 22:28:43 [INFO    ] root: Gen 33: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 33/100 - BestFit: 1.0952 (G-mean: 0.813) | AvgFit: 0.7897 (G-mean: 0.531) | (Diversity: 0.472) | (RuleAct: 54.6) | Mut: 0.642 | Tourn: 3 | Stagn: 7 | Time: 8.33s2025-10-13 22:29:13 [INFO    ] root: Gen 34: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 34/100 - BestFit: 1.0952 (G-mean: 0.813) | AvgFit: 0.7773 (G-mean: 0.519) | (Diversity: 0.451) | (RuleAct: 54.7) | Mut: 0.657 | Tourn: 3 | Stagn: 8 | Time: 7.64s2025-10-13 22:29:43 [INFO    ] root: Gen 35: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 35/100 - BestFit: 1.1009 (G-mean: 0.819) | AvgFit: 0.7409 (G-mean: 0.484) | (Diversity: 0.470) | (RuleAct: 46.4) | Mut: 0.582 | Tourn: 3 | Stagn: 0 | Time: 8.24s2025-10-13 22:30:14 [INFO    ] root: Gen 36: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 36/100 - BestFit: 1.1009 (G-mean: 0.819) | AvgFit: 0.7717 (G-mean: 0.515) | (Diversity: 0.479) | (RuleAct: 50.6) | Mut: 0.694 | Tourn: 3 | Stagn: 1 | Time: 8.88s2025-10-13 22:30:46 [INFO    ] root: Gen 37: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 37/100 - BestFit: 1.1009 (G-mean: 0.819) | AvgFit: 0.7264 (G-mean: 0.470) | (Diversity: 0.497) | (RuleAct: 49.9) | Mut: 0.597 | Tourn: 3 | Stagn: 2 | Time: 7.49s2025-10-13 22:31:15 [INFO    ] root: Gen 38: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 38/100 - BestFit: 1.1009 (G-mean: 0.819) | AvgFit: 0.7648 (G-mean: 0.506) | (Diversity: 0.470) | (RuleAct: 53.3) | Mut: 0.640 | Tourn: 3 | Stagn: 3 | Time: 8.01s2025-10-13 22:31:46 [INFO    ] root: Gen 39: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 39/100 - BestFit: 1.1009 (G-mean: 0.819) | AvgFit: 0.8045 (G-mean: 0.544) | (Diversity: 0.431) | (RuleAct: 56.4) | Mut: 0.664 | Tourn: 3 | Stagn: 4 | Time: 7.51s2025-10-13 22:32:17 [INFO    ] root: Gen 40: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 40/100 - BestFit: 1.1009 (G-mean: 0.819) | AvgFit: 0.7346 (G-mean: 0.480) | (Diversity: 0.478) | (RuleAct: 46.4) | Mut: 0.659 | Tourn: 3 | Stagn: 5 | Time: 7.74s2025-10-13 22:32:47 [INFO    ] root: Gen 41: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 41/100 - BestFit: 1.1009 (G-mean: 0.819) | AvgFit: 0.7467 (G-mean: 0.490) | (Diversity: 0.503) | (RuleAct: 50.9) | Mut: 0.588 | Tourn: 3 | Stagn: 6 | Time: 7.41s2025-10-13 22:33:16 [INFO    ] root: Gen 42: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 42/100 - BestFit: 1.1009 (G-mean: 0.819) | AvgFit: 0.7976 (G-mean: 0.537) | (Diversity: 0.488) | (RuleAct: 50.8) | Mut: 0.647 | Tourn: 3 | Stagn: 7 | Time: 8.46s2025-10-13 22:33:46 [INFO    ] root: Gen 43: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 43/100 - BestFit: 1.1009 (G-mean: 0.819) | AvgFit: 0.7621 (G-mean: 0.505) | (Diversity: 0.500) | (RuleAct: 51.2) | Mut: 0.606 | Tourn: 3 | Stagn: 8 | Time: 7.16s2025-10-13 22:34:14 [INFO    ] root: Gen 44: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 44/100 - BestFit: 1.1009 (G-mean: 0.819) | AvgFit: 0.7227 (G-mean: 0.467) | (Diversity: 0.480) | (RuleAct: 53.8) | Mut: 0.569 | Tourn: 3 | Stagn: 9 | Time: 7.80s2025-10-13 22:34:42 [INFO    ] root: Gen 45: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+2025-10-13 22:34:42 [INFO    ] root: 
+Estagnação detectada (10 gerações)! Ativando mecanismos de resgate...
+2025-10-13 22:34:42 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [AGGRESSIVE]
+2025-10-13 22:34:42 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.819 → EXPLORAÇÃO AGRESSIVA - Grandes mudanças estruturais
+2025-10-13 22:34:42 [INFO    ] hill_climbing_v2:      Operações: ['inject_memory_rules', 'crossover_with_memory', 'add_random_rules', 'diverse_mutation']
+2025-10-13 22:34:42 [INFO    ] hill_climbing_v2:      Variantes planejadas: 15
+2025-10-13 22:34:42 [INFO    ] hill_climbing_v2:        ✓ inject_memory_rules: 2 variantes geradas
+2025-10-13 22:34:42 [INFO    ] hill_climbing_v2:        ✓ crossover_with_memory: 3 variantes geradas
+2025-10-13 22:34:43 [INFO    ] hill_climbing_v2:        ✓ add_random_rules: 3 variantes geradas
+2025-10-13 22:34:44 [INFO    ] hill_climbing_v2:        ✓ diverse_mutation: 4 variantes geradas
+2025-10-13 22:34:44 [INFO    ] hill_climbing_v2:      Total gerado: 12 variantes, retornando 12
+2025-10-13 22:34:44 [INFO    ] root:      Avaliando 12 variantes HC geradas...
+2025-10-13 22:34:47 [INFO    ] root:        ✓ HC variant #8 APROVADO: fitness=1.1010 (elite=1.1009), gmean=0.819 (elite=0.819)
+2025-10-13 22:34:47 [INFO    ] root:      Resultado: 1/12 variantes aprovadas (8.3% taxa de aprovação)
+Gen 45/100 - BestFit: 1.1009 (G-mean: 0.819) | AvgFit: 0.8485 (G-mean: 0.585) | (Diversity: 0.468) | (RuleAct: 58.4) | Mut: 0.726 | Tourn: 2 | Stagn: 10 | Time: 8.49s2025-10-13 22:35:38 [INFO    ] root: Gen 46: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 46/100 - BestFit: 1.1010 (G-mean: 0.819) | AvgFit: 0.4463 (G-mean: 0.209) | (Diversity: 0.564) | (RuleAct: 22.5) | Mut: 0.392 | Tourn: 4 | Stagn: 0 | Time: 3.02s2025-10-13 22:35:57 [INFO    ] root: Gen 47: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 47/100 - BestFit: 1.1014 (G-mean: 0.819) | AvgFit: 0.7207 (G-mean: 0.465) | (Diversity: 0.581) | (RuleAct: 59.7) | Mut: 0.557 | Tourn: 3 | Stagn: 0 | Time: 7.77s2025-10-13 22:36:25 [INFO    ] root: Gen 48: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 48/100 - BestFit: 1.1057 (G-mean: 0.823) | AvgFit: 0.7273 (G-mean: 0.471) | (Diversity: 0.390) | (RuleAct: 50.7) | Mut: 0.581 | Tourn: 3 | Stagn: 0 | Time: 8.30s2025-10-13 22:36:53 [INFO    ] root: Gen 49: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 49/100 - BestFit: 1.1057 (G-mean: 0.823) | AvgFit: 0.7511 (G-mean: 0.493) | (Diversity: 0.443) | (RuleAct: 54.3) | Mut: 0.607 | Tourn: 3 | Stagn: 1 | Time: 8.35s2025-10-13 22:37:23 [INFO    ] root: Gen 50: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 50/100 - BestFit: 1.1057 (G-mean: 0.823) | AvgFit: 0.7980 (G-mean: 0.538) | (Diversity: 0.438) | (RuleAct: 53.0) | Mut: 0.644 | Tourn: 3 | Stagn: 2 | Time: 8.39s2025-10-13 22:37:56 [INFO    ] root: Gen 51: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 51/100 - BestFit: 1.1057 (G-mean: 0.823) | AvgFit: 0.7653 (G-mean: 0.507) | (Diversity: 0.446) | (RuleAct: 49.6) | Mut: 0.606 | Tourn: 3 | Stagn: 3 | Time: 8.11s2025-10-13 22:38:26 [INFO    ] root: Gen 52: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 52/100 - BestFit: 1.1057 (G-mean: 0.823) | AvgFit: 0.7267 (G-mean: 0.471) | (Diversity: 0.441) | (RuleAct: 50.5) | Mut: 0.571 | Tourn: 3 | Stagn: 4 | Time: 7.69s2025-10-13 22:38:55 [INFO    ] root: Gen 53: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 53/100 - BestFit: 1.1057 (G-mean: 0.823) | AvgFit: 0.7627 (G-mean: 0.504) | (Diversity: 0.446) | (RuleAct: 54.0) | Mut: 0.603 | Tourn: 3 | Stagn: 5 | Time: 8.00s2025-10-13 22:39:23 [INFO    ] root: Gen 54: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 54/100 - BestFit: 1.1066 (G-mean: 0.824) | AvgFit: 0.7804 (G-mean: 0.520) | (Diversity: 0.482) | (RuleAct: 55.5) | Mut: 0.643 | Tourn: 3 | Stagn: 0 | Time: 7.29s2025-10-13 22:39:52 [INFO    ] root: Gen 55: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 55/100 - BestFit: 1.1066 (G-mean: 0.824) | AvgFit: 0.7773 (G-mean: 0.519) | (Diversity: 0.466) | (RuleAct: 56.8) | Mut: 0.620 | Tourn: 3 | Stagn: 1 | Time: 6.63s2025-10-13 22:40:22 [INFO    ] root: Gen 56: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 56/100 - BestFit: 1.1066 (G-mean: 0.824) | AvgFit: 0.7714 (G-mean: 0.513) | (Diversity: 0.480) | (RuleAct: 45.6) | Mut: 0.615 | Tourn: 3 | Stagn: 2 | Time: 7.52s2025-10-13 22:40:49 [INFO    ] root: Gen 57: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 57/100 - BestFit: 1.1066 (G-mean: 0.824) | AvgFit: 0.7267 (G-mean: 0.472) | (Diversity: 0.487) | (RuleAct: 50.5) | Mut: 0.600 | Tourn: 3 | Stagn: 3 | Time: 6.28s2025-10-13 22:41:16 [INFO    ] root: Gen 58: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 58/100 - BestFit: 1.1081 (G-mean: 0.825) | AvgFit: 0.7650 (G-mean: 0.507) | (Diversity: 0.486) | (RuleAct: 49.9) | Mut: 0.608 | Tourn: 3 | Stagn: 0 | Time: 7.25s2025-10-13 22:41:44 [INFO    ] root: Gen 59: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 59/100 - BestFit: 1.1081 (G-mean: 0.825) | AvgFit: 0.7287 (G-mean: 0.475) | (Diversity: 0.462) | (RuleAct: 53.6) | Mut: 0.649 | Tourn: 3 | Stagn: 1 | Time: 7.67s2025-10-13 22:42:14 [INFO    ] root: Gen 60: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 60/100 - BestFit: 1.1081 (G-mean: 0.825) | AvgFit: 0.7756 (G-mean: 0.519) | (Diversity: 0.461) | (RuleAct: 51.9) | Mut: 0.693 | Tourn: 3 | Stagn: 2 | Time: 6.62s2025-10-13 22:42:44 [INFO    ] root: Gen 61: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 61/100 - BestFit: 1.1081 (G-mean: 0.825) | AvgFit: 0.7175 (G-mean: 0.463) | (Diversity: 0.471) | (RuleAct: 60.4) | Mut: 0.565 | Tourn: 3 | Stagn: 3 | Time: 6.03s2025-10-13 22:43:12 [INFO    ] root: Gen 62: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 62/100 - BestFit: 1.1081 (G-mean: 0.825) | AvgFit: 0.7933 (G-mean: 0.533) | (Diversity: 0.479) | (RuleAct: 58.3) | Mut: 0.640 | Tourn: 3 | Stagn: 4 | Time: 7.28s2025-10-13 22:43:42 [INFO    ] root: Gen 63: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 63/100 - BestFit: 1.1081 (G-mean: 0.825) | AvgFit: 0.7374 (G-mean: 0.481) | (Diversity: 0.464) | (RuleAct: 49.0) | Mut: 0.611 | Tourn: 3 | Stagn: 5 | Time: 7.31s2025-10-13 22:44:10 [INFO    ] root: Gen 64: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 64/100 - BestFit: 1.1081 (G-mean: 0.825) | AvgFit: 0.7880 (G-mean: 0.528) | (Diversity: 0.495) | (RuleAct: 54.2) | Mut: 0.639 | Tourn: 3 | Stagn: 6 | Time: 6.61s2025-10-13 22:44:40 [INFO    ] root: Gen 65: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 65/100 - BestFit: 1.1081 (G-mean: 0.825) | AvgFit: 0.7450 (G-mean: 0.488) | (Diversity: 0.489) | (RuleAct: 47.1) | Mut: 0.616 | Tourn: 3 | Stagn: 7 | Time: 6.72s2025-10-13 22:45:08 [INFO    ] root: Gen 66: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 66/100 - BestFit: 1.1116 (G-mean: 0.828) | AvgFit: 0.8056 (G-mean: 0.545) | (Diversity: 0.483) | (RuleAct: 47.8) | Mut: 0.664 | Tourn: 3 | Stagn: 0 | Time: 7.20s2025-10-13 22:45:38 [INFO    ] root: Gen 67: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 67/100 - BestFit: 1.1116 (G-mean: 0.828) | AvgFit: 0.7892 (G-mean: 0.530) | (Diversity: 0.499) | (RuleAct: 48.3) | Mut: 0.634 | Tourn: 3 | Stagn: 1 | Time: 6.83s2025-10-13 22:46:09 [INFO    ] root: Gen 68: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 68/100 - BestFit: 1.1116 (G-mean: 0.828) | AvgFit: 0.7578 (G-mean: 0.502) | (Diversity: 0.456) | (RuleAct: 51.8) | Mut: 0.674 | Tourn: 3 | Stagn: 2 | Time: 7.38s2025-10-13 22:46:39 [INFO    ] root: Gen 69: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 69/100 - BestFit: 1.1118 (G-mean: 0.828) | AvgFit: 0.7103 (G-mean: 0.458) | (Diversity: 0.478) | (RuleAct: 44.8) | Mut: 0.630 | Tourn: 3 | Stagn: 0 | Time: 7.62s2025-10-13 22:47:09 [INFO    ] root: Gen 70: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 70/100 - BestFit: 1.1118 (G-mean: 0.828) | AvgFit: 0.7710 (G-mean: 0.513) | (Diversity: 0.470) | (RuleAct: 47.3) | Mut: 0.609 | Tourn: 3 | Stagn: 1 | Time: 7.44s2025-10-13 22:47:37 [INFO    ] root: Gen 71: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 71/100 - BestFit: 1.1118 (G-mean: 0.828) | AvgFit: 0.7774 (G-mean: 0.518) | (Diversity: 0.450) | (RuleAct: 50.4) | Mut: 0.625 | Tourn: 3 | Stagn: 2 | Time: 7.34s2025-10-13 22:48:06 [INFO    ] root: Gen 72: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 72/100 - BestFit: 1.1118 (G-mean: 0.828) | AvgFit: 0.7304 (G-mean: 0.476) | (Diversity: 0.495) | (RuleAct: 53.2) | Mut: 0.649 | Tourn: 3 | Stagn: 3 | Time: 7.14s2025-10-13 22:48:35 [INFO    ] root: Gen 73: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 73/100 - BestFit: 1.1118 (G-mean: 0.828) | AvgFit: 0.7833 (G-mean: 0.524) | (Diversity: 0.496) | (RuleAct: 54.0) | Mut: 0.623 | Tourn: 3 | Stagn: 4 | Time: 6.90s2025-10-13 22:49:07 [INFO    ] root: Gen 74: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 74/100 - BestFit: 1.1118 (G-mean: 0.828) | AvgFit: 0.7737 (G-mean: 0.515) | (Diversity: 0.471) | (RuleAct: 55.6) | Mut: 0.616 | Tourn: 3 | Stagn: 5 | Time: 7.72s2025-10-13 22:49:35 [INFO    ] root: Gen 75: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 75/100 - BestFit: 1.1118 (G-mean: 0.828) | AvgFit: 0.7731 (G-mean: 0.515) | (Diversity: 0.468) | (RuleAct: 58.7) | Mut: 0.640 | Tourn: 3 | Stagn: 6 | Time: 7.13s2025-10-13 22:50:05 [INFO    ] root: Gen 76: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 76/100 - BestFit: 1.1118 (G-mean: 0.828) | AvgFit: 0.7581 (G-mean: 0.500) | (Diversity: 0.487) | (RuleAct: 55.0) | Mut: 0.598 | Tourn: 3 | Stagn: 7 | Time: 6.04s2025-10-13 22:50:34 [INFO    ] root: Gen 77: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 77/100 - BestFit: 1.1121 (G-mean: 0.829) | AvgFit: 0.8217 (G-mean: 0.560) | (Diversity: 0.465) | (RuleAct: 53.9) | Mut: 0.665 | Tourn: 3 | Stagn: 0 | Time: 7.02s2025-10-13 22:51:04 [INFO    ] root: Gen 78: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 78/100 - BestFit: 1.1121 (G-mean: 0.829) | AvgFit: 0.6698 (G-mean: 0.418) | (Diversity: 0.446) | (RuleAct: 51.3) | Mut: 0.497 | Tourn: 3 | Stagn: 1 | Time: 6.33s2025-10-13 22:51:29 [INFO    ] root: Gen 79: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 79/100 - BestFit: 1.1121 (G-mean: 0.829) | AvgFit: 0.7599 (G-mean: 0.502) | (Diversity: 0.453) | (RuleAct: 58.0) | Mut: 0.596 | Tourn: 3 | Stagn: 2 | Time: 7.79s2025-10-13 22:51:59 [INFO    ] root: Gen 80: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 80/100 - BestFit: 1.1121 (G-mean: 0.829) | AvgFit: 0.7880 (G-mean: 0.530) | (Diversity: 0.505) | (RuleAct: 54.2) | Mut: 0.702 | Tourn: 2 | Stagn: 3 | Time: 7.34s2025-10-13 22:52:28 [INFO    ] root: Gen 81: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 81/100 - BestFit: 1.1121 (G-mean: 0.829) | AvgFit: 0.7057 (G-mean: 0.455) | (Diversity: 0.525) | (RuleAct: 60.1) | Mut: 0.626 | Tourn: 3 | Stagn: 4 | Time: 6.01s2025-10-13 22:52:56 [INFO    ] root: Gen 82: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 82/100 - BestFit: 1.1121 (G-mean: 0.829) | AvgFit: 0.7368 (G-mean: 0.481) | (Diversity: 0.439) | (RuleAct: 63.8) | Mut: 0.584 | Tourn: 3 | Stagn: 5 | Time: 6.56s2025-10-13 22:53:24 [INFO    ] root: Gen 83: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 83/100 - BestFit: 1.1121 (G-mean: 0.829) | AvgFit: 0.7910 (G-mean: 0.532) | (Diversity: 0.440) | (RuleAct: 64.8) | Mut: 0.657 | Tourn: 3 | Stagn: 6 | Time: 6.90s2025-10-13 22:53:54 [INFO    ] root: Gen 84: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 84/100 - BestFit: 1.1121 (G-mean: 0.829) | AvgFit: 0.7435 (G-mean: 0.490) | (Diversity: 0.457) | (RuleAct: 59.2) | Mut: 0.661 | Tourn: 3 | Stagn: 7 | Time: 6.68s2025-10-13 22:54:24 [INFO    ] root: Gen 85: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 85/100 - BestFit: 1.1121 (G-mean: 0.829) | AvgFit: 0.7668 (G-mean: 0.511) | (Diversity: 0.432) | (RuleAct: 65.0) | Mut: 0.683 | Tourn: 3 | Stagn: 8 | Time: 6.61s2025-10-13 22:54:54 [INFO    ] root: Gen 86: Preservando 5 elites do pool híbrido (ordenados por G-mean).
+Gen 86/100 - BestFit: 1.1121 (G-mean: 0.829) | AvgFit: 0.7332 (G-mean: 0.477) | (Diversity: 0.431) | (RuleAct: 57.7) | Mut: 0.566 | Tourn: 3 | Stagn: 9 | Time: 6.03s2025-10-13 22:55:20 [INFO    ] root: 
+2025-10-13 22:55:20 [INFO    ] root: ╔══════════════════════════════════════════════════════════════╗
+2025-10-13 22:55:20 [INFO    ] root: ║ EARLY STOPPING LAYER 2: Melhoria Marginal                   ║
+2025-10-13 22:55:20 [INFO    ] root: ╠══════════════════════════════════════════════════════════════╣
+2025-10-13 22:55:20 [INFO    ] root: ║ G-mean 30 gens atrás: 0.8252                          ║
+2025-10-13 22:55:20 [INFO    ] root: ║ G-mean atual:         0.8287                          ║
+2025-10-13 22:55:20 [INFO    ] root: ║ Melhoria:              0.0035 (< 0.0050)          ║
+2025-10-13 22:55:20 [INFO    ] root: ║ Geração atual:         87                              ║
+2025-10-13 22:55:20 [INFO    ] root: ║ Decisão:               PARAR (retorno decrescente severo)  ║
+2025-10-13 22:55:20 [INFO    ] root: ╚══════════════════════════════════════════════════════════════╝
+2025-10-13 22:55:20 [INFO    ] root: 
+2025-10-13 22:55:20 [INFO    ] root: GA run finished after 87 generations.
+2025-10-13 22:55:20 [INFO    ] GBMLEvaluator[GBML]: ✓ Melhor indivíduo do chunk 0 salvo em: comparison_results/RBF_Abrupt_Severe_seed42_20251013_220924/best_individual_chunk_0.pkl
+2025-10-13 22:55:20 [INFO    ] GBMLEvaluator[GBML]: ✓ Evolução concluída - Fitness: 1.1121, G-mean: 0.8287
+2025-10-13 22:55:20 [INFO    ] GBMLEvaluator[GBML]: [PREQUENTIAL] Testando no chunk 1 (6000 instâncias)...
+2025-10-13 22:55:20 [INFO    ] GBMLEvaluator[GBML]: [RESULTADO] Treinou chunk 0 → Testou chunk 1 | Acc: 0.8272, F1: 0.8249, G-mean: 0.8163
+2025-10-13 22:55:20 [INFO    ] comparison: ✓ Resultados GBML salvos em: comparison_results/RBF_Abrupt_Severe_seed42_20251013_220924/gbml_results.csv
+2025-10-13 22:55:20 [INFO    ] comparison: 
+[4/5] Executando modelos River...
+2025-10-13 22:55:20 [INFO    ] baseline_river: 
+============================================================
+2025-10-13 22:55:20 [INFO    ] baseline_river: Executando modelo: HAT
+2025-10-13 22:55:20 [INFO    ] baseline_river: ============================================================
+2025-10-13 22:55:20 [INFO    ] baseline_river: Modelo River 'HAT' criado com sucesso
+2025-10-13 22:55:20 [INFO    ] RiverEvaluator[HAT]: Modelo River 'HAT' inicializado
+2025-10-13 22:55:20 [INFO    ] RiverEvaluator[HAT]: [PREQUENTIAL] Treinando no chunk 0 (6000 instâncias)...
+2025-10-13 22:55:21 [INFO    ] RiverEvaluator[HAT]: [PREQUENTIAL] Testando no chunk 1 (6000 instâncias)...
+2025-10-13 22:55:21 [INFO    ] RiverEvaluator[HAT]: [RESULTADO] Treinou chunk 0 → Testou chunk 1 | Acc: 0.7692, F1: 0.7658, G-mean: 0.7635
+2025-10-13 22:55:21 [INFO    ] baseline_river: 
+✓ HAT - Resultados:
+2025-10-13 22:55:21 [INFO    ] baseline_river:   Accuracy média: 0.7692
+2025-10-13 22:55:21 [INFO    ] baseline_river:   F1 média:       0.7658
+2025-10-13 22:55:21 [INFO    ] baseline_river:   G-mean média:   0.7635
+2025-10-13 22:55:21 [INFO    ] baseline_river: 
+============================================================
+2025-10-13 22:55:21 [INFO    ] baseline_river: Executando modelo: ARF
+2025-10-13 22:55:21 [INFO    ] baseline_river: ============================================================
+2025-10-13 22:55:21 [INFO    ] baseline_river: Modelo River 'ARF' criado com sucesso
+2025-10-13 22:55:21 [INFO    ] RiverEvaluator[ARF]: Modelo River 'ARF' inicializado
+2025-10-13 22:55:21 [INFO    ] RiverEvaluator[ARF]: [PREQUENTIAL] Treinando no chunk 0 (6000 instâncias)...
+2025-10-13 22:55:28 [INFO    ] RiverEvaluator[ARF]: [PREQUENTIAL] Testando no chunk 1 (6000 instâncias)...
+2025-10-13 22:55:29 [INFO    ] RiverEvaluator[ARF]: [RESULTADO] Treinou chunk 0 → Testou chunk 1 | Acc: 0.9277, F1: 0.9277, G-mean: 0.9276
+2025-10-13 22:55:29 [INFO    ] baseline_river: 
+✓ ARF - Resultados:
+2025-10-13 22:55:29 [INFO    ] baseline_river:   Accuracy média: 0.9277
+2025-10-13 22:55:29 [INFO    ] baseline_river:   F1 média:       0.9277
+2025-10-13 22:55:29 [INFO    ] baseline_river:   G-mean média:   0.9276
+2025-10-13 22:55:29 [INFO    ] baseline_river: 
+============================================================
+2025-10-13 22:55:29 [INFO    ] baseline_river: Executando modelo: SRP
+2025-10-13 22:55:29 [INFO    ] baseline_river: ============================================================
+2025-10-13 22:55:29 [INFO    ] baseline_river: Modelo River 'SRP' criado com sucesso
+2025-10-13 22:55:29 [INFO    ] RiverEvaluator[SRP]: Modelo River 'SRP' inicializado
+2025-10-13 22:55:29 [INFO    ] RiverEvaluator[SRP]: [PREQUENTIAL] Treinando no chunk 0 (6000 instâncias)...
+2025-10-13 22:55:48 [INFO    ] RiverEvaluator[SRP]: [PREQUENTIAL] Testando no chunk 1 (6000 instâncias)...
+2025-10-13 22:55:50 [INFO    ] RiverEvaluator[SRP]: [RESULTADO] Treinou chunk 0 → Testou chunk 1 | Acc: 0.9080, F1: 0.9080, G-mean: 0.9086
+2025-10-13 22:55:50 [INFO    ] baseline_river: 
+✓ SRP - Resultados:
+2025-10-13 22:55:50 [INFO    ] baseline_river:   Accuracy média: 0.9080
+2025-10-13 22:55:50 [INFO    ] baseline_river:   F1 média:       0.9080
+2025-10-13 22:55:50 [INFO    ] baseline_river:   G-mean média:   0.9086
+2025-10-13 22:55:50 [INFO    ] comparison: ✓ Resultados HAT salvos em: comparison_results/RBF_Abrupt_Severe_seed42_20251013_220924/river_HAT_results.csv
+2025-10-13 22:55:50 [INFO    ] comparison: ✓ Resultados ARF salvos em: comparison_results/RBF_Abrupt_Severe_seed42_20251013_220924/river_ARF_results.csv
+2025-10-13 22:55:50 [INFO    ] comparison: ✓ Resultados SRP salvos em: comparison_results/RBF_Abrupt_Severe_seed42_20251013_220924/river_SRP_results.csv
+2025-10-13 22:55:50 [INFO    ] comparison: 
+[5/5] Gerando análise comparativa...
+2025-10-13 22:55:50 [INFO    ] comparison: ✓ Tabela comparativa salva em: comparison_results/RBF_Abrupt_Severe_seed42_20251013_220924/comparison_table.csv
+2025-10-13 22:55:51 [INFO    ] comparison: ✓ Gráficos salvos em: comparison_results/RBF_Abrupt_Severe_seed42_20251013_220924
+2025-10-13 22:55:51 [INFO    ] comparison: ✓ Resumo salvo em: comparison_results/RBF_Abrupt_Severe_seed42_20251013_220924/summary.txt
+2025-10-13 22:55:51 [INFO    ] comparison: 
+======================================================================
+2025-10-13 22:55:51 [INFO    ] comparison: COMPARAÇÃO CONCLUÍDA!
+2025-10-13 22:55:51 [INFO    ] comparison: Resultados em: comparison_results/RBF_Abrupt_Severe_seed42_20251013_220924
+2025-10-13 22:55:51 [INFO    ] comparison: ======================================================================
+
+
+======================================================================
+RESUMO DOS RESULTADOS
+======================================================================
+ESTATÍSTICAS RESUMIDAS
+----------------------------------------------------------------------
+
+Modelo: GBML
+  Accuracy média:  0.8272 ± nan
+  F1 média:        0.8249 ± nan
+  G-mean média:    0.8163 ± nan
+
+Modelo: HAT
+  Accuracy média:  0.7692 ± nan
+  F1 média:        0.7658 ± nan
+  G-mean média:    0.7635 ± nan
+
+Modelo: ARF
+  Accuracy média:  0.9277 ± nan
+  F1 média:        0.9277 ± nan
+  G-mean média:    0.9276 ± nan
+
+Modelo: SRP
+  Accuracy média:  0.9080 ± nan
+  F1 média:        0.9080 ± nan
+  G-mean média:    0.9086 ± nan
+
+✓ Comparação concluída com sucesso!

@@ -1,0 +1,121 @@
+================================================================================
+ANÁLISE DETALHADA - EXPERIMENTO LAYER 1 (5 CHUNKS)
+================================================================================
+
+1. RESUMO GERAL
+--------------------------------------------------------------------------------
+Total de chunks: 5
+Tempo total: 0.00h (0.0min)
+Tempo médio por chunk: 0.0min (0.00h)
+
+2. DESEMPENHO (G-MEAN E OVERFITTING)
+--------------------------------------------------------------------------------
+Train G-mean: 0.0000 +/- 0.0000
+Test G-mean:  0.0000 +/- 0.0000
+Delta (Train-Test): 0.0000 +/- 0.0000
+
+Por chunk:
+  Chunk 0: Train=0.000, Test=0.000, Delta=0.000 [OK]
+  Chunk 1: Train=0.000, Test=0.000, Delta=0.000 [OK]
+  Chunk 2: Train=0.000, Test=0.000, Delta=0.000 [OK]
+  Chunk 3: Train=0.000, Test=0.000, Delta=0.000 [OK]
+  Chunk 4: Train=0.000, Test=0.000, Delta=0.000 [OK]
+
+3. CACHE SHA256 (LAYER 1 FIX 2)
+--------------------------------------------------------------------------------
+PROBLEMA: Nenhum log de cache encontrado!
+
+4. EARLY STOPPING (LAYER 1 FIX 1)
+--------------------------------------------------------------------------------
+Por chunk:
+  Chunk 0: SEM DADOS (não descartou ou logging invisível)
+  Chunk 1: SEM DADOS (não descartou ou logging invisível)
+  Chunk 2: SEM DADOS (não descartou ou logging invisível)
+  Chunk 3: SEM DADOS (não descartou ou logging invisível)
+  Chunk 4: SEM DADOS (não descartou ou logging invisível)
+
+5. HILL CLIMBING SELETIVO (LAYER 1 FIX 3)
+--------------------------------------------------------------------------------
+Por chunk:
+  Chunk 0: Aplicado=2, Pulado=0 (0% economia)
+            Variantes geradas=16, Aprovadas=6 (37.5%)
+  Chunk 1: Aplicado=4, Pulado=2 (33% economia)
+            Variantes geradas=32, Aprovadas=12 (37.5%)
+  Chunk 2: Aplicado=4, Pulado=0 (0% economia)
+            Variantes geradas=32, Aprovadas=12 (37.5%)
+  Chunk 3: Aplicado=4, Pulado=5 (56% economia)
+            Variantes geradas=32, Aprovadas=12 (37.5%)
+  Chunk 4: Aplicado=5, Pulado=2 (29% economia)
+            Variantes geradas=40, Aprovadas=13 (32.5%)
+
+6. FASE 2 - CONCEPT FINGERPRINTING
+--------------------------------------------------------------------------------
+Por chunk:
+  Chunk 0: NOVO CONCEITO
+  Chunk 1: CONCEITO RECORRENTE (similarity=0.9949)
+  Chunk 2: CONCEITO RECORRENTE (similarity=0.9953)
+  Chunk 3: CONCEITO RECORRENTE (similarity=0.9814)
+  Chunk 4: CONCEITO RECORRENTE (similarity=0.9834)
+
+7. EVOLUÇÃO DO G-MEAN POR CHUNK
+--------------------------------------------------------------------------------
+  Chunk 0: Gen 1=0.763 -> Gen final=0.913 (melhoria=+0.150)
+  Chunk 1: Gen 1=0.893 -> Gen final=0.937 (melhoria=+0.044)
+  Chunk 2: Gen 1=0.863 -> Gen final=0.940 (melhoria=+0.077)
+  Chunk 3: Gen 1=0.924 -> Gen final=0.926 (melhoria=+0.002)
+  Chunk 4: Gen 1=0.859 -> Gen final=0.932 (melhoria=+0.073)
+
+8. COMPARAÇÃO COM BASELINE (RUN3 - SEM LAYER 1)
+--------------------------------------------------------------------------------
+Run3 (baseline): 9.9h, G-mean=0.7763
+Run4 (Layer 1):  0.0h, G-mean=0.0000
+
+Redução de tempo: +100.0% (meta: -40-55%)
+Delta G-mean: -0.7763 (meta: neutro ou leve melhora)
+
+STATUS: TEMPO EXCELENTE (META ALCANÇADA!)
+
+9. CHUNK PROBLEMÁTICO (CHUNK 2)
+--------------------------------------------------------------------------------
+Test G-mean: 0.0000 (MUITO BAIXO)
+Delta: 0.0000 (overfitting SEVERO)
+Tempo: 0.0min (0.00h)
+
+Diagnóstico:
+  - Severe drift detectado no chunk seguinte (chunk 3)
+  - Train G-mean alto (0.9405) mas test muito baixo (0.4389)
+  - Overfitting extremo (delta = -0.50)
+  - Chunk 3 ativou contramedidas (SEVERE DRIFT countermeasures)
+
+================================================================================
+10. SUMÁRIO EXECUTIVO
+================================================================================
+
+LAYER 1 - OTIMIZAÇÕES:
+
+  Fix 1 (Early Stop): SEM DADOS (logging invisível ou não ativado)
+  Fix 2 (Cache SHA256): SEM DADOS
+  Fix 3 (HC Seletivo): FUNCIONANDO (32% economia)
+
+DESEMPENHO:
+
+  Tempo: 0.00h (Run3: 9.9h, delta: +100.0%)
+  G-mean: 0.0000 (Run3: 0.7763, delta: -0.7763)
+
+  RESULTADO: SUCESSO PARCIAL (redução de tempo significativa)
+
+PROBLEMAS IDENTIFICADOS:
+
+  1. Chunk 2: Overfitting extremo (delta=-0.50)
+  2. Test G-mean chunk 2: 0.4389 (muito baixo)
+  3. Severe drift detectado após chunk 2
+  4. Tempo ainda maior que Run3 (esperava-se redução)
+
+RECOMENDAÇÕES:
+
+  1. Investigar por que chunk 2 teve overfitting severo
+  2. Verificar se early stopping está sendo agressivo demais
+  3. Analisar threshold adaptativo na fase 2
+  4. Considerar implementar Layer 2 (penalizar overfitting)
+
+================================================================================

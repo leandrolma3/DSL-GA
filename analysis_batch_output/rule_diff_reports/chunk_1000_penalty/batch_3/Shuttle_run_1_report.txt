@@ -1,0 +1,693 @@
+Rule Diff Analysis Report
+Source File: RulesHistory_Shuttle_Run1.txt
+Similarity Threshold: 0.35
+
+======================================================================
+--- Diff Chunk 0 -> Chunk 1 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 0):      nan
+  - Test Acc (Chunk 1):     nan
+  - Test F1 (Chunk 1):      nan
+Fitness:       1.095172 -> 1.111945
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((attr_0 <= 54.5000) AND (attr_6 <= 27.5000)) AND (attr_7 <= 26.5000)) THEN Class 1
+  + New: IF ((((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_1 > 4.5000)) AND (attr_7 <= 38.5000)) THEN Class 1
+    (Similarity: 0.68)
+
+  New Rules:
+  + IF ((((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_1 > 4.5000)) AND (attr_0 <= 48.0000)) THEN Class 1
+  + IF ((((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_1 > 4.5000)) AND (attr_2 <= 84.5000)) THEN Class 1
+  + IF ((attr_6 > 61.0704) AND ((attr_1 > -23.5130) OR ((attr_2 > 80.2827) AND (attr_4 >= 57.2592)))) THEN Class 1
+
+=== Class 2 ===
+
+  Deleted Rules:
+  - IF ((((attr_6 > 8.5000) AND (attr_1 > -11.5000)) AND (attr_1 > 4.5000)) AND (attr_6 <= 29.0000)) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF ((attr_6 > 8.5000) AND (attr_1 <= -11.5000)) THEN Class 3
+  + New: IF ((attr_6 > 7.5000) AND (attr_1 <= -9.0000)) THEN Class 3
+    (Similarity: 0.91)
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((((((attr_6 > 8.5000) AND (attr_1 > -11.5000)) AND (attr_1 <= 4.5000)) AND (attr_0 > 53.5000)) AND (attr_8 > 3.0000)) AND (attr_3 > -6.5000)) THEN Class 4
+  + New: IF (((((attr_6 > 7.5000) AND (attr_1 > -9.0000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) AND (attr_4 >= -23.0000)) THEN Class 4
+    (Similarity: 0.73)
+  - Old: IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_0 > 55.5000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 65.5000)) AND (attr_0 > 55.5000)) THEN Class 4
+    (Similarity: 0.97)
+  - Old: IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_1 <= -0.5000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 65.5000)) AND (attr_1 <= -0.5000)) THEN Class 4
+    (Similarity: 0.97)
+  - Old: IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_3 <= -3.5000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 65.5000)) AND (attr_3 <= -2.5000)) THEN Class 4
+    (Similarity: 0.96)
+  - Old: IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_5 <= -17.5000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 65.5000)) AND (attr_5 <= -27.0000)) THEN Class 4
+    (Similarity: 0.95)
+  - Old: IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_7 <= 45.5000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 65.5000)) AND (attr_7 >= 44.5000)) THEN Class 4
+    (Similarity: 0.95)
+  - Old: IF (((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 14.5000)) THEN Class 4
+  + New: IF (((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 13.5000)) THEN Class 4
+    (Similarity: 0.97)
+
+  New Rules:
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 65.5000)) AND (attr_2 <= 77.5000)) THEN Class 4
+
+  Deleted Rules:
+  - IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_6 <= 21.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_8 <= 7.0000)) THEN Class 4
+  - IF (((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_6 <= 8.5000) THEN Class 5
+  + New: IF (attr_6 <= 7.5000) THEN Class 5
+    (Similarity: 0.94)
+
+======================================================================
+--- Diff Chunk 1 -> Chunk 2 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 1):      nan
+  - Test Acc (Chunk 2):     nan
+  - Test F1 (Chunk 2):      nan
+Fitness:       1.111945 -> 1.096699
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_1 > 4.5000)) AND (attr_2 <= 84.5000)) THEN Class 1
+  + New: IF ((((attr_0 <= 54.5000) AND (attr_1 > -5.5000)) AND (attr_7 <= 86.5000)) AND (attr_1 <= -4.5000)) THEN Class 1
+    (Similarity: 0.92)
+  - Old: IF ((((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_1 > 4.5000)) AND (attr_7 <= 38.5000)) THEN Class 1
+  + New: IF ((((attr_0 <= 54.5000) AND (attr_1 > -5.5000)) AND (attr_7 <= 86.5000)) AND (attr_6 <= 26.5000)) THEN Class 1
+    (Similarity: 0.91)
+
+  New Rules:
+  + IF ((((attr_0 >= 54.5000) AND (attr_1 > -5.5000)) AND (attr_7 <= 86.5000)) AND (attr_5 <= -29.5000)) THEN Class 1
+  + IF ((((attr_6 > 6.5000) AND (attr_1 > -18.0000)) AND (attr_1 <= 4.5000)) AND (attr_0 <= 54.5000)) THEN Class 1
+  + IF (((attr_0 <= 54.5000) AND (attr_1 > -5.5000)) AND (attr_7 > 86.5000)) THEN Class 1
+  + IF ((attr_7 < 77.6982) AND (attr_1 <= -622.9341)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_1 > 4.5000)) AND (attr_0 <= 48.0000)) THEN Class 1
+  - IF ((attr_6 > 61.0704) AND ((attr_1 > -23.5130) OR ((attr_2 > 80.2827) AND (attr_4 >= 57.2592)))) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF ((((attr_6 > 6.5000) AND (attr_1 > -18.0000)) AND (attr_1 > 4.5000)) AND (attr_0 <= 42.5000)) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF ((attr_6 > 7.5000) AND (attr_1 <= -9.0000)) THEN Class 3
+  + New: IF ((attr_6 > 6.5000) AND (attr_1 <= -18.0000)) THEN Class 3
+    (Similarity: 0.93)
+
+  New Rules:
+  + IF (attr_1 <= -7.0000) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF (((((attr_6 > 7.5000) AND (attr_1 > -9.0000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) AND (attr_4 >= -23.0000)) THEN Class 4
+  + New: IF (((((attr_6 > 6.5000) AND (attr_1 > -18.0000)) AND (attr_1 <= 4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+    (Similarity: 0.87)
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 65.5000)) AND (attr_5 <= -27.0000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_4 <= -20.0000)) THEN Class 4
+    (Similarity: 0.89)
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 65.5000)) AND (attr_7 >= 44.5000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_7 <= 43.5000)) THEN Class 4
+    (Similarity: 0.89)
+  - Old: IF (((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_6 > 13.5000)) THEN Class 4
+  + New: IF (((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+    (Similarity: 0.89)
+
+  Deleted Rules:
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 65.5000)) AND (attr_0 > 55.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 65.5000)) AND (attr_1 <= -0.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 65.5000)) AND (attr_2 <= 77.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 65.5000)) AND (attr_3 <= -2.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  New Rules:
+  + IF ((attr_6 <= 6.5000) AND (attr_7 <= 31.5000)) THEN Class 5
+  + IF ((attr_6 <= 6.5000) AND (attr_7 <= 34.5000)) THEN Class 5
+  + IF ((attr_6 <= 6.5000) AND (attr_7 > 31.5000)) THEN Class 5
+
+  Deleted Rules:
+  - IF (attr_6 <= 7.5000) THEN Class 5
+
+======================================================================
+--- Diff Chunk 2 -> Chunk 3 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 2):      nan
+  - Test Acc (Chunk 3):     nan
+  - Test F1 (Chunk 3):      nan
+Fitness:       1.096699 -> 1.111817
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_0 <= 54.5000) AND (attr_1 > -5.5000)) AND (attr_7 <= 86.5000)) AND (attr_6 <= 26.5000)) THEN Class 1
+  + New: IF ((((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_7 <= 87.5000)) AND (attr_7 <= 27.5000)) THEN Class 1
+    (Similarity: 0.96)
+  - Old: IF ((((attr_6 > 6.5000) AND (attr_1 > -18.0000)) AND (attr_1 <= 4.5000)) AND (attr_0 <= 54.5000)) THEN Class 1
+  + New: IF ((((attr_6 > 10.0000) AND (attr_1 > -32.0000)) AND (attr_0 > 54.5000)) AND (attr_4 > 53.0000)) THEN Class 1
+    (Similarity: 0.85)
+  - Old: IF (((attr_0 <= 54.5000) AND (attr_1 > -5.5000)) AND (attr_7 > 86.5000)) THEN Class 1
+  + New: IF (((attr_0 <= 54.5000) AND (attr_1 <= -4.5000)) AND (attr_7 <= 39.5000)) THEN Class 1
+    (Similarity: 0.90)
+
+  Deleted Rules:
+  - IF ((((attr_0 <= 54.5000) AND (attr_1 > -5.5000)) AND (attr_7 <= 86.5000)) AND (attr_1 <= -4.5000)) THEN Class 1
+  - IF ((((attr_0 >= 54.5000) AND (attr_1 > -5.5000)) AND (attr_7 <= 86.5000)) AND (attr_5 <= -29.5000)) THEN Class 1
+  - IF ((attr_7 < 77.6982) AND (attr_1 <= -622.9341)) THEN Class 1
+
+=== Class 2 ===
+
+  Deleted Rules:
+  - IF ((((attr_6 > 6.5000) AND (attr_1 > -18.0000)) AND (attr_1 > 4.5000)) AND (attr_0 <= 42.5000)) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF ((attr_6 > 6.5000) AND (attr_1 <= -18.0000)) THEN Class 3
+  + New: IF ((attr_6 > 10.0000) AND (attr_1 <= -32.0000)) THEN Class 3
+    (Similarity: 0.89)
+
+  Deleted Rules:
+  - IF (attr_1 <= -7.0000) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_7 <= 43.5000)) THEN Class 4
+  + New: IF ((((attr_6 > 10.0000) AND (attr_1 > -32.0000)) AND (attr_0 <= 54.5000)) AND (attr_8 > 44.0000)) THEN Class 4
+    (Similarity: 0.77)
+  - Old: IF ((((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_8 > 3.0000)) AND (attr_4 <= -20.0000)) THEN Class 4
+  + New: IF ((((attr_6 > 10.0000) AND (attr_1 > -32.0000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+    (Similarity: 0.81)
+  - Old: IF (((attr_0 > 54.5000) AND (attr_0 <= 56.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+  + New: IF (((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) THEN Class 4
+    (Similarity: 0.91)
+
+  Deleted Rules:
+  - IF (((((attr_6 > 6.5000) AND (attr_1 > -18.0000)) AND (attr_1 <= 4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+
+=== Class 5 ===
+
+  New Rules:
+  + IF (attr_6 <= 10.0000) THEN Class 5
+
+  Deleted Rules:
+  - IF ((attr_6 <= 6.5000) AND (attr_7 <= 31.5000)) THEN Class 5
+  - IF ((attr_6 <= 6.5000) AND (attr_7 <= 34.5000)) THEN Class 5
+  - IF ((attr_6 <= 6.5000) AND (attr_7 > 31.5000)) THEN Class 5
+
+======================================================================
+--- Diff Chunk 3 -> Chunk 4 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 3):      nan
+  - Test Acc (Chunk 4):     nan
+  - Test F1 (Chunk 4):      nan
+Fitness:       1.111817 -> 1.090022
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((attr_0 <= 54.5000) AND (attr_1 <= -4.5000)) AND (attr_7 <= 39.5000)) THEN Class 1
+  + New: IF (((attr_0 <= 54.5000) AND (attr_1 > -17.5000)) AND (attr_4 <= -5.0000)) THEN Class 1
+    (Similarity: 0.89)
+
+  Deleted Rules:
+  - IF ((((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_7 <= 87.5000)) AND (attr_7 <= 27.5000)) THEN Class 1
+  - IF ((((attr_6 > 10.0000) AND (attr_1 > -32.0000)) AND (attr_0 > 54.5000)) AND (attr_4 > 53.0000)) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF ((attr_6 <= 14.5000) AND (attr_1 > 3.0000)) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF (((attr_6 > 14.5000) AND (attr_1 <= -29.0000)) AND (attr_1 > -784.5863)) THEN Class 3
+  + IF (attr_1 <= -29.0000) THEN Class 3
+
+  Deleted Rules:
+  - IF ((attr_6 > 10.0000) AND (attr_1 <= -32.0000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_6 > 10.0000) AND (attr_1 > -32.0000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+  + New: IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 62.0000)) AND (attr_4 <= -13.0000)) THEN Class 4
+    (Similarity: 0.84)
+  - Old: IF ((((attr_6 > 10.0000) AND (attr_1 > -32.0000)) AND (attr_0 <= 54.5000)) AND (attr_8 > 44.0000)) THEN Class 4
+  + New: IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 62.0000)) AND (attr_7 <= 45.5000)) THEN Class 4
+    (Similarity: 0.82)
+  - Old: IF (((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) THEN Class 4
+  + New: IF (((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 62.0000)) THEN Class 4
+    (Similarity: 0.96)
+
+  New Rules:
+  + IF (((((attr_1 < -2622.5390) AND ((attr_2 >= 80.7817) AND (attr_5 > -2032.9080))) OR (attr_4 < 26.5647)) AND ((((attr_4 < -30.4320) AND (attr_1 < -2795.9840)) AND ((attr_6 < 20.5044) OR ((((((attr_5 <= -363.6659) AND (attr_8 >= 11.9562)) AND (attr_7 < 74.5180)) OR (attr_0 > 85.8054)) AND (((attr_5 >= -1761.2149) AND ((attr_8 > 13.5413) AND ((attr_0 > 62.5108) AND (attr_2 <= 97.6142)))) AND (((attr_0 <= 48.9070) AND ((attr_7 <= 97.8194) AND (attr_4 < 49.4404))) OR (((attr_6 >= 54.7836) AND (attr_3 < 0.1184)) AND ((attr_8 >= 15.5709) AND (attr_0 <= 79.5345)))))) AND (attr_6 < 42.7319)))) AND (attr_8 < 79.0462))) AND (((((attr_2 <= 99.9909) AND (attr_2 > 93.4225)) OR (attr_2 > 88.3730)) AND ((((attr_3 > -2.9074) AND (attr_5 <= 567.3942)) OR ((attr_0 > 96.7275) OR (attr_0 < 51.6222))) AND ((attr_8 <= 95.0180) OR (attr_4 <= 55.4511)))) OR (attr_8 <= 77.3027))) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 62.0000)) AND (attr_1 <= -0.5000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 62.0000)) AND (attr_2 <= 77.5000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 62.0000)) AND (attr_3 <= -2.5000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 62.0000)) AND (attr_5 <= -21.5000)) THEN Class 4
+  + IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 62.0000)) AND (attr_6 <= 21.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_6 <= 10.0000) THEN Class 5
+  + New: IF (attr_6 <= 9.0000) THEN Class 5
+    (Similarity: 0.89)
+
+  New Rules:
+  + IF (((attr_6 <= 14.5000) AND (attr_1 <= 3.0000)) AND (attr_6 <= 1.5000)) THEN Class 5
+  + IF (((attr_6 <= 14.5000) AND (attr_1 <= 3.0000)) AND (attr_6 > 1.5000)) THEN Class 5
+
+=== Class 7 ===
+
+  New Rules:
+  + IF (((attr_6 > 14.5000) AND (attr_1 <= -29.0000)) AND (attr_1 <= -92.5000)) THEN Class 7
+
+======================================================================
+--- Diff Chunk 4 -> Chunk 5 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 4):      nan
+  - Test Acc (Chunk 5):     nan
+  - Test F1 (Chunk 5):      nan
+Fitness:       1.090022 -> 1.117070
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((attr_0 <= 54.5000) AND (attr_1 > -17.5000)) AND (attr_4 <= -5.0000)) THEN Class 1
+  + New: IF ((((attr_0 <= 69.5000) AND (attr_1 > -13.0000)) AND (attr_0 <= 54.5000)) AND (attr_8 <= 55.0000)) THEN Class 1
+    (Similarity: 0.68)
+
+  New Rules:
+  + IF ((((attr_0 <= 69.5000) AND (attr_1 > -13.0000)) AND (attr_0 > 54.5000)) AND (attr_4 > 53.0000)) THEN Class 1
+
+=== Class 2 ===
+
+  Deleted Rules:
+  - IF ((attr_6 <= 14.5000) AND (attr_1 > 3.0000)) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF ((attr_0 <= 69.5000) AND (attr_1 <= -13.0000)) THEN Class 3
+
+  Deleted Rules:
+  - IF (((attr_6 > 14.5000) AND (attr_1 <= -29.0000)) AND (attr_1 > -784.5863)) THEN Class 3
+  - IF (attr_1 <= -29.0000) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 62.0000)) AND (attr_7 <= 45.5000)) THEN Class 4
+  + New: IF ((((attr_0 <= 69.5000) AND (attr_1 > -13.0000)) AND (attr_0 <= 54.5000)) AND (attr_8 > 55.0000)) THEN Class 4
+    (Similarity: 0.82)
+  - Old: IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 62.0000)) AND (attr_4 <= -13.0000)) THEN Class 4
+  + New: IF ((((attr_0 <= 69.5000) AND (attr_1 > -13.0000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+    (Similarity: 0.84)
+
+  Deleted Rules:
+  - IF (((((attr_1 < -2622.5390) AND ((attr_2 >= 80.7817) AND (attr_5 > -2032.9080))) OR (attr_4 < 26.5647)) AND ((((attr_4 < -30.4320) AND (attr_1 < -2795.9840)) AND ((attr_6 < 20.5044) OR ((((((attr_5 <= -363.6659) AND (attr_8 >= 11.9562)) AND (attr_7 < 74.5180)) OR (attr_0 > 85.8054)) AND (((attr_5 >= -1761.2149) AND ((attr_8 > 13.5413) AND ((attr_0 > 62.5108) AND (attr_2 <= 97.6142)))) AND (((attr_0 <= 48.9070) AND ((attr_7 <= 97.8194) AND (attr_4 < 49.4404))) OR (((attr_6 >= 54.7836) AND (attr_3 < 0.1184)) AND ((attr_8 >= 15.5709) AND (attr_0 <= 79.5345)))))) AND (attr_6 < 42.7319)))) AND (attr_8 < 79.0462))) AND (((((attr_2 <= 99.9909) AND (attr_2 > 93.4225)) OR (attr_2 > 88.3730)) AND ((((attr_3 > -2.9074) AND (attr_5 <= 567.3942)) OR ((attr_0 > 96.7275) OR (attr_0 < 51.6222))) AND ((attr_8 <= 95.0180) OR (attr_4 <= 55.4511)))) OR (attr_8 <= 77.3027))) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 62.0000)) AND (attr_1 <= -0.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 62.0000)) AND (attr_2 <= 77.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 62.0000)) AND (attr_3 <= -2.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 62.0000)) AND (attr_5 <= -21.5000)) THEN Class 4
+  - IF ((((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 62.0000)) AND (attr_6 <= 21.5000)) THEN Class 4
+  - IF (((attr_0 > 53.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 62.0000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_6 <= 9.0000) THEN Class 5
+  + New: IF (attr_0 > 69.5000) THEN Class 5
+    (Similarity: 0.72)
+
+  Deleted Rules:
+  - IF (((attr_6 <= 14.5000) AND (attr_1 <= 3.0000)) AND (attr_6 <= 1.5000)) THEN Class 5
+  - IF (((attr_6 <= 14.5000) AND (attr_1 <= 3.0000)) AND (attr_6 > 1.5000)) THEN Class 5
+
+=== Class 7 ===
+
+  Deleted Rules:
+  - IF (((attr_6 > 14.5000) AND (attr_1 <= -29.0000)) AND (attr_1 <= -92.5000)) THEN Class 7
+
+======================================================================
+--- Diff Chunk 5 -> Chunk 6 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 5):      nan
+  - Test Acc (Chunk 6):     nan
+  - Test F1 (Chunk 6):      nan
+Fitness:       1.117070 -> 1.098356
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_0 <= 69.5000) AND (attr_1 > -13.0000)) AND (attr_0 <= 54.5000)) AND (attr_8 <= 55.0000)) THEN Class 1
+  + New: IF (((attr_0 <= 54.5000) AND (attr_1 <= -4.5000)) AND (attr_7 <= 43.5000)) THEN Class 1
+    (Similarity: 0.66)
+
+  New Rules:
+  + IF (((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_5 <= -27.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((attr_0 <= 69.5000) AND (attr_1 > -13.0000)) AND (attr_0 > 54.5000)) AND (attr_4 > 53.0000)) THEN Class 1
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF ((attr_0 <= 69.5000) AND (attr_1 <= -13.0000)) THEN Class 3
+  + New: IF ((attr_6 > 11.0000) AND (attr_1 <= -17.0000)) THEN Class 3
+    (Similarity: 0.85)
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((((attr_0 <= 69.5000) AND (attr_1 > -13.0000)) AND (attr_0 <= 54.5000)) AND (attr_8 > 55.0000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_0 <= 55.5000)) THEN Class 4
+    (Similarity: 0.84)
+  - Old: IF ((((attr_0 <= 69.5000) AND (attr_1 > -13.0000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) THEN Class 4
+  + New: IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_4 <= -16.0000)) THEN Class 4
+    (Similarity: 0.84)
+
+  New Rules:
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_1 <= -1.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_2 <= 76.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_3 <= -2.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_5 <= 349.0487)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_6 <= 21.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_7 <= 44.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_0 > 69.5000) THEN Class 5
+  + New: IF (attr_6 <= 11.0000) THEN Class 5
+    (Similarity: 0.68)
+
+=== Class 6 ===
+
+  New Rules:
+  + IF (((attr_6 > 11.0000) AND (attr_1 > -17.0000)) AND (attr_0 > 64.5000)) THEN Class 6
+
+======================================================================
+--- Diff Chunk 6 -> Chunk 7 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 6):      nan
+  - Test Acc (Chunk 7):     nan
+  - Test F1 (Chunk 7):      nan
+Fitness:       1.098356 -> 1.097755
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((attr_0 <= 54.5000) AND (attr_1 <= -4.5000)) AND (attr_7 <= 43.5000)) THEN Class 1
+  + New: IF (((attr_6 > 12.5000) AND (attr_2 <= 75.5000)) AND (attr_5 <= 24.0000)) THEN Class 1
+    (Similarity: 0.83)
+
+  New Rules:
+  + IF (((((attr_6 > 12.5000) AND (attr_2 > 75.5000)) AND (attr_1 <= -4.5000)) AND (attr_7 <= 52.5000)) AND (attr_7 <= 33.5000)) THEN Class 1
+  + IF (((((attr_6 > 12.5000) AND (attr_2 > 75.5000)) AND (attr_1 <= -4.5000)) AND (attr_7 <= 52.5000)) AND (attr_7 > 33.5000)) THEN Class 1
+  + IF (((((attr_6 > 12.5000) AND (attr_2 > 75.5000)) AND (attr_1 > -4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 <= 3.0000)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_5 <= -27.5000)) THEN Class 1
+
+=== Class 3 ===
+
+  New Rules:
+  + IF ((((attr_6 > 12.5000) AND (attr_2 > 75.5000)) AND (attr_1 <= -4.5000)) AND (attr_7 > 52.5000)) THEN Class 3
+
+  Deleted Rules:
+  - IF ((attr_6 > 11.0000) AND (attr_1 <= -17.0000)) THEN Class 3
+
+=== Class 4 ===
+
+  New Rules:
+  + IF (((((attr_6 > 12.5000) AND (attr_2 > 75.5000)) AND (attr_1 > -4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+
+  Deleted Rules:
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_0 <= 55.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_1 <= -1.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_2 <= 76.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_3 <= -2.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_4 <= -16.0000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_5 <= 349.0487)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_6 <= 21.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.5000)) AND (attr_7 <= 44.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_6 <= 11.0000) THEN Class 5
+  + New: IF (attr_6 <= 12.5000) THEN Class 5
+    (Similarity: 0.89)
+
+=== Class 6 ===
+
+  Modified Rules:
+  - Old: IF (((attr_6 > 11.0000) AND (attr_1 > -17.0000)) AND (attr_0 > 64.5000)) THEN Class 6
+  + New: IF (((attr_6 > 12.5000) AND (attr_2 <= 75.5000)) AND (attr_5 > 24.0000)) THEN Class 6
+    (Similarity: 0.83)
+
+======================================================================
+--- Diff Chunk 7 -> Chunk 8 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 7):      nan
+  - Test Acc (Chunk 8):     nan
+  - Test F1 (Chunk 8):      nan
+Fitness:       1.097755 -> 1.097456
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((((attr_6 > 12.5000) AND (attr_2 > 75.5000)) AND (attr_1 > -4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 <= 3.0000)) THEN Class 1
+  + New: IF ((((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_1 > 4.5000)) AND (attr_6 > 37.5000)) THEN Class 1
+    (Similarity: 0.70)
+  - Old: IF (((((attr_6 > 12.5000) AND (attr_2 > 75.5000)) AND (attr_1 <= -4.5000)) AND (attr_7 <= 52.5000)) AND (attr_7 <= 33.5000)) THEN Class 1
+  + New: IF ((((attr_0 <= 70.5000) AND (attr_1 > -24.0000)) AND (attr_1 <= 4.5000)) AND (attr_0 <= 54.5000)) THEN Class 1
+    (Similarity: 0.69)
+
+  Deleted Rules:
+  - IF (((((attr_6 > 12.5000) AND (attr_2 > 75.5000)) AND (attr_1 <= -4.5000)) AND (attr_7 <= 52.5000)) AND (attr_7 > 33.5000)) THEN Class 1
+  - IF (((attr_6 > 12.5000) AND (attr_2 <= 75.5000)) AND (attr_5 <= 24.0000)) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF ((((attr_0 <= 70.5000) AND (attr_1 > -24.0000)) AND (attr_1 > 4.5000)) AND (attr_2 <= 80.0000)) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF ((attr_0 <= 70.5000) AND (attr_1 <= -24.0000)) THEN Class 3
+
+  Deleted Rules:
+  - IF ((((attr_6 > 12.5000) AND (attr_2 > 75.5000)) AND (attr_1 <= -4.5000)) AND (attr_7 > 52.5000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF (((((attr_6 > 12.5000) AND (attr_2 > 75.5000)) AND (attr_1 > -4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+  + New: IF (((((attr_0 <= 70.5000) AND (attr_1 > -24.0000)) AND (attr_1 <= 4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+    (Similarity: 0.89)
+
+  New Rules:
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_0 > 55.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_1 <= -2.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_3 <= -3.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_5 <= -23.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_6 <= 21.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_7 <= 44.5000)) THEN Class 4
+  + IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_8 <= 5.0000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_6 <= 12.5000) THEN Class 5
+  + New: IF (attr_0 > 70.5000) THEN Class 5
+    (Similarity: 0.74)
+
+=== Class 6 ===
+
+  Deleted Rules:
+  - IF (((attr_6 > 12.5000) AND (attr_2 <= 75.5000)) AND (attr_5 > 24.0000)) THEN Class 6
+
+======================================================================
+--- Diff Chunk 8 -> Chunk 9 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 8):      nan
+  - Test Acc (Chunk 9):     nan
+  - Test F1 (Chunk 9):      nan
+Fitness:       1.097456 -> 1.089931
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  New Rules:
+  + IF (((((((attr_6 > 11.0000) AND (attr_1 > -7.0000)) AND (attr_0 <= 61.0000)) AND (attr_6 > 20.5000)) AND (attr_0 <= 54.5000)) AND (attr_8 <= 43.0000)) AND (attr_4 > -1.0000)) THEN Class 1
+  + IF ((((((attr_6 > 11.0000) AND (attr_1 > -7.0000)) AND (attr_0 <= 61.0000)) AND (attr_6 > 20.5000)) AND (attr_0 > 54.5000)) AND (attr_8 <= 3.0000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((attr_0 <= 54.5000) AND (attr_1 > -4.5000)) AND (attr_1 > 4.5000)) AND (attr_6 > 37.5000)) THEN Class 1
+  - IF ((((attr_0 <= 70.5000) AND (attr_1 > -24.0000)) AND (attr_1 <= 4.5000)) AND (attr_0 <= 54.5000)) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF (((attr_6 > 11.0000) AND (attr_1 > -7.0000)) AND (attr_0 > 61.0000)) THEN Class 2
+
+  Deleted Rules:
+  - IF ((((attr_0 <= 70.5000) AND (attr_1 > -24.0000)) AND (attr_1 > 4.5000)) AND (attr_2 <= 80.0000)) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF ((attr_0 <= 70.5000) AND (attr_1 <= -24.0000)) THEN Class 3
+  + New: IF ((attr_6 > 11.0000) AND (attr_1 <= -7.0000)) THEN Class 3
+    (Similarity: 0.83)
+
+=== Class 4 ===
+
+  New Rules:
+  + IF (((((((attr_6 > 11.0000) AND (attr_1 > -7.0000)) AND (attr_0 <= 61.0000)) AND (attr_6 > 20.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) AND (attr_5 <= -26.5000)) THEN Class 4
+  + IF (((((((attr_6 > 11.0000) AND (attr_1 > -7.0000)) AND (attr_0 <= 61.0000)) AND (attr_6 > 20.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) AND (attr_5 > -26.5000)) THEN Class 4
+
+  Deleted Rules:
+  - IF (((((attr_0 <= 70.5000) AND (attr_1 > -24.0000)) AND (attr_1 <= 4.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_0 > 55.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_1 <= -2.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_3 <= -3.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_5 <= -23.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_6 <= 21.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_7 <= 44.5000)) THEN Class 4
+  - IF ((((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 63.0000)) AND (attr_8 <= 5.0000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_0 > 70.5000) THEN Class 5
+  + New: IF (attr_6 <= 11.0000) THEN Class 5
+    (Similarity: 0.68)
+
+=== Class 6 ===
+
+  New Rules:
+  + IF ((((attr_6 > 11.0000) AND (attr_1 > -7.0000)) AND (attr_0 <= 61.0000)) AND (attr_6 <= 20.5000)) THEN Class 6
+
+======================================================================
+--- Diff Chunk 9 -> Chunk 10 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 9):      nan
+  - Test Acc (Chunk 10):     nan
+  - Test F1 (Chunk 10):      nan
+Fitness:       1.089931 -> 1.079793
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((((attr_5 >= -2118.5264) AND (attr_0 <= 85.9729)) AND (attr_2 > 103.8648)) AND (attr_8 < 82.2197)) THEN Class 1
+  + IF (((attr_0 <= 54.5000) AND (attr_8 <= 38.0000)) AND (attr_6 <= 25.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((((attr_6 > 11.0000) AND (attr_1 > -7.0000)) AND (attr_0 <= 61.0000)) AND (attr_6 > 20.5000)) AND (attr_0 <= 54.5000)) AND (attr_8 <= 43.0000)) AND (attr_4 > -1.0000)) THEN Class 1
+  - IF ((((((attr_6 > 11.0000) AND (attr_1 > -7.0000)) AND (attr_0 <= 61.0000)) AND (attr_6 > 20.5000)) AND (attr_0 > 54.5000)) AND (attr_8 <= 3.0000)) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF ((attr_0 > 68.0000) AND (attr_0 <= 77.5000)) THEN Class 2
+
+  Deleted Rules:
+  - IF (((attr_6 > 11.0000) AND (attr_1 > -7.0000)) AND (attr_0 > 61.0000)) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF ((attr_6 > 11.0000) AND (attr_1 <= -7.0000)) THEN Class 3
+  + New: IF ((attr_0 <= 68.0000) AND (attr_1 <= -21.5000)) THEN Class 3
+    (Similarity: 0.83)
+
+=== Class 4 ===
+
+  New Rules:
+  + IF (((((attr_0 <= 68.0000) AND (attr_1 > -21.5000)) AND (attr_0 <= 54.5000)) AND (attr_6 <= 25.5000)) AND (attr_7 > 25.5000)) THEN Class 4
+  + IF (((((attr_0 <= 68.0000) AND (attr_1 > -21.5000)) AND (attr_0 > 54.5000)) AND (attr_4 <= 53.0000)) AND (attr_4 > -26.0000)) THEN Class 4
+  + IF (((attr_0 > 54.5000) AND (attr_4 <= 53.0000)) AND (attr_0 <= 64.0000)) THEN Class 4
+
+  Deleted Rules:
+  - IF (((((((attr_6 > 11.0000) AND (attr_1 > -7.0000)) AND (attr_0 <= 61.0000)) AND (attr_6 > 20.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) AND (attr_5 <= -26.5000)) THEN Class 4
+  - IF (((((((attr_6 > 11.0000) AND (attr_1 > -7.0000)) AND (attr_0 <= 61.0000)) AND (attr_6 > 20.5000)) AND (attr_0 > 54.5000)) AND (attr_8 > 3.0000)) AND (attr_5 > -26.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (attr_6 <= 11.0000) THEN Class 5
+  + New: IF (attr_6 <= 7.5000) THEN Class 5
+    (Similarity: 0.84)
+
+  New Rules:
+  + IF ((attr_0 > 77.5000) AND (attr_5 <= -17.5000)) THEN Class 5
+
+=== Class 6 ===
+
+  Deleted Rules:
+  - IF ((((attr_6 > 11.0000) AND (attr_1 > -7.0000)) AND (attr_0 <= 61.0000)) AND (attr_6 <= 20.5000)) THEN Class 6
+
+======================================================================
+Overall Performance Summary (from History File)
+======================================================================
+Avg Train Accuracy: nan +/- nan (over 0 chunks)
+Avg Test Accuracy:  nan +/- nan (over 0 chunks)
+Avg Test F1:        nan +/- nan (over 0 chunks)
+======================================================================

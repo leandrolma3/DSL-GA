@@ -1,0 +1,99 @@
+================================================================================
+INSTRUÇÕES DE UPLOAD PARA SERVIDOR SSH
+================================================================================
+
+PROBLEMA IDENTIFICADO:
+- O servidor requer autenticação (senha ou chave SSH)
+- O script precisa de configuração inicial
+
+================================================================================
+SOLUÇÃO 1: CONFIGURAR CHAVE SSH (RECOMENDADO - SEM SENHA)
+================================================================================
+
+Passo 1: Execute o script de configuração
+-----------------------------------------
+Duplo clique em: setup_ssh_key.bat
+
+OU no PowerShell:
+> .\setup_ssh_key.ps1
+
+Passo 2: Digite a senha do servidor APENAS UMA VEZ
+---------------------------------------------------
+Quando solicitado, digite a senha: [sua senha]
+
+Passo 3: Pronto! Agora use o upload normalmente
+------------------------------------------------
+Duplo clique em: upload.bat
+
+✅ VANTAGEM: Nunca mais precisará digitar senha!
+
+================================================================================
+SOLUÇÃO 2: USAR UPLOAD COM SENHA (MAIS SIMPLES, MAS PEDE SENHA SEMPRE)
+================================================================================
+
+Execute: upload_with_password.bat
+
+- Digitará a senha UMA VEZ no início
+- Mas ainda precisará confirmar para cada arquivo
+- Menos seguro que chave SSH
+
+================================================================================
+RESUMO DOS ARQUIVOS
+================================================================================
+
+✅ USAR PRIMEIRO:
+- setup_ssh_key.ps1    -> Configura autenticação sem senha (executar 1x)
+
+✅ USAR DEPOIS:
+- upload.bat            -> Upload rápido (funciona após setup_ssh_key)
+- upload_simple.ps1     -> Script que o upload.bat executa
+
+⚠️ ALTERNATIVA:
+- upload_with_password.ps1  -> Se não quiser configurar chave SSH
+
+================================================================================
+RESOLUÇÃO DE PROBLEMAS
+================================================================================
+
+PROBLEMA: "Falha na conexão SSH"
+CAUSA: Servidor requer autenticação
+SOLUÇÃO: Execute setup_ssh_key.ps1 PRIMEIRO
+
+PROBLEMA: "Ainda pede senha após setup"
+CAUSA: Chave não foi copiada corretamente
+SOLUÇÃO: Execute setup_ssh_key.ps1 novamente
+
+PROBLEMA: "Permission denied"
+CAUSA: Senha incorreta ou chave inválida
+SOLUÇÃO: Verifique senha ou regere chave SSH
+
+================================================================================
+TESTE MANUAL
+================================================================================
+
+Para testar conexão SSH manualmente:
+
+1. Teste com senha:
+> ssh root@right-scotia-humor-toward.trycloudflare.com
+
+2. Teste com chave (após setup):
+> ssh root@right-scotia-humor-toward.trycloudflare.com
+(Deve conectar SEM pedir senha)
+
+================================================================================
+CONFIGURAÇÃO ATUAL DO SISTEMA
+================================================================================
+
+✅ Hill Climbing Inteligente: ATIVADO
+✅ Crossover Balanceado: ATIVADO
+
+Arquivos que serão enviados:
+- ga_operators.py
+- ga.py
+- main.py
+- config.yaml
+
+Servidor: root@right-scotia-humor-toward.trycloudflare.com
+Diretório remoto: ~/DSL-AG-hybrid
+
+================================================================================

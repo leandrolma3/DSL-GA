@@ -1,0 +1,40 @@
+ROSE_Original (como no paper)
+Evaluator: WindowAUCImbalancedPerformanceEvaluator
+Eval frequency: 500
+N_classes: 2
+
+Command: java -Xmx4g -javaagent:rose_jars/sizeofag-1.0.4.jar -cp rose_jars/ROSE-1.0.jar:rose_jars/MOA-dependencies.jar moa.DoTask EvaluateInterleavedTestThenTrain -e (WindowAUCImbalancedPerformanceEvaluator) -s (ArffFileStream -f /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_6chunks_phase2_gbml/batch_1/STAGGER_Abrupt_Chain/run_1/rose_arff/STAGGER_Abrupt_Chain.arff) -l (moa.classifiers.meta.imbalanced.ROSE) -f 500 -d /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_6chunks_phase2_gbml/batch_1/STAGGER_Abrupt_Chain/run_1/rose_original_output/rose_original_results.csv
+
+STDOUT:
+learning evaluation instances,evaluation time (cpu seconds),model cost (RAM-Hours),classified instances,pAUC,sAUC,Accuracy,Kappa,Periodical holdout AUC,Pos/Neg ratio,G-Mean,Recall,KappaM,Classes,CM[0][0],CM[0][1],CM[1][0],CM[1][1],model training instances,model serialized size (bytes)
+500.0,0.480409839,1.1463010302431881E-7,500.0,0.9891503452162885,0.8450118344148944,0.998,0.9881449165402124,0.0,0.10375275938189846,0.9893045053244826,0.9787234042553191,0.9787234042553191,2.0,453.0,1.0,0.0,46.0,500.0,944176.0
+1000.0,0.885393669,1.9680216260121511E-7,1000.0,0.995530324949367,0.9353045888964869,0.999,0.9949921878129883,0.0,0.1273957158962796,0.9955653883486891,0.9911504424778761,0.9911504424778761,2.0,887.0,1.0,0.0,112.0,1000.0,784312.0
+1500.0,1.32397036,3.2350169879132674E-7,1500.0,0.9292868939404111,0.6541454115718066,0.879,0.708143988730981,0.995530324949367,0.5082956259426847,0.8138886869370395,0.6735905044510386,0.52734375,2.0,652.0,110.0,11.0,227.0,1500.0,1116688.0
+2000.0,1.642936272,4.2293235339751675E-7,2000.0,0.7751310861423221,0.41465586090307843,0.765,0.5448206399628108,0.995530324949367,1.247191011235955,0.7639620540593064,0.6054054054054054,0.2780337941628265,2.0,429.0,219.0,16.0,336.0,2000.0,1204976.0
+2500.0,1.850310994,4.758842059834633E-7,2500.0,0.8099200468971357,0.46747219264692236,0.785,0.5839493463166939,0.7751310861423221,1.304147465437788,0.7895350029194587,0.6395759717314488,0.3814729574223246,2.0,423.0,204.0,11.0,362.0,2500.0,987024.0
+3000.0,2.048892347,5.26305502522563E-7,3000.0,0.8187994736309343,0.5003724025127984,0.803,0.616791160908808,0.7751310861423221,1.247191011235955,0.8045573199097416,0.6576576576576577,0.46076642335766427,2.0,438.0,190.0,7.0,365.0,3000.0,981472.0
+3500.0,2.273231843,5.838273881952217E-7,3500.0,0.9391731721544438,0.6555010969544521,0.88,0.7611303312724189,0.8187994736309343,1.4449877750611246,0.8914244640099772,0.8104906937394247,0.6713615023474179,2.0,401.0,112.0,8.0,479.0,3500.0,991128.0
+4000.0,2.47900003,6.365512896651485E-7,4000.0,0.9943217974448089,0.8999402806199472,0.976,0.9469751534406496,0.8187994736309343,1.932551319648094,0.9768341872560886,0.9742033383915023,0.9331941544885177,2.0,334.0,17.0,7.0,642.0,4000.0,990448.0
+4500.0,2.686172026,6.898376940986721E-7,4500.0,1.0,0.9821696478918631,1.0,1.0,0.9943217974448089,1.9585798816568047,1.0,1.0,1.0,2.0,338.0,0.0,0.0,662.0,4500.0,994232.0
+5000.0,2.909660597,7.472944963997023E-7,5000.0,1.0,0.98574778469262,1.0,1.0,0.9943217974448089,2.0864197530864197,1.0,1.0,1.0,2.0,324.0,0.0,0.0,676.0,5000.0,993776.0
+
+
+STDERR:
+
+{M}assive {O}nline {A}nalysis
+Version:  21.07 July 2021
+Copyright: (C) 2007-2021 University of Waikato, Hamilton, New Zealand
+Web: http://moa.cms.waikato.ac.nz/
+
+- 0.00s [running] Preparing option learner...                                  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by sizeof.agent.SizeOfAgent (file:/content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/rose_jars/MOA-dependencies.jar) to field java.util.HashMap.table
+WARNING: Please consider reporting this to the maintainers of sizeof.agent.SizeOfAgent
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+\ 0.74s [running] 11.66% Evaluating learner...                                 
+| 1.59s [running] 46.71% Evaluating learner...                                 
+/ 2.53s [running] 81.76% Evaluating learner...                                 
+                                                                               
+Task completed in 3.04s (CPU time)
+

@@ -1,0 +1,41 @@
+ROSE_Original (como no paper)
+Evaluator: WindowAUCImbalancedPerformanceEvaluator
+Eval frequency: 500
+N_classes: 2
+
+Command: java -Xmx4g -javaagent:rose_jars/sizeofag-1.0.4.jar -cp rose_jars/ROSE-1.0.jar:rose_jars/MOA-dependencies.jar moa.DoTask EvaluateInterleavedTestThenTrain -e (WindowAUCImbalancedPerformanceEvaluator) -s (ArffFileStream -f /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_6chunks_phase2_gbml/batch_3/STAGGER_Abrupt_Chain_Noise/run_1/rose_arff/STAGGER_Abrupt_Chain_Noise.arff) -l (moa.classifiers.meta.imbalanced.ROSE) -f 500 -d /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_6chunks_phase2_gbml/batch_3/STAGGER_Abrupt_Chain_Noise/run_1/rose_original_output/rose_original_results.csv
+
+STDOUT:
+learning evaluation instances,evaluation time (cpu seconds),model cost (RAM-Hours),classified instances,pAUC,sAUC,Accuracy,Kappa,Periodical holdout AUC,Pos/Neg ratio,G-Mean,Recall,KappaM,Classes,CM[0][0],CM[0][1],CM[1][0],CM[1][1],model training instances,model serialized size (bytes)
+500.0,0.572449802,1.3689732928470605E-7,500.0,0.9767517875383044,0.8399280949849486,0.992,0.9577970035872546,0.0,0.12359550561797752,0.9629500128629352,0.9272727272727272,0.9272727272727272,2.0,445.0,4.0,0.0,51.0,500.0,948664.0
+1000.0,1.049998175,2.333570286821036E-7,1000.0,0.9892047613017602,0.9104111442924867,0.996,0.9785380091857321,0.0,0.1185682326621924,0.9809506363438459,0.9622641509433962,0.9622641509433962,2.0,894.0,4.0,0.0,102.0,1000.0,780784.0
+1500.0,1.738660042,4.375851754002232E-7,1500.0,0.9200911680911681,0.6111771489076098,0.855,0.6430329886755292,0.9892047613017602,0.48148148148148145,0.7806608348260716,0.6338461538461538,0.42763157894736825,2.0,649.0,119.0,26.0,206.0,1500.0,1146336.0
+2000.0,1.997246978,5.176251144387283E-7,2000.0,0.7564853013357997,0.362703544768207,0.727,0.4726675680896271,0.9892047613017602,1.2675736961451247,0.7263568144833373,0.5688729874776386,0.1599999999999998,2.0,409.0,241.0,32.0,318.0,2000.0,1196472.0
+2500.0,2.213393784,5.733317512209961E-7,2500.0,0.7868884141999797,0.39691409239946046,0.754,0.5287085464681878,0.7564853013357997,1.2988505747126438,0.7531846738242455,0.5752212389380531,0.29310344827586204,2.0,429.0,240.0,6.0,325.0,2500.0,996232.0
+3000.0,2.430752544,6.321685811661929E-7,3000.0,0.7978206168831169,0.4217013851192729,0.767,0.5519575417275594,0.7564853013357997,1.2727272727272727,0.765028010691672,0.5892857142857143,0.35871559633027517,2.0,437.0,230.0,3.0,330.0,3000.0,1046344.0
+3500.0,2.878229319,7.861522363573747E-7,3500.0,0.916226901878005,0.5325135061626728,0.819,0.645662200574771,0.7978206168831169,1.5380710659898478,0.8361572831678474,0.7211221122112211,0.49881329113924033,2.0,382.0,169.0,12.0,437.0,3500.0,1330168.0
+4000.0,3.316218161,9.417649478543156E-7,4000.0,0.9888193699687164,0.7808803087107714,0.934,0.8579734969937725,0.7978206168831169,1.932551319648094,0.9430775154926768,0.91350531107739,0.8155136268343817,2.0,332.0,57.0,9.0,602.0,4000.0,1373360.0
+4500.0,3.514067818,9.902061603180545E-7,4500.0,1.0,0.950276819764089,1.0,1.0,0.9888193699687164,1.8985507246376812,1.0,1.0,1.0,2.0,345.0,0.0,0.0,655.0,4500.0,946416.0
+5000.0,3.630326701,1.0186758631951774E-6,5000.0,1.0,0.9933560067320204,1.0,1.0,0.9888193699687164,1.7247956403269755,1.0,1.0,1.0,2.0,367.0,0.0,0.0,633.0,5000.0,946584.0
+
+
+STDERR:
+
+{M}assive {O}nline {A}nalysis
+Version:  21.07 July 2021
+Copyright: (C) 2007-2021 University of Waikato, Hamilton, New Zealand
+Web: http://moa.cms.waikato.ac.nz/
+
+- 0.00s [running] Preparing option stream...                                   
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by sizeof.agent.SizeOfAgent (file:/content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/rose_jars/MOA-dependencies.jar) to field java.util.HashMap.table
+WARNING: Please consider reporting this to the maintainers of sizeof.agent.SizeOfAgent
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+\ 0.67s [running] 11.32% Evaluating learner...                                 
+| 1.52s [running] 22.66% Evaluating learner...                                 
+/ 2.35s [running] 51.01% Evaluating learner...                                 
+- 3.26s [running] 79.36% Evaluating learner...                                 
+                                                                               
+Task completed in 3.72s (CPU time)
+

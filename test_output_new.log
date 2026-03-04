@@ -1,0 +1,1146 @@
+nohup: ignoring input
+2025-10-19 13:52:43 [INFO    ] comparison: ======================================================================
+2025-10-19 13:52:43 [INFO    ] comparison: COMPARAÇÃO: GBML vs River
+2025-10-19 13:52:43 [INFO    ] comparison: Stream: RBF_Abrupt_Severe
+2025-10-19 13:52:43 [INFO    ] comparison: Chunks: 3 x 6000 instâncias
+2025-10-19 13:52:43 [INFO    ] comparison: Seed: 42
+2025-10-19 13:52:43 [INFO    ] comparison: ======================================================================
+2025-10-19 13:52:43 [INFO    ] comparison: Resultados serão salvos em: comparison_results/RBF_Abrupt_Severe_seed42_20251019_135243
+2025-10-19 13:52:43 [INFO    ] comparison: 
+[1/5] Carregando configuração...
+2025-10-19 13:52:43 [INFO    ] comparison: ✓ Configuração carregada de: config.yaml
+2025-10-19 13:52:43 [INFO    ] comparison: 
+[2/5] Gerando/carregando chunks (compartilhados)...
+2025-10-19 13:52:43 [INFO    ] shared_evaluation: ChunkCache inicializado em: chunks_cache
+2025-10-19 13:52:43 [INFO    ] shared_evaluation: [CACHE MISS] Gerando chunks para 'RBF_Abrupt_Severe' (seed=42)
+2025-10-19 13:52:43 [INFO    ] data_handling_final: Full configuration loaded from config.yaml
+2025-10-19 13:52:43 [INFO    ] data_handling_final: --- Generating stream: 'RBF_Abrupt_Severe' ---
+2025-10-19 13:52:43 [INFO    ] data_handling_final: Mode: Drift Simulation
+2025-10-19 13:52:43 [INFO    ] data_handling_final: Generation for 'RBF_Abrupt_Severe' complete. Total chunks: 4.
+2025-10-19 13:52:43 [INFO    ] shared_evaluation: ✓ Chunks salvos em cache: chunks_cache/RBF_Abrupt_Severe_cs6000_nc4_seed42.pkl
+2025-10-19 13:52:43 [INFO    ] shared_evaluation: ✓ Total de 4 chunks gerados/carregados para 'RBF_Abrupt_Severe'
+2025-10-19 13:52:43 [INFO    ] shared_evaluation: ✓ Validação de 4 chunks passou!
+2025-10-19 13:52:43 [INFO    ] comparison: ✓ 4 chunks validados e prontos
+2025-10-19 13:52:43 [INFO    ] comparison:   Atributos: 10
+2025-10-19 13:52:43 [INFO    ] comparison:   Classes: [0, 1]
+2025-10-19 13:52:43 [INFO    ] comparison: 
+[3/5] Executando GBML...
+2025-10-19 13:52:43 [INFO    ] GBMLEvaluator[GBML]: Salvamento de indivíduos ativado em: comparison_results/RBF_Abrupt_Severe_seed42_20251019_135243
+2025-10-19 13:52:43 [INFO    ] GBMLEvaluator[GBML]: GBMLEvaluator inicializado para classes: [0, 1]
+2025-10-19 13:52:43 [INFO    ] GBMLEvaluator[GBML]: [PREQUENTIAL] Treinando no chunk 0 (6000 instâncias)...
+2025-10-19 13:52:43 [INFO    ] GBMLEvaluator[GBML]: Iniciando evolução GA em 6000 instâncias...
+2025-10-19 13:52:43 [INFO    ] root: Starting GA run: Pop=120, MaxGen=200, Elit=0.10, Parallel=True, InitStrategy=full_random
+2025-10-19 13:52:43 [INFO    ] root: Initializing population with strategy 'full_random' and performance 'medium'.
+2025-10-19 13:52:43 [INFO    ] root: Construindo o 'Pool de Genes' com a estratégia 'Focus Training' usando Decision Tree...
+2025-10-19 13:52:43 [INFO    ] root: Estratégia de reset ativada. Usando 'Seeding Multi-Profundidade'.
+2025-10-19 13:52:43 [INFO    ] root:   -> SEEDING ADAPTATIVO ATIVADO: Estimando complexidade do chunk...
+2025-10-19 13:52:43 [INFO    ] root:   -> Complexidade estimada: MEDIUM (DT probe acc: 0.789)
+2025-10-19 13:52:43 [INFO    ] root:      Problema MÉDIO (DT probe 75-90%) - Seeding moderado
+2025-10-19 13:52:43 [INFO    ] root:      Parâmetros adaptativos: seeding_ratio=0.6, injection_ratio=0.6, depths=[5, 8, 10]
+2025-10-19 13:52:43 [INFO    ] root:   -> Seeding Probabilístico ATIVADO: Injetando 60% das regras DT
+2025-10-19 13:52:45 [INFO    ] root: População de reset criada: 120 indivíduos (72 semeados, 48 aleatórios).
+2025-10-19 13:52:45 [INFO    ] root: Parallel enabled. Using cores: 12
+2025-10-19 13:54:15 [INFO    ] root: Gen 1: Preservando 1 elites do pool híbrido (ordenados por G-mean).
+Gen 1/200 - BestFit: 1.1430 (G-mean: 0.857) | AvgFit: 0.8893 (G-mean: 0.625) | (Diversity: 0.628) | (RuleAct: 74.8) | Mut: 0.774 | Tourn: 2 | Stagn: 0 | Time: 90.86s2025-10-19 13:56:36 [INFO    ] root: Gen 2: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 2/200 - BestFit: 1.1430 (G-mean: 0.857) | AvgFit: 0.6200 (G-mean: 0.373) | (Diversity: 0.484) | (RuleAct: 54.7) | Mut: 0.534 | Tourn: 3 | Stagn: 1 | Time: 21.92s2025-10-19 13:58:01 [INFO    ] root: Gen 3: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 3/200 - BestFit: 1.1430 (G-mean: 0.857) | AvgFit: 0.7439 (G-mean: 0.488) | (Diversity: 0.491) | (RuleAct: 61.1) | Mut: 0.580 | Tourn: 3 | Stagn: 2 | Time: 23.82s2025-10-19 13:59:26 [INFO    ] root: Gen 4: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 4/200 - BestFit: 1.1446 (G-mean: 0.858) | AvgFit: 0.7509 (G-mean: 0.495) | (Diversity: 0.483) | (RuleAct: 54.8) | Mut: 0.650 | Tourn: 3 | Stagn: 0 | Time: 22.81s2025-10-19 14:00:51 [INFO    ] root: Gen 5: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 5/200 - BestFit: 1.1446 (G-mean: 0.858) | AvgFit: 0.7406 (G-mean: 0.484) | (Diversity: 0.447) | (RuleAct: 55.3) | Mut: 0.590 | Tourn: 3 | Stagn: 1 | Time: 19.21s2025-10-19 14:02:09 [INFO    ] root: Gen 6: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 6/200 - BestFit: 1.1446 (G-mean: 0.858) | AvgFit: 0.7864 (G-mean: 0.527) | (Diversity: 0.479) | (RuleAct: 56.0) | Mut: 0.619 | Tourn: 3 | Stagn: 2 | Time: 18.73s2025-10-19 14:03:27 [INFO    ] root: Gen 7: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 7/200 - BestFit: 1.1446 (G-mean: 0.858) | AvgFit: 0.7620 (G-mean: 0.504) | (Diversity: 0.504) | (RuleAct: 54.0) | Mut: 0.660 | Tourn: 3 | Stagn: 3 | Time: 17.36s2025-10-19 14:04:44 [INFO    ] root: Gen 8: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 8/200 - BestFit: 1.1446 (G-mean: 0.858) | AvgFit: 0.7564 (G-mean: 0.499) | (Diversity: 0.504) | (RuleAct: 52.5) | Mut: 0.601 | Tourn: 3 | Stagn: 4 | Time: 16.63s2025-10-19 14:05:57 [INFO    ] root: Gen 9: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 9/200 - BestFit: 1.1449 (G-mean: 0.859) | AvgFit: 0.8153 (G-mean: 0.554) | (Diversity: 0.475) | (RuleAct: 53.7) | Mut: 0.663 | Tourn: 3 | Stagn: 0 | Time: 17.13s2025-10-19 14:07:11 [INFO    ] root: Gen 10: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 10/200 - BestFit: 1.1459 (G-mean: 0.860) | AvgFit: 0.7869 (G-mean: 0.527) | (Diversity: 0.489) | (RuleAct: 55.4) | Mut: 0.627 | Tourn: 3 | Stagn: 0 | Time: 15.42s2025-10-19 14:08:25 [INFO    ] root: Gen 11: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 11/200 - BestFit: 1.1501 (G-mean: 0.864) | AvgFit: 0.8219 (G-mean: 0.561) | (Diversity: 0.477) | (RuleAct: 52.4) | Mut: 0.709 | Tourn: 2 | Stagn: 0 | Time: 16.31s2025-10-19 14:09:46 [INFO    ] root: Gen 12: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 12/200 - BestFit: 1.1501 (G-mean: 0.864) | AvgFit: 0.7040 (G-mean: 0.450) | (Diversity: 0.517) | (RuleAct: 57.2) | Mut: 0.605 | Tourn: 3 | Stagn: 1 | Time: 15.16s2025-10-19 14:11:02 [INFO    ] root: Gen 13: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 13/200 - BestFit: 1.1501 (G-mean: 0.864) | AvgFit: 0.7355 (G-mean: 0.479) | (Diversity: 0.473) | (RuleAct: 58.4) | Mut: 0.571 | Tourn: 3 | Stagn: 2 | Time: 17.08s2025-10-19 14:12:14 [INFO    ] root: Gen 14: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 14/200 - BestFit: 1.1540 (G-mean: 0.867) | AvgFit: 0.7986 (G-mean: 0.538) | (Diversity: 0.491) | (RuleAct: 58.7) | Mut: 0.634 | Tourn: 3 | Stagn: 0 | Time: 17.84s2025-10-19 14:13:31 [INFO    ] root: Gen 15: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 15/200 - BestFit: 1.1605 (G-mean: 0.873) | AvgFit: 0.7775 (G-mean: 0.518) | (Diversity: 0.456) | (RuleAct: 54.9) | Mut: 0.617 | Tourn: 3 | Stagn: 0 | Time: 16.58s2025-10-19 14:14:46 [INFO    ] root: Gen 16: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 16/200 - BestFit: 1.1605 (G-mean: 0.873) | AvgFit: 0.7721 (G-mean: 0.513) | (Diversity: 0.501) | (RuleAct: 53.6) | Mut: 0.610 | Tourn: 3 | Stagn: 1 | Time: 15.94s2025-10-19 14:16:00 [INFO    ] root: Gen 17: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 17/200 - BestFit: 1.1605 (G-mean: 0.873) | AvgFit: 0.8227 (G-mean: 0.561) | (Diversity: 0.427) | (RuleAct: 54.8) | Mut: 0.704 | Tourn: 2 | Stagn: 2 | Time: 16.06s2025-10-19 14:17:21 [INFO    ] root: Gen 18: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 18/200 - BestFit: 1.1605 (G-mean: 0.873) | AvgFit: 0.7322 (G-mean: 0.476) | (Diversity: 0.496) | (RuleAct: 56.3) | Mut: 0.560 | Tourn: 3 | Stagn: 3 | Time: 14.54s2025-10-19 14:18:31 [INFO    ] root: Gen 19: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 19/200 - BestFit: 1.1641 (G-mean: 0.876) | AvgFit: 0.8155 (G-mean: 0.554) | (Diversity: 0.464) | (RuleAct: 58.6) | Mut: 0.654 | Tourn: 3 | Stagn: 0 | Time: 16.58s2025-10-19 14:19:47 [INFO    ] root: Gen 20: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 20/200 - BestFit: 1.1641 (G-mean: 0.876) | AvgFit: 0.7693 (G-mean: 0.511) | (Diversity: 0.488) | (RuleAct: 49.0) | Mut: 0.655 | Tourn: 3 | Stagn: 1 | Time: 15.53s2025-10-19 14:21:04 [INFO    ] root: Gen 21: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 21/200 - BestFit: 1.1641 (G-mean: 0.876) | AvgFit: 0.7351 (G-mean: 0.479) | (Diversity: 0.441) | (RuleAct: 56.5) | Mut: 0.625 | Tourn: 3 | Stagn: 2 | Time: 15.47s2025-10-19 14:22:17 [INFO    ] root: Gen 22: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 22/200 - BestFit: 1.1641 (G-mean: 0.876) | AvgFit: 0.7834 (G-mean: 0.524) | (Diversity: 0.460) | (RuleAct: 58.3) | Mut: 0.603 | Tourn: 3 | Stagn: 3 | Time: 15.28s2025-10-19 14:23:32 [INFO    ] root: Gen 23: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 23/200 - BestFit: 1.1641 (G-mean: 0.876) | AvgFit: 0.8240 (G-mean: 0.561) | (Diversity: 0.471) | (RuleAct: 57.9) | Mut: 0.646 | Tourn: 3 | Stagn: 4 | Time: 16.78s2025-10-19 14:24:46 [INFO    ] root: Gen 24: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 24/200 - BestFit: 1.1641 (G-mean: 0.876) | AvgFit: 0.7537 (G-mean: 0.496) | (Diversity: 0.471) | (RuleAct: 62.7) | Mut: 0.596 | Tourn: 3 | Stagn: 5 | Time: 15.66s2025-10-19 14:25:57 [INFO    ] root: Gen 25: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 25/200 - BestFit: 1.1641 (G-mean: 0.876) | AvgFit: 0.7919 (G-mean: 0.532) | (Diversity: 0.465) | (RuleAct: 62.3) | Mut: 0.633 | Tourn: 3 | Stagn: 6 | Time: 16.29s2025-10-19 14:27:13 [INFO    ] root: Gen 26: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 26/200 - BestFit: 1.1662 (G-mean: 0.878) | AvgFit: 0.8003 (G-mean: 0.540) | (Diversity: 0.542) | (RuleAct: 58.1) | Mut: 0.630 | Tourn: 3 | Stagn: 0 | Time: 15.35s2025-10-19 14:28:26 [INFO    ] root: Gen 27: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 27/200 - BestFit: 1.1662 (G-mean: 0.878) | AvgFit: 0.8349 (G-mean: 0.572) | (Diversity: 0.517) | (RuleAct: 59.7) | Mut: 0.674 | Tourn: 3 | Stagn: 1 | Time: 15.47s2025-10-19 14:29:42 [INFO    ] root: Gen 28: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 28/200 - BestFit: 1.1662 (G-mean: 0.878) | AvgFit: 0.7961 (G-mean: 0.537) | (Diversity: 0.517) | (RuleAct: 59.4) | Mut: 0.677 | Tourn: 3 | Stagn: 2 | Time: 15.27s2025-10-19 14:31:01 [INFO    ] root: Gen 29: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 29/200 - BestFit: 1.1662 (G-mean: 0.878) | AvgFit: 0.7710 (G-mean: 0.512) | (Diversity: 0.459) | (RuleAct: 53.4) | Mut: 0.606 | Tourn: 3 | Stagn: 3 | Time: 15.07s2025-10-19 14:32:10 [INFO    ] root: Gen 30: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 30/200 - BestFit: 1.1662 (G-mean: 0.878) | AvgFit: 0.7688 (G-mean: 0.510) | (Diversity: 0.486) | (RuleAct: 59.4) | Mut: 0.595 | Tourn: 3 | Stagn: 4 | Time: 15.53s2025-10-19 14:33:18 [INFO    ] root: Gen 31: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 31/200 - BestFit: 1.1662 (G-mean: 0.878) | AvgFit: 0.8017 (G-mean: 0.540) | (Diversity: 0.493) | (RuleAct: 58.8) | Mut: 0.634 | Tourn: 3 | Stagn: 5 | Time: 15.82s2025-10-19 14:34:32 [INFO    ] root: Gen 32: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 32/200 - BestFit: 1.1662 (G-mean: 0.878) | AvgFit: 0.7785 (G-mean: 0.518) | (Diversity: 0.485) | (RuleAct: 56.0) | Mut: 0.609 | Tourn: 3 | Stagn: 6 | Time: 16.07s2025-10-19 14:35:43 [INFO    ] root: Gen 33: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 33/200 - BestFit: 1.1662 (G-mean: 0.878) | AvgFit: 0.8240 (G-mean: 0.561) | (Diversity: 0.534) | (RuleAct: 57.9) | Mut: 0.645 | Tourn: 3 | Stagn: 7 | Time: 15.83s2025-10-19 14:36:54 [INFO    ] root: Gen 34: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 34/200 - BestFit: 1.1662 (G-mean: 0.878) | AvgFit: 0.8148 (G-mean: 0.553) | (Diversity: 0.462) | (RuleAct: 58.0) | Mut: 0.694 | Tourn: 3 | Stagn: 8 | Time: 14.87s2025-10-19 14:38:12 [INFO    ] root: Gen 35: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 35/200 - BestFit: 1.1662 (G-mean: 0.878) | AvgFit: 0.7693 (G-mean: 0.511) | (Diversity: 0.488) | (RuleAct: 56.6) | Mut: 0.600 | Tourn: 3 | Stagn: 9 | Time: 13.99s2025-10-19 14:39:20 [INFO    ] root: Gen 36: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2025-10-19 14:39:20 [INFO    ] root: 
+Estagnação detectada (10 gerações)! Ativando mecanismos de resgate...
+2025-10-19 14:39:20 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [AGGRESSIVE]
+2025-10-19 14:39:20 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.878 → EXPLORAÇÃO AGRESSIVA - HC Inteligente Multi-Estratégia
+2025-10-19 14:39:20 [INFO    ] hill_climbing_v2:      Operações: ['error_focused_dt_rules', 'ensemble_boosting', 'guided_mutation']
+2025-10-19 14:39:20 [INFO    ] hill_climbing_v2:      Variantes planejadas: 15
+2025-10-19 14:39:20 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 723/6000 (12.0%)
+2025-10-19 14:39:20 [INFO    ] intelligent_hc:        DT nos erros: acc=0.923, depth=8, nodes=111
+2025-10-19 14:39:20 [INFO    ] dt_rule_extraction:   Extração DT: 56 regras extraídas de 111 nós
+2025-10-19 14:39:20 [INFO    ] dt_rule_extraction:   Ranqueamento: 56 regras avaliadas
+2025-10-19 14:39:20 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.201', '0.130', '0.055']
+2025-10-19 14:39:20 [INFO    ] dt_rule_extraction:     Top-1: coverage=20.06%, accuracy=100.00%
+2025-10-19 14:39:20 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.201', '0.130', '0.055']
+2025-10-19 14:39:20 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2025-10-19 14:39:20 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2025-10-19 14:39:20 [INFO    ] intelligent_hc:        ensemble_boosting: 723 erros com peso 3×
+2025-10-19 14:39:21 [INFO    ] intelligent_hc:        DT boosted #1: depth=10, acc=0.938
+2025-10-19 14:39:21 [INFO    ] dt_rule_extraction:   Extração DT: 137 regras extraídas de 273 nós
+2025-10-19 14:39:21 [INFO    ] dt_rule_extraction:   Ranqueamento: 137 regras avaliadas
+2025-10-19 14:39:21 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.172', '0.123', '0.083']
+2025-10-19 14:39:21 [INFO    ] dt_rule_extraction:     Top-1: coverage=17.33%, accuracy=99.33%
+2025-10-19 14:39:21 [INFO    ] intelligent_hc:        DT boosted #2: depth=6, acc=0.895
+2025-10-19 14:39:21 [INFO    ] dt_rule_extraction:   Extração DT: 45 regras extraídas de 89 nós
+2025-10-19 14:39:21 [INFO    ] dt_rule_extraction:   Ranqueamento: 45 regras avaliadas
+2025-10-19 14:39:21 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.229', '0.169', '0.099']
+2025-10-19 14:39:21 [INFO    ] dt_rule_extraction:     Top-1: coverage=24.07%, accuracy=95.08%
+2025-10-19 14:39:21 [INFO    ] intelligent_hc:        DT boosted #3: depth=12, acc=0.938
+2025-10-19 14:39:21 [INFO    ] dt_rule_extraction:   Extração DT: 158 regras extraídas de 315 nós
+2025-10-19 14:39:21 [INFO    ] dt_rule_extraction:   Ranqueamento: 158 regras avaliadas
+2025-10-19 14:39:21 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.163', '0.096', '0.083']
+2025-10-19 14:39:21 [INFO    ] dt_rule_extraction:     Top-1: coverage=16.28%, accuracy=99.80%
+2025-10-19 14:39:21 [INFO    ] intelligent_hc:        DT boosted #4: depth=8, acc=0.926
+2025-10-19 14:39:21 [INFO    ] dt_rule_extraction:   Extração DT: 91 regras extraídas de 181 nós
+2025-10-19 14:39:21 [INFO    ] dt_rule_extraction:   Ranqueamento: 91 regras avaliadas
+2025-10-19 14:39:21 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.199', '0.135', '0.083']
+2025-10-19 14:39:21 [INFO    ] dt_rule_extraction:     Top-1: coverage=20.23%, accuracy=98.11%
+2025-10-19 14:39:21 [INFO    ] intelligent_hc:        ensemble_boosting: 4 variantes geradas
+2025-10-19 14:39:21 [INFO    ] hill_climbing_v2:        ✓ ensemble_boosting: 4 variantes geradas
+2025-10-19 14:39:22 [INFO    ] intelligent_hc:        guided_mutation: Top-5 features: [9, 6, 7, 1, 8]
+2025-10-19 14:39:22 [INFO    ] intelligent_hc:        importâncias: ['0.078', '0.080', '0.144', '0.196', '0.221']
+2025-10-19 14:39:22 [INFO    ] intelligent_hc:        guided_mutation: 4 variantes geradas
+2025-10-19 14:39:22 [INFO    ] hill_climbing_v2:        ✓ guided_mutation: 4 variantes geradas
+2025-10-19 14:39:22 [INFO    ] hill_climbing_v2:      Total gerado: 13 variantes, retornando 13
+2025-10-19 14:39:22 [INFO    ] root:      Avaliando 13 variantes HC geradas...
+2025-10-19 14:39:22 [INFO    ] root:        ✓ HC variant #3 APROVADO: fitness=1.1709 (elite=1.1662), gmean=0.883 (elite=0.878)
+2025-10-19 14:39:23 [INFO    ] root:        ✓ HC variant #6 APROVADO: fitness=1.1662 (elite=1.1662), gmean=0.878 (elite=0.878)
+2025-10-19 14:39:23 [INFO    ] root:        ✓ HC variant #7 APROVADO: fitness=1.1737 (elite=1.1662), gmean=0.885 (elite=0.878)
+2025-10-19 14:39:23 [INFO    ] root:        ✓ HC variant #8 APROVADO: fitness=1.1718 (elite=1.1662), gmean=0.883 (elite=0.878)
+2025-10-19 14:39:24 [INFO    ] root:      Resultado: 4/13 variantes aprovadas (30.8% taxa de aprovação)
+Gen 36/200 - BestFit: 1.1662 (G-mean: 0.878) | AvgFit: 0.8070 (G-mean: 0.546) | (Diversity: 0.478) | (RuleAct: 63.6) | Mut: 0.638 | Tourn: 3 | Stagn: 10 | Time: 15.25s2025-10-19 14:41:20 [INFO    ] root: Gen 37: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 37/200 - BestFit: 1.1737 (G-mean: 0.885) | AvgFit: 0.4807 (G-mean: 0.238) | (Diversity: 0.552) | (RuleAct: 22.0) | Mut: 0.314 | Tourn: 4 | Stagn: 0 | Time: 6.29s2025-10-19 14:41:54 [INFO    ] root: Gen 38: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 38/200 - BestFit: 1.1783 (G-mean: 0.889) | AvgFit: 0.8241 (G-mean: 0.562) | (Diversity: 0.544) | (RuleAct: 65.3) | Mut: 0.639 | Tourn: 3 | Stagn: 0 | Time: 14.83s2025-10-19 14:43:10 [INFO    ] root: Gen 39: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 39/200 - BestFit: 1.1783 (G-mean: 0.889) | AvgFit: 0.8315 (G-mean: 0.568) | (Diversity: 0.490) | (RuleAct: 62.0) | Mut: 0.657 | Tourn: 3 | Stagn: 1 | Time: 15.50s2025-10-19 14:44:24 [INFO    ] root: Gen 40: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 40/200 - BestFit: 1.1783 (G-mean: 0.889) | AvgFit: 0.8636 (G-mean: 0.599) | (Diversity: 0.463) | (RuleAct: 62.5) | Mut: 0.729 | Tourn: 2 | Stagn: 2 | Time: 14.88s2025-10-19 14:45:42 [INFO    ] root: Gen 41: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 41/200 - BestFit: 1.1783 (G-mean: 0.889) | AvgFit: 0.7850 (G-mean: 0.525) | (Diversity: 0.484) | (RuleAct: 55.0) | Mut: 0.604 | Tourn: 3 | Stagn: 3 | Time: 13.74s2025-10-19 14:46:52 [INFO    ] root: Gen 42: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 42/200 - BestFit: 1.1783 (G-mean: 0.889) | AvgFit: 0.8189 (G-mean: 0.557) | (Diversity: 0.523) | (RuleAct: 60.9) | Mut: 0.691 | Tourn: 3 | Stagn: 4 | Time: 15.91s2025-10-19 14:48:10 [INFO    ] root: Gen 43: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 43/200 - BestFit: 1.1783 (G-mean: 0.889) | AvgFit: 0.8268 (G-mean: 0.563) | (Diversity: 0.513) | (RuleAct: 57.5) | Mut: 0.659 | Tourn: 3 | Stagn: 5 | Time: 14.73s2025-10-19 14:49:24 [INFO    ] root: Gen 44: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 44/200 - BestFit: 1.1783 (G-mean: 0.889) | AvgFit: 0.8124 (G-mean: 0.551) | (Diversity: 0.497) | (RuleAct: 60.0) | Mut: 0.685 | Tourn: 3 | Stagn: 6 | Time: 15.22s2025-10-19 14:50:41 [INFO    ] root: Gen 45: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 45/200 - BestFit: 1.1783 (G-mean: 0.889) | AvgFit: 0.7719 (G-mean: 0.512) | (Diversity: 0.506) | (RuleAct: 56.8) | Mut: 0.598 | Tourn: 3 | Stagn: 7 | Time: 14.65s2025-10-19 14:51:49 [INFO    ] root: Gen 46: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 46/200 - BestFit: 1.1783 (G-mean: 0.889) | AvgFit: 0.8606 (G-mean: 0.595) | (Diversity: 0.488) | (RuleAct: 61.2) | Mut: 0.679 | Tourn: 3 | Stagn: 8 | Time: 16.04s2025-10-19 14:53:03 [INFO    ] root: Gen 47: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 47/200 - BestFit: 1.1783 (G-mean: 0.889) | AvgFit: 0.8214 (G-mean: 0.559) | (Diversity: 0.563) | (RuleAct: 58.5) | Mut: 0.692 | Tourn: 3 | Stagn: 9 | Time: 15.22s2025-10-19 14:54:21 [INFO    ] root: Gen 48: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2025-10-19 14:54:21 [INFO    ] root: 
+Estagnação detectada (10 gerações)! Ativando mecanismos de resgate...
+2025-10-19 14:54:21 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [AGGRESSIVE]
+2025-10-19 14:54:21 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.889 → EXPLORAÇÃO AGRESSIVA - HC Inteligente Multi-Estratégia
+2025-10-19 14:54:21 [INFO    ] hill_climbing_v2:      Operações: ['error_focused_dt_rules', 'ensemble_boosting', 'guided_mutation']
+2025-10-19 14:54:21 [INFO    ] hill_climbing_v2:      Variantes planejadas: 15
+2025-10-19 14:54:22 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 662/6000 (11.0%)
+2025-10-19 14:54:22 [INFO    ] intelligent_hc:        DT nos erros: acc=0.947, depth=10, nodes=87
+2025-10-19 14:54:22 [INFO    ] dt_rule_extraction:   Extração DT: 44 regras extraídas de 87 nós
+2025-10-19 14:54:22 [INFO    ] dt_rule_extraction:   Ranqueamento: 44 regras avaliadas
+2025-10-19 14:54:22 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.205', '0.148', '0.079']
+2025-10-19 14:54:22 [INFO    ] dt_rule_extraction:     Top-1: coverage=20.54%, accuracy=100.00%
+2025-10-19 14:54:22 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.205', '0.148', '0.079']
+2025-10-19 14:54:22 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2025-10-19 14:54:22 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2025-10-19 14:54:22 [INFO    ] intelligent_hc:        ensemble_boosting: 662 erros com peso 3×
+2025-10-19 14:54:22 [INFO    ] intelligent_hc:        DT boosted #1: depth=8, acc=0.933
+2025-10-19 14:54:22 [INFO    ] dt_rule_extraction:   Extração DT: 102 regras extraídas de 203 nós
+2025-10-19 14:54:22 [INFO    ] dt_rule_extraction:   Ranqueamento: 102 regras avaliadas
+2025-10-19 14:54:22 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.161', '0.156', '0.083']
+2025-10-19 14:54:22 [INFO    ] dt_rule_extraction:     Top-1: coverage=16.85%, accuracy=95.55%
+2025-10-19 14:54:22 [INFO    ] intelligent_hc:        DT boosted #2: depth=12, acc=0.939
+2025-10-19 14:54:22 [INFO    ] dt_rule_extraction:   Extração DT: 150 regras extraídas de 299 nós
+2025-10-19 14:54:23 [INFO    ] dt_rule_extraction:   Ranqueamento: 150 regras avaliadas
+2025-10-19 14:54:23 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.144', '0.127', '0.083']
+2025-10-19 14:54:23 [INFO    ] dt_rule_extraction:     Top-1: coverage=14.40%, accuracy=100.00%
+2025-10-19 14:54:23 [INFO    ] intelligent_hc:        DT boosted #3: depth=10, acc=0.938
+2025-10-19 14:54:23 [INFO    ] dt_rule_extraction:   Extração DT: 139 regras extraídas de 277 nós
+2025-10-19 14:54:23 [INFO    ] dt_rule_extraction:   Ranqueamento: 139 regras avaliadas
+2025-10-19 14:54:23 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.144', '0.133', '0.083']
+2025-10-19 14:54:23 [INFO    ] dt_rule_extraction:     Top-1: coverage=14.40%, accuracy=100.00%
+2025-10-19 14:54:23 [INFO    ] intelligent_hc:        DT boosted #4: depth=12, acc=0.939
+2025-10-19 14:54:23 [INFO    ] dt_rule_extraction:   Extração DT: 152 regras extraídas de 303 nós
+2025-10-19 14:54:23 [INFO    ] dt_rule_extraction:   Ranqueamento: 152 regras avaliadas
+2025-10-19 14:54:23 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.144', '0.127', '0.083']
+2025-10-19 14:54:23 [INFO    ] dt_rule_extraction:     Top-1: coverage=14.40%, accuracy=100.00%
+2025-10-19 14:54:23 [INFO    ] intelligent_hc:        ensemble_boosting: 4 variantes geradas
+2025-10-19 14:54:23 [INFO    ] hill_climbing_v2:        ✓ ensemble_boosting: 4 variantes geradas
+2025-10-19 14:54:24 [INFO    ] intelligent_hc:        guided_mutation: Top-5 features: [1, 9, 6, 8, 7]
+2025-10-19 14:54:24 [INFO    ] intelligent_hc:        importâncias: ['0.065', '0.120', '0.163', '0.189', '0.231']
+2025-10-19 14:54:24 [INFO    ] intelligent_hc:        guided_mutation: 4 variantes geradas
+2025-10-19 14:54:24 [INFO    ] hill_climbing_v2:        ✓ guided_mutation: 4 variantes geradas
+2025-10-19 14:54:24 [INFO    ] hill_climbing_v2:      Total gerado: 13 variantes, retornando 13
+2025-10-19 14:54:24 [INFO    ] root:      Avaliando 13 variantes HC geradas...
+2025-10-19 14:54:25 [INFO    ] root:        ✓ HC variant #7 APROVADO: fitness=1.1852 (elite=1.1783), gmean=0.896 (elite=0.889)
+2025-10-19 14:54:26 [INFO    ] root:      Resultado: 1/13 variantes aprovadas (7.7% taxa de aprovação)
+Gen 48/200 - BestFit: 1.1783 (G-mean: 0.889) | AvgFit: 0.7824 (G-mean: 0.523) | (Diversity: 0.531) | (RuleAct: 61.7) | Mut: 0.659 | Tourn: 3 | Stagn: 10 | Time: 14.12s2025-10-19 14:56:25 [INFO    ] root: Gen 49: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 49/200 - BestFit: 1.1852 (G-mean: 0.896) | AvgFit: 0.4570 (G-mean: 0.216) | (Diversity: 0.447) | (RuleAct: 20.3) | Mut: 0.377 | Tourn: 4 | Stagn: 0 | Time: 5.92s2025-10-19 14:57:03 [INFO    ] root: Gen 50: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 50/200 - BestFit: 1.1852 (G-mean: 0.896) | AvgFit: 0.8300 (G-mean: 0.567) | (Diversity: 0.582) | (RuleAct: 59.2) | Mut: 0.655 | Tourn: 3 | Stagn: 1 | Time: 13.71s2025-10-19 14:58:14 [INFO    ] root: Gen 51: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 51/200 - BestFit: 1.1852 (G-mean: 0.896) | AvgFit: 0.8246 (G-mean: 0.562) | (Diversity: 0.489) | (RuleAct: 59.6) | Mut: 0.691 | Tourn: 3 | Stagn: 2 | Time: 14.42s2025-10-19 14:59:29 [INFO    ] root: Gen 52: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 52/200 - BestFit: 1.1852 (G-mean: 0.896) | AvgFit: 0.8541 (G-mean: 0.589) | (Diversity: 0.499) | (RuleAct: 57.0) | Mut: 0.671 | Tourn: 3 | Stagn: 3 | Time: 14.74s2025-10-19 15:00:45 [INFO    ] root: Gen 53: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 53/200 - BestFit: 1.1852 (G-mean: 0.896) | AvgFit: 0.8426 (G-mean: 0.578) | (Diversity: 0.498) | (RuleAct: 59.0) | Mut: 0.662 | Tourn: 3 | Stagn: 4 | Time: 15.06s2025-10-19 15:01:59 [INFO    ] root: Gen 54: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 54/200 - BestFit: 1.1852 (G-mean: 0.896) | AvgFit: 0.8549 (G-mean: 0.591) | (Diversity: 0.508) | (RuleAct: 55.3) | Mut: 0.717 | Tourn: 2 | Stagn: 5 | Time: 15.38s2025-10-19 15:03:16 [INFO    ] root: Gen 55: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 55/200 - BestFit: 1.1852 (G-mean: 0.896) | AvgFit: 0.7564 (G-mean: 0.498) | (Diversity: 0.510) | (RuleAct: 57.0) | Mut: 0.575 | Tourn: 3 | Stagn: 6 | Time: 14.30s2025-10-19 15:04:25 [INFO    ] root: Gen 56: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 56/200 - BestFit: 1.1852 (G-mean: 0.896) | AvgFit: 0.8390 (G-mean: 0.575) | (Diversity: 0.511) | (RuleAct: 61.7) | Mut: 0.657 | Tourn: 3 | Stagn: 7 | Time: 16.55s2025-10-19 15:05:40 [INFO    ] root: Gen 57: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 57/200 - BestFit: 1.1852 (G-mean: 0.896) | AvgFit: 0.8261 (G-mean: 0.563) | (Diversity: 0.525) | (RuleAct: 57.9) | Mut: 0.644 | Tourn: 3 | Stagn: 8 | Time: 15.61s2025-10-19 15:06:55 [INFO    ] root: Gen 58: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 58/200 - BestFit: 1.1852 (G-mean: 0.896) | AvgFit: 0.8325 (G-mean: 0.569) | (Diversity: 0.534) | (RuleAct: 57.8) | Mut: 0.658 | Tourn: 3 | Stagn: 9 | Time: 15.29s2025-10-19 15:08:09 [INFO    ] root: Gen 59: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2025-10-19 15:08:09 [INFO    ] root: 
+Estagnação detectada (10 gerações)! Ativando mecanismos de resgate...
+2025-10-19 15:08:09 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [AGGRESSIVE]
+2025-10-19 15:08:09 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.896 → EXPLORAÇÃO AGRESSIVA - HC Inteligente Multi-Estratégia
+2025-10-19 15:08:09 [INFO    ] hill_climbing_v2:      Operações: ['error_focused_dt_rules', 'ensemble_boosting', 'guided_mutation']
+2025-10-19 15:08:09 [INFO    ] hill_climbing_v2:      Variantes planejadas: 15
+2025-10-19 15:08:09 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 624/6000 (10.4%)
+2025-10-19 15:08:09 [INFO    ] intelligent_hc:        DT nos erros: acc=0.938, depth=9, nodes=79
+2025-10-19 15:08:09 [INFO    ] dt_rule_extraction:   Extração DT: 40 regras extraídas de 79 nós
+2025-10-19 15:08:09 [INFO    ] dt_rule_extraction:   Ranqueamento: 40 regras avaliadas
+2025-10-19 15:08:09 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.154', '0.151', '0.080']
+2025-10-19 15:08:09 [INFO    ] dt_rule_extraction:     Top-1: coverage=15.38%, accuracy=100.00%
+2025-10-19 15:08:09 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.154', '0.151', '0.080']
+2025-10-19 15:08:09 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2025-10-19 15:08:09 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2025-10-19 15:08:10 [INFO    ] intelligent_hc:        ensemble_boosting: 624 erros com peso 3×
+2025-10-19 15:08:10 [INFO    ] intelligent_hc:        DT boosted #1: depth=10, acc=0.934
+2025-10-19 15:08:10 [INFO    ] dt_rule_extraction:   Extração DT: 140 regras extraídas de 279 nós
+2025-10-19 15:08:10 [INFO    ] dt_rule_extraction:   Ranqueamento: 140 regras avaliadas
+2025-10-19 15:08:10 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.144', '0.137', '0.083']
+2025-10-19 15:08:10 [INFO    ] dt_rule_extraction:     Top-1: coverage=14.40%, accuracy=100.00%
+2025-10-19 15:08:10 [INFO    ] intelligent_hc:        DT boosted #2: depth=6, acc=0.914
+2025-10-19 15:08:10 [INFO    ] dt_rule_extraction:   Extração DT: 47 regras extraídas de 93 nós
+2025-10-19 15:08:10 [INFO    ] dt_rule_extraction:   Ranqueamento: 47 regras avaliadas
+2025-10-19 15:08:10 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.204', '0.160', '0.099']
+2025-10-19 15:08:10 [INFO    ] dt_rule_extraction:     Top-1: coverage=20.95%, accuracy=97.61%
+2025-10-19 15:08:10 [INFO    ] intelligent_hc:        DT boosted #3: depth=8, acc=0.928
+2025-10-19 15:08:10 [INFO    ] dt_rule_extraction:   Extração DT: 102 regras extraídas de 203 nós
+2025-10-19 15:08:10 [INFO    ] dt_rule_extraction:   Ranqueamento: 102 regras avaliadas
+2025-10-19 15:08:10 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.157', '0.156', '0.083']
+2025-10-19 15:08:10 [INFO    ] dt_rule_extraction:     Top-1: coverage=16.42%, accuracy=95.74%
+2025-10-19 15:08:11 [INFO    ] intelligent_hc:        DT boosted #4: depth=10, acc=0.934
+2025-10-19 15:08:11 [INFO    ] dt_rule_extraction:   Extração DT: 139 regras extraídas de 277 nós
+2025-10-19 15:08:11 [INFO    ] dt_rule_extraction:   Ranqueamento: 139 regras avaliadas
+2025-10-19 15:08:11 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.144', '0.137', '0.083']
+2025-10-19 15:08:11 [INFO    ] dt_rule_extraction:     Top-1: coverage=14.40%, accuracy=100.00%
+2025-10-19 15:08:11 [INFO    ] intelligent_hc:        ensemble_boosting: 4 variantes geradas
+2025-10-19 15:08:11 [INFO    ] hill_climbing_v2:        ✓ ensemble_boosting: 4 variantes geradas
+2025-10-19 15:08:11 [INFO    ] intelligent_hc:        guided_mutation: Top-5 features: [6, 2, 9, 8, 7]
+2025-10-19 15:08:11 [INFO    ] intelligent_hc:        importâncias: ['0.093', '0.123', '0.125', '0.170', '0.262']
+2025-10-19 15:08:11 [INFO    ] intelligent_hc:        guided_mutation: 4 variantes geradas
+2025-10-19 15:08:11 [INFO    ] hill_climbing_v2:        ✓ guided_mutation: 4 variantes geradas
+2025-10-19 15:08:11 [INFO    ] hill_climbing_v2:      Total gerado: 13 variantes, retornando 13
+2025-10-19 15:08:11 [INFO    ] root:      Avaliando 13 variantes HC geradas...
+2025-10-19 15:08:14 [INFO    ] root:      Resultado: 0/13 variantes aprovadas (0.0% taxa de aprovação)
+Gen 59/200 - BestFit: 1.1852 (G-mean: 0.896) | AvgFit: 0.7891 (G-mean: 0.529) | (Diversity: 0.457) | (RuleAct: 59.0) | Mut: 0.603 | Tourn: 3 | Stagn: 10 | Time: 14.24s2025-10-19 15:10:17 [INFO    ] root: Gen 60: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2025-10-19 15:10:17 [INFO    ] root: 
+Estagnação detectada (11 gerações)! Ativando mecanismos de resgate...
+2025-10-19 15:10:17 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [AGGRESSIVE]
+2025-10-19 15:10:17 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.896 → EXPLORAÇÃO AGRESSIVA - HC Inteligente Multi-Estratégia
+2025-10-19 15:10:17 [INFO    ] hill_climbing_v2:      Operações: ['error_focused_dt_rules', 'ensemble_boosting', 'guided_mutation']
+2025-10-19 15:10:17 [INFO    ] hill_climbing_v2:      Variantes planejadas: 15
+2025-10-19 15:10:17 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 624/6000 (10.4%)
+2025-10-19 15:10:17 [INFO    ] intelligent_hc:        DT nos erros: acc=0.938, depth=10, nodes=87
+2025-10-19 15:10:17 [INFO    ] dt_rule_extraction:   Extração DT: 44 regras extraídas de 87 nós
+2025-10-19 15:10:17 [INFO    ] dt_rule_extraction:   Ranqueamento: 44 regras avaliadas
+2025-10-19 15:10:17 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.154', '0.151', '0.080']
+2025-10-19 15:10:17 [INFO    ] dt_rule_extraction:     Top-1: coverage=15.38%, accuracy=100.00%
+2025-10-19 15:10:17 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.154', '0.151', '0.080']
+2025-10-19 15:10:17 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2025-10-19 15:10:17 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2025-10-19 15:10:17 [INFO    ] intelligent_hc:        ensemble_boosting: 624 erros com peso 3×
+2025-10-19 15:10:18 [INFO    ] intelligent_hc:        DT boosted #1: depth=10, acc=0.934
+2025-10-19 15:10:18 [INFO    ] dt_rule_extraction:   Extração DT: 139 regras extraídas de 277 nós
+2025-10-19 15:10:18 [INFO    ] dt_rule_extraction:   Ranqueamento: 139 regras avaliadas
+2025-10-19 15:10:18 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.144', '0.137', '0.083']
+2025-10-19 15:10:18 [INFO    ] dt_rule_extraction:     Top-1: coverage=14.40%, accuracy=100.00%
+2025-10-19 15:10:18 [INFO    ] intelligent_hc:        DT boosted #2: depth=8, acc=0.928
+2025-10-19 15:10:18 [INFO    ] dt_rule_extraction:   Extração DT: 102 regras extraídas de 203 nós
+2025-10-19 15:10:18 [INFO    ] dt_rule_extraction:   Ranqueamento: 102 regras avaliadas
+2025-10-19 15:10:18 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.157', '0.156', '0.083']
+2025-10-19 15:10:18 [INFO    ] dt_rule_extraction:     Top-1: coverage=16.42%, accuracy=95.74%
+2025-10-19 15:10:18 [INFO    ] intelligent_hc:        DT boosted #3: depth=6, acc=0.914
+2025-10-19 15:10:18 [INFO    ] dt_rule_extraction:   Extração DT: 47 regras extraídas de 93 nós
+2025-10-19 15:10:18 [INFO    ] dt_rule_extraction:   Ranqueamento: 47 regras avaliadas
+2025-10-19 15:10:18 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.204', '0.160', '0.099']
+2025-10-19 15:10:18 [INFO    ] dt_rule_extraction:     Top-1: coverage=20.95%, accuracy=97.61%
+2025-10-19 15:10:18 [INFO    ] intelligent_hc:        DT boosted #4: depth=6, acc=0.914
+2025-10-19 15:10:18 [INFO    ] dt_rule_extraction:   Extração DT: 47 regras extraídas de 93 nós
+2025-10-19 15:10:18 [INFO    ] dt_rule_extraction:   Ranqueamento: 47 regras avaliadas
+2025-10-19 15:10:18 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.204', '0.160', '0.099']
+2025-10-19 15:10:18 [INFO    ] dt_rule_extraction:     Top-1: coverage=20.95%, accuracy=97.61%
+2025-10-19 15:10:18 [INFO    ] intelligent_hc:        ensemble_boosting: 4 variantes geradas
+2025-10-19 15:10:18 [INFO    ] hill_climbing_v2:        ✓ ensemble_boosting: 4 variantes geradas
+2025-10-19 15:10:19 [INFO    ] intelligent_hc:        guided_mutation: Top-5 features: [0, 2, 9, 8, 7]
+2025-10-19 15:10:19 [INFO    ] intelligent_hc:        importâncias: ['0.089', '0.126', '0.128', '0.179', '0.263']
+2025-10-19 15:10:19 [INFO    ] intelligent_hc:        guided_mutation: 4 variantes geradas
+2025-10-19 15:10:19 [INFO    ] hill_climbing_v2:        ✓ guided_mutation: 4 variantes geradas
+2025-10-19 15:10:19 [INFO    ] hill_climbing_v2:      Total gerado: 13 variantes, retornando 13
+2025-10-19 15:10:19 [INFO    ] root:      Avaliando 13 variantes HC geradas...
+2025-10-19 15:10:21 [INFO    ] root:      Resultado: 0/13 variantes aprovadas (0.0% taxa de aprovação)
+Gen 60/200 - BestFit: 1.1852 (G-mean: 0.896) | AvgFit: 0.4317 (G-mean: 0.191) | (Diversity: 0.549) | (RuleAct: 16.8) | Mut: 0.255 | Tourn: 4 | Stagn: 11 | Time: 5.74s2025-10-19 15:11:14 [INFO    ] root: Gen 61: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2025-10-19 15:11:14 [INFO    ] root: 
+Estagnação detectada (12 gerações)! Ativando mecanismos de resgate...
+2025-10-19 15:11:14 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [AGGRESSIVE]
+2025-10-19 15:11:14 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.896 → EXPLORAÇÃO AGRESSIVA - HC Inteligente Multi-Estratégia
+2025-10-19 15:11:14 [INFO    ] hill_climbing_v2:      Operações: ['error_focused_dt_rules', 'ensemble_boosting', 'guided_mutation']
+2025-10-19 15:11:14 [INFO    ] hill_climbing_v2:      Variantes planejadas: 15
+2025-10-19 15:11:15 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 624/6000 (10.4%)
+2025-10-19 15:11:15 [INFO    ] intelligent_hc:        DT nos erros: acc=0.938, depth=9, nodes=77
+2025-10-19 15:11:15 [INFO    ] dt_rule_extraction:   Extração DT: 39 regras extraídas de 77 nós
+2025-10-19 15:11:15 [INFO    ] dt_rule_extraction:   Ranqueamento: 39 regras avaliadas
+2025-10-19 15:11:15 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.154', '0.151', '0.080']
+2025-10-19 15:11:15 [INFO    ] dt_rule_extraction:     Top-1: coverage=15.38%, accuracy=100.00%
+2025-10-19 15:11:15 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.154', '0.151', '0.080']
+2025-10-19 15:11:15 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2025-10-19 15:11:15 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2025-10-19 15:11:15 [INFO    ] intelligent_hc:        ensemble_boosting: 624 erros com peso 3×
+2025-10-19 15:11:15 [INFO    ] intelligent_hc:        DT boosted #1: depth=6, acc=0.914
+2025-10-19 15:11:15 [INFO    ] dt_rule_extraction:   Extração DT: 47 regras extraídas de 93 nós
+2025-10-19 15:11:15 [INFO    ] dt_rule_extraction:   Ranqueamento: 47 regras avaliadas
+2025-10-19 15:11:15 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.204', '0.160', '0.099']
+2025-10-19 15:11:15 [INFO    ] dt_rule_extraction:     Top-1: coverage=20.95%, accuracy=97.61%
+2025-10-19 15:11:15 [INFO    ] intelligent_hc:        DT boosted #2: depth=12, acc=0.934
+2025-10-19 15:11:15 [INFO    ] dt_rule_extraction:   Extração DT: 148 regras extraídas de 295 nós
+2025-10-19 15:11:15 [INFO    ] dt_rule_extraction:   Ranqueamento: 148 regras avaliadas
+2025-10-19 15:11:15 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.144', '0.134', '0.083']
+2025-10-19 15:11:15 [INFO    ] dt_rule_extraction:     Top-1: coverage=14.40%, accuracy=100.00%
+2025-10-19 15:11:16 [INFO    ] intelligent_hc:        DT boosted #3: depth=6, acc=0.914
+2025-10-19 15:11:16 [INFO    ] dt_rule_extraction:   Extração DT: 47 regras extraídas de 93 nós
+2025-10-19 15:11:16 [INFO    ] dt_rule_extraction:   Ranqueamento: 47 regras avaliadas
+2025-10-19 15:11:16 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.204', '0.160', '0.099']
+2025-10-19 15:11:16 [INFO    ] dt_rule_extraction:     Top-1: coverage=20.95%, accuracy=97.61%
+2025-10-19 15:11:16 [INFO    ] intelligent_hc:        DT boosted #4: depth=6, acc=0.914
+2025-10-19 15:11:16 [INFO    ] dt_rule_extraction:   Extração DT: 47 regras extraídas de 93 nós
+2025-10-19 15:11:16 [INFO    ] dt_rule_extraction:   Ranqueamento: 47 regras avaliadas
+2025-10-19 15:11:16 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.204', '0.160', '0.099']
+2025-10-19 15:11:16 [INFO    ] dt_rule_extraction:     Top-1: coverage=20.95%, accuracy=97.61%
+2025-10-19 15:11:16 [INFO    ] intelligent_hc:        ensemble_boosting: 4 variantes geradas
+2025-10-19 15:11:16 [INFO    ] hill_climbing_v2:        ✓ ensemble_boosting: 4 variantes geradas
+2025-10-19 15:11:16 [INFO    ] intelligent_hc:        guided_mutation: Top-5 features: [0, 2, 9, 8, 7]
+2025-10-19 15:11:16 [INFO    ] intelligent_hc:        importâncias: ['0.086', '0.125', '0.128', '0.179', '0.262']
+2025-10-19 15:11:16 [INFO    ] intelligent_hc:        guided_mutation: 4 variantes geradas
+2025-10-19 15:11:16 [INFO    ] hill_climbing_v2:        ✓ guided_mutation: 4 variantes geradas
+2025-10-19 15:11:16 [INFO    ] hill_climbing_v2:      Total gerado: 13 variantes, retornando 13
+2025-10-19 15:11:16 [INFO    ] root:      Avaliando 13 variantes HC geradas...
+2025-10-19 15:11:18 [INFO    ] root:      Resultado: 0/13 variantes aprovadas (0.0% taxa de aprovação)
+Gen 61/200 - BestFit: 1.1852 (G-mean: 0.896) | AvgFit: 0.8060 (G-mean: 0.543) | (Diversity: 0.523) | (RuleAct: 43.4) | Mut: 0.629 | Tourn: 3 | Stagn: 12 | Time: 12.28s2025-10-19 15:13:07 [INFO    ] root: Gen 62: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2025-10-19 15:13:07 [INFO    ] root: 
+Estagnação detectada (13 gerações)! Ativando mecanismos de resgate...
+2025-10-19 15:13:07 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [AGGRESSIVE]
+2025-10-19 15:13:07 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.896 → EXPLORAÇÃO AGRESSIVA - HC Inteligente Multi-Estratégia
+2025-10-19 15:13:07 [INFO    ] hill_climbing_v2:      Operações: ['error_focused_dt_rules', 'ensemble_boosting', 'guided_mutation']
+2025-10-19 15:13:07 [INFO    ] hill_climbing_v2:      Variantes planejadas: 15
+2025-10-19 15:13:07 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 624/6000 (10.4%)
+2025-10-19 15:13:07 [INFO    ] intelligent_hc:        DT nos erros: acc=0.938, depth=10, nodes=83
+2025-10-19 15:13:07 [INFO    ] dt_rule_extraction:   Extração DT: 42 regras extraídas de 83 nós
+2025-10-19 15:13:07 [INFO    ] dt_rule_extraction:   Ranqueamento: 42 regras avaliadas
+2025-10-19 15:13:07 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.154', '0.151', '0.080']
+2025-10-19 15:13:07 [INFO    ] dt_rule_extraction:     Top-1: coverage=15.38%, accuracy=100.00%
+2025-10-19 15:13:07 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.154', '0.151', '0.080']
+2025-10-19 15:13:07 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2025-10-19 15:13:07 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2025-10-19 15:13:07 [INFO    ] intelligent_hc:        ensemble_boosting: 624 erros com peso 3×
+2025-10-19 15:13:08 [INFO    ] intelligent_hc:        DT boosted #1: depth=10, acc=0.934
+2025-10-19 15:13:08 [INFO    ] dt_rule_extraction:   Extração DT: 141 regras extraídas de 281 nós
+2025-10-19 15:13:08 [INFO    ] dt_rule_extraction:   Ranqueamento: 141 regras avaliadas
+2025-10-19 15:13:08 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.144', '0.137', '0.083']
+2025-10-19 15:13:08 [INFO    ] dt_rule_extraction:     Top-1: coverage=14.40%, accuracy=100.00%
+2025-10-19 15:13:08 [INFO    ] intelligent_hc:        DT boosted #2: depth=6, acc=0.914
+2025-10-19 15:13:08 [INFO    ] dt_rule_extraction:   Extração DT: 47 regras extraídas de 93 nós
+2025-10-19 15:13:08 [INFO    ] dt_rule_extraction:   Ranqueamento: 47 regras avaliadas
+2025-10-19 15:13:08 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.204', '0.160', '0.099']
+2025-10-19 15:13:08 [INFO    ] dt_rule_extraction:     Top-1: coverage=20.95%, accuracy=97.61%
+2025-10-19 15:13:08 [INFO    ] intelligent_hc:        DT boosted #3: depth=8, acc=0.928
+2025-10-19 15:13:08 [INFO    ] dt_rule_extraction:   Extração DT: 103 regras extraídas de 205 nós
+2025-10-19 15:13:08 [INFO    ] dt_rule_extraction:   Ranqueamento: 103 regras avaliadas
+2025-10-19 15:13:08 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.157', '0.156', '0.083']
+2025-10-19 15:13:08 [INFO    ] dt_rule_extraction:     Top-1: coverage=16.42%, accuracy=95.74%
+2025-10-19 15:13:08 [INFO    ] intelligent_hc:        DT boosted #4: depth=10, acc=0.934
+2025-10-19 15:13:08 [INFO    ] dt_rule_extraction:   Extração DT: 140 regras extraídas de 279 nós
+2025-10-19 15:13:08 [INFO    ] dt_rule_extraction:   Ranqueamento: 140 regras avaliadas
+2025-10-19 15:13:08 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.144', '0.137', '0.083']
+2025-10-19 15:13:08 [INFO    ] dt_rule_extraction:     Top-1: coverage=14.40%, accuracy=100.00%
+2025-10-19 15:13:08 [INFO    ] intelligent_hc:        ensemble_boosting: 4 variantes geradas
+2025-10-19 15:13:08 [INFO    ] hill_climbing_v2:        ✓ ensemble_boosting: 4 variantes geradas
+2025-10-19 15:13:09 [INFO    ] intelligent_hc:        guided_mutation: Top-5 features: [0, 9, 2, 8, 7]
+2025-10-19 15:13:09 [INFO    ] intelligent_hc:        importâncias: ['0.086', '0.120', '0.123', '0.179', '0.263']
+2025-10-19 15:13:09 [INFO    ] intelligent_hc:        guided_mutation: 4 variantes geradas
+2025-10-19 15:13:09 [INFO    ] hill_climbing_v2:        ✓ guided_mutation: 4 variantes geradas
+2025-10-19 15:13:09 [INFO    ] hill_climbing_v2:      Total gerado: 13 variantes, retornando 13
+2025-10-19 15:13:09 [INFO    ] root:      Avaliando 13 variantes HC geradas...
+2025-10-19 15:13:11 [INFO    ] root:      Resultado: 0/13 variantes aprovadas (0.0% taxa de aprovação)
+Gen 62/200 - BestFit: 1.1852 (G-mean: 0.896) | AvgFit: 0.4457 (G-mean: 0.205) | (Diversity: 0.492) | (RuleAct: 18.7) | Mut: 0.286 | Tourn: 4 | Stagn: 13 | Time: 5.68s2025-10-19 15:14:08 [INFO    ] root: Gen 63: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2025-10-19 15:14:08 [INFO    ] root: 
+Estagnação detectada (14 gerações)! Ativando mecanismos de resgate...
+2025-10-19 15:14:08 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [AGGRESSIVE]
+2025-10-19 15:14:08 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.896 → EXPLORAÇÃO AGRESSIVA - HC Inteligente Multi-Estratégia
+2025-10-19 15:14:08 [INFO    ] hill_climbing_v2:      Operações: ['error_focused_dt_rules', 'ensemble_boosting', 'guided_mutation']
+2025-10-19 15:14:08 [INFO    ] hill_climbing_v2:      Variantes planejadas: 15
+2025-10-19 15:14:09 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 624/6000 (10.4%)
+2025-10-19 15:14:09 [INFO    ] intelligent_hc:        DT nos erros: acc=0.938, depth=9, nodes=81
+2025-10-19 15:14:09 [INFO    ] dt_rule_extraction:   Extração DT: 41 regras extraídas de 81 nós
+2025-10-19 15:14:09 [INFO    ] dt_rule_extraction:   Ranqueamento: 41 regras avaliadas
+2025-10-19 15:14:09 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.154', '0.151', '0.080']
+2025-10-19 15:14:09 [INFO    ] dt_rule_extraction:     Top-1: coverage=15.38%, accuracy=100.00%
+2025-10-19 15:14:09 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.154', '0.151', '0.080']
+2025-10-19 15:14:09 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2025-10-19 15:14:09 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2025-10-19 15:14:09 [INFO    ] intelligent_hc:        ensemble_boosting: 624 erros com peso 3×
+2025-10-19 15:14:09 [INFO    ] intelligent_hc:        DT boosted #1: depth=6, acc=0.914
+2025-10-19 15:14:09 [INFO    ] dt_rule_extraction:   Extração DT: 47 regras extraídas de 93 nós
+2025-10-19 15:14:09 [INFO    ] dt_rule_extraction:   Ranqueamento: 47 regras avaliadas
+2025-10-19 15:14:09 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.204', '0.160', '0.099']
+2025-10-19 15:14:09 [INFO    ] dt_rule_extraction:     Top-1: coverage=20.95%, accuracy=97.61%
+2025-10-19 15:14:09 [INFO    ] intelligent_hc:        DT boosted #2: depth=8, acc=0.928
+2025-10-19 15:14:09 [INFO    ] dt_rule_extraction:   Extração DT: 103 regras extraídas de 205 nós
+2025-10-19 15:14:09 [INFO    ] dt_rule_extraction:   Ranqueamento: 103 regras avaliadas
+2025-10-19 15:14:09 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.157', '0.156', '0.083']
+2025-10-19 15:14:09 [INFO    ] dt_rule_extraction:     Top-1: coverage=16.42%, accuracy=95.74%
+2025-10-19 15:14:09 [INFO    ] intelligent_hc:        DT boosted #3: depth=6, acc=0.914
+2025-10-19 15:14:09 [INFO    ] dt_rule_extraction:   Extração DT: 47 regras extraídas de 93 nós
+2025-10-19 15:14:09 [INFO    ] dt_rule_extraction:   Ranqueamento: 47 regras avaliadas
+2025-10-19 15:14:09 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.204', '0.160', '0.099']
+2025-10-19 15:14:09 [INFO    ] dt_rule_extraction:     Top-1: coverage=20.95%, accuracy=97.61%
+2025-10-19 15:14:10 [INFO    ] intelligent_hc:        DT boosted #4: depth=6, acc=0.914
+2025-10-19 15:14:10 [INFO    ] dt_rule_extraction:   Extração DT: 47 regras extraídas de 93 nós
+2025-10-19 15:14:10 [INFO    ] dt_rule_extraction:   Ranqueamento: 47 regras avaliadas
+2025-10-19 15:14:10 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.204', '0.160', '0.099']
+2025-10-19 15:14:10 [INFO    ] dt_rule_extraction:     Top-1: coverage=20.95%, accuracy=97.61%
+2025-10-19 15:14:10 [INFO    ] intelligent_hc:        ensemble_boosting: 4 variantes geradas
+2025-10-19 15:14:10 [INFO    ] hill_climbing_v2:        ✓ ensemble_boosting: 4 variantes geradas
+2025-10-19 15:14:10 [INFO    ] intelligent_hc:        guided_mutation: Top-5 features: [6, 9, 2, 8, 7]
+2025-10-19 15:14:10 [INFO    ] intelligent_hc:        importâncias: ['0.093', '0.125', '0.130', '0.166', '0.265']
+2025-10-19 15:14:10 [INFO    ] intelligent_hc:        guided_mutation: 4 variantes geradas
+2025-10-19 15:14:10 [INFO    ] hill_climbing_v2:        ✓ guided_mutation: 4 variantes geradas
+2025-10-19 15:14:10 [INFO    ] hill_climbing_v2:      Total gerado: 13 variantes, retornando 13
+2025-10-19 15:14:10 [INFO    ] root:      Avaliando 13 variantes HC geradas...
+2025-10-19 15:14:12 [INFO    ] root:      Resultado: 0/13 variantes aprovadas (0.0% taxa de aprovação)
+Gen 63/200 - BestFit: 1.1852 (G-mean: 0.896) | AvgFit: 0.6939 (G-mean: 0.439) | (Diversity: 0.570) | (RuleAct: 46.5) | Mut: 0.579 | Tourn: 3 | Stagn: 14 | Time: 11.28s2025-10-19 15:15:57 [INFO    ] root: 
+2025-10-19 15:15:57 [INFO    ] root: ╔══════════════════════════════════════════════════════════════╗
+2025-10-19 15:15:57 [INFO    ] root: ║ EARLY STOPPING LAYER 1: Elite Satisfatório + Estagnado     ║
+2025-10-19 15:15:57 [INFO    ] root: ╠══════════════════════════════════════════════════════════════╣
+2025-10-19 15:15:57 [INFO    ] root: ║ Elite G-mean:     89.6% (≥ 88%)          ║
+2025-10-19 15:15:57 [INFO    ] root: ║ Estagnação:       15 gerações (≥ 15)                ║
+2025-10-19 15:15:57 [INFO    ] root: ║ Geração atual:    64                                     ║
+2025-10-19 15:15:57 [INFO    ] root: ║ Decisão:          PARAR (performance satisfatória)         ║
+2025-10-19 15:15:57 [INFO    ] root: ╚══════════════════════════════════════════════════════════════╝
+2025-10-19 15:15:57 [INFO    ] root: 
+2025-10-19 15:15:57 [INFO    ] root: GA run finished after 64 generations.
+2025-10-19 15:15:57 [INFO    ] GBMLEvaluator[GBML]: ✓ Melhor indivíduo do chunk 0 salvo em: comparison_results/RBF_Abrupt_Severe_seed42_20251019_135243/best_individual_chunk_0.pkl
+2025-10-19 15:15:57 [INFO    ] GBMLEvaluator[GBML]: ✓ Evolução concluída - Fitness: 1.1852, G-mean: 0.8956
+2025-10-19 15:15:57 [INFO    ] GBMLEvaluator[GBML]: [PREQUENTIAL] Testando no chunk 1 (6000 instâncias)...
+2025-10-19 15:15:57 [INFO    ] GBMLEvaluator[GBML]: [RESULTADO] Treinou chunk 0 → Testou chunk 1 | Acc: 0.8807, F1: 0.8806, G-mean: 0.8801
+2025-10-19 15:15:57 [INFO    ] GBMLEvaluator[GBML]: [PREQUENTIAL] Treinando no chunk 1 (6000 instâncias)...
+2025-10-19 15:15:57 [INFO    ] GBMLEvaluator[GBML]: Iniciando evolução GA em 6000 instâncias...
+2025-10-19 15:15:57 [INFO    ] root: Starting GA run: Pop=120, MaxGen=200, Elit=0.10, Parallel=True, InitStrategy=full_random
+2025-10-19 15:15:57 [INFO    ] root: Initializing population with strategy 'full_random' and performance 'medium'.
+2025-10-19 15:15:57 [INFO    ] root: Construindo o 'Pool de Genes' com a estratégia 'Focus Training' usando Decision Tree...
+2025-10-19 15:15:57 [INFO    ] root: Estratégia de reset ativada. Usando 'Seeding Multi-Profundidade'.
+2025-10-19 15:15:57 [INFO    ] root:   -> SEEDING ADAPTATIVO ATIVADO: Estimando complexidade do chunk...
+2025-10-19 15:15:58 [INFO    ] root:   -> Complexidade estimada: MEDIUM (DT probe acc: 0.794)
+2025-10-19 15:15:58 [INFO    ] root:      Problema MÉDIO (DT probe 75-90%) - Seeding moderado
+2025-10-19 15:15:58 [INFO    ] root:      Parâmetros adaptativos: seeding_ratio=0.6, injection_ratio=0.6, depths=[5, 8, 10]
+2025-10-19 15:15:58 [INFO    ] root:   -> Seeding Probabilístico ATIVADO: Injetando 60% das regras DT
+2025-10-19 15:15:58 [INFO    ] root: População de reset criada: 120 indivíduos (72 semeados, 48 aleatórios).
+2025-10-19 15:15:58 [INFO    ] root: Parallel enabled. Using cores: 12
+
+2025-10-19 15:17:19 [INFO    ] root: Gen 1: Preservando 1 elites do pool híbrido (ordenados por G-mean).
+Gen 1/200 - BestFit: 1.0701 (G-mean: 0.790) | AvgFit: 0.7700 (G-mean: 0.513) | (Diversity: 0.610) | (RuleAct: 69.3) | Mut: 0.711 | Tourn: 2 | Stagn: 0 | Time: 80.55s2025-10-19 15:19:36 [INFO    ] root: Gen 2: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 2/200 - BestFit: 1.0701 (G-mean: 0.790) | AvgFit: 0.6028 (G-mean: 0.356) | (Diversity: 0.472) | (RuleAct: 41.9) | Mut: 0.433 | Tourn: 3 | Stagn: 1 | Time: 26.60s2025-10-19 15:20:54 [INFO    ] root: Gen 3: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 3/200 - BestFit: 1.0980 (G-mean: 0.816) | AvgFit: 0.7096 (G-mean: 0.457) | (Diversity: 0.493) | (RuleAct: 58.8) | Mut: 0.571 | Tourn: 3 | Stagn: 0 | Time: 28.03s2025-10-19 15:22:21 [INFO    ] root: Gen 4: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 4/200 - BestFit: 1.0980 (G-mean: 0.816) | AvgFit: 0.7672 (G-mean: 0.511) | (Diversity: 0.500) | (RuleAct: 53.3) | Mut: 0.649 | Tourn: 3 | Stagn: 1 | Time: 25.30s2025-10-19 15:23:53 [INFO    ] root: Gen 5: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 5/200 - BestFit: 1.0980 (G-mean: 0.816) | AvgFit: 0.6949 (G-mean: 0.442) | (Diversity: 0.471) | (RuleAct: 54.9) | Mut: 0.563 | Tourn: 3 | Stagn: 2 | Time: 22.75s2025-10-19 15:25:14 [INFO    ] root: Gen 6: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 6/200 - BestFit: 1.0980 (G-mean: 0.816) | AvgFit: 0.7561 (G-mean: 0.499) | (Diversity: 0.406) | (RuleAct: 54.1) | Mut: 0.617 | Tourn: 3 | Stagn: 3 | Time: 23.43s2025-10-19 15:26:37 [INFO    ] root: Gen 7: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 7/200 - BestFit: 1.0980 (G-mean: 0.816) | AvgFit: 0.7267 (G-mean: 0.472) | (Diversity: 0.486) | (RuleAct: 51.4) | Mut: 0.583 | Tourn: 3 | Stagn: 4 | Time: 21.59s2025-10-19 15:27:59 [INFO    ] root: Gen 8: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 8/200 - BestFit: 1.0980 (G-mean: 0.816) | AvgFit: 0.7568 (G-mean: 0.500) | (Diversity: 0.456) | (RuleAct: 48.7) | Mut: 0.613 | Tourn: 3 | Stagn: 5 | Time: 21.88s2025-10-19 15:29:21 [INFO    ] root: Gen 9: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 9/200 - BestFit: 1.0980 (G-mean: 0.816) | AvgFit: 0.7363 (G-mean: 0.481) | (Diversity: 0.471) | (RuleAct: 54.2) | Mut: 0.613 | Tourn: 3 | Stagn: 6 | Time: 20.10s2025-10-19 15:30:41 [INFO    ] root: Gen 10: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 10/200 - BestFit: 1.1262 (G-mean: 0.841) | AvgFit: 0.7689 (G-mean: 0.511) | (Diversity: 0.451) | (RuleAct: 59.0) | Mut: 0.630 | Tourn: 3 | Stagn: 0 | Time: 20.05s2025-10-19 15:32:00 [INFO    ] root: Gen 11: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 11/200 - BestFit: 1.1262 (G-mean: 0.841) | AvgFit: 0.7638 (G-mean: 0.506) | (Diversity: 0.457) | (RuleAct: 56.2) | Mut: 0.563 | Tourn: 3 | Stagn: 1 | Time: 18.86s2025-10-19 15:33:14 [INFO    ] root: Gen 12: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 12/200 - BestFit: 1.1356 (G-mean: 0.850) | AvgFit: 0.7621 (G-mean: 0.504) | (Diversity: 0.449) | (RuleAct: 56.5) | Mut: 0.620 | Tourn: 3 | Stagn: 0 | Time: 19.90s2025-10-19 15:34:30 [INFO    ] root: Gen 13: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 13/200 - BestFit: 1.1356 (G-mean: 0.850) | AvgFit: 0.7656 (G-mean: 0.508) | (Diversity: 0.486) | (RuleAct: 50.9) | Mut: 0.611 | Tourn: 3 | Stagn: 1 | Time: 18.44s2025-10-19 15:35:44 [INFO    ] root: Gen 14: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 14/200 - BestFit: 1.1356 (G-mean: 0.850) | AvgFit: 0.7800 (G-mean: 0.521) | (Diversity: 0.493) | (RuleAct: 54.4) | Mut: 0.591 | Tourn: 3 | Stagn: 2 | Time: 18.37s2025-10-19 15:36:56 [INFO    ] root: Gen 15: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 15/200 - BestFit: 1.1356 (G-mean: 0.850) | AvgFit: 0.7614 (G-mean: 0.504) | (Diversity: 0.458) | (RuleAct: 55.1) | Mut: 0.606 | Tourn: 3 | Stagn: 3 | Time: 18.00s2025-10-19 15:38:08 [INFO    ] root: Gen 16: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 16/200 - BestFit: 1.1361 (G-mean: 0.850) | AvgFit: 0.7842 (G-mean: 0.525) | (Diversity: 0.484) | (RuleAct: 57.6) | Mut: 0.606 | Tourn: 3 | Stagn: 0 | Time: 17.14s2025-10-19 15:39:22 [INFO    ] root: Gen 17: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 17/200 - BestFit: 1.1551 (G-mean: 0.868) | AvgFit: 0.8081 (G-mean: 0.547) | (Diversity: 0.453) | (RuleAct: 59.0) | Mut: 0.650 | Tourn: 3 | Stagn: 0 | Time: 18.46s2025-10-19 15:40:40 [INFO    ] root: Gen 18: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 18/200 - BestFit: 1.1551 (G-mean: 0.868) | AvgFit: 0.8037 (G-mean: 0.543) | (Diversity: 0.487) | (RuleAct: 58.8) | Mut: 0.627 | Tourn: 3 | Stagn: 1 | Time: 17.06s2025-10-19 15:41:55 [INFO    ] root: Gen 19: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 19/200 - BestFit: 1.1569 (G-mean: 0.870) | AvgFit: 0.7763 (G-mean: 0.517) | (Diversity: 0.507) | (RuleAct: 58.2) | Mut: 0.617 | Tourn: 3 | Stagn: 0 | Time: 17.31s2025-10-19 15:43:10 [INFO    ] root: Gen 20: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 20/200 - BestFit: 1.1569 (G-mean: 0.870) | AvgFit: 0.7966 (G-mean: 0.537) | (Diversity: 0.508) | (RuleAct: 64.7) | Mut: 0.613 | Tourn: 3 | Stagn: 1 | Time: 16.91s2025-10-19 15:44:23 [INFO    ] root: Gen 21: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 21/200 - BestFit: 1.1569 (G-mean: 0.870) | AvgFit: 0.7844 (G-mean: 0.525) | (Diversity: 0.482) | (RuleAct: 59.6) | Mut: 0.616 | Tourn: 3 | Stagn: 2 | Time: 17.51s2025-10-19 15:45:38 [INFO    ] root: Gen 22: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 22/200 - BestFit: 1.1569 (G-mean: 0.870) | AvgFit: 0.8352 (G-mean: 0.573) | (Diversity: 0.458) | (RuleAct: 61.4) | Mut: 0.652 | Tourn: 3 | Stagn: 3 | Time: 17.46s2025-10-19 15:46:53 [INFO    ] root: Gen 23: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 23/200 - BestFit: 1.1569 (G-mean: 0.870) | AvgFit: 0.7865 (G-mean: 0.527) | (Diversity: 0.490) | (RuleAct: 60.5) | Mut: 0.620 | Tourn: 3 | Stagn: 4 | Time: 16.28s2025-10-19 15:48:06 [INFO    ] root: Gen 24: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 24/200 - BestFit: 1.1580 (G-mean: 0.871) | AvgFit: 0.8456 (G-mean: 0.582) | (Diversity: 0.490) | (RuleAct: 62.2) | Mut: 0.678 | Tourn: 3 | Stagn: 0 | Time: 16.94s2025-10-19 15:49:21 [INFO    ] root: Gen 25: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 25/200 - BestFit: 1.1593 (G-mean: 0.872) | AvgFit: 0.7907 (G-mean: 0.531) | (Diversity: 0.489) | (RuleAct: 60.0) | Mut: 0.676 | Tourn: 3 | Stagn: 0 | Time: 15.61s2025-10-19 15:50:39 [INFO    ] root: Gen 26: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 26/200 - BestFit: 1.1593 (G-mean: 0.872) | AvgFit: 0.7478 (G-mean: 0.491) | (Diversity: 0.435) | (RuleAct: 54.0) | Mut: 0.569 | Tourn: 3 | Stagn: 1 | Time: 15.36s2025-10-19 15:51:46 [INFO    ] root: Gen 27: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 27/200 - BestFit: 1.1651 (G-mean: 0.877) | AvgFit: 0.8115 (G-mean: 0.550) | (Diversity: 0.471) | (RuleAct: 61.4) | Mut: 0.644 | Tourn: 3 | Stagn: 0 | Time: 16.69s2025-10-19 15:53:01 [INFO    ] root: Gen 28: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 28/200 - BestFit: 1.1651 (G-mean: 0.877) | AvgFit: 0.8101 (G-mean: 0.549) | (Diversity: 0.461) | (RuleAct: 56.1) | Mut: 0.590 | Tourn: 3 | Stagn: 1 | Time: 14.91s2025-10-19 15:54:10 [INFO    ] root: Gen 29: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 29/200 - BestFit: 1.1652 (G-mean: 0.877) | AvgFit: 0.8309 (G-mean: 0.569) | (Diversity: 0.570) | (RuleAct: 57.3) | Mut: 0.617 | Tourn: 3 | Stagn: 0 | Time: 15.74s2025-10-19 15:55:19 [INFO    ] root: Gen 30: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 30/200 - BestFit: 1.1652 (G-mean: 0.877) | AvgFit: 0.8305 (G-mean: 0.568) | (Diversity: 0.481) | (RuleAct: 56.1) | Mut: 0.660 | Tourn: 3 | Stagn: 1 | Time: 15.53s2025-10-19 15:56:32 [INFO    ] root: Gen 31: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 31/200 - BestFit: 1.1669 (G-mean: 0.879) | AvgFit: 0.8299 (G-mean: 0.567) | (Diversity: 0.466) | (RuleAct: 52.8) | Mut: 0.611 | Tourn: 3 | Stagn: 0 | Time: 14.71s2025-10-19 15:57:43 [INFO    ] root: Gen 32: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 32/200 - BestFit: 1.1669 (G-mean: 0.879) | AvgFit: 0.8222 (G-mean: 0.561) | (Diversity: 0.450) | (RuleAct: 56.1) | Mut: 0.699 | Tourn: 3 | Stagn: 1 | Time: 15.68s2025-10-19 15:58:58 [INFO    ] root: Gen 33: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 33/200 - BestFit: 1.1669 (G-mean: 0.879) | AvgFit: 0.7609 (G-mean: 0.504) | (Diversity: 0.428) | (RuleAct: 57.6) | Mut: 0.646 | Tourn: 3 | Stagn: 2 | Time: 14.46s2025-10-19 16:00:13 [INFO    ] root: Gen 34: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 34/200 - BestFit: 1.1669 (G-mean: 0.879) | AvgFit: 0.8093 (G-mean: 0.548) | (Diversity: 0.459) | (RuleAct: 56.9) | Mut: 0.633 | Tourn: 3 | Stagn: 3 | Time: 15.83s2025-10-19 16:01:25 [INFO    ] root: Gen 35: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 35/200 - BestFit: 1.1669 (G-mean: 0.879) | AvgFit: 0.7451 (G-mean: 0.489) | (Diversity: 0.471) | (RuleAct: 59.8) | Mut: 0.586 | Tourn: 3 | Stagn: 4 | Time: 15.71s2025-10-19 16:02:34 [INFO    ] root: Gen 36: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 36/200 - BestFit: 1.1669 (G-mean: 0.879) | AvgFit: 0.8368 (G-mean: 0.574) | (Diversity: 0.487) | (RuleAct: 56.5) | Mut: 0.654 | Tourn: 3 | Stagn: 5 | Time: 16.04s2025-10-19 16:03:49 [INFO    ] root: Gen 37: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 37/200 - BestFit: 1.1669 (G-mean: 0.879) | AvgFit: 0.8137 (G-mean: 0.553) | (Diversity: 0.444) | (RuleAct: 58.3) | Mut: 0.601 | Tourn: 3 | Stagn: 6 | Time: 15.70s2025-10-19 16:05:00 [INFO    ] root: Gen 38: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 38/200 - BestFit: 1.1669 (G-mean: 0.879) | AvgFit: 0.8384 (G-mean: 0.575) | (Diversity: 0.503) | (RuleAct: 59.1) | Mut: 0.661 | Tourn: 3 | Stagn: 7 | Time: 16.22s2025-10-19 16:06:15 [INFO    ] root: Gen 39: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 39/200 - BestFit: 1.1669 (G-mean: 0.879) | AvgFit: 0.7818 (G-mean: 0.523) | (Diversity: 0.481) | (RuleAct: 57.0) | Mut: 0.581 | Tourn: 3 | Stagn: 8 | Time: 14.91s2025-10-19 16:07:25 [INFO    ] root: Gen 40: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 40/200 - BestFit: 1.1669 (G-mean: 0.879) | AvgFit: 0.8721 (G-mean: 0.607) | (Diversity: 0.522) | (RuleAct: 59.0) | Mut: 0.676 | Tourn: 3 | Stagn: 9 | Time: 16.08s2025-10-19 16:08:40 [INFO    ] root: Gen 41: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2025-10-19 16:08:40 [INFO    ] root: 
+Estagnação detectada (10 gerações)! Ativando mecanismos de resgate...
+2025-10-19 16:08:40 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [AGGRESSIVE]
+2025-10-19 16:08:40 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.879 → EXPLORAÇÃO AGRESSIVA - HC Inteligente Multi-Estratégia
+2025-10-19 16:08:40 [INFO    ] hill_climbing_v2:      Operações: ['error_focused_dt_rules', 'ensemble_boosting', 'guided_mutation']
+2025-10-19 16:08:40 [INFO    ] hill_climbing_v2:      Variantes planejadas: 15
+2025-10-19 16:08:41 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 717/6000 (11.9%)
+2025-10-19 16:08:41 [INFO    ] intelligent_hc:        DT nos erros: acc=0.971, depth=6, nodes=61
+2025-10-19 16:08:41 [INFO    ] dt_rule_extraction:   Extração DT: 31 regras extraídas de 61 nós
+2025-10-19 16:08:41 [INFO    ] dt_rule_extraction:   Ranqueamento: 31 regras avaliadas
+2025-10-19 16:08:41 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.205', '0.202', '0.162']
+2025-10-19 16:08:41 [INFO    ] dt_rule_extraction:     Top-1: coverage=20.50%, accuracy=100.00%
+2025-10-19 16:08:41 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.205', '0.202', '0.162']
+2025-10-19 16:08:41 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2025-10-19 16:08:41 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2025-10-19 16:08:41 [INFO    ] intelligent_hc:        ensemble_boosting: 717 erros com peso 3×
+2025-10-19 16:08:41 [INFO    ] intelligent_hc:        DT boosted #1: depth=12, acc=0.938
+2025-10-19 16:08:41 [INFO    ] dt_rule_extraction:   Extração DT: 158 regras extraídas de 315 nós
+2025-10-19 16:08:42 [INFO    ] dt_rule_extraction:   Ranqueamento: 158 regras avaliadas
+2025-10-19 16:08:42 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.154', '0.146', '0.096']
+2025-10-19 16:08:42 [INFO    ] dt_rule_extraction:     Top-1: coverage=15.43%, accuracy=100.00%
+2025-10-19 16:08:42 [INFO    ] intelligent_hc:        DT boosted #2: depth=8, acc=0.931
+2025-10-19 16:08:42 [INFO    ] dt_rule_extraction:   Extração DT: 102 regras extraídas de 203 nós
+2025-10-19 16:08:42 [INFO    ] dt_rule_extraction:   Ranqueamento: 102 regras avaliadas
+2025-10-19 16:08:42 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.174', '0.159', '0.096']
+2025-10-19 16:08:42 [INFO    ] dt_rule_extraction:     Top-1: coverage=17.63%, accuracy=98.77%
+2025-10-19 16:08:42 [INFO    ] intelligent_hc:        DT boosted #3: depth=12, acc=0.938
+2025-10-19 16:08:42 [INFO    ] dt_rule_extraction:   Extração DT: 156 regras extraídas de 311 nós
+2025-10-19 16:08:42 [INFO    ] dt_rule_extraction:   Ranqueamento: 156 regras avaliadas
+2025-10-19 16:08:42 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.154', '0.146', '0.096']
+2025-10-19 16:08:42 [INFO    ] dt_rule_extraction:     Top-1: coverage=15.43%, accuracy=100.00%
+2025-10-19 16:08:42 [INFO    ] intelligent_hc:        DT boosted #4: depth=8, acc=0.931
+2025-10-19 16:08:42 [INFO    ] dt_rule_extraction:   Extração DT: 101 regras extraídas de 201 nós
+2025-10-19 16:08:42 [INFO    ] dt_rule_extraction:   Ranqueamento: 101 regras avaliadas
+2025-10-19 16:08:42 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.174', '0.159', '0.096']
+2025-10-19 16:08:42 [INFO    ] dt_rule_extraction:     Top-1: coverage=17.63%, accuracy=98.77%
+2025-10-19 16:08:42 [INFO    ] intelligent_hc:        ensemble_boosting: 4 variantes geradas
+2025-10-19 16:08:42 [INFO    ] hill_climbing_v2:        ✓ ensemble_boosting: 4 variantes geradas
+2025-10-19 16:08:43 [INFO    ] intelligent_hc:        guided_mutation: Top-5 features: [2, 1, 8, 4, 7]
+2025-10-19 16:08:43 [INFO    ] intelligent_hc:        importâncias: ['0.100', '0.175', '0.182', '0.191', '0.207']
+2025-10-19 16:08:43 [INFO    ] intelligent_hc:        guided_mutation: 4 variantes geradas
+2025-10-19 16:08:43 [INFO    ] hill_climbing_v2:        ✓ guided_mutation: 4 variantes geradas
+2025-10-19 16:08:43 [INFO    ] hill_climbing_v2:      Total gerado: 13 variantes, retornando 13
+2025-10-19 16:08:43 [INFO    ] root:      Avaliando 13 variantes HC geradas...
+2025-10-19 16:08:44 [INFO    ] root:        ✓ HC variant #9 APROVADO: fitness=1.1718 (elite=1.1669), gmean=0.883 (elite=0.879)
+2025-10-19 16:08:45 [INFO    ] root:      Resultado: 1/13 variantes aprovadas (7.7% taxa de aprovação)
+Gen 41/200 - BestFit: 1.1669 (G-mean: 0.879) | AvgFit: 0.7874 (G-mean: 0.528) | (Diversity: 0.521) | (RuleAct: 58.4) | Mut: 0.617 | Tourn: 3 | Stagn: 10 | Time: 14.93s2025-10-19 16:10:47 [INFO    ] root: Gen 42: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 42/200 - BestFit: 1.1718 (G-mean: 0.883) | AvgFit: 0.4886 (G-mean: 0.246) | (Diversity: 0.534) | (RuleAct: 18.7) | Mut: 0.313 | Tourn: 4 | Stagn: 0 | Time: 5.96s2025-10-19 16:11:22 [INFO    ] root: Gen 43: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 43/200 - BestFit: 1.1729 (G-mean: 0.884) | AvgFit: 0.8073 (G-mean: 0.547) | (Diversity: 0.491) | (RuleAct: 66.3) | Mut: 0.604 | Tourn: 3 | Stagn: 0 | Time: 15.26s2025-10-19 16:12:37 [INFO    ] root: Gen 44: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 44/200 - BestFit: 1.1729 (G-mean: 0.884) | AvgFit: 0.8135 (G-mean: 0.552) | (Diversity: 0.432) | (RuleAct: 60.6) | Mut: 0.641 | Tourn: 3 | Stagn: 1 | Time: 16.72s2025-10-19 16:13:51 [INFO    ] root: Gen 45: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 45/200 - BestFit: 1.1729 (G-mean: 0.884) | AvgFit: 0.8076 (G-mean: 0.547) | (Diversity: 0.448) | (RuleAct: 57.9) | Mut: 0.684 | Tourn: 3 | Stagn: 2 | Time: 16.29s2025-10-19 16:15:10 [INFO    ] root: Gen 46: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 46/200 - BestFit: 1.1729 (G-mean: 0.884) | AvgFit: 0.7633 (G-mean: 0.505) | (Diversity: 0.481) | (RuleAct: 57.3) | Mut: 0.564 | Tourn: 3 | Stagn: 3 | Time: 14.50s2025-10-19 16:16:18 [INFO    ] root: Gen 47: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 47/200 - BestFit: 1.1729 (G-mean: 0.884) | AvgFit: 0.8399 (G-mean: 0.577) | (Diversity: 0.447) | (RuleAct: 62.6) | Mut: 0.663 | Tourn: 3 | Stagn: 4 | Time: 16.57s2025-10-19 16:17:35 [INFO    ] root: Gen 48: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 48/200 - BestFit: 1.1729 (G-mean: 0.884) | AvgFit: 0.8257 (G-mean: 0.564) | (Diversity: 0.528) | (RuleAct: 52.3) | Mut: 0.699 | Tourn: 3 | Stagn: 5 | Time: 15.65s2025-10-19 16:18:52 [INFO    ] root: Gen 49: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 49/200 - BestFit: 1.1729 (G-mean: 0.884) | AvgFit: 0.7617 (G-mean: 0.504) | (Diversity: 0.498) | (RuleAct: 51.8) | Mut: 0.574 | Tourn: 3 | Stagn: 6 | Time: 14.40s2025-10-19 16:20:01 [INFO    ] root: Gen 50: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 50/200 - BestFit: 1.1729 (G-mean: 0.884) | AvgFit: 0.8139 (G-mean: 0.552) | (Diversity: 0.461) | (RuleAct: 57.4) | Mut: 0.640 | Tourn: 3 | Stagn: 7 | Time: 16.76s2025-10-19 16:21:15 [INFO    ] root: Gen 51: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 51/200 - BestFit: 1.1729 (G-mean: 0.884) | AvgFit: 0.8269 (G-mean: 0.565) | (Diversity: 0.488) | (RuleAct: 54.9) | Mut: 0.646 | Tourn: 3 | Stagn: 8 | Time: 15.95s2025-10-19 16:22:28 [INFO    ] root: Gen 52: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 52/200 - BestFit: 1.1735 (G-mean: 0.885) | AvgFit: 0.8037 (G-mean: 0.543) | (Diversity: 0.494) | (RuleAct: 53.6) | Mut: 0.613 | Tourn: 3 | Stagn: 0 | Time: 15.26s2025-10-19 16:23:39 [INFO    ] root: Gen 53: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 53/200 - BestFit: 1.1735 (G-mean: 0.885) | AvgFit: 0.8757 (G-mean: 0.610) | (Diversity: 0.510) | (RuleAct: 56.7) | Mut: 0.667 | Tourn: 3 | Stagn: 1 | Time: 15.90s2025-10-19 16:24:55 [INFO    ] root: Gen 54: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 54/200 - BestFit: 1.1735 (G-mean: 0.885) | AvgFit: 0.7911 (G-mean: 0.531) | (Diversity: 0.524) | (RuleAct: 53.4) | Mut: 0.624 | Tourn: 3 | Stagn: 2 | Time: 15.42s2025-10-19 16:26:08 [INFO    ] root: Gen 55: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 55/200 - BestFit: 1.1735 (G-mean: 0.885) | AvgFit: 0.7946 (G-mean: 0.535) | (Diversity: 0.498) | (RuleAct: 59.8) | Mut: 0.618 | Tourn: 3 | Stagn: 3 | Time: 15.54s2025-10-19 16:27:16 [INFO    ] root: Gen 56: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 56/200 - BestFit: 1.1735 (G-mean: 0.885) | AvgFit: 0.8271 (G-mean: 0.565) | (Diversity: 0.455) | (RuleAct: 61.1) | Mut: 0.646 | Tourn: 3 | Stagn: 4 | Time: 14.87s2025-10-19 16:28:28 [INFO    ] root: Gen 57: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 57/200 - BestFit: 1.1741 (G-mean: 0.886) | AvgFit: 0.8329 (G-mean: 0.571) | (Diversity: 0.549) | (RuleAct: 57.5) | Mut: 0.654 | Tourn: 3 | Stagn: 0 | Time: 15.75s2025-10-19 16:29:41 [INFO    ] root: Gen 58: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 58/200 - BestFit: 1.1741 (G-mean: 0.886) | AvgFit: 0.8122 (G-mean: 0.551) | (Diversity: 0.535) | (RuleAct: 57.6) | Mut: 0.618 | Tourn: 3 | Stagn: 1 | Time: 14.84s2025-10-19 16:30:51 [INFO    ] root: Gen 59: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 59/200 - BestFit: 1.1741 (G-mean: 0.886) | AvgFit: 0.7341 (G-mean: 0.479) | (Diversity: 0.496) | (RuleAct: 59.5) | Mut: 0.619 | Tourn: 3 | Stagn: 2 | Time: 14.94s2025-10-19 16:32:02 [INFO    ] root: Gen 60: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 60/200 - BestFit: 1.1741 (G-mean: 0.886) | AvgFit: 0.8111 (G-mean: 0.550) | (Diversity: 0.473) | (RuleAct: 58.4) | Mut: 0.624 | Tourn: 3 | Stagn: 3 | Time: 15.18s2025-10-19 16:33:12 [INFO    ] root: Gen 61: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 61/200 - BestFit: 1.1741 (G-mean: 0.886) | AvgFit: 0.7879 (G-mean: 0.528) | (Diversity: 0.493) | (RuleAct: 58.4) | Mut: 0.610 | Tourn: 3 | Stagn: 4 | Time: 14.79s2025-10-19 16:34:18 [INFO    ] root: Gen 62: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 62/200 - BestFit: 1.1821 (G-mean: 0.893) | AvgFit: 0.8144 (G-mean: 0.553) | (Diversity: 0.454) | (RuleAct: 57.3) | Mut: 0.640 | Tourn: 3 | Stagn: 0 | Time: 15.53s2025-10-19 16:35:27 [INFO    ] root: Gen 63: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 63/200 - BestFit: 1.1821 (G-mean: 0.893) | AvgFit: 0.8364 (G-mean: 0.574) | (Diversity: 0.483) | (RuleAct: 58.2) | Mut: 0.633 | Tourn: 3 | Stagn: 1 | Time: 14.75s2025-10-19 16:36:38 [INFO    ] root: Gen 64: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 64/200 - BestFit: 1.1821 (G-mean: 0.893) | AvgFit: 0.8410 (G-mean: 0.578) | (Diversity: 0.537) | (RuleAct: 57.9) | Mut: 0.707 | Tourn: 2 | Stagn: 2 | Time: 15.64s2025-10-19 16:37:56 [INFO    ] root: Gen 65: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 65/200 - BestFit: 1.1821 (G-mean: 0.893) | AvgFit: 0.7723 (G-mean: 0.514) | (Diversity: 0.500) | (RuleAct: 54.0) | Mut: 0.567 | Tourn: 3 | Stagn: 3 | Time: 14.79s2025-10-19 16:39:02 [INFO    ] root: Gen 66: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 66/200 - BestFit: 1.1821 (G-mean: 0.893) | AvgFit: 0.7893 (G-mean: 0.530) | (Diversity: 0.468) | (RuleAct: 60.9) | Mut: 0.598 | Tourn: 3 | Stagn: 4 | Time: 16.03s2025-10-19 16:40:09 [INFO    ] root: Gen 67: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 67/200 - BestFit: 1.1821 (G-mean: 0.893) | AvgFit: 0.8294 (G-mean: 0.568) | (Diversity: 0.503) | (RuleAct: 63.4) | Mut: 0.697 | Tourn: 3 | Stagn: 5 | Time: 16.84s2025-10-19 16:41:27 [INFO    ] root: Gen 68: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 68/200 - BestFit: 1.1821 (G-mean: 0.893) | AvgFit: 0.7538 (G-mean: 0.497) | (Diversity: 0.506) | (RuleAct: 60.1) | Mut: 0.583 | Tourn: 3 | Stagn: 6 | Time: 15.75s2025-10-19 16:42:35 [INFO    ] root: Gen 69: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 69/200 - BestFit: 1.1821 (G-mean: 0.893) | AvgFit: 0.8415 (G-mean: 0.578) | (Diversity: 0.556) | (RuleAct: 55.1) | Mut: 0.619 | Tourn: 3 | Stagn: 7 | Time: 16.64s2025-10-19 16:43:45 [INFO    ] root: Gen 70: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 70/200 - BestFit: 1.1821 (G-mean: 0.893) | AvgFit: 0.8359 (G-mean: 0.573) | (Diversity: 0.536) | (RuleAct: 58.4) | Mut: 0.637 | Tourn: 3 | Stagn: 8 | Time: 15.45s2025-10-19 16:44:56 [INFO    ] root: Gen 71: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 71/200 - BestFit: 1.1821 (G-mean: 0.893) | AvgFit: 0.8127 (G-mean: 0.551) | (Diversity: 0.522) | (RuleAct: 55.2) | Mut: 0.630 | Tourn: 3 | Stagn: 9 | Time: 14.98s2025-10-19 16:46:07 [INFO    ] root: Gen 72: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2025-10-19 16:46:07 [INFO    ] root: 
+Estagnação detectada (10 gerações)! Ativando mecanismos de resgate...
+2025-10-19 16:46:07 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [AGGRESSIVE]
+2025-10-19 16:46:07 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.893 → EXPLORAÇÃO AGRESSIVA - HC Inteligente Multi-Estratégia
+2025-10-19 16:46:07 [INFO    ] hill_climbing_v2:      Operações: ['error_focused_dt_rules', 'ensemble_boosting', 'guided_mutation']
+2025-10-19 16:46:07 [INFO    ] hill_climbing_v2:      Variantes planejadas: 15
+2025-10-19 16:46:07 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 642/6000 (10.7%)
+2025-10-19 16:46:07 [INFO    ] intelligent_hc:        DT nos erros: acc=0.949, depth=10, nodes=93
+2025-10-19 16:46:07 [INFO    ] dt_rule_extraction:   Extração DT: 47 regras extraídas de 93 nós
+2025-10-19 16:46:08 [INFO    ] dt_rule_extraction:   Ranqueamento: 47 regras avaliadas
+2025-10-19 16:46:08 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.170', '0.112', '0.072']
+2025-10-19 16:46:08 [INFO    ] dt_rule_extraction:     Top-1: coverage=16.98%, accuracy=100.00%
+2025-10-19 16:46:08 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.170', '0.112', '0.072']
+2025-10-19 16:46:08 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2025-10-19 16:46:08 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2025-10-19 16:46:08 [INFO    ] intelligent_hc:        ensemble_boosting: 642 erros com peso 3×
+2025-10-19 16:46:08 [INFO    ] intelligent_hc:        DT boosted #1: depth=10, acc=0.940
+2025-10-19 16:46:08 [INFO    ] dt_rule_extraction:   Extração DT: 134 regras extraídas de 267 nós
+2025-10-19 16:46:08 [INFO    ] dt_rule_extraction:   Ranqueamento: 134 regras avaliadas
+2025-10-19 16:46:08 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.155', '0.085', '0.077']
+2025-10-19 16:46:08 [INFO    ] dt_rule_extraction:     Top-1: coverage=15.47%, accuracy=100.00%
+2025-10-19 16:46:08 [INFO    ] intelligent_hc:        DT boosted #2: depth=6, acc=0.916
+2025-10-19 16:46:08 [INFO    ] dt_rule_extraction:   Extração DT: 53 regras extraídas de 105 nós
+2025-10-19 16:46:08 [INFO    ] dt_rule_extraction:   Ranqueamento: 53 regras avaliadas
+2025-10-19 16:46:08 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.174', '0.152', '0.108']
+2025-10-19 16:46:08 [INFO    ] dt_rule_extraction:     Top-1: coverage=17.53%, accuracy=99.14%
+2025-10-19 16:46:08 [INFO    ] intelligent_hc:        DT boosted #3: depth=8, acc=0.929
+2025-10-19 16:46:08 [INFO    ] dt_rule_extraction:   Extração DT: 102 regras extraídas de 203 nós
+2025-10-19 16:46:09 [INFO    ] dt_rule_extraction:   Ranqueamento: 102 regras avaliadas
+2025-10-19 16:46:09 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.160', '0.089', '0.079']
+2025-10-19 16:46:09 [INFO    ] dt_rule_extraction:     Top-1: coverage=16.03%, accuracy=99.79%
+2025-10-19 16:46:09 [INFO    ] intelligent_hc:        DT boosted #4: depth=6, acc=0.916
+2025-10-19 16:46:09 [INFO    ] dt_rule_extraction:   Extração DT: 53 regras extraídas de 105 nós
+2025-10-19 16:46:09 [INFO    ] dt_rule_extraction:   Ranqueamento: 53 regras avaliadas
+2025-10-19 16:46:09 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.174', '0.152', '0.108']
+2025-10-19 16:46:09 [INFO    ] dt_rule_extraction:     Top-1: coverage=17.53%, accuracy=99.14%
+2025-10-19 16:46:09 [INFO    ] intelligent_hc:        ensemble_boosting: 4 variantes geradas
+2025-10-19 16:46:09 [INFO    ] hill_climbing_v2:        ✓ ensemble_boosting: 4 variantes geradas
+2025-10-19 16:46:09 [INFO    ] intelligent_hc:        guided_mutation: Top-5 features: [4, 1, 3, 2, 7]
+2025-10-19 16:46:09 [INFO    ] intelligent_hc:        importâncias: ['0.073', '0.123', '0.137', '0.168', '0.235']
+2025-10-19 16:46:09 [INFO    ] intelligent_hc:        guided_mutation: 4 variantes geradas
+2025-10-19 16:46:09 [INFO    ] hill_climbing_v2:        ✓ guided_mutation: 4 variantes geradas
+2025-10-19 16:46:09 [INFO    ] hill_climbing_v2:      Total gerado: 13 variantes, retornando 13
+2025-10-19 16:46:09 [INFO    ] root:      Avaliando 13 variantes HC geradas...
+2025-10-19 16:46:10 [INFO    ] root:        ✓ HC variant #6 APROVADO: fitness=1.1835 (elite=1.1821), gmean=0.894 (elite=0.893)
+2025-10-19 16:46:11 [INFO    ] root:      Resultado: 1/13 variantes aprovadas (7.7% taxa de aprovação)
+Gen 72/200 - BestFit: 1.1821 (G-mean: 0.893) | AvgFit: 0.8216 (G-mean: 0.560) | (Diversity: 0.550) | (RuleAct: 58.7) | Mut: 0.690 | Tourn: 3 | Stagn: 10 | Time: 16.06s2025-10-19 16:48:12 [INFO    ] root: Gen 73: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 73/200 - BestFit: 1.1835 (G-mean: 0.894) | AvgFit: 0.4673 (G-mean: 0.226) | (Diversity: 0.495) | (RuleAct: 16.8) | Mut: 0.304 | Tourn: 4 | Stagn: 0 | Time: 5.98s2025-10-19 16:48:45 [INFO    ] root: Gen 74: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 74/200 - BestFit: 1.1839 (G-mean: 0.894) | AvgFit: 0.7503 (G-mean: 0.492) | (Diversity: 0.519) | (RuleAct: 54.8) | Mut: 0.572 | Tourn: 3 | Stagn: 0 | Time: 14.74s2025-10-19 16:49:52 [INFO    ] root: Gen 75: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 75/200 - BestFit: 1.1839 (G-mean: 0.894) | AvgFit: 0.7878 (G-mean: 0.527) | (Diversity: 0.401) | (RuleAct: 55.8) | Mut: 0.615 | Tourn: 3 | Stagn: 1 | Time: 15.93s2025-10-19 16:51:00 [INFO    ] root: Gen 76: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 76/200 - BestFit: 1.1839 (G-mean: 0.894) | AvgFit: 0.8411 (G-mean: 0.578) | (Diversity: 0.457) | (RuleAct: 54.9) | Mut: 0.623 | Tourn: 3 | Stagn: 2 | Time: 15.86s2025-10-19 16:52:08 [INFO    ] root: Gen 77: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 77/200 - BestFit: 1.1839 (G-mean: 0.894) | AvgFit: 0.8338 (G-mean: 0.572) | (Diversity: 0.415) | (RuleAct: 58.0) | Mut: 0.700 | Tourn: 3 | Stagn: 3 | Time: 14.98s2025-10-19 16:53:21 [INFO    ] root: Gen 78: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 78/200 - BestFit: 1.1839 (G-mean: 0.894) | AvgFit: 0.7943 (G-mean: 0.534) | (Diversity: 0.499) | (RuleAct: 54.5) | Mut: 0.600 | Tourn: 3 | Stagn: 4 | Time: 14.81s2025-10-19 16:54:27 [INFO    ] root: Gen 79: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 79/200 - BestFit: 1.1839 (G-mean: 0.894) | AvgFit: 0.8190 (G-mean: 0.557) | (Diversity: 0.491) | (RuleAct: 59.6) | Mut: 0.640 | Tourn: 3 | Stagn: 5 | Time: 15.86s2025-10-19 16:55:39 [INFO    ] root: Gen 80: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 80/200 - BestFit: 1.1839 (G-mean: 0.894) | AvgFit: 0.7961 (G-mean: 0.536) | (Diversity: 0.467) | (RuleAct: 56.7) | Mut: 0.622 | Tourn: 3 | Stagn: 6 | Time: 15.91s2025-10-19 16:56:50 [INFO    ] root: Gen 81: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 81/200 - BestFit: 1.1839 (G-mean: 0.894) | AvgFit: 0.7954 (G-mean: 0.535) | (Diversity: 0.445) | (RuleAct: 57.3) | Mut: 0.609 | Tourn: 3 | Stagn: 7 | Time: 15.82s2025-10-19 16:58:01 [INFO    ] root: Gen 82: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 82/200 - BestFit: 1.1839 (G-mean: 0.894) | AvgFit: 0.8371 (G-mean: 0.574) | (Diversity: 0.449) | (RuleAct: 58.4) | Mut: 0.663 | Tourn: 3 | Stagn: 8 | Time: 16.18s2025-10-19 16:59:16 [INFO    ] root: Gen 83: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 83/200 - BestFit: 1.1839 (G-mean: 0.894) | AvgFit: 0.8538 (G-mean: 0.589) | (Diversity: 0.495) | (RuleAct: 57.4) | Mut: 0.642 | Tourn: 3 | Stagn: 9 | Time: 15.89s2025-10-19 17:00:28 [INFO    ] root: Gen 84: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2025-10-19 17:00:28 [INFO    ] root: 
+Estagnação detectada (10 gerações)! Ativando mecanismos de resgate...
+2025-10-19 17:00:28 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [AGGRESSIVE]
+2025-10-19 17:00:28 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.894 → EXPLORAÇÃO AGRESSIVA - HC Inteligente Multi-Estratégia
+2025-10-19 17:00:28 [INFO    ] hill_climbing_v2:      Operações: ['error_focused_dt_rules', 'ensemble_boosting', 'guided_mutation']
+2025-10-19 17:00:28 [INFO    ] hill_climbing_v2:      Variantes planejadas: 15
+2025-10-19 17:00:28 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 630/6000 (10.5%)
+2025-10-19 17:00:28 [INFO    ] intelligent_hc:        DT nos erros: acc=0.944, depth=8, nodes=93
+2025-10-19 17:00:28 [INFO    ] dt_rule_extraction:   Extração DT: 47 regras extraídas de 93 nós
+2025-10-19 17:00:28 [INFO    ] dt_rule_extraction:   Ranqueamento: 47 regras avaliadas
+2025-10-19 17:00:28 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.162', '0.132', '0.070']
+2025-10-19 17:00:28 [INFO    ] dt_rule_extraction:     Top-1: coverage=16.19%, accuracy=100.00%
+2025-10-19 17:00:28 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.162', '0.132', '0.070']
+2025-10-19 17:00:28 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2025-10-19 17:00:28 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2025-10-19 17:00:29 [INFO    ] intelligent_hc:        ensemble_boosting: 630 erros com peso 3×
+2025-10-19 17:00:29 [INFO    ] intelligent_hc:        DT boosted #1: depth=10, acc=0.938
+2025-10-19 17:00:29 [INFO    ] dt_rule_extraction:   Extração DT: 145 regras extraídas de 289 nós
+2025-10-19 17:00:29 [INFO    ] dt_rule_extraction:   Ranqueamento: 145 regras avaliadas
+2025-10-19 17:00:29 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.155', '0.111', '0.078']
+2025-10-19 17:00:29 [INFO    ] dt_rule_extraction:     Top-1: coverage=15.47%, accuracy=100.00%
+2025-10-19 17:00:29 [INFO    ] intelligent_hc:        DT boosted #2: depth=10, acc=0.938
+2025-10-19 17:00:29 [INFO    ] dt_rule_extraction:   Extração DT: 144 regras extraídas de 287 nós
+2025-10-19 17:00:29 [INFO    ] dt_rule_extraction:   Ranqueamento: 144 regras avaliadas
+2025-10-19 17:00:29 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.155', '0.111', '0.078']
+2025-10-19 17:00:29 [INFO    ] dt_rule_extraction:     Top-1: coverage=15.47%, accuracy=100.00%
+2025-10-19 17:00:29 [INFO    ] intelligent_hc:        DT boosted #3: depth=6, acc=0.911
+2025-10-19 17:00:29 [INFO    ] dt_rule_extraction:   Extração DT: 53 regras extraídas de 105 nós
+2025-10-19 17:00:30 [INFO    ] dt_rule_extraction:   Ranqueamento: 53 regras avaliadas
+2025-10-19 17:00:30 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.174', '0.127', '0.083']
+2025-10-19 17:00:30 [INFO    ] dt_rule_extraction:     Top-1: coverage=17.53%, accuracy=99.14%
+2025-10-19 17:00:30 [INFO    ] intelligent_hc:        DT boosted #4: depth=10, acc=0.938
+2025-10-19 17:00:30 [INFO    ] dt_rule_extraction:   Extração DT: 144 regras extraídas de 287 nós
+2025-10-19 17:00:30 [INFO    ] dt_rule_extraction:   Ranqueamento: 144 regras avaliadas
+2025-10-19 17:00:30 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.155', '0.111', '0.078']
+2025-10-19 17:00:30 [INFO    ] dt_rule_extraction:     Top-1: coverage=15.47%, accuracy=100.00%
+2025-10-19 17:00:30 [INFO    ] intelligent_hc:        ensemble_boosting: 4 variantes geradas
+2025-10-19 17:00:30 [INFO    ] hill_climbing_v2:        ✓ ensemble_boosting: 4 variantes geradas
+2025-10-19 17:00:30 [INFO    ] intelligent_hc:        guided_mutation: Top-5 features: [1, 8, 3, 2, 7]
+2025-10-19 17:00:30 [INFO    ] intelligent_hc:        importâncias: ['0.101', '0.119', '0.124', '0.157', '0.248']
+2025-10-19 17:00:30 [INFO    ] intelligent_hc:        guided_mutation: 4 variantes geradas
+2025-10-19 17:00:30 [INFO    ] hill_climbing_v2:        ✓ guided_mutation: 4 variantes geradas
+2025-10-19 17:00:30 [INFO    ] hill_climbing_v2:      Total gerado: 13 variantes, retornando 13
+2025-10-19 17:00:30 [INFO    ] root:      Avaliando 13 variantes HC geradas...
+2025-10-19 17:00:32 [INFO    ] root:        ✓ HC variant #6 APROVADO: fitness=1.1849 (elite=1.1839), gmean=0.895 (elite=0.894)
+2025-10-19 17:00:34 [INFO    ] root:      Resultado: 1/13 variantes aprovadas (7.7% taxa de aprovação)
+Gen 84/200 - BestFit: 1.1839 (G-mean: 0.894) | AvgFit: 0.8215 (G-mean: 0.560) | (Diversity: 0.456) | (RuleAct: 59.0) | Mut: 0.648 | Tourn: 3 | Stagn: 10 | Time: 15.63s2025-10-19 17:02:31 [INFO    ] root: Gen 85: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 85/200 - BestFit: 1.1849 (G-mean: 0.895) | AvgFit: 0.4791 (G-mean: 0.238) | (Diversity: 0.640) | (RuleAct: 19.8) | Mut: 0.395 | Tourn: 4 | Stagn: 0 | Time: 6.26s2025-10-19 17:03:11 [INFO    ] root: Gen 86: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 86/200 - BestFit: 1.1857 (G-mean: 0.896) | AvgFit: 0.7716 (G-mean: 0.513) | (Diversity: 0.592) | (RuleAct: 63.3) | Mut: 0.587 | Tourn: 3 | Stagn: 0 | Time: 15.62s2025-10-19 17:04:18 [INFO    ] root: Gen 87: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 87/200 - BestFit: 1.1857 (G-mean: 0.896) | AvgFit: 0.8411 (G-mean: 0.579) | (Diversity: 0.480) | (RuleAct: 60.5) | Mut: 0.706 | Tourn: 2 | Stagn: 1 | Time: 16.29s2025-10-19 17:05:33 [INFO    ] root: Gen 88: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 88/200 - BestFit: 1.1857 (G-mean: 0.896) | AvgFit: 0.7865 (G-mean: 0.527) | (Diversity: 0.478) | (RuleAct: 56.4) | Mut: 0.616 | Tourn: 3 | Stagn: 2 | Time: 14.69s2025-10-19 17:06:43 [INFO    ] root: Gen 89: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 89/200 - BestFit: 1.1857 (G-mean: 0.896) | AvgFit: 0.8722 (G-mean: 0.606) | (Diversity: 0.470) | (RuleAct: 57.7) | Mut: 0.685 | Tourn: 3 | Stagn: 3 | Time: 15.68s2025-10-19 17:07:59 [INFO    ] root: Gen 90: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 90/200 - BestFit: 1.1857 (G-mean: 0.896) | AvgFit: 0.7972 (G-mean: 0.536) | (Diversity: 0.504) | (RuleAct: 53.8) | Mut: 0.610 | Tourn: 3 | Stagn: 4 | Time: 15.04s2025-10-19 17:09:08 [INFO    ] root: 
+2025-10-19 17:09:08 [INFO    ] root: ╔══════════════════════════════════════════════════════════════╗
+2025-10-19 17:09:08 [INFO    ] root: ║ EARLY STOPPING LAYER 2: Melhoria Marginal                   ║
+2025-10-19 17:09:08 [INFO    ] root: ╠══════════════════════════════════════════════════════════════╣
+2025-10-19 17:09:08 [INFO    ] root: ║ G-mean 30 gens atrás: 0.8928                          ║
+2025-10-19 17:09:08 [INFO    ] root: ║ G-mean atual:         0.8961                          ║
+2025-10-19 17:09:08 [INFO    ] root: ║ Melhoria:              0.0033 (< 0.0050)          ║
+2025-10-19 17:09:08 [INFO    ] root: ║ Geração atual:         91                              ║
+2025-10-19 17:09:08 [INFO    ] root: ║ Decisão:               PARAR (retorno decrescente severo)  ║
+2025-10-19 17:09:08 [INFO    ] root: ╚══════════════════════════════════════════════════════════════╝
+2025-10-19 17:09:08 [INFO    ] root: 
+2025-10-19 17:09:08 [INFO    ] root: GA run finished after 91 generations.
+2025-10-19 17:09:08 [INFO    ] GBMLEvaluator[GBML]: ✓ Melhor indivíduo do chunk 1 salvo em: comparison_results/RBF_Abrupt_Severe_seed42_20251019_135243/best_individual_chunk_1.pkl
+2025-10-19 17:09:08 [INFO    ] GBMLEvaluator[GBML]: ✓ Evolução concluída - Fitness: 1.1857, G-mean: 0.8961
+2025-10-19 17:09:08 [INFO    ] GBMLEvaluator[GBML]: [PREQUENTIAL] Testando no chunk 2 (6000 instâncias)...
+2025-10-19 17:09:08 [INFO    ] GBMLEvaluator[GBML]: [RESULTADO] Treinou chunk 1 → Testou chunk 2 | Acc: 0.8812, F1: 0.8811, G-mean: 0.8803
+2025-10-19 17:09:08 [INFO    ] GBMLEvaluator[GBML]: [PREQUENTIAL] Treinando no chunk 2 (6000 instâncias)...
+2025-10-19 17:09:08 [INFO    ] GBMLEvaluator[GBML]: Iniciando evolução GA em 6000 instâncias...
+2025-10-19 17:09:08 [INFO    ] root: Starting GA run: Pop=120, MaxGen=200, Elit=0.10, Parallel=True, InitStrategy=full_random
+2025-10-19 17:09:08 [INFO    ] root: Initializing population with strategy 'full_random' and performance 'medium'.
+2025-10-19 17:09:08 [INFO    ] root: Construindo o 'Pool de Genes' com a estratégia 'Focus Training' usando Decision Tree...
+2025-10-19 17:09:09 [INFO    ] root: Estratégia de reset ativada. Usando 'Seeding Multi-Profundidade'.
+2025-10-19 17:09:09 [INFO    ] root:   -> SEEDING ADAPTATIVO ATIVADO: Estimando complexidade do chunk...
+2025-10-19 17:09:09 [INFO    ] root:   -> Complexidade estimada: MEDIUM (DT probe acc: 0.787)
+2025-10-19 17:09:09 [INFO    ] root:      Problema MÉDIO (DT probe 75-90%) - Seeding moderado
+2025-10-19 17:09:09 [INFO    ] root:      Parâmetros adaptativos: seeding_ratio=0.6, injection_ratio=0.6, depths=[5, 8, 10]
+2025-10-19 17:09:09 [INFO    ] root:   -> Seeding Probabilístico ATIVADO: Injetando 60% das regras DT
+2025-10-19 17:09:10 [INFO    ] root: População de reset criada: 120 indivíduos (72 semeados, 48 aleatórios).
+2025-10-19 17:09:10 [INFO    ] root: Parallel enabled. Using cores: 12
+
+2025-10-19 17:10:34 [INFO    ] root: Gen 1: Preservando 1 elites do pool híbrido (ordenados por G-mean).
+Gen 1/200 - BestFit: 1.1921 (G-mean: 0.902) | AvgFit: 0.8692 (G-mean: 0.606) | (Diversity: 0.631) | (RuleAct: 79.5) | Mut: 0.726 | Tourn: 2 | Stagn: 0 | Time: 84.36s2025-10-19 17:12:55 [INFO    ] root: Gen 2: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 2/200 - BestFit: 1.1921 (G-mean: 0.902) | AvgFit: 0.6676 (G-mean: 0.417) | (Diversity: 0.408) | (RuleAct: 48.5) | Mut: 0.499 | Tourn: 3 | Stagn: 1 | Time: 26.66s2025-10-19 17:14:17 [INFO    ] root: Gen 3: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 3/200 - BestFit: 1.1921 (G-mean: 0.902) | AvgFit: 0.7460 (G-mean: 0.490) | (Diversity: 0.457) | (RuleAct: 49.2) | Mut: 0.526 | Tourn: 3 | Stagn: 2 | Time: 28.02s2025-10-19 17:15:37 [INFO    ] root: Gen 4: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 4/200 - BestFit: 1.1921 (G-mean: 0.902) | AvgFit: 0.7212 (G-mean: 0.467) | (Diversity: 0.381) | (RuleAct: 51.7) | Mut: 0.537 | Tourn: 3 | Stagn: 3 | Time: 25.09s2025-10-19 17:16:54 [INFO    ] root: Gen 5: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 5/200 - BestFit: 1.1921 (G-mean: 0.902) | AvgFit: 0.7569 (G-mean: 0.500) | (Diversity: 0.407) | (RuleAct: 48.8) | Mut: 0.561 | Tourn: 3 | Stagn: 4 | Time: 24.51s2025-10-19 17:18:14 [INFO    ] root: Gen 6: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 6/200 - BestFit: 1.1921 (G-mean: 0.902) | AvgFit: 0.7760 (G-mean: 0.518) | (Diversity: 0.417) | (RuleAct: 50.8) | Mut: 0.646 | Tourn: 3 | Stagn: 5 | Time: 23.54s2025-10-19 17:19:39 [INFO    ] root: Gen 7: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 7/200 - BestFit: 1.1921 (G-mean: 0.902) | AvgFit: 0.7807 (G-mean: 0.522) | (Diversity: 0.437) | (RuleAct: 51.2) | Mut: 0.581 | Tourn: 3 | Stagn: 6 | Time: 22.16s2025-10-19 17:20:58 [INFO    ] root: Gen 8: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 8/200 - BestFit: 1.1921 (G-mean: 0.902) | AvgFit: 0.7683 (G-mean: 0.510) | (Diversity: 0.494) | (RuleAct: 54.0) | Mut: 0.573 | Tourn: 3 | Stagn: 7 | Time: 22.63s2025-10-19 17:22:17 [INFO    ] root: Gen 9: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 9/200 - BestFit: 1.1921 (G-mean: 0.902) | AvgFit: 0.8060 (G-mean: 0.545) | (Diversity: 0.430) | (RuleAct: 57.6) | Mut: 0.603 | Tourn: 3 | Stagn: 8 | Time: 22.97s2025-10-19 17:23:35 [INFO    ] root: Gen 10: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 10/200 - BestFit: 1.1921 (G-mean: 0.902) | AvgFit: 0.7711 (G-mean: 0.513) | (Diversity: 0.457) | (RuleAct: 51.2) | Mut: 0.556 | Tourn: 3 | Stagn: 9 | Time: 21.72s2025-10-19 17:24:50 [INFO    ] root: Gen 11: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2025-10-19 17:24:50 [INFO    ] root: 
+Estagnação detectada (10 gerações)! Ativando mecanismos de resgate...
+2025-10-19 17:24:50 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [AGGRESSIVE]
+2025-10-19 17:24:50 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.902 → EXPLORAÇÃO AGRESSIVA - HC Inteligente Multi-Estratégia
+2025-10-19 17:24:50 [INFO    ] hill_climbing_v2:      Operações: ['error_focused_dt_rules', 'ensemble_boosting', 'guided_mutation']
+2025-10-19 17:24:50 [INFO    ] hill_climbing_v2:      Variantes planejadas: 15
+2025-10-19 17:24:52 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 567/6000 (9.4%)
+2025-10-19 17:24:52 [INFO    ] intelligent_hc:        DT nos erros: acc=0.882, depth=10, nodes=85
+2025-10-19 17:24:52 [INFO    ] dt_rule_extraction:   Extração DT: 43 regras extraídas de 85 nós
+2025-10-19 17:24:52 [INFO    ] dt_rule_extraction:   Ranqueamento: 43 regras avaliadas
+2025-10-19 17:24:52 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.173', '0.078', '0.067']
+2025-10-19 17:24:52 [INFO    ] dt_rule_extraction:     Top-1: coverage=17.28%, accuracy=100.00%
+2025-10-19 17:24:52 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.173', '0.078', '0.067']
+2025-10-19 17:24:52 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2025-10-19 17:24:52 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2025-10-19 17:24:54 [INFO    ] intelligent_hc:        ensemble_boosting: 567 erros com peso 3×
+2025-10-19 17:24:54 [INFO    ] intelligent_hc:        DT boosted #1: depth=10, acc=0.934
+2025-10-19 17:24:54 [INFO    ] dt_rule_extraction:   Extração DT: 140 regras extraídas de 279 nós
+2025-10-19 17:24:54 [INFO    ] dt_rule_extraction:   Ranqueamento: 140 regras avaliadas
+2025-10-19 17:24:54 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.170', '0.137', '0.093']
+2025-10-19 17:24:54 [INFO    ] dt_rule_extraction:     Top-1: coverage=17.18%, accuracy=98.74%
+2025-10-19 17:24:54 [INFO    ] intelligent_hc:        DT boosted #2: depth=6, acc=0.895
+2025-10-19 17:24:54 [INFO    ] dt_rule_extraction:   Extração DT: 55 regras extraídas de 109 nós
+2025-10-19 17:24:55 [INFO    ] dt_rule_extraction:   Ranqueamento: 55 regras avaliadas
+2025-10-19 17:24:55 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.217', '0.141', '0.096']
+2025-10-19 17:24:55 [INFO    ] dt_rule_extraction:     Top-1: coverage=22.52%, accuracy=96.30%
+2025-10-19 17:24:55 [INFO    ] intelligent_hc:        DT boosted #3: depth=6, acc=0.895
+2025-10-19 17:24:55 [INFO    ] dt_rule_extraction:   Extração DT: 55 regras extraídas de 109 nós
+2025-10-19 17:24:55 [INFO    ] dt_rule_extraction:   Ranqueamento: 55 regras avaliadas
+2025-10-19 17:24:55 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.217', '0.141', '0.096']
+2025-10-19 17:24:55 [INFO    ] dt_rule_extraction:     Top-1: coverage=22.52%, accuracy=96.30%
+2025-10-19 17:24:55 [INFO    ] intelligent_hc:        DT boosted #4: depth=10, acc=0.934
+2025-10-19 17:24:55 [INFO    ] dt_rule_extraction:   Extração DT: 141 regras extraídas de 281 nós
+2025-10-19 17:24:55 [INFO    ] dt_rule_extraction:   Ranqueamento: 141 regras avaliadas
+2025-10-19 17:24:55 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.170', '0.137', '0.093']
+2025-10-19 17:24:55 [INFO    ] dt_rule_extraction:     Top-1: coverage=17.18%, accuracy=98.74%
+2025-10-19 17:24:55 [INFO    ] intelligent_hc:        ensemble_boosting: 4 variantes geradas
+2025-10-19 17:24:55 [INFO    ] hill_climbing_v2:        ✓ ensemble_boosting: 4 variantes geradas
+2025-10-19 17:24:57 [INFO    ] intelligent_hc:        guided_mutation: Top-5 features: [5, 3, 1, 0, 2]
+2025-10-19 17:24:57 [INFO    ] intelligent_hc:        importâncias: ['0.098', '0.108', '0.113', '0.141', '0.219']
+2025-10-19 17:24:57 [INFO    ] intelligent_hc:        guided_mutation: 4 variantes geradas
+2025-10-19 17:24:57 [INFO    ] hill_climbing_v2:        ✓ guided_mutation: 4 variantes geradas
+2025-10-19 17:24:57 [INFO    ] hill_climbing_v2:      Total gerado: 13 variantes, retornando 13
+2025-10-19 17:24:57 [INFO    ] root:      Avaliando 13 variantes HC geradas...
+2025-10-19 17:25:08 [INFO    ] root:        ✓ HC variant #7 APROVADO: fitness=1.2199 (elite=1.1921), gmean=0.927 (elite=0.902)
+2025-10-19 17:25:10 [INFO    ] root:        ✓ HC variant #8 APROVADO: fitness=1.2121 (elite=1.1921), gmean=0.920 (elite=0.902)
+2025-10-19 17:25:11 [INFO    ] root:        ✓ HC variant #9 APROVADO: fitness=1.2162 (elite=1.1921), gmean=0.924 (elite=0.902)
+2025-10-19 17:25:19 [INFO    ] root:      Resultado: 3/13 variantes aprovadas (23.1% taxa de aprovação)
+Gen 11/200 - BestFit: 1.1921 (G-mean: 0.902) | AvgFit: 0.7965 (G-mean: 0.537) | (Diversity: 0.483) | (RuleAct: 56.8) | Mut: 0.585 | Tourn: 3 | Stagn: 10 | Time: 21.84s2025-10-19 17:27:47 [INFO    ] root: Gen 12: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 12/200 - BestFit: 1.2199 (G-mean: 0.927) | AvgFit: 0.4689 (G-mean: 0.227) | (Diversity: 0.409) | (RuleAct: 18.8) | Mut: 0.281 | Tourn: 4 | Stagn: 0 | Time: 27.33s2025-10-19 17:28:46 [INFO    ] root: Gen 13: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 13/200 - BestFit: 1.2199 (G-mean: 0.927) | AvgFit: 0.7225 (G-mean: 0.469) | (Diversity: 0.529) | (RuleAct: 52.4) | Mut: 0.588 | Tourn: 3 | Stagn: 1 | Time: 35.81s2025-10-19 17:30:29 [INFO    ] root: Gen 14: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 14/200 - BestFit: 1.2199 (G-mean: 0.927) | AvgFit: 0.7785 (G-mean: 0.520) | (Diversity: 0.479) | (RuleAct: 58.2) | Mut: 0.635 | Tourn: 3 | Stagn: 2 | Time: 36.02s2025-10-19 17:32:12 [INFO    ] root: Gen 15: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 15/200 - BestFit: 1.2199 (G-mean: 0.927) | AvgFit: 0.7711 (G-mean: 0.513) | (Diversity: 0.511) | (RuleAct: 49.0) | Mut: 0.584 | Tourn: 3 | Stagn: 3 | Time: 35.24s2025-10-19 17:33:50 [INFO    ] root: Gen 16: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 16/200 - BestFit: 1.2199 (G-mean: 0.927) | AvgFit: 0.8125 (G-mean: 0.552) | (Diversity: 0.471) | (RuleAct: 52.8) | Mut: 0.579 | Tourn: 3 | Stagn: 4 | Time: 36.11s2025-10-19 17:35:26 [INFO    ] root: Gen 17: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 17/200 - BestFit: 1.2199 (G-mean: 0.927) | AvgFit: 0.7793 (G-mean: 0.521) | (Diversity: 0.501) | (RuleAct: 54.4) | Mut: 0.635 | Tourn: 3 | Stagn: 5 | Time: 35.76s2025-10-19 17:37:08 [INFO    ] root: Gen 18: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 18/200 - BestFit: 1.2199 (G-mean: 0.927) | AvgFit: 0.7795 (G-mean: 0.521) | (Diversity: 0.506) | (RuleAct: 50.7) | Mut: 0.582 | Tourn: 3 | Stagn: 6 | Time: 35.30s2025-10-19 17:38:43 [INFO    ] root: Gen 19: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 19/200 - BestFit: 1.2199 (G-mean: 0.927) | AvgFit: 0.8413 (G-mean: 0.578) | (Diversity: 0.490) | (RuleAct: 51.5) | Mut: 0.632 | Tourn: 3 | Stagn: 7 | Time: 34.82s2025-10-19 17:40:22 [INFO    ] root: Gen 20: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 20/200 - BestFit: 1.2199 (G-mean: 0.927) | AvgFit: 0.7773 (G-mean: 0.518) | (Diversity: 0.537) | (RuleAct: 50.8) | Mut: 0.572 | Tourn: 3 | Stagn: 8 | Time: 34.33s2025-10-19 17:41:55 [INFO    ] root: Gen 21: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 21/200 - BestFit: 1.2199 (G-mean: 0.927) | AvgFit: 0.7779 (G-mean: 0.520) | (Diversity: 0.476) | (RuleAct: 51.7) | Mut: 0.565 | Tourn: 3 | Stagn: 9 | Time: 34.76s2025-10-19 17:43:29 [INFO    ] root: Gen 22: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2025-10-19 17:43:29 [INFO    ] root: 
+Estagnação detectada (10 gerações)! Ativando mecanismos de resgate...
+2025-10-19 17:43:29 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [MODERATE]
+2025-10-19 17:43:29 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.927 → REFINAMENTO MODERADO - HC Inteligente + Operações Legadas
+2025-10-19 17:43:29 [INFO    ] hill_climbing_v2:      Operações: ['error_focused_dt_rules', 'ensemble_boosting', 'crossover_with_memory']
+2025-10-19 17:43:29 [INFO    ] hill_climbing_v2:      Variantes planejadas: 10
+2025-10-19 17:43:31 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 437/6000 (7.3%)
+2025-10-19 17:43:31 [INFO    ] intelligent_hc:        DT nos erros: acc=0.904, depth=10, nodes=81
+2025-10-19 17:43:31 [INFO    ] dt_rule_extraction:   Extração DT: 41 regras extraídas de 81 nós
+2025-10-19 17:43:31 [INFO    ] dt_rule_extraction:   Ranqueamento: 41 regras avaliadas
+2025-10-19 17:43:31 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.144', '0.130', '0.098']
+2025-10-19 17:43:31 [INFO    ] dt_rule_extraction:     Top-1: coverage=14.42%, accuracy=100.00%
+2025-10-19 17:43:31 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.144', '0.130', '0.098']
+2025-10-19 17:43:31 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2025-10-19 17:43:31 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2025-10-19 17:43:33 [INFO    ] intelligent_hc:        ensemble_boosting: 437 erros com peso 3×
+2025-10-19 17:43:33 [INFO    ] intelligent_hc:        DT boosted #1: depth=6, acc=0.911
+2025-10-19 17:43:33 [INFO    ] dt_rule_extraction:   Extração DT: 55 regras extraídas de 109 nós
+2025-10-19 17:43:33 [INFO    ] dt_rule_extraction:   Ranqueamento: 55 regras avaliadas
+2025-10-19 17:43:33 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.165', '0.127', '0.083']
+2025-10-19 17:43:33 [INFO    ] dt_rule_extraction:     Top-1: coverage=16.78%, accuracy=98.61%
+2025-10-19 17:43:33 [INFO    ] intelligent_hc:        DT boosted #2: depth=10, acc=0.938
+2025-10-19 17:43:33 [INFO    ] dt_rule_extraction:   Extração DT: 157 regras extraídas de 313 nós
+2025-10-19 17:43:33 [INFO    ] dt_rule_extraction:   Ranqueamento: 157 regras avaliadas
+2025-10-19 17:43:33 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.157', '0.083', '0.079']
+2025-10-19 17:43:33 [INFO    ] dt_rule_extraction:     Top-1: coverage=15.73%, accuracy=99.68%
+2025-10-19 17:43:33 [INFO    ] intelligent_hc:        DT boosted #3: depth=8, acc=0.936
+2025-10-19 17:43:33 [INFO    ] dt_rule_extraction:   Extração DT: 115 regras extraídas de 229 nós
+2025-10-19 17:43:33 [INFO    ] dt_rule_extraction:   Ranqueamento: 115 regras avaliadas
+2025-10-19 17:43:33 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.160', '0.083', '0.081']
+2025-10-19 17:43:33 [INFO    ] dt_rule_extraction:     Top-1: coverage=16.10%, accuracy=99.28%
+2025-10-19 17:43:34 [INFO    ] intelligent_hc:        DT boosted #4: depth=6, acc=0.911
+2025-10-19 17:43:34 [INFO    ] dt_rule_extraction:   Extração DT: 55 regras extraídas de 109 nós
+2025-10-19 17:43:34 [INFO    ] dt_rule_extraction:   Ranqueamento: 55 regras avaliadas
+2025-10-19 17:43:34 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.165', '0.127', '0.083']
+2025-10-19 17:43:34 [INFO    ] dt_rule_extraction:     Top-1: coverage=16.78%, accuracy=98.61%
+2025-10-19 17:43:34 [INFO    ] intelligent_hc:        ensemble_boosting: 4 variantes geradas
+2025-10-19 17:43:34 [INFO    ] hill_climbing_v2:        ✓ ensemble_boosting: 4 variantes geradas
+2025-10-19 17:43:34 [INFO    ] hill_climbing_v2:        ✓ crossover_with_memory: 2 variantes geradas
+2025-10-19 17:43:34 [INFO    ] hill_climbing_v2:      Total gerado: 11 variantes, retornando 10
+2025-10-19 17:43:34 [INFO    ] root:      Avaliando 10 variantes HC geradas...
+2025-10-19 17:43:44 [INFO    ] root:        ✓ HC variant #8 APROVADO: fitness=1.2288 (elite=1.2199), gmean=0.935 (elite=0.927)
+2025-10-19 17:43:45 [INFO    ] root:        ✓ HC variant #9 APROVADO: fitness=1.2204 (elite=1.2199), gmean=0.928 (elite=0.927)
+2025-10-19 17:43:46 [INFO    ] root:      Resultado: 2/10 variantes aprovadas (20.0% taxa de aprovação)
+Gen 22/200 - BestFit: 1.2199 (G-mean: 0.927) | AvgFit: 0.7926 (G-mean: 0.533) | (Diversity: 0.465) | (RuleAct: 56.4) | Mut: 0.551 | Tourn: 3 | Stagn: 10 | Time: 34.98s2025-10-19 17:46:23 [INFO    ] root: Gen 23: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 23/200 - BestFit: 1.2288 (G-mean: 0.935) | AvgFit: 0.4713 (G-mean: 0.230) | (Diversity: 0.461) | (RuleAct: 16.4) | Mut: 0.378 | Tourn: 4 | Stagn: 0 | Time: 26.97s2025-10-19 17:47:34 [INFO    ] root: Gen 24: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 24/200 - BestFit: 1.2288 (G-mean: 0.935) | AvgFit: 0.7241 (G-mean: 0.469) | (Diversity: 0.648) | (RuleAct: 50.1) | Mut: 0.536 | Tourn: 3 | Stagn: 1 | Time: 37.25s2025-10-19 17:49:20 [INFO    ] root: Gen 25: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 25/200 - BestFit: 1.2288 (G-mean: 0.935) | AvgFit: 0.7828 (G-mean: 0.524) | (Diversity: 0.525) | (RuleAct: 53.3) | Mut: 0.559 | Tourn: 3 | Stagn: 2 | Time: 39.30s2025-10-19 17:51:02 [INFO    ] root: Gen 26: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 26/200 - BestFit: 1.2288 (G-mean: 0.935) | AvgFit: 0.7661 (G-mean: 0.508) | (Diversity: 0.480) | (RuleAct: 50.4) | Mut: 0.553 | Tourn: 3 | Stagn: 3 | Time: 38.44s2025-10-19 17:52:46 [INFO    ] root: Gen 27: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 27/200 - BestFit: 1.2288 (G-mean: 0.935) | AvgFit: 0.8089 (G-mean: 0.548) | (Diversity: 0.447) | (RuleAct: 56.1) | Mut: 0.611 | Tourn: 3 | Stagn: 4 | Time: 39.38s2025-10-19 17:54:33 [INFO    ] root: Gen 28: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 28/200 - BestFit: 1.2288 (G-mean: 0.935) | AvgFit: 0.7651 (G-mean: 0.508) | (Diversity: 0.460) | (RuleAct: 53.2) | Mut: 0.572 | Tourn: 3 | Stagn: 5 | Time: 38.23s2025-10-19 17:56:17 [INFO    ] root: Gen 29: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 29/200 - BestFit: 1.2288 (G-mean: 0.935) | AvgFit: 0.8037 (G-mean: 0.543) | (Diversity: 0.477) | (RuleAct: 53.4) | Mut: 0.592 | Tourn: 3 | Stagn: 6 | Time: 38.72s2025-10-19 17:58:03 [INFO    ] root: Gen 30: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 30/200 - BestFit: 1.2288 (G-mean: 0.935) | AvgFit: 0.7969 (G-mean: 0.537) | (Diversity: 0.500) | (RuleAct: 53.4) | Mut: 0.590 | Tourn: 3 | Stagn: 7 | Time: 38.38s2025-10-19 17:59:48 [INFO    ] root: Gen 31: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 31/200 - BestFit: 1.2288 (G-mean: 0.935) | AvgFit: 0.8091 (G-mean: 0.548) | (Diversity: 0.492) | (RuleAct: 53.6) | Mut: 0.556 | Tourn: 3 | Stagn: 8 | Time: 38.54s2025-10-19 18:01:30 [INFO    ] root: Gen 32: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 32/200 - BestFit: 1.2288 (G-mean: 0.935) | AvgFit: 0.8135 (G-mean: 0.552) | (Diversity: 0.504) | (RuleAct: 51.8) | Mut: 0.555 | Tourn: 3 | Stagn: 9 | Time: 38.72s2025-10-19 18:03:09 [INFO    ] root: Gen 33: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2025-10-19 18:03:09 [INFO    ] root: 
+Estagnação detectada (10 gerações)! Ativando mecanismos de resgate...
+2025-10-19 18:03:09 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [MODERATE]
+2025-10-19 18:03:09 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.935 → REFINAMENTO MODERADO - HC Inteligente + Operações Legadas
+2025-10-19 18:03:09 [INFO    ] hill_climbing_v2:      Operações: ['error_focused_dt_rules', 'ensemble_boosting', 'crossover_with_memory']
+2025-10-19 18:03:09 [INFO    ] hill_climbing_v2:      Variantes planejadas: 10
+2025-10-19 18:03:11 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 386/6000 (6.4%)
+2025-10-19 18:03:11 [INFO    ] intelligent_hc:        DT nos erros: acc=0.870, depth=10, nodes=85
+2025-10-19 18:03:11 [INFO    ] dt_rule_extraction:   Extração DT: 43 regras extraídas de 85 nós
+2025-10-19 18:03:11 [INFO    ] dt_rule_extraction:   Ranqueamento: 43 regras avaliadas
+2025-10-19 18:03:11 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.093', '0.060', '0.054']
+2025-10-19 18:03:11 [INFO    ] dt_rule_extraction:     Top-1: coverage=9.33%, accuracy=100.00%
+2025-10-19 18:03:11 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.093', '0.060', '0.054']
+2025-10-19 18:03:11 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2025-10-19 18:03:11 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2025-10-19 18:03:13 [INFO    ] intelligent_hc:        ensemble_boosting: 386 erros com peso 3×
+2025-10-19 18:03:13 [INFO    ] intelligent_hc:        DT boosted #1: depth=6, acc=0.901
+2025-10-19 18:03:13 [INFO    ] dt_rule_extraction:   Extração DT: 55 regras extraídas de 109 nós
+2025-10-19 18:03:13 [INFO    ] dt_rule_extraction:   Ranqueamento: 55 regras avaliadas
+2025-10-19 18:03:13 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.202', '0.085', '0.069']
+2025-10-19 18:03:13 [INFO    ] dt_rule_extraction:     Top-1: coverage=20.88%, accuracy=96.81%
+2025-10-19 18:03:13 [INFO    ] intelligent_hc:        DT boosted #2: depth=10, acc=0.936
+2025-10-19 18:03:13 [INFO    ] dt_rule_extraction:   Extração DT: 145 regras extraídas de 289 nós
+2025-10-19 18:03:13 [INFO    ] dt_rule_extraction:   Ranqueamento: 145 regras avaliadas
+2025-10-19 18:03:13 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.173', '0.085', '0.068']
+2025-10-19 18:03:13 [INFO    ] dt_rule_extraction:     Top-1: coverage=17.60%, accuracy=98.48%
+2025-10-19 18:03:13 [INFO    ] intelligent_hc:        DT boosted #3: depth=6, acc=0.901
+2025-10-19 18:03:13 [INFO    ] dt_rule_extraction:   Extração DT: 55 regras extraídas de 109 nós
+2025-10-19 18:03:13 [INFO    ] dt_rule_extraction:   Ranqueamento: 55 regras avaliadas
+2025-10-19 18:03:13 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.202', '0.085', '0.069']
+2025-10-19 18:03:13 [INFO    ] dt_rule_extraction:     Top-1: coverage=20.88%, accuracy=96.81%
+2025-10-19 18:03:13 [INFO    ] intelligent_hc:        DT boosted #4: depth=8, acc=0.929
+2025-10-19 18:03:13 [INFO    ] dt_rule_extraction:   Extração DT: 107 regras extraídas de 213 nós
+2025-10-19 18:03:13 [INFO    ] dt_rule_extraction:   Ranqueamento: 107 regras avaliadas
+2025-10-19 18:03:13 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.186', '0.085', '0.068']
+2025-10-19 18:03:13 [INFO    ] dt_rule_extraction:     Top-1: coverage=19.05%, accuracy=97.73%
+2025-10-19 18:03:13 [INFO    ] intelligent_hc:        ensemble_boosting: 4 variantes geradas
+2025-10-19 18:03:13 [INFO    ] hill_climbing_v2:        ✓ ensemble_boosting: 4 variantes geradas
+2025-10-19 18:03:13 [INFO    ] hill_climbing_v2:        ✓ crossover_with_memory: 2 variantes geradas
+2025-10-19 18:03:13 [INFO    ] hill_climbing_v2:      Total gerado: 11 variantes, retornando 10
+2025-10-19 18:03:13 [INFO    ] root:      Avaliando 10 variantes HC geradas...
+2025-10-19 18:03:25 [INFO    ] root:        ✓ HC variant #9 APROVADO: fitness=1.2304 (elite=1.2288), gmean=0.937 (elite=0.935)
+2025-10-19 18:03:26 [INFO    ] root:      Resultado: 1/10 variantes aprovadas (10.0% taxa de aprovação)
+Gen 33/200 - BestFit: 1.2288 (G-mean: 0.935) | AvgFit: 0.8161 (G-mean: 0.555) | (Diversity: 0.470) | (RuleAct: 53.6) | Mut: 0.567 | Tourn: 3 | Stagn: 10 | Time: 38.50s2025-10-19 18:06:09 [INFO    ] root: Gen 34: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 34/200 - BestFit: 1.2304 (G-mean: 0.937) | AvgFit: 0.4714 (G-mean: 0.230) | (Diversity: 0.520) | (RuleAct: 15.1) | Mut: 0.295 | Tourn: 4 | Stagn: 0 | Time: 29.06s2025-10-19 18:07:13 [INFO    ] root: Gen 35: Preservando 11 elites do pool híbrido (ordenados por G-mean).
+Gen 35/200 - BestFit: 1.2304 (G-mean: 0.937) | AvgFit: 0.7625 (G-mean: 0.505) | (Diversity: 0.547) | (RuleAct: 48.1) | Mut: 0.616 | Tourn: 3 | Stagn: 1 | Time: 37.63s2025-10-19 18:09:12 [INFO    ] root: Gen 36: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 36/200 - BestFit: 1.2304 (G-mean: 0.937) | AvgFit: 0.8045 (G-mean: 0.544) | (Diversity: 0.466) | (RuleAct: 52.8) | Mut: 0.544 | Tourn: 3 | Stagn: 2 | Time: 38.04s2025-10-19 18:10:52 [INFO    ] root: Gen 37: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 37/200 - BestFit: 1.2304 (G-mean: 0.937) | AvgFit: 0.8388 (G-mean: 0.576) | (Diversity: 0.452) | (RuleAct: 56.9) | Mut: 0.621 | Tourn: 3 | Stagn: 3 | Time: 37.76s2025-10-19 18:12:40 [INFO    ] root: Gen 38: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 38/200 - BestFit: 1.2304 (G-mean: 0.937) | AvgFit: 0.8398 (G-mean: 0.577) | (Diversity: 0.455) | (RuleAct: 51.4) | Mut: 0.583 | Tourn: 3 | Stagn: 4 | Time: 36.59s2025-10-19 18:14:17 [INFO    ] root: Gen 39: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 39/200 - BestFit: 1.2304 (G-mean: 0.937) | AvgFit: 0.8379 (G-mean: 0.576) | (Diversity: 0.479) | (RuleAct: 54.8) | Mut: 0.678 | Tourn: 3 | Stagn: 5 | Time: 36.19s2025-10-19 18:16:05 [INFO    ] root: Gen 40: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 40/200 - BestFit: 1.2304 (G-mean: 0.937) | AvgFit: 0.8068 (G-mean: 0.546) | (Diversity: 0.488) | (RuleAct: 52.0) | Mut: 0.596 | Tourn: 3 | Stagn: 6 | Time: 35.72s2025-10-19 18:17:47 [INFO    ] root: Gen 41: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 41/200 - BestFit: 1.2304 (G-mean: 0.937) | AvgFit: 0.8166 (G-mean: 0.555) | (Diversity: 0.559) | (RuleAct: 51.3) | Mut: 0.617 | Tourn: 3 | Stagn: 7 | Time: 36.73s2025-10-19 18:19:31 [INFO    ] root: Gen 42: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 42/200 - BestFit: 1.2304 (G-mean: 0.937) | AvgFit: 0.7991 (G-mean: 0.539) | (Diversity: 0.508) | (RuleAct: 52.4) | Mut: 0.578 | Tourn: 3 | Stagn: 8 | Time: 37.64s2025-10-19 18:21:15 [INFO    ] root: Gen 43: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 43/200 - BestFit: 1.2304 (G-mean: 0.937) | AvgFit: 0.8033 (G-mean: 0.542) | (Diversity: 0.464) | (RuleAct: 55.3) | Mut: 0.605 | Tourn: 3 | Stagn: 9 | Time: 37.70s2025-10-19 18:23:03 [INFO    ] root: Gen 44: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2025-10-19 18:23:03 [INFO    ] root: 
+Estagnação detectada (10 gerações)! Ativando mecanismos de resgate...
+2025-10-19 18:23:03 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [MODERATE]
+2025-10-19 18:23:03 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.937 → REFINAMENTO MODERADO - HC Inteligente + Operações Legadas
+2025-10-19 18:23:03 [INFO    ] hill_climbing_v2:      Operações: ['error_focused_dt_rules', 'ensemble_boosting', 'crossover_with_memory']
+2025-10-19 18:23:03 [INFO    ] hill_climbing_v2:      Variantes planejadas: 10
+2025-10-19 18:23:04 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 375/6000 (6.2%)
+2025-10-19 18:23:04 [INFO    ] intelligent_hc:        DT nos erros: acc=0.875, depth=10, nodes=63
+2025-10-19 18:23:04 [INFO    ] dt_rule_extraction:   Extração DT: 32 regras extraídas de 63 nós
+2025-10-19 18:23:04 [INFO    ] dt_rule_extraction:   Ranqueamento: 32 regras avaliadas
+2025-10-19 18:23:04 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.147', '0.080', '0.072']
+2025-10-19 18:23:04 [INFO    ] dt_rule_extraction:     Top-1: coverage=14.67%, accuracy=100.00%
+2025-10-19 18:23:04 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.147', '0.080', '0.072']
+2025-10-19 18:23:04 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2025-10-19 18:23:04 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2025-10-19 18:23:06 [INFO    ] intelligent_hc:        ensemble_boosting: 375 erros com peso 3×
+2025-10-19 18:23:06 [INFO    ] intelligent_hc:        DT boosted #1: depth=10, acc=0.939
+2025-10-19 18:23:06 [INFO    ] dt_rule_extraction:   Extração DT: 149 regras extraídas de 297 nós
+2025-10-19 18:23:06 [INFO    ] dt_rule_extraction:   Ranqueamento: 149 regras avaliadas
+2025-10-19 18:23:06 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.181', '0.107', '0.089']
+2025-10-19 18:23:06 [INFO    ] dt_rule_extraction:     Top-1: coverage=18.38%, accuracy=98.28%
+2025-10-19 18:23:06 [INFO    ] intelligent_hc:        DT boosted #2: depth=10, acc=0.939
+2025-10-19 18:23:06 [INFO    ] dt_rule_extraction:   Extração DT: 149 regras extraídas de 297 nós
+2025-10-19 18:23:06 [INFO    ] dt_rule_extraction:   Ranqueamento: 149 regras avaliadas
+2025-10-19 18:23:06 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.181', '0.107', '0.089']
+2025-10-19 18:23:06 [INFO    ] dt_rule_extraction:     Top-1: coverage=18.38%, accuracy=98.28%
+2025-10-19 18:23:06 [INFO    ] intelligent_hc:        DT boosted #3: depth=8, acc=0.925
+2025-10-19 18:23:06 [INFO    ] dt_rule_extraction:   Extração DT: 104 regras extraídas de 207 nós
+2025-10-19 18:23:06 [INFO    ] dt_rule_extraction:   Ranqueamento: 104 regras avaliadas
+2025-10-19 18:23:06 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.183', '0.113', '0.089']
+2025-10-19 18:23:06 [INFO    ] dt_rule_extraction:     Top-1: coverage=18.75%, accuracy=97.87%
+2025-10-19 18:23:07 [INFO    ] intelligent_hc:        DT boosted #4: depth=8, acc=0.925
+2025-10-19 18:23:07 [INFO    ] dt_rule_extraction:   Extração DT: 104 regras extraídas de 207 nós
+2025-10-19 18:23:07 [INFO    ] dt_rule_extraction:   Ranqueamento: 104 regras avaliadas
+2025-10-19 18:23:07 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.183', '0.113', '0.089']
+2025-10-19 18:23:07 [INFO    ] dt_rule_extraction:     Top-1: coverage=18.75%, accuracy=97.87%
+2025-10-19 18:23:07 [INFO    ] intelligent_hc:        ensemble_boosting: 4 variantes geradas
+2025-10-19 18:23:07 [INFO    ] hill_climbing_v2:        ✓ ensemble_boosting: 4 variantes geradas
+2025-10-19 18:23:07 [INFO    ] hill_climbing_v2:        ✓ crossover_with_memory: 2 variantes geradas
+2025-10-19 18:23:07 [INFO    ] hill_climbing_v2:      Total gerado: 11 variantes, retornando 10
+2025-10-19 18:23:07 [INFO    ] root:      Avaliando 10 variantes HC geradas...
+2025-10-19 18:23:17 [INFO    ] root:      Resultado: 0/10 variantes aprovadas (0.0% taxa de aprovação)
+Gen 44/200 - BestFit: 1.2304 (G-mean: 0.937) | AvgFit: 0.8480 (G-mean: 0.585) | (Diversity: 0.465) | (RuleAct: 56.5) | Mut: 0.633 | Tourn: 3 | Stagn: 10 | Time: 37.36s2025-10-19 18:26:13 [INFO    ] root: Gen 45: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2025-10-19 18:26:13 [INFO    ] root: 
+Estagnação detectada (11 gerações)! Ativando mecanismos de resgate...
+2025-10-19 18:26:13 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [MODERATE]
+2025-10-19 18:26:13 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.937 → REFINAMENTO MODERADO - HC Inteligente + Operações Legadas
+2025-10-19 18:26:13 [INFO    ] hill_climbing_v2:      Operações: ['error_focused_dt_rules', 'ensemble_boosting', 'crossover_with_memory']
+2025-10-19 18:26:13 [INFO    ] hill_climbing_v2:      Variantes planejadas: 10
+2025-10-19 18:26:14 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 375/6000 (6.2%)
+2025-10-19 18:26:14 [INFO    ] intelligent_hc:        DT nos erros: acc=0.875, depth=10, nodes=61
+2025-10-19 18:26:14 [INFO    ] dt_rule_extraction:   Extração DT: 31 regras extraídas de 61 nós
+2025-10-19 18:26:14 [INFO    ] dt_rule_extraction:   Ranqueamento: 31 regras avaliadas
+2025-10-19 18:26:14 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.160', '0.080', '0.072']
+2025-10-19 18:26:14 [INFO    ] dt_rule_extraction:     Top-1: coverage=16.00%, accuracy=100.00%
+2025-10-19 18:26:14 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.160', '0.080', '0.072']
+2025-10-19 18:26:14 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2025-10-19 18:26:14 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2025-10-19 18:26:16 [INFO    ] intelligent_hc:        ensemble_boosting: 375 erros com peso 3×
+2025-10-19 18:26:16 [INFO    ] intelligent_hc:        DT boosted #1: depth=8, acc=0.925
+2025-10-19 18:26:16 [INFO    ] dt_rule_extraction:   Extração DT: 103 regras extraídas de 205 nós
+2025-10-19 18:26:16 [INFO    ] dt_rule_extraction:   Ranqueamento: 103 regras avaliadas
+2025-10-19 18:26:16 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.183', '0.113', '0.089']
+2025-10-19 18:26:16 [INFO    ] dt_rule_extraction:     Top-1: coverage=18.75%, accuracy=97.87%
+2025-10-19 18:26:16 [INFO    ] intelligent_hc:        DT boosted #2: depth=6, acc=0.894
+2025-10-19 18:26:16 [INFO    ] dt_rule_extraction:   Extração DT: 50 regras extraídas de 99 nós
+2025-10-19 18:26:16 [INFO    ] dt_rule_extraction:   Ranqueamento: 50 regras avaliadas
+2025-10-19 18:26:16 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.203', '0.119', '0.091']
+2025-10-19 18:26:16 [INFO    ] dt_rule_extraction:     Top-1: coverage=21.15%, accuracy=95.90%
+2025-10-19 18:26:16 [INFO    ] intelligent_hc:        DT boosted #3: depth=12, acc=0.939
+2025-10-19 18:26:16 [INFO    ] dt_rule_extraction:   Extração DT: 161 regras extraídas de 321 nós
+2025-10-19 18:26:16 [INFO    ] dt_rule_extraction:   Ranqueamento: 161 regras avaliadas
+2025-10-19 18:26:16 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.178', '0.101', '0.089']
+2025-10-19 18:26:16 [INFO    ] dt_rule_extraction:     Top-1: coverage=18.05%, accuracy=98.61%
+2025-10-19 18:26:17 [INFO    ] intelligent_hc:        DT boosted #4: depth=6, acc=0.894
+2025-10-19 18:26:17 [INFO    ] dt_rule_extraction:   Extração DT: 50 regras extraídas de 99 nós
+2025-10-19 18:26:17 [INFO    ] dt_rule_extraction:   Ranqueamento: 50 regras avaliadas
+2025-10-19 18:26:17 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.203', '0.119', '0.091']
+2025-10-19 18:26:17 [INFO    ] dt_rule_extraction:     Top-1: coverage=21.15%, accuracy=95.90%
+2025-10-19 18:26:17 [INFO    ] intelligent_hc:        ensemble_boosting: 4 variantes geradas
+2025-10-19 18:26:17 [INFO    ] hill_climbing_v2:        ✓ ensemble_boosting: 4 variantes geradas
+2025-10-19 18:26:17 [INFO    ] hill_climbing_v2:        ✓ crossover_with_memory: 2 variantes geradas
+2025-10-19 18:26:17 [INFO    ] hill_climbing_v2:      Total gerado: 11 variantes, retornando 10
+2025-10-19 18:26:17 [INFO    ] root:      Avaliando 10 variantes HC geradas...
+2025-10-19 18:26:27 [INFO    ] root:      Resultado: 0/10 variantes aprovadas (0.0% taxa de aprovação)
+Gen 45/200 - BestFit: 1.2304 (G-mean: 0.937) | AvgFit: 0.4719 (G-mean: 0.230) | (Diversity: 0.445) | (RuleAct: 15.6) | Mut: 0.276 | Tourn: 4 | Stagn: 11 | Time: 26.91s2025-10-19 18:27:58 [INFO    ] root: Gen 46: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2025-10-19 18:27:58 [INFO    ] root: 
+Estagnação detectada (12 gerações)! Ativando mecanismos de resgate...
+2025-10-19 18:27:58 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [MODERATE]
+2025-10-19 18:27:58 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.937 → REFINAMENTO MODERADO - HC Inteligente + Operações Legadas
+2025-10-19 18:27:58 [INFO    ] hill_climbing_v2:      Operações: ['error_focused_dt_rules', 'ensemble_boosting', 'crossover_with_memory']
+2025-10-19 18:27:58 [INFO    ] hill_climbing_v2:      Variantes planejadas: 10
+2025-10-19 18:27:59 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 375/6000 (6.2%)
+2025-10-19 18:27:59 [INFO    ] intelligent_hc:        DT nos erros: acc=0.875, depth=10, nodes=63
+2025-10-19 18:27:59 [INFO    ] dt_rule_extraction:   Extração DT: 32 regras extraídas de 63 nós
+2025-10-19 18:27:59 [INFO    ] dt_rule_extraction:   Ranqueamento: 32 regras avaliadas
+2025-10-19 18:27:59 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.160', '0.080', '0.072']
+2025-10-19 18:27:59 [INFO    ] dt_rule_extraction:     Top-1: coverage=16.00%, accuracy=100.00%
+2025-10-19 18:27:59 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.160', '0.080', '0.072']
+2025-10-19 18:28:00 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2025-10-19 18:28:00 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2025-10-19 18:28:01 [INFO    ] intelligent_hc:        ensemble_boosting: 375 erros com peso 3×
+2025-10-19 18:28:01 [INFO    ] intelligent_hc:        DT boosted #1: depth=12, acc=0.939
+2025-10-19 18:28:01 [INFO    ] dt_rule_extraction:   Extração DT: 162 regras extraídas de 323 nós
+2025-10-19 18:28:01 [INFO    ] dt_rule_extraction:   Ranqueamento: 162 regras avaliadas
+2025-10-19 18:28:01 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.178', '0.101', '0.089']
+2025-10-19 18:28:01 [INFO    ] dt_rule_extraction:     Top-1: coverage=18.05%, accuracy=98.61%
+2025-10-19 18:28:02 [INFO    ] intelligent_hc:        DT boosted #2: depth=8, acc=0.925
+2025-10-19 18:28:02 [INFO    ] dt_rule_extraction:   Extração DT: 103 regras extraídas de 205 nós
+2025-10-19 18:28:02 [INFO    ] dt_rule_extraction:   Ranqueamento: 103 regras avaliadas
+2025-10-19 18:28:02 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.183', '0.113', '0.089']
+2025-10-19 18:28:02 [INFO    ] dt_rule_extraction:     Top-1: coverage=18.75%, accuracy=97.87%
+2025-10-19 18:28:02 [INFO    ] intelligent_hc:        DT boosted #3: depth=8, acc=0.925
+2025-10-19 18:28:02 [INFO    ] dt_rule_extraction:   Extração DT: 102 regras extraídas de 203 nós
+2025-10-19 18:28:02 [INFO    ] dt_rule_extraction:   Ranqueamento: 102 regras avaliadas
+2025-10-19 18:28:02 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.183', '0.113', '0.089']
+2025-10-19 18:28:02 [INFO    ] dt_rule_extraction:     Top-1: coverage=18.75%, accuracy=97.87%
+2025-10-19 18:28:02 [INFO    ] intelligent_hc:        DT boosted #4: depth=10, acc=0.939
+2025-10-19 18:28:02 [INFO    ] dt_rule_extraction:   Extração DT: 149 regras extraídas de 297 nós
+2025-10-19 18:28:02 [INFO    ] dt_rule_extraction:   Ranqueamento: 149 regras avaliadas
+2025-10-19 18:28:02 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.181', '0.107', '0.089']
+2025-10-19 18:28:02 [INFO    ] dt_rule_extraction:     Top-1: coverage=18.38%, accuracy=98.28%
+2025-10-19 18:28:02 [INFO    ] intelligent_hc:        ensemble_boosting: 4 variantes geradas
+2025-10-19 18:28:02 [INFO    ] hill_climbing_v2:        ✓ ensemble_boosting: 4 variantes geradas
+2025-10-19 18:28:02 [INFO    ] hill_climbing_v2:        ✓ crossover_with_memory: 2 variantes geradas
+2025-10-19 18:28:02 [INFO    ] hill_climbing_v2:      Total gerado: 11 variantes, retornando 10
+2025-10-19 18:28:02 [INFO    ] root:      Avaliando 10 variantes HC geradas...
+2025-10-19 18:28:12 [INFO    ] root:        ✓ HC variant #9 APROVADO: fitness=1.2317 (elite=1.2304), gmean=0.938 (elite=0.937)
+2025-10-19 18:28:13 [INFO    ] root:      Resultado: 1/10 variantes aprovadas (10.0% taxa de aprovação)
+Gen 46/200 - BestFit: 1.2304 (G-mean: 0.937) | AvgFit: 0.6779 (G-mean: 0.426) | (Diversity: 0.578) | (RuleAct: 40.9) | Mut: 0.458 | Tourn: 3 | Stagn: 12 | Time: 33.42s2025-10-19 18:30:39 [INFO    ] root: Gen 47: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 47/200 - BestFit: 1.2317 (G-mean: 0.938) | AvgFit: 0.5300 (G-mean: 0.286) | (Diversity: 0.483) | (RuleAct: 20.0) | Mut: 0.334 | Tourn: 4 | Stagn: 0 | Time: 29.60s2025-10-19 18:31:50 [INFO    ] root: Gen 48: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 48/200 - BestFit: 1.2317 (G-mean: 0.938) | AvgFit: 0.8301 (G-mean: 0.568) | (Diversity: 0.555) | (RuleAct: 47.1) | Mut: 0.572 | Tourn: 3 | Stagn: 1 | Time: 36.96s2025-10-19 18:33:41 [INFO    ] root: Gen 49: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 49/200 - BestFit: 1.2317 (G-mean: 0.938) | AvgFit: 0.8253 (G-mean: 0.563) | (Diversity: 0.501) | (RuleAct: 55.2) | Mut: 0.626 | Tourn: 3 | Stagn: 2 | Time: 38.12s2025-10-19 18:35:31 [INFO    ] root: Gen 50: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 50/200 - BestFit: 1.2317 (G-mean: 0.938) | AvgFit: 0.7743 (G-mean: 0.516) | (Diversity: 0.554) | (RuleAct: 56.6) | Mut: 0.558 | Tourn: 3 | Stagn: 3 | Time: 36.82s2025-10-19 18:37:12 [INFO    ] root: Gen 51: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 51/200 - BestFit: 1.2317 (G-mean: 0.938) | AvgFit: 0.7964 (G-mean: 0.537) | (Diversity: 0.559) | (RuleAct: 57.5) | Mut: 0.643 | Tourn: 3 | Stagn: 4 | Time: 36.76s2025-10-19 18:39:00 [INFO    ] root: 
+2025-10-19 18:39:00 [INFO    ] root: ╔══════════════════════════════════════════════════════════════╗
+2025-10-19 18:39:00 [INFO    ] root: ║ EARLY STOPPING LAYER 2: Melhoria Marginal                   ║
+2025-10-19 18:39:00 [INFO    ] root: ╠══════════════════════════════════════════════════════════════╣
+2025-10-19 18:39:00 [INFO    ] root: ║ G-mean 30 gens atrás: 0.9353                          ║
+2025-10-19 18:39:00 [INFO    ] root: ║ G-mean atual:         0.9378                          ║
+2025-10-19 18:39:00 [INFO    ] root: ║ Melhoria:              0.0025 (< 0.0050)          ║
+2025-10-19 18:39:00 [INFO    ] root: ║ Geração atual:         52                              ║
+2025-10-19 18:39:00 [INFO    ] root: ║ Decisão:               PARAR (retorno decrescente severo)  ║
+2025-10-19 18:39:00 [INFO    ] root: ╚══════════════════════════════════════════════════════════════╝
+2025-10-19 18:39:00 [INFO    ] root: 
+2025-10-19 18:39:00 [INFO    ] root: GA run finished after 52 generations.
+2025-10-19 18:39:00 [INFO    ] GBMLEvaluator[GBML]: ✓ Melhor indivíduo do chunk 2 salvo em: comparison_results/RBF_Abrupt_Severe_seed42_20251019_135243/best_individual_chunk_2.pkl
+2025-10-19 18:39:00 [INFO    ] GBMLEvaluator[GBML]: ✓ Evolução concluída - Fitness: 1.2317, G-mean: 0.9378
+2025-10-19 18:39:00 [INFO    ] GBMLEvaluator[GBML]: [PREQUENTIAL] Testando no chunk 3 (6000 instâncias)...
+2025-10-19 18:39:01 [INFO    ] GBMLEvaluator[GBML]: [RESULTADO] Treinou chunk 2 → Testou chunk 3 | Acc: 0.8947, F1: 0.8946, G-mean: 0.8937
+2025-10-19 18:39:01 [INFO    ] comparison: ✓ Resultados GBML salvos em: comparison_results/RBF_Abrupt_Severe_seed42_20251019_135243/gbml_results.csv
+2025-10-19 18:39:01 [INFO    ] comparison: 
+[4/5] Executando modelos River...
+2025-10-19 18:39:01 [INFO    ] baseline_river: 
+============================================================
+2025-10-19 18:39:01 [INFO    ] baseline_river: Executando modelo: HAT
+2025-10-19 18:39:01 [INFO    ] baseline_river: ============================================================
+2025-10-19 18:39:01 [INFO    ] baseline_river: Modelo River 'HAT' criado com sucesso
+2025-10-19 18:39:01 [INFO    ] RiverEvaluator[HAT]: Modelo River 'HAT' inicializado
+2025-10-19 18:39:01 [INFO    ] RiverEvaluator[HAT]: [PREQUENTIAL] Treinando no chunk 0 (6000 instâncias)...
+2025-10-19 18:39:02 [INFO    ] RiverEvaluator[HAT]: [PREQUENTIAL] Testando no chunk 1 (6000 instâncias)...
+2025-10-19 18:39:02 [INFO    ] RiverEvaluator[HAT]: [RESULTADO] Treinou chunk 0 → Testou chunk 1 | Acc: 0.8197, F1: 0.8196, G-mean: 0.8199
+2025-10-19 18:39:02 [INFO    ] RiverEvaluator[HAT]: [PREQUENTIAL] Treinando no chunk 1 (6000 instâncias)...
+2025-10-19 18:39:03 [INFO    ] RiverEvaluator[HAT]: [PREQUENTIAL] Testando no chunk 2 (6000 instâncias)...
+2025-10-19 18:39:03 [INFO    ] RiverEvaluator[HAT]: [RESULTADO] Treinou chunk 1 → Testou chunk 2 | Acc: 0.8765, F1: 0.8764, G-mean: 0.8760
+2025-10-19 18:39:03 [INFO    ] RiverEvaluator[HAT]: [PREQUENTIAL] Treinando no chunk 2 (6000 instâncias)...
+2025-10-19 18:39:04 [INFO    ] RiverEvaluator[HAT]: [PREQUENTIAL] Testando no chunk 3 (6000 instâncias)...
+2025-10-19 18:39:04 [INFO    ] RiverEvaluator[HAT]: [RESULTADO] Treinou chunk 2 → Testou chunk 3 | Acc: 0.8825, F1: 0.8824, G-mean: 0.8820
+2025-10-19 18:39:04 [INFO    ] baseline_river: 
+✓ HAT - Resultados:
+2025-10-19 18:39:04 [INFO    ] baseline_river:   Accuracy média: 0.8596
+2025-10-19 18:39:04 [INFO    ] baseline_river:   F1 média:       0.8595
+2025-10-19 18:39:04 [INFO    ] baseline_river:   G-mean média:   0.8593
+2025-10-19 18:39:04 [INFO    ] baseline_river: 
+============================================================
+2025-10-19 18:39:04 [INFO    ] baseline_river: Executando modelo: ARF
+2025-10-19 18:39:04 [INFO    ] baseline_river: ============================================================
+2025-10-19 18:39:04 [INFO    ] baseline_river: Modelo River 'ARF' criado com sucesso
+2025-10-19 18:39:04 [INFO    ] RiverEvaluator[ARF]: Modelo River 'ARF' inicializado
+2025-10-19 18:39:04 [INFO    ] RiverEvaluator[ARF]: [PREQUENTIAL] Treinando no chunk 0 (6000 instâncias)...
+2025-10-19 18:39:11 [INFO    ] RiverEvaluator[ARF]: [PREQUENTIAL] Testando no chunk 1 (6000 instâncias)...
+2025-10-19 18:39:12 [INFO    ] RiverEvaluator[ARF]: [RESULTADO] Treinou chunk 0 → Testou chunk 1 | Acc: 0.9328, F1: 0.9328, G-mean: 0.9325
+2025-10-19 18:39:12 [INFO    ] RiverEvaluator[ARF]: [PREQUENTIAL] Treinando no chunk 1 (6000 instâncias)...
+2025-10-19 18:39:19 [INFO    ] RiverEvaluator[ARF]: [PREQUENTIAL] Testando no chunk 2 (6000 instâncias)...
+2025-10-19 18:39:20 [INFO    ] RiverEvaluator[ARF]: [RESULTADO] Treinou chunk 1 → Testou chunk 2 | Acc: 0.9337, F1: 0.9337, G-mean: 0.9335
+2025-10-19 18:39:20 [INFO    ] RiverEvaluator[ARF]: [PREQUENTIAL] Treinando no chunk 2 (6000 instâncias)...
+2025-10-19 18:39:28 [INFO    ] RiverEvaluator[ARF]: [PREQUENTIAL] Testando no chunk 3 (6000 instâncias)...
+2025-10-19 18:39:29 [INFO    ] RiverEvaluator[ARF]: [RESULTADO] Treinou chunk 2 → Testou chunk 3 | Acc: 0.9317, F1: 0.9317, G-mean: 0.9314
+2025-10-19 18:39:29 [INFO    ] baseline_river: 
+✓ ARF - Resultados:
+2025-10-19 18:39:29 [INFO    ] baseline_river:   Accuracy média: 0.9327
+2025-10-19 18:39:29 [INFO    ] baseline_river:   F1 média:       0.9327
+2025-10-19 18:39:29 [INFO    ] baseline_river:   G-mean média:   0.9325
+2025-10-19 18:39:29 [INFO    ] baseline_river: 
+============================================================
+2025-10-19 18:39:29 [INFO    ] baseline_river: Executando modelo: SRP
+2025-10-19 18:39:29 [INFO    ] baseline_river: ============================================================
+2025-10-19 18:39:29 [INFO    ] baseline_river: Modelo River 'SRP' criado com sucesso
+2025-10-19 18:39:29 [INFO    ] RiverEvaluator[SRP]: Modelo River 'SRP' inicializado
+2025-10-19 18:39:29 [INFO    ] RiverEvaluator[SRP]: [PREQUENTIAL] Treinando no chunk 0 (6000 instâncias)...
+2025-10-19 18:39:52 [INFO    ] RiverEvaluator[SRP]: [PREQUENTIAL] Testando no chunk 1 (6000 instâncias)...
+2025-10-19 18:39:54 [INFO    ] RiverEvaluator[SRP]: [RESULTADO] Treinou chunk 0 → Testou chunk 1 | Acc: 0.9288, F1: 0.9288, G-mean: 0.9285
+2025-10-19 18:39:54 [INFO    ] RiverEvaluator[SRP]: [PREQUENTIAL] Treinando no chunk 1 (6000 instâncias)...
+2025-10-19 18:40:20 [INFO    ] RiverEvaluator[SRP]: [PREQUENTIAL] Testando no chunk 2 (6000 instâncias)...
+2025-10-19 18:40:21 [INFO    ] RiverEvaluator[SRP]: [RESULTADO] Treinou chunk 1 → Testou chunk 2 | Acc: 0.9268, F1: 0.9268, G-mean: 0.9268
+2025-10-19 18:40:21 [INFO    ] RiverEvaluator[SRP]: [PREQUENTIAL] Treinando no chunk 2 (6000 instâncias)...
+2025-10-19 18:40:48 [INFO    ] RiverEvaluator[SRP]: [PREQUENTIAL] Testando no chunk 3 (6000 instâncias)...
+2025-10-19 18:40:50 [INFO    ] RiverEvaluator[SRP]: [RESULTADO] Treinou chunk 2 → Testou chunk 3 | Acc: 0.9355, F1: 0.9355, G-mean: 0.9355
+2025-10-19 18:40:50 [INFO    ] baseline_river: 
+✓ SRP - Resultados:
+2025-10-19 18:40:50 [INFO    ] baseline_river:   Accuracy média: 0.9304
+2025-10-19 18:40:50 [INFO    ] baseline_river:   F1 média:       0.9304
+2025-10-19 18:40:50 [INFO    ] baseline_river:   G-mean média:   0.9303
+2025-10-19 18:40:50 [INFO    ] comparison: ✓ Resultados HAT salvos em: comparison_results/RBF_Abrupt_Severe_seed42_20251019_135243/river_HAT_results.csv
+2025-10-19 18:40:50 [INFO    ] comparison: ✓ Resultados ARF salvos em: comparison_results/RBF_Abrupt_Severe_seed42_20251019_135243/river_ARF_results.csv
+2025-10-19 18:40:50 [INFO    ] comparison: ✓ Resultados SRP salvos em: comparison_results/RBF_Abrupt_Severe_seed42_20251019_135243/river_SRP_results.csv
+2025-10-19 18:40:50 [INFO    ] comparison: 
+[5/5] Gerando análise comparativa...
+2025-10-19 18:40:50 [INFO    ] comparison: ✓ Tabela comparativa salva em: comparison_results/RBF_Abrupt_Severe_seed42_20251019_135243/comparison_table.csv
+2025-10-19 18:40:51 [INFO    ] comparison: ✓ Gráficos salvos em: comparison_results/RBF_Abrupt_Severe_seed42_20251019_135243
+2025-10-19 18:40:51 [INFO    ] comparison: ✓ Resumo salvo em: comparison_results/RBF_Abrupt_Severe_seed42_20251019_135243/summary.txt
+2025-10-19 18:40:51 [INFO    ] comparison: 
+======================================================================
+2025-10-19 18:40:51 [INFO    ] comparison: COMPARAÇÃO CONCLUÍDA!
+2025-10-19 18:40:51 [INFO    ] comparison: Resultados em: comparison_results/RBF_Abrupt_Severe_seed42_20251019_135243
+2025-10-19 18:40:51 [INFO    ] comparison: ======================================================================
+
+
+======================================================================
+RESUMO DOS RESULTADOS
+======================================================================
+ESTATÍSTICAS RESUMIDAS
+----------------------------------------------------------------------
+
+Modelo: GBML
+  Accuracy média:  0.8855 ± 0.0079
+  F1 média:        0.8854 ± 0.0079
+  G-mean média:    0.8847 ± 0.0078
+
+Modelo: HAT
+  Accuracy média:  0.8596 ± 0.0347
+  F1 média:        0.8595 ± 0.0347
+  G-mean média:    0.8593 ± 0.0343
+
+Modelo: ARF
+  Accuracy média:  0.9327 ± 0.0010
+  F1 média:        0.9327 ± 0.0010
+  G-mean média:    0.9325 ± 0.0010
+
+Modelo: SRP
+  Accuracy média:  0.9304 ± 0.0045
+  F1 média:        0.9304 ± 0.0045
+  G-mean média:    0.9303 ± 0.0046
+
+✓ Comparação concluída com sucesso!

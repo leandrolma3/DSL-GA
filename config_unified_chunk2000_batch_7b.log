@@ -1,0 +1,1676 @@
+2026-01-28 13:27:32 [INFO    ] root: Configuration loaded successfully from /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/config_test_drift_recovery.yaml
+2026-01-28 13:27:32 [INFO    ] root: Configuration loaded successfully from /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/config_test_drift_recovery.yaml
+2026-01-28 13:27:32 [INFO    ] main: ===== Starting Experiment Execution with Loaded Configuration =====
+2026-01-28 13:27:32 [INFO    ] main: Using configuration file: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/config_test_drift_recovery.yaml
+2026-01-28 13:27:32 [INFO    ] main: Relative base_results_dir resolved: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000/batch_7
+2026-01-28 13:27:32 [INFO    ] main: Execution mode set to: 'unified_pregenerated'
+2026-01-28 13:27:32 [INFO    ] main: Running in UNIFIED PREGENERATED mode. Found 6 experiments to run.
+2026-01-28 13:27:32 [INFO    ] main: Pre-generated chunks directory: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/unified_chunks/chunk_2000
+2026-01-28 13:27:33 [INFO    ] main: [RESUME] SKIPPING 'STAGGER_Stationary': Already complete (5/5 chunks)
+2026-01-28 13:27:34 [INFO    ] main: [RESUME] SKIPPING 'WAVEFORM_Stationary': Already complete (5/5 chunks)
+2026-01-28 13:27:34 [INFO    ] main: [RESUME] SKIPPING 'SINE_Stationary': Already complete (5/5 chunks)
+2026-01-28 13:27:35 [INFO    ] main: [RESUME] SKIPPING 'AssetNegotiation_F2': Already complete (5/5 chunks)
+2026-01-28 13:27:35 [INFO    ] main: [RESUME] SKIPPING 'AssetNegotiation_F3': Already complete (5/5 chunks)
+2026-01-28 13:27:36 [INFO    ] main: ====== Processing Experiment ID: AssetNegotiation_F4 (Runs: 1) ======
+2026-01-28 13:27:36 [INFO    ] main: --- Starting Experiment: ID='AssetNegotiation_F4', Run=1, Mode=Drift Simulation ---
+2026-01-28 13:27:36 [INFO    ] main: Using Random Seed: 43
+2026-01-28 13:27:36 [INFO    ] root: Results will be saved in: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000/batch_7/AssetNegotiation_F4/run_1
+2026-01-28 13:27:36 [WARNING ] main: Concept difference data file not found at /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/results/concept_heatmaps/concept_differences.json. Penalty reduction based on drift severity might be affected.
+2026-01-28 13:27:36 [INFO    ] main: Pre-generated Chunks Mode - Inferred Base Type: AssetNegotiation_F4
+2026-01-28 13:27:36 [INFO    ] main: Loading pre-generated chunks from: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/unified_chunks/chunk_2000/AssetNegotiation_F4
+2026-01-28 13:27:38 [INFO    ] root: Loaded 6 chunks from /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/unified_chunks/chunk_2000/AssetNegotiation_F4
+2026-01-28 13:27:38 [INFO    ] main: Loaded 6 pre-generated chunks successfully
+2026-01-28 13:27:38 [INFO    ] root: Converting data types for all chunks...
+2026-01-28 13:27:38 [INFO    ] root: Data type conversion finished.
+2026-01-28 13:27:38 [INFO    ] root: Stream Properties: 5 attrs (5 num, 0 cat), 2 classes: [0, 1]
+2026-01-28 13:27:38 [INFO    ] root: Categorical features: []
+2026-01-28 13:27:38 [INFO    ] root: Numeric features: ['x_0', 'x_1', 'x_2', 'x_3', 'x_4']
+2026-01-28 13:27:38 [WARNING ] main: [RESUME] Detected 4 chunks already processed
+2026-01-28 13:27:38 [WARNING ] main: [RESUME] Last completed: chunk 3
+2026-01-28 13:27:38 [WARNING ] main: [RESUME] Resuming from: chunk 4
+2026-01-28 13:27:38 [INFO    ] main: [RESUME] Loaded checkpoint individual from chunk 3
+2026-01-28 13:27:40 [INFO    ] main: [RESUME] Loaded 4 partial metrics
+2026-01-28 13:27:40 [INFO    ] main: [RESUME] Loaded 4 individuals from checkpoints
+2026-01-28 13:27:40 [WARNING ] main: 
+2026-01-28 13:27:40 [WARNING ] main: ######################################################################
+2026-01-28 13:27:40 [WARNING ] main: EXPERIMENTO INICIADO
+2026-01-28 13:27:40 [WARNING ] main: ######################################################################
+2026-01-28 13:27:40 [WARNING ] main: Timestamp: 2026-01-28 13:27:40
+2026-01-28 13:27:40 [WARNING ] main: Total de chunks a processar: 5
+2026-01-28 13:27:40 [WARNING ] main: [RESUME] Iniciando do chunk: 4 (chunks 0-3 já processados)
+2026-01-28 13:27:40 [WARNING ] main: 
+2026-01-28 13:27:40 [WARNING ] main: 
+2026-01-28 13:27:40 [WARNING ] main: ======================================================================
+2026-01-28 13:27:40 [WARNING ] main: CHUNK 4 - INÍCIO
+2026-01-28 13:27:40 [WARNING ] main: ======================================================================
+2026-01-28 13:27:40 [WARNING ] main: Timestamp: 2026-01-28 13:27:40
+2026-01-28 13:27:40 [WARNING ] main: Train: Chunk 4 | Test: Chunk 5
+2026-01-28 13:27:40 [INFO    ] root: ===== Processing Chunk 4 (Train) / Chunk 5 (Test) =====
+2026-01-28 13:27:40 [INFO    ] root: Salvando chunk de teste (chunk 5) para depuração.
+2026-01-28 13:27:40 [INFO    ] root: Chunk 5 (test) salvo com sucesso em: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000/batch_7/AssetNegotiation_F4/run_1/chunk_data/chunk_5_test.csv
+2026-01-28 13:27:40 [WARNING ] main: 
+2026-01-28 13:27:40 [WARNING ] main: [FASE 2] Chunk 4 - Calculando concept fingerprint...
+2026-01-28 13:27:40 [WARNING ] main: [FASE 2]   ✓ Fingerprint calculada: 2000 instâncias
+2026-01-28 13:27:40 [WARNING ] main: [FASE 2]   - Mean shape: (5,)
+2026-01-28 13:27:40 [WARNING ] main: [FASE 2]   - Std shape: (5,)
+2026-01-28 13:27:40 [WARNING ] main: [FASE 2]   - Class distribution shape: (2,)
+2026-01-28 13:27:40 [WARNING ] main: [FASE 2] Chunk 4 - Detectando conceito recorrente...
+2026-01-28 13:27:40 [WARNING ] main: [FASE 2]   Conceitos conhecidos: []
+2026-01-28 13:27:40 [WARNING ] main: [FASE 2]   Threshold similaridade: 0.85
+2026-01-28 13:27:40 [WARNING ] main: [FASE 2]   ✓ NOVO CONCEITO: 'concept_4'
+2026-01-28 13:27:40 [INFO    ] root: 🆕 Chunk 4: NOVO conceito detectado (ID: 'concept_4')
+2026-01-28 13:27:40 [WARNING ] main: [FASE 2] Chunk 4 - Criando entrada para novo conceito 'concept_4'
+2026-01-28 13:27:40 [WARNING ] main: [FASE 2]   ✓ Conceito 'concept_4' inicializado
+2026-01-28 13:27:40 [INFO    ] main: Classifying performance: current_acc_input=0.8840, history_len=4, history_tail=[0.9256359086149696, 0.9191442889846516, 0.9204162343987261, 0.8839944363218786], abs_bad_thr=0.60
+2026-01-28 13:27:40 [INFO    ] main: Chunk 4: Performance label='bad'.
+2026-01-28 13:27:40 [INFO    ] main: Performance label is 'bad' for chunk 4. Reducing change penalties.
+2026-01-28 13:27:40 [INFO    ] main: Recovery mode: Using max_generations_recovery: 25 for chunk 4
+2026-01-28 13:27:40 [INFO    ] main: Explicit drift adaptation activated for chunk 4.
+2026-01-28 13:27:40 [INFO    ] main:   Mutation rate will be overridden to 0.5 for 10 generations.
+2026-01-28 13:27:40 [INFO    ] main:   Memory abandoned. Overriding/setting initialization strategy to: 'full_random'.
+2026-01-28 13:27:40 [INFO    ] main:   Max depth temporarily increased to: 15 (multiplier: 1.5).
+2026-01-28 13:27:40 [INFO    ] main:   Max rules per class temporarily increased to: 22 (multiplier: 1.5).
+2026-01-28 13:27:40 [INFO    ] main: Starting GA training on chunk 4 with MaxGen: 25, MaxDepth: 15, MaxRules: 22, InitStrategy: full_random
+2026-01-28 13:27:40 [INFO    ] main: Chunk 4: Using drift_severity='STABLE' from previous chunk for GA adaptation
+2026-01-28 13:27:40 [INFO    ] root: Starting GA run: Pop=120, MaxGen=25, Elit=0.10, Parallel=True, InitStrategy=full_random
+2026-01-28 13:27:40 [INFO    ] root:   Crossover Balanceado Inteligente ATIVADO (70% qualidade + 30% diversidade)
+2026-01-28 13:27:40 [INFO    ] root:   Mutation override: Rate=0.5 for 10 generations.
+2026-01-28 13:27:40 [INFO    ] root: Initializing population with strategy 'full_random' and performance 'bad'.
+2026-01-28 13:27:40 [INFO    ] root: Construindo o 'Pool de Genes' com a estratégia 'Focus Training' usando Decision Tree...
+2026-01-28 13:27:40 [INFO    ] root: Estratégia de reset ativada. Usando 'Seeding Multi-Profundidade'.
+2026-01-28 13:27:40 [INFO    ] root:   -> SEEDING ADAPTATIVO ATIVADO: Estimando complexidade do chunk...
+2026-01-28 13:27:40 [INFO    ] root:   -> Complexidade estimada: MEDIUM (DT probe acc: 0.881)
+2026-01-28 13:27:40 [INFO    ] root:      Problema MÉDIO (DT probe 75-90%) - Seeding moderado
+2026-01-28 13:27:40 [INFO    ] root:      Parâmetros adaptativos: seeding_ratio=0.6, injection_ratio=0.6, depths=[5, 8, 10]
+2026-01-28 13:27:40 [INFO    ] root:   -> Seeding Probabilístico ATIVADO: Injetando 60% das regras DT
+2026-01-28 13:27:41 [INFO    ] root: População de reset criada: 120 indivíduos (72 semeados, 48 aleatórios).
+2026-01-28 13:27:41 [INFO    ] root: Parallel enabled. Using cores: 2
+2026-01-28 13:27:41 [WARNING ] root: [DEBUG L1] Gen 1: Avaliando 120 individuos (cache size=0)
+2026-01-28 13:27:41 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash 8c776b45b25df437... no cache
+2026-01-28 13:27:41 [WARNING ] root: [DEBUG L1] Gen 1: CACHE MISS #1 - avaliando hash 8c776b45b25df437...
+2026-01-28 13:27:41 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash 8c776b45b25df437... no cache
+2026-01-28 13:27:41 [WARNING ] root: [DEBUG L1] Gen 1: CACHE MISS #2 - avaliando hash 8c776b45b25df437...
+2026-01-28 13:27:41 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash 8c776b45b25df437... no cache
+2026-01-28 13:27:41 [WARNING ] root: [DEBUG L1] Gen 1: CACHE MISS #3 - avaliando hash 8c776b45b25df437...
+2026-01-28 13:27:41 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash 8c776b45b25df437... no cache
+2026-01-28 13:27:41 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash 8c776b45b25df437... no cache
+2026-01-28 13:27:41 [WARNING ] root: [DEBUG L1 FITNESS] Early stop DESATIVADO: threshold=0.0
+2026-01-28 13:27:41 [WARNING ] root: [DEBUG L1 FITNESS] Early stop DESATIVADO: threshold=0.0
+2026-01-28 13:28:32 [WARNING ] root: [DEBUG L1] Gen 1: cache_hits=0, cache_misses=120, early_stopped=0
+2026-01-28 13:28:32 [WARNING ] root:    [CACHE] Gen 1: Hits=0/120 (0.0%)
+2026-01-28 13:28:32 [WARNING ] root: 
+2026-01-28 13:28:32 [WARNING ] root:    [GEN 1] Best: Fit=0.9727, Gmean=0.884 | Avg: Fit=0.6931, Gmean=0.626 | Div=0.649 | Stag=0
+2026-01-28 13:28:32 [INFO    ] root: Gen 1: Preservando 1 elites do pool híbrido (ordenados por G-mean).
+2026-01-28 13:29:29 [WARNING ] root:    [EARLY STOP] Gen 2: threshold=0.884 (50%=0.442, mediana top-12)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Gen 2: Avaliando 120 individuos (cache size=51)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 8c776b45b25df437... (rules_len=1911)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash 8c776b45b25df437... no cache
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Gen 2: CACHE HIT #1 - hash 8c776b45b25df437...
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 52b0e424508d96d7... (rules_len=3987)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash 52b0e424508d96d7... no cache
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Gen 2: CACHE MISS #1 - avaliando hash 52b0e424508d96d7...
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 985b12fa21ee9ba3... (rules_len=6698)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash 985b12fa21ee9ba3... no cache
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Gen 2: CACHE MISS #2 - avaliando hash 985b12fa21ee9ba3...
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 2822c17897508ff0... (rules_len=3090)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash 2822c17897508ff0... no cache
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Gen 2: CACHE MISS #3 - avaliando hash 2822c17897508ff0...
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 6597e4d723d768c1... (rules_len=17776)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash 6597e4d723d768c1... no cache
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 32e9323673d4bddf... (rules_len=3091)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: f8f119e23bb151bd... (rules_len=11667)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 0b3d18c453a3963b... (rules_len=15967)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 38f0917627a14156... (rules_len=18154)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 6bc2dc27bac18e57... (rules_len=3585)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: ad5dbc6f7d31f8d8... (rules_len=2303)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: ae0268074fb40f83... (rules_len=2877)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: fb7fd0a5f7a40ec9... (rules_len=15248)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: ae1a78565663bdc1... (rules_len=5731)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 04695fbe9cf14001... (rules_len=4290)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: ce0a8eea52310a1a... (rules_len=3009)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: ddc9b45be20ad02b... (rules_len=2749)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: f0816ef15c05e679... (rules_len=36143)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: bf473375a4c00b92... (rules_len=3364)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 8d5fd31ee3bac16f... (rules_len=3366)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 367660940aa27402... (rules_len=5963)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: c31dc8884746e2ce... (rules_len=2880)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 5953e24fa81fc5ae... (rules_len=3574)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 9d54a10d8c6d481a... (rules_len=10960)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 0f064e281538207c... (rules_len=2682)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: e8322bb4fa1e0a8d... (rules_len=13969)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 8bd9b1b5fb9ad810... (rules_len=1231)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 26f6a702cb78f3a4... (rules_len=9135)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 76696801d88f3bb1... (rules_len=20720)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 9b81280cfc6bda1b... (rules_len=7806)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: a9bb7ccb9465f433... (rules_len=3638)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 1d6ce136ee88ee8d... (rules_len=2960)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 9d2a12daf1d745ae... (rules_len=2725)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 07d4aa07fff335c3... (rules_len=21081)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 32f9f17afecfd0a8... (rules_len=1336)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 447d6a4773b15951... (rules_len=3598)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: be42856126837fec... (rules_len=2431)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 9f0057e3c9b9301c... (rules_len=3322)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: c7c61c99c755ca15... (rules_len=2366)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 05df13ee289c8828... (rules_len=16063)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 577ab6f28a531655... (rules_len=7188)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: cb75f33a71b22445... (rules_len=2689)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 876c945fe7bb15a0... (rules_len=1336)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 0feb4390701b2191... (rules_len=25231)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: cc5e5a9db0695d58... (rules_len=4304)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 981461c8578ad435... (rules_len=7335)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 82714d834ca38419... (rules_len=2110)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: b60e957e10309886... (rules_len=24399)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 103539a67779eee0... (rules_len=18089)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: e8b0b618f9e422d4... (rules_len=1230)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 90f682a6779f53a6... (rules_len=2828)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 63b563a8a5d60bd2... (rules_len=5350)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: a00c66093d8cef66... (rules_len=3491)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 876f5277c6611e30... (rules_len=17659)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 5fde24df30570755... (rules_len=2957)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: b01d871b973d3357... (rules_len=3837)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 5568a82718f99a73... (rules_len=1232)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: ce80ee1bdb13e77a... (rules_len=3344)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 35ad2d2536d48431... (rules_len=3304)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 83aeff95267496f7... (rules_len=2367)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 1eb7b346fb264655... (rules_len=22691)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: c9b5a8e028c67f73... (rules_len=16031)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 5e582e13c8c4de11... (rules_len=2855)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 659eab58bed2cb60... (rules_len=14452)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 89dcd22793dc520c... (rules_len=2285)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 2768d26e6ad73c96... (rules_len=2980)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 59ff09b3c6306fcd... (rules_len=2862)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 35303a57fc4b53ed... (rules_len=4071)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 632921208d991364... (rules_len=3331)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: c1254841029563a2... (rules_len=1232)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: bdcf6061e7e65c15... (rules_len=7888)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 8992197cfa1166fa... (rules_len=6470)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 1a12e90dc80fdbd2... (rules_len=1850)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 7143dfba628cb7fc... (rules_len=2765)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 4aae2f76aaacf24b... (rules_len=19097)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: b14e5d3e92804cbd... (rules_len=3305)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 1069bae0d0bb443c... (rules_len=2878)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: e08537d9b5d4c69f... (rules_len=7501)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 279a70701bfc5629... (rules_len=3088)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 7d57934caaadd375... (rules_len=2064)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 669685a7abef71c3... (rules_len=4615)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: dbd29382ff7038dd... (rules_len=2365)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: cee0f3b1efec5af5... (rules_len=3026)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 0cdbdeb398744bcd... (rules_len=23249)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: d183ecb71ee63897... (rules_len=3043)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 9562900e0521d03a... (rules_len=2693)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: e2b8ff40c43e57a9... (rules_len=6893)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 3d2797ca64caa9b6... (rules_len=5947)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 22386bddf5e62f28... (rules_len=1167)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: c282aaf0cb71a9c3... (rules_len=10165)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: e70d4f4ba93051b1... (rules_len=2725)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 4065e109a4697f20... (rules_len=4892)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 22d4a21f74cef943... (rules_len=2816)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 35fed9163be4acd0... (rules_len=1337)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: f2bdda4d4b69dbca... (rules_len=3494)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 90dcdd578bc04657... (rules_len=2278)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 5f4245bd8f6d6fbd... (rules_len=3642)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: edd3e51cfec95a50... (rules_len=3428)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 4cab4939944eb1a1... (rules_len=2233)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: bc0b24c7d2212e38... (rules_len=2965)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: fdc60ff53124bdd3... (rules_len=14253)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: a97cb874921818e2... (rules_len=2151)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 397f78ad3719c738... (rules_len=3095)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 6bd71730f944fa31... (rules_len=26405)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 23a4e2ae9bd7f060... (rules_len=4056)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 62aba5db9c1c0a6d... (rules_len=4944)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: a06f7f8cd62c1c72... (rules_len=3156)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 9efab2f43f09d53a... (rules_len=8473)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: ab6ded36edb72406... (rules_len=24891)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 37063fa44f549559... (rules_len=2728)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 63bd2aa1628dd9e2... (rules_len=6930)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 011caa8f808abb75... (rules_len=7341)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 75ce23b8ae106948... (rules_len=2978)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 9191fafed68e71c7... (rules_len=1271)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 1ebd281027b50bcc... (rules_len=2625)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 49a47d4d1e39a318... (rules_len=4841)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 488dabad96e55a3e... (rules_len=7252)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: aadf8615e395b988... (rules_len=4487)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 5d48b13a76daef0e... (rules_len=1615)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1] Hash gerado: 868b6fa0dda3f686... (rules_len=1335)
+Gen 1/25 - BestFit: 0.9727 (G-mean: 0.884) | AvgFit: 0.6931 (G-mean: 0.626) | (Diversity: 0.649) | (RuleAct: 73.4) | Mut: 0.500 | Tourn: 2 | Stagn: 0 | Time: 51.61s2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.884, partial_size=400/2000
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.929 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.884, partial_size=400/2000
+2026-01-28 13:29:29 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.937 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.884, partial_size=400/2000
+2026-01-28 13:29:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.531 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.884, partial_size=400/2000
+2026-01-28 13:29:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.446 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.884, partial_size=400/2000
+2026-01-28 13:29:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.921 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.884, partial_size=400/2000
+2026-01-28 13:29:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.898 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.884, partial_size=400/2000
+2026-01-28 13:29:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.374 vs threshold_50%=0.442 (should_discard=True)
+2026-01-28 13:29:31 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.374 < 0.442
+2026-01-28 13:29:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.884, partial_size=400/2000
+2026-01-28 13:29:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.450 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:32 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.884, partial_size=400/2000
+2026-01-28 13:29:32 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.937 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:32 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.884, partial_size=400/2000
+2026-01-28 13:29:32 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.929 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:32 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.730 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:33 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.325 vs threshold_50%=0.442 (should_discard=True)
+2026-01-28 13:29:33 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.325 < 0.442
+2026-01-28 13:29:33 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.907 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:33 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.566 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:33 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.923 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:34 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.935 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:34 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.949 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:34 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.642 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:35 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.923 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:35 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.669 vs threshold_50%=0.442 (should_discard=False)
+2026-01-28 13:29:40 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.394 < 0.442
+2026-01-28 13:29:40 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.429 < 0.442
+2026-01-28 13:29:40 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.394 < 0.442
+2026-01-28 13:29:41 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.333 < 0.442
+2026-01-28 13:29:41 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.288 < 0.442
+2026-01-28 13:29:43 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.283 < 0.442
+2026-01-28 13:29:46 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.414 < 0.442
+2026-01-28 13:29:47 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.384 < 0.442
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 52b0e424508d96d7... (rules_len=3987)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 985b12fa21ee9ba3... (rules_len=6698)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 2822c17897508ff0... (rules_len=3090)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Gen 2: EARLY STOPPED individual #1 (gmean=0.374)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 6597e4d723d768c1... (rules_len=17776)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 32e9323673d4bddf... (rules_len=3091)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: f8f119e23bb151bd... (rules_len=11667)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Gen 2: EARLY STOPPED individual #2 (gmean=0.325)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 0b3d18c453a3963b... (rules_len=15967)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 38f0917627a14156... (rules_len=18154)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 6bc2dc27bac18e57... (rules_len=3585)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: ad5dbc6f7d31f8d8... (rules_len=2303)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: ae0268074fb40f83... (rules_len=2877)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: fb7fd0a5f7a40ec9... (rules_len=15248)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: ae1a78565663bdc1... (rules_len=5731)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 04695fbe9cf14001... (rules_len=4290)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: ce0a8eea52310a1a... (rules_len=3009)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: ddc9b45be20ad02b... (rules_len=2749)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: f0816ef15c05e679... (rules_len=36143)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: bf473375a4c00b92... (rules_len=3364)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 8d5fd31ee3bac16f... (rules_len=3366)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 367660940aa27402... (rules_len=5963)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: c31dc8884746e2ce... (rules_len=2880)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 5953e24fa81fc5ae... (rules_len=3574)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 9d54a10d8c6d481a... (rules_len=10960)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 0f064e281538207c... (rules_len=2682)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: e8322bb4fa1e0a8d... (rules_len=13969)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 8bd9b1b5fb9ad810... (rules_len=1231)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 26f6a702cb78f3a4... (rules_len=9135)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 76696801d88f3bb1... (rules_len=20720)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 9b81280cfc6bda1b... (rules_len=7806)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: a9bb7ccb9465f433... (rules_len=3638)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 1d6ce136ee88ee8d... (rules_len=2960)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 9d2a12daf1d745ae... (rules_len=2725)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Gen 2: EARLY STOPPED individual #3 (gmean=0.394)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 07d4aa07fff335c3... (rules_len=21081)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Gen 2: EARLY STOPPED individual #4 (gmean=0.394)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 32f9f17afecfd0a8... (rules_len=1336)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 447d6a4773b15951... (rules_len=3598)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Gen 2: EARLY STOPPED individual #5 (gmean=0.333)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: be42856126837fec... (rules_len=2431)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 9f0057e3c9b9301c... (rules_len=3322)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: c7c61c99c755ca15... (rules_len=2366)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 05df13ee289c8828... (rules_len=16063)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 577ab6f28a531655... (rules_len=7188)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: cb75f33a71b22445... (rules_len=2689)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 876c945fe7bb15a0... (rules_len=1336)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 0feb4390701b2191... (rules_len=25231)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: cc5e5a9db0695d58... (rules_len=4304)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 981461c8578ad435... (rules_len=7335)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 82714d834ca38419... (rules_len=2110)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: b60e957e10309886... (rules_len=24399)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 103539a67779eee0... (rules_len=18089)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: e8b0b618f9e422d4... (rules_len=1230)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 90f682a6779f53a6... (rules_len=2828)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 63b563a8a5d60bd2... (rules_len=5350)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: a00c66093d8cef66... (rules_len=3491)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 876f5277c6611e30... (rules_len=17659)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 5fde24df30570755... (rules_len=2957)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: b01d871b973d3357... (rules_len=3837)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 5568a82718f99a73... (rules_len=1232)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: ce80ee1bdb13e77a... (rules_len=3344)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 35ad2d2536d48431... (rules_len=3304)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 83aeff95267496f7... (rules_len=2367)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 1eb7b346fb264655... (rules_len=22691)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: c9b5a8e028c67f73... (rules_len=16031)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 5e582e13c8c4de11... (rules_len=2855)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 659eab58bed2cb60... (rules_len=14452)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 89dcd22793dc520c... (rules_len=2285)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 2768d26e6ad73c96... (rules_len=2980)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 59ff09b3c6306fcd... (rules_len=2862)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 35303a57fc4b53ed... (rules_len=4071)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 632921208d991364... (rules_len=3331)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: c1254841029563a2... (rules_len=1232)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: bdcf6061e7e65c15... (rules_len=7888)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 8992197cfa1166fa... (rules_len=6470)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 1a12e90dc80fdbd2... (rules_len=1850)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 7143dfba628cb7fc... (rules_len=2765)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 4aae2f76aaacf24b... (rules_len=19097)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: b14e5d3e92804cbd... (rules_len=3305)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 1069bae0d0bb443c... (rules_len=2878)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: e08537d9b5d4c69f... (rules_len=7501)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 279a70701bfc5629... (rules_len=3088)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 7d57934caaadd375... (rules_len=2064)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 669685a7abef71c3... (rules_len=4615)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: dbd29382ff7038dd... (rules_len=2365)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: cee0f3b1efec5af5... (rules_len=3026)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 0cdbdeb398744bcd... (rules_len=23249)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: d183ecb71ee63897... (rules_len=3043)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 9562900e0521d03a... (rules_len=2693)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: e2b8ff40c43e57a9... (rules_len=6893)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 3d2797ca64caa9b6... (rules_len=5947)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 22386bddf5e62f28... (rules_len=1167)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: c282aaf0cb71a9c3... (rules_len=10165)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: e70d4f4ba93051b1... (rules_len=2725)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 4065e109a4697f20... (rules_len=4892)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 22d4a21f74cef943... (rules_len=2816)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 35fed9163be4acd0... (rules_len=1337)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: f2bdda4d4b69dbca... (rules_len=3494)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 90dcdd578bc04657... (rules_len=2278)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 5f4245bd8f6d6fbd... (rules_len=3642)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: edd3e51cfec95a50... (rules_len=3428)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 4cab4939944eb1a1... (rules_len=2233)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: bc0b24c7d2212e38... (rules_len=2965)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: fdc60ff53124bdd3... (rules_len=14253)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: a97cb874921818e2... (rules_len=2151)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 397f78ad3719c738... (rules_len=3095)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 6bd71730f944fa31... (rules_len=26405)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 23a4e2ae9bd7f060... (rules_len=4056)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 62aba5db9c1c0a6d... (rules_len=4944)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: a06f7f8cd62c1c72... (rules_len=3156)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 9efab2f43f09d53a... (rules_len=8473)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: ab6ded36edb72406... (rules_len=24891)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 37063fa44f549559... (rules_len=2728)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 63bd2aa1628dd9e2... (rules_len=6930)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 011caa8f808abb75... (rules_len=7341)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 75ce23b8ae106948... (rules_len=2978)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 9191fafed68e71c7... (rules_len=1271)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 1ebd281027b50bcc... (rules_len=2625)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 49a47d4d1e39a318... (rules_len=4841)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 488dabad96e55a3e... (rules_len=7252)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: aadf8615e395b988... (rules_len=4487)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 5d48b13a76daef0e... (rules_len=1615)
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Hash gerado: 868b6fa0dda3f686... (rules_len=1335)
+2026-01-28 13:30:04 [WARNING ] root: Gen 2: Only 89/119 individuals evaluated successfully in parallel.
+2026-01-28 13:30:04 [WARNING ] root: [DEBUG L1] Gen 2: cache_hits=1, cache_misses=119, early_stopped=30
+2026-01-28 13:30:04 [WARNING ] root:    [CACHE] Gen 2: Hits=1/120 (0.8%)
+2026-01-28 13:30:04 [WARNING ] root:    [EARLY STOP] Gen 2: Descartados=30/119 (25.2%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:30:04 [WARNING ] root: 
+2026-01-28 13:30:04 [WARNING ] root:    [GEN 2] Best: Fit=1.0472, Gmean=0.952 | Avg: Fit=-inf, Gmean=0.656 | Div=0.631 | Stag=0
+2026-01-28 13:30:04 [INFO    ] root: Gen 2: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2026-01-28 13:30:53 [WARNING ] root:    [EARLY STOP] Gen 3: threshold=0.940 (50%=0.470, mediana top-12)
+2026-01-28 13:30:53 [WARNING ] root: [DEBUG L1] Gen 3: Avaliando 120 individuos (cache size=170)
+2026-01-28 13:30:53 [WARNING ] root: [DEBUG L1] Gen 3: Procurando hash aadf8615e395b988... no cache
+2026-01-28 13:30:53 [WARNING ] root: [DEBUG L1] Gen 3: CACHE HIT #1 - hash aadf8615e395b988...
+2026-01-28 13:30:53 [WARNING ] root: [DEBUG L1] Gen 3: Procurando hash 37063fa44f549559... no cache
+2026-01-28 13:30:53 [WARNING ] root: [DEBUG L1] Gen 3: CACHE HIT #2 - hash 37063fa44f549559...
+2026-01-28 13:30:53 [WARNING ] root: [DEBUG L1] Gen 3: Procurando hash 9562900e0521d03a... no cache
+2026-01-28 13:30:53 [WARNING ] root: [DEBUG L1] Gen 3: CACHE HIT #3 - hash 9562900e0521d03a...
+2026-01-28 13:30:53 [WARNING ] root: [DEBUG L1] Gen 3: Procurando hash 279a70701bfc5629... no cache
+2026-01-28 13:30:53 [WARNING ] root: [DEBUG L1] Gen 3: Procurando hash ddc9b45be20ad02b... no cache
+2026-01-28 13:30:53 [WARNING ] root: [DEBUG L1] Gen 3: CACHE MISS #1 - avaliando hash 65c7f785efb46442...
+2026-01-28 13:30:53 [WARNING ] root: [DEBUG L1] Gen 3: CACHE MISS #2 - avaliando hash 41aa41c8949cc35c...
+2026-01-28 13:30:53 [WARNING ] root: [DEBUG L1] Gen 3: CACHE MISS #3 - avaliando hash 19f49616fc6425d8...
+Gen 2/25 - BestFit: 1.0472 (G-mean: 0.952) | AvgFit: -inf (G-mean: 0.656) | (Diversity: 0.631) | (RuleAct: 69.0) | Mut: 0.500 | Tourn: 3 | Stagn: 0 | Time: 34.82s2026-01-28 13:30:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:30:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.853 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:30:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:30:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.687 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:30:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:30:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.579 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:30:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:30:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.889 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:30:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:30:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.683 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:30:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:30:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.334 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:30:54 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.334 < 0.470
+2026-01-28 13:30:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:30:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.691 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:30:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:30:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.826 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:30:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:30:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.613 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:30:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:30:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.524 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:30:56 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.874 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:30:56 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.626 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:30:56 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.515 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:30:56 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.556 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:30:57 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.444 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:30:57 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.444 < 0.470
+2026-01-28 13:30:57 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.591 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:30:57 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.263 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:30:57 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.263 < 0.470
+2026-01-28 13:30:57 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.332 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:30:57 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.332 < 0.470
+2026-01-28 13:30:57 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.780 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:30:58 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.599 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:30:58 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.245 < 0.470
+2026-01-28 13:30:58 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.245 < 0.470
+2026-01-28 13:30:59 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.446 < 0.470
+2026-01-28 13:31:00 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.372 < 0.470
+2026-01-28 13:31:02 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.458 < 0.470
+2026-01-28 13:31:04 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.297 < 0.470
+2026-01-28 13:31:20 [WARNING ] root: [DEBUG L1] Gen 3: EARLY STOPPED individual #1 (gmean=0.444)
+2026-01-28 13:31:20 [WARNING ] root: [DEBUG L1] Gen 3: EARLY STOPPED individual #2 (gmean=0.263)
+2026-01-28 13:31:20 [WARNING ] root: [DEBUG L1] Gen 3: EARLY STOPPED individual #3 (gmean=0.245)
+2026-01-28 13:31:20 [WARNING ] root: [DEBUG L1] Gen 3: EARLY STOPPED individual #4 (gmean=0.334)
+2026-01-28 13:31:20 [WARNING ] root: [DEBUG L1] Gen 3: EARLY STOPPED individual #5 (gmean=0.332)
+2026-01-28 13:31:20 [WARNING ] root: Gen 3: Only 72/108 individuals evaluated successfully in parallel.
+2026-01-28 13:31:20 [WARNING ] root: [DEBUG L1] Gen 3: cache_hits=12, cache_misses=108, early_stopped=35
+2026-01-28 13:31:20 [WARNING ] root:    [CACHE] Gen 3: Hits=12/120 (10.0%)
+2026-01-28 13:31:20 [WARNING ] root:    [EARLY STOP] Gen 3: Descartados=35/108 (32.4%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:31:20 [WARNING ] root: 
+2026-01-28 13:31:20 [WARNING ] root:    [GEN 3] Best: Fit=1.0472, Gmean=0.952 | Avg: Fit=-inf, Gmean=0.571 | Div=0.497 | Stag=1
+2026-01-28 13:31:20 [INFO    ] root: Gen 3: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 3/25 - BestFit: 1.0472 (G-mean: 0.952) | AvgFit: -inf (G-mean: 0.571) | (Diversity: 0.497) | (RuleAct: 53.1) | Mut: 0.500 | Tourn: 3 | Stagn: 1 | Time: 26.61s2026-01-28 13:32:06 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:32:06 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:32:06 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.847 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:32:06 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.676 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:32:07 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:32:07 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.383 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:32:07 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.383 < 0.470
+2026-01-28 13:32:07 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:32:07 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.537 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:32:07 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:32:07 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.508 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:32:07 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:32:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.609 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:32:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:32:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.358 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:32:08 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.358 < 0.470
+2026-01-28 13:32:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:32:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.519 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:32:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:32:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.506 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:32:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:32:08 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.245 < 0.470
+2026-01-28 13:32:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:32:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.376 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:32:09 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.376 < 0.470
+2026-01-28 13:32:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.525 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:32:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.521 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:32:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.609 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:32:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.319 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:32:09 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.319 < 0.470
+2026-01-28 13:32:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.576 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:32:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.657 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:32:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.343 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:32:10 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.343 < 0.470
+2026-01-28 13:32:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.802 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:32:11 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.567 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:32:12 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.231 < 0.470
+2026-01-28 13:32:12 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.227 < 0.470
+2026-01-28 13:32:12 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.353 < 0.470
+2026-01-28 13:32:16 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.387 < 0.470
+2026-01-28 13:32:31 [WARNING ] root: [DEBUG L1] Gen 4: EARLY STOPPED individual #1 (gmean=0.383)
+2026-01-28 13:32:31 [WARNING ] root: [DEBUG L1] Gen 4: EARLY STOPPED individual #2 (gmean=0.358)
+2026-01-28 13:32:31 [WARNING ] root: [DEBUG L1] Gen 4: EARLY STOPPED individual #3 (gmean=0.245)
+2026-01-28 13:32:31 [WARNING ] root: [DEBUG L1] Gen 4: EARLY STOPPED individual #4 (gmean=0.343)
+2026-01-28 13:32:31 [WARNING ] root: [DEBUG L1] Gen 4: EARLY STOPPED individual #5 (gmean=0.376)
+2026-01-28 13:32:31 [WARNING ] root: Gen 4: Only 72/108 individuals evaluated successfully in parallel.
+2026-01-28 13:32:31 [WARNING ] root: [DEBUG L1] Gen 4: cache_hits=12, cache_misses=108, early_stopped=36
+2026-01-28 13:32:31 [WARNING ] root:    [CACHE] Gen 4: Hits=12/120 (10.0%)
+2026-01-28 13:32:31 [WARNING ] root:    [EARLY STOP] Gen 4: Descartados=36/108 (33.3%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:32:31 [INFO    ] root: Gen 4: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 4/25 - BestFit: 1.0472 (G-mean: 0.952) | AvgFit: -inf (G-mean: 0.551) | (Diversity: 0.501) | (RuleAct: 47.3) | Mut: 0.500 | Tourn: 3 | Stagn: 2 | Time: 24.55s2026-01-28 13:33:17 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:33:17 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:33:17 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.556 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:33:17 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.407 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:33:17 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.407 < 0.470
+2026-01-28 13:33:17 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:33:17 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.499 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:33:17 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:33:17 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.255 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:33:17 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.255 < 0.470
+2026-01-28 13:33:18 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:33:18 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.522 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:33:18 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:33:18 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.554 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:33:18 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:33:18 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.669 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:33:18 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:33:18 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.236 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:33:18 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.236 < 0.470
+2026-01-28 13:33:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:33:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.434 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:33:19 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.434 < 0.470
+2026-01-28 13:33:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:33:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.480 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:33:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:33:19 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.245 < 0.470
+2026-01-28 13:33:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.572 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:33:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.576 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:33:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.451 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:33:19 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.451 < 0.470
+2026-01-28 13:33:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.339 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:33:20 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.339 < 0.470
+2026-01-28 13:33:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.355 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:33:20 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.355 < 0.470
+2026-01-28 13:33:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.532 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:33:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:33:20 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.245 < 0.470
+2026-01-28 13:33:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:33:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.302 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:33:20 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.302 < 0.470
+2026-01-28 13:33:38 [WARNING ] root: [DEBUG L1] Gen 5: EARLY STOPPED individual #1 (gmean=0.255)
+2026-01-28 13:33:38 [WARNING ] root: [DEBUG L1] Gen 5: EARLY STOPPED individual #2 (gmean=0.236)
+2026-01-28 13:33:38 [WARNING ] root: [DEBUG L1] Gen 5: EARLY STOPPED individual #3 (gmean=0.434)
+2026-01-28 13:33:38 [WARNING ] root: [DEBUG L1] Gen 5: EARLY STOPPED individual #4 (gmean=0.245)
+2026-01-28 13:33:38 [WARNING ] root: [DEBUG L1] Gen 5: EARLY STOPPED individual #5 (gmean=0.339)
+2026-01-28 13:33:39 [WARNING ] root: Gen 5: Only 50/108 individuals evaluated successfully in parallel.
+2026-01-28 13:33:39 [WARNING ] root:    [CACHE] Gen 5: Hits=12/120 (10.0%)
+2026-01-28 13:33:39 [WARNING ] root:    [EARLY STOP] Gen 5: Descartados=58/108 (53.7%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:33:39 [INFO    ] root: Gen 5: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 5/25 - BestFit: 1.0472 (G-mean: 0.952) | AvgFit: -inf (G-mean: 0.497) | (Diversity: 0.505) | (RuleAct: 47.0) | Mut: 0.500 | Tourn: 3 | Stagn: 3 | Time: 22.07s2026-01-28 13:34:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:34:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:34:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.501 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:34:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.507 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:34:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:34:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.577 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:34:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:34:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:34:27 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.245 < 0.470
+2026-01-28 13:34:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:34:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.352 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:34:28 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.352 < 0.470
+2026-01-28 13:34:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:34:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.589 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:34:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:34:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.116 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:34:28 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.116 < 0.470
+2026-01-28 13:34:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:34:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.485 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:34:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:34:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.419 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:34:28 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.419 < 0.470
+2026-01-28 13:34:29 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:34:29 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:34:29 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.245 < 0.470
+2026-01-28 13:34:29 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.416 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:34:29 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.416 < 0.470
+2026-01-28 13:34:29 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.602 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:34:29 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.515 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:34:29 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.433 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:34:29 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.433 < 0.470
+2026-01-28 13:34:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.473 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:34:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.226 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:34:30 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.226 < 0.470
+2026-01-28 13:34:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.457 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:34:30 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.457 < 0.470
+2026-01-28 13:34:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.585 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:34:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.375 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:34:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.467 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:34:31 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.467 < 0.470
+2026-01-28 13:34:49 [WARNING ] root: [DEBUG L1] Gen 6: EARLY STOPPED individual #1 (gmean=0.352)
+2026-01-28 13:34:49 [WARNING ] root: [DEBUG L1] Gen 6: EARLY STOPPED individual #2 (gmean=0.116)
+2026-01-28 13:34:49 [WARNING ] root: [DEBUG L1] Gen 6: EARLY STOPPED individual #3 (gmean=0.419)
+2026-01-28 13:34:49 [WARNING ] root: [DEBUG L1] Gen 6: EARLY STOPPED individual #4 (gmean=0.416)
+2026-01-28 13:34:49 [WARNING ] root: [DEBUG L1] Gen 6: EARLY STOPPED individual #5 (gmean=0.467)
+2026-01-28 13:34:49 [WARNING ] root: Gen 6: Only 50/108 individuals evaluated successfully in parallel.
+2026-01-28 13:34:49 [WARNING ] root:    [CACHE] Gen 6: Hits=12/120 (10.0%)
+2026-01-28 13:34:49 [WARNING ] root:    [EARLY STOP] Gen 6: Descartados=57/108 (52.8%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:34:49 [INFO    ] root: Gen 6: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 6/25 - BestFit: 1.0472 (G-mean: 0.952) | AvgFit: -inf (G-mean: 0.506) | (Diversity: 0.480) | (RuleAct: 44.5) | Mut: 0.500 | Tourn: 3 | Stagn: 4 | Time: 22.95s2026-01-28 13:35:37 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:35:37 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:35:37 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.539 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:35:37 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.394 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:35:37 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.394 < 0.470
+2026-01-28 13:35:38 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:35:38 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.254 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:35:38 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.254 < 0.470
+2026-01-28 13:35:38 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:35:38 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.380 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:35:38 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.380 < 0.470
+2026-01-28 13:35:38 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:35:38 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.359 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:35:38 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.359 < 0.470
+2026-01-28 13:35:38 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:35:38 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.525 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:35:38 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:35:38 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.320 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:35:38 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.320 < 0.470
+2026-01-28 13:35:39 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:35:39 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.533 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:35:39 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:35:39 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.576 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:35:39 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.558 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:35:40 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:35:40 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.593 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:35:40 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.384 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:35:40 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.384 < 0.470
+2026-01-28 13:35:40 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:35:40 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.245 < 0.470
+2026-01-28 13:35:41 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.646 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:35:41 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.646 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:35:41 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.462 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:35:41 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.462 < 0.470
+2026-01-28 13:35:41 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.577 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:35:42 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.359 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:35:42 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.359 < 0.470
+2026-01-28 13:35:42 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.567 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:35:42 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.650 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:35:43 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.000 < 0.470
+2026-01-28 13:36:00 [WARNING ] root: Gen 7: Only 51/108 individuals evaluated successfully in parallel.
+2026-01-28 13:36:00 [WARNING ] root:    [CACHE] Gen 7: Hits=12/120 (10.0%)
+2026-01-28 13:36:00 [WARNING ] root:    [EARLY STOP] Gen 7: Descartados=55/108 (50.9%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:36:00 [INFO    ] root: Gen 7: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 7/25 - BestFit: 1.0472 (G-mean: 0.952) | AvgFit: -inf (G-mean: 0.495) | (Diversity: 0.478) | (RuleAct: 53.8) | Mut: 0.500 | Tourn: 3 | Stagn: 5 | Time: 22.55s2026-01-28 13:36:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:36:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:36:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:36:47 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.245 < 0.470
+2026-01-28 13:36:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.526 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:36:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:36:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.338 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:36:48 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.338 < 0.470
+2026-01-28 13:36:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:36:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.635 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:36:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:36:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.463 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:36:48 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.463 < 0.470
+2026-01-28 13:36:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:36:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:36:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:36:48 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.245 < 0.470
+2026-01-28 13:36:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.335 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:36:48 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.335 < 0.470
+2026-01-28 13:36:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:36:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.461 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:36:49 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.461 < 0.470
+2026-01-28 13:36:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:36:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.562 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:36:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:36:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.440 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:36:49 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.440 < 0.470
+2026-01-28 13:36:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.529 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:36:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.474 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:36:50 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.539 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:36:50 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:36:50 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.000 < 0.470
+2026-01-28 13:36:50 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.481 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:36:50 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.491 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:36:50 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.774 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:36:51 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.881 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:36:51 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.480 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:36:51 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.136 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:36:51 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.136 < 0.470
+2026-01-28 13:36:51 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.353 < 0.470
+2026-01-28 13:37:11 [WARNING ] root: Gen 8: Only 54/108 individuals evaluated successfully in parallel.
+2026-01-28 13:37:11 [WARNING ] root:    [CACHE] Gen 8: Hits=12/120 (10.0%)
+2026-01-28 13:37:11 [WARNING ] root:    [EARLY STOP] Gen 8: Descartados=52/108 (48.1%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:37:11 [INFO    ] root: Gen 8: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 8/25 - BestFit: 1.0472 (G-mean: 0.952) | AvgFit: -inf (G-mean: 0.511) | (Diversity: 0.547) | (RuleAct: 49.9) | Mut: 0.500 | Tourn: 3 | Stagn: 6 | Time: 23.43s2026-01-28 13:37:58 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:37:58 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:37:58 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.408 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:37:58 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.408 < 0.470
+2026-01-28 13:37:58 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:37:58 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.245 < 0.470
+2026-01-28 13:37:59 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:37:59 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:37:59 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.245 < 0.470
+2026-01-28 13:37:59 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:37:59 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.698 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:37:59 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:37:59 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.492 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:37:59 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:37:59 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.426 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:37:59 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.426 < 0.470
+2026-01-28 13:37:59 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:37:59 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:37:59 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.426 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:37:59 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.426 < 0.470
+2026-01-28 13:37:59 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:37:59 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.245 < 0.470
+2026-01-28 13:38:00 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:38:00 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.359 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:38:00 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.359 < 0.470
+2026-01-28 13:38:00 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:38:00 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.445 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:38:00 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.445 < 0.470
+2026-01-28 13:38:00 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.479 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:38:00 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.424 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:38:00 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.424 < 0.470
+2026-01-28 13:38:00 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.593 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:38:00 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:38:00 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.245 < 0.470
+2026-01-28 13:38:01 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.205 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:38:01 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.561 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:38:01 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:38:01 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.365 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:38:01 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.757 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:38:01 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.555 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:38:21 [WARNING ] root: Gen 9: Only 50/108 individuals evaluated successfully in parallel.
+2026-01-28 13:38:21 [WARNING ] root:    [CACHE] Gen 9: Hits=12/120 (10.0%)
+2026-01-28 13:38:21 [WARNING ] root:    [EARLY STOP] Gen 9: Descartados=58/108 (53.7%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:38:21 [INFO    ] root: Gen 9: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 9/25 - BestFit: 1.0472 (G-mean: 0.952) | AvgFit: -inf (G-mean: 0.485) | (Diversity: 0.461) | (RuleAct: 48.8) | Mut: 0.500 | Tourn: 3 | Stagn: 7 | Time: 22.48s2026-01-28 13:39:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:39:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.479 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:39:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:39:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.836 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:39:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:39:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.385 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:39:08 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.385 < 0.470
+2026-01-28 13:39:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:39:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.743 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:39:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:39:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.495 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:39:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:39:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.516 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:39:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:39:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.668 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:39:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:39:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:39:09 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.245 < 0.470
+2026-01-28 13:39:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:39:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.386 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:39:09 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.386 < 0.470
+2026-01-28 13:39:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:39:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.595 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:39:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.453 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:39:10 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.453 < 0.470
+2026-01-28 13:39:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.758 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:39:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.629 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:39:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.623 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:39:11 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.537 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:39:11 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.236 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:39:11 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.236 < 0.470
+2026-01-28 13:39:11 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.529 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:39:11 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.392 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:39:11 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.392 < 0.470
+2026-01-28 13:39:12 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.637 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:39:12 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.387 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:39:12 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.387 < 0.470
+2026-01-28 13:39:12 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.245 < 0.470
+2026-01-28 13:39:12 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.429 < 0.470
+2026-01-28 13:39:13 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.136 < 0.470
+2026-01-28 13:39:30 [WARNING ] root: Gen 10: Only 56/108 individuals evaluated successfully in parallel.
+2026-01-28 13:39:30 [WARNING ] root:    [CACHE] Gen 10: Hits=12/120 (10.0%)
+2026-01-28 13:39:30 [WARNING ] root:    [EARLY STOP] Gen 10: Descartados=50/108 (46.3%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:39:30 [INFO    ] root: Gen 10: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 10/25 - BestFit: 1.0472 (G-mean: 0.952) | AvgFit: -inf (G-mean: 0.499) | (Diversity: 0.548) | (RuleAct: 49.8) | Mut: 0.500 | Tourn: 3 | Stagn: 8 | Time: 21.95s2026-01-28 13:40:17 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:40:17 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:40:17 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.489 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:40:17 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.485 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:40:18 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:40:18 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:40:18 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.551 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:40:18 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.289 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:40:18 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.289 < 0.470
+2026-01-28 13:40:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:40:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.767 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:40:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:40:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.551 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:40:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:40:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:40:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.433 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:40:20 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.433 < 0.470
+2026-01-28 13:40:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.284 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:40:20 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.284 < 0.470
+2026-01-28 13:40:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:40:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:40:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.538 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:40:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.766 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:40:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.551 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:40:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.687 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:40:21 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.556 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:40:21 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.406 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:40:21 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.406 < 0.470
+2026-01-28 13:40:21 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.594 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:40:21 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.225 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:40:21 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.225 < 0.470
+2026-01-28 13:40:21 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.488 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:40:22 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.511 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:40:22 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.620 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:40:22 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.426 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:40:22 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.426 < 0.470
+2026-01-28 13:40:22 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.245 < 0.470
+2026-01-28 13:40:23 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.358 < 0.470
+2026-01-28 13:40:23 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.274 < 0.470
+2026-01-28 13:40:24 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.434 < 0.470
+2026-01-28 13:40:40 [WARNING ] root: Gen 11: Only 57/108 individuals evaluated successfully in parallel.
+2026-01-28 13:40:40 [WARNING ] root:    [CACHE] Gen 11: Hits=12/120 (10.0%)
+2026-01-28 13:40:40 [WARNING ] root:    [EARLY STOP] Gen 11: Descartados=49/108 (45.4%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:40:41 [WARNING ] root: 
+2026-01-28 13:40:41 [WARNING ] root:    [GEN 11] Best: Fit=1.0472, Gmean=0.952 | Avg: Fit=-inf, Gmean=0.497 | Div=0.443 | Stag=9
+2026-01-28 13:40:41 [INFO    ] root: Gen 11: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2026-01-28 13:41:26 [WARNING ] root:    [EARLY STOP] Gen 12: threshold=0.940 (50%=0.470, mediana top-12)
+Gen 11/25 - BestFit: 1.0472 (G-mean: 0.952) | AvgFit: -inf (G-mean: 0.497) | (Diversity: 0.443) | (RuleAct: 48.1) | Mut: 0.403 | Tourn: 3 | Stagn: 9 | Time: 23.44s2026-01-28 13:41:26 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:41:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.940, partial_size=400/2000
+2026-01-28 13:41:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.682 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:41:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:41:27 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.245 < 0.470
+2026-01-28 13:41:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:41:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.552 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:41:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.940, partial_size=400/2000
+2026-01-28 13:41:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.236 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:41:27 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.236 < 0.470
+2026-01-28 13:41:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:41:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.940, partial_size=400/2000
+2026-01-28 13:41:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.669 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:41:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.798 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:41:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:41:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.585 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:41:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.940, partial_size=400/2000
+2026-01-28 13:41:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.570 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:41:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:41:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.539 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:41:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.940, partial_size=400/2000
+2026-01-28 13:41:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.440 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:41:28 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.440 < 0.470
+2026-01-28 13:41:29 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:41:29 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.245 < 0.470
+2026-01-28 13:41:29 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.512 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:41:29 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.650 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:41:29 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.468 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:41:29 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.468 < 0.470
+2026-01-28 13:41:29 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.597 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:41:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:41:30 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.245 < 0.470
+2026-01-28 13:41:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.204 vs threshold_50%=0.470 (should_discard=True)
+2026-01-28 13:41:30 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.204 < 0.470
+2026-01-28 13:41:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.547 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:41:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.747 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:41:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.550 vs threshold_50%=0.470 (should_discard=False)
+2026-01-28 13:41:33 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.356 < 0.470
+2026-01-28 13:41:34 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.307 < 0.470
+2026-01-28 13:41:34 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.296 < 0.470
+2026-01-28 13:41:53 [WARNING ] root: Gen 12: Only 72/108 individuals evaluated successfully in parallel.
+2026-01-28 13:41:53 [WARNING ] root:    [CACHE] Gen 12: Hits=12/120 (10.0%)
+2026-01-28 13:41:53 [WARNING ] root:    [EARLY STOP] Gen 12: Descartados=36/108 (33.3%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:41:53 [INFO    ] root: Gen 12: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2026-01-28 13:41:53 [INFO    ] root: 
+Estagnação detectada (10 gerações)! Ativando mecanismos de resgate...
+2026-01-28 13:41:53 [WARNING ] root: 
+2026-01-28 13:41:53 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=10, elite_gmean=0.952)
+2026-01-28 13:41:53 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [MODERATE]
+2026-01-28 13:41:53 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.952 → REFINAMENTO MODERADO - HC Inteligente + Operações Legadas
+2026-01-28 13:41:53 [INFO    ] hill_climbing_v2:      Operações: ['error_focused_dt_rules', 'ensemble_boosting', 'crossover_with_memory']
+2026-01-28 13:41:53 [INFO    ] hill_climbing_v2:      Variantes planejadas: 12
+2026-01-28 13:41:53 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 93/2000 (4.7%)
+2026-01-28 13:41:53 [INFO    ] intelligent_hc:        DT nos erros: acc=0.968, depth=3, nodes=9
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:   Extração DT: 5 regras extraídas de 9 nós
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:   Ranqueamento: 5 regras avaliadas
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.634', '0.151', '0.097']
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:     Top-1: coverage=63.44%, accuracy=100.00%
+2026-01-28 13:41:53 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.634', '0.151', '0.097']
+2026-01-28 13:41:53 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2026-01-28 13:41:53 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2026-01-28 13:41:53 [INFO    ] intelligent_hc:        ensemble_boosting: 93 erros com peso 3×
+2026-01-28 13:41:53 [INFO    ] intelligent_hc:        DT boosted #1: depth=12, acc=0.959
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:   Extração DT: 49 regras extraídas de 97 nós
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:   Ranqueamento: 49 regras avaliadas
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.242', '0.195', '0.060']
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:     Top-1: coverage=24.25%, accuracy=100.00%
+2026-01-28 13:41:53 [INFO    ] intelligent_hc:        DT boosted #2: depth=10, acc=0.959
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:   Extração DT: 48 regras extraídas de 95 nós
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:   Ranqueamento: 48 regras avaliadas
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.242', '0.195', '0.060']
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:     Top-1: coverage=24.25%, accuracy=100.00%
+2026-01-28 13:41:53 [INFO    ] intelligent_hc:        DT boosted #3: depth=6, acc=0.959
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:   Extração DT: 45 regras extraídas de 89 nós
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:   Ranqueamento: 45 regras avaliadas
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.242', '0.195', '0.060']
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:     Top-1: coverage=24.25%, accuracy=100.00%
+2026-01-28 13:41:53 [INFO    ] intelligent_hc:        DT boosted #4: depth=6, acc=0.959
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:   Extração DT: 45 regras extraídas de 89 nós
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:   Ranqueamento: 45 regras avaliadas
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.242', '0.195', '0.060']
+2026-01-28 13:41:53 [INFO    ] dt_rule_extraction:     Top-1: coverage=24.25%, accuracy=100.00%
+2026-01-28 13:41:53 [INFO    ] intelligent_hc:        ensemble_boosting: 4 variantes geradas
+2026-01-28 13:41:53 [INFO    ] hill_climbing_v2:        ✓ ensemble_boosting: 4 variantes geradas
+2026-01-28 13:41:53 [INFO    ] hill_climbing_v2:        ✓ crossover_with_memory: 3 variantes geradas
+2026-01-28 13:41:53 [INFO    ] hill_climbing_v2:      Total gerado: 12 variantes, retornando 8 (limite: 8)
+2026-01-28 13:41:53 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2026-01-28 13:41:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop DESATIVADO: threshold=None
+2026-01-28 13:41:54 [INFO    ] root:        ✓ HC variant #6 APROVADO (MELHOR): fitness=1.0570 (elite=1.0472, Δ=+0.0098), gmean=0.961 (elite=0.952, Δ=+0.009)
+2026-01-28 13:41:54 [INFO    ] root:        ✓ HC variant #7 APROVADO (TOLERÂNCIA): fitness=1.0224 (elite=1.0472, Δ=-0.0248), gmean=0.929 (elite=0.952, Δ=-0.023)
+2026-01-28 13:41:54 [INFO    ] root:        ✓ HC variant #8 APROVADO (TOLERÂNCIA): fitness=1.0230 (elite=1.0472, Δ=-0.0242), gmean=0.930 (elite=0.952, Δ=-0.022)
+2026-01-28 13:41:54 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+Gen 12/25 - BestFit: 1.0472 (G-mean: 0.952) | AvgFit: -inf (G-mean: 0.557) | (Diversity: 0.508) | (RuleAct: 53.4) | Mut: 0.473 | Tourn: 3 | Stagn: 10 | Time: 26.28s2026-01-28 13:42:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:42:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:42:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.967 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:42:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.612 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:42:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:42:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.485 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.180 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.180 < 0.471
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.207 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.207 < 0.471
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.942 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.245 < 0.471
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.207 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.207 < 0.471
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.000 < 0.471
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.220 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.939 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:42:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:42:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:42:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.361 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:42:55 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.361 < 0.471
+2026-01-28 13:42:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:42:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.252 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:42:55 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.252 < 0.471
+2026-01-28 13:42:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.179 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:42:55 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.179 < 0.471
+2026-01-28 13:42:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.180 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:42:55 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.180 < 0.471
+2026-01-28 13:42:56 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:42:56 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.000 < 0.471
+2026-01-28 13:42:56 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.194 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:42:56 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.258 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:43:01 [WARNING ] root: Gen 13: Only 11/108 individuals evaluated successfully in parallel.
+2026-01-28 13:43:01 [WARNING ] root:    [CACHE] Gen 13: Hits=12/120 (10.0%)
+2026-01-28 13:43:01 [WARNING ] root:    [EARLY STOP] Gen 13: Descartados=95/108 (88.0%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:43:01 [INFO    ] root: Gen 13: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 13/25 - BestFit: 1.0570 (G-mean: 0.961) | AvgFit: -inf (G-mean: 0.344) | (Diversity: 0.626) | (RuleAct: 24.3) | Mut: 0.707 | Tourn: 2 | Stagn: 0 | Time: 7.81s2026-01-28 13:43:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:43:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:43:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.531 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:43:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.399 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:43:48 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.399 < 0.471
+2026-01-28 13:43:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:43:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:43:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.436 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:43:48 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.436 < 0.471
+2026-01-28 13:43:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.231 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:43:48 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.231 < 0.471
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.528 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.167 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.167 < 0.471
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.152 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.152 < 0.471
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.384 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.384 < 0.471
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.710 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.326 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.326 < 0.471
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.260 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.207 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.207 < 0.471
+2026-01-28 13:43:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:43:50 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.243 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:43:50 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.243 < 0.471
+2026-01-28 13:43:50 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.646 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:43:50 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:43:50 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.245 < 0.471
+2026-01-28 13:43:50 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.399 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:43:50 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.195 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:43:50 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.254 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:43:50 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:44:01 [WARNING ] root: Gen 14: Only 22/105 individuals evaluated successfully in parallel.
+2026-01-28 13:44:01 [WARNING ] root:    [CACHE] Gen 14: Hits=15/120 (12.5%)
+2026-01-28 13:44:01 [WARNING ] root:    [EARLY STOP] Gen 14: Descartados=83/105 (79.0%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:44:01 [INFO    ] root: Gen 14: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 14/25 - BestFit: 1.0570 (G-mean: 0.961) | AvgFit: -inf (G-mean: 0.396) | (Diversity: 0.612) | (RuleAct: 37.8) | Mut: 0.549 | Tourn: 3 | Stagn: 1 | Time: 12.77s2026-01-28 13:44:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:44:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.317 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:44:46 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.317 < 0.471
+2026-01-28 13:44:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:44:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.360 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:44:46 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.360 < 0.471
+2026-01-28 13:44:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:44:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.502 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:44:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:44:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.301 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:44:47 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.301 < 0.471
+2026-01-28 13:44:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:44:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:44:47 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.245 < 0.471
+2026-01-28 13:44:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:44:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:44:47 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.245 < 0.471
+2026-01-28 13:44:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:44:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.259 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:44:47 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.259 < 0.471
+2026-01-28 13:44:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:44:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.461 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:44:47 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.461 < 0.471
+2026-01-28 13:44:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:44:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.370 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:44:48 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.370 < 0.471
+2026-01-28 13:44:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:44:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.619 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:44:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.296 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:44:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.500 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:44:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:44:48 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.245 < 0.471
+2026-01-28 13:44:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.521 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:44:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.424 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:44:49 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.424 < 0.471
+2026-01-28 13:44:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:44:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:44:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.563 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:44:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.457 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:44:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.466 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:45:05 [WARNING ] root: Gen 15: Only 29/107 individuals evaluated successfully in parallel.
+2026-01-28 13:45:05 [WARNING ] root:    [CACHE] Gen 15: Hits=13/120 (10.8%)
+2026-01-28 13:45:05 [WARNING ] root:    [EARLY STOP] Gen 15: Descartados=78/107 (72.9%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:45:05 [INFO    ] root: Gen 15: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 15/25 - BestFit: 1.0570 (G-mean: 0.961) | AvgFit: -inf (G-mean: 0.428) | (Diversity: 0.487) | (RuleAct: 50.1) | Mut: 0.528 | Tourn: 3 | Stagn: 2 | Time: 18.57s2026-01-28 13:45:51 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:45:51 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.305 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:45:51 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.305 < 0.471
+2026-01-28 13:45:51 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:45:51 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.332 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:45:51 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.332 < 0.471
+2026-01-28 13:45:51 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:45:51 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.136 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:45:51 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.136 < 0.471
+2026-01-28 13:45:51 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:45:51 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.450 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:45:51 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.450 < 0.471
+2026-01-28 13:45:52 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:45:52 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:45:52 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.565 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:45:52 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.543 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:45:52 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:45:52 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.709 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:45:52 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:45:52 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.164 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:45:52 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.164 < 0.471
+2026-01-28 13:45:52 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:45:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.254 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:45:53 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.254 < 0.471
+2026-01-28 13:45:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:45:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.408 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:45:53 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.408 < 0.471
+2026-01-28 13:45:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.466 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:45:53 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.466 < 0.471
+2026-01-28 13:45:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:45:53 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.245 < 0.471
+2026-01-28 13:45:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.516 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:45:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.366 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:45:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.336 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:45:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.328 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:45:54 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.328 < 0.471
+2026-01-28 13:45:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.316 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:45:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.676 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:45:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.413 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:45:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.624 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:46:12 [WARNING ] root: Gen 16: Only 35/108 individuals evaluated successfully in parallel.
+2026-01-28 13:46:12 [WARNING ] root:    [CACHE] Gen 16: Hits=12/120 (10.0%)
+2026-01-28 13:46:12 [WARNING ] root:    [EARLY STOP] Gen 16: Descartados=73/108 (67.6%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:46:12 [INFO    ] root: Gen 16: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 16/25 - BestFit: 1.0570 (G-mean: 0.961) | AvgFit: -inf (G-mean: 0.460) | (Diversity: 0.512) | (RuleAct: 49.8) | Mut: 0.517 | Tourn: 3 | Stagn: 3 | Time: 21.58s2026-01-28 13:47:01 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:47:01 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:47:01 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:47:01 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.245 < 0.471
+2026-01-28 13:47:01 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.561 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:47:01 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:47:02 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.379 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:47:02 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.379 < 0.471
+2026-01-28 13:47:02 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:47:02 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.562 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:47:02 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:47:02 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.419 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:47:02 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.419 < 0.471
+2026-01-28 13:47:02 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:47:02 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:47:02 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.456 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:47:02 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.456 < 0.471
+2026-01-28 13:47:02 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.519 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:47:02 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:47:02 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.397 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:47:02 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.397 < 0.471
+2026-01-28 13:47:03 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:47:03 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.630 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:47:03 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.557 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:47:03 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:47:03 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.431 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:47:03 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.319 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:47:03 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.319 < 0.471
+2026-01-28 13:47:03 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.530 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:47:04 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.192 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:47:04 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.514 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:47:04 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.667 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:47:04 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.253 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:47:04 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.394 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:47:04 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.394 < 0.471
+2026-01-28 13:47:05 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.411 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:47:05 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.411 < 0.471
+2026-01-28 13:47:05 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.420 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:47:05 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.420 < 0.471
+2026-01-28 13:47:06 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.308 < 0.471
+2026-01-28 13:47:22 [WARNING ] root: Gen 17: Only 39/108 individuals evaluated successfully in parallel.
+2026-01-28 13:47:22 [WARNING ] root:    [CACHE] Gen 17: Hits=12/120 (10.0%)
+2026-01-28 13:47:22 [WARNING ] root:    [EARLY STOP] Gen 17: Descartados=68/108 (63.0%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:47:22 [INFO    ] root: Gen 17: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 17/25 - BestFit: 1.0570 (G-mean: 0.961) | AvgFit: -inf (G-mean: 0.478) | (Diversity: 0.529) | (RuleAct: 46.0) | Mut: 0.514 | Tourn: 3 | Stagn: 4 | Time: 21.35s2026-01-28 13:48:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:48:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:48:09 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.245 < 0.471
+2026-01-28 13:48:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:48:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.372 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:48:10 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.372 < 0.471
+2026-01-28 13:48:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:48:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.533 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:48:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:48:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.644 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:48:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:48:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.501 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:48:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:48:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.511 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:48:11 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:48:11 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.533 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:48:11 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:48:11 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:48:11 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.245 < 0.471
+2026-01-28 13:48:11 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:48:12 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.417 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:48:12 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.417 < 0.471
+2026-01-28 13:48:12 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:48:12 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.762 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:48:12 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.457 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:48:12 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.457 < 0.471
+2026-01-28 13:48:12 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.374 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:48:12 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.374 < 0.471
+2026-01-28 13:48:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:48:13 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.245 < 0.471
+2026-01-28 13:48:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.473 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:48:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.361 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:48:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:48:13 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.245 < 0.471
+2026-01-28 13:48:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.501 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:48:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.553 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:48:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:48:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.716 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:48:15 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.299 < 0.471
+2026-01-28 13:48:15 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.259 < 0.471
+2026-01-28 13:48:32 [WARNING ] root: Gen 18: Only 50/108 individuals evaluated successfully in parallel.
+2026-01-28 13:48:32 [WARNING ] root:    [CACHE] Gen 18: Hits=12/120 (10.0%)
+2026-01-28 13:48:32 [WARNING ] root:    [EARLY STOP] Gen 18: Descartados=57/108 (52.8%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:48:32 [INFO    ] root: Gen 18: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 18/25 - BestFit: 1.0570 (G-mean: 0.961) | AvgFit: -inf (G-mean: 0.500) | (Diversity: 0.462) | (RuleAct: 47.4) | Mut: 0.468 | Tourn: 3 | Stagn: 5 | Time: 22.97s2026-01-28 13:49:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:49:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.193 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:49:19 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.193 < 0.471
+2026-01-28 13:49:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:49:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.596 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:49:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:49:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.477 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:49:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:49:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.374 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:49:20 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.374 < 0.471
+2026-01-28 13:49:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:49:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.539 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:49:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:49:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.508 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:49:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:49:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.644 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:49:21 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:49:21 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.784 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:49:21 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:49:21 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.795 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:49:21 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:49:21 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.354 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:49:21 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.354 < 0.471
+2026-01-28 13:49:21 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.502 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:49:21 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.180 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:49:21 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.180 < 0.471
+2026-01-28 13:49:22 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.792 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:49:22 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.290 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:49:22 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.290 < 0.471
+2026-01-28 13:49:22 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.467 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:49:22 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.467 < 0.471
+2026-01-28 13:49:22 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.574 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:49:22 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.502 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:49:23 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.753 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:49:23 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.704 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:49:23 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.614 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:49:24 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.451 < 0.471
+2026-01-28 13:49:24 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.245 < 0.471
+2026-01-28 13:49:27 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.245 < 0.471
+2026-01-28 13:49:28 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.325 < 0.471
+2026-01-28 13:49:43 [WARNING ] root: Gen 19: Only 65/108 individuals evaluated successfully in parallel.
+2026-01-28 13:49:43 [WARNING ] root:    [CACHE] Gen 19: Hits=12/120 (10.0%)
+2026-01-28 13:49:43 [WARNING ] root:    [EARLY STOP] Gen 19: Descartados=43/108 (39.8%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:49:43 [INFO    ] root: Gen 19: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 19/25 - BestFit: 1.0570 (G-mean: 0.961) | AvgFit: -inf (G-mean: 0.546) | (Diversity: 0.447) | (RuleAct: 54.9) | Mut: 0.491 | Tourn: 3 | Stagn: 6 | Time: 24.32s2026-01-28 13:50:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:50:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.187 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:50:30 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.187 < 0.471
+2026-01-28 13:50:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:50:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.413 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:50:30 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.413 < 0.471
+2026-01-28 13:50:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:50:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:50:30 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.245 < 0.471
+2026-01-28 13:50:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:50:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.596 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:50:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:50:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.505 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:50:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:50:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.624 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:50:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:50:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.581 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:50:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:50:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.630 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:50:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:50:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.595 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:50:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:50:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:50:31 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.245 < 0.471
+2026-01-28 13:50:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.476 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:50:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.565 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:50:32 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.515 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:50:32 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.388 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:50:32 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.388 < 0.471
+2026-01-28 13:50:32 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.285 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:50:32 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.285 < 0.471
+2026-01-28 13:50:32 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.632 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:50:32 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.409 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:50:32 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.409 < 0.471
+2026-01-28 13:50:33 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.663 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:50:33 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.533 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:50:33 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.492 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:50:33 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.167 < 0.471
+2026-01-28 13:50:35 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.000 < 0.471
+2026-01-28 13:50:36 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.433 < 0.471
+2026-01-28 13:50:51 [WARNING ] root: Gen 20: Only 54/108 individuals evaluated successfully in parallel.
+2026-01-28 13:50:51 [WARNING ] root:    [CACHE] Gen 20: Hits=12/120 (10.0%)
+2026-01-28 13:50:51 [WARNING ] root:    [EARLY STOP] Gen 20: Descartados=51/108 (47.2%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:50:51 [INFO    ] root: Gen 20: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 20/25 - BestFit: 1.0570 (G-mean: 0.961) | AvgFit: -inf (G-mean: 0.498) | (Diversity: 0.440) | (RuleAct: 53.6) | Mut: 0.458 | Tourn: 3 | Stagn: 7 | Time: 21.37s2026-01-28 13:51:35 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:51:35 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:51:35 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.398 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:51:35 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.398 < 0.471
+2026-01-28 13:51:35 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.253 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:51:35 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.253 < 0.471
+2026-01-28 13:51:36 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:51:36 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.697 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:51:36 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:51:36 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.567 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:51:36 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:51:36 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.821 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:51:36 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:51:36 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.659 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:51:37 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:51:37 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:51:37 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.692 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:51:37 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.483 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:51:37 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:51:37 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.193 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:51:37 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.193 < 0.471
+2026-01-28 13:51:37 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:51:37 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.478 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:51:38 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.578 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:51:38 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.347 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:51:38 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.347 < 0.471
+2026-01-28 13:51:39 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.619 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:51:39 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.375 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:51:39 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.375 < 0.471
+2026-01-28 13:51:39 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.922 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:51:39 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.693 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:51:40 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.296 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:51:40 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.296 < 0.471
+2026-01-28 13:51:40 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.455 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:51:40 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.455 < 0.471
+2026-01-28 13:51:40 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.366 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:51:40 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.366 < 0.471
+2026-01-28 13:51:40 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.362 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:51:40 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.362 < 0.471
+2026-01-28 13:51:41 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.368 < 0.471
+2026-01-28 13:51:59 [WARNING ] root: Gen 21: Only 66/108 individuals evaluated successfully in parallel.
+2026-01-28 13:51:59 [WARNING ] root:    [CACHE] Gen 21: Hits=12/120 (10.0%)
+2026-01-28 13:51:59 [WARNING ] root:    [EARLY STOP] Gen 21: Descartados=40/108 (37.0%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:51:59 [WARNING ] root: 
+2026-01-28 13:51:59 [WARNING ] root:    [GEN 21] Best: Fit=1.0570, Gmean=0.961 | Avg: Fit=-inf, Gmean=0.556 | Div=0.490 | Stag=8
+2026-01-28 13:51:59 [INFO    ] root: Gen 21: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2026-01-28 13:52:45 [WARNING ] root:    [EARLY STOP] Gen 22: threshold=0.943 (50%=0.471, mediana top-12)
+Gen 21/25 - BestFit: 1.0570 (G-mean: 0.961) | AvgFit: -inf (G-mean: 0.556) | (Diversity: 0.490) | (RuleAct: 57.8) | Mut: 0.499 | Tourn: 3 | Stagn: 8 | Time: 24.04s2026-01-28 13:52:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:52:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.668 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:52:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:52:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.655 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:52:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:52:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.878 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:52:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:52:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.660 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:52:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:52:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:52:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.429 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:52:46 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.429 < 0.471
+2026-01-28 13:52:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.529 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:52:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:52:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.595 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:52:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:52:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.841 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:52:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:52:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:52:47 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.245 < 0.471
+2026-01-28 13:52:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:52:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.745 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:52:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.682 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:52:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.706 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:52:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.680 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:52:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.193 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:52:48 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.193 < 0.471
+2026-01-28 13:52:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.203 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:52:48 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.203 < 0.471
+2026-01-28 13:52:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.252 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:52:48 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.252 < 0.471
+2026-01-28 13:52:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.413 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:52:49 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.413 < 0.471
+2026-01-28 13:52:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.921 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:52:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.464 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:52:49 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.464 < 0.471
+2026-01-28 13:52:49 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.427 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:52:49 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.427 < 0.471
+2026-01-28 13:52:49 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.203 < 0.471
+2026-01-28 13:52:50 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.236 < 0.471
+2026-01-28 13:53:08 [WARNING ] root: Gen 22: Only 66/108 individuals evaluated successfully in parallel.
+2026-01-28 13:53:08 [WARNING ] root:    [CACHE] Gen 22: Hits=12/120 (10.0%)
+2026-01-28 13:53:08 [WARNING ] root:    [EARLY STOP] Gen 22: Descartados=42/108 (38.9%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:53:08 [INFO    ] root: Gen 22: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+Gen 22/25 - BestFit: 1.0570 (G-mean: 0.961) | AvgFit: -inf (G-mean: 0.543) | (Diversity: 0.467) | (RuleAct: 53.0) | Mut: 0.504 | Tourn: 3 | Stagn: 9 | Time: 22.76s2026-01-28 13:53:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:53:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.707 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:53:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:53:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.572 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:53:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:53:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.440 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:53:54 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.440 < 0.471
+2026-01-28 13:53:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:53:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.180 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:53:55 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.180 < 0.471
+2026-01-28 13:53:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:53:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.435 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:53:55 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.435 < 0.471
+2026-01-28 13:53:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:53:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.560 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:53:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:53:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.664 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:53:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:53:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:53:55 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.245 < 0.471
+2026-01-28 13:53:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:53:55 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.596 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:53:56 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:53:56 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.456 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:53:56 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.456 < 0.471
+2026-01-28 13:53:56 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:53:56 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.245 < 0.471
+2026-01-28 13:53:56 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.473 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:53:56 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:53:56 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.245 < 0.471
+2026-01-28 13:53:56 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.495 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:53:56 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.462 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:53:56 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.462 < 0.471
+2026-01-28 13:53:57 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.707 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:53:57 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:53:57 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.245 < 0.471
+2026-01-28 13:53:57 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.430 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:53:57 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.430 < 0.471
+2026-01-28 13:53:57 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.691 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:53:57 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.506 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:54:15 [WARNING ] root: Gen 23: Only 60/108 individuals evaluated successfully in parallel.
+2026-01-28 13:54:15 [WARNING ] root:    [CACHE] Gen 23: Hits=12/120 (10.0%)
+2026-01-28 13:54:15 [WARNING ] root:    [EARLY STOP] Gen 23: Descartados=47/108 (43.5%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:54:15 [WARNING ] root: 
+2026-01-28 13:54:15 [WARNING ] root:    [GEN 23] Best: Fit=1.0570, Gmean=0.961 | Avg: Fit=-inf, Gmean=0.533 | Div=0.507 | Stag=10
+2026-01-28 13:54:15 [INFO    ] root: Gen 23: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2026-01-28 13:54:15 [INFO    ] root: 
+Estagnação detectada (10 gerações)! Ativando mecanismos de resgate...
+2026-01-28 13:54:15 [WARNING ] root: 
+2026-01-28 13:54:15 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=10, elite_gmean=0.961)
+2026-01-28 13:54:15 [INFO    ] hill_climbing_v2:   -> Hill Climbing V2 HIERÁRQUICO [FINE_TUNING]
+2026-01-28 13:54:15 [INFO    ] hill_climbing_v2:      Elite G-mean: 0.961 → FINE-TUNING - Mutação Guiada + Ajustes Finos
+2026-01-28 13:54:15 [INFO    ] hill_climbing_v2:      Operações: ['guided_mutation', 'error_focused_dt_rules']
+2026-01-28 13:54:15 [INFO    ] hill_climbing_v2:      Variantes planejadas: 6
+2026-01-28 13:54:15 [INFO    ] intelligent_hc:        guided_mutation: Top-5 features: ['x_0', 'x_3', 'x_4', 'x_1', 'x_2']
+2026-01-28 13:54:15 [INFO    ] intelligent_hc:        importâncias: ['0.000', '0.000', '0.076', '0.172', '0.752']
+2026-01-28 13:54:15 [INFO    ] intelligent_hc:        guided_mutation: 4 variantes geradas
+2026-01-28 13:54:15 [INFO    ] hill_climbing_v2:        ✓ guided_mutation: 4 variantes geradas
+2026-01-28 13:54:15 [INFO    ] intelligent_hc:        error_focused_dt_rules: Elite erra em 76/2000 (3.8%)
+2026-01-28 13:54:15 [INFO    ] intelligent_hc:        DT nos erros: acc=0.895, depth=3, nodes=9
+2026-01-28 13:54:15 [INFO    ] dt_rule_extraction:   Extração DT: 5 regras extraídas de 9 nós
+2026-01-28 13:54:15 [INFO    ] dt_rule_extraction:   Ranqueamento: 5 regras avaliadas
+2026-01-28 13:54:15 [INFO    ] dt_rule_extraction:     Top-3 scores: ['0.618', '0.171', '0.066']
+2026-01-28 13:54:15 [INFO    ] dt_rule_extraction:     Top-1: coverage=61.84%, accuracy=100.00%
+2026-01-28 13:54:15 [INFO    ] intelligent_hc:        Top-3 DT rules: scores=['0.618', '0.171', '0.066']
+2026-01-28 13:54:15 [INFO    ] intelligent_hc:        error_focused_dt_rules: 5 variantes geradas
+2026-01-28 13:54:15 [INFO    ] hill_climbing_v2:        ✓ error_focused_dt_rules: 5 variantes geradas
+2026-01-28 13:54:15 [INFO    ] hill_climbing_v2:      Total gerado: 9 variantes, retornando 6 (limite: 8)
+2026-01-28 13:54:15 [WARNING ] root:    [HC] Geradas 6 variantes, avaliando...
+2026-01-28 13:54:15 [INFO    ] root:        ✓ HC variant #1 APROVADO (TOLERÂNCIA): fitness=1.0290 (elite=1.0570, Δ=-0.0280), gmean=0.935 (elite=0.961, Δ=-0.026)
+2026-01-28 13:54:16 [INFO    ] root:        ✓ HC variant #4 APROVADO (TOLERÂNCIA): fitness=1.0342 (elite=1.0570, Δ=-0.0229), gmean=0.940 (elite=0.961, Δ=-0.021)
+2026-01-28 13:54:16 [WARNING ] root:    [HC] Aprovadas: 2/6 variantes (33.3%)
+Gen 23/25 - BestFit: 1.0570 (G-mean: 0.961) | AvgFit: -inf (G-mean: 0.533) | (Diversity: 0.507) | (RuleAct: 49.1) | Mut: 0.483 | Tourn: 3 | Stagn: 10 | Time: 20.78s2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.207 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.207 < 0.471
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.942 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.245 < 0.471
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.245 < 0.471
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.232 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.232 < 0.471
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.232 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.232 < 0.471
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.217 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:55:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:55:15 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.949 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:55:15 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.127 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:55:15 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:55:15 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:55:15 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:55:15 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.245 < 0.471
+2026-01-28 13:55:16 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:55:16 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.218 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:55:16 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.218 < 0.471
+2026-01-28 13:55:16 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:55:16 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.207 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:55:16 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.207 < 0.471
+2026-01-28 13:55:16 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.274 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:55:16 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.274 < 0.471
+2026-01-28 13:55:16 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.180 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:55:16 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.180 < 0.471
+2026-01-28 13:55:16 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:55:16 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.180 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:55:16 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.610 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:55:20 [WARNING ] root: Gen 24: Only 5/100 individuals evaluated successfully in parallel.
+2026-01-28 13:55:20 [WARNING ] root:    [CACHE] Gen 24: Hits=20/120 (16.7%)
+2026-01-28 13:55:20 [WARNING ] root:    [EARLY STOP] Gen 24: Descartados=94/100 (94.0%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:55:20 [WARNING ] root: 
+2026-01-28 13:55:20 [WARNING ] root:    [GEN 24] Best: Fit=1.0570, Gmean=0.961 | Avg: Fit=-inf, Gmean=0.318 | Div=0.533 | Stag=11
+2026-01-28 13:55:20 [INFO    ] root: Gen 24: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2026-01-28 13:55:20 [INFO    ] root: 
+Estagnação detectada (11 gerações)! Ativando mecanismos de resgate...
+2026-01-28 13:55:20 [WARNING ] root:    [HC] PULANDO Hill Climbing (economia tempo, próximo em +2 ger)
+Gen 24/25 - BestFit: 1.0570 (G-mean: 0.961) | AvgFit: -inf (G-mean: 0.318) | (Diversity: 0.533) | (RuleAct: 22.7) | Mut: 0.848 | Tourn: 2 | Stagn: 11 | Time: 6.19s2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.943, partial_size=400/2000
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.245 < 0.471
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.241 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.241 < 0.471
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.245 < 0.471
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.245 < 0.471
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.943, partial_size=400/2000
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.216 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.216 < 0.471
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.245 < 0.471
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.180 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.180 < 0.471
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.943, partial_size=400/2000
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.180 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.180 < 0.471
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.943, partial_size=400/2000
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.180 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.180 < 0.471
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.943, partial_size=400/2000
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.444 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.180 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.180 < 0.471
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.536 vs threshold_50%=0.471 (should_discard=False)
+2026-01-28 13:56:13 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.180 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.245 vs threshold_50%=0.471 (should_discard=True)
+2026-01-28 13:56:18 [WARNING ] root: Gen 25: Only 10/108 individuals evaluated successfully in parallel.
+2026-01-28 13:56:18 [WARNING ] root:    [CACHE] Gen 25: Hits=12/120 (10.0%)
+2026-01-28 13:56:18 [WARNING ] root:    [EARLY STOP] Gen 25: Descartados=96/108 (88.9%)
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:1882: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)
+2026-01-28 13:56:18 [WARNING ] root: 
+2026-01-28 13:56:18 [WARNING ] root:    [GEN 25] Best: Fit=1.0570, Gmean=0.961 | Avg: Fit=-inf, Gmean=0.330 | Div=0.666 | Stag=12
+2026-01-28 13:56:18 [INFO    ] root: Gen 25: Preservando 12 elites do pool híbrido (ordenados por G-mean).
+2026-01-28 13:56:18 [INFO    ] root: 
+Estagnação detectada (12 gerações)! Ativando mecanismos de resgate...
+2026-01-28 13:56:18 [WARNING ] root:    [HC] PULANDO Hill Climbing (economia tempo, próximo em +1 ger)
+2026-01-28 13:57:13 [INFO    ] root: GA run finished after 25 generations.
+2026-01-28 13:57:13 [WARNING ] root: 
+2026-01-28 13:57:13 [WARNING ] root: [CACHE FINAL] Hits=289, Misses=2711, Hit Rate=9.6%
+2026-01-28 13:57:13 [WARNING ] root: [CACHE FINAL] Zero collisions (SHA256 funcionando perfeitamente)
+2026-01-28 13:57:13 [WARNING ] main: [FASE 2] Chunk 4 - Salvando memória do conceito 'concept_4'
+2026-01-28 13:57:13 [WARNING ] main: [FASE 2]   → Salvando 1 indivíduos
+2026-01-28 13:57:13 [WARNING ] main: [FASE 2]   ✓ Memória do conceito 'concept_4' atualizada (last_seen: 4)
+2026-01-28 13:57:13 [INFO    ] root: 💾 Memória do conceito 'concept_4' atualizada com 1 indivíduos
+2026-01-28 13:57:13 [INFO    ] root: Melhor indivíduo do chunk 4 salvo em: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000/batch_7/AssetNegotiation_F4/run_1/chunk_data/best_individual_trained_on_chunk_4.pkl
+2026-01-28 13:57:13 [INFO    ] root: Finished GA training on chunk 4.
+2026-01-28 13:57:13 [INFO    ] root: Starting evaluation on test chunk 5...
+2026-01-28 13:57:13 [INFO    ] root: Starting periodic evaluation. Period size: 2000
+2026-01-28 13:57:13 [WARNING ] main: 
+2026-01-28 13:57:13 [WARNING ] main: ======================================================================
+2026-01-28 13:57:13 [WARNING ] main: CHUNK 4 - FINAL
+2026-01-28 13:57:13 [WARNING ] main: ======================================================================
+2026-01-28 13:57:13 [WARNING ] main: Tempo total: 1773.5s (29.6min)
+2026-01-28 13:57:13 [WARNING ] main: Train G-mean: 0.9608
+2026-01-28 13:57:13 [WARNING ] main: Test G-mean:  0.9315
+2026-01-28 13:57:13 [WARNING ] main: Test F1:      0.9319
+2026-01-28 13:57:13 [WARNING ] main: Delta:        -0.0294
+2026-01-28 13:57:13 [WARNING ] main: Best Fitness: 1.0570
+2026-01-28 13:57:13 [INFO    ] root: Chunk 4 Results: TrainGmean0.9608, TestGmean=0.9315, TestF1=0.9319
+2026-01-28 13:57:13 [INFO    ] root: Chunk 4: Best Individual Fitness=1.0570
+2026-01-28 13:57:13 [INFO    ] main: ✓ PERFORMANCE IMPROVED: 0.884 → 0.931 (gain: 4.7%)
+2026-01-28 13:57:13 [INFO    ] main:    → Inheritance INCREASED to 65% (stable performance)
+2026-01-28 13:57:13 [INFO    ] root: Chunk 4 processed in 1773.61 seconds. Total instances tested: 2000
+2026-01-28 13:57:13 [WARNING ] main: 
+2026-01-28 13:57:13 [WARNING ] main: ######################################################################
+2026-01-28 13:57:13 [WARNING ] main: EXPERIMENTO FINALIZADO
+2026-01-28 13:57:13 [WARNING ] main: ######################################################################
+2026-01-28 13:57:13 [WARNING ] main: Tempo total: 1773.6s (0.49h)
+2026-01-28 13:57:13 [WARNING ] main: Média por chunk: 354.7s
+2026-01-28 13:57:13 [WARNING ] main: Chunks processados: 5
+2026-01-28 13:57:13 [WARNING ] main: Avg Test G-mean: 0.9161
+2026-01-28 13:57:13 [WARNING ] main: Std Test G-mean: 0.0167
+2026-01-28 13:57:13 [WARNING ] main: Timestamp final: 2026-01-28 13:57:13
+2026-01-28 13:57:13 [WARNING ] main: 
+2026-01-28 13:57:13 [INFO    ] root: Finished processing 5 chunk transitions for run 1.
+2026-01-28 13:57:14 [INFO    ] root: GA evolution plots saved individually per chunk.
+2026-01-28 13:57:14 [INFO    ] main: Generating rule components heatmap for AssetNegotiation_F4...
+2026-01-28 13:57:14 [INFO    ] main: Generating rule components radar plot for AssetNegotiation_F4...
+2026-01-28 13:57:14 [INFO    ] main: Periodic g-mean plot saved to /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000/batch_7/AssetNegotiation_F4/run_1/G-meanPlot_Periodic_AssetNegotiation_F4_Run1.png
+2026-01-28 13:57:14 [INFO    ] main: Rule history saved to /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000/batch_7/AssetNegotiation_F4/run_1/RulesHistory_AssetNegotiation_F4_Run1.txt
+2026-01-28 13:57:14 [INFO    ] root: --- Run 1 Summary (Stream: AssetNegotiation_F4) ---
+2026-01-28 13:57:14 [INFO    ] root: Avg Train Gmean (Final Gen): 0.9484
+2026-01-28 13:57:14 [INFO    ] root: Avg Test Gmean (Overall Chunk): 0.9161
+2026-01-28 13:57:14 [INFO    ] root: Avg Test F1 (Overall Chunk): 0.9170
+2026-01-28 13:57:14 [INFO    ] root: Run 1 duration: 1778.55 seconds
+2026-01-28 13:57:14 [INFO    ] root: --- End Experiment Run: Stream='AssetNegotiation_F4', Run=1 ---
+2026-01-28 13:57:14 [INFO    ] main: Saving results for Stream 'AssetNegotiation_F4', Run 1 to /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000/batch_7/AssetNegotiation_F4/run_1
+2026-01-28 13:57:14 [INFO    ] main: All available results saved successfully for Stream 'AssetNegotiation_F4', Run 1.
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:2035: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+2026-01-28 13:57:14 [INFO    ] main: Aggregating results for experiment: AssetNegotiation_F4
+2026-01-28 13:57:14 [INFO    ] main: Aggregating results for experiment: AssetNegotiation_F4
+2026-01-28 13:57:14 [INFO    ] main: Generating mosaic plot for AssetNegotiation_F4...
+2026-01-28 13:57:15 [INFO    ] main: ====== Finished Stream: AssetNegotiation_F4 in 1779.16 seconds ======
+2026-01-28 13:57:15 [INFO    ] main: ====== Generating Final Summary Reports ======
+2026-01-28 13:57:15 [INFO    ] main: Overall performance plot by type saved to /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000/batch_7/Overall_Performance_by_Type.png
+2026-01-28 13:57:15 [INFO    ] root: Performance summary table saved to /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000/batch_7/performance_summary_table.csv
+2026-01-28 13:57:15 [INFO    ] main: Total experiment duration: 1782.59 seconds.
+2026-01-28 13:57:15 [INFO    ] main: ===== Experiment Execution Finished =====
+Gen 25/25 - BestFit: 1.0570 (G-mean: 0.961) | AvgFit: -inf (G-mean: 0.330) | (Diversity: 0.666) | (RuleAct: 24.3) | Mut: 0.615 | Tourn: 3 | Stagn: 12 | Time: 5.16s
+
+================================================================================
+Overall Performance Summary Table
+================================================================================
+        Stream Name        Dataset Type  Avg Train Acc  Std Train Acc  Avg Test Acc  Std Test Acc  Avg Test F1  Std Test F1  Total Feats  Avg Used Feats
+AssetNegotiation_F4 AssetNegotiation_F4         0.9484         0.0127        0.9161        0.0167        0.917       0.0159            5             5.0
+================================================================================
+
+
+================================================================================
+Feature Usage Summary
+================================================================================
+Stream: AssetNegotiation_F4
+  Total Features Available: 5
+  Average Features Used (across chunks/runs): 5.00
+------------------------------
+================================================================================
+

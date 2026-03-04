@@ -1,0 +1,402 @@
+2025-11-02 18:41:13 [INFO    ] root: Configuration loaded successfully from /content/drive/MyDrive/DSL-AG-hybrid/config_test_single.yaml
+2025-11-02 18:41:13 [WARNING ] main: 
+2025-11-02 18:41:13 [WARNING ] main: ######################################################################
+2025-11-02 18:41:13 [WARNING ] main: EXPERIMENTO INICIADO
+2025-11-02 18:41:13 [WARNING ] main: ######################################################################
+2025-11-02 18:41:13 [WARNING ] main: Timestamp: 2025-11-02 18:41:13
+2025-11-02 18:41:13 [WARNING ] main: Total de chunks a processar: 5
+2025-11-02 18:41:13 [WARNING ] main: 
+2025-11-02 18:41:13 [WARNING ] main: 
+2025-11-02 18:41:13 [WARNING ] main: ======================================================================
+2025-11-02 18:41:13 [WARNING ] main: CHUNK 0 - INÍCIO
+2025-11-02 18:41:13 [WARNING ] main: ======================================================================
+2025-11-02 18:41:13 [WARNING ] main: Timestamp: 2025-11-02 18:41:13
+2025-11-02 18:41:13 [WARNING ] main: Train: Chunk 0 | Test: Chunk 1
+2025-11-02 18:41:13 [WARNING ] main: 
+2025-11-02 18:41:13 [WARNING ] main: [FASE 2] Chunk 0 - Calculando concept fingerprint...
+2025-11-02 18:41:13 [WARNING ] main: [FASE 2]   ✓ Fingerprint calculada: 6000 instâncias
+2025-11-02 18:41:13 [WARNING ] main: [FASE 2]   - Mean shape: (10,)
+2025-11-02 18:41:13 [WARNING ] main: [FASE 2]   - Std shape: (10,)
+2025-11-02 18:41:13 [WARNING ] main: [FASE 2]   - Class distribution shape: (2,)
+2025-11-02 18:41:13 [WARNING ] main: [FASE 2] Chunk 0 - Detectando conceito recorrente...
+2025-11-02 18:41:13 [WARNING ] main: [FASE 2]   Conceitos conhecidos: []
+2025-11-02 18:41:13 [WARNING ] main: [FASE 2]   Threshold similaridade: 0.85
+2025-11-02 18:41:13 [WARNING ] main: [FASE 2]   ✓ NOVO CONCEITO: 'concept_0'
+2025-11-02 18:41:13 [WARNING ] main: [FASE 2] Chunk 0 - Criando entrada para novo conceito 'concept_0'
+2025-11-02 18:41:13 [WARNING ] main: [FASE 2]   ✓ Conceito 'concept_0' inicializado
+Gen 1/25 - BestFit: 0.8412 (G-mean: 0.763) | AvgFit: 0.5784 (G-mean: 0.519) | (Diversity: 0.730) | (RuleAct: 79.5) | Mut: 0.500 | Tourn: 2 | Stagn: 0 | Time: 73.62s2025-11-02 18:42:28 [WARNING ] root: 
+2025-11-02 18:42:28 [WARNING ] root:    [GEN 1] Best: Fit=0.8412, Gmean=0.763 | Avg: Fit=0.5784, Gmean=0.519 | Div=0.730 | Stag=0
+2025-11-02 18:48:14 [WARNING ] root:    [EARLY STOP] Gen 2: threshold=0.763 (50%=0.382, mediana top-12)
+Gen 2/25 - BestFit: 0.9643 (G-mean: 0.876) | AvgFit: 0.6311 (G-mean: 0.568) | (Diversity: 0.579) | (RuleAct: 68.6) | Mut: 0.500 | Tourn: 3 | Stagn: 0 | Time: 34.09s2025-11-02 18:48:48 [WARNING ] root: 
+2025-11-02 18:48:48 [WARNING ] root:    [GEN 2] Best: Fit=0.9643, Gmean=0.876 | Avg: Fit=0.6311, Gmean=0.568 | Div=0.579 | Stag=0
+2025-11-02 18:52:10 [WARNING ] root:    [EARLY STOP] Gen 3: threshold=0.864 (50%=0.432, mediana top-12)
+Gen 3/25 - BestFit: 0.9643 (G-mean: 0.876) | AvgFit: 0.5377 (G-mean: 0.481) | (Diversity: 0.532) | (RuleAct: 51.9) | Mut: 0.500 | Tourn: 3 | Stagn: 1 | Time: 27.64s2025-11-02 18:52:38 [WARNING ] root: 
+2025-11-02 18:52:38 [WARNING ] root:    [GEN 3] Best: Fit=0.9643, Gmean=0.876 | Avg: Fit=0.5377, Gmean=0.481 | Div=0.532 | Stag=1
+Gen 11/25 - BestFit: 0.9643 (G-mean: 0.876) | AvgFit: 0.4531 (G-mean: 0.403) | (Diversity: 0.529) | (RuleAct: 38.3) | Mut: 0.506 | Tourn: 3 | Stagn: 9 | Time: 23.04s2025-11-02 19:20:43 [WARNING ] root: 
+2025-11-02 19:20:43 [WARNING ] root:    [GEN 11] Best: Fit=0.9643, Gmean=0.876 | Avg: Fit=0.4531, Gmean=0.403 | Div=0.529 | Stag=9
+2025-11-02 19:23:53 [WARNING ] root:    [EARLY STOP] Gen 12: threshold=0.864 (50%=0.432, mediana top-12)
+Gen 12/25 - BestFit: 0.9643 (G-mean: 0.876) | AvgFit: 0.4291 (G-mean: 0.380) | (Diversity: 0.531) | (RuleAct: 41.5) | Mut: 0.483 | Tourn: 3 | Stagn: 10 | Time: 22.97s2025-11-02 19:24:16 [WARNING ] root: 
+2025-11-02 19:24:16 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=10, elite_gmean=0.876)
+2025-11-02 19:24:19 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-02 19:24:22 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+Gen 21/25 - BestFit: 1.0004 (G-mean: 0.909) | AvgFit: 0.5173 (G-mean: 0.462) | (Diversity: 0.523) | (RuleAct: 41.8) | Mut: 0.535 | Tourn: 3 | Stagn: 7 | Time: 24.67s2025-11-02 19:56:36 [WARNING ] root: 
+2025-11-02 19:56:36 [WARNING ] root:    [GEN 21] Best: Fit=1.0004, Gmean=0.909 | Avg: Fit=0.5173, Gmean=0.462 | Div=0.523 | Stag=7
+2025-11-02 19:59:48 [WARNING ] root:    [EARLY STOP] Gen 22: threshold=0.893 (50%=0.446, mediana top-12)
+Gen 23/25 - BestFit: 1.0004 (G-mean: 0.909) | AvgFit: 0.5223 (G-mean: 0.467) | (Diversity: 0.567) | (RuleAct: 48.0) | Mut: 0.555 | Tourn: 3 | Stagn: 9 | Time: 22.91s2025-11-02 20:03:33 [WARNING ] root: 
+2025-11-02 20:03:33 [WARNING ] root:    [GEN 23] Best: Fit=1.0004, Gmean=0.909 | Avg: Fit=0.5223, Gmean=0.467 | Div=0.567 | Stag=9
+Gen 24/25 - BestFit: 1.0004 (G-mean: 0.909) | AvgFit: 0.5057 (G-mean: 0.452) | (Diversity: 0.471) | (RuleAct: 45.2) | Mut: 0.524 | Tourn: 3 | Stagn: 10 | Time: 21.07s2025-11-02 20:07:01 [WARNING ] root: 
+2025-11-02 20:07:01 [WARNING ] root:    [GEN 24] Best: Fit=1.0004, Gmean=0.909 | Avg: Fit=0.5057, Gmean=0.452 | Div=0.471 | Stag=10
+2025-11-02 20:07:01 [WARNING ] root: 
+2025-11-02 20:07:01 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=10, elite_gmean=0.909)
+2025-11-02 20:07:04 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-02 20:07:06 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+Gen 25/25 - BestFit: 1.0040 (G-mean: 0.913) | AvgFit: 0.2575 (G-mean: 0.215) | (Diversity: 0.449) | (RuleAct: 17.9) | Mut: 0.295 | Tourn: 4 | Stagn: 0 | Time: 7.64s2025-11-02 20:11:17 [WARNING ] root: 
+2025-11-02 20:11:17 [WARNING ] root:    [GEN 25] Best: Fit=1.0040, Gmean=0.913 | Avg: Fit=0.2575, Gmean=0.215 | Div=0.449 | Stag=0
+
+2025-11-02 20:14:13 [WARNING ] main: [FASE 2] Chunk 0 - Salvando memória do conceito 'concept_0'
+2025-11-02 20:14:13 [WARNING ] main: [FASE 2]   → Salvando 1 indivíduos
+2025-11-02 20:14:13 [WARNING ] main: [FASE 2]   ✓ Memória do conceito 'concept_0' atualizada (last_seen: 0)
+2025-11-02 20:14:14 [WARNING ] main: 
+2025-11-02 20:14:14 [WARNING ] main: ======================================================================
+2025-11-02 20:14:14 [WARNING ] main: CHUNK 0 - FINAL
+2025-11-02 20:14:14 [WARNING ] main: ======================================================================
+2025-11-02 20:14:14 [WARNING ] main: Tempo total: 5581.0s (93.0min)
+2025-11-02 20:14:14 [WARNING ] main: Train G-mean: 0.9127
+2025-11-02 20:14:14 [WARNING ] main: Test G-mean:  0.8830
+2025-11-02 20:14:14 [WARNING ] main: Test F1:      0.8845
+2025-11-02 20:14:14 [WARNING ] main: Delta:        -0.0297
+2025-11-02 20:14:14 [WARNING ] main: Best Fitness: 1.0040
+2025-11-02 20:14:14 [WARNING ] main: 
+2025-11-02 20:14:14 [WARNING ] main: ======================================================================
+2025-11-02 20:14:14 [WARNING ] main: CHUNK 1 - INÍCIO
+2025-11-02 20:14:14 [WARNING ] main: ======================================================================
+2025-11-02 20:14:14 [WARNING ] main: Timestamp: 2025-11-02 20:14:14
+2025-11-02 20:14:14 [WARNING ] main: Train: Chunk 1 | Test: Chunk 2
+2025-11-02 20:14:14 [WARNING ] main: 
+2025-11-02 20:14:14 [WARNING ] main: [FASE 2] Chunk 1 - Calculando concept fingerprint...
+2025-11-02 20:14:14 [WARNING ] main: [FASE 2]   ✓ Fingerprint calculada: 6000 instâncias
+2025-11-02 20:14:14 [WARNING ] main: [FASE 2]   - Mean shape: (10,)
+2025-11-02 20:14:14 [WARNING ] main: [FASE 2]   - Std shape: (10,)
+2025-11-02 20:14:14 [WARNING ] main: [FASE 2]   - Class distribution shape: (2,)
+2025-11-02 20:14:14 [WARNING ] main: [FASE 2] Chunk 1 - Detectando conceito recorrente...
+2025-11-02 20:14:14 [WARNING ] main: [FASE 2]   Conceitos conhecidos: ['concept_0']
+2025-11-02 20:14:14 [WARNING ] main: [FASE 2]   Threshold similaridade: 0.85
+2025-11-02 20:14:14 [WARNING ] root: [FASE 2] Similaridades calculadas:
+2025-11-02 20:14:14 [WARNING ] root: [FASE 2]   concept_0: 0.9949
+2025-11-02 20:14:14 [WARNING ] root: [FASE 2] ✓ MATCH: 'concept_0' (sim=0.9949 >= 0.85)
+2025-11-02 20:14:14 [WARNING ] main: [FASE 2]   ✓ CONCEITO RECORRENTE: 'concept_0'
+2025-11-02 20:14:14 [WARNING ] main: [FASE 2] Chunk 1 - Restaurando memória de 'concept_0'
+2025-11-02 20:14:14 [WARNING ] main: [FASE 2]   → 1 indivíduos disponíveis na memória
+2025-11-02 20:14:14 [WARNING ] main: [FASE 2]   ✓ 1 indivíduos restaurados com sucesso
+Gen 1/200 - BestFit: 1.1828 (G-mean: 0.893) | AvgFit: 0.8202 (G-mean: 0.561) | (Diversity: 0.691) | (RuleAct: 72.4) | Mut: 0.689 | Tourn: 3 | Stagn: 0 | Time: 79.90s2025-11-02 20:15:35 [WARNING ] root: 
+2025-11-02 20:15:35 [WARNING ] root:    [GEN 1] Best: Fit=1.1828, Gmean=0.893 | Avg: Fit=0.8202, Gmean=0.561 | Div=0.691 | Stag=0
+2025-11-02 20:22:13 [WARNING ] root:    [EARLY STOP] Gen 2: threshold=0.893 (50%=0.447, mediana top-12)
+Gen 2/200 - BestFit: 1.1828 (G-mean: 0.893) | AvgFit: 0.5813 (G-mean: 0.337) | (Diversity: 0.422) | (RuleAct: 42.8) | Mut: 0.485 | Tourn: 3 | Stagn: 1 | Time: 23.46s2025-11-02 20:22:36 [WARNING ] root: 
+2025-11-02 20:22:36 [WARNING ] root:    [GEN 2] Best: Fit=1.1828, Gmean=0.893 | Avg: Fit=0.5813, Gmean=0.337 | Div=0.422 | Stag=1
+2025-11-02 20:24:55 [WARNING ] root:    [EARLY STOP] Gen 3: threshold=0.678 (50%=0.339, mediana top-12)
+Gen 3/200 - BestFit: 1.1828 (G-mean: 0.893) | AvgFit: 0.6097 (G-mean: 0.363) | (Diversity: 0.417) | (RuleAct: 47.7) | Mut: 0.509 | Tourn: 3 | Stagn: 2 | Time: 22.72s2025-11-02 20:25:18 [WARNING ] root: 
+2025-11-02 20:25:18 [WARNING ] root:    [GEN 3] Best: Fit=1.1828, Gmean=0.893 | Avg: Fit=0.6097, Gmean=0.363 | Div=0.417 | Stag=2
+Gen 11/200 - BestFit: 1.1828 (G-mean: 0.893) | AvgFit: 0.7041 (G-mean: 0.449) | (Diversity: 0.408) | (RuleAct: 45.6) | Mut: 0.535 | Tourn: 3 | Stagn: 10 | Time: 22.33s2025-11-02 20:46:34 [WARNING ] root: 
+2025-11-02 20:46:34 [WARNING ] root:    [GEN 11] Best: Fit=1.1828, Gmean=0.893 | Avg: Fit=0.7041, Gmean=0.449 | Div=0.408 | Stag=10
+2025-11-02 20:46:34 [WARNING ] root: 
+2025-11-02 20:46:34 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=10, elite_gmean=0.893)
+2025-11-02 20:46:42 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-02 20:46:54 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+2025-11-02 20:50:07 [WARNING ] root:    [EARLY STOP] Gen 12: threshold=0.844 (50%=0.422, mediana top-12)
+Gen 21/200 - BestFit: 1.2257 (G-mean: 0.933) | AvgFit: 0.7781 (G-mean: 0.519) | (Diversity: 0.456) | (RuleAct: 41.1) | Mut: 0.580 | Tourn: 3 | Stagn: 9 | Time: 34.33s2025-11-02 21:20:32 [WARNING ] root: 
+2025-11-02 21:20:32 [WARNING ] root:    [GEN 21] Best: Fit=1.2257, Gmean=0.933 | Avg: Fit=0.7781, Gmean=0.519 | Div=0.456 | Stag=9
+2025-11-02 21:23:24 [WARNING ] root:    [EARLY STOP] Gen 22: threshold=0.859 (50%=0.430, mediana top-12)
+Gen 22/200 - BestFit: 1.2257 (G-mean: 0.933) | AvgFit: 0.7583 (G-mean: 0.501) | (Diversity: 0.566) | (RuleAct: 42.7) | Mut: 0.615 | Tourn: 3 | Stagn: 10 | Time: 33.50s2025-11-02 21:23:57 [WARNING ] root: 
+2025-11-02 21:23:57 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=10, elite_gmean=0.933)
+2025-11-02 21:24:02 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-02 21:24:13 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+Gen 31/200 - BestFit: 1.2307 (G-mean: 0.937) | AvgFit: 0.7949 (G-mean: 0.535) | (Diversity: 0.509) | (RuleAct: 50.5) | Mut: 0.572 | Tourn: 3 | Stagn: 8 | Time: 32.93s2025-11-02 21:57:45 [WARNING ] root: 
+2025-11-02 21:57:45 [WARNING ] root:    [GEN 31] Best: Fit=1.2307, Gmean=0.937 | Avg: Fit=0.7949, Gmean=0.535 | Div=0.509 | Stag=8
+2025-11-02 22:01:00 [WARNING ] root:    [EARLY STOP] Gen 32: threshold=0.927 (50%=0.464, mediana top-12)
+Gen 33/200 - BestFit: 1.2307 (G-mean: 0.937) | AvgFit: 0.7848 (G-mean: 0.525) | (Diversity: 0.534) | (RuleAct: 48.0) | Mut: 0.585 | Tourn: 3 | Stagn: 10 | Time: 33.75s2025-11-02 22:05:08 [WARNING ] root: 
+2025-11-02 22:05:08 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=10, elite_gmean=0.937)
+2025-11-02 22:05:12 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-02 22:05:23 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+Gen 34/200 - BestFit: 1.2307 (G-mean: 0.937) | AvgFit: 0.4956 (G-mean: 0.252) | (Diversity: 0.718) | (RuleAct: 20.0) | Mut: 0.321 | Tourn: 4 | Stagn: 11 | Time: 25.64s2025-11-02 22:09:53 [WARNING ] root:    [HC] PULANDO Hill Climbing (economia tempo, próximo em +2 ger)
+Gen 35/200 - BestFit: 1.2307 (G-mean: 0.937) | AvgFit: 0.6670 (G-mean: 0.414) | (Diversity: 0.505) | (RuleAct: 27.0) | Mut: 0.448 | Tourn: 3 | Stagn: 12 | Time: 29.46s2025-11-02 22:14:20 [WARNING ] root:    [HC] PULANDO Hill Climbing (economia tempo, próximo em +1 ger)
+Gen 36/200 - BestFit: 1.2307 (G-mean: 0.937) | AvgFit: 0.4777 (G-mean: 0.236) | (Diversity: 0.583) | (RuleAct: 17.4) | Mut: 0.383 | Tourn: 4 | Stagn: 13 | Time: 26.27s2025-11-02 22:18:44 [WARNING ] root: 
+2025-11-02 22:18:44 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=13, elite_gmean=0.937)
+2025-11-02 22:18:48 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-02 22:18:59 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+Gen 40/200 - BestFit: 1.2310 (G-mean: 0.937) | AvgFit: 0.7628 (G-mean: 0.504) | (Diversity: 0.569) | (RuleAct: 48.4) | Mut: 0.561 | Tourn: 3 | Stagn: 3 | Time: 30.73s
+2025-11-02 22:37:47 [WARNING ] main: [FASE 2] Chunk 1 - Salvando memória do conceito 'concept_0'
+2025-11-02 22:37:47 [WARNING ] main: [FASE 2]   → Salvando 2 indivíduos
+2025-11-02 22:37:47 [WARNING ] main: [FASE 2]   ✓ Memória do conceito 'concept_0' atualizada (last_seen: 1)
+2025-11-02 22:37:50 [WARNING ] main: 
+2025-11-02 22:37:50 [WARNING ] main: ======================================================================
+2025-11-02 22:37:50 [WARNING ] main: CHUNK 1 - FINAL
+2025-11-02 22:37:50 [WARNING ] main: ======================================================================
+2025-11-02 22:37:50 [WARNING ] main: Tempo total: 8615.2s (143.6min)
+2025-11-02 22:37:50 [WARNING ] main: Train G-mean: 0.9373
+2025-11-02 22:37:50 [WARNING ] main: Test G-mean:  0.8937
+2025-11-02 22:37:50 [WARNING ] main: Test F1:      0.8937
+2025-11-02 22:37:50 [WARNING ] main: Delta:        -0.0436
+2025-11-02 22:37:50 [WARNING ] main: Best Fitness: 1.2310
+2025-11-02 22:37:50 [WARNING ] main: 
+2025-11-02 22:37:50 [WARNING ] main: ======================================================================
+2025-11-02 22:37:50 [WARNING ] main: CHUNK 2 - INÍCIO
+2025-11-02 22:37:50 [WARNING ] main: ======================================================================
+2025-11-02 22:37:50 [WARNING ] main: Timestamp: 2025-11-02 22:37:50
+2025-11-02 22:37:50 [WARNING ] main: Train: Chunk 2 | Test: Chunk 3
+2025-11-02 22:37:51 [WARNING ] main: 
+2025-11-02 22:37:51 [WARNING ] main: [FASE 2] Chunk 2 - Calculando concept fingerprint...
+2025-11-02 22:37:51 [WARNING ] main: [FASE 2]   ✓ Fingerprint calculada: 6000 instâncias
+2025-11-02 22:37:51 [WARNING ] main: [FASE 2]   - Mean shape: (10,)
+2025-11-02 22:37:51 [WARNING ] main: [FASE 2]   - Std shape: (10,)
+2025-11-02 22:37:51 [WARNING ] main: [FASE 2]   - Class distribution shape: (2,)
+2025-11-02 22:37:51 [WARNING ] main: [FASE 2] Chunk 2 - Detectando conceito recorrente...
+2025-11-02 22:37:51 [WARNING ] main: [FASE 2]   Conceitos conhecidos: ['concept_0']
+2025-11-02 22:37:51 [WARNING ] main: [FASE 2]   Threshold similaridade: 0.85
+2025-11-02 22:37:51 [WARNING ] root: [FASE 2] Similaridades calculadas:
+2025-11-02 22:37:51 [WARNING ] root: [FASE 2]   concept_0: 0.9953
+2025-11-02 22:37:51 [WARNING ] root: [FASE 2] ✓ MATCH: 'concept_0' (sim=0.9953 >= 0.85)
+2025-11-02 22:37:51 [WARNING ] main: [FASE 2]   ✓ CONCEITO RECORRENTE: 'concept_0'
+2025-11-02 22:37:51 [WARNING ] main: [FASE 2] Chunk 2 - Restaurando memória de 'concept_0'
+2025-11-02 22:37:51 [WARNING ] main: [FASE 2]   → 2 indivíduos disponíveis na memória
+2025-11-02 22:37:51 [WARNING ] main: [FASE 2]   ✓ 2 indivíduos restaurados com sucesso
+Gen 1/200 - BestFit: 1.1502 (G-mean: 0.863) | AvgFit: 0.8361 (G-mean: 0.575) | (Diversity: 0.633) | (RuleAct: 74.6) | Mut: 0.722 | Tourn: 2 | Stagn: 0 | Time: 76.47s2025-11-02 22:39:08 [WARNING ] root: 
+2025-11-02 22:39:08 [WARNING ] root:    [GEN 1] Best: Fit=1.1502, Gmean=0.863 | Avg: Fit=0.8361, Gmean=0.575 | Div=0.633 | Stag=0
+2025-11-02 22:44:59 [WARNING ] root:    [EARLY STOP] Gen 2: threshold=0.863 (50%=0.432, mediana top-12)
+Gen 2/200 - BestFit: 1.1502 (G-mean: 0.863) | AvgFit: 0.5597 (G-mean: 0.316) | (Diversity: 0.486) | (RuleAct: 47.8) | Mut: 0.478 | Tourn: 3 | Stagn: 1 | Time: 22.25s2025-11-02 22:45:22 [WARNING ] root: 
+2025-11-02 22:45:22 [WARNING ] root:    [GEN 2] Best: Fit=1.1502, Gmean=0.863 | Avg: Fit=0.5597, Gmean=0.316 | Div=0.486 | Stag=1
+2025-11-02 22:47:32 [WARNING ] root:    [EARLY STOP] Gen 3: threshold=0.676 (50%=0.338, mediana top-12)
+Gen 3/200 - BestFit: 1.1502 (G-mean: 0.863) | AvgFit: 0.5874 (G-mean: 0.341) | (Diversity: 0.464) | (RuleAct: 41.8) | Mut: 0.402 | Tourn: 3 | Stagn: 2 | Time: 22.46s2025-11-02 22:47:55 [WARNING ] root: 
+2025-11-02 22:47:55 [WARNING ] root:    [GEN 3] Best: Fit=1.1502, Gmean=0.863 | Avg: Fit=0.5874, Gmean=0.341 | Div=0.464 | Stag=2
+Gen 11/200 - BestFit: 1.1502 (G-mean: 0.863) | AvgFit: 0.6702 (G-mean: 0.418) | (Diversity: 0.396) | (RuleAct: 33.1) | Mut: 0.495 | Tourn: 3 | Stagn: 10 | Time: 23.19s2025-11-02 23:10:02 [WARNING ] root: 
+2025-11-02 23:10:02 [WARNING ] root:    [GEN 11] Best: Fit=1.1502, Gmean=0.863 | Avg: Fit=0.6702, Gmean=0.418 | Div=0.396 | Stag=10
+2025-11-02 23:10:02 [WARNING ] root: 
+2025-11-02 23:10:02 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=10, elite_gmean=0.863)
+2025-11-02 23:10:10 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-02 23:10:22 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+2025-11-02 23:13:27 [WARNING ] root:    [EARLY STOP] Gen 12: threshold=0.846 (50%=0.423, mediana top-12)
+Gen 21/200 - BestFit: 1.2156 (G-mean: 0.923) | AvgFit: 0.7717 (G-mean: 0.513) | (Diversity: 0.429) | (RuleAct: 45.0) | Mut: 0.586 | Tourn: 3 | Stagn: 9 | Time: 33.58s2025-11-02 23:43:15 [WARNING ] root: 
+2025-11-02 23:43:15 [WARNING ] root:    [GEN 21] Best: Fit=1.2156, Gmean=0.923 | Avg: Fit=0.7717, Gmean=0.513 | Div=0.429 | Stag=9
+2025-11-02 23:45:54 [WARNING ] root:    [EARLY STOP] Gen 22: threshold=0.864 (50%=0.432, mediana top-12)
+Gen 22/200 - BestFit: 1.2156 (G-mean: 0.923) | AvgFit: 0.7667 (G-mean: 0.508) | (Diversity: 0.461) | (RuleAct: 47.1) | Mut: 0.579 | Tourn: 3 | Stagn: 10 | Time: 32.59s2025-11-02 23:46:27 [WARNING ] root: 
+2025-11-02 23:46:27 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=10, elite_gmean=0.923)
+2025-11-02 23:46:32 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-02 23:46:43 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+Gen 31/200 - BestFit: 1.2304 (G-mean: 0.937) | AvgFit: 0.8387 (G-mean: 0.575) | (Diversity: 0.438) | (RuleAct: 48.2) | Mut: 0.620 | Tourn: 3 | Stagn: 8 | Time: 33.00s2025-11-03 00:18:34 [WARNING ] root: 
+2025-11-03 00:18:34 [WARNING ] root:    [GEN 31] Best: Fit=1.2304, Gmean=0.937 | Avg: Fit=0.8387, Gmean=0.575 | Div=0.438 | Stag=8
+2025-11-03 00:21:24 [WARNING ] root:    [EARLY STOP] Gen 32: threshold=0.917 (50%=0.458, mediana top-12)
+Gen 33/200 - BestFit: 1.2304 (G-mean: 0.937) | AvgFit: 0.7759 (G-mean: 0.516) | (Diversity: 0.455) | (RuleAct: 49.8) | Mut: 0.572 | Tourn: 3 | Stagn: 10 | Time: 32.00s2025-11-03 00:25:12 [WARNING ] root: 
+2025-11-03 00:25:12 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=10, elite_gmean=0.937)
+2025-11-03 00:25:17 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-03 00:25:27 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+Gen 41/200 - BestFit: 1.2328 (G-mean: 0.939) | AvgFit: 0.7605 (G-mean: 0.502) | (Diversity: 0.541) | (RuleAct: 53.6) | Mut: 0.544 | Tourn: 3 | Stagn: 7 | Time: 32.81s2025-11-03 00:56:20 [WARNING ] root: 
+2025-11-03 00:56:20 [WARNING ] root:    [GEN 41] Best: Fit=1.2328, Gmean=0.939 | Avg: Fit=0.7605, Gmean=0.502 | Div=0.541 | Stag=7
+2025-11-03 00:59:41 [WARNING ] root:    [EARLY STOP] Gen 42: threshold=0.932 (50%=0.466, mediana top-12)
+Gen 44/200 - BestFit: 1.2328 (G-mean: 0.939) | AvgFit: 0.7995 (G-mean: 0.539) | (Diversity: 0.538) | (RuleAct: 52.5) | Mut: 0.645 | Tourn: 3 | Stagn: 10 | Time: 33.11s2025-11-03 01:07:45 [WARNING ] root: 
+2025-11-03 01:07:45 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=10, elite_gmean=0.939)
+2025-11-03 01:07:49 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-03 01:07:58 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+Gen 51/200 - BestFit: 1.2345 (G-mean: 0.940) | AvgFit: 0.8389 (G-mean: 0.576) | (Diversity: 0.509) | (RuleAct: 57.2) | Mut: 0.677 | Tourn: 3 | Stagn: 6 | Time: 32.14s2025-11-03 01:35:45 [WARNING ] root: 
+2025-11-03 01:35:45 [WARNING ] root:    [GEN 51] Best: Fit=1.2345, Gmean=0.940 | Avg: Fit=0.8389, Gmean=0.576 | Div=0.509 | Stag=6
+2025-11-03 01:39:05 [WARNING ] root:    [EARLY STOP] Gen 52: threshold=0.937 (50%=0.468, mediana top-12)
+
+2025-11-03 01:39:36 [WARNING ] main: [FASE 2] Chunk 2 - Salvando memória do conceito 'concept_0'
+2025-11-03 01:39:36 [WARNING ] main: [FASE 2]   → Salvando 3 indivíduos
+2025-11-03 01:39:36 [WARNING ] main: [FASE 2]   ✓ Memória do conceito 'concept_0' atualizada (last_seen: 2)
+2025-11-03 01:39:39 [WARNING ] main: 
+2025-11-03 01:39:39 [WARNING ] main: ======================================================================
+2025-11-03 01:39:39 [WARNING ] main: CHUNK 2 - FINAL
+2025-11-03 01:39:39 [WARNING ] main: ======================================================================
+2025-11-03 01:39:39 [WARNING ] main: Tempo total: 10909.5s (181.8min)
+2025-11-03 01:39:39 [WARNING ] main: Train G-mean: 0.9405
+2025-11-03 01:39:39 [WARNING ] main: Test G-mean:  0.4389
+2025-11-03 01:39:39 [WARNING ] main: Test F1:      0.4557
+2025-11-03 01:39:39 [WARNING ] main: Delta:        -0.5015
+2025-11-03 01:39:39 [WARNING ] main: Best Fitness: 1.2345
+2025-11-03 01:39:39 [WARNING ] main: 🔴 SEVERE DRIFT detected: 0.894 → 0.439 (drop: 45.5%)
+2025-11-03 01:39:39 [WARNING ] main: [FASE 2]   → Memory PRESERVADA (conceito recorrente 'concept_0')
+2025-11-03 01:39:39 [WARNING ] main:    → Inheritance REDUCED to 20% due to SEVERE drift (was 50%)
+2025-11-03 01:39:40 [WARNING ] main: 
+2025-11-03 01:39:40 [WARNING ] main: ======================================================================
+2025-11-03 01:39:40 [WARNING ] main: CHUNK 3 - INÍCIO
+2025-11-03 01:39:40 [WARNING ] main: ======================================================================
+2025-11-03 01:39:40 [WARNING ] main: Timestamp: 2025-11-03 01:39:40
+2025-11-03 01:39:40 [WARNING ] main: Train: Chunk 3 | Test: Chunk 4
+2025-11-03 01:39:41 [WARNING ] main: 
+2025-11-03 01:39:41 [WARNING ] main: [FASE 2] Chunk 3 - Calculando concept fingerprint...
+2025-11-03 01:39:41 [WARNING ] main: [FASE 2]   ✓ Fingerprint calculada: 6000 instâncias
+2025-11-03 01:39:41 [WARNING ] main: [FASE 2]   - Mean shape: (10,)
+2025-11-03 01:39:41 [WARNING ] main: [FASE 2]   - Std shape: (10,)
+2025-11-03 01:39:41 [WARNING ] main: [FASE 2]   - Class distribution shape: (2,)
+2025-11-03 01:39:41 [WARNING ] main: [FASE 2] Chunk 3 - Detectando conceito recorrente...
+2025-11-03 01:39:41 [WARNING ] main: [FASE 2]   Conceitos conhecidos: ['concept_0']
+2025-11-03 01:39:41 [WARNING ] main: [FASE 2]   Threshold similaridade: 0.85
+2025-11-03 01:39:41 [WARNING ] root: [FASE 2] Similaridades calculadas:
+2025-11-03 01:39:41 [WARNING ] root: [FASE 2]   concept_0: 0.9814
+2025-11-03 01:39:41 [WARNING ] root: [FASE 2] ✓ MATCH: 'concept_0' (sim=0.9814 >= 0.85)
+2025-11-03 01:39:41 [WARNING ] main: [FASE 2]   ✓ CONCEITO RECORRENTE: 'concept_0'
+2025-11-03 01:39:41 [WARNING ] main: [FASE 2] Chunk 3 - Restaurando memória de 'concept_0'
+2025-11-03 01:39:41 [WARNING ] main: [FASE 2]   → 3 indivíduos disponíveis na memória
+2025-11-03 01:39:41 [WARNING ] main: [FASE 2]   ✓ 3 indivíduos restaurados com sucesso
+2025-11-03 01:39:41 [WARNING ] main: SEVERE DRIFT detected (severity: 61.36%) for chunk 3. Activating severe drift countermeasures.
+2025-11-03 01:39:41 [WARNING ] main: PERFORMANCE CRITICAL (Acc: 0.439, Bad Chunks: 1). Abandoning best_ever_memory.
+2025-11-03 01:39:41 [WARNING ] main: Chunk 3: Previous chunk had very low G-mean (0.439) - assuming SEVERE drift preventively
+Gen 1/200 - BestFit: 1.0169 (G-mean: 0.924) | AvgFit: 0.8372 (G-mean: 0.757) | (Diversity: 0.432) | (RuleAct: 94.1) | Mut: 0.500 | Tourn: 2 | Stagn: 0 | Time: 208.87s2025-11-03 01:43:12 [WARNING ] root: 
+2025-11-03 01:43:12 [WARNING ] root:    [GEN 1] Best: Fit=1.0169, Gmean=0.924 | Avg: Fit=0.8372, Gmean=0.757 | Div=0.432 | Stag=0
+2025-11-03 01:56:26 [WARNING ] root:    [EARLY STOP] Gen 2: threshold=0.924 (50%=0.462, mediana top-12)
+Gen 2/200 - BestFit: 1.0169 (G-mean: 0.924) | AvgFit: 0.7080 (G-mean: 0.639) | (Diversity: 0.394) | (RuleAct: 54.3) | Mut: 0.500 | Tourn: 2 | Stagn: 1 | Time: 40.09s2025-11-03 01:57:06 [WARNING ] root: 
+2025-11-03 01:57:06 [WARNING ] root:    [GEN 2] Best: Fit=1.0169, Gmean=0.924 | Avg: Fit=0.7080, Gmean=0.639 | Div=0.394 | Stag=1
+2025-11-03 02:00:43 [WARNING ] root:    [EARLY STOP] Gen 3: threshold=0.826 (50%=0.413, mediana top-12)
+Gen 3/200 - BestFit: 1.0169 (G-mean: 0.924) | AvgFit: 0.5789 (G-mean: 0.519) | (Diversity: 0.427) | (RuleAct: 46.4) | Mut: 0.500 | Tourn: 3 | Stagn: 2 | Time: 34.37s2025-11-03 02:01:17 [WARNING ] root: 
+2025-11-03 02:01:17 [WARNING ] root:    [GEN 3] Best: Fit=1.0169, Gmean=0.924 | Avg: Fit=0.5789, Gmean=0.519 | Div=0.427 | Stag=2
+Gen 11/200 - BestFit: 1.0169 (G-mean: 0.924) | AvgFit: 0.5228 (G-mean: 0.467) | (Diversity: 0.523) | (RuleAct: 47.5) | Mut: 0.516 | Tourn: 3 | Stagn: 10 | Time: 34.62s2025-11-03 02:33:40 [WARNING ] root: 
+2025-11-03 02:33:40 [WARNING ] root:    [GEN 11] Best: Fit=1.0169, Gmean=0.924 | Avg: Fit=0.5228, Gmean=0.467 | Div=0.523 | Stag=10
+2025-11-03 02:33:40 [WARNING ] root: 
+2025-11-03 02:33:40 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=10, elite_gmean=0.924)
+2025-11-03 02:33:49 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-03 02:34:09 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+2025-11-03 02:38:41 [WARNING ] root:    [EARLY STOP] Gen 12: threshold=0.831 (50%=0.415, mediana top-12)
+Gen 12/200 - BestFit: 1.0169 (G-mean: 0.924) | AvgFit: 0.2389 (G-mean: 0.197) | (Diversity: 0.534) | (RuleAct: 19.5) | Mut: 0.284 | Tourn: 4 | Stagn: 11 | Time: 32.35s2025-11-03 02:39:14 [WARNING ] root:    [HC] PULANDO Hill Climbing (economia tempo, próximo em +2 ger)
+Gen 13/200 - BestFit: 1.0169 (G-mean: 0.924) | AvgFit: 0.4093 (G-mean: 0.360) | (Diversity: 0.669) | (RuleAct: 35.7) | Mut: 0.441 | Tourn: 3 | Stagn: 12 | Time: 53.08s2025-11-03 02:44:49 [WARNING ] root:    [HC] PULANDO Hill Climbing (economia tempo, próximo em +1 ger)
+Gen 14/200 - BestFit: 1.0169 (G-mean: 0.924) | AvgFit: 0.2684 (G-mean: 0.226) | (Diversity: 0.620) | (RuleAct: 13.1) | Mut: 0.256 | Tourn: 4 | Stagn: 13 | Time: 49.15s2025-11-03 02:51:38 [WARNING ] root: 
+2025-11-03 02:51:38 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=13, elite_gmean=0.924)
+2025-11-03 02:51:46 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-03 02:52:05 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+Gen 21/200 - BestFit: 1.0184 (G-mean: 0.926) | AvgFit: 0.5145 (G-mean: 0.459) | (Diversity: 0.549) | (RuleAct: 56.4) | Mut: 0.534 | Tourn: 3 | Stagn: 6 | Time: 59.55s2025-11-03 03:34:04 [WARNING ] root: 
+2025-11-03 03:34:04 [WARNING ] root:    [GEN 21] Best: Fit=1.0184, Gmean=0.926 | Avg: Fit=0.5145, Gmean=0.459 | Div=0.549 | Stag=6
+2025-11-03 03:38:29 [WARNING ] root:    [EARLY STOP] Gen 22: threshold=0.912 (50%=0.456, mediana top-12)
+Gen 25/200 - BestFit: 1.0184 (G-mean: 0.926) | AvgFit: 0.5777 (G-mean: 0.518) | (Diversity: 0.636) | (RuleAct: 51.4) | Mut: 0.600 | Tourn: 3 | Stagn: 10 | Time: 59.16s2025-11-03 03:57:28 [WARNING ] root: 
+2025-11-03 03:57:28 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=10, elite_gmean=0.926)
+2025-11-03 03:57:36 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-03 03:57:54 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+Gen 26/200 - BestFit: 1.0184 (G-mean: 0.926) | AvgFit: 0.2441 (G-mean: 0.204) | (Diversity: 0.704) | (RuleAct: 21.9) | Mut: 0.241 | Tourn: 4 | Stagn: 11 | Time: 46.11s2025-11-03 04:05:03 [WARNING ] root:    [HC] PULANDO Hill Climbing (economia tempo, próximo em +2 ger)
+Gen 27/200 - BestFit: 1.0184 (G-mean: 0.926) | AvgFit: 0.5609 (G-mean: 0.502) | (Diversity: 0.706) | (RuleAct: 43.3) | Mut: 0.551 | Tourn: 3 | Stagn: 12 | Time: 60.43s2025-11-03 04:12:38 [WARNING ] root:    [HC] PULANDO Hill Climbing (economia tempo, próximo em +1 ger)
+Gen 28/200 - BestFit: 1.0184 (G-mean: 0.926) | AvgFit: 0.2174 (G-mean: 0.178) | (Diversity: 0.623) | (RuleAct: 22.9) | Mut: 0.264 | Tourn: 4 | Stagn: 13 | Time: 46.68s2025-11-03 04:20:37 [WARNING ] root: 
+2025-11-03 04:20:37 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=13, elite_gmean=0.926)
+2025-11-03 04:20:45 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-03 04:21:04 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+Gen 29/200 - BestFit: 1.0184 (G-mean: 0.926) | AvgFit: 0.5605 (G-mean: 0.501) | (Diversity: 0.515) | (RuleAct: 41.3) | Mut: 0.584 | Tourn: 3 | Stagn: 14 | Time: 61.26s2025-11-03 04:28:44 [WARNING ] root:    [HC] PULANDO Hill Climbing (economia tempo, próximo em +2 ger)
+
+2025-11-03 04:37:50 [WARNING ] main: [FASE 2] Chunk 3 - Salvando memória do conceito 'concept_0'
+2025-11-03 04:37:50 [WARNING ] main: [FASE 2]   → Salvando 1 indivíduos
+2025-11-03 04:37:50 [WARNING ] main: [FASE 2]   ✓ Memória do conceito 'concept_0' atualizada (last_seen: 3)
+2025-11-03 04:37:58 [WARNING ] main: 
+2025-11-03 04:37:58 [WARNING ] main: ======================================================================
+2025-11-03 04:37:58 [WARNING ] main: CHUNK 3 - FINAL
+2025-11-03 04:37:58 [WARNING ] main: ======================================================================
+2025-11-03 04:37:58 [WARNING ] main: Tempo total: 10698.3s (178.3min)
+2025-11-03 04:37:58 [WARNING ] main: Train G-mean: 0.9255
+2025-11-03 04:37:58 [WARNING ] main: Test G-mean:  0.8725
+2025-11-03 04:37:58 [WARNING ] main: Test F1:      0.8759
+2025-11-03 04:37:58 [WARNING ] main: Delta:        -0.0531
+2025-11-03 04:37:58 [WARNING ] main: Best Fitness: 1.0184
+2025-11-03 04:37:58 [WARNING ] main: 
+2025-11-03 04:37:58 [WARNING ] main: ======================================================================
+2025-11-03 04:37:58 [WARNING ] main: CHUNK 4 - INÍCIO
+2025-11-03 04:37:58 [WARNING ] main: ======================================================================
+2025-11-03 04:37:58 [WARNING ] main: Timestamp: 2025-11-03 04:37:58
+2025-11-03 04:37:58 [WARNING ] main: Train: Chunk 4 | Test: Chunk 5
+2025-11-03 04:38:00 [WARNING ] main: 
+2025-11-03 04:38:00 [WARNING ] main: [FASE 2] Chunk 4 - Calculando concept fingerprint...
+2025-11-03 04:38:00 [WARNING ] main: [FASE 2]   ✓ Fingerprint calculada: 6000 instâncias
+2025-11-03 04:38:00 [WARNING ] main: [FASE 2]   - Mean shape: (10,)
+2025-11-03 04:38:00 [WARNING ] main: [FASE 2]   - Std shape: (10,)
+2025-11-03 04:38:00 [WARNING ] main: [FASE 2]   - Class distribution shape: (2,)
+2025-11-03 04:38:00 [WARNING ] main: [FASE 2] Chunk 4 - Detectando conceito recorrente...
+2025-11-03 04:38:00 [WARNING ] main: [FASE 2]   Conceitos conhecidos: ['concept_0']
+2025-11-03 04:38:00 [WARNING ] main: [FASE 2]   Threshold similaridade: 0.85
+2025-11-03 04:38:00 [WARNING ] root: [FASE 2] Similaridades calculadas:
+2025-11-03 04:38:00 [WARNING ] root: [FASE 2]   concept_0: 0.9834
+2025-11-03 04:38:00 [WARNING ] root: [FASE 2] ✓ MATCH: 'concept_0' (sim=0.9834 >= 0.85)
+2025-11-03 04:38:00 [WARNING ] main: [FASE 2]   ✓ CONCEITO RECORRENTE: 'concept_0'
+2025-11-03 04:38:00 [WARNING ] main: [FASE 2] Chunk 4 - Restaurando memória de 'concept_0'
+2025-11-03 04:38:00 [WARNING ] main: [FASE 2]   → 1 indivíduos disponíveis na memória
+2025-11-03 04:38:00 [WARNING ] main: [FASE 2]   ✓ 1 indivíduos restaurados com sucesso
+Gen 1/200 - BestFit: 1.1465 (G-mean: 0.859) | AvgFit: 0.7063 (G-mean: 0.458) | (Diversity: 0.598) | (RuleAct: 69.4) | Mut: 0.610 | Tourn: 3 | Stagn: 0 | Time: 83.02s2025-11-03 04:39:24 [WARNING ] root: 
+2025-11-03 04:39:24 [WARNING ] root:    [GEN 1] Best: Fit=1.1465, Gmean=0.859 | Avg: Fit=0.7063, Gmean=0.458 | Div=0.598 | Stag=0
+2025-11-03 04:46:18 [WARNING ] root:    [EARLY STOP] Gen 2: threshold=0.859 (50%=0.430, mediana top-12)
+Gen 2/200 - BestFit: 1.1465 (G-mean: 0.859) | AvgFit: 0.6491 (G-mean: 0.399) | (Diversity: 0.408) | (RuleAct: 48.7) | Mut: 0.483 | Tourn: 3 | Stagn: 1 | Time: 25.23s2025-11-03 04:46:43 [WARNING ] root: 
+2025-11-03 04:46:43 [WARNING ] root:    [GEN 2] Best: Fit=1.1465, Gmean=0.859 | Avg: Fit=0.6491, Gmean=0.399 | Div=0.408 | Stag=1
+2025-11-03 04:49:10 [WARNING ] root:    [EARLY STOP] Gen 3: threshold=0.670 (50%=0.335, mediana top-12)
+Gen 3/200 - BestFit: 1.1465 (G-mean: 0.859) | AvgFit: 0.6655 (G-mean: 0.416) | (Diversity: 0.418) | (RuleAct: 45.5) | Mut: 0.571 | Tourn: 3 | Stagn: 2 | Time: 23.72s2025-11-03 04:49:34 [WARNING ] root: 
+2025-11-03 04:49:34 [WARNING ] root:    [GEN 3] Best: Fit=1.1465, Gmean=0.859 | Avg: Fit=0.6655, Gmean=0.416 | Div=0.418 | Stag=2
+Gen 11/200 - BestFit: 1.1465 (G-mean: 0.859) | AvgFit: 0.6953 (G-mean: 0.441) | (Diversity: 0.451) | (RuleAct: 47.1) | Mut: 0.536 | Tourn: 3 | Stagn: 10 | Time: 24.32s2025-11-03 05:11:33 [WARNING ] root: 
+2025-11-03 05:11:33 [WARNING ] root:    [GEN 11] Best: Fit=1.1465, Gmean=0.859 | Avg: Fit=0.6953, Gmean=0.441 | Div=0.451 | Stag=10
+2025-11-03 05:11:33 [WARNING ] root: 
+2025-11-03 05:11:33 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=10, elite_gmean=0.859)
+2025-11-03 05:11:41 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-03 05:11:55 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+2025-11-03 05:14:57 [WARNING ] root:    [EARLY STOP] Gen 12: threshold=0.803 (50%=0.402, mediana top-12)
+Gen 21/200 - BestFit: 1.2078 (G-mean: 0.916) | AvgFit: 0.8201 (G-mean: 0.558) | (Diversity: 0.455) | (RuleAct: 43.4) | Mut: 0.627 | Tourn: 3 | Stagn: 9 | Time: 37.82s2025-11-03 05:46:20 [WARNING ] root: 
+2025-11-03 05:46:20 [WARNING ] root:    [GEN 21] Best: Fit=1.2078, Gmean=0.916 | Avg: Fit=0.8201, Gmean=0.558 | Div=0.455 | Stag=9
+2025-11-03 05:49:21 [WARNING ] root:    [EARLY STOP] Gen 22: threshold=0.843 (50%=0.421, mediana top-12)
+Gen 22/200 - BestFit: 1.2078 (G-mean: 0.916) | AvgFit: 0.7285 (G-mean: 0.472) | (Diversity: 0.505) | (RuleAct: 51.0) | Mut: 0.530 | Tourn: 3 | Stagn: 10 | Time: 36.35s2025-11-03 05:49:58 [WARNING ] root: 
+2025-11-03 05:49:58 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=10, elite_gmean=0.916)
+2025-11-03 05:50:05 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-03 05:50:17 [WARNING ] root:    [HC] Aprovadas: 1/8 variantes (12.5%)
+Gen 23/200 - BestFit: 1.2078 (G-mean: 0.916) | AvgFit: 0.4287 (G-mean: 0.190) | (Diversity: 0.405) | (RuleAct: 15.7) | Mut: 0.350 | Tourn: 4 | Stagn: 11 | Time: 28.57s2025-11-03 05:54:27 [WARNING ] root:    [HC] PULANDO Hill Climbing (economia tempo, próximo em +2 ger)
+Gen 24/200 - BestFit: 1.2078 (G-mean: 0.916) | AvgFit: 0.5385 (G-mean: 0.293) | (Diversity: 0.596) | (RuleAct: 19.1) | Mut: 0.316 | Tourn: 4 | Stagn: 12 | Time: 31.71s2025-11-03 05:58:14 [WARNING ] root:    [HC] PULANDO Hill Climbing (economia tempo, próximo em +1 ger)
+Gen 25/200 - BestFit: 1.2078 (G-mean: 0.916) | AvgFit: 0.6094 (G-mean: 0.360) | (Diversity: 0.500) | (RuleAct: 25.4) | Mut: 0.497 | Tourn: 3 | Stagn: 13 | Time: 33.85s2025-11-03 06:02:11 [WARNING ] root: 
+2025-11-03 06:02:11 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=13, elite_gmean=0.916)
+2025-11-03 06:02:19 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-03 06:02:31 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+Gen 31/200 - BestFit: 1.2216 (G-mean: 0.929) | AvgFit: 0.7956 (G-mean: 0.534) | (Diversity: 0.526) | (RuleAct: 51.3) | Mut: 0.587 | Tourn: 3 | Stagn: 5 | Time: 37.23s2025-11-03 06:26:28 [WARNING ] root: 
+2025-11-03 06:26:28 [WARNING ] root:    [GEN 31] Best: Fit=1.2216, Gmean=0.929 | Avg: Fit=0.7956, Gmean=0.534 | Div=0.526 | Stag=5
+2025-11-03 06:29:29 [WARNING ] root:    [EARLY STOP] Gen 32: threshold=0.902 (50%=0.451, mediana top-12)
+Gen 36/200 - BestFit: 1.2216 (G-mean: 0.929) | AvgFit: 0.8159 (G-mean: 0.554) | (Diversity: 0.539) | (RuleAct: 55.3) | Mut: 0.614 | Tourn: 3 | Stagn: 10 | Time: 36.62s2025-11-03 06:45:54 [WARNING ] root: 
+2025-11-03 06:45:54 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=10, elite_gmean=0.929)
+2025-11-03 06:46:00 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-03 06:46:11 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+Gen 41/200 - BestFit: 1.2220 (G-mean: 0.929) | AvgFit: 0.8281 (G-mean: 0.566) | (Diversity: 0.484) | (RuleAct: 51.8) | Mut: 0.676 | Tourn: 3 | Stagn: 4 | Time: 37.17s2025-11-03 07:07:06 [WARNING ] root: 
+2025-11-03 07:07:06 [WARNING ] root:    [GEN 41] Best: Fit=1.2220, Gmean=0.929 | Avg: Fit=0.8281, Gmean=0.566 | Div=0.484 | Stag=4
+2025-11-03 07:10:53 [WARNING ] root:    [EARLY STOP] Gen 42: threshold=0.912 (50%=0.456, mediana top-12)
+Gen 47/200 - BestFit: 1.2220 (G-mean: 0.929) | AvgFit: 0.7872 (G-mean: 0.528) | (Diversity: 0.542) | (RuleAct: 53.5) | Mut: 0.639 | Tourn: 3 | Stagn: 10 | Time: 36.60s2025-11-03 07:32:25 [WARNING ] root: 
+2025-11-03 07:32:25 [WARNING ] root:    [HC] Aplicando Hill Climbing (estagnação=10, elite_gmean=0.929)
+2025-11-03 07:32:31 [WARNING ] root:    [HC] Geradas 8 variantes, avaliando...
+2025-11-03 07:32:42 [WARNING ] root:    [HC] Aprovadas: 3/8 variantes (37.5%)
+Gen 51/200 - BestFit: 1.2253 (G-mean: 0.932) | AvgFit: 0.8073 (G-mean: 0.546) | (Diversity: 0.513) | (RuleAct: 52.3) | Mut: 0.589 | Tourn: 3 | Stagn: 3 | Time: 35.31s2025-11-03 07:50:31 [WARNING ] root: 
+2025-11-03 07:50:31 [WARNING ] root:    [GEN 51] Best: Fit=1.2253, Gmean=0.932 | Avg: Fit=0.8073, Gmean=0.546 | Div=0.513 | Stag=3
+2025-11-03 07:53:41 [WARNING ] root:    [EARLY STOP] Gen 52: threshold=0.928 (50%=0.464, mediana top-12)
+Gen 54/200 - BestFit: 1.2253 (G-mean: 0.932) | AvgFit: 0.7654 (G-mean: 0.507) | (Diversity: 0.564) | (RuleAct: 50.0) | Mut: 0.539 | Tourn: 3 | Stagn: 6 | Time: 35.81s
+2025-11-03 08:06:22 [WARNING ] main: [FASE 2] Chunk 4 - Salvando memória do conceito 'concept_0'
+2025-11-03 08:06:22 [WARNING ] main: [FASE 2]   → Salvando 2 indivíduos
+2025-11-03 08:06:22 [WARNING ] main: [FASE 2]   ✓ Memória do conceito 'concept_0' atualizada (last_seen: 4)
+2025-11-03 08:06:26 [WARNING ] main: 
+2025-11-03 08:06:26 [WARNING ] main: ======================================================================
+2025-11-03 08:06:26 [WARNING ] main: CHUNK 4 - FINAL
+2025-11-03 08:06:26 [WARNING ] main: ======================================================================
+2025-11-03 08:06:26 [WARNING ] main: Tempo total: 12507.6s (208.5min)
+2025-11-03 08:06:26 [WARNING ] main: Train G-mean: 0.9318
+2025-11-03 08:06:26 [WARNING ] main: Test G-mean:  0.8760
+2025-11-03 08:06:26 [WARNING ] main: Test F1:      0.8791
+2025-11-03 08:06:26 [WARNING ] main: Delta:        -0.0558
+2025-11-03 08:06:26 [WARNING ] main: Best Fitness: 1.2253
+2025-11-03 08:06:27 [WARNING ] main: 
+2025-11-03 08:06:27 [WARNING ] main: ######################################################################
+2025-11-03 08:06:27 [WARNING ] main: EXPERIMENTO FINALIZADO
+2025-11-03 08:06:27 [WARNING ] main: ######################################################################
+2025-11-03 08:06:27 [WARNING ] main: Tempo total: 48313.6s (13.42h)
+2025-11-03 08:06:27 [WARNING ] main: Média por chunk: 9662.7s
+2025-11-03 08:06:27 [WARNING ] main: Chunks processados: 5
+2025-11-03 08:06:27 [WARNING ] main: Avg Test G-mean: 0.7928
+2025-11-03 08:06:27 [WARNING ] main: Std Test G-mean: 0.1771
+2025-11-03 08:06:27 [WARNING ] main: Timestamp final: 2025-11-03 08:06:27
+2025-11-03 08:06:27 [WARNING ] main: 
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:2035: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+
+================================================================================
+Overall Performance Summary Table
+================================================================================
+      Stream Name Dataset Type  Avg Train Acc  Std Train Acc  Avg Test Acc  Std Test Acc  Avg Test F1  Std Test F1  Total Feats  Avg Used Feats
+RBF_Abrupt_Severe          RBF         0.9296         0.0098        0.7928        0.1771       0.7978       0.1711           10            10.0
+================================================================================
+
+
+================================================================================
+Feature Usage Summary
+================================================================================
+Stream: RBF_Abrupt_Severe
+  Total Features Available: 10
+  Average Features Used (across chunks/runs): 10.00
+------------------------------
+================================================================================

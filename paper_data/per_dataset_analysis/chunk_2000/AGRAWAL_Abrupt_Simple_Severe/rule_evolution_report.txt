@@ -1,0 +1,247 @@
+Rule Diff Analysis Report
+Source File: RulesHistory_AGRAWAL_Abrupt_Simple_Severe_Run1.txt
+Similarity Threshold: 0.35
+
+======================================================================
+--- Diff Chunk 0 -> Chunk 1 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 0):   0.8984
+  - Test G-Mean (Chunk 1):  0.8614
+  - Test F1 (Chunk 1):      0.8606
+Fitness:       0.988171 -> 1.258867
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((salary > 100085.4688) AND ((age > 39.5000) AND (age > 59.5000))) THEN Class 0
+  + New: IF (((salary <= 50037.8281) AND (age <= 59.5000)) AND (age <= 20.5000)) THEN Class 0
+    (Similarity: 0.71)
+
+  New Rules:
+  + IF (((salary <= 50037.8281) AND (age <= 59.5000)) AND (commission <= 12829.1001)) THEN Class 0
+  + IF (((salary <= 50037.8281) AND (age <= 59.5000)) AND (salary <= 21264.3887)) THEN Class 0
+  + IF ((commission > 31323.5597) AND (car >= 5.1615)) THEN Class 0
+  + IF ((salary > 124934.1172) AND (hyears <= 1.5000)) THEN Class 0
+  + IF ((salary > 124934.1172) AND (loan <= 13706.6255)) THEN Class 0
+
+  Deleted Rules:
+  - IF (elevel < 1.0454) THEN Class 0
+  - IF (salary <= 25494.1895) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((((((((salary <= 124934.1172) AND (salary > 50037.8281)) AND (salary <= 99839.8906)) AND (age > 39.5000)) AND (hvalue <= 442513.9531)) AND (salary > 52465.4922)) AND (age <= 62.5000)) AND (commission <= 16288.9282)) THEN Class 1
+  + IF ((((((salary <= 124934.1172) AND (salary > 50037.8281)) AND (salary > 99839.8906)) AND (age <= 59.5000)) AND (age > 39.5000)) AND (hyears >= 2.5000)) THEN Class 1
+  + IF ((((salary < 124934.1172) AND (salary > 70377.8256)) AND (salary < 99839.8906)) AND (age <= 39.5000)) THEN Class 1
+  + IF (((salary < 50037.8281) AND (age > 59.5000)) AND (salary > 24973.7500)) THEN Class 1
+  + IF (((salary <= 124934.1172) AND ((salary > 50037.8281) AND (age <= 58.5000))) AND ((salary <= 100055.1328) AND ((salary <= 74211.9297) AND (age <= 39.5000)))) THEN Class 1
+  + IF (((salary <= 124934.1172) AND ((salary > 50037.8281) AND (age <= 58.5000))) AND ((salary <= 96739.5063) AND (salary > 75535.3750))) THEN Class 1
+  + IF (((salary <= 124934.1172) AND (salary > 50037.8281)) AND ((age > 58.5000) AND ((salary <= 75072.8594) AND (age > 60.5000)))) THEN Class 1
+  + IF (((salary <= 50037.8281) AND (age > 59.5000)) AND (salary > 24973.7500)) THEN Class 1
+  + IF (((salary <= 50037.8281) AND (age > 59.5000)) AND (salary > 24973.7500)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((((((salary <= 124823.0664) AND (salary > 25494.1895)) AND (salary <= 100085.4688)) AND (salary > 50455.4219)) AND (age > 39.5000)) AND (hvalue <= 214663.9922)) AND (hvalue <= 201140.0703)) AND (car <= 17.5000)) AND (commission <= 79374.0859)) AND (loan > 476844.4219)) THEN Class 1
+  - IF ((((((((((salary <= 124823.0664) AND (salary > 25494.1895)) AND (salary <= 100085.4688)) AND (salary > 50455.4219)) AND (age > 39.5000)) AND (hvalue > 214663.9922)) AND (age <= 77.5000)) AND (hvalue <= 1164799.5000)) AND (hvalue > 957086.8438)) AND (elevel <= 1.5000)) THEN Class 1
+  - IF (((((((((salary <= 124823.0664) AND (salary > 25494.1895)) AND (salary <= 100085.4688)) AND (salary > 50455.4219)) AND (age > 39.5000)) AND (hvalue <= 214663.9922)) AND (hvalue <= 201140.0703)) AND (car <= 17.5000)) AND (commission > 79374.0859)) THEN Class 1
+  - IF ((((((((salary <= 124823.0664) AND (salary > 25494.1895)) AND (salary <= 100085.4688)) AND (salary > 50455.4219)) AND (age > 39.5000)) AND (hvalue > 214663.9922)) AND (age <= 77.5000)) AND (hvalue <= 1164799.5000)) THEN Class 1
+  - IF ((((((((salary <= 124823.0664) AND (salary > 25494.1895)) AND (salary <= 100085.4688)) AND (salary > 50455.4219)) AND (age > 39.5000)) AND (hvalue > 214663.9922)) AND (age > 77.5000)) AND (salary <= 77676.3320)) THEN Class 1
+  - IF ((((((salary <= 124823.0664) AND (salary > 25494.1895)) AND (salary <= 100085.4688)) AND (salary > 50455.4219)) AND (age <= 39.5000)) AND (salary > 99431.5352)) THEN Class 1
+  - IF (((((salary <= 124823.0664) AND (salary > 25494.1895)) AND (salary <= 100085.4688)) AND (salary <= 50455.4219)) AND (age > 59.5000)) THEN Class 1
+  - IF (((salary <= 100085.4688) AND ((salary > 25494.1895) AND (age > 38.5000))) AND (((hvalue > 201140.0703) AND (age > 59.5000)) AND ((salary <= 74273.1992) AND (salary > 27601.5508)))) THEN Class 1
+  - IF (((salary <= 100085.4688) AND (salary > 25494.1895)) AND ((age <= 38.5000) AND ((salary > 50080.4199) AND (salary <= 98772.9414)))) THEN Class 1
+  - IF (((salary > 100085.4688) AND (age > 39.5000)) AND ((age <= 59.5000) AND (salary <= 125024.5234))) THEN Class 1
+
+======================================================================
+--- Diff Chunk 1 -> Chunk 2 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 1):   0.9888
+  - Test G-Mean (Chunk 2):  0.9752
+  - Test F1 (Chunk 2):      0.9775
+Fitness:       1.258867 -> 1.270171
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((salary > 124934.1172) AND (hyears <= 1.5000)) THEN Class 0
+  + New: IF ((salary > 32581.5966) AND (hyears <= 1.5000)) THEN Class 0
+    (Similarity: 0.81)
+
+  New Rules:
+  + IF ((salary > 124847.2695) AND (age <= 21.5000)) THEN Class 0
+  + IF ((salary > 124847.2695) AND (car <= 1.5000)) THEN Class 0
+  + IF (salary > 124847.2695) THEN Class 0
+
+  Deleted Rules:
+  - IF (((salary <= 50037.8281) AND (age <= 59.5000)) AND (age <= 20.5000)) THEN Class 0
+  - IF (((salary <= 50037.8281) AND (age <= 59.5000)) AND (commission <= 12829.1001)) THEN Class 0
+  - IF (((salary <= 50037.8281) AND (age <= 59.5000)) AND (salary <= 21264.3887)) THEN Class 0
+  - IF ((commission > 31323.5597) AND (car >= 5.1615)) THEN Class 0
+  - IF ((salary > 124934.1172) AND (loan <= 13706.6255)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((((salary <= 124934.1172) AND (salary > 50037.8281)) AND (salary > 99839.8906)) AND (age <= 59.5000)) AND (age > 39.5000)) AND (hyears >= 2.5000)) THEN Class 1
+  + New: IF (((((salary <= 124847.2695) AND (salary > 28074.4541)) AND (salary > 70691.5873)) AND (age <= 59.5000)) AND (age > 39.5000)) THEN Class 1
+    (Similarity: 0.68)
+  - Old: IF ((((salary < 124934.1172) AND (salary > 70377.8256)) AND (salary < 99839.8906)) AND (age <= 39.5000)) THEN Class 1
+  + New: IF (((salary <= 124847.2695) AND (salary > 50004.0645)) AND ((salary <= 99724.7344) AND (age <= 39.5000))) THEN Class 1
+    (Similarity: 0.73)
+  - Old: IF (((salary <= 50037.8281) AND (age > 59.5000)) AND (salary > 24973.7500)) THEN Class 1
+  + New: IF (((salary <= 28074.4541) AND (age > 59.5000)) AND (salary > 25085.6807)) THEN Class 1
+    (Similarity: 0.81)
+
+  New Rules:
+  + IF (((((((((salary <= 124847.2695) AND (salary > 28074.4541)) AND (salary <= 101385.9961)) AND (salary > 50004.0645)) AND (age > 39.5000)) AND (hvalue <= 937070.3125)) AND (zipcode <= 6.5000)) AND (commission > 45102.4570)) AND (age > 59.0000)) THEN Class 1
+  + IF (((((salary <= 124847.2695) AND (salary > 28074.4541)) AND (salary <= 101385.9961)) AND (salary <= 50004.0645)) AND (age > 59.5000)) THEN Class 1
+  + IF (((salary <= 124847.2695) AND ((salary > 50004.0645) AND (salary <= 99724.7344))) AND ((age > 39.5000) AND ((age > 59.5000) AND (commission > 5404.2173)))) THEN Class 1
+  + IF (((salary <= 124847.2695) AND (salary > 50004.0645)) AND ((salary <= 99724.7344) AND (age <= 39.5000))) THEN Class 1
+  + IF (((salary <= 28074.4541) AND (age > 59.5000)) AND (salary > 25085.6807)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((((salary <= 124934.1172) AND (salary > 50037.8281)) AND (salary <= 99839.8906)) AND (age > 39.5000)) AND (hvalue <= 442513.9531)) AND (salary > 52465.4922)) AND (age <= 62.5000)) AND (commission <= 16288.9282)) THEN Class 1
+  - IF (((salary < 50037.8281) AND (age > 59.5000)) AND (salary > 24973.7500)) THEN Class 1
+  - IF (((salary <= 124934.1172) AND ((salary > 50037.8281) AND (age <= 58.5000))) AND ((salary <= 100055.1328) AND ((salary <= 74211.9297) AND (age <= 39.5000)))) THEN Class 1
+  - IF (((salary <= 124934.1172) AND ((salary > 50037.8281) AND (age <= 58.5000))) AND ((salary <= 96739.5063) AND (salary > 75535.3750))) THEN Class 1
+  - IF (((salary <= 124934.1172) AND (salary > 50037.8281)) AND ((age > 58.5000) AND ((salary <= 75072.8594) AND (age > 60.5000)))) THEN Class 1
+  - IF (((salary <= 50037.8281) AND (age > 59.5000)) AND (salary > 24973.7500)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 2 -> Chunk 3 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 2):   0.9948
+  - Test G-Mean (Chunk 3):  0.9893
+  - Test F1 (Chunk 3):      0.9875
+Fitness:       1.270171 -> 1.196513
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((salary > 124847.2695) AND (age <= 21.5000)) THEN Class 0
+  + New: IF ((salary > 124852.9844) AND (age <= 20.5000)) THEN Class 0
+    (Similarity: 0.84)
+  - Old: IF ((salary > 124847.2695) AND (car <= 1.5000)) THEN Class 0
+  + New: IF ((salary > 124852.9844) AND (car <= 1.5000)) THEN Class 0
+    (Similarity: 0.86)
+  - Old: IF ((salary > 32581.5966) AND (hyears <= 1.5000)) THEN Class 0
+  + New: IF ((salary > 124852.9844) AND (hyears <= 1.5000)) THEN Class 0
+    (Similarity: 0.83)
+
+  New Rules:
+  + IF (((hyears <= 7.7091) OR (hvalue > 787743.7964)) OR (zipcode >= 5.8971)) THEN Class 0
+  + IF ((salary > 124852.9844) AND (hvalue <= 27089.1211)) THEN Class 0
+  + IF ((salary > 124852.9844) AND (salary <= 125591.9258)) THEN Class 0
+  + IF ((salary > 124852.9844) AND (zipcode <= 0.5000)) THEN Class 0
+  + IF ((salary > 93198.1452) AND (hyears <= 1.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (salary > 124847.2695) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((((salary <= 124847.2695) AND (salary > 28074.4541)) AND (salary <= 101385.9961)) AND (salary <= 50004.0645)) AND (age > 59.5000)) THEN Class 1
+  + New: IF (((((salary <= 124852.9844) AND (salary > 25475.1543)) AND (salary <= 99988.0000)) AND (salary > 49690.5117)) AND (age <= 40.5000)) THEN Class 1
+    (Similarity: 0.73)
+  - Old: IF (((salary <= 124847.2695) AND ((salary > 50004.0645) AND (salary <= 99724.7344))) AND ((age > 39.5000) AND ((age > 59.5000) AND (commission > 5404.2173)))) THEN Class 1
+  + New: IF (((salary <= 124852.9844) AND ((salary > 25475.1543) AND (salary <= 98395.3750))) AND ((age > 59.5000) AND ((commission > 5329.3271) AND (zipcode > 0.5000)))) THEN Class 1
+    (Similarity: 0.65)
+  - Old: IF (((((salary <= 124847.2695) AND (salary > 28074.4541)) AND (salary > 70691.5873)) AND (age <= 59.5000)) AND (age > 39.5000)) THEN Class 1
+  + New: IF (((salary <= 124852.9844) AND (salary > 25475.1543)) AND ((salary > 98395.3750) AND ((age <= 59.5000) AND (age > 39.5000)))) THEN Class 1
+    (Similarity: 0.79)
+  - Old: IF (((salary <= 124847.2695) AND (salary > 50004.0645)) AND ((salary <= 99724.7344) AND (age <= 39.5000))) THEN Class 1
+  + New: IF (((salary <= 124852.9844) AND (salary > 49850.0488)) AND ((salary <= 98395.3750) AND (age <= 39.5000))) THEN Class 1
+    (Similarity: 0.79)
+  - Old: IF (((salary <= 28074.4541) AND (age > 59.5000)) AND (salary > 25085.6807)) THEN Class 1
+  + New: IF ((salary <= 49850.0488) AND ((age > 59.5000) AND (salary > 25238.8652))) THEN Class 1
+    (Similarity: 0.74)
+
+  New Rules:
+  + IF ((((((((salary <= 124852.9844) AND (salary > 25475.1543)) AND (salary <= 99988.0000)) AND (salary > 49690.5117)) AND (age > 40.5000)) AND (hvalue <= 55518.0137)) AND (age <= 60.5000)) AND (salary > 77767.2461)) THEN Class 1
+  + IF (((salary <= 124852.9844) AND (salary > 25475.1543)) AND ((salary <= 98395.3750) AND ((age <= 39.5000) AND (salary > 49959.7090)))) THEN Class 1
+  + IF (((salary <= 124852.9844) AND (salary > 49850.0488)) AND ((salary > 98395.3750) AND ((age <= 59.5000) AND (age > 39.5000)))) THEN Class 1
+  + IF (((salary <= 124852.9844) AND (salary > 98395.3750)) AND ((age <= 59.5000) AND (age > 41.5000))) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((((((salary <= 124847.2695) AND (salary > 28074.4541)) AND (salary <= 101385.9961)) AND (salary > 50004.0645)) AND (age > 39.5000)) AND (hvalue <= 937070.3125)) AND (zipcode <= 6.5000)) AND (commission > 45102.4570)) AND (age > 59.0000)) THEN Class 1
+  - IF (((salary <= 124847.2695) AND (salary > 50004.0645)) AND ((salary <= 99724.7344) AND (age <= 39.5000))) THEN Class 1
+  - IF (((salary <= 28074.4541) AND (age > 59.5000)) AND (salary > 25085.6807)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 3 -> Chunk 4 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 3):   0.9329
+  - Test G-Mean (Chunk 4):  0.9191
+  - Test F1 (Chunk 4):      0.9356
+Fitness:       1.196513 -> 1.283740
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((salary > 124852.9844) AND (age <= 20.5000)) THEN Class 0
+  + New: IF ((salary > 124667.2930) AND (age <= 21.5000)) THEN Class 0
+    (Similarity: 0.82)
+  - Old: IF ((salary > 124852.9844) AND (salary <= 125591.9258)) THEN Class 0
+  + New: IF ((salary > 124667.2930) AND (salary <= 125129.8164)) THEN Class 0
+    (Similarity: 0.73)
+
+  New Rules:
+  + IF (((salary <= 46972.2559) AND (age > 59.5000)) AND (salary <= 24889.7646)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((hyears <= 7.7091) OR (hvalue > 787743.7964)) OR (zipcode >= 5.8971)) THEN Class 0
+  - IF ((salary > 124852.9844) AND (car <= 1.5000)) THEN Class 0
+  - IF ((salary > 124852.9844) AND (hvalue <= 27089.1211)) THEN Class 0
+  - IF ((salary > 124852.9844) AND (hyears <= 1.5000)) THEN Class 0
+  - IF ((salary > 124852.9844) AND (zipcode <= 0.5000)) THEN Class 0
+  - IF ((salary > 93198.1452) AND (hyears <= 1.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((((((salary <= 124852.9844) AND (salary > 25475.1543)) AND (salary <= 99988.0000)) AND (salary > 49690.5117)) AND (age > 40.5000)) AND (hvalue <= 55518.0137)) AND (age <= 60.5000)) AND (salary > 77767.2461)) THEN Class 1
+  + New: IF ((((((((salary <= 124667.2930) AND (salary > 46972.2559)) AND (salary <= 100064.8125)) AND (age > 39.5000)) AND (age <= 66.5000)) AND (salary > 73694.0078)) AND (age <= 59.5000)) AND (salary > 75254.0586)) THEN Class 1
+    (Similarity: 0.69)
+  - Old: IF (((salary <= 124852.9844) AND (salary > 25475.1543)) AND ((salary <= 98395.3750) AND ((age <= 39.5000) AND (salary > 49959.7090)))) THEN Class 1
+  + New: IF (((((salary <= 124667.2930) AND (salary > 46972.2559)) AND (salary <= 100064.8125)) AND (age <= 39.5000)) AND (salary > 50003.3770)) THEN Class 1
+    (Similarity: 0.70)
+  - Old: IF (((salary <= 124852.9844) AND (salary > 25475.1543)) AND ((salary > 98395.3750) AND ((age <= 59.5000) AND (age > 39.5000)))) THEN Class 1
+  + New: IF (((((salary <= 124667.2930) AND (salary > 46972.2559)) AND (salary > 100064.8125)) AND (age <= 59.5000)) AND (age > 39.5000)) THEN Class 1
+    (Similarity: 0.75)
+  - Old: IF ((salary <= 49850.0488) AND ((age > 59.5000) AND (salary > 25238.8652))) THEN Class 1
+  + New: IF (((salary <= 46972.2559) AND (age > 59.5000)) AND (salary > 24889.7646)) THEN Class 1
+    (Similarity: 0.74)
+
+  New Rules:
+  + IF (((((((salary <= 124667.2930) AND (salary > 46972.2559)) AND (salary <= 100064.8125)) AND (age > 39.5000)) AND (age <= 66.5000)) AND (salary <= 73694.0078)) AND (age > 59.5000)) THEN Class 1
+  + IF ((((((salary <= 124667.2930) AND (salary > 46972.2559)) AND (salary <= 100064.8125)) AND (age > 39.5000)) AND (age > 66.5000)) AND (commission > 5351.4717)) THEN Class 1
+  + IF (((salary <= 46972.2559) AND (age > 59.5000)) AND (salary > 24889.7646)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((salary <= 124852.9844) AND (salary > 25475.1543)) AND (salary <= 99988.0000)) AND (salary > 49690.5117)) AND (age <= 40.5000)) THEN Class 1
+  - IF (((salary <= 124852.9844) AND ((salary > 25475.1543) AND (salary <= 98395.3750))) AND ((age > 59.5000) AND ((commission > 5329.3271) AND (zipcode > 0.5000)))) THEN Class 1
+  - IF (((salary <= 124852.9844) AND (salary > 49850.0488)) AND ((salary <= 98395.3750) AND (age <= 39.5000))) THEN Class 1
+  - IF (((salary <= 124852.9844) AND (salary > 49850.0488)) AND ((salary > 98395.3750) AND ((age <= 59.5000) AND (age > 39.5000)))) THEN Class 1
+  - IF (((salary <= 124852.9844) AND (salary > 98395.3750)) AND ((age <= 59.5000) AND (age > 41.5000))) THEN Class 1
+
+======================================================================
+Overall Performance Summary (from History File)
+======================================================================
+Avg Train G-Mean:   0.9623 +/- 0.0397 (over 5 chunks)
+Avg Test G-Mean:    0.8524 +/- 0.1737 (over 5 chunks)
+Avg Test F1:        0.8568 +/- 0.1728 (over 5 chunks)
+======================================================================

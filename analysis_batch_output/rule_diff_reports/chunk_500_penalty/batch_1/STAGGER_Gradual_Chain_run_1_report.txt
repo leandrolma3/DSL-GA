@@ -1,0 +1,656 @@
+Rule Diff Analysis Report
+Source File: RulesHistory_STAGGER_Gradual_Chain_Run1.txt
+Similarity Threshold: 0.35
+
+======================================================================
+--- Diff Chunk 0 -> Chunk 1 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 0):      nan
+  - Test Acc (Chunk 1):     nan
+  - Test F1 (Chunk 1):      nan
+Fitness:       1.100000 -> 1.298400
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((color > 0.5000) AND (color > 1.5000)) THEN Class 0
+  + New: IF ((color <= 0.5000) AND (size > 0.5000)) THEN Class 0
+    (Similarity: 0.79)
+
+  Deleted Rules:
+  - IF (((color <= 0.5000) AND (size > 0.5000)) AND (size <= 1.5000)) THEN Class 0
+  - IF (((color <= 0.5000) AND (size > 0.5000)) AND (size > 1.5000)) THEN Class 0
+  - IF ((color > 0.5000) AND (color <= 1.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 1 -> Chunk 2 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 1):      nan
+  - Test Acc (Chunk 2):     nan
+  - Test F1 (Chunk 2):      nan
+Fitness:       1.298400 -> 1.298200
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((size <= 0.5000) AND (color > 0.5000)) AND (color > 1.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((color <= 0.5000) AND (size > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+  + New: IF ((size <= 0.5000) AND (color <= 0.5000)) THEN Class 1
+    (Similarity: 0.75)
+
+======================================================================
+--- Diff Chunk 2 -> Chunk 3 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 2):      nan
+  - Test Acc (Chunk 3):     nan
+  - Test F1 (Chunk 3):      nan
+Fitness:       1.298200 -> 1.298400
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((size <= 0.5000) AND (color > 0.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((size <= 0.5000) AND (color > 0.5000)) AND (color > 1.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((size <= 0.5000) AND (color <= 0.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 3 -> Chunk 4 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 3):      nan
+  - Test Acc (Chunk 4):     nan
+  - Test F1 (Chunk 4):      nan
+Fitness:       1.298400 -> 1.298200
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((color <= 0.5000) AND (size > 0.5000)) AND (size > 1.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((size <= 0.5000) AND (color > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((size <= 0.5000) AND (color <= 0.5000)) THEN Class 1
+  + New: IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+    (Similarity: 0.75)
+
+======================================================================
+--- Diff Chunk 4 -> Chunk 5 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 4):      nan
+  - Test Acc (Chunk 5):     nan
+  - Test F1 (Chunk 5):      nan
+Fitness:       1.298200 -> 1.298400
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((color <= 0.5000) AND (size > 0.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((color <= 0.5000) AND (size > 0.5000)) AND (size > 1.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 5 -> Chunk 6 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 5):      nan
+  - Test Acc (Chunk 6):     nan
+  - Test F1 (Chunk 6):      nan
+Fitness:       1.298400 -> 1.298200
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((size <= 0.5000) AND (color > 0.5000)) AND (color > 1.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((color <= 0.5000) AND (size > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+  + New: IF ((size <= 0.5000) AND (color <= 0.5000)) THEN Class 1
+    (Similarity: 0.75)
+
+======================================================================
+--- Diff Chunk 6 -> Chunk 7 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 6):      nan
+  - Test Acc (Chunk 7):     nan
+  - Test F1 (Chunk 7):      nan
+Fitness:       1.298200 -> 1.298400
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((color <= 0.5000) AND (size > 0.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((size <= 0.5000) AND (color > 0.5000)) AND (color > 1.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((size <= 0.5000) AND (color <= 0.5000)) THEN Class 1
+  + New: IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+    (Similarity: 0.75)
+
+======================================================================
+--- Diff Chunk 7 -> Chunk 8 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 7):      nan
+  - Test Acc (Chunk 8):     nan
+  - Test F1 (Chunk 8):      nan
+Fitness:       1.298400 -> 1.298200
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((color <= 0.5000) AND (size > 0.5000)) AND (size <= 1.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((color <= 0.5000) AND (size > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 8 -> Chunk 9 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 8):      nan
+  - Test Acc (Chunk 9):     nan
+  - Test F1 (Chunk 9):      nan
+Fitness:       1.298200 -> 1.298400
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((color <= 0.5000) AND (size > 0.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((color <= 0.5000) AND (size > 0.5000)) AND (size <= 1.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 9 -> Chunk 10 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 9):      nan
+  - Test Acc (Chunk 10):     nan
+  - Test F1 (Chunk 10):      nan
+Fitness:       1.298400 -> 1.298600
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (size < 0.5805) THEN Class 0
+
+  Deleted Rules:
+  - IF ((color <= 0.5000) AND (size > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 10 -> Chunk 11 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 10):      nan
+  - Test Acc (Chunk 11):     nan
+  - Test F1 (Chunk 11):      nan
+Fitness:       1.298600 -> 1.298400
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((color <= 0.5000) AND (size > 0.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (size < 0.5805) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 11 -> Chunk 12 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 11):      nan
+  - Test Acc (Chunk 12):     nan
+  - Test F1 (Chunk 12):      nan
+Fitness:       1.298400 -> 1.298400
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Unchanged Rules:
+    IF ((color <= 0.5000) AND (size > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 12 -> Chunk 13 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 12):      nan
+  - Test Acc (Chunk 13):     nan
+  - Test F1 (Chunk 13):      nan
+Fitness:       1.298400 -> 1.298200
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((size <= 0.5000) AND (color > 0.5000)) AND (color > 1.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((color <= 0.5000) AND (size > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 13 -> Chunk 14 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 13):      nan
+  - Test Acc (Chunk 14):     nan
+  - Test F1 (Chunk 14):      nan
+Fitness:       1.298200 -> 1.298400
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((color <= 0.5000) AND (size > 0.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((size <= 0.5000) AND (color > 0.5000)) AND (color > 1.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 14 -> Chunk 15 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 14):      nan
+  - Test Acc (Chunk 15):     nan
+  - Test F1 (Chunk 15):      nan
+Fitness:       1.298400 -> 1.298200
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((color <= 0.5000) AND (size > 0.5000)) AND (size > 1.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((color <= 0.5000) AND (size > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 15 -> Chunk 16 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 15):      nan
+  - Test Acc (Chunk 16):     nan
+  - Test F1 (Chunk 16):      nan
+Fitness:       1.298200 -> 1.051354
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF (((color <= 0.5000) AND (size > 0.5000)) AND (size > 1.5000)) THEN Class 0
+  + New: IF ((((color <= 1.5000) AND (shape > 0.5000)) AND (size > 1.5000)) AND (color <= 0.5000)) THEN Class 0
+    (Similarity: 0.67)
+
+  New Rules:
+  + IF (((((color <= 1.5000) AND (shape > 0.5000)) AND (size > 1.5000)) AND (color <= 0.5000)) AND (shape > 1.5000)) THEN Class 0
+  + IF (((((color <= 1.5000) AND (shape > 0.5000)) AND (size > 1.5000)) AND (color > 0.5000)) AND (shape <= 1.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((((color <= 1.5000) AND (shape <= 0.5000)) AND (size <= 0.5000)) AND (color <= 0.5000)) THEN Class 1
+  + IF ((((color <= 1.5000) AND (shape <= 0.5000)) AND (size <= 0.5000)) AND (color > 0.5000)) THEN Class 1
+  + IF ((((color > 1.5000) AND (size <= 0.5000)) AND (shape > 0.5000)) AND (shape <= 1.5000)) THEN Class 1
+  + IF ((((color > 1.5000) AND (size <= 0.5000)) AND (shape > 0.5000)) AND (shape > 1.5000)) THEN Class 1
+  + IF (((color <= 1.5000) AND (shape <= 0.5000)) AND (size > 0.5000)) THEN Class 1
+  + IF (((color > 1.5000) AND (size <= 0.5000)) AND (shape <= 0.5000)) THEN Class 1
+  + IF (((color > 1.5000) AND (size > 0.5000)) AND (shape <= 0.5000)) THEN Class 1
+  + IF (((color > 1.5000) AND (size > 0.5000)) AND (shape > 0.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 16 -> Chunk 17 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 16):      nan
+  - Test Acc (Chunk 17):     nan
+  - Test F1 (Chunk 17):      nan
+Fitness:       1.051354 -> 1.178458
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((((color <= 1.5000) AND (shape > 0.5000)) AND (size > 1.5000)) AND (color <= 0.5000)) THEN Class 0
+  + New: IF (((color <= 1.5000) AND (shape > 0.5000)) AND (size <= 0.5000)) THEN Class 0
+    (Similarity: 0.73)
+
+  Deleted Rules:
+  - IF (((((color <= 1.5000) AND (shape > 0.5000)) AND (size > 1.5000)) AND (color <= 0.5000)) AND (shape > 1.5000)) THEN Class 0
+  - IF (((((color <= 1.5000) AND (shape > 0.5000)) AND (size > 1.5000)) AND (color > 0.5000)) AND (shape <= 1.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((((color <= 1.5000) AND (shape <= 0.5000)) AND (size <= 0.5000)) AND (color <= 0.5000)) THEN Class 1
+    IF ((((color <= 1.5000) AND (shape <= 0.5000)) AND (size <= 0.5000)) AND (color > 0.5000)) THEN Class 1
+    IF ((((color > 1.5000) AND (size <= 0.5000)) AND (shape > 0.5000)) AND (shape <= 1.5000)) THEN Class 1
+    IF ((((color > 1.5000) AND (size <= 0.5000)) AND (shape > 0.5000)) AND (shape > 1.5000)) THEN Class 1
+    IF (((color > 1.5000) AND (size <= 0.5000)) AND (shape <= 0.5000)) THEN Class 1
+
+  Modified Rules:
+  - Old: IF (((color <= 1.5000) AND (shape <= 0.5000)) AND (size > 0.5000)) THEN Class 1
+  + New: IF ((((color <= 1.5000) AND (shape <= 0.5000)) AND (size > 0.5000)) AND (color <= 0.5000)) THEN Class 1
+    (Similarity: 0.72)
+
+  New Rules:
+  + IF ((((color <= 1.5000) AND (shape <= 0.5000)) AND (size > 0.5000)) AND (color >= 0.5000)) THEN Class 1
+  + IF ((color >= 1.5835) AND (size >= 0.8322)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((color > 1.5000) AND (size > 0.5000)) AND (shape <= 0.5000)) THEN Class 1
+  - IF (((color > 1.5000) AND (size > 0.5000)) AND (shape > 0.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 17 -> Chunk 18 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 17):      nan
+  - Test Acc (Chunk 18):     nan
+  - Test F1 (Chunk 18):      nan
+Fitness:       1.178458 -> 1.145494
+Default Class: 0 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Unchanged Rules:
+    IF (((color <= 1.5000) AND (shape > 0.5000)) AND (size <= 0.5000)) THEN Class 0
+
+  New Rules:
+  + IF ((shape > 0.6922) AND (color < 1.7691)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF (((color > 1.5000) AND (size <= 0.5000)) AND (shape <= 0.5000)) THEN Class 1
+
+  New Rules:
+  + IF (shape > 1.7714) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((color <= 1.5000) AND (shape <= 0.5000)) AND (size <= 0.5000)) AND (color <= 0.5000)) THEN Class 1
+  - IF ((((color <= 1.5000) AND (shape <= 0.5000)) AND (size <= 0.5000)) AND (color > 0.5000)) THEN Class 1
+  - IF ((((color <= 1.5000) AND (shape <= 0.5000)) AND (size > 0.5000)) AND (color <= 0.5000)) THEN Class 1
+  - IF ((((color <= 1.5000) AND (shape <= 0.5000)) AND (size > 0.5000)) AND (color >= 0.5000)) THEN Class 1
+  - IF ((((color > 1.5000) AND (size <= 0.5000)) AND (shape > 0.5000)) AND (shape <= 1.5000)) THEN Class 1
+  - IF ((((color > 1.5000) AND (size <= 0.5000)) AND (shape > 0.5000)) AND (shape > 1.5000)) THEN Class 1
+  - IF ((color >= 1.5835) AND (size >= 0.8322)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 18 -> Chunk 19 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 18):      nan
+  - Test Acc (Chunk 19):     nan
+  - Test F1 (Chunk 19):      nan
+Fitness:       1.145494 -> 1.084292
+Default Class: 1 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((size <= 0.5000) AND ((color <= 1.5000) AND (shape > 0.5000))) THEN Class 0
+
+  Deleted Rules:
+  - IF (((color <= 1.5000) AND (shape > 0.5000)) AND (size <= 0.5000)) THEN Class 0
+  - IF ((shape > 0.6922) AND (color < 1.7691)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF (((color > 1.5000) AND (size <= 0.5000)) AND (shape <= 0.5000)) THEN Class 1
+
+  New Rules:
+  + IF ((((((color <= 1.5000) AND (shape > 0.5000)) AND (size > 0.5000)) AND (shape > 1.5000)) AND (size > 1.5000)) AND (color <= 0.5000)) THEN Class 1
+  + IF ((((color <= 1.5000) AND (shape <= 0.5000)) AND (size > 0.5000)) AND (color <= 0.5000)) THEN Class 1
+  + IF ((((color <= 1.5000) AND (shape <= 0.6023)) AND (size > 0.5000)) AND (color > 0.5000)) THEN Class 1
+  + IF ((((color > 1.5000) AND (size <= 0.5000)) AND (shape > 0.5000)) AND (shape <= 1.5000)) THEN Class 1
+  + IF ((color > 1.5000) AND (size > 0.5000)) THEN Class 1
+  + IF ((size > 0.5000) AND ((color <= 1.5000) AND (shape <= 0.5000))) THEN Class 1
+  + IF ((size > 0.5000) AND (color > 1.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF (shape > 1.7714) THEN Class 1
+
+======================================================================
+--- Diff Chunk 19 -> Chunk 20 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 19):      nan
+  - Test Acc (Chunk 20):     nan
+  - Test F1 (Chunk 20):      nan
+Fitness:       1.084292 -> 1.072930
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((size <= 0.5000) AND ((color <= 1.5000) AND (shape > 0.5000))) THEN Class 0
+  + New: IF ((((size <= 0.5000) AND (color <= 1.5000)) AND (shape <= 0.5000)) AND (color <= 0.5000)) THEN Class 0
+    (Similarity: 0.68)
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((((color <= 1.5000) AND (shape > 0.5000)) AND (size > 0.5000)) AND (shape > 1.5000)) AND (size > 1.5000)) AND (color <= 0.5000)) THEN Class 1
+  + New: IF ((((((size > 0.5000) AND (color <= 1.5000)) AND (shape > 0.5000)) AND (size > 1.5000)) AND (shape <= 1.5000)) AND (color <= 0.5000)) THEN Class 1
+    (Similarity: 0.80)
+  - Old: IF ((((color > 1.5000) AND (size <= 0.5000)) AND (shape > 0.5000)) AND (shape <= 1.5000)) THEN Class 1
+  + New: IF ((((size <= 0.5000) AND (color > 1.5000)) AND (shape > 0.5000)) AND (shape <= 1.5000)) THEN Class 1
+    (Similarity: 0.81)
+  - Old: IF ((size > 0.5000) AND ((color <= 1.5000) AND (shape <= 0.5000))) THEN Class 1
+  + New: IF (((size > 0.5000) AND (color <= 1.5000)) AND (shape <= 0.5000)) THEN Class 1
+    (Similarity: 0.94)
+
+  New Rules:
+  + IF (((size > 0.5000) AND (color > 1.5000)) AND (shape <= 0.5000)) THEN Class 1
+  + IF (((size > 0.5000) AND (color > 1.5000)) AND (size <= 1.5000)) THEN Class 1
+  + IF (((size > 0.5000) AND (color > 1.5000)) AND (size > 1.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((color <= 1.5000) AND (shape <= 0.5000)) AND (size > 0.5000)) AND (color <= 0.5000)) THEN Class 1
+  - IF ((((color <= 1.5000) AND (shape <= 0.6023)) AND (size > 0.5000)) AND (color > 0.5000)) THEN Class 1
+  - IF (((color > 1.5000) AND (size <= 0.5000)) AND (shape <= 0.5000)) THEN Class 1
+  - IF ((color > 1.5000) AND (size > 0.5000)) THEN Class 1
+  - IF ((size > 0.5000) AND (color > 1.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 20 -> Chunk 21 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 20):      nan
+  - Test Acc (Chunk 21):     nan
+  - Test F1 (Chunk 21):      nan
+Fitness:       1.072930 -> 1.112981
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((((size <= 0.5000) AND (color <= 1.5000)) AND (shape <= 0.5000)) AND (color <= 0.5000)) THEN Class 0
+  + New: IF ((((size <= 0.5000) AND (color > 1.5000)) AND (shape > 0.5000)) AND (shape <= 1.5000)) THEN Class 0
+    (Similarity: 0.89)
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((((size > 0.5000) AND (color <= 1.5000)) AND (shape > 0.5000)) AND (size > 1.5000)) AND (shape <= 1.5000)) AND (color <= 0.5000)) THEN Class 1
+  + New: IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape <= 1.5000)) AND (size <= 1.5000)) AND (color <= 0.5000)) THEN Class 1
+    (Similarity: 0.82)
+  - Old: IF (((size > 0.5000) AND (color > 1.5000)) AND (size > 1.5000)) THEN Class 1
+  + New: IF (((size > 0.5000) AND (shape > 0.5000)) AND (color > 1.5000)) THEN Class 1
+    (Similarity: 0.82)
+
+  New Rules:
+  + IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape <= 1.5000)) AND (size > 1.5000)) AND (color > 0.5000)) THEN Class 1
+  + IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape > 1.5000)) AND (size > 1.5000)) AND (color <= 0.5000)) THEN Class 1
+  + IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape > 1.5000)) AND (size > 1.5000)) AND (color > 0.5000)) THEN Class 1
+  + IF (((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape <= 1.5000)) AND (size <= 1.5000)) THEN Class 1
+  + IF ((color < 0.3830) AND (color >= 0.5559)) THEN Class 1
+  + IF ((size > 0.3196) AND (shape <= 0.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((size <= 0.5000) AND (color > 1.5000)) AND (shape > 0.5000)) AND (shape <= 1.5000)) THEN Class 1
+  - IF (((size > 0.5000) AND (color <= 1.5000)) AND (shape <= 0.5000)) THEN Class 1
+  - IF (((size > 0.5000) AND (color > 1.5000)) AND (shape <= 0.5000)) THEN Class 1
+  - IF (((size > 0.5000) AND (color > 1.5000)) AND (size <= 1.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 21 -> Chunk 22 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 21):      nan
+  - Test Acc (Chunk 22):     nan
+  - Test F1 (Chunk 22):      nan
+Fitness:       1.112981 -> 1.193379
+Default Class: 0 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((((size <= 0.5000) AND (color > 1.5000)) AND (shape > 0.5000)) AND (shape <= 1.5000)) THEN Class 0
+  + New: IF ((size <= 0.5000) AND ((shape > 0.5000) AND (color <= 1.5000))) THEN Class 0
+    (Similarity: 0.65)
+
+  New Rules:
+  + IF (size < 0.6767) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((size > 0.3196) AND (shape <= 0.5000)) THEN Class 1
+  + New: IF ((size > 0.5000) AND (color > 1.5000)) THEN Class 1
+    (Similarity: 0.69)
+
+  Deleted Rules:
+  - IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape <= 1.5000)) AND (size <= 1.5000)) AND (color <= 0.5000)) THEN Class 1
+  - IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape <= 1.5000)) AND (size > 1.5000)) AND (color > 0.5000)) THEN Class 1
+  - IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape > 1.5000)) AND (size > 1.5000)) AND (color <= 0.5000)) THEN Class 1
+  - IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape > 1.5000)) AND (size > 1.5000)) AND (color > 0.5000)) THEN Class 1
+  - IF (((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape <= 1.5000)) AND (size <= 1.5000)) THEN Class 1
+  - IF (((size > 0.5000) AND (shape > 0.5000)) AND (color > 1.5000)) THEN Class 1
+  - IF ((color < 0.3830) AND (color >= 0.5559)) THEN Class 1
+
+======================================================================
+Overall Performance Summary (from History File)
+======================================================================
+Avg Train Accuracy: nan +/- nan (over 0 chunks)
+Avg Test Accuracy:  nan +/- nan (over 0 chunks)
+Avg Test F1:        nan +/- nan (over 0 chunks)
+======================================================================

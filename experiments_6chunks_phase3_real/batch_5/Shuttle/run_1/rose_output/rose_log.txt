@@ -1,0 +1,20 @@
+STDOUT:
+
+
+STDERR:
+
+{M}assive {O}nline {A}nalysis
+Version:  21.07 July 2021
+Copyright: (C) 2007-2021 University of Waikato, Hamilton, New Zealand
+Web: http://moa.cms.waikato.ac.nz/
+
+- 0.00s [running] Preparing option stream...                                   
+                                                                               
+Task failed. Reason: 
+java.lang.RuntimeException: Too many classes (5). AUC evaluation can be performed only for two-class problems!
+	at moa.evaluation.WindowAUCImbalancedPerformanceEvaluator.reset(WindowAUCImbalancedPerformanceEvaluator.java:436)
+	at moa.evaluation.WindowAUCImbalancedPerformanceEvaluator.addResult(WindowAUCImbalancedPerformanceEvaluator.java:460)
+	at moa.tasks.EvaluateInterleavedTestThenTrain.doMainTask(EvaluateInterleavedTestThenTrain.java:157)
+	at moa.tasks.MainTask.doTaskImpl(MainTask.java:50)
+	at moa.tasks.AbstractTask.doTask(AbstractTask.java:57)
+	at moa.tasks.TaskThread.run(TaskThread.java:76)

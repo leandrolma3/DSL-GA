@@ -1,0 +1,149 @@
+Rule Diff Analysis Report
+Source File: RulesHistory_STAGGER_Gradual_Chain_Run1.txt
+Similarity Threshold: 0.35
+
+======================================================================
+--- Diff Chunk 0 -> Chunk 1 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 0):   1.0000
+  - Test G-Mean (Chunk 1):  1.0000
+  - Test F1 (Chunk 1):      1.0000
+Fitness:       1.100000 -> 1.300000
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF (((size <= 0.5000) AND (color > 0.5000)) AND (color <= 1.5000)) THEN Class 0
+  + New: IF (((color <= 0.5000) AND (size > 0.5000)) AND (size <= 1.5000)) THEN Class 0
+    (Similarity: 0.76)
+  - Old: IF (((size <= 0.5000) AND (color > 0.5000)) AND (color > 1.5000)) THEN Class 0
+  + New: IF (((color <= 0.5000) AND (size > 0.5000)) AND (size > 1.5000)) THEN Class 0
+    (Similarity: 0.76)
+
+  New Rules:
+  + IF (color > 0.5000) THEN Class 0
+
+  Deleted Rules:
+  - IF ((size > 0.5000) AND (size <= 1.5000)) THEN Class 0
+  - IF ((size > 0.5000) AND (size > 1.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((size <= 0.5000) AND (color <= 0.5000)) THEN Class 1
+  + New: IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+    (Similarity: 0.75)
+
+======================================================================
+--- Diff Chunk 1 -> Chunk 2 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 1):   1.0000
+  - Test G-Mean (Chunk 2):  1.0000
+  - Test F1 (Chunk 2):      1.0000
+Fitness:       1.300000 -> 1.300000
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Unchanged Rules:
+    IF (color > 0.5000) THEN Class 0
+
+  New Rules:
+  + IF ((color <= 0.5000) AND (size > 0.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((color <= 0.5000) AND (size > 0.5000)) AND (size <= 1.5000)) THEN Class 0
+  - IF (((color <= 0.5000) AND (size > 0.5000)) AND (size > 1.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 2 -> Chunk 3 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 2):   1.0000
+  - Test G-Mean (Chunk 3):  1.0000
+  - Test F1 (Chunk 3):      1.0000
+Fitness:       1.300000 -> 1.300000
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((color <= 0.5000) AND (size > 0.5000)) THEN Class 0
+  + New: IF ((color > 0.5000) AND (color > 1.5000)) THEN Class 0
+    (Similarity: 0.79)
+
+  New Rules:
+  + IF (((color <= 0.5000) AND (size > 0.5000)) AND (size <= 1.5000)) THEN Class 0
+  + IF (((color <= 0.5000) AND (size > 0.5000)) AND (size > 1.5000)) THEN Class 0
+  + IF ((color > 0.5000) AND (color <= 1.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (color > 0.5000) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 3 -> Chunk 4 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 3):   1.0000
+  - Test G-Mean (Chunk 4):  0.1851
+  - Test F1 (Chunk 4):      0.2471
+Fitness:       1.300000 -> 0.967198
+Default Class: 0 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF (((color <= 0.5000) AND (size > 0.5000)) AND (size <= 1.5000)) THEN Class 0
+  + New: IF (((color <= 1.5000) AND (shape > 0.5000)) AND (size <= 0.5000)) THEN Class 0
+    (Similarity: 0.92)
+
+  New Rules:
+  + IF ((((((color <= 1.5000) AND (shape > 0.5000)) AND (size > 0.5000)) AND (size < 1.5000)) AND (color <= 0.5000)) AND (shape > 1.5000)) THEN Class 0
+  + IF ((((((color <= 1.5000) AND (shape > 0.5000)) AND (size > 0.5000)) AND (size > 1.5000)) AND (shape > 1.5000)) AND (color <= 0.5000)) THEN Class 0
+  + IF ((((((size < 1.4140) OR (color <= 1.4268)) AND ((shape < 0.2744) AND (shape >= 0.3228))) AND (color > 0.6285)) AND (size < 1.3525)) AND (((size <= 0.9488) OR (((shape < 0.6736) AND (color < 1.4492)) AND ((color > 1.7846) AND (color <= 0.4030)))) AND ((((shape >= 1.1472) OR (color >= 1.3460)) AND (shape > 0.8773)) AND (((color <= 1.4936) AND (size > 1.0380)) AND (size >= 0.7707))))) THEN Class 0
+  + IF (size > 0.8133) THEN Class 0
+
+  Deleted Rules:
+  - IF (((color <= 0.5000) AND (size > 0.5000)) AND (size > 1.5000)) THEN Class 0
+  - IF ((color > 0.5000) AND (color <= 1.5000)) THEN Class 0
+  - IF ((color > 0.5000) AND (color > 1.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((((color <= 1.5000) AND (shape <= 0.5000)) AND (size <= 0.5000)) AND (color <= 0.5000)) THEN Class 1
+  + IF ((((color <= 1.5000) AND (shape <= 0.5000)) AND (size <= 0.5000)) AND (color > 0.5000)) THEN Class 1
+  + IF ((((color > 1.5000) AND (size <= 0.5000)) AND (shape > 0.5000)) AND (shape <= 1.5000)) THEN Class 1
+  + IF ((((color > 1.5000) AND (size <= 0.5000)) AND (shape > 0.5000)) AND (shape > 1.5000)) THEN Class 1
+  + IF (((color <= 1.5000) AND (shape <= 0.5000)) AND (size > 0.5000)) THEN Class 1
+  + IF (((color > 1.5000) AND (size <= 0.5000)) AND (shape <= 0.5000)) THEN Class 1
+  + IF (((color > 1.5000) AND (size > 0.5000)) AND (size <= 1.5000)) THEN Class 1
+  + IF (((color > 1.5000) AND (size > 0.5000)) AND (size > 1.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+
+======================================================================
+Overall Performance Summary (from History File)
+======================================================================
+Avg Train G-Mean:   0.9759 +/- 0.0483 (over 5 chunks)
+Avg Test G-Mean:    0.7646 +/- 0.3219 (over 5 chunks)
+Avg Test F1:        0.7789 +/- 0.2989 (over 5 chunks)
+======================================================================

@@ -1,0 +1,68 @@
+Rule History for Stream: STAGGER_Gradual_Chain, Run: 1
+========================================
+
+--- Chunk 0 (Trained) --- Test Perf (Chunk 1): TestGmean=1.0000, TestF1=1.0000
+ Train Perf (Chunk 0): TrainGmean=1.0000
+---
+  Fitness: 1.100000
+  Default Class: 0
+  Rules (4 total):
+    Class 0:
+      1: IF (((color <= 0.5000) AND (size > 0.5000)) AND (size <= 1.5000)) THEN Class 0
+      2: IF (((color <= 0.5000) AND (size > 0.5000)) AND (size > 1.5000)) THEN Class 0
+      3: IF (color > 0.5000) THEN Class 0
+    Class 1:
+      1: IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+========================================
+
+--- Chunk 1 (Trained) --- Test Perf (Chunk 2): TestGmean=0.1571, TestF1=0.2089
+ Train Perf (Chunk 1): TrainGmean=1.0000
+---
+  Fitness: 1.300000
+  Default Class: 0
+  Rules (3 total):
+    Class 0:
+      1: IF ((color <= 0.5000) AND (size > 0.5000)) THEN Class 0
+      2: IF (color > 0.5000) THEN Class 0
+    Class 1:
+      1: IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+========================================
+
+--- Chunk 2 (Trained) --- Test Perf (Chunk 3): TestGmean=0.7902, TestF1=0.7767
+ Train Perf (Chunk 2): TrainGmean=0.7899
+---
+  Fitness: 0.867377
+  Default Class: 0
+  Rules (8 total):
+    Class 0:
+      1: IF (((size <= 0.5000) AND (color > 1.5000)) AND (shape <= 0.5000)) THEN Class 0
+      2: IF ((((color < 0.7567) AND ((shape >= 1.2435) AND (color < 1.0477))) AND ((color < 0.3118) AND (shape <= 0.3772))) AND (size < 1.0109)) THEN Class 0
+      3: IF ((((shape <= 0.5263) AND ((((color > 1.3831) AND (((((shape >= 0.6759) AND (size > 1.5682)) AND (color > 1.6575)) OR (((size <= 1.3256) AND (size >= 0.8959)) OR (shape > 0.2331))) AND (((size >= 1.6573) AND ((size > 1.1647) AND (color > 0.2722))) AND ((color >= 0.5768) AND (size >= 0.5201))))) OR (color >= 1.1870)) OR (((shape <= 1.5132) AND (color < 1.7540)) AND ((((color > 1.7044) OR ((color >= 1.5999) AND ((color > 0.7218) OR (color < 0.3669)))) AND ((size >= 0.9535) OR (color < 1.2778))) OR ((size <= 0.6111) AND ((((size <= 1.4784) AND (size >= 1.2513)) AND (shape <= 0.2898)) AND (shape < 0.7468))))))) AND (shape > 1.2781)) AND ((color <= 0.8038) AND (((color < 0.2766) AND (size >= 0.4485)) OR (shape > 1.2799)))) THEN Class 0
+      4: IF ((size < 0.4281) AND (((size <= 0.2227) AND ((size > 1.4968) AND (shape <= 1.5729))) AND (((shape > 1.5601) AND ((shape > 1.4664) AND (shape <= 0.8552))) AND ((color > 0.7446) AND ((size >= 0.4000) AND (shape > 1.7622)))))) THEN Class 0
+    Class 1:
+      1: IF ((size > 0.5000) AND (shape <= 0.5000)) THEN Class 1
+      2: IF (((size > 0.5000) AND (shape > 0.5000)) AND (color > 1.5000)) THEN Class 1
+      3: IF (((((color > 1.4437) AND ((size > 1.5017) AND (color > 1.1599))) AND (shape >= 1.3049)) AND (color >= 1.3613)) AND (size <= 1.4399)) THEN Class 1
+      4: IF (color > 1.7541) THEN Class 1
+========================================
+
+--- Chunk 3 (Trained) --- Test Perf (Chunk 4): TestGmean=0.8274, TestF1=0.8009
+ Train Perf (Chunk 3): TrainGmean=0.8032
+---
+  Fitness: 1.082148
+  Default Class: 0
+  Rules (11 total):
+    Class 0:
+      1: IF (((size <= 0.5000) AND (color > 1.5000)) AND (shape <= 0.5000)) THEN Class 0
+      2: IF ((shape < 1.4769) AND (size <= 0.6500)) THEN Class 0
+      3: IF ((((size <= 0.5000) AND (color <= 1.5000)) AND (shape <= 0.5000)) AND (color <= 0.5000)) THEN Class 0
+      4: IF ((((size <= 0.5000) AND (color > 1.5000)) AND (shape > 0.5000)) AND (shape > 0.6224)) THEN Class 0
+    Class 1:
+      1: IF ((size > 0.5000) AND (shape <= 0.0693)) THEN Class 1
+      2: IF ((((size > 0.5000) AND (shape > 0.5000)) AND (color > 1.5000)) AND (shape <= 1.5000)) THEN Class 1
+      3: IF ((((size > 0.5000) AND (shape > 0.5000)) AND (color > 1.5000)) AND (size > 1.5000)) THEN Class 1
+      4: IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (size <= 1.5000)) AND (shape <= 1.5000)) AND (color > 0.5000)) THEN Class 1
+      5: IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (size <= 1.5000)) AND (shape <= 1.5000)) AND (color <= 0.5000)) THEN Class 1
+      6: IF ((((size > 0.5000) AND (shape > 0.5000)) AND (color > 1.5000)) AND (shape > 1.5000)) THEN Class 1
+      7: IF ((((size > 0.5000) AND (shape > 0.5000)) AND (color > 1.5000)) AND (size <= 1.5000)) THEN Class 1
+========================================

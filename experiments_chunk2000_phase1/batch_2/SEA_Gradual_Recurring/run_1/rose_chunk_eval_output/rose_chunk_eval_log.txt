@@ -1,0 +1,27 @@
+Command: java -Xmx4g -javaagent:rose_jars/sizeofag-1.0.4.jar -cp rose_jars/ROSE-1.0.jar:rose_jars/MOA-dependencies.jar moa.DoTask EvaluateInterleavedTestThenTrain -e (WindowAUCImbalancedPerformanceEvaluator) -s (ArffFileStream -f /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_chunk2000_phase1/batch_2/SEA_Gradual_Recurring/run_1/rose_arff/SEA_Gradual_Recurring.arff) -l (moa.classifiers.meta.imbalanced.ROSE) -f 2000 -d /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_chunk2000_phase1/batch_2/SEA_Gradual_Recurring/run_1/rose_chunk_eval_output/rose_chunk_eval_results.csv
+
+STDOUT:
+learning evaluation instances,evaluation time (cpu seconds),model cost (RAM-Hours),classified instances,pAUC,sAUC,Accuracy,Kappa,Periodical holdout AUC,Pos/Neg ratio,G-Mean,Recall,KappaM,Classes,CM[0][0],CM[0][1],CM[1][0],CM[1][1],model training instances,model serialized size (bytes)
+2000.0,0.46192198,1.1272344428996246E-7,2000.0,0.9964421866903546,0.9185527950616152,0.981,0.9561597814449736,0.981565297354771,2.1645569620253164,0.9792899514148946,0.9839181286549707,0.9379084967320261,2.0,308.0,11.0,8.0,673.0,2000.0,967560.0
+4000.0,1.029091868,2.754146253536145E-7,4000.0,0.9902730766518582,0.8144624903125077,0.94,0.8690093614643005,0.9794255209537601,1.8735632183908046,0.9385681630772055,0.9432515337423313,0.8286937901498928,2.0,325.0,37.0,23.0,615.0,4000.0,1108800.0
+6000.0,1.344857007,3.9432587752889016E-7,6000.0,0.9938017006064357,0.8471757915932814,0.938,0.862402627665949,0.9904261418712953,2.1545741324921135,0.9482452717175278,0.9194729136163983,0.8254340685124353,2.0,310.0,55.0,7.0,628.0,6000.0,1455664.0
+8000.0,1.675773102,5.093162223850108E-7,8000.0,0.9997546246438649,0.9141757813238767,0.985,0.9663172644229473,0.9992841417129273,2.058103975535168,0.9887930716203457,0.9777117384843982,0.9570046578287352,2.0,327.0,15.0,0.0,658.0,8000.0,1343216.0
+
+
+STDERR:
+
+{M}assive {O}nline {A}nalysis
+Version:  21.07 July 2021
+Copyright: (C) 2007-2021 University of Waikato, Hamilton, New Zealand
+Web: http://moa.cms.waikato.ac.nz/
+
+- 0.00s [running] Preparing option stream...                                   
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by sizeof.agent.SizeOfAgent (file:/content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/rose_jars/MOA-dependencies.jar) to field java.util.HashMap.table
+WARNING: Please consider reporting this to the maintainers of sizeof.agent.SizeOfAgent
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+\ 0.99s [running] 45.33% Evaluating learner...                                 
+                                                                               
+Task completed in 1.77s (CPU time)
+

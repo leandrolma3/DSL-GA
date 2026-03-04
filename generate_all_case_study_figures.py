@@ -8,10 +8,10 @@ Produces 144 composite 2x2 figures (48 datasets x 3 NP configs):
   - EXP-2000-NP  (48 PDFs)
 
 Each figure contains four subplots:
-  (a) Rule Evolution Counts       (top-left)
-  (b) Rule Complexity Over Time   (top-right)
-  (c) Transition Metrics Over Time (bottom-left)
-  (d) Rule Turnover Proportions   (bottom-right)
+  (a) Accuracy & Detected Drifts  (top-left)
+  (b) Rule Evolution Counts       (top-right)
+  (c) Rule Complexity Over Time   (bottom-left)
+  (d) Transition Metrics Over Time (bottom-right)
 
 Usage:
     python generate_all_case_study_figures.py
@@ -49,15 +49,24 @@ from generate_paper_case_studies import (
     plot_rule_evolution_counts,
     plot_rule_complexity,
     plot_transition_metrics,
-    plot_turnover_proportions,
     load_csv,
     filter_dataset,
 )
 
 # ---------------------------------------------------------------------------
+# Config-to-directory mapping (for per-dataset analysis PNG lookup)
+# ---------------------------------------------------------------------------
+CONFIG_DIR_MAP = {
+    "EXP-500-NP": "chunk_500",
+    "EXP-1000-NP": "chunk_1000",
+    "EXP-2000-NP": "chunk_2000",
+}
+
+# ---------------------------------------------------------------------------
 # Paths
 # ---------------------------------------------------------------------------
 DATA_DIR = os.path.join(BASE_DIR, "paper_data")
+PER_DATASET_DIR = os.path.join(DATA_DIR, "per_dataset_analysis")
 AST_CSV = os.path.join(DATA_DIR, "ast_chunk_quantitatives.csv")
 EVOL_CSV = os.path.join(DATA_DIR, "evolution_analysis_summary.csv")
 TRANS_CSV = os.path.join(DATA_DIR, "egis_transition_metrics.csv")
@@ -196,6 +205,48 @@ def discover_datasets(df_ast):
 
 
 # ---------------------------------------------------------------------------
+# Accuracy PNG embedding
+# ---------------------------------------------------------------------------
+def plot_accuracy_png(ax, config_label, dataset_name):
+    """
+    Embed the pre-generated Accuracy & Detected Drifts PNG into the given axis.
+
+    Looks for the PNG at:
+        {PER_DATASET_DIR}/{CONFIG_DIR_MAP[config_label]}/{dataset_name}/plots/
+        Plot_AccuracyPeriodic_DetectedDrifts_{dataset_name}_Run1.png
+    """
+    config_dir = CONFIG_DIR_MAP.get(config_label)
+    if config_dir is None:
+        ax.text(
+            0.5, 0.5, f"Unknown config: {config_label}",
+            ha="center", va="center", transform=ax.transAxes, fontsize=9,
+        )
+        ax.set_xticks([])
+        ax.set_yticks([])
+        ax.set_title("(a) Accuracy & Detected Drifts", fontweight="bold")
+        return
+
+    png_filename = f"Plot_AccuracyPeriodic_DetectedDrifts_{dataset_name}_Run1.png"
+    png_path = os.path.join(
+        PER_DATASET_DIR, config_dir, dataset_name, "plots", png_filename
+    )
+
+    if os.path.isfile(png_path):
+        img = plt.imread(png_path)
+        ax.imshow(img, aspect="auto")
+    else:
+        ax.text(
+            0.5, 0.5, "No accuracy plot available",
+            ha="center", va="center", transform=ax.transAxes, fontsize=9,
+            color="gray",
+        )
+
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.set_title("(a) Accuracy & Detected Drifts", fontweight="bold")
+
+
+# ---------------------------------------------------------------------------
 # Figure generation
 # ---------------------------------------------------------------------------
 def generate_figure(dataset_name, config_label, drift_cfg, df_ast, df_evol,
@@ -215,17 +266,20 @@ def generate_figure(dataset_name, config_label, drift_cfg, df_ast, df_evol,
         fontsize=11, fontweight="bold", y=0.98,
     )
 
-    # (a) Rule Evolution Counts - top left
-    plot_rule_evolution_counts(axes[0, 0], evol_data, drift_cfg)
+    # (a) Accuracy & Detected Drifts - top left (embedded PNG)
+    plot_accuracy_png(axes[0, 0], config_label, dataset_name)
 
-    # (b) Rule Complexity Over Time - top right
-    plot_rule_complexity(axes[0, 1], ast_data, drift_cfg)
+    # (b) Rule Evolution Counts - top right
+    plot_rule_evolution_counts(axes[0, 1], evol_data, drift_cfg)
+    axes[0, 1].set_title("(b) Rule Evolution Counts", fontweight="bold")
 
-    # (c) Transition Metrics Over Time - bottom left
-    plot_transition_metrics(axes[1, 0], trans_data, drift_cfg)
+    # (c) Rule Complexity Over Time - bottom left
+    plot_rule_complexity(axes[1, 0], ast_data, drift_cfg)
+    axes[1, 0].set_title("(c) Rule Complexity Over Time", fontweight="bold")
 
-    # (d) Rule Turnover Proportions - bottom right
-    plot_turnover_proportions(axes[1, 1], evol_data, drift_cfg)
+    # (d) Transition Metrics Over Time - bottom right
+    plot_transition_metrics(axes[1, 1], trans_data, drift_cfg)
+    axes[1, 1].set_title("(d) Transition Metrics Over Time", fontweight="bold")
 
     fig.tight_layout(rect=[0, 0, 1, 0.96])
 

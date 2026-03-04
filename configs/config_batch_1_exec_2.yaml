@@ -1,0 +1,869 @@
+experiment_settings:
+  run_mode: drift_simulation
+  standard_experiments:
+  - CovType
+  - PokerHand
+  drift_simulation_experiments:
+  - RBF_Abrupt_Severe
+  - HYPERPLANE_Abrupt_Simple
+  num_runs: 1
+  base_results_dir: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_6chunks_phase1_gbml/batch_1
+  logging_level: INFO
+  evaluation_period: 1000
+data_params:
+  chunk_size: 1000
+  num_chunks: 6
+  max_instances: 24000
+ga_params:
+  population_size: 120
+  max_generations: 200
+  max_generations_recovery: 25
+  recovery_generation_multiplier: 1.5
+  enable_explicit_drift_adaptation: true
+  recovery_mutation_override_rate: 0.5
+  recovery_mutation_override_generations: 10
+  recovery_initialization_strategy: full_random
+  recovery_random_individual_ratio: 0.6
+  recovery_max_depth_multiplier: 1.5
+  recovery_max_rules_multiplier: 1.5
+  elitism_rate: 0.1
+  intelligent_mutation_rate: 0.8
+  initial_tournament_size: 2
+  final_tournament_size: 5
+  max_rules_per_class: 15
+  initial_max_depth: 10
+  stagnation_threshold: 10
+  early_stopping_patience: 20
+  hc_enable_adaptive: false
+  hc_gmean_threshold: 0.9
+  hc_hierarchical_enabled: true
+  enable_dt_seeding_on_init: true
+  dt_seeding_ratio_on_init: 0.8
+  dt_seeding_depths_on_init:
+  - 4
+  - 7
+  - 10
+  - 13
+  dt_seeding_sample_size_on_init: 2000
+  dt_seeding_rules_to_replace_per_class: 4
+  dt_rule_injection_ratio: 0.5
+  enable_adaptive_seeding: true
+  adaptive_seeding_strategy: dt_probe
+  adaptive_complexity_simple_threshold: 0.9
+  adaptive_complexity_medium_threshold: 0.75
+  use_balanced_crossover: true
+memory_params:
+  max_memory_size: 20
+  enable_active_memory_pruning: true
+  memory_max_age_chunks: 10
+  memory_fitness_threshold_percentile_for_old_removal: 0.25
+  memory_min_retain_count_during_pruning: 5
+  abandon_memory_on_severe_performance_drop: true
+  performance_drop_threshold_for_memory_abandon: 0.55
+  consecutive_bad_chunks_for_memory_abandon: 1
+  historical_reference_size: 500
+fitness_params:
+  class_coverage_coefficient: 0.2
+  gmean_bonus_coefficient: 0.1
+  initial_regularization_coefficient: 0.001
+  feature_penalty_coefficient: 0.1
+  operator_penalty_coefficient: 0.0001
+  threshold_penalty_coefficient: 0.0001
+  operator_change_coefficient: 0.05
+  gamma: 0.1
+  drift_penalty_reduction_threshold: 0.1
+  absolute_bad_threshold_for_label: 0.6
+  min_regularization_coeff: 0.01
+  max_regularization_coeff: 0.3
+parallelism:
+  enabled: true
+  num_workers: null
+drift_analysis:
+  severity_samples: 20000
+  heatmap_save_directory: test_real_results_heatmaps/concept_heatmapsS
+  datasets:
+    ELECTRICITY:
+      class: river.datasets.Elec2
+    SHUTTLE:
+      loader: local_csv
+      source_path: datasets/processed/shuttle_processed.csv
+      target_column: class
+    COVERTYPE:
+      loader: local_csv
+      source_path: datasets/processed/covertype_processed.csv
+      target_column: class
+    POKER:
+      loader: local_csv
+      source_path: datasets/processed/poker_processed.csv
+      target_column: class
+    INTELLABSENSORS:
+      loader: local_csv
+      source_path: datasets/processed/intellabsensors_processed.csv
+      target_column: class
+    SEA:
+      class: river.datasets.synth.SEA
+      n_features: 3
+      feature_bounds:
+      - - 0
+        - 10
+      - - 0
+        - 10
+      - - 0
+        - 10
+      concepts:
+        f1:
+          variant: 0
+        f2:
+          variant: 1
+        f3:
+          variant: 2
+        f4:
+          variant: 3
+      pairs_to_compare:
+      - - f1
+        - f2
+      - - f1
+        - f3
+      - - f1
+        - f4
+      - - f2
+        - f3
+      - - f2
+        - f4
+      - - f3
+        - f4
+    AGRAWAL:
+      class: river.datasets.synth.Agrawal
+      n_features: 9
+      feature_bounds:
+      - - 0
+        - 1
+      concepts:
+        f1:
+          classification_function: 1
+        f2:
+          classification_function: 2
+        f3:
+          classification_function: 3
+        f4:
+          classification_function: 4
+        f5:
+          classification_function: 5
+        f6:
+          classification_function: 6
+        f7:
+          classification_function: 7
+        f8:
+          classification_function: 8
+        f9:
+          classification_function: 9
+        f10:
+          classification_function: 10
+      pairs_to_compare:
+      - - f1
+        - f2
+      - - f1
+        - f3
+      - - f1
+        - f6
+      - - f2
+        - f7
+      - - f5
+        - f9
+    RBF:
+      class: river.datasets.synth.RandomRBF
+      n_features: 10
+      feature_bounds:
+      - - 0
+        - 1
+      concepts:
+        c1:
+          seed_model: 42
+        c2_severe:
+          seed_model: 84
+        c3_moderate:
+          seed_model: 60
+      pairs_to_compare:
+      - - c1
+        - c2_severe
+      - - c1
+        - c3_moderate
+      - - c2_severe
+        - c3_moderate
+    STAGGER:
+      class: river.datasets.synth.STAGGER
+      n_features: 3
+      feature_bounds:
+      - - 1
+        - 3
+      - - 1
+        - 3
+      - - 1
+        - 3
+      concepts:
+        f1:
+          classification_function: 0
+        f2:
+          classification_function: 1
+        f3:
+          classification_function: 2
+      pairs_to_compare:
+      - - f1
+        - f2
+      - - f1
+        - f3
+      - - f2
+        - f3
+    LED:
+      class: river.datasets.synth.LED
+      n_features: 24
+      feature_bounds:
+      - - 0
+        - 1
+      concepts:
+        c1_no_noise:
+          noise_percentage: 0
+          seed: 42
+        c2_with_noise:
+          noise_percentage: 0.1
+          seed: 42
+      pairs_to_compare:
+      - - c1_no_noise
+        - c2_with_noise
+    HYPERPLANE:
+      class: river.datasets.synth.Hyperplane
+      n_features: 10
+      n_classes: 4
+      feature_bounds:
+      - - 0
+        - 1
+      concepts:
+        plane1:
+          seed: 42
+        plane2:
+          seed: 84
+          mag_change: 0.01
+      pairs_to_compare:
+      - - plane1
+        - plane2
+    RANDOMTREE:
+      class: river.datasets.synth.RandomTree
+      n_features: 10
+      n_classes: 2
+      feature_bounds:
+      - - 0
+        - 1
+      concepts:
+        tree1:
+          seed_tree: 42
+          seed_sample: 42
+        tree2:
+          seed_tree: 84
+          seed_sample: 84
+      pairs_to_compare:
+      - - tree1
+        - tree2
+    WAVEFORM:
+      class: river.datasets.synth.Waveform
+      n_features: 40
+      feature_bounds:
+      - - 0
+        - 6
+      concepts:
+        wave1:
+          has_noise: true
+          seed: 42
+        wave2:
+          has_noise: true
+          seed: 84
+      pairs_to_compare:
+      - - wave1
+        - wave2
+    SINE:
+      class: river.datasets.synth.Sine
+      n_features: 2
+      feature_bounds:
+      - - 0
+        - 1
+      - - 0
+        - 1
+      concepts:
+        f1_sum:
+          classification_function: 0
+        f2_prod:
+          classification_function: 2
+        f3_sum_alt:
+          classification_function: 1
+        f4_reversed2:
+          classification_function: 3
+      pairs_to_compare:
+      - - f1_sum
+        - f2_prod
+      - - f1_sum
+        - f3_sum_alt
+      - - f2_prod
+        - f3_sum_alt
+    ASSETNEGOTIATION:
+      class: custom_generators.AssetNegotiation
+      params:
+        seed: 42
+      concepts:
+        F2:
+          classification_function: 1
+        F3:
+          classification_function: 2
+        F4:
+          classification_function: 3
+      pairs_to_compare:
+      - - F2
+        - F3
+      - - F2
+        - F4
+      - - F3
+        - F4
+experimental_streams:
+  Electricity:
+    dataset_type: ELECTRICITY
+  Shuttle:
+    dataset_type: SHUTTLE
+  CovType:
+    dataset_type: COVERTYPE
+  PokerHand:
+    dataset_type: POKER
+  IntelLabSensors:
+    dataset_type: INTELLABSENSORS
+  SEA_Stationary:
+    dataset_type: SEA
+  AGRAWAL_Stationary:
+    dataset_type: AGRAWAL
+  RBF_Stationary:
+    dataset_type: RBF
+    params_override:
+      n_features: 50
+      n_classes: 4
+  LED_Stationary:
+    dataset_type: LED
+  HYPERPLANE_Stationary:
+    dataset_type: HYPERPLANE
+  RANDOMTREE_Stationary:
+    dataset_type: RANDOMTREE
+  STAGGER_Stationary:
+    dataset_type: STAGGER
+  WAVEFORM_Stationary:
+    dataset_type: WAVEFORM
+  SINE_Stationary:
+    dataset_type: SINE
+  AssetNegotiation_F2:
+    dataset_type: ASSETNEGOTIATION
+    params_override:
+      classification_function: 1
+  AssetNegotiation_F3:
+    dataset_type: ASSETNEGOTIATION
+    params_override:
+      classification_function: 2
+  AssetNegotiation_F4:
+    dataset_type: ASSETNEGOTIATION
+    params_override:
+      classification_function: 3
+  SINE_Abrupt_Simple:
+    dataset_type: SINE
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    concept_sequence:
+    - concept_id: f1_sum
+      duration_chunks: 6
+    - concept_id: f2_prod
+      duration_chunks: 6
+  SINE_Gradual_Recurring:
+    dataset_type: SINE
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+    concept_sequence:
+    - concept_id: f1_sum
+      duration_chunks: 4
+    - concept_id: f3_sum_alt
+      duration_chunks: 5
+    - concept_id: f1_sum
+      duration_chunks: 4
+  SINE_Abrupt_Recurring_Noise:
+    dataset_type: SINE
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    noise_config:
+      enabled: true
+      attribute_ratio: 0.45
+      noise_level: 0.1
+    concept_sequence:
+    - concept_id: f1_sum
+      duration_chunks: 4
+    - concept_id: f2_prod
+      duration_chunks: 5
+    - concept_id: f1_sum
+      duration_chunks: 4
+  SEA_Abrupt_Simple:
+    dataset_type: SEA
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 5
+    - concept_id: f3
+      duration_chunks: 5
+  SEA_Abrupt_Chain:
+    dataset_type: SEA
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 3
+    - concept_id: f2
+      duration_chunks: 3
+    - concept_id: f4
+      duration_chunks: 3
+  AGRAWAL_Abrupt_Simple_Mild:
+    dataset_type: AGRAWAL
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 5
+    - concept_id: f2
+      duration_chunks: 5
+  AGRAWAL_Abrupt_Simple_Severe:
+    dataset_type: AGRAWAL
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 5
+    - concept_id: f6
+      duration_chunks: 5
+  RBF_Abrupt_Severe:
+    dataset_type: RBF
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    concept_sequence:
+    - concept_id: c1
+      duration_chunks: 5
+    - concept_id: c2_severe
+      duration_chunks: 5
+  STAGGER_Abrupt_Chain:
+    dataset_type: STAGGER
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 4
+    - concept_id: f2
+      duration_chunks: 4
+    - concept_id: f3
+      duration_chunks: 4
+  HYPERPLANE_Abrupt_Simple:
+    dataset_type: HYPERPLANE
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    concept_sequence:
+    - concept_id: plane1
+      duration_chunks: 6
+    - concept_id: plane2
+      duration_chunks: 6
+  SEA_Gradual_Simple_Fast:
+    dataset_type: SEA
+    drift_type: gradual
+    gradual_drift_width_chunks: 1
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 5
+    - concept_id: f3
+      duration_chunks: 5
+  SEA_Gradual_Simple_Slow:
+    dataset_type: SEA
+    drift_type: gradual
+    gradual_drift_width_chunks: 3
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 6
+    - concept_id: f3
+      duration_chunks: 6
+  AGRAWAL_Gradual_Chain:
+    dataset_type: AGRAWAL
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 3
+    - concept_id: f3
+      duration_chunks: 3
+    - concept_id: f5
+      duration_chunks: 3
+    - concept_id: f7
+      duration_chunks: 3
+  RBF_Gradual_Moderate:
+    dataset_type: RBF
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+    concept_sequence:
+    - concept_id: c1
+      duration_chunks: 5
+    - concept_id: c3_moderate
+      duration_chunks: 5
+  RANDOMTREE_Gradual_Simple:
+    dataset_type: RANDOMTREE
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+    concept_sequence:
+    - concept_id: tree1
+      duration_chunks: 5
+    - concept_id: tree2
+      duration_chunks: 5
+  WAVEFORM_Gradual_Simple:
+    dataset_type: WAVEFORM
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+    concept_sequence:
+    - concept_id: wave1
+      duration_chunks: 5
+    - concept_id: wave2
+      duration_chunks: 5
+  LED_Gradual_Simple:
+    dataset_type: LED
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+    concept_sequence:
+    - concept_id: c1_no_noise
+      duration_chunks: 5
+    - concept_id: c2_with_noise
+      duration_chunks: 5
+  SEA_Abrupt_Recurring:
+    dataset_type: SEA
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 4
+    - concept_id: f3
+      duration_chunks: 5
+    - concept_id: f1
+      duration_chunks: 4
+  AGRAWAL_Gradual_Recurring:
+    dataset_type: AGRAWAL
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+    concept_sequence:
+    - concept_id: f2
+      duration_chunks: 4
+    - concept_id: f7
+      duration_chunks: 5
+    - concept_id: f2
+      duration_chunks: 4
+  RBF_Abrupt_Blip:
+    dataset_type: RBF
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    concept_sequence:
+    - concept_id: c1
+      duration_chunks: 6
+    - concept_id: c3_moderate
+      duration_chunks: 1
+    - concept_id: c1
+      duration_chunks: 6
+  STAGGER_Mixed_Recurring:
+    dataset_type: STAGGER
+    drift_type: abrupt
+    gradual_drift_width_chunks: 2
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 3
+    - concept_id: f2
+      duration_chunks: 3
+      drift_type_override: gradual
+    - concept_id: f3
+      duration_chunks: 3
+    - concept_id: f1
+      duration_chunks: 3
+  RBF_Severe_Gradual_Recurrent:
+    dataset_type: RBF
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+    concept_sequence:
+    - concept_id: c1
+      duration_chunks: 3
+    - concept_id: c2_severe
+      duration_chunks: 4
+    - concept_id: c1
+      duration_chunks: 3
+  SEA_Abrupt_Chain_Noise:
+    dataset_type: SEA
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    noise_config:
+      enabled: true
+      attribute_ratio: 0.45
+      noise_level: 0.1
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 3
+    - concept_id: f2
+      duration_chunks: 3
+    - concept_id: f4
+      duration_chunks: 3
+  AGRAWAL_Gradual_Recurring_Noise:
+    dataset_type: AGRAWAL
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+    noise_config:
+      enabled: true
+      attribute_ratio: 0.45
+      noise_level: 0.1
+    concept_sequence:
+    - concept_id: f2
+      duration_chunks: 4
+    - concept_id: f7
+      duration_chunks: 5
+    - concept_id: f2
+      duration_chunks: 4
+  RBF_Abrupt_Blip_Noise:
+    dataset_type: RBF
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    noise_config:
+      enabled: true
+      attribute_ratio: 0.45
+      noise_level: 0.1
+    concept_sequence:
+    - concept_id: c1
+      duration_chunks: 6
+    - concept_id: c3_moderate
+      duration_chunks: 1
+    - concept_id: c1
+      duration_chunks: 6
+  HYPERPLANE_Gradual_Noise:
+    dataset_type: HYPERPLANE
+    drift_type: gradual
+    gradual_drift_width_chunks: 3
+    noise_config:
+      enabled: true
+      attribute_ratio: 0.45
+      noise_level: 0.1
+    concept_sequence:
+    - concept_id: plane1
+      duration_chunks: 6
+    - concept_id: plane2
+      duration_chunks: 6
+  AGRAWAL_Abrupt_Chain_Long:
+    dataset_type: AGRAWAL
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 2
+    - concept_id: f2
+      duration_chunks: 2
+    - concept_id: f3
+      duration_chunks: 2
+    - concept_id: f4
+      duration_chunks: 2
+    - concept_id: f5
+      duration_chunks: 2
+  RANDOMTREE_Abrupt_Simple:
+    dataset_type: RANDOMTREE
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    concept_sequence:
+    - concept_id: tree1
+      duration_chunks: 5
+    - concept_id: tree2
+      duration_chunks: 5
+  LED_Abrupt_Simple:
+    dataset_type: LED
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    concept_sequence:
+    - concept_id: c1_no_noise
+      duration_chunks: 5
+    - concept_id: c2_with_noise
+      duration_chunks: 5
+  WAVEFORM_Abrupt_Simple:
+    dataset_type: WAVEFORM
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    concept_sequence:
+    - concept_id: wave1
+      duration_chunks: 5
+    - concept_id: wave2
+      duration_chunks: 5
+  STAGGER_Gradual_Chain:
+    dataset_type: STAGGER
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 4
+    - concept_id: f2
+      duration_chunks: 4
+    - concept_id: f3
+      duration_chunks: 4
+  HYPERPLANE_Gradual_Simple:
+    dataset_type: HYPERPLANE
+    drift_type: gradual
+    gradual_drift_width_chunks: 3
+    concept_sequence:
+    - concept_id: plane1
+      duration_chunks: 6
+    - concept_id: plane2
+      duration_chunks: 6
+  RBF_Gradual_Severe:
+    dataset_type: RBF
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+    concept_sequence:
+    - concept_id: c1
+      duration_chunks: 5
+    - concept_id: c2_severe
+      duration_chunks: 5
+  AGRAWAL_Gradual_Mild_to_Severe:
+    dataset_type: AGRAWAL
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 4
+    - concept_id: f2
+      duration_chunks: 4
+    - concept_id: f6
+      duration_chunks: 4
+  STAGGER_Abrupt_Recurring:
+    dataset_type: STAGGER
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 4
+    - concept_id: f3
+      duration_chunks: 5
+    - concept_id: f1
+      duration_chunks: 4
+  SEA_Gradual_Recurring:
+    dataset_type: SEA
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 4
+    - concept_id: f4
+      duration_chunks: 5
+    - concept_id: f1
+      duration_chunks: 4
+  AGRAWAL_Gradual_Blip:
+    dataset_type: AGRAWAL
+    drift_type: gradual
+    gradual_drift_width_chunks: 1
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 6
+    - concept_id: f9
+      duration_chunks: 1
+    - concept_id: f1
+      duration_chunks: 6
+  RANDOMTREE_Abrupt_Recurring:
+    dataset_type: RANDOMTREE
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    concept_sequence:
+    - concept_id: tree1
+      duration_chunks: 4
+    - concept_id: tree2
+      duration_chunks: 5
+    - concept_id: tree1
+      duration_chunks: 4
+  STAGGER_Abrupt_Chain_Noise:
+    dataset_type: STAGGER
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    noise_config:
+      enabled: true
+      attribute_ratio: 0.45
+      noise_level: 0.1
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 4
+    - concept_id: f2
+      duration_chunks: 4
+    - concept_id: f3
+      duration_chunks: 4
+  RBF_Gradual_Severe_Noise:
+    dataset_type: RBF
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+    noise_config:
+      enabled: true
+      attribute_ratio: 0.45
+      noise_level: 0.1
+    concept_sequence:
+    - concept_id: c1
+      duration_chunks: 5
+    - concept_id: c2_severe
+      duration_chunks: 5
+  RANDOMTREE_Gradual_Noise:
+    dataset_type: RANDOMTREE
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+    noise_config:
+      enabled: true
+      attribute_ratio: 0.45
+      noise_level: 0.1
+    concept_sequence:
+    - concept_id: tree1
+      duration_chunks: 5
+    - concept_id: tree2
+      duration_chunks: 5
+  AGRAWAL_Abrupt_Simple_Severe_Noise:
+    dataset_type: AGRAWAL
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    noise_config:
+      enabled: true
+      attribute_ratio: 0.45
+      noise_level: 0.1
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 5
+    - concept_id: f6
+      duration_chunks: 5
+  Bartosz_RandomTree_drift:
+    dataset_type: RANDOMTREE
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+    concept_sequence:
+    - concept_id: tree1
+      duration_chunks: 5
+    - concept_id: tree2
+      duration_chunks: 5
+  Bartosz_Agrawal_recurring_drift:
+    dataset_type: AGRAWAL
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 3
+    - concept_id: f6
+      duration_chunks: 4
+    - concept_id: f1
+      duration_chunks: 3
+  Bartosz_SEA_drift_noise:
+    dataset_type: SEA
+    drift_type: abrupt
+    gradual_drift_width_chunks: 0
+    noise_config:
+      enabled: true
+      attribute_ratio: 0.45
+      noise_level: 0.1
+    concept_sequence:
+    - concept_id: f1
+      duration_chunks: 2
+    - concept_id: f2
+      duration_chunks: 2
+    - concept_id: f3
+      duration_chunks: 2
+    - concept_id: f4
+      duration_chunks: 2

@@ -1,0 +1,91 @@
+experiment_settings:
+  run_mode: unified_pregenerated
+  use_pregenerated_chunks: true
+  resume_from_checkpoint: true
+  pregenerated_chunks_base_dir: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/unified_chunks/chunk_1000
+  unified_experiments:
+  - SEA_Abrupt_Simple
+  - SEA_Abrupt_Chain
+  - SEA_Abrupt_Recurring
+  - AGRAWAL_Abrupt_Simple_Mild
+  - AGRAWAL_Abrupt_Simple_Severe
+  - AGRAWAL_Abrupt_Chain_Long
+  - RBF_Abrupt_Severe
+  - RBF_Abrupt_Blip
+  - STAGGER_Abrupt_Chain
+  - STAGGER_Abrupt_Recurring
+  - HYPERPLANE_Abrupt_Simple
+  - RANDOMTREE_Abrupt_Simple
+  - SEA_Gradual_Simple_Fast
+  num_runs: 1
+  base_results_dir: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_1000/batch_1
+  logging_level: INFO
+  evaluation_period: 1000
+data_params:
+  chunk_size: 1000
+  num_chunks: 12
+  max_instances: 12000
+ga_params:
+  population_size: 120
+  max_generations: 200
+  max_generations_recovery: 25
+  recovery_generation_multiplier: 1.5
+  enable_explicit_drift_adaptation: true
+  recovery_mutation_override_rate: 0.5
+  recovery_mutation_override_generations: 10
+  recovery_initialization_strategy: full_random
+  recovery_random_individual_ratio: 0.6
+  recovery_max_depth_multiplier: 1.5
+  recovery_max_rules_multiplier: 1.5
+  elitism_rate: 0.1
+  intelligent_mutation_rate: 0.8
+  initial_tournament_size: 2
+  final_tournament_size: 5
+  max_rules_per_class: 15
+  initial_max_depth: 10
+  stagnation_threshold: 10
+  early_stopping_patience: 20
+  hc_enable_adaptive: false
+  hc_gmean_threshold: 0.9
+  hc_hierarchical_enabled: true
+  enable_dt_seeding_on_init: true
+  dt_seeding_ratio_on_init: 0.8
+  dt_seeding_depths_on_init:
+  - 4
+  - 7
+  - 10
+  - 13
+  dt_seeding_sample_size_on_init: 2000
+  dt_seeding_rules_to_replace_per_class: 4
+  dt_rule_injection_ratio: 0.5
+  enable_adaptive_seeding: true
+  adaptive_seeding_strategy: dt_probe
+  adaptive_complexity_simple_threshold: 0.9
+  adaptive_complexity_medium_threshold: 0.75
+  use_balanced_crossover: true
+memory_params:
+  max_memory_size: 20
+  enable_active_memory_pruning: true
+  memory_max_age_chunks: 10
+  memory_fitness_threshold_percentile_for_old_removal: 0.25
+  memory_min_retain_count_during_pruning: 5
+  abandon_memory_on_severe_performance_drop: true
+  performance_drop_threshold_for_memory_abandon: 0.55
+  consecutive_bad_chunks_for_memory_abandon: 1
+  historical_reference_size: 500
+fitness_params:
+  class_coverage_coefficient: 0.2
+  gmean_bonus_coefficient: 0.1
+  initial_regularization_coefficient: 0.001
+  feature_penalty_coefficient: 0.0
+  operator_penalty_coefficient: 0.0
+  threshold_penalty_coefficient: 0.0
+  operator_change_coefficient: 0.05
+  gamma: 0.1
+  drift_penalty_reduction_threshold: 0.1
+  absolute_bad_threshold_for_label: 0.6
+  min_regularization_coeff: 0.01
+  max_regularization_coeff: 0.3
+parallelism:
+  enabled: true
+  num_workers: null

@@ -1,0 +1,119 @@
+================================================================================
+ANALISE COMPLETA - EXPERIMENTO COM DEBUG (RUN5)
+================================================================================
+
+1. RESUMO GERAL
+--------------------------------------------------------------------------------
+Total chunks: 5
+Tempo total: 12.86h (771.5min)
+Tempo medio por chunk: 154.3min
+
+Train G-mean: 0.9204 +/- 0.0362
+Test G-mean:  0.7852 +/- 0.1969
+Delta medio:  0.0000
+
+2. DIAGNOSTICO CRITICO - EARLY STOP
+--------------------------------------------------------------------------------
+Logs 'Early stop DESATIVADO': 133 ocorrencias
+
+PROBLEMA IDENTIFICADO:
+  Early stop recebe threshold=None durante avaliacao paralela
+  Isso significa que early_stop_threshold NAO esta sendo passado
+  para a funcao calculate_fitness() em evaluate_individual_fitness_parallel()
+
+Por chunk:
+  Chunk 0: 133 desativado logs, 4 thresholds calculados
+  Chunk 1: 0 desativado logs, 8 thresholds calculados
+  Chunk 2: 0 desativado logs, 8 thresholds calculados
+  Chunk 3: 0 desativado logs, 3 thresholds calculados
+  Chunk 4: 0 desativado logs, 7 thresholds calculados
+
+3. DIAGNOSTICO - CACHE
+--------------------------------------------------------------------------------
+Logs de cache (DEBUG L1): 0
+Logs de hash gerado: 0
+
+PROBLEMA IDENTIFICADO:
+  Codigo de cache NAO esta sendo executado
+  Possivel causa: codigo de cache esta no modo SERIAL
+  mas experimento esta rodando em modo PARALELO
+
+4. HILL CLIMBING (FUNCIONANDO)
+--------------------------------------------------------------------------------
+HC aplicado: 23
+HC pulado: 12
+Economia: 34.3%
+
+  Chunk 0: Aplicado=2, Pulado=0, Aprovacao=37.5%
+  Chunk 1: Aplicado=7, Pulado=3, Aprovacao=51.8%
+  Chunk 2: Aplicado=5, Pulado=0, Aprovacao=37.5%
+  Chunk 3: Aplicado=2, Pulado=3, Aprovacao=37.5%
+  Chunk 4: Aplicado=7, Pulado=6, Aprovacao=26.8%
+
+5. COMPARACAO ENTRE RUNS
+--------------------------------------------------------------------------------
+Run3 (Baseline - Fase 1+2):     9.9h, G-mean=0.7763
+Run4 (Layer1 sem funcionar):    13.4h, G-mean=0.7928
+Run5 (Debug ativo):             12.9h, G-mean=0.7852
+
+Run3 -> Run4: +35.6% tempo, +0.0165 G-mean
+Run3 -> Run5: +29.9% tempo, +0.0089 G-mean
+Run4 -> Run5: -4.2% tempo, -0.0076 G-mean
+
+6. CAUSA RAIZ DOS PROBLEMAS
+--------------------------------------------------------------------------------
+PROBLEMA 1: Early Stop nao funciona
+  Sintoma: threshold=None nas avaliacoes paralelas
+  Causa raiz: evaluate_individual_fitness_parallel() NAO passa
+              early_stop_threshold para calculate_fitness()
+  Localizacao: ga.py linha ~161
+
+PROBLEMA 2: Cache nao funciona
+  Sintoma: Zero logs de cache ou hash
+  Causa raiz: Codigo de cache esta no bloco SERIAL (linha ~915)
+              mas experimento roda em modo PARALELO (use_parallel=True)
+  Localizacao: ga.py linha ~907-998
+
+CONCLUSAO:
+  Layer 1 foi implementado APENAS no modo SERIAL
+  Modo PARALELO (default) NAO tem cache nem early stop
+  Por isso Run3, Run4 e Run5 nao tiveram beneficio
+
+7. IMPACTO ESTIMADO SE CORRIGIDO
+--------------------------------------------------------------------------------
+Se Early Stop e Cache funcionassem:
+  Tempo atual: 12.9h
+  Reducao esperada: -40-55%
+  Tempo esperado: 5.8h - 7.7h
+  Diferenca vs Run3: -35.1%
+
+8. RECOMENDACOES URGENTES
+--------------------------------------------------------------------------------
+PRIORIDADE 1 (CRITICO):
+  1. Implementar cache e early stop no modo PARALELO
+     - Mover codigo de ga.py linha 915-998 para modo paralelo
+     - Adicionar early_stop_threshold ao worker args
+     - Implementar cache compartilhado entre workers
+
+PRIORIDADE 2 (ALTO):
+  2. Corrigir evaluate_individual_fitness_parallel()
+     - Passar early_stop_threshold via constant_args_for_worker
+     - Linha ~161: adicionar parametro ao calculate_fitness()
+
+PRIORIDADE 3 (MEDIO):
+  3. Validar com smoke test
+     - 2 chunks com use_parallel=False (serial)
+     - Verificar se cache e early stop funcionam
+
+================================================================================
+CONCLUSAO FINAL
+================================================================================
+
+Layer 1 NAO funciona porque foi implementado apenas no modo SERIAL
+Todos os experimentos (Run3, Run4, Run5) rodaram em modo PARALELO
+Por isso tempo piorou em vez de melhorar
+
+PROXIMA ACAO:
+  Implementar Layer 1 no modo PARALELO ou
+  Forcar use_parallel=False para testar implementacao serial
+

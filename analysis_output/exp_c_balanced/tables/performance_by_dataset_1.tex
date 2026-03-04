@@ -1,0 +1,39 @@
+\begin{table*}[htbp]
+\centering
+\caption{G-Mean Performance by Dataset - exp_c_balanced (Part 1/2)}
+\label{tab:gmean_exp_c_balanced_1}
+\footnotesize
+\begin{tabular}{lcccccccc}
+\toprule
+Dataset & GBML & ROSE_Original & ROSE_ChunkEval & HAT & ARF & SRP & ACDWM & ERulesD2S \\
+\midrule
+SEA_Gradual_Simple_Fast & 0.9650 & 0.9682 & \textbf{0.9787} & 0.9339 & 0.9714 & 0.9690 & 0.7253 & 0.6570 \\
+SEA_Abrupt_Simple & 0.9643 & 0.9744 & \textbf{0.9865} & 0.9476 & 0.9759 & 0.9720 & 0.7735 & 0.6297 \\
+SEA_Abrupt_Recurring & 0.9547 & 0.9635 & \textbf{0.9793} & 0.9149 & 0.9625 & 0.9481 & 0.7674 & 0.6459 \\
+SEA_Gradual_Simple_Slow & 0.9521 & 0.9608 & \textbf{0.9708} & 0.9406 & 0.9598 & 0.9537 & 0.6418 & 0.6423 \\
+SEA_Abrupt_Chain & 0.9480 & 0.9649 & \textbf{0.9769} & 0.9315 & 0.9619 & 0.9557 & 0.7542 & 0.6091 \\
+SEA_Gradual_Recurring & 0.9337 & 0.9469 & \textbf{0.9584} & 0.9148 & 0.9477 & 0.9439 & 0.6951 & 0.6050 \\
+SINE_Abrupt_Simple & 0.9058 & 0.9592 & \textbf{0.9742} & 0.9013 & 0.9723 & 0.9689 & 0.6877 & 0.6424 \\
+AGRAWAL_Abrupt_Simple_Sev & 0.8795 & 0.9172 & \textbf{0.9562} & 0.7393 & 0.8246 & 0.8772 & 0.6012 & 0.5405 \\
+AGRAWAL_Abrupt_Simple_Mil & 0.8625 & 0.7929 & 0.8460 & 0.6003 & 0.8241 & \textbf{0.9286} & 0.6955 & 0.5294 \\
+LED_Abrupt_Simple & \textbf{0.7929} & 0.7033 & 0.7518 & 0.4477 & 0.7837 & 0.6247 & - & 0.2085 \\
+RBF_Gradual_Moderate & 0.7902 & 0.8317 & 0.8490 & 0.7162 & \textbf{0.8699} & 0.8585 & 0.5515 & 0.5192 \\
+RBF_Abrupt_Severe & 0.7759 & 0.8389 & 0.8718 & 0.7458 & 0.8592 & \textbf{0.8821} & 0.6193 & 0.5199 \\
+RBF_Gradual_Severe & 0.7628 & 0.8250 & 0.8393 & 0.7414 & 0.8497 & \textbf{0.8597} & 0.5363 & 0.5187 \\
+Electricity & 0.7601 & \textbf{0.9048} & 0.9044 & 0.8557 & 0.8919 & 0.8828 & 0.6382 & 0.5938 \\
+STAGGER_Abrupt_Chain & 0.7497 & 0.9025 & 0.9073 & 0.7392 & \textbf{0.9944} & 0.9898 & 0.4470 & 0.7375 \\
+LED_Gradual_Simple & 0.7270 & 0.6976 & 0.7115 & 0.4749 & \textbf{0.7662} & 0.6227 & - & 0.2135 \\
+AGRAWAL_Abrupt_Chain_Long & 0.7148 & 0.7455 & \textbf{0.8186} & 0.6135 & 0.6969 & 0.7627 & 0.5227 & 0.5189 \\
+HYPERPLANE_Abrupt_Simple & 0.7082 & 0.8277 & 0.8419 & \textbf{0.8465} & 0.7866 & 0.7577 & 0.5430 & 0.5366 \\
+RBF_Abrupt_Blip & 0.7029 & 0.8531 & \textbf{0.8897} & 0.7456 & 0.8715 & 0.8690 & 0.5773 & 0.5159 \\
+HYPERPLANE_Gradual_Simple & 0.7012 & 0.7812 & 0.7817 & \textbf{0.8138} & 0.7533 & 0.7076 & 0.4649 & 0.5345 \\
+WAVEFORM_Abrupt_Simple & 0.6755 & 0.8264 & \textbf{0.8380} & 0.7587 & 0.7951 & 0.8192 & - & 0.3896 \\
+RANDOMTREE_Abrupt_Simple & \textbf{0.6692} & 0.6397 & 0.6599 & 0.5196 & 0.5427 & 0.5858 & 0.5947 & 0.5223 \\
+WAVEFORM_Gradual_Simple & 0.6664 & 0.8152 & \textbf{0.8198} & 0.7817 & 0.7857 & 0.8135 & - & 0.3828 \\
+STAGGER_Gradual_Chain & 0.6510 & 0.6932 & 0.6647 & 0.6196 & \textbf{0.9113} & 0.8802 & 0.4224 & 0.7146 \\
+RANDOMTREE_Abrupt_Recurri & 0.6448 & 0.6286 & \textbf{0.6502} & 0.4730 & 0.5374 & 0.5765 & 0.5519 & 0.5304 \\
+\midrule
+\textbf{Average} & 0.7943 & 0.8385 & 0.8571 & 0.7487 & 0.8438 & 0.8404 & 0.6100 & 0.5383 \\
+\bottomrule
+\end{tabular}
+\end{table*}

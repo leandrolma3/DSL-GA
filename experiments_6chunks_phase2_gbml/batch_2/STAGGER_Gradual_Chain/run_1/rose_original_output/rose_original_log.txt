@@ -1,0 +1,38 @@
+ROSE_Original (como no paper)
+Evaluator: WindowAUCImbalancedPerformanceEvaluator
+Eval frequency: 500
+N_classes: 2
+
+Command: java -Xmx4g -javaagent:rose_jars/sizeofag-1.0.4.jar -cp rose_jars/ROSE-1.0.jar:rose_jars/MOA-dependencies.jar moa.DoTask EvaluateInterleavedTestThenTrain -e (WindowAUCImbalancedPerformanceEvaluator) -s (ArffFileStream -f /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_6chunks_phase2_gbml/batch_2/STAGGER_Gradual_Chain/run_1/rose_arff/STAGGER_Gradual_Chain.arff) -l (moa.classifiers.meta.imbalanced.ROSE) -f 500 -d /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_6chunks_phase2_gbml/batch_2/STAGGER_Gradual_Chain/run_1/rose_original_output/rose_original_results.csv
+
+STDOUT:
+learning evaluation instances,evaluation time (cpu seconds),model cost (RAM-Hours),classified instances,pAUC,sAUC,Accuracy,Kappa,Periodical holdout AUC,Pos/Neg ratio,G-Mean,Recall,KappaM,Classes,CM[0][0],CM[0][1],CM[1][0],CM[1][1],model training instances,model serialized size (bytes)
+500.0,0.495632009,1.174939531561546E-7,500.0,0.9890094406087079,0.8668443014921622,0.998,0.9881449165402124,0.0,0.10375275938189846,0.9893045053244826,0.9787234042553191,0.9787234042553191,2.0,453.0,1.0,0.0,46.0,500.0,940608.0
+1000.0,0.925492494,2.049030313456783E-7,1000.0,0.9956018879700421,0.944620803104233,0.999,0.995105716523101,0.0,0.13122171945701358,0.9956803253779938,0.9913793103448276,0.9913793103448276,2.0,884.0,1.0,0.0,115.0,1000.0,786016.0
+1500.0,1.448394021,3.590169678051501E-7,1500.0,0.9159190495159251,0.5944333458566895,0.832,0.6076966187184755,0.9956018879700421,0.567398119122257,0.7601561267147269,0.5994475138121547,0.3838630806845963,2.0,615.0,145.0,23.0,217.0,1500.0,1139264.0
+2000.0,1.794231468,4.656031717309832E-7,2000.0,0.8052788116512317,0.3304693519796405,0.709,0.43836272118086644,0.9956018879700421,1.5188916876574308,0.7243777686152538,0.6003316749585407,0.11280487804878027,2.0,347.0,241.0,50.0,362.0,2000.0,1191328.0
+2500.0,2.285098755,6.404266554273334E-7,2500.0,0.7969264680900431,0.3503111335579409,0.695,0.39360923781651597,0.8052788116512317,1.457002457002457,0.7029886945381246,0.6509274873524452,0.12657502863688405,2.0,309.0,207.0,98.0,386.0,2500.0,1376696.0
+3000.0,2.671065554,7.816551343052399E-7,3000.0,0.8398825797185441,0.4042810400639658,0.738,0.4669357759339814,0.8052788116512317,1.5575447570332481,0.7408253691266865,0.7274220032840722,0.24928366762177642,2.0,295.0,166.0,96.0,443.0,3000.0,1414408.0
+3500.0,2.915344377,8.445049424561237E-7,3500.0,0.9800101035167328,0.6819952912364547,0.92,0.8263466814850833,0.8398825797185441,1.9069767441860466,0.9217251475300737,0.9161585365853658,0.769926047658176,2.0,319.0,55.0,25.0,601.0,3500.0,994536.0
+4000.0,3.107385216,8.949976353361209E-7,4000.0,1.0,0.9341476500284814,1.0,1.0,0.8398825797185441,1.9761904761904763,1.0,1.0,1.0,2.0,336.0,0.0,0.0,664.0,4000.0,1016336.0
+
+
+STDERR:
+
+{M}assive {O}nline {A}nalysis
+Version:  21.07 July 2021
+Copyright: (C) 2007-2021 University of Waikato, Hamilton, New Zealand
+Web: http://moa.cms.waikato.ac.nz/
+
+- 0.00s [running] Preparing option stream...                                   
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by sizeof.agent.SizeOfAgent (file:/content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/rose_jars/MOA-dependencies.jar) to field java.util.HashMap.table
+WARNING: Please consider reporting this to the maintainers of sizeof.agent.SizeOfAgent
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+\ 0.73s [running] 14.57% Evaluating learner...                                 
+| 1.64s [running] 43.77% Evaluating learner...                                 
+/ 2.55s [running] 72.97% Evaluating learner...                                 
+                                                                               
+Task completed in 3.20s (CPU time)
+

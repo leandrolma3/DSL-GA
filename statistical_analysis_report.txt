@@ -1,0 +1,220 @@
+====================================================================================================
+ANALISE ESTATISTICA COMPARATIVA DOS MODELOS
+====================================================================================================
+
+Objetivo: Determinar se as diferencas de performance sao estatisticamente significativas
+Metrica analisada: G-mean
+Nivel de significancia: alpha = 0.05
+Correcao para multiplas comparacoes: Bonferroni
+
+====================================================================================================
+1. ESTATISTICAS DESCRITIVAS
+====================================================================================================
+
+Modelo: GBML
+----------------------------------------------------------------------------------------------------
+  N:              8
+  Media:          0.7072
+  Desvio padrao:  0.1763
+  Erro padrao:    0.0623
+  Mediana:        0.7356
+  Min:            0.4289
+  Max:            0.8799
+  Q25:            0.6289
+  Q75:            0.8553
+  IQR:            0.2264
+  IC 95%:         [0.5598, 0.8546]
+
+Modelo: ACDWM
+----------------------------------------------------------------------------------------------------
+  N:              8
+  Media:          0.7746
+  Desvio padrao:  0.1971
+  Erro padrao:    0.0697
+  Mediana:        0.8938
+  Min:            0.4481
+  Max:            0.9185
+  Q25:            0.6595
+  Q75:            0.9138
+  IQR:            0.2543
+  IC 95%:         [0.6099, 0.9394]
+
+Modelo: HAT
+----------------------------------------------------------------------------------------------------
+  N:              8
+  Media:          0.7130
+  Desvio padrao:  0.1528
+  Erro padrao:    0.0540
+  Mediana:        0.7654
+  Min:            0.4198
+  Max:            0.8616
+  Q25:            0.6358
+  Q75:            0.8125
+  IQR:            0.1766
+  IC 95%:         [0.5852, 0.8408]
+
+Modelo: ARF
+----------------------------------------------------------------------------------------------------
+  N:              8
+  Media:          0.7730
+  Desvio padrao:  0.1940
+  Erro padrao:    0.0686
+  Mediana:        0.8922
+  Min:            0.4768
+  Max:            0.9244
+  Q25:            0.6369
+  Q75:            0.9074
+  IQR:            0.2705
+  IC 95%:         [0.6108, 0.9352]
+
+Modelo: SRP
+----------------------------------------------------------------------------------------------------
+  N:              8
+  Media:          0.7715
+  Desvio padrao:  0.2033
+  Erro padrao:    0.0719
+  Mediana:        0.8948
+  Min:            0.4271
+  Max:            0.9268
+  Q25:            0.6526
+  Q75:            0.9097
+  IQR:            0.2571
+  IC 95%:         [0.6015, 0.9415]
+
+====================================================================================================
+2. TESTE DE NORMALIDADE (Shapiro-Wilk)
+====================================================================================================
+
+H0: Os dados seguem distribuicao normal
+Se p > 0.05, aceita H0 (dados normais)
+
+GBML      : p = 0.1527 -> Normal
+ACDWM     : p = 0.0077 -> Nao normal
+HAT       : p = 0.2525 -> Normal
+ARF       : p = 0.0078 -> Nao normal
+SRP       : p = 0.0104 -> Nao normal
+
+Conclusao: Dados NAO seguem distribuicao normal
+Recomendacao: Usar testes nao parametricos (Kruskal-Wallis)
+
+====================================================================================================
+3. TESTE GLOBAL DE DIFERENCAS
+====================================================================================================
+
+3.1. Teste de Kruskal-Wallis (nao parametrico)
+----------------------------------------------------------------------------------------------------
+H0: Todos os modelos tem a mesma distribuicao de G-mean
+H estatistica: 5.2537
+p-valor:       0.262246
+Resultado:     NAO REJEITA H0 (sem diferencas significativas)
+
+3.2. ANOVA (parametrico, para comparacao)
+----------------------------------------------------------------------------------------------------
+H0: Todos os modelos tem a mesma media de G-mean
+F estatistica: 0.2775
+p-valor:       0.890540
+Resultado:     NAO REJEITA H0 (sem diferencas significativas)
+
+====================================================================================================
+4. COMPARACOES PAREADAS (Mann-Whitney U com correcao de Bonferroni)
+====================================================================================================
+
+Numero de comparacoes: 10
+Alpha original: 0.05
+Alpha corrigido (Bonferroni): 0.005000
+
+Comparacao           |  Diff Media |    p-valor |  Signif |   Cohen d |      Tamanho |
+----------------------------------------------------------------------------------------------------
+ACDWM_vs_ARF         |     +0.0016 |   1.000000 |     NAO |    +0.008 |   negligivel |
+ACDWM_vs_HAT         |     +0.0616 |   0.194872 |     NAO |    +0.350 |      pequeno |
+ACDWM_vs_SRP         |     +0.0031 |   0.959130 |     NAO |    +0.016 |   negligivel |
+ARF_vs_SRP           |     +0.0015 |   0.959130 |     NAO |    +0.007 |   negligivel |
+GBML_vs_ACDWM        |     -0.0675 |   0.130381 |     NAO |    -0.361 |      pequeno |
+GBML_vs_ARF          |     -0.0658 |   0.130381 |     NAO |    -0.355 |      pequeno |
+GBML_vs_HAT          |     -0.0058 |   0.878477 |     NAO |    -0.035 |   negligivel |
+GBML_vs_SRP          |     -0.0643 |   0.160528 |     NAO |    -0.338 |      pequeno |
+HAT_vs_ARF           |     -0.0600 |   0.194872 |     NAO |    -0.344 |      pequeno |
+HAT_vs_SRP           |     -0.0585 |   0.194872 |     NAO |    -0.325 |      pequeno |
+
+====================================================================================================
+5. ANALISE ESPECIFICA: GBML vs OUTROS MODELOS
+====================================================================================================
+
+Questao: O GBML e estatisticamente diferente dos outros modelos?
+
+GBML vs         |       Diff |    p-valor |  Signif? |   Cohen d |      Tamanho |
+----------------------------------------------------------------------------------------------------
+GBML vs ACDWM   |    -0.0675 |   0.130381 |      NAO |    -0.361 |      pequeno |
+GBML vs ARF     |    -0.0658 |   0.130381 |      NAO |    -0.355 |      pequeno |
+GBML vs HAT     |    -0.0058 |   0.878477 |      NAO |    -0.035 |   negligivel |
+GBML vs SRP     |    -0.0643 |   0.160528 |      NAO |    -0.338 |      pequeno |
+
+Total de comparacoes: 4
+Diferencas significativas: 0
+Diferencas NAO significativas: 4
+
+====================================================================================================
+6. ANALISE DE INTERVALOS DE CONFIANCA (95%)
+====================================================================================================
+
+Intervalos de confianca para a media de G-mean:
+
+Modelo     |    Media |                    IC 95% |    Largura |
+----------------------------------------------------------------------------------------------------
+GBML       |   0.7072 | [  0.5598,   0.8546] |     0.2948 |
+ACDWM      |   0.7746 | [  0.6099,   0.9394] |     0.3295 |
+HAT        |   0.7130 | [  0.5852,   0.8408] |     0.2556 |
+ARF        |   0.7730 | [  0.6108,   0.9352] |     0.3244 |
+SRP        |   0.7715 | [  0.6015,   0.9415] |     0.3400 |
+
+Analise de overlap dos intervalos de confianca:
+----------------------------------------------------------------------------------------------------
+
+GBML vs ACDWM: OVERLAP de 83.0% do IC do GBML
+GBML vs HAT: OVERLAP de 86.7% do IC do GBML
+GBML vs ARF: OVERLAP de 82.7% do IC do GBML
+GBML vs SRP: OVERLAP de 85.8% do IC do GBML
+
+====================================================================================================
+7. CONCLUSOES E RECOMENDACOES
+====================================================================================================
+
+7.1. GBML E ESTATISTICAMENTE EQUIVALENTE AO MELHOR MODELO (ACDWM)
+----------------------------------------------------------------------------------------------------
+p-valor: 0.130381 > 0.005000 (alpha corrigido)
+Tamanho de efeito: pequeno
+Cohen's d: 0.361
+
+RECOMENDACAO: A diferenca de performance NAO e estatisticamente significativa.
+O GBML oferece explicabilidade superior atraves de regras interpretaveis.
+JUSTIFICA-SE o uso do GBML considerando o trade-off explicabilidade vs performance.
+
+7.2. EQUIVALENCIA ESTATISTICA DO GBML COM OUTROS MODELOS
+----------------------------------------------------------------------------------------------------
+
+GBML vs HAT: NAO ha diferenca significativa (p=0.8785)
+GBML vs ARF: NAO ha diferenca significativa (p=0.1304)
+GBML vs SRP: NAO ha diferenca significativa (p=0.1605)
+
+GBML e estatisticamente EQUIVALENTE a: HAT, ARF, SRP
+Nesses casos, a explicabilidade do GBML pode justificar sua escolha.
+
+7.3. CONSIDERACOES FINAIS
+----------------------------------------------------------------------------------------------------
+
+O GBML oferece vantagens unicas:
+  - Regras interpretaveis (explicabilidade)
+  - Rastreamento de mudancas ao longo dos chunks
+  - Transparencia na tomada de decisao
+
+Contextos onde GBML e preferivel:
+  - Aplicacoes criticas que exigem explicabilidade (medicina, financas, legal)
+  - Necessidade de auditoria e compliance
+  - Entendimento de como o modelo se adapta ao drift
+  - Trade-off aceitavel de performance por interpretabilidade
+
+Contextos onde outros modelos sao preferiveis:
+  - Performance e prioridade maxima
+  - Nao ha necessidade de explicabilidade
+  - Aplicacoes em tempo real com restricoes computacionais
+

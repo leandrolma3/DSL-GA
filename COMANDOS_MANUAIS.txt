@@ -1,0 +1,44 @@
+===============================================================================
+  COMANDOS MANUAIS - Copie e cole linha por linha
+===============================================================================
+
+Host: frozen-about-ball-indicating.trycloudflare.com
+Senha: root
+
+===============================================================================
+PASSO 1: Criar diretorio remoto VIA SSH
+===============================================================================
+
+ssh frozen-about-ball-indicating.trycloudflare.com
+mkdir -p /content/DSL-AG-hybrid
+exit
+
+===============================================================================
+PASSO 2: Upload de arquivos VIA SCP (UM COMANDO, UMA SENHA)
+===============================================================================
+
+scp ga_operators.py ga.py main.py config.yaml setup_colab_remote.py compare_gbml_vs_river.py hill_climbing_v2.py intelligent_hc_strategies.py dt_rule_extraction.py early_stopping.py utils.py frozen-about-ball-indicating.trycloudflare.com:/content/DSL-AG-hybrid/
+
+===============================================================================
+PASSO 3: Montar Google Drive NO NOTEBOOK COLAB (navegador - UMA VEZ)
+===============================================================================
+
+from google.colab import drive
+drive.mount('/content/drive')
+
+===============================================================================
+PASSO 4: Setup e Execucao
+===============================================================================
+
+ssh frozen-about-ball-indicating.trycloudflare.com
+cd /content/DSL-AG-hybrid
+python3 setup_colab_remote.py
+/root/run_experiment.sh python3 compare_gbml_vs_river.py --stream RBF_Abrupt_Severe --chunks 1
+
+===============================================================================
+PASSO 5: Ver resultados
+===============================================================================
+
+tail -50 /content/drive/MyDrive/DSL-AG-hybrid/experiments/ssh_session_*/logs/*.log
+
+===============================================================================

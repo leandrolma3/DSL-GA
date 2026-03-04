@@ -1,0 +1,64 @@
+\begin{table*}[ht]
+\centering
+\caption{Performance Comparison on Binary Datasets (G-Mean) - Chunk Size 500}
+\label{tab:binary_comparison}
+\footnotesize
+\begin{tabular}{l|ccccccc}
+\toprule
+\textbf{Dataset} & \textbf{EGIS} & \textbf{ARF} & \textbf{HAT} & \textbf{SRP} & \textbf{ROSE} & \textbf{eRulesD2S} & \textbf{CDCMS} \\
+\midrule
+\multicolumn{8}{l}{\textbf{Abrupt Drift (14)}} \\
+AGRAWAL\_Abrupt\_Chain\_Long & \textbf{0.888} & 0.788 & 0.664 & 0.785 & 0.830 & 0.528 & 0.652 \\
+AGRAWAL\_Abrupt\_Simple\_Mild & \textbf{0.906} & 0.825 & 0.585 & 0.866 & 0.900 & 0.542 & 0.622 \\
+AGRAWAL\_Abrupt\_Simple\_Severe & 0.900 & 0.840 & 0.680 & 0.889 & \textbf{0.925} & 0.543 & 0.690 \\
+HYPERPLANE\_Abrupt\_Simple & 0.756 & 0.835 & 0.882 & 0.771 & 0.863 & 0.525 & \textbf{0.900} \\
+RANDOMTREE\_Abrupt\_Recurring & 0.615 & 0.533 & 0.533 & 0.524 & \textbf{0.654} & 0.552 & 0.534 \\
+RANDOMTREE\_Abrupt\_Simple & 0.614 & 0.550 & 0.542 & 0.511 & \textbf{0.659} & 0.542 & 0.524 \\
+RBF\_Abrupt\_Blip & 0.832 & 0.910 & 0.837 & \textbf{0.916} & 0.896 & 0.521 & 0.851 \\
+RBF\_Abrupt\_Severe & 0.807 & 0.894 & 0.789 & \textbf{0.901} & 0.870 & 0.522 & 0.791 \\
+SEA\_Abrupt\_Chain & 0.947 & 0.972 & 0.930 & 0.956 & \textbf{0.977} & 0.623 & 0.935 \\
+SEA\_Abrupt\_Recurring & 0.945 & \textbf{0.977} & 0.946 & 0.939 & 0.975 & 0.646 & 0.952 \\
+SEA\_Abrupt\_Simple & 0.950 & 0.977 & 0.952 & 0.973 & \textbf{0.979} & 0.620 & 0.940 \\
+SINE\_Abrupt\_Simple & 0.951 & \textbf{0.988} & 0.971 & 0.987 & 0.980 & 0.655 & 0.973 \\
+STAGGER\_Abrupt\_Chain & 0.968 & \textbf{0.994} & 0.763 & 0.993 & 0.922 & 0.778 & 0.982 \\
+STAGGER\_Abrupt\_Recurring & 0.957 & 0.997 & 0.790 & 0.989 & \textbf{0.997} & 0.797 & 0.988 \\
+\multicolumn{8}{l}{\textbf{Gradual Drift (9)}} \\
+HYPERPLANE\_Gradual\_Simple & 0.756 & 0.832 & 0.879 & 0.774 & 0.863 & 0.536 & \textbf{0.900} \\
+RANDOMTREE\_Gradual\_Simple & 0.610 & 0.549 & 0.523 & 0.511 & \textbf{0.669} & 0.561 & 0.522 \\
+RBF\_Gradual\_Moderate & 0.819 & 0.895 & 0.820 & \textbf{0.904} & 0.889 & 0.535 & 0.820 \\
+RBF\_Gradual\_Severe & 0.823 & \textbf{0.902} & 0.830 & 0.897 & 0.894 & 0.526 & 0.817 \\
+SEA\_Gradual\_Recurring & 0.939 & \textbf{0.961} & 0.920 & 0.954 & 0.960 & 0.635 & 0.920 \\
+SEA\_Gradual\_Simple\_Fast & 0.953 & 0.977 & 0.950 & 0.976 & \textbf{0.980} & 0.638 & 0.951 \\
+SEA\_Gradual\_Simple\_Slow & 0.957 & 0.978 & 0.948 & 0.976 & \textbf{0.981} & 0.633 & 0.933 \\
+SINE\_Gradual\_Recurring & 0.917 & \textbf{0.952} & 0.928 & 0.950 & 0.943 & 0.636 & 0.923 \\
+STAGGER\_Gradual\_Chain & 0.920 & \textbf{0.950} & 0.686 & 0.936 & 0.920 & 0.764 & 0.920 \\
+\multicolumn{8}{l}{\textbf{Noisy Drift (8)}} \\
+AGRAWAL\_Abrupt\_Simple\_Severe\_Noise & 0.917 & 0.779 & 0.687 & 0.836 & \textbf{0.940} & 0.547 & 0.658 \\
+HYPERPLANE\_Gradual\_Noise & 0.753 & 0.811 & 0.856 & 0.759 & 0.848 & 0.530 & \textbf{0.870} \\
+RANDOMTREE\_Gradual\_Noise & 0.620 & 0.511 & 0.532 & 0.477 & \textbf{0.690} & 0.550 & 0.516 \\
+RBF\_Abrupt\_Blip\_Noise & 0.827 & 0.904 & 0.825 & \textbf{0.905} & 0.886 & 0.523 & 0.846 \\
+RBF\_Gradual\_Severe\_Noise & 0.824 & 0.890 & 0.818 & \textbf{0.901} & 0.877 & 0.518 & 0.820 \\
+SEA\_Abrupt\_Chain\_Noise & 0.946 & 0.966 & 0.917 & 0.937 & \textbf{0.971} & 0.632 & 0.926 \\
+SINE\_Abrupt\_Recurring\_Noise & 0.913 & 0.981 & 0.949 & \textbf{0.981} & 0.973 & 0.668 & 0.945 \\
+STAGGER\_Abrupt\_Chain\_Noise & 0.965 & \textbf{0.995} & 0.758 & 0.982 & 0.922 & 0.774 & 0.942 \\
+\multicolumn{8}{l}{\textbf{Stationary Drift (7)}} \\
+AGRAWAL\_Stationary & \textbf{1.000} & 0.934 & 0.981 & 0.998 & 0.997 & 0.524 & 0.977 \\
+HYPERPLANE\_Stationary & 0.723 & 0.819 & 0.875 & 0.762 & 0.852 & 0.526 & \textbf{0.902} \\
+RANDOMTREE\_Stationary & 0.542 & 0.585 & 0.432 & 0.555 & \textbf{0.594} & 0.528 & 0.515 \\
+RBF\_Stationary & 0.814 & 0.921 & 0.900 & \textbf{0.969} & 0.963 & 0.268 & -- \\
+SEA\_Stationary & 0.954 & 0.980 & 0.950 & 0.962 & \textbf{0.984} & 0.612 & 0.945 \\
+SINE\_Stationary & 0.953 & 0.986 & 0.968 & \textbf{0.987} & 0.982 & 0.635 & 0.976 \\
+STAGGER\_Stationary & \textbf{1.000} & 0.998 & 0.801 & 0.997 & 0.999 & 0.787 & 0.999 \\
+\multicolumn{8}{l}{\textbf{Real Drift (4)}} \\
+AssetNegotiation\_F2 & 0.949 & 0.967 & 0.947 & 0.972 & \textbf{0.982} & 0.651 & 0.948 \\
+AssetNegotiation\_F3 & \textbf{0.995} & 0.966 & 0.961 & 0.921 & 0.992 & 0.762 & 0.944 \\
+AssetNegotiation\_F4 & 0.906 & 0.946 & 0.939 & 0.936 & 0.662 & 0.562 & \textbf{0.948} \\
+Electricity & 0.710 & 0.887 & 0.861 & 0.885 & \textbf{0.905} & 0.619 & 0.857 \\
+\midrule
+\textbf{EGIS W/L/D} & -- & 11/31/0 & 26/16/0 & 13/29/0 & 8/34/0 & 42/0/0 & 24/17/0 \\
+\textbf{Mean} & 0.858 & 0.879 & 0.817 & 0.871 & 0.894 & 0.597 & 0.843 \\
+\textbf{Std} & 0.123 & 0.139 & 0.149 & 0.149 & 0.110 & 0.100 & 0.152 \\
+\textbf{Avg Rank} & 4.02 & 2.64 & 4.88 & 3.26 & 2.26 & 6.50 & 4.37 \\
+\bottomrule
+\end{tabular}
+\end{table*}

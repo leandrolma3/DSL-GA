@@ -1,0 +1,703 @@
+Rule Diff Analysis Report
+Source File: RulesHistory_RANDOMTREE_Abrupt_Simple_Run1.txt
+Similarity Threshold: 0.35
+
+======================================================================
+--- Diff Chunk 0 -> Chunk 1 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 0):   0.6768
+  - Test G-Mean (Chunk 1):  0.6123
+  - Test F1 (Chunk 1):      0.6332
+Fitness:       0.746624 -> 1.000656
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((((x_cat_3 > 1.5000) AND (x_num_4 > 0.1296)) AND ((x_num_0 > 0.1028) AND ((x_num_1 <= 0.7382) AND (x_num_3 <= 0.7394)))) AND (((x_cat_3 <= 3.5000) AND (x_cat_3 > 2.5000)) AND ((x_num_4 > 0.2364) AND ((x_num_2 > 0.3865) AND (x_num_3 > 0.2024))))) THEN Class 0
+  + IF ((((x_cat_4 <= 1.5000) AND (x_cat_0 <= 3.5000)) AND ((x_cat_1 > 1.5000) AND (x_cat_3 <= 3.5000))) AND (((x_num_0 <= 0.7637) AND (x_num_2 <= 0.8532)) AND ((x_num_0 > 0.3408) AND ((x_num_2 > 0.1856) AND (x_num_3 > 0.2193))))) THEN Class 0
+  + IF ((((x_cat_4 > 1.5000) AND (x_cat_3 > 1.5000)) AND ((x_num_3 > 0.1253) AND ((x_num_4 > 0.3957) AND (x_num_3 <= 0.7525)))) AND (((x_num_2 > 0.3150) AND (x_num_1 <= 0.6844)) AND ((x_num_4 <= 0.8978) AND ((x_num_3 <= 0.5693) AND (x_num_4 > 0.5796))))) THEN Class 0
+  + IF (((x_cat_3 > 1.5000) AND ((x_num_3 <= 0.3101) AND (x_cat_3 <= 3.5000))) AND ((x_cat_4 <= 2.5000) AND ((x_num_3 > 0.1432) AND (x_num_0 <= 0.6565)))) THEN Class 0
+
+  Deleted Rules:
+  - IF ((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_cat_4 > 0.5000)) AND (x_cat_0 <= 0.5000)) THEN Class 0
+  - IF ((((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_0 <= 0.8414)) AND (x_num_1 <= 0.1754)) THEN Class 0
+  - IF ((((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_0 <= 0.8414)) AND (x_num_3 <= 0.2580)) THEN Class 0
+  - IF ((((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_0 <= 0.8414)) AND (x_num_4 <= 0.1366)) THEN Class 0
+  - IF ((((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_1 > 0.1030)) AND (x_cat_1 <= 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.3952)) AND (x_cat_3 <= 1.5000)) AND (x_cat_1 <= 1.5000)) THEN Class 1
+  + New: IF ((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.3292)) AND (x_cat_2 <= 0.5000)) AND (x_num_2 > 0.4785)) AND (x_cat_0 <= 0.5000)) THEN Class 1
+    (Similarity: 0.78)
+  - Old: IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.3952)) AND (x_num_4 > 0.1720)) AND (x_cat_3 > 2.5000)) AND (x_num_2 <= 0.3252)) AND (x_num_4 > 0.5260)) THEN Class 1
+  + New: IF (((x_cat_3 > 1.5000) AND ((x_num_3 > 0.2829) AND (x_num_4 > 0.1728))) AND ((x_cat_3 <= 2.5000) AND ((x_num_2 > 0.4097) AND (x_num_3 > 0.4398)))) THEN Class 1
+    (Similarity: 0.67)
+  - Old: IF (((((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.4632)) AND (x_cat_3 > 0.5000)) AND (x_num_4 <= 0.1281)) AND (x_num_2 > 0.4420)) AND (x_num_1 <= 0.2937)) THEN Class 1
+  + New: IF (((x_cat_3 > 1.5000) AND ((x_num_3 > 0.3101) AND (x_num_4 > 0.2010))) AND (((x_cat_3 <= 2.5000) AND (x_num_2 > 0.4097)) AND ((x_num_3 > 0.4564) AND (x_num_1 > 0.1715)))) THEN Class 1
+    (Similarity: 0.71)
+  - Old: IF ((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_cat_4 <= 0.5000)) AND (x_num_0 <= 0.2912)) THEN Class 1
+  + New: IF (((x_cat_4 <= 1.5000) AND (x_cat_3 > 3.5000)) AND ((x_cat_4 <= 0.5000) AND (x_num_0 > 0.2298))) THEN Class 1
+    (Similarity: 0.91)
+
+  New Rules:
+  + IF ((((x_cat_3 > 1.5000) AND (x_num_4 > 0.1296)) AND ((x_num_0 > 0.1028) AND (x_num_1 <= 0.7382))) AND (((x_num_3 <= 0.7394) AND (x_cat_3 <= 3.5000)) AND ((x_cat_3 <= 2.5000) AND ((x_num_3 > 0.4259) AND (x_num_2 > 0.4249))))) THEN Class 1
+  + IF ((((x_cat_3 > 1.6984) OR (x_num_3 > 0.8358)) AND (x_cat_4 <= 2.5815)) AND ((((x_num_0 > 0.4779) AND (x_cat_3 > 3.4744)) AND ((x_cat_2 >= 1.4590) AND (x_num_4 >= 0.4844))) OR ((x_cat_2 < 0.7894) OR (x_cat_2 >= 0.6482)))) THEN Class 1
+  + IF (((x_cat_3 > 1.5000) AND ((x_num_3 > 0.3101) AND (x_num_4 <= 0.2010))) AND ((x_cat_3 <= 3.5000) AND ((x_cat_3 > 2.5000) AND (x_cat_0 > 1.5000)))) THEN Class 1
+  + IF (((x_cat_3 > 1.5000) AND (x_num_3 <= 0.3101)) AND ((x_cat_3 > 3.5000) AND ((x_cat_2 <= 1.5000) AND (x_num_1 > 0.6128)))) THEN Class 1
+  + IF (((x_cat_3 > 1.5000) AND (x_num_3 > 0.2829)) AND ((x_num_4 <= 0.1728) AND ((x_cat_3 <= 3.5000) AND (x_cat_3 > 2.5000)))) THEN Class 1
+  + IF (((x_cat_4 > 1.5000) AND (x_cat_3 <= 1.5000)) AND ((x_cat_4 <= 2.5000) AND (x_cat_3 <= 0.5000))) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 1.3570)) AND (x_num_3 <= 0.3952)) AND (x_cat_3 <= 1.5000)) AND (x_cat_1 > 1.5000)) AND (x_num_2 <= 0.4430)) AND (x_num_4 <= 0.7477)) THEN Class 1
+  - IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.3952)) AND (x_cat_3 <= 1.5000)) AND (x_cat_1 <= 1.5000)) AND (x_num_3 > 0.0894)) AND (x_num_3 > 0.2644)) THEN Class 1
+  - IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.3952)) AND (x_cat_3 <= 1.5000)) AND (x_cat_1 > 1.5000)) AND (x_num_2 <= 0.4430)) AND (x_num_4 <= 0.7477)) THEN Class 1
+  - IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.3952)) AND (x_num_4 <= 0.1720)) AND (x_cat_3 > 1.5000)) AND (x_num_2 > 0.3671)) AND (x_num_4 <= 0.0584)) THEN Class 1
+  - IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 > 2.2661)) AND (x_cat_4 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_num_1 > 0.1023)) AND (x_cat_4 <= 1.5000)) AND (x_cat_0 <= 1.5000)) THEN Class 1
+  - IF (((((x_cat_4 <= 0.6067) AND (x_cat_3 > 3.5000)) AND (x_cat_4 <= 0.5000)) AND (x_num_0 > 0.2227)) AND (x_num_4 <= 0.1478)) THEN Class 1
+  - IF (((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_cat_4 <= 0.5000)) AND (x_num_0 > 0.2227)) AND (x_cat_2 <= 0.5000)) THEN Class 1
+  - IF (((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.4632)) AND (x_num_4 > 0.1029)) AND (x_num_4 > 0.9447)) THEN Class 1
+  - IF ((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_cat_4 <= 0.5000)) AND (x_num_0 <= 0.6645)) THEN Class 1
+  - IF (((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.3952)) THEN Class 1
+  - IF ((x_num_4 > 0.6728) AND (((x_num_1 > 0.1069) AND (((((x_cat_4 < 1.1922) OR (x_cat_3 > 1.2213)) AND (x_cat_1 < 2.7450)) OR (((((((x_cat_0 > 3.2108) AND (x_num_3 < 0.5900)) AND (((x_num_0 <= 0.7018) AND (x_num_4 >= 0.3423)) AND (x_num_0 > 0.7260))) AND ((x_cat_4 <= 0.4449) AND (((x_num_0 <= 0.6440) AND (x_num_2 <= 0.3753)) AND ((x_num_3 >= 0.2932) AND (x_cat_3 > 1.1048))))) AND ((x_num_1 >= 0.6921) OR ((x_cat_0 > 1.3457) AND (x_cat_1 > 1.1352)))) AND (x_num_4 >= 0.1944)) OR (x_cat_0 <= 1.9659))) AND (x_num_1 <= 0.3746))) AND ((x_cat_0 >= 2.6174) AND ((x_num_1 > 0.5412) AND ((x_cat_3 > 2.2694) AND (((x_num_0 > 0.8451) AND ((((x_cat_0 >= 2.1858) AND (x_cat_4 < 3.3908)) AND (x_cat_2 < 2.2732)) OR (x_cat_1 >= 3.5155))) AND (((x_num_3 < 0.1225) AND (((x_cat_2 <= 3.1382) OR (x_cat_0 > 0.7358)) AND (((x_num_0 >= 0.1026) AND (x_cat_2 <= 2.4076)) AND (((x_cat_1 < 2.5200) AND (x_num_4 >= 0.8330)) AND ((x_cat_0 < 2.5627) AND (x_cat_0 >= 1.1401)))))) AND (((x_cat_4 > 0.7225) AND (x_num_2 > 0.6831)) AND (x_cat_2 > 3.2636))))))))) THEN Class 1
+
+======================================================================
+--- Diff Chunk 1 -> Chunk 2 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 1):   0.7269
+  - Test G-Mean (Chunk 2):  0.6916
+  - Test F1 (Chunk 2):      0.7010
+Fitness:       1.000656 -> 0.900706
+Default Class: 0 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF (((x_cat_3 > 1.5000) AND ((x_num_3 <= 0.3101) AND (x_cat_3 <= 3.5000))) AND ((x_cat_4 <= 2.5000) AND ((x_num_3 > 0.1432) AND (x_num_0 <= 0.6565)))) THEN Class 0
+  + New: IF (((x_num_1 > 0.5852) AND ((x_num_2 > 0.2051) AND (x_num_3 <= 0.4004))) AND ((x_num_2 > 0.3433) AND ((x_num_2 <= 0.7904) AND (x_num_0 <= 0.6675)))) THEN Class 0
+    (Similarity: 0.73)
+
+  New Rules:
+  + IF (((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_0 > 0.9143)) THEN Class 0
+  + IF (((x_num_1 <= 0.5852) AND (x_cat_3 > 2.5000)) AND ((x_num_4 > 0.1748) AND ((x_num_0 > 0.7016) AND (x_cat_3 <= 3.5000)))) THEN Class 0
+  + IF ((x_cat_3 <= 3.3198) AND ((((((x_cat_1 < 0.5699) AND (x_cat_4 <= 0.9107)) AND ((x_cat_0 < 0.9719) AND ((x_num_3 >= 0.5475) AND (x_num_0 > 0.3617)))) AND ((x_num_2 >= 0.4843) AND ((x_cat_1 > 1.4307) AND (x_cat_1 <= 3.4580)))) OR (x_num_1 <= 0.6358)) OR ((((x_num_3 <= 0.1974) AND ((x_cat_4 < 3.0361) AND (x_cat_3 < 1.3051))) AND (x_num_0 <= 0.6679)) AND ((x_num_3 > 0.2265) AND ((x_cat_2 <= 1.6456) AND (((x_num_1 <= 0.5772) OR (x_cat_4 < 2.6663)) AND ((x_num_4 < 0.7349) AND (x_num_0 < 0.1228)))))))) THEN Class 0
+  + IF ((x_cat_4 >= 2.6316) AND (x_num_2 >= 0.2310)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((((x_cat_3 > 1.5000) AND (x_num_4 > 0.1296)) AND ((x_num_0 > 0.1028) AND ((x_num_1 <= 0.7382) AND (x_num_3 <= 0.7394)))) AND (((x_cat_3 <= 3.5000) AND (x_cat_3 > 2.5000)) AND ((x_num_4 > 0.2364) AND ((x_num_2 > 0.3865) AND (x_num_3 > 0.2024))))) THEN Class 0
+  - IF ((((x_cat_4 <= 1.5000) AND (x_cat_0 <= 3.5000)) AND ((x_cat_1 > 1.5000) AND (x_cat_3 <= 3.5000))) AND (((x_num_0 <= 0.7637) AND (x_num_2 <= 0.8532)) AND ((x_num_0 > 0.3408) AND ((x_num_2 > 0.1856) AND (x_num_3 > 0.2193))))) THEN Class 0
+  - IF ((((x_cat_4 > 1.5000) AND (x_cat_3 > 1.5000)) AND ((x_num_3 > 0.1253) AND ((x_num_4 > 0.3957) AND (x_num_3 <= 0.7525)))) AND (((x_num_2 > 0.3150) AND (x_num_1 <= 0.6844)) AND ((x_num_4 <= 0.8978) AND ((x_num_3 <= 0.5693) AND (x_num_4 > 0.5796))))) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((x_cat_4 <= 1.5000) AND (x_cat_3 > 3.5000)) AND ((x_cat_4 <= 0.5000) AND (x_num_0 > 0.2298))) THEN Class 1
+  + New: IF ((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_0 <= 0.9143)) AND (x_num_0 <= 0.0906)) THEN Class 1
+    (Similarity: 0.81)
+  - Old: IF ((((x_cat_3 > 1.5000) AND (x_num_4 > 0.1296)) AND ((x_num_0 > 0.1028) AND (x_num_1 <= 0.7382))) AND (((x_num_3 <= 0.7394) AND (x_cat_3 <= 3.5000)) AND ((x_cat_3 <= 2.5000) AND ((x_num_3 > 0.4259) AND (x_num_2 > 0.4249))))) THEN Class 1
+  + New: IF ((((x_num_1 <= 0.5852) AND (x_cat_3 <= 2.5000)) AND ((x_num_3 > 0.4222) AND ((x_num_2 > 0.1873) AND (x_cat_3 <= 1.5000)))) AND (((x_num_2 <= 0.7718) AND (x_num_1 > 0.1560)) AND ((x_cat_1 <= 3.5000) AND ((x_cat_4 <= 2.5000) AND (x_cat_3 <= 0.5000))))) THEN Class 1
+    (Similarity: 0.66)
+  - Old: IF (((x_cat_3 > 1.5000) AND ((x_num_3 > 0.3101) AND (x_num_4 > 0.2010))) AND (((x_cat_3 <= 2.5000) AND (x_num_2 > 0.4097)) AND ((x_num_3 > 0.4564) AND (x_num_1 > 0.1715)))) THEN Class 1
+  + New: IF (((x_num_1 <= 0.5852) AND ((x_cat_3 <= 2.5000) AND (x_num_3 > 0.4222))) AND (((x_num_2 > 0.1873) AND (x_cat_3 > 1.5000)) AND ((x_num_2 > 0.4126) AND (x_num_3 > 0.5925)))) THEN Class 1
+    (Similarity: 0.70)
+  - Old: IF (((x_cat_3 > 1.5000) AND (x_num_3 > 0.2829)) AND ((x_num_4 <= 0.1728) AND ((x_cat_3 <= 3.5000) AND (x_cat_3 > 2.5000)))) THEN Class 1
+  + New: IF (((x_num_3 <= 0.4222) AND ((x_cat_3 > 1.5000) AND (x_cat_3 > 2.5000))) AND ((x_num_0 > 0.1122) AND ((x_cat_4 <= 0.5000) AND (x_cat_3 > 3.5000)))) THEN Class 1
+    (Similarity: 0.71)
+  - Old: IF (((x_cat_3 > 1.5000) AND ((x_num_3 > 0.3101) AND (x_num_4 <= 0.2010))) AND ((x_cat_3 <= 3.5000) AND ((x_cat_3 > 2.5000) AND (x_cat_0 > 1.5000)))) THEN Class 1
+  + New: IF (((x_num_3 > 0.4222) AND ((x_num_2 > 0.1816) AND (x_cat_3 <= 2.5000))) AND ((x_cat_3 > 1.5000) AND ((x_num_2 > 0.4126) AND (x_cat_0 > 0.5000)))) THEN Class 1
+    (Similarity: 0.78)
+
+  New Rules:
+  + IF (((((((((x_cat_2 > 2.4149) AND (x_cat_3 > 2.6352)) OR (x_num_0 > 0.2977)) OR ((x_cat_2 > 2.7336) AND (((x_cat_0 < 2.8461) AND (x_num_4 > 0.1658)) AND (((x_num_2 >= 0.4421) AND (x_num_2 < 0.2904)) OR ((x_num_4 <= 0.4741) AND (x_num_1 > 0.8409)))))) AND ((((((x_num_4 >= 0.4296) AND (x_cat_2 >= 2.8556)) AND ((x_num_4 < 0.2392) AND (x_num_1 < 0.6664))) AND (x_cat_4 <= 1.0460)) AND (x_num_4 >= 0.6907)) OR ((((x_num_3 > 0.6269) OR ((x_cat_4 >= 1.1090) AND (x_cat_4 <= 0.6153))) AND (((x_num_0 <= 0.3996) AND (x_num_1 <= 0.2336)) AND (x_num_4 > 0.2518))) AND (x_cat_0 > 2.9986)))) OR ((x_cat_0 > 2.4722) AND (x_num_0 <= 0.6063))) OR (x_cat_1 <= 0.9748)) AND (x_cat_4 < 3.1759)) AND ((x_cat_4 >= 2.1413) AND (x_cat_4 <= 1.2872))) THEN Class 1
+  + IF ((((x_num_0 > 0.6195) AND (((x_cat_0 >= 3.4435) AND (((((x_num_0 >= 0.8316) AND (x_num_4 <= 0.3857)) OR (((x_cat_4 <= 3.3136) AND (x_num_0 <= 0.6889)) AND (x_num_1 <= 0.8751))) OR ((x_num_0 <= 0.4154) AND (((x_num_1 > 0.3205) AND (x_num_3 >= 0.6892)) OR (x_num_1 < 0.6421)))) AND ((x_num_4 >= 0.3971) AND (((x_num_0 < 0.3629) AND ((x_num_2 > 0.6947) AND (x_num_0 < 0.3215))) AND (((x_num_1 > 0.5522) AND (x_cat_3 > 2.7956)) AND ((x_num_4 >= 0.3505) AND (x_num_1 > 0.5131))))))) AND ((x_cat_4 <= 0.9829) AND (x_cat_0 > 1.2854)))) AND (((x_cat_2 > 3.4281) OR (x_num_0 < 0.2958)) AND (((x_cat_3 <= 1.5959) AND (x_num_0 >= 0.2898)) AND (x_cat_1 < 1.4615)))) AND (x_num_0 >= 0.8000)) THEN Class 1
+  + IF ((((x_num_1 > 0.5852) AND (x_num_2 > 0.2051)) AND ((x_cat_1 > 1.5000) AND (x_cat_3 > 1.5000))) AND (((x_cat_4 <= 2.5000) AND (x_num_3 > 0.4071)) AND ((x_num_1 > 0.6852) AND (x_num_3 > 0.5888)))) THEN Class 1
+  + IF (((x_num_1 > 0.5852) AND ((x_num_2 > 0.2051) AND (x_num_3 > 0.4004))) AND ((x_cat_3 > 1.5000) AND ((x_num_0 <= 0.9268) AND (x_cat_3 <= 2.5000)))) THEN Class 1
+  + IF (((x_num_4 <= 0.4646) AND (((x_cat_0 > 1.4361) AND (x_num_4 >= 0.6916)) AND (x_num_4 >= 0.8945))) AND (((x_cat_3 <= 3.1002) AND ((((x_cat_4 >= 1.0384) AND ((x_cat_3 >= 3.3227) AND (x_cat_2 < 3.1984))) OR ((x_cat_1 <= 0.5198) AND ((((x_cat_4 < 2.6971) AND ((x_num_3 >= 0.8034) AND (x_cat_1 >= 1.2187))) AND ((x_cat_0 > 1.9478) AND ((x_num_2 < 0.7487) AND (x_num_3 <= 0.2993)))) AND (((x_num_1 < 0.2497) AND ((x_num_3 < 0.7000) AND (x_num_4 <= 0.2997))) AND (x_cat_2 > 1.0377))))) AND (x_num_1 <= 0.8271))) AND ((x_cat_3 < 3.2813) OR ((x_num_1 > 0.5615) AND (((x_cat_1 > 3.2412) AND ((x_num_4 <= 0.5114) AND (((x_num_1 <= 0.8910) AND (x_cat_3 > 2.0053)) AND (x_num_3 <= 0.2169)))) AND ((x_cat_2 > 2.8434) AND ((x_num_2 < 0.1773) AND (x_num_1 < 0.5162)))))))) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.3292)) AND (x_cat_2 <= 0.5000)) AND (x_num_2 > 0.4785)) AND (x_cat_0 <= 0.5000)) THEN Class 1
+  - IF ((((x_cat_3 > 1.6984) OR (x_num_3 > 0.8358)) AND (x_cat_4 <= 2.5815)) AND ((((x_num_0 > 0.4779) AND (x_cat_3 > 3.4744)) AND ((x_cat_2 >= 1.4590) AND (x_num_4 >= 0.4844))) OR ((x_cat_2 < 0.7894) OR (x_cat_2 >= 0.6482)))) THEN Class 1
+  - IF (((x_cat_3 > 1.5000) AND ((x_num_3 > 0.2829) AND (x_num_4 > 0.1728))) AND ((x_cat_3 <= 2.5000) AND ((x_num_2 > 0.4097) AND (x_num_3 > 0.4398)))) THEN Class 1
+  - IF (((x_cat_3 > 1.5000) AND (x_num_3 <= 0.3101)) AND ((x_cat_3 > 3.5000) AND ((x_cat_2 <= 1.5000) AND (x_num_1 > 0.6128)))) THEN Class 1
+  - IF (((x_cat_4 > 1.5000) AND (x_cat_3 <= 1.5000)) AND ((x_cat_4 <= 2.5000) AND (x_cat_3 <= 0.5000))) THEN Class 1
+
+======================================================================
+--- Diff Chunk 2 -> Chunk 3 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 2):   0.6324
+  - Test G-Mean (Chunk 3):  0.5735
+  - Test F1 (Chunk 3):      0.6233
+Fitness:       0.900706 -> 0.853754
+Default Class: 1 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_cat_4 >= 2.6316) AND (x_num_2 >= 0.2310)) THEN Class 0
+  + New: IF ((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) THEN Class 0
+    (Similarity: 0.69)
+
+  Deleted Rules:
+  - IF (((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_0 > 0.9143)) THEN Class 0
+  - IF (((x_num_1 <= 0.5852) AND (x_cat_3 > 2.5000)) AND ((x_num_4 > 0.1748) AND ((x_num_0 > 0.7016) AND (x_cat_3 <= 3.5000)))) THEN Class 0
+  - IF (((x_num_1 > 0.5852) AND ((x_num_2 > 0.2051) AND (x_num_3 <= 0.4004))) AND ((x_num_2 > 0.3433) AND ((x_num_2 <= 0.7904) AND (x_num_0 <= 0.6675)))) THEN Class 0
+  - IF ((x_cat_3 <= 3.3198) AND ((((((x_cat_1 < 0.5699) AND (x_cat_4 <= 0.9107)) AND ((x_cat_0 < 0.9719) AND ((x_num_3 >= 0.5475) AND (x_num_0 > 0.3617)))) AND ((x_num_2 >= 0.4843) AND ((x_cat_1 > 1.4307) AND (x_cat_1 <= 3.4580)))) OR (x_num_1 <= 0.6358)) OR ((((x_num_3 <= 0.1974) AND ((x_cat_4 < 3.0361) AND (x_cat_3 < 1.3051))) AND (x_num_0 <= 0.6679)) AND ((x_num_3 > 0.2265) AND ((x_cat_2 <= 1.6456) AND (((x_num_1 <= 0.5772) OR (x_cat_4 < 2.6663)) AND ((x_num_4 < 0.7349) AND (x_num_0 < 0.1228)))))))) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((x_num_3 <= 0.4222) AND ((x_cat_3 > 1.5000) AND (x_cat_3 > 2.5000))) AND ((x_num_0 > 0.1122) AND ((x_cat_4 <= 0.5000) AND (x_cat_3 > 3.5000)))) THEN Class 1
+  + New: IF ((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.3805)) AND (x_cat_1 > 1.5000)) AND (x_cat_3 <= 0.5000)) AND (x_num_3 > 0.1954)) THEN Class 1
+    (Similarity: 0.65)
+  - Old: IF (((x_num_3 > 0.4222) AND ((x_num_2 > 0.1816) AND (x_cat_3 <= 2.5000))) AND ((x_cat_3 > 1.5000) AND ((x_num_2 > 0.4126) AND (x_cat_0 > 0.5000)))) THEN Class 1
+  + New: IF ((((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_1 <= 1.5000)) AND (x_cat_3 > 0.5000)) AND (x_num_3 <= 0.3801)) AND (x_cat_3 <= 1.5000)) THEN Class 1
+    (Similarity: 0.69)
+  - Old: IF ((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_0 <= 0.9143)) AND (x_num_0 <= 0.0906)) THEN Class 1
+  + New: IF ((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_1 > 0.1011)) AND (x_num_0 <= 0.0814)) THEN Class 1
+    (Similarity: 0.90)
+  - Old: IF ((((x_num_1 > 0.5852) AND (x_num_2 > 0.2051)) AND ((x_cat_1 > 1.5000) AND (x_cat_3 > 1.5000))) AND (((x_cat_4 <= 2.5000) AND (x_num_3 > 0.4071)) AND ((x_num_1 > 0.6852) AND (x_num_3 > 0.5888)))) THEN Class 1
+  + New: IF ((((x_cat_4 <= 2.5000) AND (x_cat_4 <= 1.5000)) AND ((x_cat_1 > 1.5000) AND (x_cat_3 <= 2.5000))) AND (((x_cat_3 > 0.5000) AND (x_cat_3 > 1.5000)) AND ((x_num_2 > 0.3908) AND (x_num_3 > 0.4114)))) THEN Class 1
+    (Similarity: 0.78)
+  - Old: IF ((((x_num_1 <= 0.5852) AND (x_cat_3 <= 2.5000)) AND ((x_num_3 > 0.4222) AND ((x_num_2 > 0.1873) AND (x_cat_3 <= 1.5000)))) AND (((x_num_2 <= 0.7718) AND (x_num_1 > 0.1560)) AND ((x_cat_1 <= 3.5000) AND ((x_cat_4 <= 2.5000) AND (x_cat_3 <= 0.5000))))) THEN Class 1
+  + New: IF ((((x_cat_4 <= 2.5000) AND (x_cat_4 > 1.5000)) AND ((x_num_1 > 0.3734) AND (x_num_4 > 0.1361))) AND (((x_cat_3 > 0.5000) AND (x_num_3 > 0.2264)) AND ((x_num_1 <= 0.8798) AND ((x_cat_1 <= 1.5000) AND (x_num_2 > 0.3749))))) THEN Class 1
+    (Similarity: 0.68)
+  - Old: IF (((x_num_1 <= 0.5852) AND ((x_cat_3 <= 2.5000) AND (x_num_3 > 0.4222))) AND (((x_num_2 > 0.1873) AND (x_cat_3 > 1.5000)) AND ((x_num_2 > 0.4126) AND (x_num_3 > 0.5925)))) THEN Class 1
+  + New: IF (((x_cat_4 > 2.5000) AND ((x_cat_3 <= 3.5000) AND (x_cat_1 <= 1.5000))) AND (((x_num_3 > 0.1231) AND (x_num_2 > 0.4469)) AND ((x_num_0 <= 0.4237) AND (x_num_0 > 0.2287)))) THEN Class 1
+    (Similarity: 0.73)
+
+  New Rules:
+  + IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.3805)) AND (x_num_4 <= 0.2675)) AND (x_num_4 > 0.0247)) AND (x_num_0 > 0.3212)) AND (x_num_1 <= 0.9037)) THEN Class 1
+  + IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_1 > 0.1011)) AND (x_num_0 > 0.0814)) AND (x_cat_4 > 0.5000)) AND (x_cat_4 > 1.5000)) AND (x_num_0 <= 0.7877)) THEN Class 1
+  + IF (((((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_1 <= 1.5000)) AND (x_cat_3 > 0.5000)) AND (x_num_3 > 0.3801)) AND (x_num_2 <= 0.4973)) AND (x_num_3 <= 0.9013)) THEN Class 1
+  + IF (((((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_1 <= 1.5000)) AND (x_cat_3 > 0.5000)) AND (x_num_3 > 0.3801)) AND (x_num_2 > 0.4973)) AND (x_num_4 <= 0.6644)) THEN Class 1
+  + IF (((((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_1 > 1.5000)) AND (x_num_4 <= 0.3701)) AND (x_cat_3 > 1.5000)) AND (x_num_3 > 0.3858)) AND (x_num_0 > 0.3760)) THEN Class 1
+  + IF (((((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_1 > 1.5000)) AND (x_num_4 > 0.3701)) AND (x_num_0 <= 0.4576)) AND (x_num_3 > 0.7488)) AND (x_cat_3 > 1.5000)) THEN Class 1
+  + IF (((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_1 > 0.1011)) AND (x_num_0 > 0.0814)) AND (x_cat_4 <= 0.5000)) THEN Class 1
+  + IF (((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_1 > 0.1011)) AND (x_num_0 > 0.0814)) AND (x_cat_4 > 0.5000)) THEN Class 1
+  + IF (((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_1 > 1.5000)) AND (x_num_4 <= 0.3701)) AND (x_cat_3 > 1.5000)) THEN Class 1
+  + IF (((x_cat_4 <= 2.5000) AND ((x_cat_4 <= 1.5000) AND (x_cat_1 > 1.5000))) AND (((x_cat_3 > 2.5000) AND (x_cat_4 <= 0.5000)) AND ((x_cat_3 > 3.5000) AND (x_num_4 <= 0.6658)))) THEN Class 1
+  + IF (((x_cat_4 <= 2.5000) AND (x_cat_4 > 1.5000)) AND ((x_num_1 > 0.3734) AND ((x_num_4 > 0.1361) AND (x_cat_3 <= 0.5000)))) THEN Class 1
+  + IF (((x_num_3 > 0.8544) OR ((x_num_4 > 0.7231) AND ((x_cat_3 < 1.9794) AND (x_num_4 <= 0.7530)))) AND (x_cat_0 > 3.2798)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((((((x_cat_2 > 2.4149) AND (x_cat_3 > 2.6352)) OR (x_num_0 > 0.2977)) OR ((x_cat_2 > 2.7336) AND (((x_cat_0 < 2.8461) AND (x_num_4 > 0.1658)) AND (((x_num_2 >= 0.4421) AND (x_num_2 < 0.2904)) OR ((x_num_4 <= 0.4741) AND (x_num_1 > 0.8409)))))) AND ((((((x_num_4 >= 0.4296) AND (x_cat_2 >= 2.8556)) AND ((x_num_4 < 0.2392) AND (x_num_1 < 0.6664))) AND (x_cat_4 <= 1.0460)) AND (x_num_4 >= 0.6907)) OR ((((x_num_3 > 0.6269) OR ((x_cat_4 >= 1.1090) AND (x_cat_4 <= 0.6153))) AND (((x_num_0 <= 0.3996) AND (x_num_1 <= 0.2336)) AND (x_num_4 > 0.2518))) AND (x_cat_0 > 2.9986)))) OR ((x_cat_0 > 2.4722) AND (x_num_0 <= 0.6063))) OR (x_cat_1 <= 0.9748)) AND (x_cat_4 < 3.1759)) AND ((x_cat_4 >= 2.1413) AND (x_cat_4 <= 1.2872))) THEN Class 1
+  - IF ((((x_num_0 > 0.6195) AND (((x_cat_0 >= 3.4435) AND (((((x_num_0 >= 0.8316) AND (x_num_4 <= 0.3857)) OR (((x_cat_4 <= 3.3136) AND (x_num_0 <= 0.6889)) AND (x_num_1 <= 0.8751))) OR ((x_num_0 <= 0.4154) AND (((x_num_1 > 0.3205) AND (x_num_3 >= 0.6892)) OR (x_num_1 < 0.6421)))) AND ((x_num_4 >= 0.3971) AND (((x_num_0 < 0.3629) AND ((x_num_2 > 0.6947) AND (x_num_0 < 0.3215))) AND (((x_num_1 > 0.5522) AND (x_cat_3 > 2.7956)) AND ((x_num_4 >= 0.3505) AND (x_num_1 > 0.5131))))))) AND ((x_cat_4 <= 0.9829) AND (x_cat_0 > 1.2854)))) AND (((x_cat_2 > 3.4281) OR (x_num_0 < 0.2958)) AND (((x_cat_3 <= 1.5959) AND (x_num_0 >= 0.2898)) AND (x_cat_1 < 1.4615)))) AND (x_num_0 >= 0.8000)) THEN Class 1
+  - IF (((x_num_1 > 0.5852) AND ((x_num_2 > 0.2051) AND (x_num_3 > 0.4004))) AND ((x_cat_3 > 1.5000) AND ((x_num_0 <= 0.9268) AND (x_cat_3 <= 2.5000)))) THEN Class 1
+  - IF (((x_num_4 <= 0.4646) AND (((x_cat_0 > 1.4361) AND (x_num_4 >= 0.6916)) AND (x_num_4 >= 0.8945))) AND (((x_cat_3 <= 3.1002) AND ((((x_cat_4 >= 1.0384) AND ((x_cat_3 >= 3.3227) AND (x_cat_2 < 3.1984))) OR ((x_cat_1 <= 0.5198) AND ((((x_cat_4 < 2.6971) AND ((x_num_3 >= 0.8034) AND (x_cat_1 >= 1.2187))) AND ((x_cat_0 > 1.9478) AND ((x_num_2 < 0.7487) AND (x_num_3 <= 0.2993)))) AND (((x_num_1 < 0.2497) AND ((x_num_3 < 0.7000) AND (x_num_4 <= 0.2997))) AND (x_cat_2 > 1.0377))))) AND (x_num_1 <= 0.8271))) AND ((x_cat_3 < 3.2813) OR ((x_num_1 > 0.5615) AND (((x_cat_1 > 3.2412) AND ((x_num_4 <= 0.5114) AND (((x_num_1 <= 0.8910) AND (x_cat_3 > 2.0053)) AND (x_num_3 <= 0.2169)))) AND ((x_cat_2 > 2.8434) AND ((x_num_2 < 0.1773) AND (x_num_1 < 0.5162)))))))) THEN Class 1
+
+======================================================================
+--- Diff Chunk 3 -> Chunk 4 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 3):   0.7732
+  - Test G-Mean (Chunk 4):  0.6645
+  - Test F1 (Chunk 4):      0.6907
+Fitness:       0.853754 -> 1.020477
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((((x_num_3 > 0.3661) AND (x_cat_3 <= 3.5000)) AND ((x_num_2 <= 0.4136) AND ((x_num_0 <= 0.9199) AND (x_cat_1 <= 3.5000)))) AND (((x_num_4 <= 0.9211) AND (x_cat_3 > 0.5000)) AND ((x_num_3 <= 0.9392) AND ((x_num_4 > 0.1329) AND (x_num_1 <= 0.8153))))) THEN Class 0
+  + IF (((x_cat_1 > 1.5000) AND ((x_num_1 <= 0.8284) AND (x_num_4 > 0.3941))) AND (((x_cat_4 > 2.5000) AND (x_num_2 <= 0.8836)) AND ((x_num_0 > 0.6924) AND (x_cat_2 > 0.5000)))) THEN Class 0
+  + IF (((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_1 <= 0.1323)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.3805)) AND (x_cat_1 > 1.5000)) AND (x_cat_3 <= 0.5000)) AND (x_num_3 > 0.1954)) THEN Class 1
+  + New: IF ((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.3772)) AND (x_cat_3 > 1.5000)) AND (x_cat_2 > 3.5000)) AND (x_num_3 <= 0.0847)) THEN Class 1
+    (Similarity: 0.90)
+  - Old: IF (((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_1 > 0.1011)) AND (x_num_0 > 0.0814)) AND (x_cat_4 <= 0.5000)) THEN Class 1
+  + New: IF (((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_0 <= 0.9557)) AND (x_num_0 > 0.1609)) AND (x_cat_4 <= 0.5000)) THEN Class 1
+    (Similarity: 0.91)
+  - Old: IF (((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_1 > 0.1011)) AND (x_num_0 > 0.0814)) AND (x_cat_4 > 0.5000)) THEN Class 1
+  + New: IF (((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_0 <= 0.9557)) AND (x_num_0 > 0.1609)) AND (x_cat_4 > 0.5000)) THEN Class 1
+    (Similarity: 0.91)
+  - Old: IF ((((x_cat_4 <= 2.5000) AND (x_cat_4 > 1.5000)) AND ((x_num_1 > 0.3734) AND (x_num_4 > 0.1361))) AND (((x_cat_3 > 0.5000) AND (x_num_3 > 0.2264)) AND ((x_num_1 <= 0.8798) AND ((x_cat_1 <= 1.5000) AND (x_num_2 > 0.3749))))) THEN Class 1
+  + New: IF ((((x_cat_1 <= 1.5000) AND (x_cat_1 > 0.5000)) AND ((x_num_0 > 0.1855) AND (x_cat_3 <= 2.5000))) AND (((x_num_4 > 0.1417) AND (x_cat_3 > 0.5000)) AND ((x_num_1 > 0.2359) AND ((x_num_4 > 0.3688) AND (x_num_2 > 0.6735))))) THEN Class 1
+    (Similarity: 0.75)
+  - Old: IF ((((x_cat_4 <= 2.5000) AND (x_cat_4 <= 1.5000)) AND ((x_cat_1 > 1.5000) AND (x_cat_3 <= 2.5000))) AND (((x_cat_3 > 0.5000) AND (x_cat_3 > 1.5000)) AND ((x_num_2 > 0.3908) AND (x_num_3 > 0.4114)))) THEN Class 1
+  + New: IF ((((x_num_3 > 0.3661) AND (x_cat_3 <= 3.5000)) AND ((x_num_2 > 0.4136) AND (x_cat_3 <= 2.5000))) AND (((x_cat_3 > 1.5000) AND (x_num_4 > 0.1330)) AND ((x_num_3 > 0.4462) AND (x_num_2 > 0.4934)))) THEN Class 1
+    (Similarity: 0.80)
+  - Old: IF ((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_1 > 0.1011)) AND (x_num_0 <= 0.0814)) THEN Class 1
+  + New: IF (((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.3772)) THEN Class 1
+    (Similarity: 0.65)
+
+  New Rules:
+  + IF (((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.3971)) AND (x_cat_3 > 1.5000)) AND (x_cat_2 <= 3.5000)) THEN Class 1
+  + IF ((((x_cat_1 <= 1.5000) AND (x_cat_1 > 0.5000)) AND ((x_num_0 > 0.1855) AND (x_cat_3 <= 2.5000))) AND (((x_num_4 > 0.1417) AND (x_cat_3 > 0.5000)) AND ((x_num_1 > 0.2359) AND ((x_num_4 > 0.3688) AND (x_num_2 <= 0.6735))))) THEN Class 1
+  + IF (((x_num_3 > 0.3661) AND (x_cat_3 > 3.5000)) AND ((x_cat_4 <= 2.5000) AND (x_cat_4 > 1.5000))) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.3805)) AND (x_num_4 <= 0.2675)) AND (x_num_4 > 0.0247)) AND (x_num_0 > 0.3212)) AND (x_num_1 <= 0.9037)) THEN Class 1
+  - IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_1 > 0.1011)) AND (x_num_0 > 0.0814)) AND (x_cat_4 > 0.5000)) AND (x_cat_4 > 1.5000)) AND (x_num_0 <= 0.7877)) THEN Class 1
+  - IF (((((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_1 <= 1.5000)) AND (x_cat_3 > 0.5000)) AND (x_num_3 > 0.3801)) AND (x_num_2 <= 0.4973)) AND (x_num_3 <= 0.9013)) THEN Class 1
+  - IF (((((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_1 <= 1.5000)) AND (x_cat_3 > 0.5000)) AND (x_num_3 > 0.3801)) AND (x_num_2 > 0.4973)) AND (x_num_4 <= 0.6644)) THEN Class 1
+  - IF (((((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_1 > 1.5000)) AND (x_num_4 <= 0.3701)) AND (x_cat_3 > 1.5000)) AND (x_num_3 > 0.3858)) AND (x_num_0 > 0.3760)) THEN Class 1
+  - IF (((((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_1 > 1.5000)) AND (x_num_4 > 0.3701)) AND (x_num_0 <= 0.4576)) AND (x_num_3 > 0.7488)) AND (x_cat_3 > 1.5000)) THEN Class 1
+  - IF ((((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_1 <= 1.5000)) AND (x_cat_3 > 0.5000)) AND (x_num_3 <= 0.3801)) AND (x_cat_3 <= 1.5000)) THEN Class 1
+  - IF (((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_1 > 1.5000)) AND (x_num_4 <= 0.3701)) AND (x_cat_3 > 1.5000)) THEN Class 1
+  - IF (((x_cat_4 <= 2.5000) AND ((x_cat_4 <= 1.5000) AND (x_cat_1 > 1.5000))) AND (((x_cat_3 > 2.5000) AND (x_cat_4 <= 0.5000)) AND ((x_cat_3 > 3.5000) AND (x_num_4 <= 0.6658)))) THEN Class 1
+  - IF (((x_cat_4 <= 2.5000) AND (x_cat_4 > 1.5000)) AND ((x_num_1 > 0.3734) AND ((x_num_4 > 0.1361) AND (x_cat_3 <= 0.5000)))) THEN Class 1
+  - IF (((x_cat_4 > 2.5000) AND ((x_cat_3 <= 3.5000) AND (x_cat_1 <= 1.5000))) AND (((x_num_3 > 0.1231) AND (x_num_2 > 0.4469)) AND ((x_num_0 <= 0.4237) AND (x_num_0 > 0.2287)))) THEN Class 1
+  - IF (((x_num_3 > 0.8544) OR ((x_num_4 > 0.7231) AND ((x_cat_3 < 1.9794) AND (x_num_4 <= 0.7530)))) AND (x_cat_0 > 3.2798)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 4 -> Chunk 5 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 4):   0.7459
+  - Test G-Mean (Chunk 5):  0.6960
+  - Test F1 (Chunk 5):      0.6987
+Fitness:       1.020477 -> 0.975652
+Default Class: 0 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((((x_num_3 > 0.3661) AND (x_cat_3 <= 3.5000)) AND ((x_num_2 <= 0.4136) AND ((x_num_0 <= 0.9199) AND (x_cat_1 <= 3.5000)))) AND (((x_num_4 <= 0.9211) AND (x_cat_3 > 0.5000)) AND ((x_num_3 <= 0.9392) AND ((x_num_4 > 0.1329) AND (x_num_1 <= 0.8153))))) THEN Class 0
+  + New: IF ((((x_cat_0 > 0.5000) AND (x_cat_4 <= 2.5000)) AND ((x_cat_3 <= 3.5000) AND ((x_num_3 <= 0.4648) AND (x_cat_1 > 0.5000)))) AND (((x_num_4 <= 0.9596) AND (x_num_3 <= 0.4200)) AND ((x_num_4 > 0.1575) AND ((x_cat_3 > 1.5000) AND (x_num_0 <= 0.4024))))) THEN Class 0
+    (Similarity: 0.77)
+  - Old: IF (((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_1 <= 0.1323)) THEN Class 0
+  + New: IF (((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_4 <= 0.2343)) THEN Class 0
+    (Similarity: 0.96)
+
+  New Rules:
+  + IF (((x_cat_0 <= 0.5000) AND (x_num_3 <= 0.2970)) AND ((x_num_2 > 0.4944) AND (x_num_3 <= 0.2048))) THEN Class 0
+  + IF (((x_cat_0 > 0.5000) AND (x_cat_4 > 2.5000)) AND ((x_cat_3 > 3.5000) AND (x_cat_0 > 1.5000))) THEN Class 0
+  + IF (((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_cat_1 <= 1.5000)) THEN Class 0
+  + IF (((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_cat_4 > 3.5000)) THEN Class 0
+  + IF (((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_2 <= 0.0780)) THEN Class 0
+  + IF ((x_cat_1 >= 0.8882) OR (x_cat_0 > 1.6054)) THEN Class 0
+  + IF ((x_cat_1 >= 1.3147) AND ((x_cat_4 < 1.8868) AND (x_cat_4 >= 0.5345))) THEN Class 0
+  + IF ((x_num_1 >= 0.3027) AND (x_cat_2 < 2.8356)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((x_cat_1 > 1.5000) AND ((x_num_1 <= 0.8284) AND (x_num_4 > 0.3941))) AND (((x_cat_4 > 2.5000) AND (x_num_2 <= 0.8836)) AND ((x_num_0 > 0.6924) AND (x_cat_2 > 0.5000)))) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.3772)) AND (x_cat_3 > 1.5000)) AND (x_cat_2 > 3.5000)) AND (x_num_3 <= 0.0847)) THEN Class 1
+  + New: IF ((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_3 > 0.5000)) AND (x_cat_1 <= 1.5000)) AND (x_num_1 <= 0.2008)) AND (x_cat_0 > 3.5000)) THEN Class 1
+    (Similarity: 0.78)
+  - Old: IF (((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_0 <= 0.9557)) AND (x_num_0 > 0.1609)) AND (x_cat_4 <= 0.5000)) THEN Class 1
+  + New: IF (((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_3 <= 0.5000)) AND (x_cat_4 > 0.1956)) AND (x_num_4 <= 0.8478)) THEN Class 1
+    (Similarity: 0.80)
+  - Old: IF (((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_0 <= 0.9557)) AND (x_num_0 > 0.1609)) AND (x_cat_4 > 0.5000)) THEN Class 1
+  + New: IF (((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_0 > 0.0986)) AND (x_num_0 <= 0.9149)) AND (x_num_2 > 0.7090)) THEN Class 1
+    (Similarity: 0.86)
+  - Old: IF ((((x_num_3 > 0.3661) AND (x_cat_3 <= 3.5000)) AND ((x_num_2 > 0.4136) AND (x_cat_3 <= 2.5000))) AND (((x_cat_3 > 1.5000) AND (x_num_4 > 0.1330)) AND ((x_num_3 > 0.4462) AND (x_num_2 > 0.4934)))) THEN Class 1
+  + New: IF ((((x_cat_0 > 0.5000) AND (x_cat_4 <= 2.5000)) AND ((x_cat_3 > 3.5000) AND (x_num_2 <= 0.7090))) AND (((x_num_0 <= 0.8583) AND (x_num_0 > 0.1804)) AND ((x_num_2 <= 0.5257) AND (x_num_4 > 0.3276)))) THEN Class 1
+    (Similarity: 0.73)
+  - Old: IF (((x_num_3 > 0.3661) AND (x_cat_3 > 3.5000)) AND ((x_cat_4 <= 2.5000) AND (x_cat_4 > 1.5000))) THEN Class 1
+  + New: IF ((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_cat_4 > 1.5000)) AND (x_num_3 <= 0.7491)) THEN Class 1
+    (Similarity: 0.69)
+  - Old: IF (((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.3772)) THEN Class 1
+  + New: IF (((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.3242)) THEN Class 1
+    (Similarity: 0.94)
+
+  New Rules:
+  + IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_3 <= 0.5000)) AND (x_cat_4 <= 1.5000)) AND (x_cat_1 > 0.5000)) AND (x_num_1 > 0.2263)) AND (x_num_1 > 0.3513)) THEN Class 1
+  + IF (((((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.3242)) AND (x_cat_3 <= 1.5000)) AND (x_cat_4 <= 3.5000)) AND (x_cat_1 <= 1.5000)) AND (x_num_4 > 0.6075)) THEN Class 1
+  + IF (((((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.3242)) AND (x_cat_3 > 1.5000)) AND (x_num_4 <= 0.2935)) AND (x_num_2 <= 0.2876)) AND (x_cat_0 > 1.5000)) THEN Class 1
+  + IF ((((x_cat_0 > 0.5000) AND (x_cat_4 <= 2.5000)) AND ((x_cat_3 <= 3.5000) AND ((x_num_3 > 0.4648) AND (x_num_0 > 0.1611)))) AND (((x_cat_1 <= 3.5000) AND (x_num_1 > 0.0207)) AND ((x_num_4 > 0.2411) AND ((x_cat_3 <= 2.5000) AND (x_cat_3 <= 1.5000))))) THEN Class 1
+  + IF ((((x_cat_0 > 0.5000) AND (x_cat_4 <= 2.5000)) AND ((x_cat_3 <= 3.5000) AND ((x_num_3 > 0.4648) AND (x_num_0 > 0.1611)))) AND (((x_cat_1 <= 3.5000) AND (x_num_1 > 0.0207)) AND ((x_num_4 > 0.2411) AND ((x_cat_3 <= 2.5000) AND (x_cat_3 > 1.5000))))) THEN Class 1
+  + IF (x_cat_3 <= 1.5134) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.3971)) AND (x_cat_3 > 1.5000)) AND (x_cat_2 <= 3.5000)) THEN Class 1
+  - IF ((((x_cat_1 <= 1.5000) AND (x_cat_1 > 0.5000)) AND ((x_num_0 > 0.1855) AND (x_cat_3 <= 2.5000))) AND (((x_num_4 > 0.1417) AND (x_cat_3 > 0.5000)) AND ((x_num_1 > 0.2359) AND ((x_num_4 > 0.3688) AND (x_num_2 <= 0.6735))))) THEN Class 1
+  - IF ((((x_cat_1 <= 1.5000) AND (x_cat_1 > 0.5000)) AND ((x_num_0 > 0.1855) AND (x_cat_3 <= 2.5000))) AND (((x_num_4 > 0.1417) AND (x_cat_3 > 0.5000)) AND ((x_num_1 > 0.2359) AND ((x_num_4 > 0.3688) AND (x_num_2 > 0.6735))))) THEN Class 1
+
+======================================================================
+--- Diff Chunk 5 -> Chunk 6 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 5):   0.7044
+  - Test G-Mean (Chunk 6):  0.6413
+  - Test F1 (Chunk 6):      0.6799
+Fitness:       0.975652 -> 1.040898
+Default Class: 1 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF (((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_2 <= 0.0780)) THEN Class 0
+  + New: IF ((x_cat_4 > 2.5000) AND ((x_cat_3 > 3.5000) AND (x_num_1 > 0.0579))) THEN Class 0
+    (Similarity: 0.87)
+
+  New Rules:
+  + IF (((((((x_num_3 > 0.4132) AND (x_cat_4 > 2.5000)) AND (x_cat_3 <= 3.5000)) AND (x_cat_3 > 3.1333)) AND (x_num_2 <= 0.3668)) AND (x_num_0 <= 0.3902)) AND (x_cat_3 <= 2.5000)) THEN Class 0
+  + IF ((x_cat_4 > 2.5000) AND ((x_cat_3 > 3.5000) AND (x_num_1 > 0.0579))) THEN Class 0
+
+  Deleted Rules:
+  - IF ((((x_cat_0 > 0.5000) AND (x_cat_4 <= 2.5000)) AND ((x_cat_3 <= 3.5000) AND ((x_num_3 <= 0.4648) AND (x_cat_1 > 0.5000)))) AND (((x_num_4 <= 0.9596) AND (x_num_3 <= 0.4200)) AND ((x_num_4 > 0.1575) AND ((x_cat_3 > 1.5000) AND (x_num_0 <= 0.4024))))) THEN Class 0
+  - IF (((x_cat_0 <= 0.5000) AND (x_num_3 <= 0.2970)) AND ((x_num_2 > 0.4944) AND (x_num_3 <= 0.2048))) THEN Class 0
+  - IF (((x_cat_0 > 0.5000) AND (x_cat_4 > 2.5000)) AND ((x_cat_3 > 3.5000) AND (x_cat_0 > 1.5000))) THEN Class 0
+  - IF (((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_cat_1 <= 1.5000)) THEN Class 0
+  - IF (((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_cat_4 > 3.5000)) THEN Class 0
+  - IF (((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_4 <= 0.2343)) THEN Class 0
+  - IF ((x_cat_1 >= 0.8882) OR (x_cat_0 > 1.6054)) THEN Class 0
+  - IF ((x_cat_1 >= 1.3147) AND ((x_cat_4 < 1.8868) AND (x_cat_4 >= 0.5345))) THEN Class 0
+  - IF ((x_num_1 >= 0.3027) AND (x_cat_2 < 2.8356)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.3242)) AND (x_cat_3 <= 1.5000)) AND (x_cat_4 <= 3.5000)) AND (x_cat_1 <= 1.5000)) AND (x_num_4 > 0.6075)) THEN Class 1
+  + New: IF (((((((x_num_3 > 0.4132) AND (x_cat_4 <= 2.5000)) AND (x_num_1 <= 0.3675)) AND (x_num_4 <= 0.2210)) AND (x_num_1 > 0.1169)) AND (x_cat_3 > 1.5000)) AND (x_num_4 > 0.1100)) THEN Class 1
+    (Similarity: 0.75)
+  - Old: IF (((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_0 > 0.0986)) AND (x_num_0 <= 0.9149)) AND (x_num_2 > 0.7090)) THEN Class 1
+  + New: IF (((((x_num_3 > 0.4132) AND (x_cat_4 <= 2.5000)) AND (x_num_1 > 0.3675)) AND (x_num_1 <= 0.9393)) AND (x_num_2 > 0.2431)) THEN Class 1
+    (Similarity: 0.77)
+  - Old: IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_3 <= 0.5000)) AND (x_cat_4 <= 1.5000)) AND (x_cat_1 > 0.5000)) AND (x_num_1 > 0.2263)) AND (x_num_1 > 0.3513)) THEN Class 1
+  + New: IF ((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND ((x_num_4 > 0.1953) AND (x_cat_3 <= 2.5000))) AND (((x_cat_4 <= 1.5000) AND (x_cat_3 > 1.5000)) AND ((x_num_3 > 0.3976) AND (x_num_2 > 0.3512)))) THEN Class 1
+    (Similarity: 0.77)
+  - Old: IF ((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_3 > 0.5000)) AND (x_cat_1 <= 1.5000)) AND (x_num_1 <= 0.2008)) AND (x_cat_0 > 3.5000)) THEN Class 1
+  + New: IF (((x_cat_4 <= 2.5000) AND ((x_cat_4 <= 1.5000) AND (x_num_4 <= 0.1911))) AND ((x_cat_1 > 0.5000) AND ((x_num_2 > 0.4640) AND (x_cat_2 > 1.5000)))) THEN Class 1
+    (Similarity: 0.76)
+  - Old: IF ((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_cat_4 > 1.5000)) AND (x_num_3 <= 0.7491)) THEN Class 1
+  + New: IF (((x_cat_4 <= 2.5000) AND (x_cat_4 > 1.5000)) AND ((x_cat_3 <= 0.5000) AND (x_num_3 <= 0.7410))) THEN Class 1
+    (Similarity: 0.88)
+  - Old: IF (((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_3 <= 0.5000)) AND (x_cat_4 > 0.1956)) AND (x_num_4 <= 0.8478)) THEN Class 1
+  + New: IF (((x_cat_4 <= 2.5000) AND (x_cat_4 > 1.5000)) AND ((x_cat_3 > 0.5000) AND ((x_cat_3 > 3.5000) AND (x_num_0 <= 0.7840)))) THEN Class 1
+    (Similarity: 0.81)
+
+  New Rules:
+  + IF ((((((x_num_3 <= 0.4132) AND (x_cat_4 > 2.5000)) AND (x_num_1 > 0.7433)) AND (x_num_4 <= 0.5917)) AND (x_cat_3 <= 1.5000)) AND (x_num_3 <= 0.2374)) THEN Class 1
+  + IF (((((x_num_3 > 0.4132) AND (x_cat_4 > 2.5000)) AND (x_cat_3 <= 3.5000)) AND (x_cat_3 > 1.5000)) AND (x_num_2 <= 0.3668)) THEN Class 1
+  + IF (((((x_num_3 > 0.4132) AND (x_cat_4 > 2.5000)) AND (x_cat_3 <= 3.5000)) AND (x_cat_3 > 1.5000)) AND (x_num_2 > 0.3668)) THEN Class 1
+  + IF (((x_cat_4 <= 2.5000) AND ((x_cat_3 > 3.5000) AND (x_num_0 <= 0.7976))) AND ((x_num_0 > 0.1302) AND ((x_cat_4 <= 1.5000) AND (x_cat_4 <= 0.5000)))) THEN Class 1
+  + IF (((x_cat_4 <= 2.5000) AND ((x_cat_3 > 3.5000) AND (x_num_0 <= 0.7976))) AND ((x_num_0 > 0.1302) AND ((x_cat_4 > 1.5000) AND (x_num_4 > 0.1934)))) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.3242)) AND (x_cat_3 > 1.5000)) AND (x_num_4 <= 0.2935)) AND (x_num_2 <= 0.2876)) AND (x_cat_0 > 1.5000)) THEN Class 1
+  - IF ((((x_cat_0 > 0.5000) AND (x_cat_4 <= 2.5000)) AND ((x_cat_3 <= 3.5000) AND ((x_num_3 > 0.4648) AND (x_num_0 > 0.1611)))) AND (((x_cat_1 <= 3.5000) AND (x_num_1 > 0.0207)) AND ((x_num_4 > 0.2411) AND ((x_cat_3 <= 2.5000) AND (x_cat_3 <= 1.5000))))) THEN Class 1
+  - IF ((((x_cat_0 > 0.5000) AND (x_cat_4 <= 2.5000)) AND ((x_cat_3 <= 3.5000) AND ((x_num_3 > 0.4648) AND (x_num_0 > 0.1611)))) AND (((x_cat_1 <= 3.5000) AND (x_num_1 > 0.0207)) AND ((x_num_4 > 0.2411) AND ((x_cat_3 <= 2.5000) AND (x_cat_3 > 1.5000))))) THEN Class 1
+  - IF ((((x_cat_0 > 0.5000) AND (x_cat_4 <= 2.5000)) AND ((x_cat_3 > 3.5000) AND (x_num_2 <= 0.7090))) AND (((x_num_0 <= 0.8583) AND (x_num_0 > 0.1804)) AND ((x_num_2 <= 0.5257) AND (x_num_4 > 0.3276)))) THEN Class 1
+  - IF (((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.3242)) THEN Class 1
+  - IF (x_cat_3 <= 1.5134) THEN Class 1
+
+======================================================================
+--- Diff Chunk 6 -> Chunk 7 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 6):   0.7619
+  - Test G-Mean (Chunk 7):  0.6876
+  - Test F1 (Chunk 7):      0.7185
+Fitness:       1.040898 -> 1.066724
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((x_cat_4 > 2.5000) AND ((x_cat_3 > 3.5000) AND (x_num_1 > 0.0579))) THEN Class 0
+  + New: IF ((x_cat_4 > 2.5000) AND ((x_cat_3 > 3.5000) AND (x_num_1 > 0.1002))) THEN Class 0
+    (Similarity: 0.94)
+
+  New Rules:
+  + IF (((x_cat_0 > 0.5000) AND (x_cat_4 > 2.5000)) AND ((x_cat_3 > 3.5000) AND ((x_num_3 > 0.1560) AND (x_num_0 > 0.1916)))) THEN Class 0
+  + IF (((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_1 <= 0.1002)) THEN Class 0
+  + IF (((x_cat_4 > 2.8936) AND (x_cat_3 > 3.5000)) AND (x_num_4 <= 0.1032)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((((((x_num_3 > 0.4132) AND (x_cat_4 > 2.5000)) AND (x_cat_3 <= 3.5000)) AND (x_cat_3 > 3.1333)) AND (x_num_2 <= 0.3668)) AND (x_num_0 <= 0.3902)) AND (x_cat_3 <= 2.5000)) THEN Class 0
+  - IF ((x_cat_4 > 2.5000) AND ((x_cat_3 > 3.5000) AND (x_num_1 > 0.0579))) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((((((x_num_3 > 0.4132) AND (x_cat_4 <= 2.5000)) AND (x_num_1 <= 0.3675)) AND (x_num_4 <= 0.2210)) AND (x_num_1 > 0.1169)) AND (x_cat_3 > 1.5000)) AND (x_num_4 > 0.1100)) THEN Class 1
+  + New: IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.2708)) AND (x_num_2 > 0.0809)) AND (x_num_4 <= 0.3216)) AND (x_cat_3 > 1.5000)) AND (x_num_1 > 0.1378)) THEN Class 1
+    (Similarity: 0.78)
+  - Old: IF ((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND ((x_num_4 > 0.1953) AND (x_cat_3 <= 2.5000))) AND (((x_cat_4 <= 1.5000) AND (x_cat_3 > 1.5000)) AND ((x_num_3 > 0.3976) AND (x_num_2 > 0.3512)))) THEN Class 1
+  + New: IF ((((x_cat_4 <= 2.5000) AND (x_cat_4 <= 1.5000)) AND ((x_cat_0 > 0.5000) AND (x_num_0 <= 0.7679))) AND (((x_cat_4 > 0.5000) AND (x_cat_0 > 3.5000)) AND ((x_num_2 > 0.3849) AND (x_num_4 <= 0.5906)))) THEN Class 1
+    (Similarity: 0.82)
+  - Old: IF (((x_cat_4 <= 2.5000) AND (x_cat_4 > 1.5000)) AND ((x_cat_3 > 0.5000) AND ((x_cat_3 > 3.5000) AND (x_num_0 <= 0.7840)))) THEN Class 1
+  + New: IF (((x_cat_0 > 0.5000) AND (x_cat_4 <= 2.5000)) AND ((x_num_1 > 0.0334) AND ((x_cat_3 <= 0.5000) AND (x_cat_4 > 1.5000)))) THEN Class 1
+    (Similarity: 0.77)
+  - Old: IF (((x_cat_4 <= 2.5000) AND ((x_cat_4 <= 1.5000) AND (x_num_4 <= 0.1911))) AND ((x_cat_1 > 0.5000) AND ((x_num_2 > 0.4640) AND (x_cat_2 > 1.5000)))) THEN Class 1
+  + New: IF (((x_cat_4 <= 2.5000) AND ((x_cat_4 > 1.5000) AND (x_cat_3 > 0.5000))) AND ((x_cat_3 > 3.5000) AND ((x_num_0 <= 0.7514) AND (x_num_2 > 0.3093)))) THEN Class 1
+    (Similarity: 0.81)
+  - Old: IF (((x_cat_4 <= 2.5000) AND (x_cat_4 > 1.5000)) AND ((x_cat_3 <= 0.5000) AND (x_num_3 <= 0.7410))) THEN Class 1
+  + New: IF (((x_cat_4 <= 2.5000) AND (x_cat_4 > 1.5000)) AND ((x_cat_3 <= 0.5000) AND (x_num_3 > 0.3534))) THEN Class 1
+    (Similarity: 0.94)
+
+  New Rules:
+  + IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.2708)) AND (x_cat_3 <= 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_num_0 <= 0.6518)) AND (x_num_3 <= 0.1042)) THEN Class 1
+  + IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.2708)) AND (x_num_2 > 0.3761)) AND (x_num_4 > 0.3216)) AND (x_cat_3 <= 2.5000)) AND (x_cat_1 <= 2.5000)) THEN Class 1
+  + IF (((((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_3 <= 1.5000)) AND (x_num_0 > 0.1546)) AND (x_num_4 > 0.1676)) AND (x_num_1 > 0.6949)) AND (x_cat_4 > 3.5000)) THEN Class 1
+  + IF (((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_0 <= 0.8993)) AND (x_cat_0 <= 3.5000)) AND (x_cat_4 <= 1.5000)) THEN Class 1
+  + IF (((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_3 > 1.5000)) AND (x_num_3 > 0.4316)) AND (x_cat_3 <= 2.5000)) THEN Class 1
+  + IF ((((x_cat_0 > 0.5000) AND (x_cat_4 <= 2.5000)) AND ((x_num_1 > 0.0334) AND ((x_cat_3 > 0.5000) AND (x_cat_3 > 2.5000)))) AND (((x_cat_4 > 0.5000) AND (x_cat_0 > 1.5000)) AND ((x_cat_0 > 3.5000) AND ((x_num_4 <= 0.6820) AND (x_num_1 > 0.4451))))) THEN Class 1
+  + IF ((((x_cat_0 > 0.5000) AND (x_cat_4 <= 2.5000)) AND ((x_num_1 > 0.0334) AND (x_cat_3 > 0.5000))) AND (((x_cat_3 > 2.5000) AND (x_cat_4 > 0.5000)) AND ((x_cat_0 <= 1.5000) AND (x_num_3 <= 0.6265)))) THEN Class 1
+  + IF (((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_0 <= 0.8993)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((x_num_3 <= 0.4132) AND (x_cat_4 > 2.5000)) AND (x_num_1 > 0.7433)) AND (x_num_4 <= 0.5917)) AND (x_cat_3 <= 1.5000)) AND (x_num_3 <= 0.2374)) THEN Class 1
+  - IF (((((x_num_3 > 0.4132) AND (x_cat_4 <= 2.5000)) AND (x_num_1 > 0.3675)) AND (x_num_1 <= 0.9393)) AND (x_num_2 > 0.2431)) THEN Class 1
+  - IF (((((x_num_3 > 0.4132) AND (x_cat_4 > 2.5000)) AND (x_cat_3 <= 3.5000)) AND (x_cat_3 > 1.5000)) AND (x_num_2 <= 0.3668)) THEN Class 1
+  - IF (((((x_num_3 > 0.4132) AND (x_cat_4 > 2.5000)) AND (x_cat_3 <= 3.5000)) AND (x_cat_3 > 1.5000)) AND (x_num_2 > 0.3668)) THEN Class 1
+  - IF (((x_cat_4 <= 2.5000) AND ((x_cat_3 > 3.5000) AND (x_num_0 <= 0.7976))) AND ((x_num_0 > 0.1302) AND ((x_cat_4 <= 1.5000) AND (x_cat_4 <= 0.5000)))) THEN Class 1
+  - IF (((x_cat_4 <= 2.5000) AND ((x_cat_3 > 3.5000) AND (x_num_0 <= 0.7976))) AND ((x_num_0 > 0.1302) AND ((x_cat_4 > 1.5000) AND (x_num_4 > 0.1934)))) THEN Class 1
+
+======================================================================
+--- Diff Chunk 7 -> Chunk 8 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 7):   0.7855
+  - Test G-Mean (Chunk 8):  0.7251
+  - Test F1 (Chunk 8):      0.7546
+Fitness:       1.066724 -> 0.998538
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF (((x_cat_0 > 0.5000) AND (x_cat_4 > 2.5000)) AND ((x_cat_3 > 3.5000) AND ((x_num_3 > 0.1560) AND (x_num_0 > 0.1916)))) THEN Class 0
+  + New: IF (((x_num_3 <= 0.3758) AND (x_num_4 > 0.0627)) AND ((x_cat_4 > 2.5000) AND ((x_cat_1 > 1.5000) AND (x_num_0 > 0.0949)))) THEN Class 0
+    (Similarity: 0.74)
+
+  New Rules:
+  + IF (((x_cat_4 < 1.0161) AND ((x_cat_2 > 2.3649) AND (x_cat_0 >= 2.7635))) AND (((((x_cat_0 <= 3.3425) AND ((x_cat_0 >= 2.1317) AND (((((x_num_0 < 0.1145) AND (x_num_1 < 0.2511)) AND ((x_cat_3 > 3.0945) OR (x_num_4 < 0.8418))) AND (x_num_2 > 0.7880)) AND ((x_num_3 >= 0.1232) AND (x_cat_3 <= 3.2405))))) AND (x_num_4 > 0.8390)) AND (((((x_cat_3 <= 1.6472) OR (x_num_1 >= 0.2244)) AND ((x_cat_3 > 2.2463) AND ((x_num_2 > 0.6668) AND (x_cat_2 < 1.0013)))) AND (x_num_2 > 0.2264)) AND (x_cat_2 >= 1.4577))) AND (x_num_2 <= 0.5301))) THEN Class 0
+  + IF ((x_cat_4 < 0.4840) AND (x_num_3 <= 0.4762)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_1 <= 0.1002)) THEN Class 0
+  - IF (((x_cat_4 > 2.8936) AND (x_cat_3 > 3.5000)) AND (x_num_4 <= 0.1032)) THEN Class 0
+  - IF ((x_cat_4 > 2.5000) AND ((x_cat_3 > 3.5000) AND (x_num_1 > 0.1002))) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((x_cat_4 <= 2.5000) AND (x_cat_4 > 1.5000)) AND ((x_cat_3 <= 0.5000) AND (x_num_3 > 0.3534))) THEN Class 1
+  + New: IF ((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_4 <= 0.1851)) AND (x_cat_3 > 2.5000)) THEN Class 1
+    (Similarity: 0.78)
+  - Old: IF ((((x_cat_4 <= 2.5000) AND (x_cat_4 <= 1.5000)) AND ((x_cat_0 > 0.5000) AND (x_num_0 <= 0.7679))) AND (((x_cat_4 > 0.5000) AND (x_cat_0 > 3.5000)) AND ((x_num_2 > 0.3849) AND (x_num_4 <= 0.5906)))) THEN Class 1
+  + New: IF ((((x_num_3 > 0.3758) AND (x_cat_3 <= 3.5000)) AND ((x_num_1 <= 0.6705) AND (x_num_1 <= 0.6484))) AND (((x_num_0 > 0.2666) AND (x_num_0 <= 0.7419)) AND ((x_num_0 <= 0.5894) AND (x_num_0 <= 0.5366)))) THEN Class 1
+    (Similarity: 0.73)
+  - Old: IF (((x_cat_0 > 0.5000) AND (x_cat_4 <= 2.5000)) AND ((x_num_1 > 0.0334) AND ((x_cat_3 <= 0.5000) AND (x_cat_4 > 1.5000)))) THEN Class 1
+  + New: IF (((x_num_4 > 0.2045) AND (x_cat_4 > 1.5000)) AND ((x_num_3 <= 0.3767) AND ((x_cat_3 <= 0.5000) AND (x_cat_4 <= 2.5000)))) THEN Class 1
+    (Similarity: 0.83)
+
+  New Rules:
+  + IF ((((((((x_num_3 > 0.7674) AND ((x_cat_2 > 1.7786) AND (((x_num_3 > 0.6226) AND (x_num_1 >= 0.5080)) OR ((x_cat_3 >= 3.4816) AND (x_cat_4 >= 1.2129))))) OR ((x_num_3 <= 0.4232) AND (((x_num_1 >= 0.6804) OR (x_cat_3 > 1.2766)) AND ((x_cat_2 > 0.6178) AND (x_num_1 <= 0.2829))))) AND (((x_cat_2 < 1.3186) AND (x_num_2 >= 0.1428)) AND (x_num_4 < 0.6982))) AND (((x_num_4 >= 0.7439) AND (x_num_0 <= 0.7448)) OR ((((x_cat_1 > 2.2002) OR (x_num_4 < 0.8196)) AND (x_num_2 <= 0.8283)) AND (x_cat_0 < 1.6027)))) AND (x_num_4 > 0.6380)) AND ((x_cat_4 > 2.6543) AND (x_cat_3 < 2.4077))) AND (x_cat_4 >= 0.6333)) THEN Class 1
+  + IF ((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_4 <= 0.1851)) AND (x_cat_3 > 2.5000)) THEN Class 1
+  + IF ((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_4 > 0.1851)) AND (x_cat_3 > 2.5000)) THEN Class 1
+  + IF ((((x_num_3 > 0.3758) AND (x_cat_3 <= 3.5000)) AND ((x_num_1 <= 0.6705) AND (x_num_1 <= 0.6484))) AND (((x_num_0 > 0.2666) AND (x_num_0 <= 0.7419)) AND ((x_num_0 > 0.5894) AND (x_cat_2 > 0.5000)))) THEN Class 1
+  + IF ((x_cat_1 <= 1.4059) AND ((((((((x_num_0 >= 0.8672) OR ((x_num_3 >= 0.5592) AND (x_cat_3 >= 1.3417))) AND (((x_cat_3 < 0.5982) AND (x_num_1 >= 0.6325)) AND ((x_num_3 > 0.5305) AND (x_num_4 <= 0.1627)))) AND (((x_cat_4 < 1.8747) AND (x_cat_1 <= 2.3625)) OR (x_num_4 > 0.5213))) AND ((((x_cat_2 > 3.1747) AND ((x_num_0 <= 0.6534) AND (x_num_1 > 0.2227))) AND ((x_num_4 > 0.1216) AND ((x_cat_2 > 2.8241) AND (x_cat_1 >= 1.8912)))) AND (((x_num_1 >= 0.6694) AND ((x_cat_0 > 2.1873) AND (x_cat_0 <= 3.0274))) AND (((x_num_3 < 0.8525) AND (x_num_0 < 0.7320)) OR ((x_num_0 < 0.1761) AND (x_num_1 < 0.5502)))))) OR (((x_num_3 <= 0.1905) AND (x_num_0 >= 0.1936)) AND (((x_cat_3 < 2.4400) AND ((x_cat_0 < 0.4778) AND (x_num_0 >= 0.2567))) AND ((x_cat_3 > 2.3982) OR (((x_cat_3 <= 0.4942) OR (x_cat_1 <= 3.2284)) AND ((x_cat_2 <= 3.3102) AND (x_cat_1 >= 1.1601))))))) OR ((x_cat_3 < 2.9893) AND (x_cat_4 <= 3.3032))) AND (x_cat_3 > 0.4129))) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.2708)) AND (x_cat_3 <= 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_num_0 <= 0.6518)) AND (x_num_3 <= 0.1042)) THEN Class 1
+  - IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.2708)) AND (x_num_2 > 0.0809)) AND (x_num_4 <= 0.3216)) AND (x_cat_3 > 1.5000)) AND (x_num_1 > 0.1378)) THEN Class 1
+  - IF (((((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.2708)) AND (x_num_2 > 0.3761)) AND (x_num_4 > 0.3216)) AND (x_cat_3 <= 2.5000)) AND (x_cat_1 <= 2.5000)) THEN Class 1
+  - IF (((((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_3 <= 1.5000)) AND (x_num_0 > 0.1546)) AND (x_num_4 > 0.1676)) AND (x_num_1 > 0.6949)) AND (x_cat_4 > 3.5000)) THEN Class 1
+  - IF (((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_0 <= 0.8993)) AND (x_cat_0 <= 3.5000)) AND (x_cat_4 <= 1.5000)) THEN Class 1
+  - IF (((((x_cat_4 > 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_cat_3 > 1.5000)) AND (x_num_3 > 0.4316)) AND (x_cat_3 <= 2.5000)) THEN Class 1
+  - IF ((((x_cat_0 > 0.5000) AND (x_cat_4 <= 2.5000)) AND ((x_num_1 > 0.0334) AND ((x_cat_3 > 0.5000) AND (x_cat_3 > 2.5000)))) AND (((x_cat_4 > 0.5000) AND (x_cat_0 > 1.5000)) AND ((x_cat_0 > 3.5000) AND ((x_num_4 <= 0.6820) AND (x_num_1 > 0.4451))))) THEN Class 1
+  - IF ((((x_cat_0 > 0.5000) AND (x_cat_4 <= 2.5000)) AND ((x_num_1 > 0.0334) AND (x_cat_3 > 0.5000))) AND (((x_cat_3 > 2.5000) AND (x_cat_4 > 0.5000)) AND ((x_cat_0 <= 1.5000) AND (x_num_3 <= 0.6265)))) THEN Class 1
+  - IF (((x_cat_4 <= 2.5000) AND ((x_cat_4 > 1.5000) AND (x_cat_3 > 0.5000))) AND ((x_cat_3 > 3.5000) AND ((x_num_0 <= 0.7514) AND (x_num_2 > 0.3093)))) THEN Class 1
+  - IF (((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_0 <= 0.8993)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 8 -> Chunk 9 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 8):   0.7241
+  - Test G-Mean (Chunk 9):  0.6690
+  - Test F1 (Chunk 9):      0.6936
+Fitness:       0.998538 -> 0.997094
+Default Class: 0 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((((x_num_3 <= 0.6525) AND (x_cat_4 <= 2.5000)) AND ((x_num_2 > 0.1232) AND (x_num_3 <= 0.3955))) AND (((x_cat_1 > 1.5000) AND (x_cat_3 <= 3.5000)) AND ((x_cat_3 > 0.5000) AND (x_num_0 <= 0.8362)))) THEN Class 0
+  + IF (((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_3 > 0.1087)) THEN Class 0
+  + IF (((x_num_3 <= 0.6525) AND ((x_num_3 <= 0.3955) AND (x_num_2 > 0.1168))) AND ((x_cat_3 > 1.5000) AND ((x_num_2 > 0.3892) AND (x_cat_3 <= 2.5000)))) THEN Class 0
+  + IF (((x_num_3 <= 0.6525) AND ((x_num_3 <= 0.3989) AND (x_num_0 <= 0.7280))) AND (((x_cat_3 > 1.5000) AND (x_num_2 > 0.3892)) AND ((x_cat_3 <= 3.5000) AND (x_num_1 <= 0.7314)))) THEN Class 0
+  + IF ((x_num_3 < 0.6526) AND (x_cat_3 <= 3.2410)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((x_cat_4 < 1.0161) AND ((x_cat_2 > 2.3649) AND (x_cat_0 >= 2.7635))) AND (((((x_cat_0 <= 3.3425) AND ((x_cat_0 >= 2.1317) AND (((((x_num_0 < 0.1145) AND (x_num_1 < 0.2511)) AND ((x_cat_3 > 3.0945) OR (x_num_4 < 0.8418))) AND (x_num_2 > 0.7880)) AND ((x_num_3 >= 0.1232) AND (x_cat_3 <= 3.2405))))) AND (x_num_4 > 0.8390)) AND (((((x_cat_3 <= 1.6472) OR (x_num_1 >= 0.2244)) AND ((x_cat_3 > 2.2463) AND ((x_num_2 > 0.6668) AND (x_cat_2 < 1.0013)))) AND (x_num_2 > 0.2264)) AND (x_cat_2 >= 1.4577))) AND (x_num_2 <= 0.5301))) THEN Class 0
+  - IF (((x_num_3 <= 0.3758) AND (x_num_4 > 0.0627)) AND ((x_cat_4 > 2.5000) AND ((x_cat_1 > 1.5000) AND (x_num_0 > 0.0949)))) THEN Class 0
+  - IF ((x_cat_4 < 0.4840) AND (x_num_3 <= 0.4762)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((x_cat_4 <= 2.5000) AND (x_cat_3 <= 3.5000)) AND (x_num_4 <= 0.1851)) AND (x_cat_3 > 2.5000)) THEN Class 1
+  + New: IF (((x_num_3 <= 0.6525) AND (x_cat_4 <= 2.5000)) AND ((x_cat_4 > 1.5000) AND (x_cat_3 <= 0.5000))) THEN Class 1
+    (Similarity: 0.71)
+  - Old: IF (((x_num_4 > 0.2045) AND (x_cat_4 > 1.5000)) AND ((x_num_3 <= 0.3767) AND ((x_cat_3 <= 0.5000) AND (x_cat_4 <= 2.5000)))) THEN Class 1
+  + New: IF (((x_num_3 > 0.6525) AND ((x_cat_3 > 1.5000) AND (x_num_4 > 0.3508))) AND ((x_cat_3 <= 2.5000) AND ((x_num_2 > 0.3702) AND (x_cat_1 > 1.5000)))) THEN Class 1
+    (Similarity: 0.69)
+
+  New Rules:
+  + IF (((((x_num_4 >= 0.7315) AND ((x_num_1 <= 0.6158) AND (x_num_3 >= 0.5876))) OR (((x_cat_4 > 0.5766) AND (x_num_0 > 0.4359)) AND (x_cat_2 < 2.3502))) AND (((((((((x_cat_4 > 0.5908) AND (x_num_0 >= 0.3921)) AND (x_cat_2 >= 3.3966)) AND (x_cat_0 < 2.2784)) AND (((x_num_2 < 0.6198) AND ((x_cat_0 <= 1.9732) AND (x_num_4 <= 0.3392))) AND (((x_cat_0 >= 1.4639) AND (x_num_2 < 0.5986)) AND ((x_cat_1 <= 3.0165) AND (x_cat_3 <= 3.0975))))) AND (x_cat_2 <= 3.5473)) AND (x_cat_0 < 1.7239)) AND ((x_num_1 <= 0.2391) AND ((x_cat_4 > 0.8360) OR (x_num_2 <= 0.1376)))) AND (((((((x_num_3 <= 0.2700) AND ((x_cat_2 <= 3.0606) AND (x_cat_2 >= 1.9274))) AND (x_num_4 > 0.6267)) AND (((x_num_3 > 0.4153) AND (x_num_1 > 0.8200)) AND (((x_num_0 < 0.6961) OR (x_num_3 > 0.6381)) AND ((x_cat_0 < 3.4756) AND (x_cat_3 >= 0.6701))))) OR (((x_cat_3 >= 2.4001) AND (x_num_2 >= 0.2878)) OR (x_cat_0 < 2.0173))) AND (x_num_3 <= 0.2675)) AND (((x_num_4 < 0.2087) AND ((x_num_3 >= 0.8978) OR ((x_num_1 <= 0.7660) AND (((x_cat_3 >= 1.5028) AND (x_num_2 <= 0.7835)) OR (x_num_0 <= 0.8197))))) AND (x_num_1 > 0.1411))))) AND ((x_cat_0 >= 1.7811) AND (x_num_3 > 0.3178))) THEN Class 1
+  + IF ((((x_num_3 <= 0.6525) AND (x_num_3 > 0.3955)) AND ((x_num_4 > 0.2192) AND ((x_num_0 > 0.1458) AND (x_num_1 > 0.1650)))) AND (((x_num_4 > 0.3303) AND (x_cat_4 <= 2.5000)) AND ((x_cat_3 <= 3.5000) AND ((x_cat_3 <= 2.5000) AND (x_cat_1 <= 2.5000))))) THEN Class 1
+  + IF (((x_num_3 <= 0.6525) AND ((x_cat_4 <= 2.5000) AND (x_num_2 > 0.1232))) AND (((x_num_3 <= 0.3955) AND (x_cat_1 <= 1.5000)) AND ((x_cat_3 <= 2.5000) AND (x_cat_4 > 1.5000)))) THEN Class 1
+  + IF (((x_num_3 <= 0.6525) AND ((x_num_3 > 0.3989) AND (x_num_4 > 0.2192))) AND ((x_cat_3 <= 2.5000) AND ((x_cat_3 > 1.5000) AND (x_num_2 > 0.3714)))) THEN Class 1
+  + IF (((x_num_3 > 0.6525) AND ((x_cat_3 > 1.5000) AND (x_num_4 <= 0.3508))) AND ((x_num_2 > 0.4479) AND ((x_cat_3 <= 3.5000) AND (x_num_1 > 0.2252)))) THEN Class 1
+  + IF (((x_num_3 > 0.6525) AND ((x_cat_3 > 1.5000) AND (x_num_4 <= 0.3508))) AND ((x_num_2 > 0.4479) AND ((x_cat_3 <= 3.5000) AND (x_num_1 > 0.2252)))) THEN Class 1
+  + IF (((x_num_3 > 0.6525) AND ((x_cat_3 > 1.5000) AND (x_num_4 <= 0.3508))) AND ((x_num_2 > 0.4479) AND ((x_cat_3 <= 3.5000) AND (x_num_1 > 0.2252)))) THEN Class 1
+  + IF (((x_num_3 > 0.6525) AND ((x_cat_3 > 1.5000) AND (x_num_4 > 0.3508))) AND ((x_cat_3 <= 2.5000) AND ((x_num_2 > 0.3702) AND (x_num_1 > 0.4188)))) THEN Class 1
+  + IF ((x_cat_4 <= 1.9779) AND ((x_cat_3 >= 2.3935) AND (((((((((x_cat_1 >= 1.4294) AND (x_num_4 > 0.4904)) AND (x_num_0 < 0.5956)) OR (x_cat_0 > 2.4372)) AND ((x_num_2 >= 0.4960) AND ((x_cat_0 <= 3.5503) AND ((x_num_4 >= 0.6906) AND (x_num_2 >= 0.5611))))) AND ((x_cat_1 >= 2.1312) AND ((x_num_0 < 0.1989) AND (((x_cat_1 >= 2.1136) AND (x_cat_2 >= 1.9040)) AND (x_cat_3 <= 1.6212))))) AND ((((x_num_3 > 0.1268) AND ((x_cat_2 > 3.4311) AND ((x_cat_2 > 0.8119) AND (x_cat_1 < 3.1500)))) AND ((((x_num_3 <= 0.2077) AND (x_cat_4 < 0.7198)) AND ((x_cat_3 < 3.5817) AND (x_cat_1 <= 1.6021))) OR (x_num_2 < 0.6169))) AND ((x_cat_2 <= 0.7207) AND (x_cat_0 >= 2.3068)))) AND (x_cat_4 <= 1.6145)) AND (x_cat_0 > 0.4128)))) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((((x_num_3 > 0.7674) AND ((x_cat_2 > 1.7786) AND (((x_num_3 > 0.6226) AND (x_num_1 >= 0.5080)) OR ((x_cat_3 >= 3.4816) AND (x_cat_4 >= 1.2129))))) OR ((x_num_3 <= 0.4232) AND (((x_num_1 >= 0.6804) OR (x_cat_3 > 1.2766)) AND ((x_cat_2 > 0.6178) AND (x_num_1 <= 0.2829))))) AND (((x_cat_2 < 1.3186) AND (x_num_2 >= 0.1428)) AND (x_num_4 < 0.6982))) AND (((x_num_4 >= 0.7439) AND (x_num_0 <= 0.7448)) OR ((((x_cat_1 > 2.2002) OR (x_num_4 < 0.8196)) AND (x_num_2 <= 0.8283)) AND (x_cat_0 < 1.6027)))) AND (x_num_4 > 0.6380)) AND ((x_cat_4 > 2.6543) AND (x_cat_3 < 2.4077))) AND (x_cat_4 >= 0.6333)) THEN Class 1
+  - IF ((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_4 <= 0.1851)) AND (x_cat_3 > 2.5000)) THEN Class 1
+  - IF ((((x_cat_4 <= 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_4 > 0.1851)) AND (x_cat_3 > 2.5000)) THEN Class 1
+  - IF ((((x_num_3 > 0.3758) AND (x_cat_3 <= 3.5000)) AND ((x_num_1 <= 0.6705) AND (x_num_1 <= 0.6484))) AND (((x_num_0 > 0.2666) AND (x_num_0 <= 0.7419)) AND ((x_num_0 <= 0.5894) AND (x_num_0 <= 0.5366)))) THEN Class 1
+  - IF ((((x_num_3 > 0.3758) AND (x_cat_3 <= 3.5000)) AND ((x_num_1 <= 0.6705) AND (x_num_1 <= 0.6484))) AND (((x_num_0 > 0.2666) AND (x_num_0 <= 0.7419)) AND ((x_num_0 > 0.5894) AND (x_cat_2 > 0.5000)))) THEN Class 1
+  - IF ((x_cat_1 <= 1.4059) AND ((((((((x_num_0 >= 0.8672) OR ((x_num_3 >= 0.5592) AND (x_cat_3 >= 1.3417))) AND (((x_cat_3 < 0.5982) AND (x_num_1 >= 0.6325)) AND ((x_num_3 > 0.5305) AND (x_num_4 <= 0.1627)))) AND (((x_cat_4 < 1.8747) AND (x_cat_1 <= 2.3625)) OR (x_num_4 > 0.5213))) AND ((((x_cat_2 > 3.1747) AND ((x_num_0 <= 0.6534) AND (x_num_1 > 0.2227))) AND ((x_num_4 > 0.1216) AND ((x_cat_2 > 2.8241) AND (x_cat_1 >= 1.8912)))) AND (((x_num_1 >= 0.6694) AND ((x_cat_0 > 2.1873) AND (x_cat_0 <= 3.0274))) AND (((x_num_3 < 0.8525) AND (x_num_0 < 0.7320)) OR ((x_num_0 < 0.1761) AND (x_num_1 < 0.5502)))))) OR (((x_num_3 <= 0.1905) AND (x_num_0 >= 0.1936)) AND (((x_cat_3 < 2.4400) AND ((x_cat_0 < 0.4778) AND (x_num_0 >= 0.2567))) AND ((x_cat_3 > 2.3982) OR (((x_cat_3 <= 0.4942) OR (x_cat_1 <= 3.2284)) AND ((x_cat_2 <= 3.3102) AND (x_cat_1 >= 1.1601))))))) OR ((x_cat_3 < 2.9893) AND (x_cat_4 <= 3.3032))) AND (x_cat_3 > 0.4129))) THEN Class 1
+
+======================================================================
+--- Diff Chunk 9 -> Chunk 10 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 9):   0.7251
+  - Test G-Mean (Chunk 10):  0.4888
+  - Test F1 (Chunk 10):      0.4945
+Fitness:       0.997094 -> 0.959310
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((((x_num_3 <= 0.6525) AND (x_cat_4 <= 2.5000)) AND ((x_num_2 > 0.1232) AND (x_num_3 <= 0.3955))) AND (((x_cat_1 > 1.5000) AND (x_cat_3 <= 3.5000)) AND ((x_cat_3 > 0.5000) AND (x_num_0 <= 0.8362)))) THEN Class 0
+  + New: IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 <= 0.5000)) AND (x_cat_4 > 2.5000)) AND (x_cat_3 <= 1.5000)) AND (x_num_0 <= 0.4914)) AND (x_num_3 <= 0.6832)) THEN Class 0
+    (Similarity: 0.69)
+  - Old: IF (((x_num_3 <= 0.6525) AND ((x_num_3 <= 0.3989) AND (x_num_0 <= 0.7280))) AND (((x_cat_3 > 1.5000) AND (x_num_2 > 0.3892)) AND ((x_cat_3 <= 3.5000) AND (x_num_1 <= 0.7314)))) THEN Class 0
+  + New: IF (((((((x_cat_0 > 3.5000) AND (x_num_0 <= 0.4896)) AND (x_cat_3 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_cat_4 > 0.5000)) AND (x_cat_3 > 1.5000)) AND (x_num_2 <= 0.4414)) THEN Class 0
+    (Similarity: 0.68)
+  - Old: IF (((x_cat_4 > 2.5000) AND (x_cat_3 > 3.5000)) AND (x_num_3 > 0.1087)) THEN Class 0
+  + New: IF (((x_cat_0 > 3.5000) AND (x_num_0 > 0.4896)) AND (x_num_2 > 0.0323)) THEN Class 0
+    (Similarity: 0.76)
+
+  New Rules:
+  + IF ((((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.7232)) AND (x_num_1 <= 0.8217)) AND (x_num_0 <= 0.4248)) AND (x_num_3 <= 0.1451)) AND (x_cat_4 <= 2.5000)) THEN Class 0
+  + IF ((((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.7232)) AND (x_num_1 <= 0.8217)) AND (x_num_0 <= 0.4248)) AND (x_num_3 > 0.1451)) AND (x_cat_2 > 2.5000)) THEN Class 0
+  + IF ((((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.7232)) AND (x_num_1 > 0.8217)) AND (x_cat_0 <= 2.5000)) AND (x_num_4 <= 0.5949)) AND (x_num_3 > 0.1845)) THEN Class 0
+  + IF ((((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.7232)) AND (x_num_1 > 0.8217)) AND (x_cat_0 > 2.5000)) AND (x_cat_1 > 0.5000)) AND (x_num_3 <= 0.1701)) THEN Class 0
+  + IF ((((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.7232)) AND (x_num_1 > 0.8217)) AND (x_cat_0 > 2.5000)) AND (x_cat_1 > 0.5000)) AND (x_num_3 > 0.1701)) THEN Class 0
+  + IF ((((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.7232)) AND (x_num_0 <= 0.4021)) AND (x_cat_1 > 0.5000)) AND (x_cat_3 <= 2.5000)) AND (x_cat_2 > 2.5000)) THEN Class 0
+  + IF ((((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.7232)) AND (x_num_0 > 0.4021)) AND (x_num_2 > 0.1593)) AND (x_cat_3 <= 2.5000)) AND (x_num_3 <= 0.8423)) THEN Class 0
+  + IF (((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 <= 0.5000)) AND (x_cat_4 <= 2.5000)) AND (x_num_0 <= 0.4792)) AND (x_cat_3 > 1.5000)) AND (x_cat_4 > 1.5000)) AND (x_num_4 <= 0.3072)) THEN Class 0
+  + IF (((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 <= 0.5000)) AND (x_cat_4 <= 2.5000)) AND (x_num_0 > 0.4792)) AND (x_num_4 <= 0.5777)) AND (x_num_2 <= 0.3735)) AND (x_num_1 > 0.5421)) THEN Class 0
+  + IF (((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 <= 0.5000)) AND (x_cat_4 > 2.5000)) AND (x_cat_3 > 1.5000)) AND (x_num_4 > 0.5299)) AND (x_cat_3 <= 3.5000)) AND (x_num_2 > 0.2738)) THEN Class 0
+  + IF (((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.7232)) AND (x_num_1 > 0.8217)) AND (x_cat_0 > 2.5000)) AND (x_cat_1 <= 0.5000)) THEN Class 0
+  + IF (((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.7232)) AND (x_num_0 <= 0.4021)) AND (x_cat_1 > 0.5000)) AND (x_cat_3 > 2.5000)) THEN Class 0
+  + IF (((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.7232)) AND (x_num_0 > 0.4021)) AND (x_num_2 <= 0.1593)) AND (x_num_1 <= 0.4158)) THEN Class 0
+  + IF (((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.7232)) AND (x_num_0 > 0.4021)) AND (x_num_2 <= 0.1593)) AND (x_num_1 > 0.4158)) THEN Class 0
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 <= 0.5000)) AND (x_num_0 > 0.5330)) AND (x_num_0 <= 0.7577)) AND (x_num_3 <= 0.6484)) AND (x_cat_2 > 2.5000)) AND (x_cat_2 <= 3.5000)) THEN Class 0
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 <= 0.5000)) AND (x_num_0 > 0.5330)) AND (x_num_0 <= 0.7577)) AND (x_num_3 > 0.6484)) AND (x_num_2 > 0.4865)) AND (x_num_0 <= 0.6175)) THEN Class 0
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 <= 0.5000)) AND (x_num_0 > 0.5330)) AND (x_num_0 <= 0.7577)) AND (x_num_3 > 0.6484)) AND (x_num_2 > 0.4865)) AND (x_num_0 > 0.6175)) THEN Class 0
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 <= 0.5000)) AND (x_cat_4 <= 2.5000)) AND (x_num_0 <= 0.4792)) AND (x_cat_3 <= 1.5000)) AND (x_num_4 <= 0.5251)) THEN Class 0
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 <= 0.5000)) AND (x_cat_4 <= 2.5000)) AND (x_num_0 > 0.4792)) AND (x_num_4 <= 0.5777)) AND (x_num_2 > 0.3735)) THEN Class 0
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 <= 0.5000)) AND (x_cat_4 <= 2.5000)) AND (x_num_0 > 0.4792)) AND (x_num_4 > 0.5777)) AND (x_cat_4 > 1.5000)) THEN Class 0
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 <= 0.5000)) AND (x_cat_4 > 2.5000)) AND (x_cat_3 <= 1.5000)) AND (x_num_0 <= 0.4914)) AND (x_num_3 > 0.6832)) THEN Class 0
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 > 3.5000)) AND (x_num_1 > 0.7644)) AND (x_cat_0 > 2.5000)) AND (x_num_4 <= 0.4463)) THEN Class 0
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 > 3.5000)) AND (x_num_1 > 0.7644)) AND (x_cat_0 > 2.5000)) AND (x_num_4 > 0.4463)) THEN Class 0
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 > 0.9260)) AND (x_cat_3 <= 3.5000)) AND (x_cat_2 > 0.5000)) AND (x_cat_2 > 1.5000)) AND (x_cat_1 <= 3.5000)) AND (x_cat_4 <= 3.5000)) AND (x_cat_1 <= 0.5000)) THEN Class 0
+  + IF (((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 <= 0.5000)) AND (x_num_0 > 0.5330)) AND (x_num_0 <= 0.7577)) AND (x_num_3 > 0.6484)) AND (x_num_2 <= 0.4865)) THEN Class 0
+  + IF (((((((x_cat_0 <= 3.5000) AND (x_num_4 > 0.9260)) AND (x_cat_3 <= 3.5000)) AND (x_cat_2 > 0.5000)) AND (x_cat_2 > 1.5000)) AND (x_cat_1 <= 3.5000)) AND (x_cat_4 > 3.5000)) THEN Class 0
+  + IF ((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 <= 0.5000)) AND (x_num_0 > 0.5330)) AND (x_num_0 > 0.7577)) AND (x_num_4 > 0.7311)) THEN Class 0
+  + IF ((((((x_cat_0 <= 3.5000) AND (x_num_4 > 0.9260)) AND (x_cat_3 <= 3.5000)) AND (x_cat_2 > 0.5000)) AND (x_cat_2 > 1.5000)) AND (x_cat_1 > 3.5000)) THEN Class 0
+  + IF (((((x_cat_0 > 3.5000) AND (x_num_0 <= 0.4896)) AND (x_cat_3 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_cat_4 <= 0.5000)) THEN Class 0
+  + IF ((((x_cat_0 <= 3.5000) AND (x_num_4 > 0.9260)) AND (x_cat_3 <= 3.5000)) AND (x_cat_2 <= 0.5000)) THEN Class 0
+  + IF (((x_cat_0 <= 3.5000) AND (x_num_4 > 0.9260)) AND (x_cat_3 > 3.5000)) THEN Class 0
+  + IF (((x_cat_0 > 3.5000) AND (x_num_0 > 0.4896)) AND (x_num_2 <= 0.0323)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((x_num_3 <= 0.6525) AND ((x_num_3 <= 0.3955) AND (x_num_2 > 0.1168))) AND ((x_cat_3 > 1.5000) AND ((x_num_2 > 0.3892) AND (x_cat_3 <= 2.5000)))) THEN Class 0
+  - IF ((x_num_3 < 0.6526) AND (x_cat_3 <= 3.2410)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((x_num_3 <= 0.6525) AND ((x_cat_4 <= 2.5000) AND (x_num_2 > 0.1232))) AND (((x_num_3 <= 0.3955) AND (x_cat_1 <= 1.5000)) AND ((x_cat_3 <= 2.5000) AND (x_cat_4 > 1.5000)))) THEN Class 1
+  + New: IF (((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 <= 0.5000)) AND (x_cat_4 > 2.5000)) AND (x_cat_3 <= 1.5000)) AND (x_num_0 > 0.4914)) THEN Class 1
+    (Similarity: 0.65)
+  - Old: IF (((x_num_3 > 0.6525) AND ((x_cat_3 > 1.5000) AND (x_num_4 > 0.3508))) AND ((x_cat_3 <= 2.5000) AND ((x_num_2 > 0.3702) AND (x_cat_1 > 1.5000)))) THEN Class 1
+  + New: IF (((((x_cat_0 <= 3.5000) AND (x_num_4 > 0.9260)) AND (x_cat_3 <= 3.5000)) AND (x_cat_2 > 0.5000)) AND (x_cat_2 <= 1.5000)) THEN Class 1
+    (Similarity: 0.67)
+  - Old: IF (((x_num_3 <= 0.6525) AND (x_cat_4 <= 2.5000)) AND ((x_cat_4 > 1.5000) AND (x_cat_3 <= 0.5000))) THEN Class 1
+  + New: IF (((((x_cat_0 > 3.5000) AND (x_num_0 <= 0.4896)) AND (x_cat_3 > 0.5000)) AND (x_cat_3 > 3.5000)) AND (x_cat_2 <= 0.5000)) THEN Class 1
+    (Similarity: 0.66)
+
+  New Rules:
+  + IF ((((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.7232)) AND (x_num_1 <= 0.8217)) AND (x_num_0 <= 0.4248)) AND (x_num_3 <= 0.1451)) AND (x_cat_4 > 2.5000)) THEN Class 1
+  + IF ((((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.7232)) AND (x_num_1 <= 0.8217)) AND (x_num_0 <= 0.4248)) AND (x_num_3 > 0.1451)) AND (x_cat_2 <= 2.5000)) THEN Class 1
+  + IF ((((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.7232)) AND (x_num_1 <= 0.8217)) AND (x_num_0 > 0.4248)) AND (x_cat_2 <= 2.5000)) AND (x_num_0 <= 0.7656)) THEN Class 1
+  + IF ((((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.7232)) AND (x_num_1 <= 0.8217)) AND (x_num_0 > 0.4248)) AND (x_cat_2 <= 2.5000)) AND (x_num_0 > 0.7656)) THEN Class 1
+  + IF ((((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.7232)) AND (x_num_1 <= 0.8217)) AND (x_num_0 > 0.4248)) AND (x_cat_2 > 2.5000)) AND (x_cat_1 <= 2.5000)) THEN Class 1
+  + IF ((((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.7232)) AND (x_num_1 <= 0.8217)) AND (x_num_0 > 0.4248)) AND (x_cat_2 > 2.5000)) AND (x_cat_1 > 2.5000)) THEN Class 1
+  + IF ((((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.7232)) AND (x_num_1 > 0.8217)) AND (x_cat_0 <= 2.5000)) AND (x_num_4 <= 0.5949)) AND (x_num_3 <= 0.1845)) THEN Class 1
+  + IF ((((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.7232)) AND (x_num_0 > 0.4021)) AND (x_num_2 > 0.1593)) AND (x_cat_3 <= 2.5000)) AND (x_num_3 > 0.8423)) THEN Class 1
+  + IF ((((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.7232)) AND (x_num_0 > 0.4021)) AND (x_num_2 > 0.1593)) AND (x_cat_3 > 2.5000)) AND (x_num_3 <= 0.8259)) THEN Class 1
+  + IF ((((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.7232)) AND (x_num_0 > 0.4021)) AND (x_num_2 > 0.1593)) AND (x_cat_3 > 2.5000)) AND (x_num_3 > 0.8259)) THEN Class 1
+  + IF (((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 <= 0.5000)) AND (x_cat_4 <= 2.5000)) AND (x_num_0 <= 0.4792)) AND (x_cat_3 > 1.5000)) AND (x_cat_4 > 1.5000)) AND (x_num_4 > 0.3072)) THEN Class 1
+  + IF (((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 <= 0.5000)) AND (x_cat_4 > 2.5000)) AND (x_cat_3 > 1.5000)) AND (x_num_4 > 0.5299)) AND (x_cat_3 <= 3.5000)) AND (x_num_2 <= 0.2738)) THEN Class 1
+  + IF (((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 <= 0.7232)) AND (x_num_1 > 0.8217)) AND (x_cat_0 <= 2.5000)) AND (x_num_4 > 0.5949)) THEN Class 1
+  + IF (((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 > 3.5000)) AND (x_num_1 <= 0.7644)) AND (x_num_0 <= 0.9558)) AND (x_num_4 <= 0.8517)) AND (x_num_4 <= 0.0367)) THEN Class 1
+  + IF (((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 > 3.5000)) AND (x_num_1 <= 0.7644)) AND (x_num_0 <= 0.9558)) AND (x_num_4 <= 0.8517)) AND (x_num_4 > 0.0367)) THEN Class 1
+  + IF (((((((((x_cat_0 <= 3.5000) AND (x_num_4 > 0.9260)) AND (x_cat_3 <= 3.5000)) AND (x_cat_2 > 0.5000)) AND (x_cat_2 > 1.5000)) AND (x_cat_1 <= 3.5000)) AND (x_cat_4 <= 3.5000)) AND (x_cat_1 > 0.5000)) AND (x_num_3 <= 0.3191)) THEN Class 1
+  + IF (((((((((x_cat_0 <= 3.5000) AND (x_num_4 > 0.9260)) AND (x_cat_3 <= 3.5000)) AND (x_cat_2 > 0.5000)) AND (x_cat_2 > 1.5000)) AND (x_cat_1 <= 3.5000)) AND (x_cat_4 <= 3.5000)) AND (x_cat_1 > 0.5000)) AND (x_num_3 > 0.3191)) THEN Class 1
+  + IF (((((((((x_cat_0 > 3.5000) AND (x_num_0 <= 0.4896)) AND (x_cat_3 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_cat_4 > 0.5000)) AND (x_cat_3 > 1.5000)) AND (x_num_2 > 0.4414)) AND (x_cat_3 > 2.5000)) AND (x_num_0 <= 0.3227)) THEN Class 1
+  + IF (((((((((x_cat_0 > 3.5000) AND (x_num_0 <= 0.4896)) AND (x_cat_3 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_cat_4 > 0.5000)) AND (x_cat_3 > 1.5000)) AND (x_num_2 > 0.4414)) AND (x_cat_3 > 2.5000)) AND (x_num_0 > 0.3227)) THEN Class 1
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 <= 0.5000)) AND (x_num_0 > 0.5330)) AND (x_num_0 <= 0.7577)) AND (x_num_3 <= 0.6484)) AND (x_cat_2 <= 2.5000)) AND (x_num_3 <= 0.4394)) THEN Class 1
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 <= 0.5000)) AND (x_num_0 > 0.5330)) AND (x_num_0 <= 0.7577)) AND (x_num_3 <= 0.6484)) AND (x_cat_2 <= 2.5000)) AND (x_num_3 > 0.4394)) THEN Class 1
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 <= 0.5000)) AND (x_num_0 > 0.5330)) AND (x_num_0 <= 0.7577)) AND (x_num_3 <= 0.6484)) AND (x_cat_2 > 2.5000)) AND (x_cat_2 > 3.5000)) THEN Class 1
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 <= 0.5000)) AND (x_cat_4 <= 2.5000)) AND (x_num_0 <= 0.4792)) AND (x_cat_3 <= 1.5000)) AND (x_num_4 > 0.5251)) THEN Class 1
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 <= 0.5000)) AND (x_cat_4 <= 2.5000)) AND (x_num_0 <= 0.4792)) AND (x_cat_3 > 1.5000)) AND (x_cat_4 <= 1.5000)) THEN Class 1
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 <= 0.5000)) AND (x_cat_4 <= 2.5000)) AND (x_num_0 > 0.4792)) AND (x_num_4 > 0.5777)) AND (x_cat_4 <= 1.5000)) THEN Class 1
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 <= 0.5000)) AND (x_cat_4 > 2.5000)) AND (x_cat_3 > 1.5000)) AND (x_num_4 > 0.5299)) AND (x_cat_3 > 3.5000)) THEN Class 1
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_num_3 > 0.7232)) AND (x_num_0 <= 0.4021)) AND (x_cat_1 <= 0.5000)) THEN Class 1
+  + IF ((((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 > 3.5000)) AND (x_num_1 <= 0.7644)) AND (x_num_0 <= 0.9558)) AND (x_num_4 > 0.8517)) THEN Class 1
+  + IF (((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 <= 0.5000)) AND (x_num_0 > 0.5330)) AND (x_num_0 > 0.7577)) AND (x_num_4 <= 0.7311)) AND (x_num_4 <= 0.1703)) THEN Class 1
+  + IF (((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 <= 0.5000)) AND (x_num_0 > 0.5330)) AND (x_num_0 > 0.7577)) AND (x_num_4 <= 0.7311)) AND (x_num_4 > 0.1703)) THEN Class 1
+  + IF (((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 <= 0.5000)) AND (x_cat_4 > 2.5000)) AND (x_cat_3 > 1.5000)) AND (x_num_4 <= 0.5299)) THEN Class 1
+  + IF (((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 > 3.5000)) AND (x_num_1 <= 0.7644)) AND (x_num_0 > 0.9558)) THEN Class 1
+  + IF (((((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 > 0.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_3 > 3.5000)) AND (x_num_1 > 0.7644)) AND (x_cat_0 <= 2.5000)) THEN Class 1
+  + IF ((((((x_cat_0 > 3.5000) AND (x_num_0 <= 0.4896)) AND (x_cat_3 > 0.5000)) AND (x_cat_3 <= 3.5000)) AND (x_cat_4 > 0.5000)) AND (x_cat_3 <= 1.5000)) THEN Class 1
+  + IF (((((x_cat_0 <= 3.5000) AND (x_num_4 <= 0.9260)) AND (x_cat_3 <= 0.5000)) AND (x_num_0 <= 0.5330)) AND (x_num_4 <= 0.8921)) THEN Class 1
+  + IF (((((x_cat_0 > 3.5000) AND (x_num_0 <= 0.4896)) AND (x_cat_3 > 0.5000)) AND (x_cat_3 > 3.5000)) AND (x_cat_2 > 0.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((x_num_4 >= 0.7315) AND ((x_num_1 <= 0.6158) AND (x_num_3 >= 0.5876))) OR (((x_cat_4 > 0.5766) AND (x_num_0 > 0.4359)) AND (x_cat_2 < 2.3502))) AND (((((((((x_cat_4 > 0.5908) AND (x_num_0 >= 0.3921)) AND (x_cat_2 >= 3.3966)) AND (x_cat_0 < 2.2784)) AND (((x_num_2 < 0.6198) AND ((x_cat_0 <= 1.9732) AND (x_num_4 <= 0.3392))) AND (((x_cat_0 >= 1.4639) AND (x_num_2 < 0.5986)) AND ((x_cat_1 <= 3.0165) AND (x_cat_3 <= 3.0975))))) AND (x_cat_2 <= 3.5473)) AND (x_cat_0 < 1.7239)) AND ((x_num_1 <= 0.2391) AND ((x_cat_4 > 0.8360) OR (x_num_2 <= 0.1376)))) AND (((((((x_num_3 <= 0.2700) AND ((x_cat_2 <= 3.0606) AND (x_cat_2 >= 1.9274))) AND (x_num_4 > 0.6267)) AND (((x_num_3 > 0.4153) AND (x_num_1 > 0.8200)) AND (((x_num_0 < 0.6961) OR (x_num_3 > 0.6381)) AND ((x_cat_0 < 3.4756) AND (x_cat_3 >= 0.6701))))) OR (((x_cat_3 >= 2.4001) AND (x_num_2 >= 0.2878)) OR (x_cat_0 < 2.0173))) AND (x_num_3 <= 0.2675)) AND (((x_num_4 < 0.2087) AND ((x_num_3 >= 0.8978) OR ((x_num_1 <= 0.7660) AND (((x_cat_3 >= 1.5028) AND (x_num_2 <= 0.7835)) OR (x_num_0 <= 0.8197))))) AND (x_num_1 > 0.1411))))) AND ((x_cat_0 >= 1.7811) AND (x_num_3 > 0.3178))) THEN Class 1
+  - IF ((((x_num_3 <= 0.6525) AND (x_num_3 > 0.3955)) AND ((x_num_4 > 0.2192) AND ((x_num_0 > 0.1458) AND (x_num_1 > 0.1650)))) AND (((x_num_4 > 0.3303) AND (x_cat_4 <= 2.5000)) AND ((x_cat_3 <= 3.5000) AND ((x_cat_3 <= 2.5000) AND (x_cat_1 <= 2.5000))))) THEN Class 1
+  - IF (((x_num_3 <= 0.6525) AND ((x_num_3 > 0.3989) AND (x_num_4 > 0.2192))) AND ((x_cat_3 <= 2.5000) AND ((x_cat_3 > 1.5000) AND (x_num_2 > 0.3714)))) THEN Class 1
+  - IF (((x_num_3 > 0.6525) AND ((x_cat_3 > 1.5000) AND (x_num_4 <= 0.3508))) AND ((x_num_2 > 0.4479) AND ((x_cat_3 <= 3.5000) AND (x_num_1 > 0.2252)))) THEN Class 1
+  - IF (((x_num_3 > 0.6525) AND ((x_cat_3 > 1.5000) AND (x_num_4 <= 0.3508))) AND ((x_num_2 > 0.4479) AND ((x_cat_3 <= 3.5000) AND (x_num_1 > 0.2252)))) THEN Class 1
+  - IF (((x_num_3 > 0.6525) AND ((x_cat_3 > 1.5000) AND (x_num_4 <= 0.3508))) AND ((x_num_2 > 0.4479) AND ((x_cat_3 <= 3.5000) AND (x_num_1 > 0.2252)))) THEN Class 1
+  - IF (((x_num_3 > 0.6525) AND ((x_cat_3 > 1.5000) AND (x_num_4 > 0.3508))) AND ((x_cat_3 <= 2.5000) AND ((x_num_2 > 0.3702) AND (x_num_1 > 0.4188)))) THEN Class 1
+  - IF ((x_cat_4 <= 1.9779) AND ((x_cat_3 >= 2.3935) AND (((((((((x_cat_1 >= 1.4294) AND (x_num_4 > 0.4904)) AND (x_num_0 < 0.5956)) OR (x_cat_0 > 2.4372)) AND ((x_num_2 >= 0.4960) AND ((x_cat_0 <= 3.5503) AND ((x_num_4 >= 0.6906) AND (x_num_2 >= 0.5611))))) AND ((x_cat_1 >= 2.1312) AND ((x_num_0 < 0.1989) AND (((x_cat_1 >= 2.1136) AND (x_cat_2 >= 1.9040)) AND (x_cat_3 <= 1.6212))))) AND ((((x_num_3 > 0.1268) AND ((x_cat_2 > 3.4311) AND ((x_cat_2 > 0.8119) AND (x_cat_1 < 3.1500)))) AND ((((x_num_3 <= 0.2077) AND (x_cat_4 < 0.7198)) AND ((x_cat_3 < 3.5817) AND (x_cat_1 <= 1.6021))) OR (x_num_2 < 0.6169))) AND ((x_cat_2 <= 0.7207) AND (x_cat_0 >= 2.3068)))) AND (x_cat_4 <= 1.6145)) AND (x_cat_0 > 0.4128)))) THEN Class 1
+
+======================================================================
+Overall Performance Summary (from History File)
+======================================================================
+Avg Train G-Mean:   0.7389 +/- 0.0591 (over 11 chunks)
+Avg Test G-Mean:    0.6489 +/- 0.0649 (over 11 chunks)
+Avg Test F1:        0.6734 +/- 0.0667 (over 11 chunks)
+======================================================================

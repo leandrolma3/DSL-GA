@@ -1,0 +1,99 @@
+================================================================================
+COMANDOS PARA EXECUTAR TESTE (SEM GOOGLE DRIVE)
+================================================================================
+
+OBSERVAÇÃO: O servidor não é um Colab real, então vamos salvar localmente
+e copiar o log depois para sua máquina.
+
+================================================================================
+NO SERVIDOR (após conectar via SSH):
+================================================================================
+
+PASSO 1: Navegar para a pasta
+------------------------------
+cd /content/DSL-AG-hybrid
+
+
+PASSO 2: Executar o teste em background
+----------------------------------------
+nohup python compare_gbml_vs_river.py --stream RBF_Abrupt_Severe --chunks 1 --chunk-size 6000 --seed 42 > test_output.log 2>&1 &
+
+
+PASSO 3: Anotar o PID (número do processo)
+-------------------------------------------
+echo $!
+
+
+PASSO 4: Verificar se está rodando
+-----------------------------------
+ps aux | grep compare_gbml
+
+
+PASSO 5: Monitorar o progresso em tempo real
+---------------------------------------------
+tail -f test_output.log
+
+(Pressione Ctrl+C para sair do monitoramento sem parar o teste)
+
+
+PASSO 6: Verificar se ainda está rodando (depois de desconectar)
+-----------------------------------------------------------------
+ps aux | grep compare_gbml
+
+
+PASSO 7: Ver últimas linhas do log
+-----------------------------------
+tail -n 50 test_output.log
+
+
+================================================================================
+NA SUA MÁQUINA WINDOWS (para baixar o log):
+================================================================================
+
+BAIXAR O LOG:
+-------------
+scp root@texture-sci-sussex-register.trycloudflare.com:/content/DSL-AG-hybrid/test_output.log .
+
+
+BAIXAR TODOS OS LOGS E RESULTADOS:
+-----------------------------------
+scp root@texture-sci-sussex-register.trycloudflare.com:/content/DSL-AG-hybrid/*.log .
+scp root@texture-sci-sussex-register.trycloudflare.com:/content/DSL-AG-hybrid/results_*.csv .
+
+
+================================================================================
+COMANDO ÚNICO (copie e cole no servidor):
+================================================================================
+
+cd /content/DSL-AG-hybrid && nohup python compare_gbml_vs_river.py --stream RBF_Abrupt_Severe --chunks 1 --chunk-size 6000 --seed 42 > test_output.log 2>&1 & echo "Processo iniciado com PID: $!"
+
+
+================================================================================
+SEQUÊNCIA COMPLETA RECOMENDADA:
+================================================================================
+
+1. Conectar:
+   ssh root@texture-sci-sussex-register.trycloudflare.com
+
+2. Executar teste:
+   cd /content/DSL-AG-hybrid && nohup python compare_gbml_vs_river.py --stream RBF_Abrupt_Severe --chunks 1 --chunk-size 6000 --seed 42 > test_output.log 2>&1 & echo "PID: $!"
+
+3. Monitorar (opcional):
+   tail -f test_output.log
+
+4. Desconectar (Ctrl+C para sair do tail, depois exit)
+
+5. Baixar log quando terminar (no Windows):
+   scp root@texture-sci-sussex-register.trycloudflare.com:/content/DSL-AG-hybrid/test_output.log .
+
+
+================================================================================
+OBSERVAÇÃO: O endereço mudou!
+================================================================================
+
+ANTES: right-scotia-humor-toward.trycloudflare.com
+AGORA:  texture-sci-sussex-register.trycloudflare.com
+
+Use sempre o endereço ATUAL do servidor Cloudflare Tunnel.
+
+================================================================================

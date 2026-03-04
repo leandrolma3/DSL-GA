@@ -1,0 +1,266 @@
+===============================================================================
+  REFERÊNCIA RÁPIDA: Google Colab via SSH + Drive
+===============================================================================
+
+🎯 OBJETIVO
+-----------
+Executar experimentos no Google Colab VIA SSH (terminal) com salvamento
+automático no Google Drive, sem abrir navegador.
+
+===============================================================================
+
+📋 PRÉ-REQUISITOS (UMA VEZ APENAS)
+-----------------------------------
+
+1. Notebook Colab rodando com SSH (colab_ssh_setup.ipynb)
+   ✅ Você já tem: ssh logged-minerals-axis-infrastructure.trycloudflare.com
+
+2. Google Drive montado NO NOTEBOOK (UMA VEZ):
+
+   Abra o notebook Colab no navegador e execute:
+
+   ```python
+   from google.colab import drive
+   drive.mount('/content/drive')
+   ```
+
+   Autorize quando solicitado.
+   Feche o navegador (Drive fica montado).
+
+===============================================================================
+
+🚀 WORKFLOW COMPLETO (Windows PowerShell)
+------------------------------------------
+
+# Substitua <SEU-HOST> pelo host real do Cloudflare Tunnel
+
+.\colab_workflow.ps1 `
+    -SSHHost <SEU-HOST>.trycloudflare.com `
+    -Action all `
+    -Stream RBF_Abrupt_Severe `
+    -Chunks 3
+
+Isso faz:
+  1. Upload de arquivos .py e .yaml
+  2. Setup do Drive
+  3. Execução do experimento
+  4. Salvamento automático no Drive
+
+===============================================================================
+
+🔧 COMANDOS SEPARADOS (Windows)
+--------------------------------
+
+# 1. Upload de arquivos
+.\colab_workflow.ps1 -SSHHost <SEU-HOST>.trycloudflare.com -Action sync
+
+# 2. Setup do ambiente
+.\colab_workflow.ps1 -SSHHost <SEU-HOST>.trycloudflare.com -Action setup
+
+# 3. Executar experimento
+.\colab_workflow.ps1 `
+    -SSHHost <SEU-HOST>.trycloudflare.com `
+    -Action run `
+    -Stream RBF_Abrupt_Severe `
+    -Chunks 3 `
+    -Population 120 `
+    -MaxGenerations 200
+
+# 4. Download de resultados
+.\colab_workflow.ps1 -SSHHost <SEU-HOST>.trycloudflare.com -Action download
+
+===============================================================================
+
+🐧 ALTERNATIVA: Via SSH Manual (Linux/Mac/Git Bash)
+----------------------------------------------------
+
+# 1. Upload
+./sync_to_colab.sh <SEU-HOST>.trycloudflare.com
+
+# 2. Conectar
+ssh <SEU-HOST>.trycloudflare.com
+
+# 3. Setup (dentro do SSH)
+cd /root/DSL-AG-hybrid
+python setup_colab_remote.py
+
+# 4. Executar (dentro do SSH)
+/root/run_experiment.sh python compare_gbml_vs_river.py \
+    --stream RBF_Abrupt_Severe \
+    --chunks 3
+
+# 5. Monitorar (em outro terminal SSH)
+ssh <SEU-HOST>.trycloudflare.com
+tail -f /content/drive/MyDrive/DSL-AG-hybrid/experiments/ssh_session_*/logs/*.log
+
+===============================================================================
+
+📊 PARÂMETROS DO EXPERIMENTO
+-----------------------------
+
+--stream <NOME>           Stream a executar
+                          Opções: RBF_Abrupt_Severe, SEA_Abrupt_Simple, etc.
+
+--chunks <N>              Número de chunks (padrão: 3)
+
+--chunk-size <N>          Tamanho do chunk (padrão: 6000)
+
+--population <N>          População do GA (padrão: 120)
+
+--max-generations <N>     Max gerações (padrão: 200)
+
+Exemplo:
+--------
+.\colab_workflow.ps1 `
+    -SSHHost <SEU-HOST>.trycloudflare.com `
+    -Action run `
+    -Stream RBF_Abrupt_Severe `
+    -Chunks 5 `
+    -Population 120 `
+    -MaxGenerations 200
+
+===============================================================================
+
+📂 ONDE ESTÃO OS RESULTADOS?
+-----------------------------
+
+Google Drive (automático):
+  /content/drive/MyDrive/DSL-AG-hybrid/experiments/ssh_session_TIMESTAMP/
+  ├── logs/
+  │   └── experiment_*.log
+  ├── results/
+  │   └── [CSVs, PNGs, PKLs]
+  └── checkpoints/
+      └── [Checkpoints]
+
+Acesso via navegador:
+  drive.google.com → MyDrive/DSL-AG-hybrid/experiments/
+
+Download via PowerShell:
+  .\colab_workflow.ps1 -SSHHost <SEU-HOST>.trycloudflare.com -Action download
+
+===============================================================================
+
+⚠️ TROUBLESHOOTING
+-------------------
+
+PROBLEMA: "Drive não está montado"
+SOLUÇÃO:  Abra notebook Colab e execute:
+          from google.colab import drive
+          drive.mount('/content/drive')
+
+PROBLEMA: "Permission denied" no SCP
+SOLUÇÃO:  Teste SSH: ssh <SEU-HOST>.trycloudflare.com "echo OK"
+          Se funcionar, tente sync novamente
+
+PROBLEMA: "run-experiment: command not found"
+SOLUÇÃO:  source ~/.bashrc
+          Ou reconecte via SSH
+
+PROBLEMA: Sessão SSH caiu, perdi tudo?
+RESPOSTA: NÃO! Tudo está no Drive.
+          Download: .\colab_workflow.ps1 -Action download
+          Ou acesse: drive.google.com
+
+PROBLEMA: Como monitorar em tempo real?
+SOLUÇÃO:  Em outro terminal SSH:
+          ssh <SEU-HOST>.trycloudflare.com
+          tail -f /content/drive/.../logs/*.log
+
+          Ou use alias:
+          drive-tail
+
+===============================================================================
+
+💡 DICAS
+--------
+
+# Executar múltiplos experimentos
+for stream in RBF SEA AGRAWAL; do
+    .\colab_workflow.ps1 -SSHHost <HOST> -Action run -Stream ${stream}_Abrupt_Severe -Chunks 3
+done
+
+# Monitorar enquanto executa (outro terminal)
+ssh <SEU-HOST>.trycloudflare.com "tail -f /content/drive/.../logs/*.log"
+
+# Download seletivo (apenas logs)
+scp -r <SEU-HOST>.trycloudflare.com:/content/drive/.../logs ./
+
+# Verificar espaço no Drive
+ssh <SEU-HOST>.trycloudflare.com "df -h /content/drive"
+
+===============================================================================
+
+✅ CHECKLIST ANTES DE EXECUTAR
+-------------------------------
+
+[ ] Notebook Colab rodando?
+[ ] SSH tunnel ativo? (ssh <HOST> echo OK)
+[ ] Drive montado no Colab? (UMA VEZ via notebook)
+[ ] Arquivos sincronizados? (sync ou -Action sync)
+[ ] Setup executado? (setup ou -Action setup)
+
+===============================================================================
+
+🎯 EXEMPLO COMPLETO (PASSO A PASSO)
+------------------------------------
+
+# PASSO 1: Setup inicial (UMA VEZ)
+# No notebook Colab:
+from google.colab import drive
+drive.mount('/content/drive')
+
+# PASSO 2: Sync + Setup (UMA VEZ por sessão)
+.\colab_workflow.ps1 -SSHHost logged-minerals-axis-infrastructure.trycloudflare.com -Action sync
+.\colab_workflow.ps1 -SSHHost logged-minerals-axis-infrastructure.trycloudflare.com -Action setup
+
+# PASSO 3: Executar experimento (SEMPRE QUE QUISER)
+.\colab_workflow.ps1 `
+    -SSHHost logged-minerals-axis-infrastructure.trycloudflare.com `
+    -Action run `
+    -Stream RBF_Abrupt_Severe `
+    -Chunks 3
+
+# PASSO 4: Download resultados (OPCIONAL)
+.\colab_workflow.ps1 -SSHHost logged-minerals-axis-infrastructure.trycloudflare.com -Action download
+
+===============================================================================
+
+📞 REFERÊNCIA DE ARQUIVOS
+--------------------------
+
+colab_workflow.ps1        Script principal (Windows PowerShell)
+sync_to_colab.sh          Upload de arquivos (Linux/Mac)
+setup_colab_remote.py     Setup do Drive via SSH
+README_WORKFLOW_SSH.md    Documentação completa
+
+===============================================================================
+
+🚀 INÍCIO RÁPIDO (COPIE E COLE)
+--------------------------------
+
+# Substitua logged-minerals-axis-infrastructure.trycloudflare.com pelo SEU host
+
+# Windows PowerShell:
+.\colab_workflow.ps1 `
+    -SSHHost logged-minerals-axis-infrastructure.trycloudflare.com `
+    -Action all `
+    -Stream RBF_Abrupt_Severe `
+    -Chunks 3
+
+# Linux/Mac/Git Bash:
+./sync_to_colab.sh logged-minerals-axis-infrastructure.trycloudflare.com
+ssh logged-minerals-axis-infrastructure.trycloudflare.com
+cd /root/DSL-AG-hybrid
+python setup_colab_remote.py
+/root/run_experiment.sh python compare_gbml_vs_river.py --stream RBF_Abrupt_Severe --chunks 3
+
+===============================================================================
+
+Versão: 1.0
+Data: 2025-10-18
+Autor: Claude Code
+
+🎉 Pronto para usar! Tudo via terminal, logs no Drive!
+
+===============================================================================

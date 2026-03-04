@@ -1,0 +1,66 @@
+================================================================================
+COMANDO PARA EXECUTAR TESTE DO GBML (1 chunk)
+================================================================================
+
+PASSO 1: Conectar ao servidor
+------------------------------
+ssh root@right-scotia-humor-toward.trycloudflare.com
+
+
+PASSO 2: Navegar para a pasta
+------------------------------
+cd /content/DSL-AG-hybrid
+
+
+PASSO 3: Executar o teste (1 chunk, sem interrupção)
+-----------------------------------------------------
+nohup python compare_gbml_vs_river.py --stream RBF_Abrupt_Severe --chunks 1 --chunk-size 6000 --seed 42 > test_output.log 2>&1 &
+
+
+PASSO 4: Verificar se está rodando
+-----------------------------------
+ps aux | grep compare_gbml
+
+
+PASSO 5: Monitorar o progresso (em tempo real)
+-----------------------------------------------
+tail -f test_output.log
+
+
+PASSO 6: Para sair do monitoramento (sem parar o processo)
+-----------------------------------------------------------
+Pressione: Ctrl+C
+
+
+PASSO 7: Verificar o log completo depois
+-----------------------------------------
+cat test_output.log
+
+
+PASSO 8: Baixar o log para sua máquina (executar no Windows)
+-------------------------------------------------------------
+scp root@right-scotia-humor-toward.trycloudflare.com:/content/DSL-AG-hybrid/test_output.log .
+
+
+================================================================================
+COMANDO ÚNICO (copie e cole tudo de uma vez após conectar ao servidor):
+================================================================================
+
+cd /content/DSL-AG-hybrid && nohup python compare_gbml_vs_river.py --stream RBF_Abrupt_Severe --chunks 1 --chunk-size 6000 --seed 42 > test_output.log 2>&1 &
+
+
+================================================================================
+NOTAS IMPORTANTES:
+================================================================================
+
+✅ NOHUP: Permite desconectar do SSH sem parar o processo
+✅ O '&' no final: Roda em background
+✅ test_output.log: Todo o output será salvo neste arquivo
+✅ Você pode desconectar: O processo continuará rodando
+
+Para verificar o resultado depois:
+- Reconecte: ssh root@right-scotia-humor-toward.trycloudflare.com
+- Entre na pasta: cd /content/DSL-AG-hybrid
+- Veja o log: cat test_output.log | grep -A 20 "RESULTADO FINAL"
+
+================================================================================

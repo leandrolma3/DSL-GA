@@ -1,0 +1,76 @@
+Rule History for Stream: STAGGER_Gradual_Chain, Run: 1
+========================================
+
+--- Chunk 0 (Trained) --- Test Perf (Chunk 1): TestGmean=1.0000, TestF1=1.0000
+ Train Perf (Chunk 0): TrainGmean=1.0000
+---
+  Fitness: 1.100000
+  Default Class: 0
+  Rules (5 total):
+    Class 0:
+      1: IF (((size <= 0.5000) AND (color > 0.5000)) AND (color <= 1.5000)) THEN Class 0
+      2: IF (((size <= 0.5000) AND (color > 0.5000)) AND (color > 1.5000)) THEN Class 0
+      3: IF ((size > 0.5000) AND (size <= 1.5000)) THEN Class 0
+      4: IF ((size > 0.5000) AND (size > 1.5000)) THEN Class 0
+    Class 1:
+      1: IF ((size <= 0.5000) AND (color <= 0.5000)) THEN Class 1
+========================================
+
+--- Chunk 1 (Trained) --- Test Perf (Chunk 2): TestGmean=0.1665, TestF1=0.2297
+ Train Perf (Chunk 1): TrainGmean=1.0000
+---
+  Fitness: 1.300000
+  Default Class: 0
+  Rules (3 total):
+    Class 0:
+      1: IF ((color <= 0.5000) AND (size > 0.5000)) THEN Class 0
+      2: IF (color > 0.5000) THEN Class 0
+    Class 1:
+      1: IF ((color <= 0.5000) AND (size <= 0.5000)) THEN Class 1
+========================================
+
+--- Chunk 2 (Trained) --- Test Perf (Chunk 3): TestGmean=0.7939, TestF1=0.7803
+ Train Perf (Chunk 2): TrainGmean=0.7953
+---
+  Fitness: 0.873499
+  Default Class: 1
+  Rules (15 total):
+    Class 0:
+      1: IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape > 1.5000)) AND (size <= 1.5000)) AND (color <= 0.5000)) THEN Class 0
+      2: IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape <= 1.5000)) AND (size <= 1.5000)) AND (color > 0.5000)) THEN Class 0
+      3: IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape <= 1.5000)) AND (size > 1.5000)) AND (color > 0.5000)) THEN Class 0
+      4: IF ((((size <= 0.5000) AND (shape <= 0.5000)) AND (color <= 1.5000)) AND (color <= 0.5000)) THEN Class 0
+      5: IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape > 1.5000)) AND (size <= 1.5000)) AND (color > 0.5000)) THEN Class 0
+      6: IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape > 1.5000)) AND (size > 1.5000)) AND (color > 0.5000)) THEN Class 0
+      7: IF ((((size <= 0.5000) AND (shape > 0.5000)) AND (color > 1.5000)) AND (shape <= 1.5000)) THEN Class 0
+      8: IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape <= 1.5000)) AND (size > 1.5000)) AND (color <= 0.5000)) THEN Class 0
+      9: IF (((size <= 0.5000) AND (shape <= 0.5000)) AND (color > 1.5000)) THEN Class 0
+      10: IF (((size <= 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) THEN Class 0
+      11: IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape > 1.5000)) AND (size > 1.5000)) AND (color <= 0.5000)) THEN Class 0
+      12: IF ((((size <= 0.5000) AND (shape <= 0.5000)) AND (color <= 1.5000)) AND (color > 0.5000)) THEN Class 0
+    Class 1:
+      1: IF ((size > 0.5000) AND (shape <= 0.5000)) THEN Class 1
+      2: IF ((((size > 0.5000) AND (shape > 0.5000)) AND (color > 1.5000)) AND (size <= 1.5000)) THEN Class 1
+      3: IF ((((size > 0.5000) AND (shape > 0.5000)) AND (color > 1.5000)) AND (size > 1.5000)) THEN Class 1
+========================================
+
+--- Chunk 3 (Trained) --- Test Perf (Chunk 4): TestGmean=0.6238, TestF1=0.6237
+ Train Perf (Chunk 3): TrainGmean=0.8090
+---
+  Fitness: 0.889326
+  Default Class: 0
+  Rules (11 total):
+    Class 0:
+      1: IF (((size <= 0.5000) AND (color > 1.5000)) AND (shape <= 0.5000)) THEN Class 0
+      2: IF ((((((size > 1.5971) AND ((((shape <= 1.1162) AND (shape > 1.0946)) AND (color <= 0.7327)) AND (((color >= 1.4725) AND (shape < 1.5963)) AND ((shape <= 0.5437) AND (color <= 1.1045))))) AND (((((shape < 0.8482) OR (color > 1.1952)) AND ((shape < 1.3710) AND (size < 0.9515))) AND (((shape <= 1.0031) OR (color <= 0.5597)) AND ((size > 1.3757) AND (shape >= 0.9981)))) AND ((((color > 1.5033) AND (size < 0.2865)) OR (color <= 0.7935)) AND (((shape <= 0.6435) AND (color > 1.7080)) AND (color > 0.9007))))) AND ((((size <= 0.9191) OR (((shape < 0.3005) AND (size > 1.7504)) OR ((size < 0.7764) AND (shape < 1.5059)))) AND ((((size >= 1.0634) OR (shape > 1.1358)) AND (size > 0.3362)) AND (((color <= 1.6977) AND (shape <= 0.6717)) AND (color >= 0.6194)))) AND ((shape > 1.7302) AND (((color >= 1.7884) OR (shape > 1.2108)) AND (size >= 1.1981))))) AND (((color < 1.1435) AND ((shape > 0.3612) AND ((color < 1.5043) AND (size <= 1.7296)))) AND (size > 0.3543))) AND (size < 0.4686)) THEN Class 0
+    Class 1:
+      1: IF ((size > 0.5000) AND (shape <= 0.5000)) THEN Class 1
+      2: IF ((((size > 0.5000) AND (shape > 0.5000)) AND (color > 1.5000)) AND (shape > 1.5000)) THEN Class 1
+      3: IF ((((size > 0.5000) AND (shape > 0.5000)) AND (color > 1.5000)) AND (shape <= 1.5000)) THEN Class 1
+      4: IF ((((size > 0.5000) AND (shape > 0.5000)) AND (color > 1.5000)) AND (size > 1.5000)) THEN Class 1
+      5: IF (((size < 0.5331) OR (shape > 1.7604)) AND (color >= 1.7482)) THEN Class 1
+      6: IF ((((((size > 0.5000) AND (shape > 0.5000)) AND (color <= 1.5000)) AND (shape > 1.5000)) AND (size > 1.5000)) AND (color > 0.5000)) THEN Class 1
+      7: IF (((((((shape > 0.2535) OR ((((((((shape < 0.9365) AND (((color < 1.0967) AND (color >= 0.8341)) OR ((size > 0.2258) AND (shape >= 0.4514)))) OR ((size > 0.8572) AND (size <= 0.7499))) OR (((shape >= 0.5869) OR ((shape >= 0.9674) AND ((color < 0.6727) AND (size <= 1.5783)))) AND ((((size <= 0.8126) OR (shape > 1.3000)) OR (size < 1.1156)) OR (shape > 1.2954)))) AND (((shape <= 1.7447) AND ((size <= 1.3038) OR ((color < 1.7813) AND ((color > 0.7638) AND (shape <= 1.4401))))) AND ((size >= 0.7283) AND ((((shape < 0.7101) AND (color > 1.4491)) AND (shape > 0.8655)) AND (((size < 1.3658) OR (color >= 1.4203)) OR ((color < 1.2379) AND (color >= 1.7255))))))) AND (((size < 0.8581) AND ((size > 1.3221) AND ((((color > 1.2060) OR (shape <= 0.5712)) AND ((shape >= 1.4191) OR (shape <= 0.4216))) AND (size <= 0.2862)))) AND ((size <= 0.4487) AND (((color > 0.9200) AND (((shape >= 1.1873) AND (size <= 1.2190)) AND ((shape <= 1.1121) AND (size <= 0.8755)))) AND (size >= 0.2404))))) AND ((shape > 0.6612) AND (((shape <= 0.2136) AND (((((size <= 1.1478) OR (shape >= 1.3802)) AND (shape > 0.6178)) AND (shape < 0.6461)) AND ((shape >= 0.9808) AND (size < 0.6319)))) OR ((((shape <= 1.5345) AND (shape > 0.6934)) AND (size > 0.4025)) AND (color < 0.3437))))) AND (((shape < 1.3702) AND ((shape <= 0.7448) AND ((((((color >= 0.8382) OR (color < 0.5282)) AND ((shape <= 0.6578) AND (color > 0.5259))) OR ((shape <= 1.4261) OR (color > 1.5294))) OR ((((color > 1.6080) OR (size >= 0.4073)) AND ((color >= 0.9814) AND (size <= 0.3358))) OR (((size < 1.7923) AND (shape > 0.9780)) OR ((size >= 0.5126) AND (shape > 1.2583))))) AND (size < 0.5982)))) OR ((((shape >= 0.4986) AND ((shape <= 0.4295) AND ((((color > 0.7632) OR (shape > 0.4173)) AND ((color <= 1.4083) AND (size >= 1.2831))) AND ((shape > 1.2177) OR ((color > 0.4519) AND (size < 0.7938)))))) AND ((shape < 0.4562) AND (size < 1.0243))) AND (shape >= 0.6382))))) OR ((color < 1.7491) AND ((size <= 1.0033) AND ((((color <= 0.3917) AND (color >= 1.2149)) AND ((((shape >= 0.4386) AND (((color <= 1.1286) AND ((size >= 0.4444) AND (size < 0.4389))) AND (color <= 1.5290))) AND (((((color < 0.8291) OR (size > 0.5336)) OR ((size >= 0.5078) OR (shape >= 0.8471))) OR (size >= 1.7888)) AND ((size <= 1.5603) OR (shape >= 1.6039)))) OR (color > 1.3062))) AND (shape >= 1.6233))))) AND ((size <= 1.3466) AND (((size < 0.5442) AND ((shape < 1.7699) AND (color >= 1.2012))) AND (color > 0.5175)))) AND (size < 1.6390)) OR ((((((((((((size > 0.7288) OR (((color <= 1.5475) AND (shape <= 1.1770)) AND ((shape < 1.4623) AND (size > 0.8966)))) AND ((size >= 1.5487) OR (((size <= 1.0008) AND (size > 1.4865)) OR (size < 0.7349)))) OR (color < 0.5255)) AND ((((((color >= 1.4109) AND (size <= 0.4664)) AND (shape > 0.9065)) AND ((shape > 0.9181) AND (shape <= 0.6968))) AND (shape > 0.3248)) AND ((shape > 1.1360) OR (size > 0.5826)))) AND ((((((size > 0.8529) AND ((shape > 0.6570) OR (color < 0.7514))) AND (shape <= 0.2890)) AND (((color < 0.9932) AND ((size > 0.4396) AND (color > 0.9814))) AND (size > 1.1724))) AND (((color >= 0.3225) AND ((size > 1.4666) AND (shape > 0.4098))) AND (size <= 0.7377))) AND (((size <= 0.6494) AND ((size >= 1.1698) AND (size < 1.4974))) AND (((size >= 0.4907) AND (color > 0.6445)) OR (size >= 1.3998))))) OR (size <= 1.3325)) AND (((color >= 0.9590) AND (size >= 1.3180)) OR ((((shape >= 1.5306) AND (shape < 0.6891)) AND ((((shape <= 1.4030) AND (((size >= 0.6420) AND (shape < 1.5776)) OR ((shape > 1.6006) AND (color >= 1.2142)))) AND ((size > 1.7929) AND ((shape > 1.6926) AND ((color >= 1.0830) AND (size >= 0.5603))))) AND (((color <= 0.3888) AND ((shape > 0.4161) AND ((shape > 1.4537) AND (shape <= 1.1419)))) AND (color <= 1.5921)))) AND (shape > 0.7374)))) OR (size >= 1.0849)) AND (((shape < 0.5689) AND (color > 1.4866)) AND (size < 0.6491))) AND (((((shape <= 0.2195) AND (((size < 0.8819) AND (((shape <= 1.6698) AND ((((color >= 1.0070) AND (size < 0.9672)) OR ((shape >= 0.2989) AND (size > 1.6213))) AND (((color > 1.1853) AND (shape < 0.5150)) OR (shape < 0.2279)))) AND (size < 0.2463))) OR ((color >= 1.0702) AND ((((((color <= 0.2002) OR (shape >= 1.6447)) AND (shape >= 0.5613)) AND (size >= 1.6712)) AND ((((size <= 1.3524) OR (color > 0.6420)) AND ((shape <= 0.3794) AND (color >= 0.4613))) OR (size >= 0.9236))) AND (color <= 1.7283))))) AND ((((shape >= 1.5718) AND (shape < 1.3019)) OR (((shape < 1.5309) AND (size >= 0.8097)) OR (shape >= 1.0900))) AND ((color >= 0.6402) AND (shape < 1.6722)))) AND (((((shape < 1.6540) OR (((((color < 0.3828) AND ((shape < 0.9014) AND (color < 0.3316))) AND (size <= 1.7305)) AND ((color <= 0.4858) AND (((color > 0.2642) AND (size <= 0.9079)) AND (shape < 1.6414)))) AND (shape < 1.0631))) AND (shape < 0.2144)) AND ((((color >= 1.7055) AND (shape < 1.2454)) AND (color < 0.4897)) AND ((shape >= 1.1827) OR ((shape <= 0.4283) OR (color < 0.4160))))) AND ((shape >= 0.4743) AND (color <= 0.8639)))) OR (color < 0.3074))) AND (((size >= 0.5693) AND ((((size >= 1.0951) AND (size < 1.1671)) AND (((color >= 0.5989) AND ((shape <= 0.9956) AND (color >= 0.6564))) AND (size > 1.1215))) AND (size >= 1.0484))) AND (((color < 1.7796) AND ((((color > 0.3822) AND (((color >= 1.1297) AND (((((size < 0.7116) OR (color < 0.8947)) AND (shape < 0.6917)) AND (shape > 1.3495)) AND (color > 0.7012))) AND (((size > 1.6048) AND (((shape <= 0.6926) OR ((shape > 1.3080) AND (shape <= 1.3290))) AND ((size <= 1.6750) OR (color <= 0.3015)))) OR (shape >= 1.2251)))) OR (size >= 0.4003)) AND ((((size >= 1.1639) AND ((shape > 1.7983) AND ((shape <= 1.1978) OR ((((color >= 1.4608) AND (size < 0.5448)) AND ((size <= 1.4127) AND (color > 1.6431))) AND (shape > 1.2663))))) AND (((((size > 1.6210) AND (((color >= 0.5719) OR (shape >= 1.4683)) OR ((color >= 0.6076) AND (color <= 0.8566)))) OR (shape > 0.3603)) AND (((size < 1.4616) AND (color > 1.5715)) AND (color >= 0.5346))) AND (shape >= 0.3932))) AND (((shape >= 0.4607) OR ((((shape < 1.2014) AND (((shape < 1.3335) AND (color >= 1.3027)) AND ((size < 0.2525) OR (shape <= 1.0396)))) AND ((size <= 0.7395) AND (((shape < 1.7996) AND (color > 0.6021)) AND (color < 0.8658)))) AND (color > 0.2413))) AND ((size <= 1.5930) AND (shape >= 1.6755)))))) AND ((((color > 1.6034) AND ((((((((shape >= 0.5564) AND (shape <= 0.7284)) AND (color > 1.2881)) AND (((shape <= 0.7923) AND (size >= 1.5078)) AND (size <= 1.3072))) AND (color < 1.1382)) AND ((((size > 0.4091) AND ((shape >= 0.2658) AND (shape < 1.6362))) AND (((size > 1.7989) AND (shape > 1.4681)) AND (color < 0.6272))) AND ((shape <= 1.0896) AND (((shape < 1.6765) OR (shape > 0.3681)) AND (color <= 0.8879))))) AND ((((shape >= 0.4228) AND (size <= 0.5170)) AND (shape < 0.8739)) AND ((size >= 0.3607) OR (color <= 0.3796)))) AND (size <= 0.3128))) AND (shape >= 1.3278)) AND (shape >= 1.0958)))))) AND (color < 0.6403)) THEN Class 1
+      8: IF ((size < 1.3654) AND ((color <= 0.3651) AND ((size >= 1.1054) AND (((color < 0.7782) AND (((shape <= 0.4905) AND ((shape > 1.2718) OR (shape <= 0.9173))) OR ((((color < 1.6907) AND (((size <= 1.5144) OR (color > 1.0371)) AND (color >= 1.1879))) AND ((size <= 0.5986) AND ((shape <= 0.4124) AND ((((shape >= 0.5736) OR (((color > 0.3296) AND (shape <= 1.1199)) OR ((color < 0.3016) AND (shape <= 0.9643)))) AND (shape > 1.2817)) AND (((((color <= 0.4792) AND (shape < 0.9119)) OR ((size > 1.1860) AND (shape > 1.1320))) AND (((size < 0.5719) AND (color >= 0.2806)) AND (color >= 0.5205))) AND ((((shape > 1.4338) AND (color < 0.4456)) AND ((shape >= 1.7177) AND (shape < 1.2565))) AND ((color < 0.7138) AND ((color <= 0.7764) AND (color > 1.7460))))))))) AND (shape > 1.3198)))) AND (((shape <= 0.9369) AND ((((shape < 1.3527) OR ((((shape <= 0.6682) AND ((shape > 0.9970) AND (((size <= 1.6350) OR (shape > 1.3861)) AND (shape < 0.6380)))) AND (((color <= 1.4068) AND (color > 1.6482)) OR ((shape <= 0.6912) AND ((size >= 1.7022) OR (color > 0.6571))))) AND (((shape < 0.7940) AND (size > 1.5400)) OR (((color < 1.6878) OR (((shape > 1.1613) AND (size > 1.4630)) AND (color < 0.4727))) AND ((((color >= 0.4870) AND (shape >= 0.5178)) AND (size >= 0.5430)) AND (((shape <= 1.5501) AND (size <= 1.3446)) AND (size > 0.3743))))))) AND ((size < 1.5603) AND ((shape > 0.6779) AND ((((size >= 0.9558) AND ((size <= 0.4346) AND (color < 1.2383))) AND ((color > 1.3783) AND (shape < 0.3322))) AND (size <= 1.0513))))) AND (size <= 1.0877))) OR (size >= 1.7525)))))) THEN Class 1
+      9: IF ((shape <= 0.9675) AND (color >= 0.9199)) THEN Class 1
+========================================

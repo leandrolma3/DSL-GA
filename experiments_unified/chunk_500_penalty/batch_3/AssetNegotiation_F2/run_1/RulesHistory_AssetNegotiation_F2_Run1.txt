@@ -1,0 +1,526 @@
+Rule History for Stream: AssetNegotiation_F2, Run: 1
+========================================
+
+--- Chunk 0 (Trained) --- Test Perf (Chunk 1): TestGmean=0.9432, TestF1=0.9520
+ Train Perf (Chunk 0): TrainGmean=0.9895
+---
+  Fitness: 1.088305
+  Default Class: 0
+  Rules (19 total):
+    Class 0:
+      1: IF ((x_1 <= 0.4268) AND (x_0 <= 0.8739)) THEN Class 0
+      2: IF ((((x_1 <= 0.4268) AND (x_0 > 0.8739)) AND (x_1 <= 0.2457)) AND (x_1 <= 0.0594)) THEN Class 0
+      3: IF ((((x_1 <= 0.4268) AND (x_0 > 0.8739)) AND (x_1 <= 0.2457)) AND (x_1 > 0.0594)) THEN Class 0
+      4: IF ((((x_1 > 0.4268) AND (x_0 <= 0.4587)) AND (x_1 <= 0.9449)) AND (x_0 <= 0.3682)) THEN Class 0
+      5: IF ((((((x_1 > 0.4268) AND (x_0 <= 0.4587)) AND (x_1 <= 0.9449)) AND (x_0 > 0.3682)) AND (x_1 <= 0.7428)) AND (x_2 <= 0.2041)) THEN Class 0
+      6: IF ((((((x_1 > 0.4268) AND (x_0 <= 0.4587)) AND (x_1 <= 0.9449)) AND (x_0 > 0.3682)) AND (x_1 <= 0.7428)) AND (x_2 > 0.2041)) THEN Class 0
+      7: IF ((((x_1 > 0.4268) AND (x_0 <= 0.4587)) AND (x_1 > 0.9449)) AND (x_0 <= 0.2118)) THEN Class 0
+      8: IF (((((x_1 > 0.4268) AND (x_0 > 0.4587)) AND (x_0 <= 0.6006)) AND (x_1 <= 0.6901)) AND (x_0 <= 0.5552)) THEN Class 0
+      9: IF (((((x_1 > 0.4268) AND (x_0 > 0.4587)) AND (x_0 <= 0.6006)) AND (x_1 <= 0.6901)) AND (x_0 > 0.5552)) THEN Class 0
+    Class 1:
+      1: IF ((((x_1 <= 0.4268) AND (x_0 > 0.8739)) AND (x_1 > 0.2457)) AND (x_4 <= 0.5152)) THEN Class 1
+      2: IF ((((x_1 <= 0.4268) AND (x_0 > 0.8739)) AND (x_1 > 0.2457)) AND (x_4 > 0.5152)) THEN Class 1
+      3: IF (((((x_1 > 0.4268) AND (x_0 <= 0.4587)) AND (x_1 <= 0.9449)) AND (x_0 > 0.3682)) AND (x_1 > 0.7428)) THEN Class 1
+      4: IF (((((x_1 > 0.4268) AND (x_0 <= 0.4587)) AND (x_1 > 0.9449)) AND (x_0 > 0.2118)) AND (x_3 <= 0.5277)) THEN Class 1
+      5: IF (((((x_1 > 0.4268) AND (x_0 <= 0.4587)) AND (x_1 > 0.9449)) AND (x_0 > 0.2118)) AND (x_3 > 0.5277)) THEN Class 1
+      6: IF (((((x_1 > 0.4268) AND (x_0 > 0.4587)) AND (x_0 <= 0.6006)) AND (x_1 > 0.6901)) AND (x_3 <= 0.2995)) THEN Class 1
+      7: IF (((((x_1 > 0.4268) AND (x_0 > 0.4587)) AND (x_0 <= 0.6006)) AND (x_1 > 0.6901)) AND (x_3 > 0.2995)) THEN Class 1
+      8: IF (((((x_1 > 0.4268) AND (x_0 > 0.4587)) AND (x_0 > 0.6006)) AND (x_1 <= 0.5277)) AND (x_0 <= 0.7675)) THEN Class 1
+      9: IF (((((x_1 > 0.4268) AND (x_0 > 0.4587)) AND (x_0 > 0.6006)) AND (x_1 <= 0.5277)) AND (x_0 > 0.7675)) THEN Class 1
+      10: IF ((((x_1 > 0.4268) AND (x_0 > 0.4587)) AND (x_0 > 0.6006)) AND (x_1 > 0.5277)) THEN Class 1
+========================================
+
+--- Chunk 1 (Trained) --- Test Perf (Chunk 2): TestGmean=0.9650, TestF1=0.9568
+ Train Perf (Chunk 1): TrainGmean=0.9852
+---
+  Fitness: 1.269581
+  Default Class: 0
+  Rules (12 total):
+    Class 0:
+      1: IF ((x_1 <= 0.5220) AND (x_0 <= 0.7449)) THEN Class 0
+      2: IF ((((x_1 <= 0.5220) AND (x_0 > 0.7449)) AND (x_1 <= 0.3000)) AND (x_3 <= 0.7297)) THEN Class 0
+      3: IF ((((x_1 <= 0.5220) AND (x_0 > 0.7449)) AND (x_1 <= 0.3000)) AND (x_3 > 0.7297)) THEN Class 0
+      4: IF (((x_1 > 0.5220) AND (x_0 <= 0.3586)) AND (x_1 <= 0.8933)) THEN Class 0
+      5: IF ((((x_1 > 0.5220) AND (x_0 <= 0.3586)) AND (x_1 > 0.8933)) AND (x_0 <= 0.2401)) THEN Class 0
+      6: IF ((((x_1 > 0.5220) AND (x_0 > 0.3586)) AND (x_0 <= 0.5388)) AND (x_1 <= 0.7299)) THEN Class 0
+    Class 1:
+      1: IF ((((x_1 <= 0.5220) AND (x_0 > 0.7449)) AND (x_1 > 0.3000)) AND (x_0 <= 0.8059)) THEN Class 1
+      2: IF ((((x_1 <= 0.5220) AND (x_0 > 0.7449)) AND (x_1 > 0.3000)) AND (x_0 > 0.8059)) THEN Class 1
+      3: IF ((((x_1 > 0.5220) AND (x_0 <= 0.3586)) AND (x_1 > 0.8933)) AND (x_0 > 0.2401)) THEN Class 1
+      4: IF ((((x_1 > 0.5220) AND (x_0 > 0.3586)) AND (x_0 <= 0.5388)) AND (x_1 > 0.7299)) THEN Class 1
+      5: IF ((((x_1 > 0.5220) AND (x_0 > 0.3586)) AND (x_0 > 0.5388)) AND (x_1 <= 0.5685)) THEN Class 1
+      6: IF ((((x_1 > 0.5220) AND (x_0 > 0.3586)) AND (x_0 > 0.5388)) AND (x_1 > 0.5685)) THEN Class 1
+========================================
+
+--- Chunk 2 (Trained) --- Test Perf (Chunk 3): TestGmean=0.9601, TestF1=0.9718
+ Train Perf (Chunk 2): TrainGmean=0.9838
+---
+  Fitness: 1.256227
+  Default Class: 0
+  Rules (13 total):
+    Class 0:
+      1: IF ((((x_1 > 0.4736) AND (x_0 <= 0.3833)) AND (x_1 > 0.9013)) AND (x_0 <= 0.2100)) THEN Class 0
+      2: IF ((((x_1 <= 0.4736) AND (x_0 <= 0.8395)) AND (x_0 <= 0.7785)) AND (x_3 <= 0.0538)) THEN Class 0
+      3: IF ((((x_1 <= 0.4736) AND (x_0 <= 0.8395)) AND (x_0 <= 0.7785)) AND (x_1 <= 0.0409)) THEN Class 0
+      4: IF ((((x_1 <= 0.4736) AND (x_0 <= 0.8395)) AND (x_0 <= 0.7785)) AND (x_4 <= 0.0450)) THEN Class 0
+    Class 1:
+      1: IF (((((x_1 > 0.4736) AND (x_0 > 0.3833)) AND (x_1 > 0.6242)) AND (x_0 > 0.4990)) AND (x_1 > 0.6464)) THEN Class 1
+      2: IF ((((x_1 > 0.4736) AND (x_0 > 0.3833)) AND (x_1 <= 0.6242)) AND (x_0 > 0.6962)) THEN Class 1
+      3: IF (((x_1 <= 0.4736) AND (x_0 > 0.8395)) AND (x_1 > 0.3033)) THEN Class 1
+      4: IF ((((((x_1 > 0.4736) AND (x_0 > 0.3833)) AND (x_1 > 0.6242)) AND (x_0 <= 0.4990)) AND (x_1 > 0.8027)) AND (x_0 > 0.4085)) THEN Class 1
+      5: IF ((((((x_1 > 0.4736) AND (x_0 > 0.3833)) AND (x_1 > 0.6242)) AND (x_0 <= 0.4990)) AND (x_1 > 0.8027)) AND (x_0 <= 0.4085)) THEN Class 1
+      6: IF ((((x_1 > 0.4736) AND (x_0 <= 0.3833)) AND (x_1 > 0.9013)) AND (x_0 > 0.2354)) THEN Class 1
+      7: IF ((((x_1 <= 0.4736) AND (x_0 > 0.8395)) AND (x_1 > 0.3033)) AND (x_4 <= 0.3093)) THEN Class 1
+      8: IF ((((x_1 <= 0.4736) AND (x_0 > 0.8395)) AND (x_1 > 0.3033)) AND (x_4 > 0.3093)) THEN Class 1
+      9: IF (((((x_1 > 0.4736) AND (x_0 > 0.3833)) AND (x_1 > 0.6242)) AND (x_0 > 0.4990)) AND (x_1 <= 0.6464)) THEN Class 1
+========================================
+
+--- Chunk 3 (Trained) --- Test Perf (Chunk 4): TestGmean=0.9444, TestF1=0.9558
+ Train Perf (Chunk 3): TrainGmean=0.9828
+---
+  Fitness: 1.268361
+  Default Class: 0
+  Rules (11 total):
+    Class 0:
+      1: IF (((x_0 <= 0.4904) AND (x_1 <= 0.8252)) AND (x_0 <= 0.0170)) THEN Class 0
+      2: IF (((x_0 <= 0.4904) AND (x_1 <= 0.8252)) AND (x_3 <= 0.0396)) THEN Class 0
+      3: IF (((x_0 <= 0.4904) AND (x_1 <= 0.8252)) AND (x_1 <= 0.0661)) THEN Class 0
+    Class 1:
+      1: IF ((((x_0 > 0.4904) AND (x_1 > 0.3836)) AND (x_0 > 0.6955)) AND (x_1 <= 0.4318)) THEN Class 1
+      2: IF ((((x_0 > 0.4904) AND (x_1 > 0.4073)) AND (x_0 > 0.6955)) AND (x_1 >= 0.4109)) THEN Class 1
+      3: IF ((((x_0 > 0.4904) AND (x_1 > 0.3836)) AND (x_0 > 0.6955)) AND (x_0 <= 0.7323)) THEN Class 1
+      4: IF ((((x_0 > 0.4904) AND (x_1 > 0.3836)) AND (x_0 <= 0.6955)) AND (x_1 > 0.6735)) THEN Class 1
+      5: IF (((x_0 <= 0.4904) AND (x_1 > 0.8252)) AND (x_0 > 0.3134)) THEN Class 1
+      6: IF (((((x_0 > 0.4904) AND (x_1 > 0.3836)) AND (x_0 <= 0.6955)) AND (x_1 > 0.6735)) AND (x_0 > 0.6197)) THEN Class 1
+      7: IF ((((x_0 > 0.4904) AND (x_1 > 0.3836)) AND (x_0 > 0.6955)) AND (x_1 <= 0.4109)) THEN Class 1
+      8: IF (((((x_0 > 0.4904) AND (x_1 > 0.3836)) AND (x_0 <= 0.6955)) AND (x_1 <= 0.6735)) AND (x_0 > 0.6197)) THEN Class 1
+========================================
+
+--- Chunk 4 (Trained) --- Test Perf (Chunk 5): TestGmean=0.9496, TestF1=0.9521
+ Train Perf (Chunk 4): TrainGmean=0.9895
+---
+  Fitness: 1.267466
+  Default Class: 0
+  Rules (11 total):
+    Class 0:
+      1: IF ((x_1 <= 0.4584) AND (x_0 <= 0.8575)) THEN Class 0
+      2: IF ((((x_1 <= 0.4584) AND (x_0 > 0.8575)) AND (x_1 <= 0.2753)) AND (x_1 <= 0.2287)) THEN Class 0
+      3: IF ((((x_1 <= 0.4584) AND (x_0 > 0.8575)) AND (x_1 <= 0.2753)) AND (x_1 > 0.2287)) THEN Class 0
+      4: IF (((x_1 > 0.4584) AND (x_0 <= 0.3593)) AND (x_1 <= 0.8926)) THEN Class 0
+      5: IF ((((x_1 > 0.4584) AND (x_0 <= 0.3593)) AND (x_1 > 0.8926)) AND (x_0 <= 0.1959)) THEN Class 0
+      6: IF ((((x_1 > 0.4584) AND (x_0 > 0.3593)) AND (x_0 <= 0.5327)) AND (x_1 <= 0.7784)) THEN Class 0
+    Class 1:
+      1: IF (((x_1 <= 0.4584) AND (x_0 > 0.8575)) AND (x_1 > 0.2753)) THEN Class 1
+      2: IF ((((x_1 > 0.4584) AND (x_0 <= 0.3593)) AND (x_1 > 0.8926)) AND (x_0 > 0.1959)) THEN Class 1
+      3: IF ((((x_1 > 0.4584) AND (x_0 > 0.3593)) AND (x_0 <= 0.5327)) AND (x_1 > 0.7784)) THEN Class 1
+      4: IF ((((x_1 > 0.4584) AND (x_0 > 0.3593)) AND (x_0 > 0.5327)) AND (x_1 <= 0.6168)) THEN Class 1
+      5: IF ((((x_1 > 0.4584) AND (x_0 > 0.3593)) AND (x_0 > 0.5327)) AND (x_1 > 0.6168)) THEN Class 1
+========================================
+
+--- Chunk 5 (Trained) --- Test Perf (Chunk 6): TestGmean=0.9595, TestF1=0.9526
+ Train Perf (Chunk 5): TrainGmean=0.9850
+---
+  Fitness: 1.260238
+  Default Class: 0
+  Rules (11 total):
+    Class 0:
+      1: IF ((((x_1 > 0.5779) AND (x_0 > 0.3137)) AND (x_0 <= 0.4516)) AND (x_1 <= 0.7904)) THEN Class 0
+    Class 1:
+      1: IF ((((x_1 > 0.5779) AND (x_0 >= 0.3137)) AND (x_0 > 0.4516)) AND (x_1 > 0.6279)) THEN Class 1
+      2: IF ((((x_1 > 0.5779) AND (x_0 > 0.3137)) AND (x_0 > 0.4516)) AND (x_1 > 0.6279)) THEN Class 1
+      3: IF ((((x_1 <= 0.5779) AND (x_0 > 0.8370)) AND (x_1 > 0.2767)) AND (x_1 > 0.3539)) THEN Class 1
+      4: IF ((((x_1 > 0.5779) AND (x_0 > 0.3137)) AND (x_0 <= 0.4516)) AND (x_1 > 0.7904)) THEN Class 1
+      5: IF ((((x_1 <= 0.5779) AND (x_0 > 0.8370)) AND (x_1 > 0.2767)) AND (x_0 <= 0.8895)) THEN Class 1
+      6: IF ((((x_1 <= 0.5779) AND (x_0 > 0.8370)) AND (x_1 > 0.2767)) AND (x_4 <= 0.3820)) THEN Class 1
+      7: IF ((((x_1 <= 0.5779) AND (x_0 > 0.8370)) AND (x_1 > 0.2767)) AND (x_1 <= 0.3898)) THEN Class 1
+      8: IF ((((x_1 <= 0.5779) AND (x_0 > 0.8370)) AND (x_1 > 0.2767)) AND (x_1 <= 0.3539)) THEN Class 1
+      9: IF ((((x_1 > 0.5779) AND (x_0 > 0.3137)) AND (x_0 > 0.4516)) AND (x_1 <= 0.6279)) THEN Class 1
+      10: IF ((((x_1 <= 0.5779) AND (x_0 <= 0.8370)) AND (x_0 > 0.6711)) AND (x_1 > 0.3981)) THEN Class 1
+========================================
+
+--- Chunk 6 (Trained) --- Test Perf (Chunk 7): TestGmean=0.9366, TestF1=0.9496
+ Train Perf (Chunk 6): TrainGmean=0.9910
+---
+  Fitness: 1.271989
+  Default Class: 0
+  Rules (14 total):
+    Class 0:
+      1: IF (((x_0 <= 0.4918) AND (x_1 <= 0.9549)) AND (x_0 <= 0.4278)) THEN Class 0
+      2: IF (((((x_0 <= 0.4918) AND (x_1 <= 0.9549)) AND (x_0 > 0.4278)) AND (x_1 <= 0.7416)) AND (x_4 <= 0.2234)) THEN Class 0
+      3: IF (((((x_0 <= 0.4918) AND (x_1 <= 0.9549)) AND (x_0 > 0.4278)) AND (x_1 <= 0.7416)) AND (x_4 > 0.2234)) THEN Class 0
+      4: IF ((x_0 > 0.4918) AND (x_1 <= 0.3180)) THEN Class 0
+      5: IF (((((x_0 > 0.4918) AND (x_1 > 0.3180)) AND (x_1 <= 0.5235)) AND (x_0 <= 0.7948)) AND (x_1 <= 0.4952)) THEN Class 0
+      6: IF (((((x_0 > 0.4918) AND (x_1 > 0.3180)) AND (x_1 <= 0.5235)) AND (x_0 <= 0.7948)) AND (x_1 > 0.4952)) THEN Class 0
+      7: IF (((((x_0 > 0.4918) AND (x_1 > 0.3180)) AND (x_1 > 0.5235)) AND (x_0 <= 0.5861)) AND (x_1 <= 0.6690)) THEN Class 0
+    Class 1:
+      1: IF ((((x_0 <= 0.4918) AND (x_1 <= 0.9549)) AND (x_0 > 0.4278)) AND (x_1 > 0.7416)) THEN Class 1
+      2: IF ((x_0 <= 0.4918) AND (x_1 > 0.9549)) THEN Class 1
+      3: IF (((((x_0 > 0.4918) AND (x_1 > 0.3180)) AND (x_1 <= 0.5235)) AND (x_0 > 0.7948)) AND (x_0 <= 0.8340)) THEN Class 1
+      4: IF (((((x_0 > 0.4918) AND (x_1 > 0.3180)) AND (x_1 <= 0.5235)) AND (x_0 > 0.7948)) AND (x_0 > 0.8340)) THEN Class 1
+      5: IF ((((((x_0 > 0.4918) AND (x_1 > 0.3180)) AND (x_1 > 0.5235)) AND (x_0 <= 0.5861)) AND (x_1 > 0.6690)) AND (x_4 <= 0.2019)) THEN Class 1
+      6: IF ((((((x_0 > 0.4918) AND (x_1 > 0.3180)) AND (x_1 > 0.5235)) AND (x_0 <= 0.5861)) AND (x_1 > 0.6690)) AND (x_4 > 0.2019)) THEN Class 1
+      7: IF ((((x_0 > 0.4918) AND (x_1 > 0.3180)) AND (x_1 > 0.5235)) AND (x_0 > 0.5861)) THEN Class 1
+========================================
+
+--- Chunk 7 (Trained) --- Test Perf (Chunk 8): TestGmean=0.9418, TestF1=0.9595
+ Train Perf (Chunk 7): TrainGmean=0.9880
+---
+  Fitness: 1.087041
+  Default Class: 0
+  Rules (15 total):
+    Class 0:
+      1: IF (((x_1 <= 0.4249) AND (x_0 <= 0.8871)) AND (x_1 <= 0.4071)) THEN Class 0
+      2: IF (((x_1 <= 0.4249) AND (x_0 <= 0.8871)) AND (x_1 > 0.4071)) THEN Class 0
+      3: IF ((((x_1 <= 0.4249) AND (x_0 > 0.8871)) AND (x_1 <= 0.2465)) AND (x_4 <= 0.2543)) THEN Class 0
+      4: IF ((((x_1 <= 0.4249) AND (x_0 > 0.8871)) AND (x_1 <= 0.2465)) AND (x_4 > 0.2543)) THEN Class 0
+      5: IF (((x_1 > 0.4249) AND (x_0 <= 0.3566)) AND (x_1 <= 0.9647)) THEN Class 0
+      6: IF (((x_1 > 0.4249) AND (x_0 <= 0.3566)) AND (x_1 > 0.9647)) THEN Class 0
+      7: IF ((((x_1 > 0.4249) AND (x_0 > 0.3566)) AND (x_0 <= 0.6892)) AND (x_1 <= 0.6141)) THEN Class 0
+      8: IF (((((((x_1 > 0.4249) AND (x_0 > 0.3566)) AND (x_0 <= 0.6892)) AND (x_1 > 0.6141)) AND (x_1 <= 0.7290)) AND (x_0 <= 0.5153)) AND (x_3 <= 0.2844)) THEN Class 0
+      9: IF (((((((x_1 > 0.4249) AND (x_0 > 0.3566)) AND (x_0 <= 0.6892)) AND (x_1 > 0.6141)) AND (x_1 <= 0.7290)) AND (x_0 <= 0.5153)) AND (x_3 > 0.2844)) THEN Class 0
+    Class 1:
+      1: IF (((x_1 <= 0.4249) AND (x_0 > 0.8871)) AND (x_1 > 0.2465)) THEN Class 1
+      2: IF (((((((x_1 > 0.4249) AND (x_0 > 0.3566)) AND (x_0 <= 0.6892)) AND (x_1 > 0.6141)) AND (x_1 <= 0.7290)) AND (x_0 > 0.5153)) AND (x_1 <= 0.6720)) THEN Class 1
+      3: IF (((((((x_1 > 0.4249) AND (x_0 > 0.3566)) AND (x_0 <= 0.6892)) AND (x_1 > 0.6141)) AND (x_1 <= 0.7290)) AND (x_0 > 0.5153)) AND (x_1 > 0.6720)) THEN Class 1
+      4: IF ((((((x_1 > 0.4249) AND (x_0 > 0.3566)) AND (x_0 <= 0.6892)) AND (x_1 > 0.6141)) AND (x_1 > 0.7290)) AND (x_4 <= 0.1266)) THEN Class 1
+      5: IF ((((((x_1 > 0.4249) AND (x_0 > 0.3566)) AND (x_0 <= 0.6892)) AND (x_1 > 0.6141)) AND (x_1 > 0.7290)) AND (x_4 > 0.1266)) THEN Class 1
+      6: IF (((x_1 > 0.4249) AND (x_0 > 0.3566)) AND (x_0 > 0.6892)) THEN Class 1
+========================================
+
+--- Chunk 8 (Trained) --- Test Perf (Chunk 9): TestGmean=0.9751, TestF1=0.9780
+ Train Perf (Chunk 8): TrainGmean=0.9898
+---
+  Fitness: 1.263323
+  Default Class: 0
+  Rules (11 total):
+    Class 0:
+      1: IF ((((x_0 > 0.4985) AND (x_1 <= 0.3884)) AND (x_0 <= 0.8698)) AND (x_1 > 0.3350)) THEN Class 0
+      2: IF ((((x_0 > 0.4985) AND (x_1 > 0.3884)) AND (x_1 <= 0.5168)) AND (x_0 <= 0.9105)) THEN Class 0
+    Class 1:
+      1: IF (((((x_0 > 0.4985) AND (x_1 > 0.3884)) AND (x_1 > 0.5168)) AND (x_0 > 0.5970)) AND (x_0 > 0.6160)) THEN Class 1
+      2: IF ((((((x_0 > 0.4985) AND (x_1 > 0.3884)) AND (x_1 > 0.5168)) AND (x_0 <= 0.5970)) AND (x_1 > 0.6258)) AND (x_2 <= 0.8427)) THEN Class 1
+      3: IF (((((x_0 > 0.4985) AND (x_1 > 0.3884)) AND (x_1 <= 0.5168)) AND (x_0 > 0.6931)) AND (x_0 > 0.7984)) THEN Class 1
+      4: IF ((((x_0 <= 0.4985) AND (x_1 > 0.7891)) AND (x_0 > 0.2670)) AND (x_1 > 0.8753)) THEN Class 1
+      5: IF ((((x_0 > 0.4985) AND (x_1 <= 0.3884)) AND (x_0 > 0.8698)) AND (x_1 > 0.2283)) THEN Class 1
+      6: IF (((((x_0 <= 0.4985) AND (x_1 > 0.7891)) AND (x_0 > 0.2670)) AND (x_1 <= 0.8753)) AND (x_0 > 0.3678)) THEN Class 1
+      7: IF (((((x_0 > 0.4985) AND (x_1 > 0.3884)) AND (x_1 <= 0.5168)) AND (x_0 > 0.6931)) AND (x_0 <= 0.7984)) THEN Class 1
+      8: IF ((((((x_0 > 0.4985) AND (x_1 > 0.3884)) AND (x_1 > 0.5168)) AND (x_0 <= 0.5970)) AND (x_1 > 0.6258)) AND (x_2 > 0.8427)) THEN Class 1
+      9: IF (((((x_0 > 0.4985) AND (x_1 > 0.3884)) AND (x_1 > 0.5168)) AND (x_0 > 0.5970)) AND (x_0 <= 0.6160)) THEN Class 1
+========================================
+
+--- Chunk 9 (Trained) --- Test Perf (Chunk 10): TestGmean=0.9557, TestF1=0.9639
+ Train Perf (Chunk 9): TrainGmean=0.9935
+---
+  Fitness: 1.282085
+  Default Class: 0
+  Rules (10 total):
+    Class 0:
+      1: IF ((x_1 <= 0.4115) AND (x_0 <= 0.8400)) THEN Class 0
+      2: IF ((((x_1 <= 0.4115) AND (x_0 > 0.8400)) AND (x_1 <= 0.3132)) AND (x_1 <= 0.0781)) THEN Class 0
+      3: IF ((((x_1 <= 0.4115) AND (x_0 > 0.8400)) AND (x_1 <= 0.3132)) AND (x_1 > 0.0781)) THEN Class 0
+      4: IF (((x_1 > 0.4115) AND (x_0 <= 0.4556)) AND (x_1 <= 0.8506)) THEN Class 0
+      5: IF ((((x_1 > 0.4115) AND (x_0 <= 0.4556)) AND (x_1 > 0.8506)) AND (x_0 <= 0.2353)) THEN Class 0
+      6: IF ((((x_1 > 0.4115) AND (x_0 > 0.4556)) AND (x_0 <= 0.6862)) AND (x_1 <= 0.6481)) THEN Class 0
+    Class 1:
+      1: IF (((x_1 <= 0.4115) AND (x_0 > 0.8400)) AND (x_1 > 0.3132)) THEN Class 1
+      2: IF ((((x_1 > 0.4115) AND (x_0 <= 0.4556)) AND (x_1 > 0.8506)) AND (x_0 > 0.2353)) THEN Class 1
+      3: IF ((((x_1 > 0.4115) AND (x_0 > 0.4556)) AND (x_0 <= 0.6862)) AND (x_1 > 0.6481)) THEN Class 1
+      4: IF (((x_1 > 0.4115) AND (x_0 > 0.4556)) AND (x_0 > 0.6862)) THEN Class 1
+========================================
+
+--- Chunk 10 (Trained) --- Test Perf (Chunk 11): TestGmean=0.9510, TestF1=0.9620
+ Train Perf (Chunk 10): TrainGmean=0.9881
+---
+  Fitness: 1.256968
+  Default Class: 0
+  Rules (14 total):
+    Class 0:
+      1: IF (((x_0 <= 0.5843) AND (x_1 <= 0.7803)) AND (x_1 <= 0.6747)) THEN Class 0
+      2: IF ((((x_0 <= 0.5843) AND (x_1 <= 0.7803)) AND (x_1 > 0.6747)) AND (x_0 <= 0.4441)) THEN Class 0
+      3: IF ((((x_0 <= 0.5843) AND (x_1 > 0.7803)) AND (x_0 <= 0.3446)) AND (x_1 <= 0.9227)) THEN Class 0
+      4: IF ((((x_0 <= 0.5843) AND (x_1 > 0.7803)) AND (x_0 <= 0.3446)) AND (x_1 > 0.9227)) THEN Class 0
+      5: IF ((((x_0 > 0.5843) AND (x_1 <= 0.3840)) AND (x_1 <= 0.2732)) AND (x_2 <= 0.1067)) THEN Class 0
+      6: IF ((((x_0 > 0.5843) AND (x_1 <= 0.3840)) AND (x_1 <= 0.2732)) AND (x_2 > 0.1067)) THEN Class 0
+      7: IF ((((x_0 > 0.5843) AND (x_1 <= 0.3840)) AND (x_1 > 0.2732)) AND (x_0 <= 0.7606)) THEN Class 0
+      8: IF ((((x_0 > 0.5843) AND (x_1 > 0.3840)) AND (x_1 <= 0.5764)) AND (x_0 <= 0.6931)) THEN Class 0
+    Class 1:
+      1: IF ((((x_0 <= 0.5843) AND (x_1 <= 0.7803)) AND (x_1 > 0.6747)) AND (x_0 > 0.4441)) THEN Class 1
+      2: IF ((((x_0 <= 0.5843) AND (x_1 > 0.7803)) AND (x_0 > 0.3446)) AND (x_1 <= 0.8126)) THEN Class 1
+      3: IF ((((x_0 <= 0.5843) AND (x_1 > 0.7803)) AND (x_0 > 0.3446)) AND (x_1 > 0.8126)) THEN Class 1
+      4: IF ((((x_0 > 0.5843) AND (x_1 <= 0.3840)) AND (x_1 > 0.2732)) AND (x_0 > 0.7606)) THEN Class 1
+      5: IF ((((x_0 > 0.5843) AND (x_1 > 0.3840)) AND (x_1 <= 0.5764)) AND (x_0 > 0.6931)) THEN Class 1
+      6: IF (((x_0 > 0.5843) AND (x_1 > 0.3840)) AND (x_1 > 0.5764)) THEN Class 1
+========================================
+
+--- Chunk 11 (Trained) --- Test Perf (Chunk 12): TestGmean=0.9496, TestF1=0.9521
+ Train Perf (Chunk 11): TrainGmean=0.9945
+---
+  Fitness: 1.273308
+  Default Class: 0
+  Rules (11 total):
+    Class 0:
+      1: IF (((x_1 <= 0.6144) AND (x_0 <= 0.8199)) AND (x_0 <= 0.6623)) THEN Class 0
+      2: IF ((((x_1 <= 0.6144) AND (x_0 <= 0.8199)) AND (x_0 > 0.6623)) AND (x_1 <= 0.4951)) THEN Class 0
+      3: IF (((x_1 <= 0.6144) AND (x_0 > 0.8199)) AND (x_1 <= 0.2369)) THEN Class 0
+      4: IF ((x_1 > 0.6144) AND (x_0 <= 0.3001)) THEN Class 0
+      5: IF ((((x_1 > 0.6144) AND (x_0 > 0.3001)) AND (x_0 <= 0.5698)) AND (x_1 <= 0.7061)) THEN Class 0
+    Class 1:
+      1: IF ((((x_1 <= 0.6144) AND (x_0 <= 0.8199)) AND (x_0 > 0.6623)) AND (x_1 > 0.4951)) THEN Class 1
+      2: IF ((((x_1 <= 0.6144) AND (x_0 > 0.8199)) AND (x_1 > 0.2369)) AND (x_0 <= 0.8997)) THEN Class 1
+      3: IF ((((x_1 <= 0.6144) AND (x_0 > 0.8199)) AND (x_1 > 0.2369)) AND (x_0 > 0.8997)) THEN Class 1
+      4: IF ((((x_1 > 0.6144) AND (x_0 > 0.3001)) AND (x_0 <= 0.5698)) AND (x_1 > 0.7061)) THEN Class 1
+      5: IF ((((x_1 > 0.6144) AND (x_0 > 0.3001)) AND (x_0 > 0.5698)) AND (x_2 <= 0.0735)) THEN Class 1
+      6: IF ((((x_1 > 0.6144) AND (x_0 > 0.3001)) AND (x_0 > 0.5698)) AND (x_2 > 0.0735)) THEN Class 1
+========================================
+
+--- Chunk 12 (Trained) --- Test Perf (Chunk 13): TestGmean=0.9449, TestF1=0.9428
+ Train Perf (Chunk 12): TrainGmean=0.9850
+---
+  Fitness: 1.256842
+  Default Class: 0
+  Rules (10 total):
+    Class 0:
+      1: IF (((x_1 <= 0.3786) AND (x_0 <= 0.9564)) AND (x_4 <= 0.0197)) THEN Class 0
+      2: IF (((x_1 <= 0.3786) AND (x_0 <= 0.9564)) AND (x_4 > 0.0197)) THEN Class 0
+      3: IF (((x_1 > 0.3786) AND (x_0 <= 0.3553)) AND (x_1 <= 0.8886)) THEN Class 0
+      4: IF ((((x_1 > 0.3786) AND (x_0 <= 0.3553)) AND (x_1 > 0.8886)) AND (x_0 <= 0.2325)) THEN Class 0
+      5: IF ((((x_1 > 0.3786) AND (x_0 > 0.3553)) AND (x_1 <= 0.5855)) AND (x_0 <= 0.7118)) THEN Class 0
+    Class 1:
+      1: IF ((x_1 <= 0.3786) AND (x_0 > 0.9564)) THEN Class 1
+      2: IF ((((x_1 > 0.3786) AND (x_0 <= 0.3553)) AND (x_1 > 0.8886)) AND (x_0 > 0.2325)) THEN Class 1
+      3: IF ((((x_1 > 0.3786) AND (x_0 > 0.3553)) AND (x_1 <= 0.5855)) AND (x_0 > 0.7118)) THEN Class 1
+      4: IF ((((x_1 > 0.3786) AND (x_0 > 0.3553)) AND (x_1 > 0.5855)) AND (x_1 <= 0.7105)) THEN Class 1
+      5: IF ((((x_1 > 0.3786) AND (x_0 > 0.3553)) AND (x_1 > 0.5855)) AND (x_1 > 0.7105)) THEN Class 1
+========================================
+
+--- Chunk 13 (Trained) --- Test Perf (Chunk 14): TestGmean=0.9390, TestF1=0.9497
+ Train Perf (Chunk 13): TrainGmean=0.9867
+---
+  Fitness: 1.256062
+  Default Class: 0
+  Rules (13 total):
+    Class 0:
+      1: IF (((x_0 <= 0.4173) AND (x_1 <= 0.8233)) AND (x_2 <= 0.0553)) THEN Class 0
+      2: IF (((x_0 <= 0.4173) AND (x_1 <= 0.8233)) AND (x_2 > 0.0553)) THEN Class 0
+      3: IF (((x_0 <= 0.4173) AND (x_1 > 0.8233)) AND (x_0 <= 0.2711)) THEN Class 0
+      4: IF ((((x_0 > 0.4173) AND (x_1 <= 0.5483)) AND (x_0 <= 0.8510)) AND (x_1 <= 0.4828)) THEN Class 0
+      5: IF ((((x_0 > 0.4173) AND (x_1 <= 0.5483)) AND (x_0 <= 0.8510)) AND (x_1 > 0.4828)) THEN Class 0
+      6: IF ((((x_0 > 0.4173) AND (x_1 <= 0.5483)) AND (x_0 > 0.8510)) AND (x_1 <= 0.2226)) THEN Class 0
+      7: IF ((((x_0 > 0.4173) AND (x_1 > 0.5483)) AND (x_1 <= 0.6431)) AND (x_0 <= 0.6853)) THEN Class 0
+    Class 1:
+      1: IF ((((x_0 <= 0.4173) AND (x_1 > 0.8233)) AND (x_0 > 0.2711)) AND (x_1 <= 0.8734)) THEN Class 1
+      2: IF ((((x_0 <= 0.4173) AND (x_1 > 0.8233)) AND (x_0 > 0.2711)) AND (x_1 > 0.8734)) THEN Class 1
+      3: IF ((((x_0 > 0.4173) AND (x_1 <= 0.5483)) AND (x_0 > 0.8510)) AND (x_1 > 0.2226)) THEN Class 1
+      4: IF ((((x_0 > 0.4173) AND (x_1 > 0.5483)) AND (x_1 <= 0.6431)) AND (x_0 > 0.6853)) THEN Class 1
+      5: IF ((((x_0 > 0.4173) AND (x_1 > 0.5483)) AND (x_1 > 0.6431)) AND (x_1 <= 0.6956)) THEN Class 1
+      6: IF ((((x_0 > 0.4173) AND (x_1 > 0.5483)) AND (x_1 > 0.6431)) AND (x_1 > 0.6956)) THEN Class 1
+========================================
+
+--- Chunk 14 (Trained) --- Test Perf (Chunk 15): TestGmean=0.9595, TestF1=0.9641
+ Train Perf (Chunk 14): TrainGmean=0.9895
+---
+  Fitness: 1.088269
+  Default Class: 0
+  Rules (16 total):
+    Class 0:
+      1: IF ((((x_1 > 0.4946) AND (x_0 > 0.3553)) AND (x_1 <= 0.6383)) AND (x_0 <= 0.6507)) THEN Class 0
+      2: IF ((((x_1 > 0.4946) AND (x_0 <= 0.3553)) AND (x_1 <= 0.9118)) AND (x_0 <= 0.0447)) THEN Class 0
+      3: IF (((x_1 <= 0.4946) AND (x_0 < 0.8770)) AND (x_1 <= 0.2466)) THEN Class 0
+      4: IF ((((x_1 > 0.4946) AND (x_0 <= 0.3553)) AND (x_1 <= 0.9118)) AND (x_2 <= 0.1394)) THEN Class 0
+      5: IF ((((x_1 <= 0.4946) AND (x_0 <= 0.8770)) AND (x_0 >= 0.8276)) AND (x_4 <= 0.0314)) THEN Class 0
+    Class 1:
+      1: IF ((((x_1 > 0.4946) AND (x_0 > 0.3553)) AND (x_1 > 0.6383)) AND (x_0 > 0.4577)) THEN Class 1
+      2: IF (((((x_1 > 0.4946) AND (x_0 > 0.3553)) AND (x_1 <= 0.6383)) AND (x_0 > 0.6507)) AND (x_0 > 0.6905)) THEN Class 1
+      3: IF ((((x_1 <= 0.4946) AND (x_0 > 0.8770)) AND (x_1 > 0.2466)) AND (x_4 > 0.2266)) THEN Class 1
+      4: IF ((((x_1 <= 0.4946) AND (x_0 > 0.8770)) AND (x_1 > 0.2466)) AND (x_4 <= 0.2266)) THEN Class 1
+      5: IF ((((x_1 > 0.4946) AND (x_0 <= 0.3553)) AND (x_1 > 0.9118)) AND (x_0 > 0.2518)) THEN Class 1
+      6: IF ((((((x_1 > 0.4946) AND (x_0 > 0.3553)) AND (x_1 > 0.6383)) AND (x_0 <= 0.4577)) AND (x_1 > 0.8423)) AND (x_1 <= 0.9350)) THEN Class 1
+      7: IF ((((((x_1 > 0.4946) AND (x_0 > 0.3553)) AND (x_1 > 0.6383)) AND (x_0 <= 0.4577)) AND (x_1 > 0.8423)) AND (x_1 > 0.9350)) THEN Class 1
+      8: IF ((((x_1 <= 0.4946) AND (x_0 <= 0.8770)) AND (x_0 > 0.8276)) AND (x_1 > 0.2980)) THEN Class 1
+      9: IF (((((x_1 > 0.4946) AND (x_0 > 0.3553)) AND (x_1 > 0.6383)) AND (x_0 <= 0.4577)) AND (x_1 <= 0.8423)) THEN Class 1
+      10: IF (((((x_1 > 0.4946) AND (x_0 > 0.3553)) AND (x_1 <= 0.6383)) AND (x_0 > 0.6507)) AND (x_0 <= 0.6905)) THEN Class 1
+      11: IF (((x_1 <= 0.4946) AND (x_0 > 0.8770)) AND (x_1 > 0.2466)) THEN Class 1
+========================================
+
+--- Chunk 15 (Trained) --- Test Perf (Chunk 16): TestGmean=0.9347, TestF1=0.9419
+ Train Perf (Chunk 15): TrainGmean=0.9895
+---
+  Fitness: 1.267196
+  Default Class: 0
+  Rules (10 total):
+    Class 0:
+      1: IF (((x_0 <= 0.4147) AND (x_1 > 0.9220)) AND (x_0 <= 0.1942)) THEN Class 0
+      2: IF ((((x_0 <= 0.4147) AND (x_1 > 0.9220)) AND (x_0 <= 0.2573)) AND (x_4 > 0.1994)) THEN Class 0
+      3: IF ((((x_0 <= 0.4147) AND (x_1 > 0.9220)) AND (x_0 <= 0.2573)) AND (x_4 <= 0.1994)) THEN Class 0
+      4: IF (((x_0 <= 0.4147) AND (x_1 <= 0.9220)) AND (x_1 > 0.8720)) THEN Class 0
+    Class 1:
+      1: IF ((((x_0 > 0.4147) AND (x_1 > 0.3586)) AND (x_1 > 0.6021)) AND (x_1 > 0.6511)) THEN Class 1
+      2: IF ((((x_0 > 0.4147) AND (x_1 > 0.3586)) AND (x_1 <= 0.6021)) AND (x_0 > 0.7099)) THEN Class 1
+      3: IF (((x_0 <= 0.4147) AND (x_1 > 0.9220)) AND (x_0 > 0.2573)) THEN Class 1
+      4: IF ((((x_0 > 0.4147) AND (x_1 <= 0.3586)) AND (x_0 > 0.9208)) AND (x_1 > 0.2510)) THEN Class 1
+      5: IF (((x_0 <= 0.4147) AND (x_1 > 0.9220)) AND (x_0 > 0.1942)) THEN Class 1
+      6: IF ((((x_0 > 0.4147) AND (x_1 > 0.3586)) AND (x_1 > 0.6021)) AND (x_1 <= 0.6511)) THEN Class 1
+========================================
+
+--- Chunk 16 (Trained) --- Test Perf (Chunk 17): TestGmean=0.9391, TestF1=0.9458
+ Train Perf (Chunk 16): TrainGmean=0.9831
+---
+  Fitness: 1.081133
+  Default Class: 0
+  Rules (15 total):
+    Class 0:
+      1: IF ((x_0 <= 0.5897) AND (x_1 <= 0.6854)) THEN Class 0
+      2: IF (((((x_0 <= 0.5897) AND (x_1 > 0.6854)) AND (x_0 <= 0.3949)) AND (x_3 <= 0.2515)) AND (x_1 <= 0.9037)) THEN Class 0
+      3: IF ((((((x_0 <= 0.5897) AND (x_1 > 0.6854)) AND (x_0 <= 0.3949)) AND (x_3 <= 0.2515)) AND (x_1 > 0.9037)) AND (x_0 <= 0.2461)) THEN Class 0
+      4: IF (((((x_0 <= 0.5897) AND (x_1 > 0.6854)) AND (x_0 <= 0.3949)) AND (x_3 > 0.2515)) AND (x_2 <= 0.0882)) THEN Class 0
+      5: IF (((((x_0 <= 0.5897) AND (x_1 > 0.6854)) AND (x_0 <= 0.3949)) AND (x_3 > 0.2515)) AND (x_2 > 0.0882)) THEN Class 0
+      6: IF (((x_0 > 0.5897) AND (x_1 <= 0.3375)) AND (x_0 <= 0.9418)) THEN Class 0
+      7: IF ((((x_0 > 0.5897) AND (x_1 > 0.3375)) AND (x_0 <= 0.7280)) AND (x_1 <= 0.5662)) THEN Class 0
+    Class 1:
+      1: IF ((((((x_0 <= 0.5897) AND (x_1 > 0.6854)) AND (x_0 <= 0.3949)) AND (x_3 <= 0.2515)) AND (x_1 > 0.9037)) AND (x_0 > 0.2461)) THEN Class 1
+      2: IF ((((x_0 <= 0.5897) AND (x_1 > 0.6854)) AND (x_0 > 0.3949)) AND (x_1 <= 0.7305)) THEN Class 1
+      3: IF ((((x_0 <= 0.5897) AND (x_1 > 0.6854)) AND (x_0 > 0.3949)) AND (x_1 > 0.7305)) THEN Class 1
+      4: IF (((x_0 > 0.5897) AND (x_1 <= 0.3375)) AND (x_0 > 0.9418)) THEN Class 1
+      5: IF (((((x_0 > 0.5897) AND (x_1 > 0.3375)) AND (x_0 <= 0.7280)) AND (x_1 > 0.5662)) AND (x_1 <= 0.5882)) THEN Class 1
+      6: IF (((((x_0 > 0.5897) AND (x_1 > 0.3375)) AND (x_0 <= 0.7280)) AND (x_1 > 0.5662)) AND (x_1 > 0.5882)) THEN Class 1
+      7: IF ((((x_0 > 0.5897) AND (x_1 > 0.3375)) AND (x_0 > 0.7280)) AND (x_1 <= 0.3824)) THEN Class 1
+      8: IF ((((x_0 > 0.5897) AND (x_1 > 0.3375)) AND (x_0 > 0.7280)) AND (x_1 > 0.3824)) THEN Class 1
+========================================
+
+--- Chunk 17 (Trained) --- Test Perf (Chunk 18): TestGmean=0.9413, TestF1=0.9408
+ Train Perf (Chunk 17): TrainGmean=0.9856
+---
+  Fitness: 1.259373
+  Default Class: 0
+  Rules (12 total):
+    Class 0:
+      1: IF ((((x_1 <= 0.5074) AND (x_0 <= 0.8228)) AND (x_1 > 0.4709)) AND (x_1 > 0.4872)) THEN Class 0
+      2: IF ((((x_1 <= 0.5074) AND (x_0 <= 0.8228)) AND (x_1 > 0.4709)) AND (x_0 <= 0.3729)) THEN Class 0
+      3: IF ((((x_1 <= 0.5074) AND (x_0 <= 0.8228)) AND (x_0 > 0.7504)) AND (x_0 > 0.7798)) THEN Class 0
+      4: IF ((((x_1 <= 0.5074) AND (x_0 <= 0.8228)) AND (x_0 > 0.7504)) AND (x_1 <= 0.2297)) THEN Class 0
+    Class 1:
+      1: IF ((((x_1 > 0.5074) AND (x_0 > 0.3639)) AND (x_0 > 0.5764)) AND (x_4 <= 0.9050)) THEN Class 1
+      2: IF ((((x_1 <= 0.5074) AND (x_0 > 0.8228)) AND (x_1 > 0.2400)) AND (x_2 <= 0.6897)) THEN Class 1
+      3: IF ((((x_1 > 0.5074) AND (x_0 <= 0.3639)) AND (x_1 > 0.9263)) AND (x_0 > 0.1849)) THEN Class 1
+      4: IF ((((x_1 > 0.5074) AND (x_0 > 0.3639)) AND (x_0 > 0.5764)) AND (x_4 > 0.9050)) THEN Class 1
+      5: IF ((((x_1 > 0.5074) AND (x_0 > 0.3639)) AND (x_0 <= 0.5764)) AND (x_1 > 0.6434)) THEN Class 1
+      6: IF ((((x_1 <= 0.5074) AND (x_0 <= 0.8228)) AND (x_0 > 0.7504)) AND (x_1 > 0.3281)) THEN Class 1
+      7: IF ((((x_1 <= 0.5074) AND (x_0 > 0.8228)) AND (x_1 > 0.2400)) AND (x_2 > 0.6897)) THEN Class 1
+      8: IF ((((x_1 <= 0.5074) AND (x_0 <= 0.4433)) AND (x_0 > 0.7504)) AND (x_1 > 0.3281)) THEN Class 1
+========================================
+
+--- Chunk 18 (Trained) --- Test Perf (Chunk 19): TestGmean=0.9373, TestF1=0.9479
+ Train Perf (Chunk 18): TrainGmean=0.9810
+---
+  Fitness: 1.263628
+  Default Class: 0
+  Rules (13 total):
+    Class 0:
+      1: IF (((x_0 <= 0.6302) AND (x_1 <= 0.7381)) AND (x_0 <= 0.6010)) THEN Class 0
+      2: IF ((((x_0 <= 0.6302) AND (x_1 <= 0.7381)) AND (x_0 > 0.6010)) AND (x_1 <= 0.5300)) THEN Class 0
+      3: IF ((((x_0 <= 0.6302) AND (x_1 > 0.7381)) AND (x_0 <= 0.3345)) AND (x_1 <= 0.9743)) THEN Class 0
+      4: IF (((x_0 > 0.6302) AND (x_1 <= 0.3027)) AND (x_2 <= 0.9226)) THEN Class 0
+      5: IF (((x_0 > 0.6302) AND (x_1 <= 0.3027)) AND (x_2 > 0.9226)) THEN Class 0
+      6: IF ((((x_0 > 0.6302) AND (x_1 > 0.3027)) AND (x_1 <= 0.3959)) AND (x_0 <= 0.8375)) THEN Class 0
+    Class 1:
+      1: IF ((((x_0 <= 0.6302) AND (x_1 <= 0.7381)) AND (x_0 > 0.6010)) AND (x_1 > 0.5300)) THEN Class 1
+      2: IF ((((x_0 <= 0.6302) AND (x_1 > 0.7381)) AND (x_0 <= 0.3345)) AND (x_1 > 0.9743)) THEN Class 1
+      3: IF ((((x_0 <= 0.6302) AND (x_1 > 0.7381)) AND (x_0 > 0.3345)) AND (x_0 <= 0.3872)) THEN Class 1
+      4: IF ((((x_0 <= 0.6302) AND (x_1 > 0.7381)) AND (x_0 > 0.3345)) AND (x_0 > 0.3872)) THEN Class 1
+      5: IF ((((x_0 > 0.6302) AND (x_1 > 0.3027)) AND (x_1 <= 0.3959)) AND (x_0 > 0.8375)) THEN Class 1
+      6: IF ((((x_0 > 0.6302) AND (x_1 > 0.3027)) AND (x_1 > 0.3959)) AND (x_2 <= 0.9058)) THEN Class 1
+      7: IF ((((x_0 > 0.6302) AND (x_1 > 0.3027)) AND (x_1 > 0.3959)) AND (x_2 > 0.9058)) THEN Class 1
+========================================
+
+--- Chunk 19 (Trained) --- Test Perf (Chunk 20): TestGmean=0.9456, TestF1=0.9538
+ Train Perf (Chunk 19): TrainGmean=0.9924
+---
+  Fitness: 1.255435
+  Default Class: 0
+  Rules (14 total):
+    Class 0:
+      1: IF (((x_1 <= 0.4668) AND (x_0 <= 0.8739)) AND (x_0 > 0.8411)) THEN Class 0
+      2: IF ((x_4 < 0.4296) AND (x_2 >= 0.8864)) THEN Class 0
+      3: IF ((x_3 < 0.4583) AND (x_0 > 0.2546)) THEN Class 0
+    Class 1:
+      1: IF ((((x_1 > 0.4668) AND (x_0 > 0.5377)) AND (x_0 > 0.6061)) AND (x_1 > 0.4930)) THEN Class 1
+      2: IF (((x_1 <= 0.4668) AND (x_0 > 0.8739)) AND (x_1 > 0.2834)) THEN Class 1
+      3: IF (((((x_1 > 0.4668) AND (x_0 <= 0.5377)) AND (x_1 > 0.8521)) AND (x_0 > 0.2319)) AND (x_3 <= 0.5472)) THEN Class 1
+      4: IF ((((x_1 > 0.4668) AND (x_0 > 0.5377)) AND (x_0 <= 0.6061)) AND (x_1 > 0.6743)) THEN Class 1
+      5: IF ((((x_1 > 0.1696) AND (x_0 > 0.5377)) AND (x_0 <= 0.6061)) AND (x_1 > 0.6743)) THEN Class 1
+      6: IF ((((x_1 > 0.4668) AND (x_0 > 0.5377)) AND (x_0 > 0.6061)) AND (x_3 <= 0.0546)) THEN Class 1
+      7: IF ((((x_1 > 0.4668) AND (x_0 > 0.5377)) AND (x_0 > 0.6061)) AND (x_1 <= 0.5163)) THEN Class 1
+      8: IF ((((x_1 > 0.4668) AND (x_0 > 0.5377)) AND (x_0 > 0.6061)) AND (x_1 <= 0.4930)) THEN Class 1
+      9: IF ((((x_1 > 0.4668) AND (x_0 > 0.5377)) AND (x_0 > 0.6061)) AND (x_4 <= 0.0652)) THEN Class 1
+      10: IF (((((x_1 > 0.4668) AND (x_0 <= 0.5377)) AND (x_1 > 0.8521)) AND (x_0 > 0.2319)) AND (x_3 > 0.5472)) THEN Class 1
+      11: IF (((((x_1 > 0.4668) AND (x_0 <= 0.5377)) AND (x_1 <= 0.8521)) AND (x_0 > 0.4679)) AND (x_1 > 0.6792)) THEN Class 1
+========================================
+
+--- Chunk 20 (Trained) --- Test Perf (Chunk 21): TestGmean=0.9638, TestF1=0.9642
+ Train Perf (Chunk 20): TrainGmean=0.9923
+---
+  Fitness: 1.270905
+  Default Class: 0
+  Rules (16 total):
+    Class 0:
+      1: IF ((x_1 <= 0.3833) AND (x_0 <= 0.9161)) THEN Class 0
+      2: IF ((((x_1 <= 0.3833) AND (x_0 > 0.9161)) AND (x_1 <= 0.2334)) AND (x_1 <= 0.1731)) THEN Class 0
+      3: IF ((((x_1 <= 0.3833) AND (x_0 > 0.9161)) AND (x_1 <= 0.2334)) AND (x_1 > 0.1731)) THEN Class 0
+      4: IF ((((x_1 > 0.3833) AND (x_0 <= 0.4254)) AND (x_1 <= 0.8580)) AND (x_2 <= 0.1377)) THEN Class 0
+      5: IF ((((x_1 > 0.3833) AND (x_0 <= 0.4254)) AND (x_1 <= 0.8580)) AND (x_2 > 0.1377)) THEN Class 0
+      6: IF ((((x_1 > 0.3833) AND (x_0 <= 0.4254)) AND (x_1 > 0.8580)) AND (x_0 <= 0.2892)) THEN Class 0
+      7: IF ((((x_1 > 0.3833) AND (x_0 > 0.4254)) AND (x_0 <= 0.6085)) AND (x_1 <= 0.6514)) THEN Class 0
+      8: IF (((((x_1 > 0.3833) AND (x_0 > 0.4254)) AND (x_0 > 0.6085)) AND (x_1 <= 0.5579)) AND (x_0 <= 0.7182)) THEN Class 0
+    Class 1:
+      1: IF (((x_1 <= 0.3833) AND (x_0 > 0.9161)) AND (x_1 > 0.2334)) THEN Class 1
+      2: IF ((((x_1 > 0.3833) AND (x_0 <= 0.4254)) AND (x_1 > 0.8580)) AND (x_0 > 0.2892)) THEN Class 1
+      3: IF (((((x_1 > 0.3833) AND (x_0 > 0.4254)) AND (x_0 <= 0.6085)) AND (x_1 > 0.6514)) AND (x_1 <= 0.7273)) THEN Class 1
+      4: IF (((((x_1 > 0.3833) AND (x_0 > 0.4254)) AND (x_0 <= 0.6085)) AND (x_1 > 0.6514)) AND (x_1 > 0.7273)) THEN Class 1
+      5: IF ((((((x_1 > 0.3833) AND (x_0 > 0.4254)) AND (x_0 > 0.6085)) AND (x_1 <= 0.5579)) AND (x_0 > 0.7182)) AND (x_1 <= 0.4054)) THEN Class 1
+      6: IF ((((((x_1 > 0.3833) AND (x_0 > 0.4254)) AND (x_0 > 0.6085)) AND (x_1 <= 0.5579)) AND (x_0 > 0.7182)) AND (x_1 > 0.4054)) THEN Class 1
+      7: IF (((((x_1 > 0.3833) AND (x_0 > 0.4254)) AND (x_0 > 0.6085)) AND (x_1 > 0.5579)) AND (x_0 <= 0.6226)) THEN Class 1
+      8: IF (((((x_1 > 0.3833) AND (x_0 > 0.4254)) AND (x_0 > 0.6085)) AND (x_1 > 0.5579)) AND (x_0 > 0.6226)) THEN Class 1
+========================================
+
+--- Chunk 21 (Trained) --- Test Perf (Chunk 22): TestGmean=0.9521, TestF1=0.9504
+ Train Perf (Chunk 21): TrainGmean=0.9775
+---
+  Fitness: 1.257068
+  Default Class: 0
+  Rules (14 total):
+    Class 0:
+      1: IF (((x_1 <= 0.4833) AND (x_0 <= 0.7974)) AND (x_0 <= 0.7566)) THEN Class 0
+      2: IF ((((x_1 <= 0.4833) AND (x_0 <= 0.7974)) AND (x_0 > 0.7566)) AND (x_1 <= 0.2468)) THEN Class 0
+      3: IF ((((x_1 <= 0.4833) AND (x_0 <= 0.7974)) AND (x_0 > 0.7566)) AND (x_1 > 0.2468)) THEN Class 0
+      4: IF (((x_1 <= 0.4833) AND (x_0 > 0.7974)) AND (x_1 <= 0.2658)) THEN Class 0
+      5: IF ((((x_1 > 0.4833) AND (x_0 <= 0.3637)) AND (x_1 <= 0.9034)) AND (x_2 <= 0.9312)) THEN Class 0
+      6: IF ((((x_1 > 0.4833) AND (x_0 <= 0.3637)) AND (x_1 <= 0.9034)) AND (x_2 > 0.9312)) THEN Class 0
+      7: IF ((((x_1 > 0.4833) AND (x_0 <= 0.3637)) AND (x_1 > 0.9034)) AND (x_0 <= 0.1857)) THEN Class 0
+      8: IF ((((x_1 > 0.4833) AND (x_0 > 0.3637)) AND (x_0 <= 0.5957)) AND (x_1 <= 0.7016)) THEN Class 0
+    Class 1:
+      1: IF ((((x_1 <= 0.4833) AND (x_0 > 0.7974)) AND (x_1 > 0.2658)) AND (x_1 <= 0.3882)) THEN Class 1
+      2: IF ((((x_1 <= 0.4833) AND (x_0 > 0.7974)) AND (x_1 > 0.2658)) AND (x_1 > 0.3882)) THEN Class 1
+      3: IF ((((x_1 > 0.4833) AND (x_0 <= 0.3637)) AND (x_1 > 0.9034)) AND (x_0 > 0.1857)) THEN Class 1
+      4: IF ((((x_1 > 0.4833) AND (x_0 > 0.3637)) AND (x_0 <= 0.5957)) AND (x_1 > 0.7016)) THEN Class 1
+      5: IF ((((x_1 > 0.4833) AND (x_0 > 0.3637)) AND (x_0 > 0.5957)) AND (x_1 <= 0.5642)) THEN Class 1
+      6: IF ((((x_1 > 0.4833) AND (x_0 > 0.3637)) AND (x_0 > 0.5957)) AND (x_1 > 0.5642)) THEN Class 1
+========================================
+
+--- Chunk 22 (Trained) --- Test Perf (Chunk 23): TestGmean=0.9292, TestF1=0.9419
+ Train Perf (Chunk 22): TrainGmean=0.9880
+---
+  Fitness: 1.275764
+  Default Class: 0
+  Rules (9 total):
+    Class 0:
+      1: IF ((((x_0 > 0.4486) AND (x_1 <= 0.4498)) AND (x_0 > 0.8869)) AND (x_1 <= 0.2120)) THEN Class 0
+    Class 1:
+      1: IF ((((x_0 > 0.4486) AND (x_1 > 0.4498)) AND (x_0 > 0.5796)) AND (x_1 > 0.4817)) THEN Class 1
+      2: IF ((((x_0 > 0.4486) AND (x_1 > 0.4498)) AND (x_0 <= 0.5796)) AND (x_1 > 0.6925)) THEN Class 1
+      3: IF ((((x_0 <= 0.4486) AND (x_1 > 0.8610)) AND (x_0 > 0.2199)) AND (x_1 > 0.9000)) THEN Class 1
+      4: IF ((((x_0 > 0.4486) AND (x_1 <= 0.4498)) AND (x_0 > 0.8869)) AND (x_1 > 0.2120)) THEN Class 1
+      5: IF ((((x_0 > 0.4486) AND (x_1 > 0.4498)) AND (x_0 > 0.5796)) AND (x_1 <= 0.4817)) THEN Class 1
+      6: IF (((((x_0 > 0.2986) AND (x_1 <= 0.4498)) AND (x_0 > 0.8869)) AND (x_1 > 0.2120)) AND (x_0 <= 0.9228)) THEN Class 1
+      7: IF (((x_0 <= 0.4486) AND (x_1 > 0.8610)) AND (x_0 > 0.2199)) THEN Class 1
+      8: IF ((((x_0 <= 0.4486) AND (x_1 > 0.8610)) AND (x_0 > 0.2199)) AND (x_1 <= 0.9000)) THEN Class 1
+========================================

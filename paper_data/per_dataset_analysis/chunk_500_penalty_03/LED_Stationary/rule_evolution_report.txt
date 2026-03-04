@@ -1,0 +1,1894 @@
+Rule Diff Analysis Report
+Source File: RulesHistory_LED_Stationary_Run1.txt
+Similarity Threshold: 0.35
+
+======================================================================
+--- Diff Chunk 0 -> Chunk 1 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 0):   1.0000
+  - Test G-Mean (Chunk 1):  1.0000
+  - Test F1 (Chunk 1):      1.0000
+Fitness:       1.100000 -> 1.057600
+Default Class: 1 -> 8
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((3 <= 0.5000) AND (1 > 0.5000)) THEN Class 0
+  + IF ((3 <= 0.5000) AND (4 > 0.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((((2 > 0.5000) AND (0 > 0.5000)) AND (3 <= 0.5000)) AND (6 > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((0 <= 0.5000) AND (3 <= 0.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((2 > 0.5000) AND (0 <= 0.5000)) AND (3 <= 0.5000)) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF (5 <= 0.5000) THEN Class 2
+
+  Deleted Rules:
+  - IF (((((2 > 0.5000) AND (0 > 0.5000)) AND (3 > 0.5000)) AND (4 > 0.5000)) AND (5 <= 0.5000)) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF (((1 <= 0.5000) AND (6 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+
+  Deleted Rules:
+  - IF (((((2 > 0.5000) AND (0 > 0.5000)) AND (3 > 0.5000)) AND (4 <= 0.5000)) AND (1 <= 0.5000)) THEN Class 3
+
+=== Class 4 ===
+
+  New Rules:
+  + IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+
+  Deleted Rules:
+  - IF (((2 > 0.5000) AND (0 <= 0.5000)) AND (3 > 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Unchanged Rules:
+    IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+
+=== Class 6 ===
+
+  Unchanged Rules:
+    IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+
+=== Class 7 ===
+
+  New Rules:
+  + IF ((6 <= 0.5000) AND (0 > 0.5000)) THEN Class 7
+
+  Deleted Rules:
+  - IF ((((2 > 0.5000) AND (0 > 0.5000)) AND (3 <= 0.5000)) AND (6 <= 0.5000)) THEN Class 7
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF (((((2 > 0.5000) AND (0 > 0.5000)) AND (3 > 0.5000)) AND (4 > 0.5000)) AND (5 > 0.5000)) THEN Class 8
+  + New: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+    (Similarity: 0.75)
+
+  New Rules:
+  + IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF (((((2 > 0.5000) AND (0 > 0.5000)) AND (3 > 0.5000)) AND (4 <= 0.5000)) AND (1 > 0.5000)) THEN Class 9
+  + New: IF ((((1 > 0.5000) AND (4 <= 0.5000)) AND (2 > 0.5000)) AND (0 > 0.5000)) THEN Class 9
+    (Similarity: 0.72)
+
+======================================================================
+--- Diff Chunk 1 -> Chunk 2 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 1):   1.0000
+  - Test G-Mean (Chunk 2):  1.0000
+  - Test F1 (Chunk 2):      1.0000
+Fitness:       1.057600 -> 1.060000
+Default Class: 8 -> 9
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((3 <= 0.5000) AND (1 > 0.5000)) THEN Class 0
+  + New: IF ((3 <= 0.5000) AND (6 > 0.5000)) THEN Class 0
+    (Similarity: 0.97)
+
+  Deleted Rules:
+  - IF ((3 <= 0.5000) AND (4 > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((0 <= 0.5000) AND (3 <= 0.5000)) THEN Class 1
+
+=== Class 2 ===
+
+  Unchanged Rules:
+    IF (5 <= 0.5000) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF (((1 <= 0.5000) AND (6 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+  + New: IF (((1 <= 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+    (Similarity: 0.98)
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+  + New: IF ((0 <= 0.5000) AND (3 > 0.5000)) THEN Class 4
+    (Similarity: 0.97)
+
+=== Class 5 ===
+
+  Unchanged Rules:
+    IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+
+=== Class 6 ===
+
+  Unchanged Rules:
+    IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+
+=== Class 7 ===
+
+  New Rules:
+  + IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (4 <= 0.5000)) THEN Class 7
+  + IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (6 <= 0.5000)) THEN Class 7
+
+  Deleted Rules:
+  - IF ((6 <= 0.5000) AND (0 > 0.5000)) THEN Class 7
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+  + New: IF ((((4 > 0.5000) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (3 > 0.5000)) THEN Class 8
+    (Similarity: 0.96)
+
+  Deleted Rules:
+  - IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF ((((1 > 0.5000) AND (4 <= 0.5000)) AND (2 > 0.5000)) AND (0 > 0.5000)) THEN Class 9
+  + New: IF ((((1 > 0.5000) AND (4 <= 0.5000)) AND (0 > 0.5000)) AND (2 > 0.5000)) THEN Class 9
+    (Similarity: 0.97)
+
+======================================================================
+--- Diff Chunk 2 -> Chunk 3 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 2):   1.0000
+  - Test G-Mean (Chunk 3):  1.0000
+  - Test F1 (Chunk 3):      1.0000
+Fitness:       1.060000 -> 1.086400
+Default Class: 9 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (4 > 0.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((3 <= 0.5000) AND (6 > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((0 <= 0.5000) AND (3 <= 0.5000)) THEN Class 1
+  + New: IF ((3 <= 0.5000) AND (0 <= 0.5000)) THEN Class 1
+    (Similarity: 0.94)
+
+=== Class 2 ===
+
+  New Rules:
+  + IF ((((3 > 0.5000) AND (4 > 0.5000)) AND (2 > 0.5000)) AND (1 <= 0.5000)) THEN Class 2
+
+  Deleted Rules:
+  - IF (5 <= 0.5000) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF (((1 <= 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+  + New: IF (((3 > 0.5000) AND (4 <= 0.5000)) AND (1 <= 0.5000)) THEN Class 3
+    (Similarity: 0.83)
+
+=== Class 4 ===
+
+  New Rules:
+  + IF (((((3 > 0.5000) AND (4 <= 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (6 <= 0.5000)) THEN Class 4
+
+  Deleted Rules:
+  - IF ((0 <= 0.5000) AND (3 > 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  New Rules:
+  + IF ((((3 > 0.5000) AND (4 <= 0.5000)) AND (1 > 0.5000)) AND (2 <= 0.5000)) THEN Class 5
+
+  Deleted Rules:
+  - IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+
+=== Class 6 ===
+
+  New Rules:
+  + IF (((3 > 0.5000) AND (4 > 0.5000)) AND (2 <= 0.5000)) THEN Class 6
+
+  Deleted Rules:
+  - IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+
+=== Class 7 ===
+
+  Unchanged Rules:
+    IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (4 <= 0.5000)) THEN Class 7
+
+  Deleted Rules:
+  - IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (6 <= 0.5000)) THEN Class 7
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF ((((4 > 0.5000) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (3 > 0.5000)) THEN Class 8
+  + New: IF ((((3 > 0.5000) AND (4 > 0.5000)) AND (2 > 0.5000)) AND (1 > 0.5000)) THEN Class 8
+    (Similarity: 0.96)
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF ((((1 > 0.5000) AND (4 <= 0.5000)) AND (0 > 0.5000)) AND (2 > 0.5000)) THEN Class 9
+  + New: IF (((((3 > 0.5000) AND (4 <= 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (6 > 0.5000)) THEN Class 9
+    (Similarity: 0.76)
+
+======================================================================
+--- Diff Chunk 3 -> Chunk 4 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 3):   1.0000
+  - Test G-Mean (Chunk 4):  1.0000
+  - Test F1 (Chunk 4):      1.0000
+Fitness:       1.086400 -> 0.970600
+Default Class: 0 -> 3
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((3 <= 0.5000) AND (1 > 0.5000)) THEN Class 0
+  + IF ((3 <= 0.5000) AND (4 > 0.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (4 > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((3 <= 0.5000) AND (0 <= 0.5000)) THEN Class 1
+  + New: IF ((0 <= 0.5000) AND (1 <= 0.5000)) THEN Class 1
+    (Similarity: 0.94)
+
+=== Class 2 ===
+
+  New Rules:
+  + IF (5 <= 0.5000) THEN Class 2
+
+  Deleted Rules:
+  - IF ((((3 > 0.5000) AND (4 > 0.5000)) AND (2 > 0.5000)) AND (1 <= 0.5000)) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF (((3 > 0.5000) AND (4 <= 0.5000)) AND (1 <= 0.5000)) THEN Class 3
+  + New: IF (((1 <= 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+    (Similarity: 0.83)
+
+=== Class 4 ===
+
+  New Rules:
+  + IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+
+  Deleted Rules:
+  - IF (((((3 > 0.5000) AND (4 <= 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (6 <= 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  New Rules:
+  + IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+
+  Deleted Rules:
+  - IF ((((3 > 0.5000) AND (4 <= 0.5000)) AND (1 > 0.5000)) AND (2 <= 0.5000)) THEN Class 5
+
+=== Class 6 ===
+
+  New Rules:
+  + IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+
+  Deleted Rules:
+  - IF (((3 > 0.5000) AND (4 > 0.5000)) AND (2 <= 0.5000)) THEN Class 6
+
+=== Class 7 ===
+
+  Modified Rules:
+  - Old: IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (4 <= 0.5000)) THEN Class 7
+  + New: IF (((3 <= 0.5000) AND (6 <= 0.5000)) AND (0 > 0.5000)) THEN Class 7
+    (Similarity: 0.88)
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF ((((3 > 0.5000) AND (4 > 0.5000)) AND (2 > 0.5000)) AND (1 > 0.5000)) THEN Class 8
+  + New: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (5 > 0.5000)) THEN Class 8
+    (Similarity: 0.96)
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF (((((3 > 0.5000) AND (4 <= 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (6 > 0.5000)) THEN Class 9
+  + New: IF ((((4 <= 0.5000) AND (6 > 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) THEN Class 9
+    (Similarity: 0.75)
+
+======================================================================
+--- Diff Chunk 4 -> Chunk 5 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 4):   1.0000
+  - Test G-Mean (Chunk 5):  1.0000
+  - Test F1 (Chunk 5):      1.0000
+Fitness:       0.970600 -> 1.115800
+Default Class: 3 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((4 > 0.5000) AND (2 > 0.5000)) AND (3 <= 0.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((3 <= 0.5000) AND (1 > 0.5000)) THEN Class 0
+  - IF ((3 <= 0.5000) AND (4 > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((((4 <= 0.5000) AND (2 > 0.5000)) AND (3 <= 0.5000)) AND (0 <= 0.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((0 <= 0.5000) AND (1 <= 0.5000)) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF ((((4 > 0.5000) AND (2 > 0.5000)) AND (3 > 0.5000)) AND (1 <= 0.5000)) THEN Class 2
+
+  Deleted Rules:
+  - IF (5 <= 0.5000) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF (((((4 <= 0.5000) AND (2 > 0.5000)) AND (3 > 0.5000)) AND (0 > 0.5000)) AND (1 <= 0.5000)) THEN Class 3
+
+  Deleted Rules:
+  - IF (((1 <= 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+
+=== Class 4 ===
+
+  New Rules:
+  + IF ((((4 <= 0.5000) AND (2 > 0.5000)) AND (3 > 0.5000)) AND (0 <= 0.5000)) THEN Class 4
+
+  Deleted Rules:
+  - IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+  + New: IF ((4 <= 0.5000) AND (2 <= 0.5000)) THEN Class 5
+    (Similarity: 0.94)
+
+=== Class 6 ===
+
+  Modified Rules:
+  - Old: IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+  + New: IF ((4 > 0.5000) AND (2 <= 0.5000)) THEN Class 6
+    (Similarity: 0.81)
+
+=== Class 7 ===
+
+  Modified Rules:
+  - Old: IF (((3 <= 0.5000) AND (6 <= 0.5000)) AND (0 > 0.5000)) THEN Class 7
+  + New: IF ((((4 <= 0.5000) AND (2 > 0.5000)) AND (3 <= 0.5000)) AND (0 > 0.5000)) THEN Class 7
+    (Similarity: 0.70)
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (5 > 0.5000)) THEN Class 8
+  + New: IF ((((4 > 0.5000) AND (2 > 0.5000)) AND (3 > 0.5000)) AND (1 > 0.5000)) THEN Class 8
+    (Similarity: 0.96)
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF ((((4 <= 0.5000) AND (6 > 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) THEN Class 9
+  + New: IF (((((4 <= 0.5000) AND (2 > 0.5000)) AND (3 > 0.5000)) AND (0 > 0.5000)) AND (1 > 0.5000)) THEN Class 9
+    (Similarity: 0.75)
+
+======================================================================
+--- Diff Chunk 5 -> Chunk 6 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 5):   1.0000
+  - Test G-Mean (Chunk 6):  1.0000
+  - Test F1 (Chunk 6):      1.0000
+Fitness:       1.115800 -> 0.878200
+Default Class: 0 -> 8
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((3 <= 0.5000) AND (4 > 0.5000)) THEN Class 0
+  + IF ((3 <= 0.5000) AND (6 > 0.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((4 > 0.5000) AND (2 > 0.5000)) AND (3 <= 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((0 <= 0.5000) AND (3 <= 0.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((4 <= 0.5000) AND (2 > 0.5000)) AND (3 <= 0.5000)) AND (0 <= 0.5000)) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF (5 <= 0.5000) THEN Class 2
+
+  Deleted Rules:
+  - IF ((((4 > 0.5000) AND (2 > 0.5000)) AND (3 > 0.5000)) AND (1 <= 0.5000)) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF (((1 <= 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+  + IF (((1 <= 0.5000) AND (6 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+
+  Deleted Rules:
+  - IF (((((4 <= 0.5000) AND (2 > 0.5000)) AND (3 > 0.5000)) AND (0 > 0.5000)) AND (1 <= 0.5000)) THEN Class 3
+
+=== Class 4 ===
+
+  New Rules:
+  + IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+
+  Deleted Rules:
+  - IF ((((4 <= 0.5000) AND (2 > 0.5000)) AND (3 > 0.5000)) AND (0 <= 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF ((4 <= 0.5000) AND (2 <= 0.5000)) THEN Class 5
+  + New: IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+    (Similarity: 0.94)
+
+=== Class 6 ===
+
+  Modified Rules:
+  - Old: IF ((4 > 0.5000) AND (2 <= 0.5000)) THEN Class 6
+  + New: IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+    (Similarity: 0.81)
+
+=== Class 7 ===
+
+  New Rules:
+  + IF ((6 <= 0.5000) AND (0 > 0.5000)) THEN Class 7
+
+  Deleted Rules:
+  - IF ((((4 <= 0.5000) AND (2 > 0.5000)) AND (3 <= 0.5000)) AND (0 > 0.5000)) THEN Class 7
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF ((((4 > 0.5000) AND (2 > 0.5000)) AND (3 > 0.5000)) AND (1 > 0.5000)) THEN Class 8
+  + New: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+    (Similarity: 0.96)
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF (((((4 <= 0.5000) AND (2 > 0.5000)) AND (3 > 0.5000)) AND (0 > 0.5000)) AND (1 > 0.5000)) THEN Class 9
+  + New: IF ((((4 <= 0.5000) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (6 > 0.5000)) THEN Class 9
+    (Similarity: 0.75)
+
+======================================================================
+--- Diff Chunk 6 -> Chunk 7 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 6):   1.0000
+  - Test G-Mean (Chunk 7):  1.0000
+  - Test F1 (Chunk 7):      1.0000
+Fitness:       0.878200 -> 1.058800
+Default Class: 8 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Unchanged Rules:
+    IF ((3 <= 0.5000) AND (4 > 0.5000)) THEN Class 0
+    IF ((3 <= 0.5000) AND (6 > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((0 <= 0.5000) AND (3 <= 0.5000)) THEN Class 1
+  + New: IF ((0 <= 0.5000) AND (1 <= 0.5000)) THEN Class 1
+    (Similarity: 0.97)
+
+=== Class 2 ===
+
+  Unchanged Rules:
+    IF (5 <= 0.5000) THEN Class 2
+
+=== Class 3 ===
+
+  Unchanged Rules:
+    IF (((1 <= 0.5000) AND (6 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+
+  Deleted Rules:
+  - IF (((1 <= 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+
+=== Class 4 ===
+
+  Unchanged Rules:
+    IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+
+  New Rules:
+  + IF ((0 <= 0.5000) AND (3 > 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Unchanged Rules:
+    IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+
+=== Class 6 ===
+
+  Unchanged Rules:
+    IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+
+=== Class 7 ===
+
+  Unchanged Rules:
+    IF ((6 <= 0.5000) AND (0 > 0.5000)) THEN Class 7
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+  + New: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (5 > 0.5000)) THEN Class 8
+    (Similarity: 0.97)
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF ((((4 <= 0.5000) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (6 > 0.5000)) THEN Class 9
+  + New: IF ((((4 <= 0.5000) AND (6 > 0.5000)) AND (2 > 0.5000)) AND (1 > 0.5000)) THEN Class 9
+    (Similarity: 0.97)
+
+======================================================================
+--- Diff Chunk 7 -> Chunk 8 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 7):   1.0000
+  - Test G-Mean (Chunk 8):  1.0000
+  - Test F1 (Chunk 8):      1.0000
+Fitness:       1.058800 -> 1.084000
+Default Class: 0 -> 8
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((3 <= 0.5000) AND (4 > 0.5000)) THEN Class 0
+  + New: IF ((3 <= 0.5000) AND (1 > 0.5000)) THEN Class 0
+    (Similarity: 0.97)
+
+  Deleted Rules:
+  - IF ((3 <= 0.5000) AND (6 > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((0 <= 0.5000) AND (1 <= 0.5000)) THEN Class 1
+  + New: IF ((0 <= 0.5000) AND (3 <= 0.5000)) THEN Class 1
+    (Similarity: 0.97)
+
+=== Class 2 ===
+
+  Unchanged Rules:
+    IF (5 <= 0.5000) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF (((1 <= 0.5000) AND (6 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+  + New: IF (((1 <= 0.5000) AND (3 > 0.5000)) AND (4 <= 0.5000)) THEN Class 3
+    (Similarity: 0.92)
+
+=== Class 4 ===
+
+  Unchanged Rules:
+    IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+    IF ((0 <= 0.5000) AND (3 > 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Unchanged Rules:
+    IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+
+=== Class 6 ===
+
+  Unchanged Rules:
+    IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+
+=== Class 7 ===
+
+  New Rules:
+  + IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (1 <= 0.5000)) THEN Class 7
+  + IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (4 <= 0.5000)) THEN Class 7
+
+  Deleted Rules:
+  - IF ((6 <= 0.5000) AND (0 > 0.5000)) THEN Class 7
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (5 > 0.5000)) THEN Class 8
+  + New: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+    (Similarity: 0.97)
+
+  New Rules:
+  + IF ((((4 > 0.5000) AND (5 > 0.5000)) AND (3 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF ((((4 <= 0.5000) AND (6 > 0.5000)) AND (2 > 0.5000)) AND (1 > 0.5000)) THEN Class 9
+  + New: IF ((((1 > 0.5000) AND (4 <= 0.5000)) AND (2 > 0.5000)) AND (0 > 0.5000)) THEN Class 9
+    (Similarity: 0.90)
+
+======================================================================
+--- Diff Chunk 8 -> Chunk 9 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 8):   1.0000
+  - Test G-Mean (Chunk 9):  1.0000
+  - Test F1 (Chunk 9):      1.0000
+Fitness:       1.084000 -> 1.115200
+Default Class: 8 -> 3
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (4 > 0.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((3 <= 0.5000) AND (1 > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((0 <= 0.5000) AND (3 <= 0.5000)) THEN Class 1
+  + New: IF ((3 <= 0.5000) AND (0 <= 0.5000)) THEN Class 1
+    (Similarity: 0.94)
+
+=== Class 2 ===
+
+  New Rules:
+  + IF (((((3 > 0.5000) AND (0 > 0.5000)) AND (4 > 0.5000)) AND (2 > 0.5000)) AND (1 <= 0.5000)) THEN Class 2
+
+  Deleted Rules:
+  - IF (5 <= 0.5000) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF (((((3 > 0.5000) AND (0 > 0.5000)) AND (4 <= 0.5000)) AND (2 > 0.5000)) AND (1 <= 0.5000)) THEN Class 3
+
+  Deleted Rules:
+  - IF (((1 <= 0.5000) AND (3 > 0.5000)) AND (4 <= 0.5000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((0 <= 0.5000) AND (3 > 0.5000)) THEN Class 4
+  + New: IF ((3 > 0.5000) AND (0 <= 0.5000)) THEN Class 4
+    (Similarity: 0.81)
+
+  Deleted Rules:
+  - IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  New Rules:
+  + IF ((((3 > 0.5000) AND (0 > 0.5000)) AND (4 <= 0.5000)) AND (2 <= 0.5000)) THEN Class 5
+
+  Deleted Rules:
+  - IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+
+=== Class 6 ===
+
+  New Rules:
+  + IF ((((3 > 0.5000) AND (0 > 0.5000)) AND (4 > 0.5000)) AND (2 <= 0.5000)) THEN Class 6
+
+  Deleted Rules:
+  - IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+
+=== Class 7 ===
+
+  Unchanged Rules:
+    IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (4 <= 0.5000)) THEN Class 7
+
+  Deleted Rules:
+  - IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (1 <= 0.5000)) THEN Class 7
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF ((((4 > 0.5000) AND (5 > 0.5000)) AND (3 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+  + New: IF (((((3 > 0.5000) AND (0 > 0.5000)) AND (4 > 0.5000)) AND (2 > 0.5000)) AND (1 > 0.5000)) THEN Class 8
+    (Similarity: 0.75)
+
+  Deleted Rules:
+  - IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF ((((1 > 0.5000) AND (4 <= 0.5000)) AND (2 > 0.5000)) AND (0 > 0.5000)) THEN Class 9
+  + New: IF (((((3 > 0.5000) AND (0 > 0.5000)) AND (4 <= 0.5000)) AND (2 > 0.5000)) AND (1 > 0.5000)) THEN Class 9
+    (Similarity: 0.76)
+
+======================================================================
+--- Diff Chunk 9 -> Chunk 10 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 9):   1.0000
+  - Test G-Mean (Chunk 10):  1.0000
+  - Test F1 (Chunk 10):      1.0000
+Fitness:       1.115200 -> 0.995200
+Default Class: 3 -> 9
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (4 > 0.5000)) THEN Class 0
+  + New: IF (((0 > 0.5000) AND (3 <= 0.5000)) AND (4 > 0.5000)) THEN Class 0
+    (Similarity: 0.88)
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((3 <= 0.5000) AND (0 <= 0.5000)) THEN Class 1
+  + New: IF ((0 <= 0.5000) AND (1 <= 0.5000)) THEN Class 1
+    (Similarity: 0.94)
+
+=== Class 2 ===
+
+  Modified Rules:
+  - Old: IF (((((3 > 0.5000) AND (0 > 0.5000)) AND (4 > 0.5000)) AND (2 > 0.5000)) AND (1 <= 0.5000)) THEN Class 2
+  + New: IF (((((0 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (4 > 0.5000)) AND (5 <= 0.5000)) THEN Class 2
+    (Similarity: 0.94)
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF (((((3 > 0.5000) AND (0 > 0.5000)) AND (4 <= 0.5000)) AND (2 > 0.5000)) AND (1 <= 0.5000)) THEN Class 3
+  + New: IF (((((0 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (4 <= 0.5000)) AND (1 <= 0.5000)) THEN Class 3
+    (Similarity: 0.91)
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((3 > 0.5000) AND (0 <= 0.5000)) THEN Class 4
+  + New: IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+    (Similarity: 0.81)
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF ((((3 > 0.5000) AND (0 > 0.5000)) AND (4 <= 0.5000)) AND (2 <= 0.5000)) THEN Class 5
+  + New: IF ((((0 > 0.5000) AND (3 > 0.5000)) AND (2 <= 0.5000)) AND (4 <= 0.5000)) THEN Class 5
+    (Similarity: 0.94)
+
+=== Class 6 ===
+
+  Modified Rules:
+  - Old: IF ((((3 > 0.5000) AND (0 > 0.5000)) AND (4 > 0.5000)) AND (2 <= 0.5000)) THEN Class 6
+  + New: IF ((((0 > 0.5000) AND (3 > 0.5000)) AND (2 <= 0.5000)) AND (4 > 0.5000)) THEN Class 6
+    (Similarity: 0.89)
+
+=== Class 7 ===
+
+  Modified Rules:
+  - Old: IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (4 <= 0.5000)) THEN Class 7
+  + New: IF (((0 > 0.5000) AND (3 <= 0.5000)) AND (4 <= 0.5000)) THEN Class 7
+    (Similarity: 0.88)
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF (((((3 > 0.5000) AND (0 > 0.5000)) AND (4 > 0.5000)) AND (2 > 0.5000)) AND (1 > 0.5000)) THEN Class 8
+  + New: IF (((((0 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (4 > 0.5000)) AND (5 > 0.5000)) THEN Class 8
+    (Similarity: 0.94)
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF (((((3 > 0.5000) AND (0 > 0.5000)) AND (4 <= 0.5000)) AND (2 > 0.5000)) AND (1 > 0.5000)) THEN Class 9
+  + New: IF (((((0 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (4 <= 0.5000)) AND (1 > 0.5000)) THEN Class 9
+    (Similarity: 0.91)
+
+======================================================================
+--- Diff Chunk 10 -> Chunk 11 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 10):   1.0000
+  - Test G-Mean (Chunk 11):  1.0000
+  - Test F1 (Chunk 11):      1.0000
+Fitness:       0.995200 -> 1.083400
+Default Class: 9 -> 8
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF (((0 > 0.5000) AND (3 <= 0.5000)) AND (4 > 0.5000)) THEN Class 0
+  + New: IF ((((0 > 0.5000) AND (6 > 0.5000)) AND (4 > 0.5000)) AND (3 <= 0.5000)) THEN Class 0
+    (Similarity: 0.67)
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((0 <= 0.5000) AND (1 <= 0.5000)) THEN Class 1
+
+=== Class 2 ===
+
+  Modified Rules:
+  - Old: IF (((((0 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (4 > 0.5000)) AND (5 <= 0.5000)) THEN Class 2
+  + New: IF ((((((0 > 0.5000) AND (6 > 0.5000)) AND (4 > 0.5000)) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (1 <= 0.5000)) THEN Class 2
+    (Similarity: 0.80)
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF (((((0 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (4 <= 0.5000)) AND (1 <= 0.5000)) THEN Class 3
+  + New: IF ((((0 > 0.5000) AND (6 > 0.5000)) AND (4 <= 0.5000)) AND (1 <= 0.5000)) THEN Class 3
+    (Similarity: 0.78)
+
+=== Class 4 ===
+
+  Unchanged Rules:
+    IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF ((((0 > 0.5000) AND (3 > 0.5000)) AND (2 <= 0.5000)) AND (4 <= 0.5000)) THEN Class 5
+  + New: IF (((((0 > 0.5000) AND (6 > 0.5000)) AND (4 <= 0.5000)) AND (1 > 0.5000)) AND (2 <= 0.5000)) THEN Class 5
+    (Similarity: 0.76)
+
+=== Class 6 ===
+
+  Modified Rules:
+  - Old: IF ((((0 > 0.5000) AND (3 > 0.5000)) AND (2 <= 0.5000)) AND (4 > 0.5000)) THEN Class 6
+  + New: IF (((((0 > 0.5000) AND (6 > 0.5000)) AND (4 > 0.5000)) AND (3 > 0.5000)) AND (2 <= 0.5000)) THEN Class 6
+    (Similarity: 0.72)
+
+=== Class 7 ===
+
+  New Rules:
+  + IF ((0 > 0.5000) AND (6 <= 0.5000)) THEN Class 7
+
+  Deleted Rules:
+  - IF (((0 > 0.5000) AND (3 <= 0.5000)) AND (4 <= 0.5000)) THEN Class 7
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF (((((0 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (4 > 0.5000)) AND (5 > 0.5000)) THEN Class 8
+  + New: IF ((((((0 > 0.5000) AND (6 > 0.5000)) AND (4 > 0.5000)) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (1 > 0.5000)) THEN Class 8
+    (Similarity: 0.79)
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF (((((0 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (4 <= 0.5000)) AND (1 > 0.5000)) THEN Class 9
+  + New: IF (((((0 > 0.5000) AND (6 > 0.5000)) AND (4 <= 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) THEN Class 9
+    (Similarity: 0.91)
+
+======================================================================
+--- Diff Chunk 11 -> Chunk 12 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 11):   1.0000
+  - Test G-Mean (Chunk 12):  1.0000
+  - Test F1 (Chunk 12):      1.0000
+Fitness:       1.083400 -> 0.994000
+Default Class: 8 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((((0 > 0.5000) AND (6 > 0.5000)) AND (4 > 0.5000)) AND (3 <= 0.5000)) THEN Class 0
+  + New: IF ((((5 > 0.5000) AND (4 > 0.5000)) AND (2 > 0.5000)) AND (3 <= 0.5000)) THEN Class 0
+    (Similarity: 0.96)
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((((5 > 0.5000) AND (4 <= 0.5000)) AND (0 <= 0.5000)) AND (3 <= 0.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((0 <= 0.5000) AND (1 <= 0.5000)) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF (5 <= 0.5000) THEN Class 2
+
+  Deleted Rules:
+  - IF ((((((0 > 0.5000) AND (6 > 0.5000)) AND (4 > 0.5000)) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (1 <= 0.5000)) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF ((((0 > 0.5000) AND (6 > 0.5000)) AND (4 <= 0.5000)) AND (1 <= 0.5000)) THEN Class 3
+  + New: IF (((((5 > 0.5000) AND (4 <= 0.5000)) AND (0 > 0.5000)) AND (1 <= 0.5000)) AND (3 > 0.5000)) THEN Class 3
+    (Similarity: 0.71)
+
+=== Class 4 ===
+
+  New Rules:
+  + IF ((((5 > 0.5000) AND (4 <= 0.5000)) AND (0 <= 0.5000)) AND (3 > 0.5000)) THEN Class 4
+
+  Deleted Rules:
+  - IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (((((0 > 0.5000) AND (6 > 0.5000)) AND (4 <= 0.5000)) AND (1 > 0.5000)) AND (2 <= 0.5000)) THEN Class 5
+  + New: IF (((((5 > 0.5000) AND (4 <= 0.5000)) AND (0 > 0.5000)) AND (1 > 0.5000)) AND (2 <= 0.5000)) THEN Class 5
+    (Similarity: 0.92)
+
+=== Class 6 ===
+
+  New Rules:
+  + IF (((5 > 0.5000) AND (4 > 0.5000)) AND (2 <= 0.5000)) THEN Class 6
+
+  Deleted Rules:
+  - IF (((((0 > 0.5000) AND (6 > 0.5000)) AND (4 > 0.5000)) AND (3 > 0.5000)) AND (2 <= 0.5000)) THEN Class 6
+
+=== Class 7 ===
+
+  New Rules:
+  + IF (((((5 > 0.5000) AND (4 <= 0.5000)) AND (0 > 0.5000)) AND (1 <= 0.5000)) AND (3 <= 0.5000)) THEN Class 7
+
+  Deleted Rules:
+  - IF ((0 > 0.5000) AND (6 <= 0.5000)) THEN Class 7
+
+=== Class 8 ===
+
+  New Rules:
+  + IF ((((5 > 0.5000) AND (4 > 0.5000)) AND (2 > 0.5000)) AND (3 > 0.5000)) THEN Class 8
+
+  Deleted Rules:
+  - IF ((((((0 > 0.5000) AND (6 > 0.5000)) AND (4 > 0.5000)) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (1 > 0.5000)) THEN Class 8
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF (((((0 > 0.5000) AND (6 > 0.5000)) AND (4 <= 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) THEN Class 9
+  + New: IF (((((5 > 0.5000) AND (4 <= 0.5000)) AND (0 > 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) THEN Class 9
+    (Similarity: 0.92)
+
+======================================================================
+--- Diff Chunk 12 -> Chunk 13 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 12):   1.0000
+  - Test G-Mean (Chunk 13):  1.0000
+  - Test F1 (Chunk 13):      1.0000
+Fitness:       0.994000 -> 0.996400
+Default Class: 1 -> 2
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((((5 > 0.5000) AND (4 > 0.5000)) AND (2 > 0.5000)) AND (3 <= 0.5000)) THEN Class 0
+  + New: IF ((((6 > 0.5000) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (3 <= 0.5000)) THEN Class 0
+    (Similarity: 0.97)
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((5 > 0.5000) AND (4 <= 0.5000)) AND (0 <= 0.5000)) AND (3 <= 0.5000)) THEN Class 1
+  + New: IF (((6 <= 0.5000) AND (0 <= 0.5000)) AND (1 <= 0.5000)) THEN Class 1
+    (Similarity: 0.71)
+
+=== Class 2 ===
+
+  New Rules:
+  + IF (((6 > 0.5000) AND (1 <= 0.5000)) AND (4 > 0.5000)) THEN Class 2
+
+  Deleted Rules:
+  - IF (5 <= 0.5000) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF (((6 > 0.5000) AND (1 <= 0.5000)) AND (4 <= 0.5000)) THEN Class 3
+
+  Deleted Rules:
+  - IF (((((5 > 0.5000) AND (4 <= 0.5000)) AND (0 > 0.5000)) AND (1 <= 0.5000)) AND (3 > 0.5000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((((5 > 0.5000) AND (4 <= 0.5000)) AND (0 <= 0.5000)) AND (3 > 0.5000)) THEN Class 4
+  + New: IF (((6 <= 0.5000) AND (0 <= 0.5000)) AND (1 > 0.5000)) THEN Class 4
+    (Similarity: 0.70)
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF (((((5 > 0.5000) AND (4 <= 0.5000)) AND (0 > 0.5000)) AND (1 > 0.5000)) AND (2 <= 0.5000)) THEN Class 5
+  + New: IF ((((6 > 0.5000) AND (1 > 0.5000)) AND (2 <= 0.5000)) AND (4 <= 0.5000)) THEN Class 5
+    (Similarity: 0.71)
+
+=== Class 6 ===
+
+  Modified Rules:
+  - Old: IF (((5 > 0.5000) AND (4 > 0.5000)) AND (2 <= 0.5000)) THEN Class 6
+  + New: IF ((((6 > 0.5000) AND (1 > 0.5000)) AND (2 <= 0.5000)) AND (4 > 0.5000)) THEN Class 6
+    (Similarity: 0.70)
+
+=== Class 7 ===
+
+  New Rules:
+  + IF ((6 <= 0.5000) AND (0 > 0.5000)) THEN Class 7
+
+  Deleted Rules:
+  - IF (((((5 > 0.5000) AND (4 <= 0.5000)) AND (0 > 0.5000)) AND (1 <= 0.5000)) AND (3 <= 0.5000)) THEN Class 7
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF ((((5 > 0.5000) AND (4 > 0.5000)) AND (2 > 0.5000)) AND (3 > 0.5000)) THEN Class 8
+  + New: IF (((((6 > 0.5000) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (3 > 0.5000)) AND (4 > 0.5000)) THEN Class 8
+    (Similarity: 0.76)
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF (((((5 > 0.5000) AND (4 <= 0.5000)) AND (0 > 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) THEN Class 9
+  + New: IF (((((6 > 0.5000) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (3 > 0.5000)) AND (4 <= 0.5000)) THEN Class 9
+    (Similarity: 0.90)
+
+======================================================================
+--- Diff Chunk 13 -> Chunk 14 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 13):   1.0000
+  - Test G-Mean (Chunk 14):  1.0000
+  - Test F1 (Chunk 14):      1.0000
+Fitness:       0.996400 -> 0.969400
+Default Class: 2 -> 5
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((3 <= 0.5000) AND (4 > 0.5000)) THEN Class 0
+  + IF ((3 <= 0.5000) AND (6 > 0.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((((6 > 0.5000) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (3 <= 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((0 <= 0.5000) AND (3 <= 0.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((6 <= 0.5000) AND (0 <= 0.5000)) AND (1 <= 0.5000)) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF (5 <= 0.5000) THEN Class 2
+
+  Deleted Rules:
+  - IF (((6 > 0.5000) AND (1 <= 0.5000)) AND (4 > 0.5000)) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF (((6 > 0.5000) AND (1 <= 0.5000)) AND (4 <= 0.5000)) THEN Class 3
+  + New: IF (((1 <= 0.5000) AND (6 > 0.5000)) AND (4 <= 0.5000)) THEN Class 3
+    (Similarity: 0.88)
+
+=== Class 4 ===
+
+  New Rules:
+  + IF ((0 <= 0.5000) AND (3 > 0.5000)) THEN Class 4
+
+  Deleted Rules:
+  - IF (((6 <= 0.5000) AND (0 <= 0.5000)) AND (1 > 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  New Rules:
+  + IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+
+  Deleted Rules:
+  - IF ((((6 > 0.5000) AND (1 > 0.5000)) AND (2 <= 0.5000)) AND (4 <= 0.5000)) THEN Class 5
+
+=== Class 6 ===
+
+  New Rules:
+  + IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+
+  Deleted Rules:
+  - IF ((((6 > 0.5000) AND (1 > 0.5000)) AND (2 <= 0.5000)) AND (4 > 0.5000)) THEN Class 6
+
+=== Class 7 ===
+
+  Unchanged Rules:
+    IF ((6 <= 0.5000) AND (0 > 0.5000)) THEN Class 7
+
+  New Rules:
+  + IF (0 >= 0.8931) THEN Class 7
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF (((((6 > 0.5000) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (3 > 0.5000)) AND (4 > 0.5000)) THEN Class 8
+  + New: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+    (Similarity: 0.74)
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF (((((6 > 0.5000) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (3 > 0.5000)) AND (4 <= 0.5000)) THEN Class 9
+  + New: IF ((((1 > 0.5000) AND (4 <= 0.5000)) AND (2 > 0.5000)) AND (6 > 0.5000)) THEN Class 9
+    (Similarity: 0.72)
+
+======================================================================
+--- Diff Chunk 14 -> Chunk 15 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 14):   1.0000
+  - Test G-Mean (Chunk 15):  1.0000
+  - Test F1 (Chunk 15):      1.0000
+Fitness:       0.969400 -> 1.055800
+Default Class: 5 -> 2
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Unchanged Rules:
+    IF ((3 <= 0.5000) AND (4 > 0.5000)) THEN Class 0
+
+  Modified Rules:
+  - Old: IF ((3 <= 0.5000) AND (6 > 0.5000)) THEN Class 0
+  + New: IF ((3 <= 0.5000) AND (1 > 0.5000)) THEN Class 0
+    (Similarity: 0.97)
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((0 <= 0.5000) AND (3 <= 0.5000)) THEN Class 1
+  + New: IF ((0 <= 0.5000) AND (1 <= 0.5000)) THEN Class 1
+    (Similarity: 0.97)
+
+=== Class 2 ===
+
+  Unchanged Rules:
+    IF (5 <= 0.5000) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF (((1 <= 0.5000) AND (6 > 0.5000)) AND (4 <= 0.5000)) THEN Class 3
+  + New: IF (((1 <= 0.5000) AND (3 > 0.5000)) AND (4 <= 0.5000)) THEN Class 3
+    (Similarity: 0.98)
+
+=== Class 4 ===
+
+  Unchanged Rules:
+    IF ((0 <= 0.5000) AND (3 > 0.5000)) THEN Class 4
+
+  New Rules:
+  + IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Unchanged Rules:
+    IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+
+=== Class 6 ===
+
+  Unchanged Rules:
+    IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+
+=== Class 7 ===
+
+  Unchanged Rules:
+    IF ((6 <= 0.5000) AND (0 > 0.5000)) THEN Class 7
+
+  New Rules:
+  + IF (((3 <= 0.5000) AND (6 <= 0.5000)) AND (0 > 0.5000)) THEN Class 7
+
+  Deleted Rules:
+  - IF (0 >= 0.8931) THEN Class 7
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+  + New: IF ((((4 > 0.5000) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (3 > 0.5000)) THEN Class 8
+    (Similarity: 0.96)
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF ((((1 > 0.5000) AND (4 <= 0.5000)) AND (2 > 0.5000)) AND (6 > 0.5000)) THEN Class 9
+  + New: IF ((((4 <= 0.5000) AND (6 > 0.5000)) AND (2 > 0.5000)) AND (1 > 0.5000)) THEN Class 9
+    (Similarity: 0.90)
+
+======================================================================
+--- Diff Chunk 15 -> Chunk 16 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 15):   1.0000
+  - Test G-Mean (Chunk 16):  1.0000
+  - Test F1 (Chunk 16):      1.0000
+Fitness:       1.055800 -> 1.061800
+Default Class: 2 -> 7
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((3 <= 0.5000) AND (4 > 0.5000)) THEN Class 0
+  + New: IF ((3 <= 0.5000) AND (6 > 0.5000)) THEN Class 0
+    (Similarity: 0.97)
+
+  Deleted Rules:
+  - IF ((3 <= 0.5000) AND (1 > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((0 <= 0.5000) AND (1 <= 0.5000)) THEN Class 1
+  + New: IF ((0 <= 0.5000) AND (3 <= 0.5000)) THEN Class 1
+    (Similarity: 0.97)
+
+=== Class 2 ===
+
+  Unchanged Rules:
+    IF (5 <= 0.5000) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF (((1 <= 0.5000) AND (3 > 0.5000)) AND (4 <= 0.5000)) THEN Class 3
+  + New: IF (((1 <= 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+    (Similarity: 0.94)
+
+=== Class 4 ===
+
+  Unchanged Rules:
+    IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+
+  Deleted Rules:
+  - IF ((0 <= 0.5000) AND (3 > 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Unchanged Rules:
+    IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+
+=== Class 6 ===
+
+  Unchanged Rules:
+    IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+
+=== Class 7 ===
+
+  Unchanged Rules:
+    IF ((6 <= 0.5000) AND (0 > 0.5000)) THEN Class 7
+
+  Deleted Rules:
+  - IF (((3 <= 0.5000) AND (6 <= 0.5000)) AND (0 > 0.5000)) THEN Class 7
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF ((((4 > 0.5000) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (3 > 0.5000)) THEN Class 8
+  + New: IF ((((4 > 0.5000) AND (2 > 0.5000)) AND (3 > 0.5000)) AND (5 > 0.5000)) THEN Class 8
+    (Similarity: 0.96)
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF ((((4 <= 0.5000) AND (6 > 0.5000)) AND (2 > 0.5000)) AND (1 > 0.5000)) THEN Class 9
+  + New: IF ((((4 <= 0.5000) AND (6 > 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) THEN Class 9
+    (Similarity: 0.97)
+
+  New Rules:
+  + IF (1 <= 0.8098) THEN Class 9
+
+======================================================================
+--- Diff Chunk 16 -> Chunk 17 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 16):   1.0000
+  - Test G-Mean (Chunk 17):  1.0000
+  - Test F1 (Chunk 17):      1.0000
+Fitness:       1.061800 -> 1.085800
+Default Class: 7 -> 3
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (4 > 0.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((3 <= 0.5000) AND (6 > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((0 <= 0.5000) AND (3 <= 0.5000)) THEN Class 1
+  + New: IF ((3 <= 0.5000) AND (0 <= 0.5000)) THEN Class 1
+    (Similarity: 0.94)
+
+=== Class 2 ===
+
+  New Rules:
+  + IF (((3 > 0.5000) AND (1 <= 0.5000)) AND (5 <= 0.5000)) THEN Class 2
+
+  Deleted Rules:
+  - IF (5 <= 0.5000) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF (((1 <= 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+  + New: IF (((3 > 0.5000) AND (1 <= 0.5000)) AND (5 > 0.5000)) THEN Class 3
+    (Similarity: 0.88)
+
+=== Class 4 ===
+
+  New Rules:
+  + IF (((3 > 0.5000) AND (1 > 0.5000)) AND (0 <= 0.5000)) THEN Class 4
+
+  Deleted Rules:
+  - IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  New Rules:
+  + IF (((((3 > 0.5000) AND (1 > 0.5000)) AND (0 > 0.5000)) AND (4 <= 0.5000)) AND (2 <= 0.5000)) THEN Class 5
+
+  Deleted Rules:
+  - IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+
+=== Class 6 ===
+
+  New Rules:
+  + IF (((((3 > 0.5000) AND (1 > 0.5000)) AND (0 > 0.5000)) AND (4 > 0.5000)) AND (2 <= 0.5000)) THEN Class 6
+
+  Deleted Rules:
+  - IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+
+=== Class 7 ===
+
+  New Rules:
+  + IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (4 <= 0.5000)) THEN Class 7
+
+  Deleted Rules:
+  - IF ((6 <= 0.5000) AND (0 > 0.5000)) THEN Class 7
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF ((((4 > 0.5000) AND (2 > 0.5000)) AND (3 > 0.5000)) AND (5 > 0.5000)) THEN Class 8
+  + New: IF (((((3 > 0.5000) AND (1 > 0.5000)) AND (0 > 0.5000)) AND (4 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+    (Similarity: 0.75)
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF ((((4 <= 0.5000) AND (6 > 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) THEN Class 9
+  + New: IF (((((3 > 0.5000) AND (1 > 0.5000)) AND (0 > 0.5000)) AND (4 <= 0.5000)) AND (2 > 0.5000)) THEN Class 9
+    (Similarity: 0.72)
+
+  Deleted Rules:
+  - IF (1 <= 0.8098) THEN Class 9
+
+======================================================================
+--- Diff Chunk 17 -> Chunk 18 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 17):   1.0000
+  - Test G-Mean (Chunk 18):  1.0000
+  - Test F1 (Chunk 18):      1.0000
+Fitness:       1.085800 -> 0.969400
+Default Class: 3 -> 7
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((3 <= 0.5000) AND (6 > 0.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (4 > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((3 <= 0.5000) AND (0 <= 0.5000)) THEN Class 1
+  + New: IF ((0 <= 0.5000) AND (3 <= 0.5000)) THEN Class 1
+    (Similarity: 0.94)
+
+=== Class 2 ===
+
+  New Rules:
+  + IF (5 <= 0.5000) THEN Class 2
+
+  Deleted Rules:
+  - IF (((3 > 0.5000) AND (1 <= 0.5000)) AND (5 <= 0.5000)) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF (((3 > 0.5000) AND (1 <= 0.5000)) AND (5 > 0.5000)) THEN Class 3
+  + New: IF (((1 <= 0.5000) AND (6 > 0.5000)) AND (4 <= 0.5000)) THEN Class 3
+    (Similarity: 0.83)
+
+=== Class 4 ===
+
+  New Rules:
+  + IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+
+  Deleted Rules:
+  - IF (((3 > 0.5000) AND (1 > 0.5000)) AND (0 <= 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  New Rules:
+  + IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+
+  Deleted Rules:
+  - IF (((((3 > 0.5000) AND (1 > 0.5000)) AND (0 > 0.5000)) AND (4 <= 0.5000)) AND (2 <= 0.5000)) THEN Class 5
+
+=== Class 6 ===
+
+  New Rules:
+  + IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+
+  Deleted Rules:
+  - IF (((((3 > 0.5000) AND (1 > 0.5000)) AND (0 > 0.5000)) AND (4 > 0.5000)) AND (2 <= 0.5000)) THEN Class 6
+
+=== Class 7 ===
+
+  Modified Rules:
+  - Old: IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (4 <= 0.5000)) THEN Class 7
+  + New: IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (6 <= 0.5000)) THEN Class 7
+    (Similarity: 0.98)
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF (((((3 > 0.5000) AND (1 > 0.5000)) AND (0 > 0.5000)) AND (4 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+  + New: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+    (Similarity: 0.76)
+
+  New Rules:
+  + IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (5 > 0.5000)) THEN Class 8
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF (((((3 > 0.5000) AND (1 > 0.5000)) AND (0 > 0.5000)) AND (4 <= 0.5000)) AND (2 > 0.5000)) THEN Class 9
+  + New: IF ((((1 > 0.5000) AND (4 <= 0.5000)) AND (6 > 0.5000)) AND (2 > 0.5000)) THEN Class 9
+    (Similarity: 0.72)
+
+======================================================================
+--- Diff Chunk 18 -> Chunk 19 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 18):   1.0000
+  - Test G-Mean (Chunk 19):  1.0000
+  - Test F1 (Chunk 19):      1.0000
+Fitness:       0.969400 -> 1.082800
+Default Class: 7 -> 7
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((3 <= 0.5000) AND (6 > 0.5000)) THEN Class 0
+  + New: IF ((3 <= 0.5000) AND (4 > 0.5000)) THEN Class 0
+    (Similarity: 0.97)
+
+  New Rules:
+  + IF ((3 <= 0.5000) AND (1 > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((0 <= 0.5000) AND (3 <= 0.5000)) THEN Class 1
+
+=== Class 2 ===
+
+  Unchanged Rules:
+    IF (5 <= 0.5000) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF (((1 <= 0.5000) AND (6 > 0.5000)) AND (4 <= 0.5000)) THEN Class 3
+  + New: IF (((1 <= 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+    (Similarity: 0.92)
+
+  New Rules:
+  + IF (3 <= 0.1515) THEN Class 3
+
+=== Class 4 ===
+
+  Unchanged Rules:
+    IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+
+  New Rules:
+  + IF ((0 <= 0.5000) AND (3 > 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Unchanged Rules:
+    IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+
+=== Class 6 ===
+
+  Unchanged Rules:
+    IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+
+=== Class 7 ===
+
+  Modified Rules:
+  - Old: IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (6 <= 0.5000)) THEN Class 7
+  + New: IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (1 <= 0.5000)) THEN Class 7
+    (Similarity: 0.98)
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+  + New: IF ((((4 > 0.5000) AND (2 > 0.5000)) AND (5 > 0.5000)) AND (3 > 0.5000)) THEN Class 8
+    (Similarity: 0.97)
+
+  New Rules:
+  + IF ((((4 > 0.5000) AND (2 > 0.5000)) AND (1 > 0.5000)) AND (3 > 0.5000)) THEN Class 8
+
+  Deleted Rules:
+  - IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (5 > 0.5000)) THEN Class 8
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF ((((1 > 0.5000) AND (4 <= 0.5000)) AND (6 > 0.5000)) AND (2 > 0.5000)) THEN Class 9
+  + New: IF ((((1 > 0.5000) AND (4 <= 0.5000)) AND (0 > 0.5000)) AND (2 > 0.5000)) THEN Class 9
+    (Similarity: 0.99)
+
+======================================================================
+--- Diff Chunk 19 -> Chunk 20 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 19):   1.0000
+  - Test G-Mean (Chunk 20):  1.0000
+  - Test F1 (Chunk 20):      1.0000
+Fitness:       1.082800 -> 0.995800
+Default Class: 7 -> 8
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((3 <= 0.5000) AND (4 > 0.5000)) THEN Class 0
+  + New: IF ((4 > 0.5000) AND (3 <= 0.5000)) THEN Class 0
+    (Similarity: 0.81)
+
+  Deleted Rules:
+  - IF ((3 <= 0.5000) AND (1 > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((((4 <= 0.5000) AND (2 > 0.5000)) AND (0 <= 0.5000)) AND (3 <= 0.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((0 <= 0.5000) AND (3 <= 0.5000)) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (1 <= 0.5000)) THEN Class 2
+
+  Deleted Rules:
+  - IF (5 <= 0.5000) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF (((((4 <= 0.5000) AND (2 > 0.5000)) AND (0 > 0.5000)) AND (1 <= 0.5000)) AND (6 > 0.5000)) THEN Class 3
+
+  Deleted Rules:
+  - IF (((1 <= 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+  - IF (3 <= 0.1515) THEN Class 3
+
+=== Class 4 ===
+
+  New Rules:
+  + IF ((((4 <= 0.5000) AND (2 > 0.5000)) AND (0 <= 0.5000)) AND (3 > 0.5000)) THEN Class 4
+
+  Deleted Rules:
+  - IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+  - IF ((0 <= 0.5000) AND (3 > 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+  + New: IF ((4 <= 0.5000) AND (2 <= 0.5000)) THEN Class 5
+    (Similarity: 0.94)
+
+=== Class 6 ===
+
+  New Rules:
+  + IF (((4 > 0.5000) AND (3 > 0.5000)) AND (2 <= 0.5000)) THEN Class 6
+
+  Deleted Rules:
+  - IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+
+=== Class 7 ===
+
+  New Rules:
+  + IF (((((4 <= 0.5000) AND (2 > 0.5000)) AND (0 > 0.5000)) AND (1 <= 0.5000)) AND (6 <= 0.5000)) THEN Class 7
+
+  Deleted Rules:
+  - IF (((3 <= 0.5000) AND (0 > 0.5000)) AND (1 <= 0.5000)) THEN Class 7
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF ((((4 > 0.5000) AND (2 > 0.5000)) AND (5 > 0.5000)) AND (3 > 0.5000)) THEN Class 8
+  + New: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (1 > 0.5000)) THEN Class 8
+    (Similarity: 0.96)
+
+  Deleted Rules:
+  - IF ((((4 > 0.5000) AND (2 > 0.5000)) AND (1 > 0.5000)) AND (3 > 0.5000)) THEN Class 8
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF ((((1 > 0.5000) AND (4 <= 0.5000)) AND (0 > 0.5000)) AND (2 > 0.5000)) THEN Class 9
+  + New: IF ((((4 <= 0.5000) AND (2 > 0.5000)) AND (0 > 0.5000)) AND (1 > 0.5000)) THEN Class 9
+    (Similarity: 0.90)
+
+======================================================================
+--- Diff Chunk 20 -> Chunk 21 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 20):   1.0000
+  - Test G-Mean (Chunk 21):  1.0000
+  - Test F1 (Chunk 21):      1.0000
+Fitness:       0.995800 -> 0.967600
+Default Class: 8 -> 4
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((4 > 0.5000) AND (3 <= 0.5000)) THEN Class 0
+  + New: IF ((3 <= 0.5000) AND (1 > 0.5000)) THEN Class 0
+    (Similarity: 0.81)
+
+  New Rules:
+  + IF ((3 <= 0.5000) AND (4 > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((0 <= 0.5000) AND (3 <= 0.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((4 <= 0.5000) AND (2 > 0.5000)) AND (0 <= 0.5000)) AND (3 <= 0.5000)) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF (5 <= 0.5000) THEN Class 2
+
+  Deleted Rules:
+  - IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (1 <= 0.5000)) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF (((1 <= 0.5000) AND (6 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+
+  Deleted Rules:
+  - IF (((((4 <= 0.5000) AND (2 > 0.5000)) AND (0 > 0.5000)) AND (1 <= 0.5000)) AND (6 > 0.5000)) THEN Class 3
+
+=== Class 4 ===
+
+  New Rules:
+  + IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+
+  Deleted Rules:
+  - IF ((((4 <= 0.5000) AND (2 > 0.5000)) AND (0 <= 0.5000)) AND (3 > 0.5000)) THEN Class 4
+
+=== Class 5 ===
+
+  Modified Rules:
+  - Old: IF ((4 <= 0.5000) AND (2 <= 0.5000)) THEN Class 5
+  + New: IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+    (Similarity: 0.94)
+
+=== Class 6 ===
+
+  New Rules:
+  + IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+
+  Deleted Rules:
+  - IF (((4 > 0.5000) AND (3 > 0.5000)) AND (2 <= 0.5000)) THEN Class 6
+
+=== Class 7 ===
+
+  New Rules:
+  + IF ((6 <= 0.5000) AND (0 > 0.5000)) THEN Class 7
+
+  Deleted Rules:
+  - IF (((((4 <= 0.5000) AND (2 > 0.5000)) AND (0 > 0.5000)) AND (1 <= 0.5000)) AND (6 <= 0.5000)) THEN Class 7
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (1 > 0.5000)) THEN Class 8
+  + New: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+    (Similarity: 0.97)
+
+  New Rules:
+  + IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF ((((4 <= 0.5000) AND (2 > 0.5000)) AND (0 > 0.5000)) AND (1 > 0.5000)) THEN Class 9
+  + New: IF ((((4 <= 0.5000) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (0 > 0.5000)) THEN Class 9
+    (Similarity: 0.96)
+
+======================================================================
+--- Diff Chunk 21 -> Chunk 22 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 21):   1.0000
+  - Test G-Mean (Chunk 22):  1.0000
+  - Test F1 (Chunk 22):      1.0000
+Fitness:       0.967600 -> 1.060600
+Default Class: 4 -> 4
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Unchanged Rules:
+    IF ((3 <= 0.5000) AND (1 > 0.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((3 <= 0.5000) AND (4 > 0.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF ((0 <= 0.5000) AND (3 <= 0.5000)) THEN Class 1
+
+=== Class 2 ===
+
+  Unchanged Rules:
+    IF (5 <= 0.5000) THEN Class 2
+
+=== Class 3 ===
+
+  Modified Rules:
+  - Old: IF (((1 <= 0.5000) AND (6 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+  + New: IF (((1 <= 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) THEN Class 3
+    (Similarity: 0.98)
+
+  New Rules:
+  + IF (((1 <= 0.5000) AND (6 > 0.5000)) AND (4 <= 0.5000)) THEN Class 3
+
+=== Class 4 ===
+
+  Modified Rules:
+  - Old: IF ((0 <= 0.5000) AND (1 > 0.5000)) THEN Class 4
+  + New: IF ((0 <= 0.5000) AND (3 > 0.5000)) THEN Class 4
+    (Similarity: 0.97)
+
+=== Class 5 ===
+
+  Unchanged Rules:
+    IF ((2 <= 0.5000) AND (4 <= 0.5000)) THEN Class 5
+
+=== Class 6 ===
+
+  Unchanged Rules:
+    IF ((2 <= 0.5000) AND (4 > 0.5000)) THEN Class 6
+
+=== Class 7 ===
+
+  Unchanged Rules:
+    IF ((6 <= 0.5000) AND (0 > 0.5000)) THEN Class 7
+
+=== Class 8 ===
+
+  Modified Rules:
+  - Old: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (1 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+  + New: IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (2 > 0.5000)) AND (5 > 0.5000)) THEN Class 8
+    (Similarity: 0.97)
+
+  Deleted Rules:
+  - IF ((((4 > 0.5000) AND (3 > 0.5000)) AND (5 > 0.5000)) AND (2 > 0.5000)) THEN Class 8
+
+=== Class 9 ===
+
+  Modified Rules:
+  - Old: IF ((((4 <= 0.5000) AND (1 > 0.5000)) AND (2 > 0.5000)) AND (0 > 0.5000)) THEN Class 9
+  + New: IF ((((4 <= 0.5000) AND (6 > 0.5000)) AND (2 > 0.5000)) AND (1 > 0.5000)) THEN Class 9
+    (Similarity: 0.97)
+
+======================================================================
+Overall Performance Summary (from History File)
+======================================================================
+Avg Train G-Mean:   1.0000 +/- 0.0000 (over 23 chunks)
+Avg Test G-Mean:    1.0000 +/- 0.0000 (over 23 chunks)
+Avg Test F1:        1.0000 +/- 0.0000 (over 23 chunks)
+======================================================================

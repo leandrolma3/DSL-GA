@@ -1,0 +1,39 @@
+Command: java -Xmx4g -javaagent:rose_jars/sizeofag-1.0.4.jar -cp rose_jars/ROSE-1.0.jar:rose_jars/MOA-dependencies.jar moa.DoTask EvaluateInterleavedTestThenTrain -e (WindowAUCMultiClassImbalancedPerformanceEvaluator) -s (ArffFileStream -f /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_balanced_phase1/batch_4/WAVEFORM_Gradual_Simple/run_1/rose_arff/WAVEFORM_Gradual_Simple.arff) -l (moa.classifiers.meta.imbalanced.ROSE) -f 500 -d /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_balanced_phase1/batch_4/WAVEFORM_Gradual_Simple/run_1/rose_original_output/rose_original_results.csv
+
+STDOUT:
+learning evaluation instances,evaluation time (cpu seconds),model cost (RAM-Hours),classified instances,PMAUC,WMAUC,EWMAUC,Accuracy,Kappa,G-Mean,Classes,CM[0][0],CM[0][1],CM[0][2],CM[1][0],CM[1][1],CM[1][2],CM[2][0],CM[2][1],CM[2][2],model training instances,model serialized size (bytes)
+500.0,1.001535522,6.086812089246759E-7,500.0,0.9280964777207227,1.0,1.0,0.778,0.6650856294579819,0.7558131598217915,3.0,89.0,4.0,12.0,39.0,160.0,18.0,29.0,9.0,140.0,500.0,2372400.0
+1000.0,1.827758351,1.0398328070986311E-6,1000.0,0.9518884721093844,1.0,1.0,0.796,0.6946875636067577,0.7700651980245009,3.0,88.0,0.0,2.0,41.0,158.0,10.0,41.0,8.0,152.0,1000.0,2017136.0
+1500.0,2.198004259,1.2634789383068556E-6,1500.0,0.9264505232562598,1.0,1.0,0.808,0.7097505668934241,0.778488958859101,3.0,86.0,10.0,5.0,35.0,162.0,8.0,33.0,5.0,156.0,1500.0,2336008.0
+2000.0,2.544038317,1.4895215108456834E-6,2000.0,0.9575331620805758,0.8999999999999999,0.8888888888888888,0.836,0.7539517745478114,0.8371588656867547,3.0,149.0,13.0,23.0,14.0,133.0,17.0,11.0,4.0,136.0,2000.0,2525072.0
+2500.0,2.871397648,1.7129205702482908E-6,2500.0,0.9485966426733995,0.9205000000000001,0.9166666666666665,0.816,0.7241197320362962,0.815803357925082,3.0,129.0,6.0,16.0,24.0,137.0,13.0,17.0,16.0,142.0,2500.0,2637904.0
+3000.0,3.146980248,1.9013718818593438E-6,3000.0,0.9611260017356961,0.95225,0.9583333333333333,0.834,0.7488714342769311,0.8250508933022973,3.0,109.0,7.0,8.0,30.0,169.0,7.0,16.0,15.0,139.0,3000.0,2643320.0
+3500.0,3.429713931,2.0974763750989713E-6,3500.0,0.9545052328976329,0.9698333333333333,0.9722222222222221,0.85,0.7743532965479063,0.8442208927265537,3.0,121.0,6.0,8.0,19.0,167.0,10.0,24.0,8.0,137.0,3500.0,2681096.0
+4000.0,3.715461613,2.2984207314627597E-6,4000.0,0.9528677904822532,0.9764999999999999,0.9791666666666665,0.818,0.7252249531976568,0.8120101277631161,3.0,114.0,14.0,12.0,20.0,164.0,15.0,20.0,10.0,131.0,4000.0,2718288.0
+4500.0,4.06050122,2.541060536144113E-6,4500.0,0.9648698706608312,0.982,0.9833333333333332,0.848,0.7711381061076014,0.8456495853998541,3.0,140.0,9.0,14.0,14.0,164.0,9.0,23.0,7.0,120.0,4500.0,2718288.0
+5000.0,4.359336393,2.7552933186889773E-6,5000.0,0.965692442465815,0.9861666666666666,0.9861111111111109,0.856,0.7839758052901925,0.8558105566652605,3.0,141.0,10.0,13.0,18.0,149.0,11.0,13.0,7.0,138.0,5000.0,2771128.0
+5500.0,4.659448914,2.976916321303834E-6,5500.0,0.9606269063604392,0.9637333333333333,0.9638888888888888,0.834,0.7509362396773573,0.8321352164894982,3.0,126.0,13.0,12.0,14.0,146.0,11.0,25.0,8.0,145.0,5500.0,2854520.0
+6000.0,4.984667066,3.227342683480835E-6,6000.0,0.9500698098751991,0.9684296296296298,0.9686067019400352,0.814,0.7209235330480551,0.8103769279314865,3.0,118.0,12.0,19.0,26.0,146.0,5.0,21.0,10.0,143.0,6000.0,2976512.0
+
+
+STDERR:
+
+{M}assive {O}nline {A}nalysis
+Version:  21.07 July 2021
+Copyright: (C) 2007-2021 University of Waikato, Hamilton, New Zealand
+Web: http://moa.cms.waikato.ac.nz/
+
+- 0.00s [running] Preparing option stream...                                   
+\ 0.99s [running] 7.86% Evaluating learner...                                  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by sizeof.agent.SizeOfAgent (file:/content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/rose_jars/MOA-dependencies.jar) to field java.util.HashMap.table
+WARNING: Please consider reporting this to the maintainers of sizeof.agent.SizeOfAgent
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+| 1.98s [running] 18.43% Evaluating learner...                                 
+/ 2.98s [running] 41.72% Evaluating learner...                                 
+- 3.97s [running] 71.99% Evaluating learner...                                 
+\ 4.97s [running] 99.03% Evaluating learner...                                 
+                                                                               
+Task completed in 5.09s (CPU time)
+

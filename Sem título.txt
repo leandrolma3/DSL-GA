@@ -1,0 +1,161 @@
+Próximas tarefas DSL-AG
+----------------------------------
+Resolver o problema de plot de desempenho de treino e teste no drift simulation, pois a curva do modelo deve ir melhorando a partir do momento que mais dados chegam
+
+Buscar aprimorar os operadores genéticos para melhorar a acurácia das regras nos modos drift simulation e standard
+
+Verificar por que a acurácia caiu tanto no Agrawal
+
+Severidade de mudanças das regras - cálculo de similaridade - aqui pode ser o ponto forte de originalidade
+	- Verificar o uso da métrica atual e possíveis problemas - regras com os mesmos condicionais em posições distintas podem ser diferentes para a métrica, mas não são diferentes na verdade
+	- Usar as matrizes (evolução das regras, operadores e outra) para calcular uma severidade original de mudanças
+
+Buscar a relação e forma de geração de dados sintéticos a partir de trabalhos da literatura, talvez 20 ou mais bases
+
+Simular experimentos de drifts severos das mais variadas formas (>80%), talvez 40 simulações ao todo
+
+Tanto para os modos drift simulation e standard
+- Realizar experimentos focados em acurácia - relaxar penalizações para mudanças e regras grandes
+- Realizar experimentos focados em redução de mudanças - aumentar penalizações para mudanças e regras grandes
+
+Analisar qual o impacto com esses experimentos na evolução das regras, recuperação do drift e comportamento em geral do algoritmo genético
+- Quando tentamos buscar mais acurácia temos mais mudanças?
+- Quando tentamos mais redução de mudanças perdemos em acurácia?
+- Recuperamos mais rápido do drift quando focamos em acurácia e mais lento quando focamos em redução de mudanças?
+
+Realizar experimentos com base de dados reais presentes em artigos da literatura
+Buscar abordagens super recentes para comparação de resultados
+Usar o desempenho do algoritmo na versão foco em acurácia nas comparações com métodos da literatura
+
+
+================================================================================
+Overall Performance Summary Table
+================================================================================
+Stream Name Dataset Type  Avg Train Acc  Std Train Acc  Avg Test Acc  Std Test Acc  Avg Test F1  Std Test F1  Total Feats  Avg Used Feats
+        RBF          RBF         0.8635          0.006        0.8565         0.008       0.8563       0.0082           10            10.0
+        RBF          RBF         0.8728         0.0048        0.8665        0.0005       0.8665       0.0005           10            10.0
+================================================================================
+  # --- Seus streams existentes ---
+  Agr_f1f3f4f7f10_Abrupt: # Agr1 from paper [config.yaml]
+    dataset_type: AGRAWAL # [config.yaml]
+    concept_sequence: # [config.yaml]
+      - {concept_id: 'f1', duration_chunks: 2} # [config.yaml]
+      - {concept_id: 'f3', duration_chunks: 2} # [config.yaml]
+      - {concept_id: 'f4', duration_chunks: 2} # [config.yaml]
+      - {concept_id: 'f7', duration_chunks: 2} # [config.yaml]
+      - {concept_id: 'f10', duration_chunks: 2} # [config.yaml]
+      - {concept_id: 'f1', duration_chunks: 2} # Added recurrence [config.yaml]
+    drift_type: abrupt # [config.yaml]
+
+  STAGGER_f1f2f3f2_Abrupt: # STA1 from paper [config.yaml]
+    dataset_type: STAGGER # [config.yaml]
+    concept_sequence: # [config.yaml]
+      - {concept_id: 'f1', duration_chunks: 2} # [config.yaml]
+      - {concept_id: 'f2', duration_chunks: 2} # [config.yaml]
+      - {concept_id: 'f3', duration_chunks: 2} # [config.yaml]
+      - {concept_id: 'f2', duration_chunks: 2} # Recurrent [config.yaml]
+      - {concept_id: 'f1', duration_chunks: 2} # Added another drift [config.yaml]
+    drift_type: abrupt # [config.yaml]
+
+  SEA_Abrupt_Mild_Recurrent: # [config.yaml]
+    dataset_type: SEA # [config.yaml]
+    concept_sequence: # [config.yaml]
+      - {concept_id: 'f1', duration_chunks: 2} # [config.yaml]
+      - {concept_id: 'f3', duration_chunks: 4} # [config.yaml]
+      - {concept_id: 'f2', duration_chunks: 2} # [config.yaml]
+      - {concept_id: 'f1', duration_chunks: 4} # [config.yaml]
+    drift_type: abrupt # [config.yaml]
+
+  RBF_Severe_Gradual_Recurrent: # [config.yaml]
+    dataset_type: RBF # [config.yaml]
+    concept_sequence: # [config.yaml]
+      - {concept_id: 'c1', duration_chunks: 2} # [config.yaml]
+      - {concept_id: 'c2_swap', duration_chunks: 2} # Drift Severo [config.yaml]
+      - {concept_id: 'c3_move', duration_chunks: 2} # Drift Moderado [config.yaml]
+      - {concept_id: 'c1', duration_chunks: 1}      # Drift Recorrente (c3->c1) [config.yaml]
+      - {concept_id: 'c5_move_swap', duration_chunks: 2} # Drift Severo [config.yaml]
+    drift_type: gradual # [config.yaml]
+    gradual_drift_width_chunks: 2 # [config.yaml]
+
+  Sine_f1f3f4f3_Gradual: # [config.yaml]
+    dataset_type: SINE # [config.yaml]
+    concept_sequence: # [config.yaml]
+      - {concept_id: 'f1', duration_chunks: 2} # [config.yaml]
+      - {concept_id: 'f3', duration_chunks: 2} # [config.yaml]
+      - {concept_id: 'f4', duration_chunks: 2} # [config.yaml]
+      - {concept_id: 'f3', duration_chunks: 2}  # Recurrent [config.yaml]
+    drift_type: gradual # [config.yaml]
+    gradual_drift_width_chunks: 2 # [config.yaml]
+
+  # --- AGRAWAL Novos Streams ---
+  AGRAWAL_f1f6f9_Abrupt:
+    dataset_type: AGRAWAL
+    concept_sequence:
+      - {concept_id: 'f1', duration_chunks: 3} # Conceitos de drift_analysis.datasets.AGRAWAL.concepts [config.yaml]
+      - {concept_id: 'f6', duration_chunks: 3} # [config.yaml]
+      - {concept_id: 'f9', duration_chunks: 3} # [config.yaml]
+    drift_type: abrupt
+
+  AGRAWAL_f1f6f9_Gradual:
+    dataset_type: AGRAWAL
+    concept_sequence:
+      - {concept_id: 'f1', duration_chunks: 3} # [config.yaml]
+      - {concept_id: 'f6', duration_chunks: 3} # [config.yaml]
+      - {concept_id: 'f9', duration_chunks: 3} # [config.yaml]
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+
+  STAGGER_f1f2f3_Abrupt:
+    dataset_type: STAGGER
+    concept_sequence:
+      - {concept_id: 'f1', duration_chunks: 3} # Conceitos de drift_analysis.datasets.STAGGER.concepts [config.yaml]
+      - {concept_id: 'f2', duration_chunks: 3} # [config.yaml]
+      - {concept_id: 'f3', duration_chunks: 3} # [config.yaml]
+    drift_type: abrupt
+
+  # --- STAGGER Novos Streams ---
+  STAGGER_f1f2f3_Gradual:
+    dataset_type: STAGGER
+    concept_sequence:
+      - {concept_id: 'f1', duration_chunks: 3} # [config.yaml]
+      - {concept_id: 'f2', duration_chunks: 3} # [config.yaml]
+      - {concept_id: 'f3', duration_chunks: 3} # [config.yaml]
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+
+  # --- SEA Novos Streams ---
+  SEA_f1f4f2_Abrupt: # Usando f1, f4 (threshold 9.5), f2 (threshold 9.0)
+    dataset_type: SEA
+    concept_sequence:
+      - {concept_id: 'f1', duration_chunks: 3} # Conceitos de drift_analysis.datasets.SEA.concepts [config.yaml]
+      - {concept_id: 'f4', duration_chunks: 3} # [config.yaml]
+      - {concept_id: 'f2', duration_chunks: 3} # [config.yaml]
+    drift_type: abrupt
+
+  SEA_f1f4f2_Gradual:
+    dataset_type: SEA
+    concept_sequence:
+      - {concept_id: 'f1', duration_chunks: 3} # [config.yaml]
+      - {concept_id: 'f4', duration_chunks: 3} # [config.yaml]
+      - {concept_id: 'f2', duration_chunks: 3} # [config.yaml]
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+
+  # --- SINE Novos Streams ---
+  SINE_f1f4f2_Abrupt: # f1 (sum, th 1.0), f4 (prod, th 0.3), f2 (sum, th 1.5)
+    dataset_type: SINE
+    concept_sequence:
+      - {concept_id: 'f1', duration_chunks: 3} # Conceitos de drift_analysis.datasets.SINE.concepts [config.yaml]
+      - {concept_id: 'f4', duration_chunks: 3} # [config.yaml]
+      - {concept_id: 'f2', duration_chunks: 3} # [config.yaml]
+    drift_type: abrupt
+
+  SINE_f1f4f2_Gradual:
+    dataset_type: SINE
+    concept_sequence:
+      - {concept_id: 'f1', duration_chunks: 3} # [config.yaml]
+      - {concept_id: 'f4', duration_chunks: 3} # [config.yaml]
+      - {concept_id: 'f2', duration_chunks: 3} # [config.yaml]
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+

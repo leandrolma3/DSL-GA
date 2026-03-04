@@ -7,10 +7,10 @@ Produces two composite 2x2 figures:
   - fig_case_stagger_abrupt.pdf (STAGGER_Abrupt_Chain, EXP-500-NP)
 
 Each figure contains:
-  (a) Rule Evolution Counts       (top-left)
-  (b) Rule Complexity Over Time   (top-right)
-  (c) Transition Metrics Over Time (bottom-left)
-  (d) Rule Turnover Proportions   (bottom-right)
+  (a) Accuracy & Detected Drifts  (top-left)
+  (b) Rule Evolution Counts       (top-right)
+  (c) Rule Complexity Over Time   (bottom-left)
+  (d) Transition Metrics Over Time (bottom-right)
 
 Usage:
     python generate_paper_case_studies.py
@@ -39,9 +39,17 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "paper_data")
 FIG_DIR = os.path.join(BASE_DIR, "paper", "figures")
 
+PER_DATASET_DIR = os.path.join(DATA_DIR, "per_dataset_analysis")
 AST_CSV = os.path.join(DATA_DIR, "ast_chunk_quantitatives.csv")
 EVOL_CSV = os.path.join(DATA_DIR, "evolution_analysis_summary.csv")
 TRANS_CSV = os.path.join(DATA_DIR, "egis_transition_metrics.csv")
+
+# Config-to-directory mapping (for per-dataset analysis PNG lookup)
+CONFIG_DIR_MAP = {
+    "EXP-500-NP": "chunk_500",
+    "EXP-1000-NP": "chunk_1000",
+    "EXP-2000-NP": "chunk_2000",
+}
 
 # ---------------------------------------------------------------------------
 # Style configuration (IEEE-compatible)
@@ -232,7 +240,49 @@ def add_drift_annotation_transitions(ax, drift_cfg, transition_labels):
 
 
 # ---------------------------------------------------------------------------
-# Subplot (a): Rule Evolution Counts
+# Subplot (a): Accuracy & Detected Drifts (embedded PNG)
+# ---------------------------------------------------------------------------
+def plot_accuracy_png(ax, dataset_name, config_label=CONFIG_LABEL):
+    """
+    Embed the pre-generated Accuracy & Detected Drifts PNG into the given axis.
+
+    Looks for the PNG at:
+        {PER_DATASET_DIR}/{CONFIG_DIR_MAP[config_label]}/{dataset_name}/plots/
+        Plot_AccuracyPeriodic_DetectedDrifts_{dataset_name}_Run1.png
+    """
+    config_dir = CONFIG_DIR_MAP.get(config_label)
+    if config_dir is None:
+        ax.text(
+            0.5, 0.5, f"Unknown config: {config_label}",
+            ha="center", va="center", transform=ax.transAxes, fontsize=9,
+        )
+        ax.set_xticks([])
+        ax.set_yticks([])
+        ax.set_title("(a) Accuracy & Detected Drifts", fontweight="bold")
+        return
+
+    png_filename = f"Plot_AccuracyPeriodic_DetectedDrifts_{dataset_name}_Run1.png"
+    png_path = os.path.join(
+        PER_DATASET_DIR, config_dir, dataset_name, "plots", png_filename
+    )
+
+    if os.path.isfile(png_path):
+        img = plt.imread(png_path)
+        ax.imshow(img, aspect="auto")
+    else:
+        ax.text(
+            0.5, 0.5, "No accuracy plot available",
+            ha="center", va="center", transform=ax.transAxes, fontsize=9,
+            color="gray",
+        )
+
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.set_title("(a) Accuracy & Detected Drifts", fontweight="bold")
+
+
+# ---------------------------------------------------------------------------
+# Subplot (b): Rule Evolution Counts
 # ---------------------------------------------------------------------------
 def plot_rule_evolution_counts(ax, evol_df, drift_cfg):
     """
@@ -242,7 +292,7 @@ def plot_rule_evolution_counts(ax, evol_df, drift_cfg):
     if evol_df is None:
         ax.text(0.5, 0.5, "No data available", ha="center", va="center",
                 transform=ax.transAxes, fontsize=9, color="gray")
-        ax.set_title("(a) Rule Evolution Counts", fontweight="bold")
+        ax.set_title("(b) Rule Evolution Counts", fontweight="bold")
         return
 
     evol_df = evol_df.sort_values("chunk_from").reset_index(drop=True)
@@ -274,7 +324,7 @@ def plot_rule_evolution_counts(ax, evol_df, drift_cfg):
 
     ax.set_xlabel("Chunk Transition")
     ax.set_ylabel("Rule Count")
-    ax.set_title("(a) Rule Evolution Counts", fontweight="bold")
+    ax.set_title("(b) Rule Evolution Counts", fontweight="bold")
     ax.set_xticks(x)
     ax.set_xticklabels(transitions, rotation=45, ha="right", fontsize=6)
     ax.legend(loc="upper right", ncol=2, fontsize=7)
@@ -282,7 +332,7 @@ def plot_rule_evolution_counts(ax, evol_df, drift_cfg):
 
 
 # ---------------------------------------------------------------------------
-# Subplot (b): Rule Complexity Over Time
+# Subplot (c): Rule Complexity Over Time
 # ---------------------------------------------------------------------------
 def plot_rule_complexity(ax, ast_df, drift_cfg):
     """
@@ -292,7 +342,7 @@ def plot_rule_complexity(ax, ast_df, drift_cfg):
     if ast_df is None:
         ax.text(0.5, 0.5, "No data available", ha="center", va="center",
                 transform=ax.transAxes, fontsize=9, color="gray")
-        ax.set_title("(b) Rule Complexity Over Time", fontweight="bold")
+        ax.set_title("(c) Rule Complexity Over Time", fontweight="bold")
         return
 
     ast_df = ast_df.sort_values("chunk").reset_index(drop=True)
@@ -328,11 +378,11 @@ def plot_rule_complexity(ax, ast_df, drift_cfg):
     labs = [l.get_label() for l in lns]
     ax.legend(lns, labs, loc="upper left", fontsize=7)
 
-    ax.set_title("(b) Rule Complexity Over Time", fontweight="bold")
+    ax.set_title("(c) Rule Complexity Over Time", fontweight="bold")
 
 
 # ---------------------------------------------------------------------------
-# Subplot (c): Transition Metrics Over Time
+# Subplot (d): Transition Metrics Over Time
 # ---------------------------------------------------------------------------
 def plot_transition_metrics(ax, trans_df, drift_cfg):
     """
@@ -341,7 +391,7 @@ def plot_transition_metrics(ax, trans_df, drift_cfg):
     if trans_df is None:
         ax.text(0.5, 0.5, "No data available", ha="center", va="center",
                 transform=ax.transAxes, fontsize=9, color="gray")
-        ax.set_title("(c) Transition Metrics Over Time", fontweight="bold")
+        ax.set_title("(d) Transition Metrics Over Time", fontweight="bold")
         return
 
     trans_df = trans_df.sort_values("chunk_from").reset_index(drop=True)
@@ -372,72 +422,12 @@ def plot_transition_metrics(ax, trans_df, drift_cfg):
 
     ax.set_xlabel("Chunk Transition")
     ax.set_ylabel("Metric Value")
-    ax.set_title("(c) Transition Metrics Over Time", fontweight="bold")
+    ax.set_title("(d) Transition Metrics Over Time", fontweight="bold")
     ax.set_xticks(x)
     ax.set_xticklabels(transitions, rotation=45, ha="right", fontsize=6)
     ax.set_ylim(-0.05, 1.05)
     ax.legend(loc="upper right", fontsize=7)
     ax.set_xlim(-0.5, len(transitions) - 0.5)
-
-
-# ---------------------------------------------------------------------------
-# Subplot (d): Rule Turnover Proportions (normalized stacked bar)
-# ---------------------------------------------------------------------------
-def plot_turnover_proportions(ax, evol_df, drift_cfg):
-    """
-    Stacked bar chart of unchanged, modified, new, deleted as fractions
-    of total rules per transition.
-    """
-    if evol_df is None:
-        ax.text(0.5, 0.5, "No data available", ha="center", va="center",
-                transform=ax.transAxes, fontsize=9, color="gray")
-        ax.set_title("(d) Rule Turnover Proportions", fontweight="bold")
-        return
-
-    evol_df = evol_df.sort_values("chunk_from").reset_index(drop=True)
-    transitions = [
-        f"{int(r.chunk_from)}->{int(r.chunk_to)}"
-        for _, r in evol_df.iterrows()
-    ]
-    x = np.arange(len(transitions))
-
-    unchanged = evol_df["unchanged"].values.astype(float)
-    modified = evol_df["modified"].values.astype(float)
-    new_rules = evol_df["new"].values.astype(float)
-    deleted = evol_df["deleted"].values.astype(float)
-
-    # Total per transition (sum of all categories)
-    totals = unchanged + modified + new_rules + deleted
-    # Avoid division by zero
-    totals = np.where(totals == 0, 1.0, totals)
-
-    frac_unchanged = unchanged / totals
-    frac_modified = modified / totals
-    frac_new = new_rules / totals
-    frac_deleted = deleted / totals
-
-    bar_width = 0.7
-    ax.bar(x, frac_unchanged, bar_width,
-           color=COLOR_UNCHANGED, label="Unchanged")
-    ax.bar(x, frac_modified, bar_width, bottom=frac_unchanged,
-           color=COLOR_MODIFIED, label="Modified")
-    ax.bar(x, frac_new, bar_width, bottom=frac_unchanged + frac_modified,
-           color=COLOR_NEW, label="New")
-    ax.bar(x, frac_deleted, bar_width,
-           bottom=frac_unchanged + frac_modified + frac_new,
-           color=COLOR_DELETED, label="Deleted")
-
-    # Drift markers
-    add_drift_annotation_transitions(ax, drift_cfg, transitions)
-
-    ax.set_xlabel("Chunk Transition")
-    ax.set_ylabel("Proportion")
-    ax.set_title("(d) Rule Turnover Proportions", fontweight="bold")
-    ax.set_xticks(x)
-    ax.set_xticklabels(transitions, rotation=45, ha="right", fontsize=6)
-    ax.set_ylim(0, 1.05)
-    ax.legend(loc="upper right", ncol=2, fontsize=7)
-    ax.set_xlim(-0.5 - bar_width / 2, len(transitions) - 0.5 + bar_width / 2)
 
 
 # ---------------------------------------------------------------------------
@@ -459,17 +449,17 @@ def generate_case_study_figure(dataset_name, dataset_cfg, df_ast, df_evol,
     fig, axes = plt.subplots(2, 2, figsize=(10, 7))
     fig.suptitle(dataset_cfg["title"], fontsize=11, fontweight="bold", y=0.98)
 
-    # (a) Rule Evolution Counts - top left
-    plot_rule_evolution_counts(axes[0, 0], evol_data, drift_cfg)
+    # (a) Accuracy & Detected Drifts - top left (embedded PNG)
+    plot_accuracy_png(axes[0, 0], dataset_name)
 
-    # (b) Rule Complexity Over Time - top right
-    plot_rule_complexity(axes[0, 1], ast_data, drift_cfg)
+    # (b) Rule Evolution Counts - top right
+    plot_rule_evolution_counts(axes[0, 1], evol_data, drift_cfg)
 
-    # (c) Transition Metrics Over Time - bottom left
-    plot_transition_metrics(axes[1, 0], trans_data, drift_cfg)
+    # (c) Rule Complexity Over Time - bottom left
+    plot_rule_complexity(axes[1, 0], ast_data, drift_cfg)
 
-    # (d) Rule Turnover Proportions - bottom right
-    plot_turnover_proportions(axes[1, 1], evol_data, drift_cfg)
+    # (d) Transition Metrics Over Time - bottom right
+    plot_transition_metrics(axes[1, 1], trans_data, drift_cfg)
 
     fig.tight_layout(rect=[0, 0, 1, 0.96])
 

@@ -1,0 +1,92 @@
+===============================================================================
+  TESTE DRIFT DETECTION - Comandos SSH
+===============================================================================
+
+Host: frozen-about-ball-indicating.trycloudflare.com
+Senha: root
+
+===============================================================================
+PASSO 1: Upload dos arquivos modificados (NO POWERSHELL LOCAL)
+===============================================================================
+
+Execute no PowerShell (no diretório do projeto):
+
+scp main.py ga.py frozen-about-ball-indicating.trycloudflare.com:/content/DSL-AG-hybrid/
+
+Digite a senha: root
+
+
+===============================================================================
+PASSO 2: Conectar via SSH e executar teste curto
+===============================================================================
+
+ssh frozen-about-ball-indicating.trycloudflare.com
+
+Digite a senha: root
+
+Dentro do SSH, execute:
+
+cd /content/DSL-AG-hybrid
+python3 compare_gbml_vs_river.py --stream RBF_Abrupt_Severe --chunks 3
+
+
+===============================================================================
+PASSO 3: Verificar logs do drift detection (DURANTE ou APÓS execução)
+===============================================================================
+
+Dentro do SSH, execute:
+
+tail -f /content/drive/MyDrive/DSL-AG-hybrid/experiments/ssh_session_*/logs/*.log | grep -E "DRIFT|Inheritance|Recipe"
+
+Pressione Ctrl+C para parar o tail -f
+
+
+===============================================================================
+PASSO 4: Ver resultados finais após execução
+===============================================================================
+
+tail -100 /content/drive/MyDrive/DSL-AG-hybrid/experiments/ssh_session_*/logs/*.log | grep -A 5 "Chunk"
+
+
+===============================================================================
+O QUE ESPERAR NO LOG:
+===============================================================================
+
+1. CHUNK 0→1 (MILD ou STABLE):
+   ✓ STABLE: 0.XXXX → 0.XXXX (drop: X.X%)
+   → Inheritance INCREASED to 65% (stable performance)
+
+2. CHUNK 1→2 (pode variar):
+   Depende da performance, pode mostrar MILD, STABLE ou MODERATE
+
+3. CHUNK 2→3 (ESPERADO: SEVERE DRIFT):
+   🔴 SEVERE DRIFT detected: 0.XXXX → 0.XXXX (drop: XX.X%)
+   → Memory cleared due to SEVERE drift
+   → Inheritance DISABLED due to SEVERE drift (was 50%)
+   🔴 Recipe adjusted for SEVERE drift: {'seeded': 0.6, 'mutants': 0.1, ...}
+
+===============================================================================
+VALIDAÇÃO DE SUCESSO:
+===============================================================================
+
+✅ Logs mostram classificação de drift (🔴🟡🟢✓)
+✅ Herança ajustada dinamicamente (0%, 25%, 50%, 65%)
+✅ Recipes ajustadas conforme severidade
+✅ Sistema detecta chunk 2→3 como SEVERE (queda >20%)
+
+===============================================================================
+COMANDOS RÁPIDOS (RESUMO):
+===============================================================================
+
+# 1. Upload (PowerShell local):
+scp main.py ga.py frozen-about-ball-indicating.trycloudflare.com:/content/DSL-AG-hybrid/
+
+# 2. SSH + Teste:
+ssh frozen-about-ball-indicating.trycloudflare.com
+cd /content/DSL-AG-hybrid
+python3 compare_gbml_vs_river.py --stream RBF_Abrupt_Severe --chunks 3
+
+# 3. Ver logs em tempo real:
+tail -f /content/drive/MyDrive/DSL-AG-hybrid/experiments/ssh_session_*/logs/*.log | grep -E "DRIFT|Inheritance|Recipe"
+
+===============================================================================

@@ -1,0 +1,2292 @@
+{
+  "overall": {
+    "timestamp": "2026-03-02T14:43:46.024516",
+    "analysis_type": "overall",
+    "configurations": [
+      {
+        "config_label": "EXP-500-NP",
+        "n_datasets": 48,
+        "n_models": 8,
+        "models": [
+          "EGIS",
+          "ARF",
+          "SRP",
+          "HAT",
+          "ROSE",
+          "ACDWM",
+          "ERulesD2S",
+          "CDCMS"
+        ],
+        "friedman_test": {
+          "statistic": 140.2872419796071,
+          "p_value": 4.425249598278551e-27,
+          "n_datasets": 48,
+          "n_models": 8,
+          "df": 7,
+          "average_ranks": {
+            "EGIS": 4.28125,
+            "ARF": 2.8125,
+            "SRP": 3.4583333333333335,
+            "HAT": 5.416666666666667,
+            "ROSE": 2.4375,
+            "ACDWM": 5.3125,
+            "ERulesD2S": 7.229166666666667,
+            "CDCMS": 5.052083333333333
+          },
+          "significant": "True"
+        },
+        "critical_distance": 1.5155,
+        "pairwise_tests": [
+          {
+            "comparison": "EGIS vs ARF",
+            "model_1": "EGIS",
+            "model_2": "ARF",
+            "raw_p_value": 0.13386907505850587,
+            "adjusted_p_value": 0.9370835254095411,
+            "significant_raw": false,
+            "significant_bonferroni": false,
+            "mean_difference": -0.0063317597191066555,
+            "cliffs_delta": -0.08333333333333333,
+            "effect_interpretation": "negligible",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs SRP",
+            "model_1": "EGIS",
+            "model_2": "SRP",
+            "raw_p_value": 0.1449705730140849,
+            "adjusted_p_value": 1.0,
+            "significant_raw": false,
+            "significant_bonferroni": false,
+            "mean_difference": 0.009642579232254776,
+            "cliffs_delta": -0.03993055555555555,
+            "effect_interpretation": "negligible",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs HAT",
+            "model_1": "EGIS",
+            "model_2": "HAT",
+            "raw_p_value": 0.03331581208401957,
+            "adjusted_p_value": 0.23321068458813698,
+            "significant_raw": true,
+            "significant_bonferroni": false,
+            "mean_difference": 0.08933696585789341,
+            "cliffs_delta": 0.23177083333333334,
+            "effect_interpretation": "small",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ROSE",
+            "model_1": "EGIS",
+            "model_2": "ROSE",
+            "raw_p_value": 0.001190737642229881,
+            "adjusted_p_value": 0.008335163495609166,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 0.000982853347554181,
+            "cliffs_delta": -0.08854166666666667,
+            "effect_interpretation": "negligible",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ACDWM",
+            "model_1": "EGIS",
+            "model_2": "ACDWM",
+            "raw_p_value": 0.116586967697323,
+            "adjusted_p_value": 0.816108773881261,
+            "significant_raw": false,
+            "significant_bonferroni": false,
+            "mean_difference": 0.12127382948382869,
+            "cliffs_delta": 0.234375,
+            "effect_interpretation": "small",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ERulesD2S",
+            "model_1": "EGIS",
+            "model_2": "ERulesD2S",
+            "raw_p_value": 7.105427357601002e-15,
+            "adjusted_p_value": 4.973799150320701e-14,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 0.2944813436482368,
+            "cliffs_delta": 0.8697916666666666,
+            "effect_interpretation": "large",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs CDCMS",
+            "model_1": "EGIS",
+            "model_2": "CDCMS",
+            "raw_p_value": 0.040077120781365515,
+            "adjusted_p_value": 0.2805398454695586,
+            "significant_raw": true,
+            "significant_bonferroni": false,
+            "mean_difference": 0.13344482359466278,
+            "cliffs_delta": 0.1618923611111111,
+            "effect_interpretation": "small",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          }
+        ],
+        "model_summary": {
+          "EGIS": {
+            "mean": 0.8560840921006306,
+            "std": 0.12382338889243583,
+            "median": 0.9065843654616218,
+            "min": 0.5424533214845638,
+            "max": 1.0,
+            "n_datasets": 48
+          },
+          "ARF": {
+            "mean": 0.8624158518197372,
+            "std": 0.1402090486882269,
+            "median": 0.903241575132719,
+            "min": 0.511208107115449,
+            "max": 0.9979796179614112,
+            "n_datasets": 48
+          },
+          "SRP": {
+            "mean": 0.8464415128683759,
+            "std": 0.1647527635940613,
+            "median": 0.9044720866712167,
+            "min": 0.3970494871414278,
+            "max": 0.998338101875527,
+            "n_datasets": 48
+          },
+          "HAT": {
+            "mean": 0.7667471262427373,
+            "std": 0.23104429106674557,
+            "median": 0.8275777953268253,
+            "min": 0.0,
+            "max": 0.9812643370152342,
+            "n_datasets": 47
+          },
+          "ROSE": {
+            "mean": 0.8551012387530766,
+            "std": 0.17020059394595974,
+            "median": 0.9028851876154763,
+            "min": 0.2743474544226543,
+            "max": 0.9994096359709408,
+            "n_datasets": 48
+          },
+          "ACDWM": {
+            "mean": 0.7348102626168019,
+            "std": 0.31857105466041097,
+            "median": 0.8646045399111083,
+            "min": 0.0,
+            "max": 0.9583333333333334,
+            "n_datasets": 41
+          },
+          "ERulesD2S": {
+            "mean": 0.5616027484523939,
+            "std": 0.13710416643706458,
+            "median": 0.5488158845661746,
+            "min": 0.2204386743148062,
+            "max": 0.7968630956543393,
+            "n_datasets": 48
+          },
+          "CDCMS": {
+            "mean": 0.7226392685059678,
+            "std": 0.33266360056256306,
+            "median": 0.8886727973502329,
+            "min": 0.0,
+            "max": 1.0,
+            "n_datasets": 41
+          }
+        },
+        "average_rankings": {
+          "EGIS": 4.28125,
+          "ARF": 2.8125,
+          "SRP": 3.4583333333333335,
+          "HAT": 5.416666666666667,
+          "ROSE": 2.4375,
+          "ACDWM": 5.3125,
+          "ERulesD2S": 7.229166666666667,
+          "CDCMS": 5.052083333333333
+        },
+        "wins_count": {
+          "EGIS": 7,
+          "ARF": 8,
+          "SRP": 9,
+          "HAT": 0,
+          "ROSE": 14,
+          "ACDWM": 4,
+          "ERulesD2S": 0,
+          "CDCMS": 5
+        }
+      },
+      {
+        "config_label": "EXP-1000-NP",
+        "n_datasets": 48,
+        "n_models": 8,
+        "models": [
+          "EGIS",
+          "ARF",
+          "SRP",
+          "HAT",
+          "ROSE",
+          "ACDWM",
+          "ERulesD2S",
+          "CDCMS"
+        ],
+        "friedman_test": {
+          "statistic": 157.8072618751554,
+          "p_value": 9.280184518761646e-31,
+          "n_datasets": 48,
+          "n_models": 8,
+          "df": 7,
+          "average_ranks": {
+            "EGIS": 3.6354166666666665,
+            "ARF": 2.8333333333333335,
+            "SRP": 3.5416666666666665,
+            "HAT": 5.25,
+            "ROSE": 2.4166666666666665,
+            "ACDWM": 6.0,
+            "ERulesD2S": 7.291666666666667,
+            "CDCMS": 5.03125
+          },
+          "significant": "True"
+        },
+        "critical_distance": 1.5155,
+        "pairwise_tests": [
+          {
+            "comparison": "EGIS vs ARF",
+            "model_1": "EGIS",
+            "model_2": "ARF",
+            "raw_p_value": 0.2035866693819557,
+            "adjusted_p_value": 1.0,
+            "significant_raw": false,
+            "significant_bonferroni": false,
+            "mean_difference": -0.006930745036813899,
+            "cliffs_delta": -0.07552083333333333,
+            "effect_interpretation": "negligible",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs SRP",
+            "model_1": "EGIS",
+            "model_2": "SRP",
+            "raw_p_value": 0.947340221793219,
+            "adjusted_p_value": 1.0,
+            "significant_raw": false,
+            "significant_bonferroni": false,
+            "mean_difference": 0.017871817193491544,
+            "cliffs_delta": 0.009548611111111112,
+            "effect_interpretation": "negligible",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs HAT",
+            "model_1": "EGIS",
+            "model_2": "HAT",
+            "raw_p_value": 0.002194714990636726,
+            "adjusted_p_value": 0.01536300493445708,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 0.09586374604801991,
+            "cliffs_delta": 0.2552083333333333,
+            "effect_interpretation": "small",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ROSE",
+            "model_1": "EGIS",
+            "model_2": "ROSE",
+            "raw_p_value": 0.0003071692895275646,
+            "adjusted_p_value": 0.0021501850266929523,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 0.010567410401022846,
+            "cliffs_delta": -0.0685763888888889,
+            "effect_interpretation": "negligible",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ACDWM",
+            "model_1": "EGIS",
+            "model_2": "ACDWM",
+            "raw_p_value": 1.207135078778651e-07,
+            "adjusted_p_value": 8.449945551450557e-07,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 0.16679263730070448,
+            "cliffs_delta": 0.4548611111111111,
+            "effect_interpretation": "medium",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ERulesD2S",
+            "model_1": "EGIS",
+            "model_2": "ERulesD2S",
+            "raw_p_value": 7.105427357601002e-15,
+            "adjusted_p_value": 4.973799150320701e-14,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 0.3098988401388476,
+            "cliffs_delta": 0.9305555555555556,
+            "effect_interpretation": "large",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs CDCMS",
+            "model_1": "EGIS",
+            "model_2": "CDCMS",
+            "raw_p_value": 0.003152914300642763,
+            "adjusted_p_value": 0.02207040010449934,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 0.14700390048968515,
+            "cliffs_delta": 0.2052951388888889,
+            "effect_interpretation": "small",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          }
+        ],
+        "model_summary": {
+          "EGIS": {
+            "mean": 0.8656686491540994,
+            "std": 0.11368116097318495,
+            "median": 0.9055523637535194,
+            "min": 0.5606025120900887,
+            "max": 1.0,
+            "n_datasets": 48
+          },
+          "ARF": {
+            "mean": 0.8725993941909133,
+            "std": 0.1309069295988221,
+            "median": 0.9035743572541148,
+            "min": 0.5131277574652687,
+            "max": 0.9975415838438066,
+            "n_datasets": 48
+          },
+          "SRP": {
+            "mean": 0.8477968319606077,
+            "std": 0.15205434775568868,
+            "median": 0.9046218310481648,
+            "min": 0.46353701730463,
+            "max": 0.998425015383538,
+            "n_datasets": 48
+          },
+          "HAT": {
+            "mean": 0.7698049031060794,
+            "std": 0.2297497929000319,
+            "median": 0.8244944396776464,
+            "min": 0.0,
+            "max": 0.9796009232044502,
+            "n_datasets": 47
+          },
+          "ROSE": {
+            "mean": 0.8551012387530766,
+            "std": 0.17020059394595974,
+            "median": 0.9028851876154763,
+            "min": 0.2743474544226543,
+            "max": 0.9994096359709408,
+            "n_datasets": 48
+          },
+          "ACDWM": {
+            "mean": 0.6988760118533949,
+            "std": 0.30058270722834507,
+            "median": 0.8175979126113814,
+            "min": 0.0,
+            "max": 0.9166666666666666,
+            "n_datasets": 41
+          },
+          "ERulesD2S": {
+            "mean": 0.5557698090152517,
+            "std": 0.13581879044226197,
+            "median": 0.5426470493626745,
+            "min": 0.2057960257335257,
+            "max": 0.780470622895623,
+            "n_datasets": 48
+          },
+          "CDCMS": {
+            "mean": 0.7186647486644141,
+            "std": 0.3312438447099147,
+            "median": 0.8875017873250686,
+            "min": 0.0,
+            "max": 1.0,
+            "n_datasets": 41
+          }
+        },
+        "average_rankings": {
+          "EGIS": 3.6354166666666665,
+          "ARF": 2.8333333333333335,
+          "SRP": 3.5416666666666665,
+          "HAT": 5.25,
+          "ROSE": 2.4166666666666665,
+          "ACDWM": 6.0,
+          "ERulesD2S": 7.291666666666667,
+          "CDCMS": 5.03125
+        },
+        "wins_count": {
+          "EGIS": 7,
+          "ARF": 8,
+          "SRP": 8,
+          "HAT": 0,
+          "ROSE": 14,
+          "ACDWM": 5,
+          "ERulesD2S": 0,
+          "CDCMS": 5
+        }
+      },
+      {
+        "config_label": "EXP-2000-NP",
+        "n_datasets": 48,
+        "n_models": 8,
+        "models": [
+          "EGIS",
+          "ARF",
+          "SRP",
+          "HAT",
+          "ROSE",
+          "ACDWM",
+          "ERulesD2S",
+          "CDCMS"
+        ],
+        "friedman_test": {
+          "statistic": 168.04179104477598,
+          "p_value": 6.494410919181331e-33,
+          "n_datasets": 48,
+          "n_models": 8,
+          "df": 7,
+          "average_ranks": {
+            "EGIS": 3.625,
+            "ARF": 2.875,
+            "SRP": 3.4375,
+            "HAT": 4.979166666666667,
+            "ROSE": 2.4166666666666665,
+            "ACDWM": 6.4375,
+            "ERulesD2S": 7.3125,
+            "CDCMS": 4.916666666666667
+          },
+          "significant": "True"
+        },
+        "critical_distance": 1.5155,
+        "pairwise_tests": [
+          {
+            "comparison": "EGIS vs ARF",
+            "model_1": "EGIS",
+            "model_2": "ARF",
+            "raw_p_value": 0.09375393967392398,
+            "adjusted_p_value": 0.6562775777174679,
+            "significant_raw": false,
+            "significant_bonferroni": false,
+            "mean_difference": -0.014372690911924486,
+            "cliffs_delta": -0.1345486111111111,
+            "effect_interpretation": "negligible",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs SRP",
+            "model_1": "EGIS",
+            "model_2": "SRP",
+            "raw_p_value": 0.6880091780960598,
+            "adjusted_p_value": 1.0,
+            "significant_raw": false,
+            "significant_bonferroni": false,
+            "mean_difference": 0.005241913691441104,
+            "cliffs_delta": -0.05381944444444445,
+            "effect_interpretation": "negligible",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs HAT",
+            "model_1": "EGIS",
+            "model_2": "HAT",
+            "raw_p_value": 0.00696877055073486,
+            "adjusted_p_value": 0.04878139385514402,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 0.08301493596138694,
+            "cliffs_delta": 0.18489583333333334,
+            "effect_interpretation": "small",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ROSE",
+            "model_1": "EGIS",
+            "model_2": "ROSE",
+            "raw_p_value": 0.0007592971304859475,
+            "adjusted_p_value": 0.0053150799134016324,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 2.831205070763047e-05,
+            "cliffs_delta": -0.12239583333333333,
+            "effect_interpretation": "negligible",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ACDWM",
+            "model_1": "EGIS",
+            "model_2": "ACDWM",
+            "raw_p_value": 2.100195095957764e-09,
+            "adjusted_p_value": 1.4701365671704348e-08,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 0.22317049148719534,
+            "cliffs_delta": 0.6553819444444444,
+            "effect_interpretation": "large",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ERulesD2S",
+            "model_1": "EGIS",
+            "model_2": "ERulesD2S",
+            "raw_p_value": 7.105427357601002e-15,
+            "adjusted_p_value": 4.973799150320701e-14,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 0.29960139686859893,
+            "cliffs_delta": 0.9331597222222222,
+            "effect_interpretation": "large",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs CDCMS",
+            "model_1": "EGIS",
+            "model_2": "CDCMS",
+            "raw_p_value": 0.009465251268442623,
+            "adjusted_p_value": 0.06625675887909836,
+            "significant_raw": true,
+            "significant_bonferroni": false,
+            "mean_difference": 0.13890179344072184,
+            "cliffs_delta": 0.15364583333333334,
+            "effect_interpretation": "small",
+            "n_samples": 48,
+            "alpha_corrected": 0.0071428571428571435
+          }
+        ],
+        "model_summary": {
+          "EGIS": {
+            "mean": 0.8551295508037842,
+            "std": 0.10974621881817818,
+            "median": 0.8569382154588613,
+            "min": 0.6224629785477447,
+            "max": 1.0,
+            "n_datasets": 48
+          },
+          "ARF": {
+            "mean": 0.8695022417157086,
+            "std": 0.13326125156179003,
+            "median": 0.8991846365730767,
+            "min": 0.5151171338627557,
+            "max": 0.9980365666253442,
+            "n_datasets": 48
+          },
+          "SRP": {
+            "mean": 0.849887637112343,
+            "std": 0.1504145936690747,
+            "median": 0.9042887277830927,
+            "min": 0.4860834861277373,
+            "max": 0.9984880722455756,
+            "n_datasets": 48
+          },
+          "HAT": {
+            "mean": 0.7721146148423972,
+            "std": 0.22890232316855283,
+            "median": 0.8266421713413652,
+            "min": 0.0,
+            "max": 0.984248302383786,
+            "n_datasets": 47
+          },
+          "ROSE": {
+            "mean": 0.8551012387530766,
+            "std": 0.17020059394595974,
+            "median": 0.9028851876154763,
+            "min": 0.2743474544226543,
+            "max": 0.9994096359709408,
+            "n_datasets": 48
+          },
+          "ACDWM": {
+            "mean": 0.6319590593165888,
+            "std": 0.2713596121094333,
+            "median": 0.7220890532109305,
+            "min": 0.0,
+            "max": 0.8333333333333334,
+            "n_datasets": 41
+          },
+          "ERulesD2S": {
+            "mean": 0.5555281539351852,
+            "std": 0.1335079640639111,
+            "median": 0.5428298611111111,
+            "min": 0.2147749999999999,
+            "max": 0.7674111111111112,
+            "n_datasets": 48
+          },
+          "CDCMS": {
+            "mean": 0.7162277573630623,
+            "std": 0.33088401648672294,
+            "median": 0.8769655847031848,
+            "min": 0.0,
+            "max": 1.0,
+            "n_datasets": 41
+          }
+        },
+        "average_rankings": {
+          "EGIS": 3.625,
+          "ARF": 2.875,
+          "SRP": 3.4375,
+          "HAT": 4.979166666666667,
+          "ROSE": 2.4166666666666665,
+          "ACDWM": 6.4375,
+          "ERulesD2S": 7.3125,
+          "CDCMS": 4.916666666666667
+        },
+        "wins_count": {
+          "EGIS": 7,
+          "ARF": 7,
+          "SRP": 9,
+          "HAT": 0,
+          "ROSE": 15,
+          "ACDWM": 2,
+          "ERulesD2S": 0,
+          "CDCMS": 6
+        }
+      }
+    ],
+    "combined": {}
+  },
+  "binary_only": {
+    "timestamp": "2026-03-02T14:43:46.640354",
+    "analysis_type": "binary_only",
+    "n_binary_datasets": 41,
+    "excluded_multiclass": [
+      "LED_Abrupt_Simple",
+      "LED_Gradual_Simple",
+      "LED_Stationary",
+      "RBF_Stationary",
+      "WAVEFORM_Abrupt_Simple",
+      "WAVEFORM_Gradual_Simple",
+      "WAVEFORM_Stationary"
+    ],
+    "configurations": [
+      {
+        "config_label": "EXP-500-NP",
+        "n_datasets": 41,
+        "n_models": 8,
+        "models": [
+          "EGIS",
+          "ARF",
+          "SRP",
+          "HAT",
+          "ROSE",
+          "ACDWM",
+          "ERulesD2S",
+          "CDCMS"
+        ],
+        "friedman_test": {
+          "statistic": 123.05808887598046,
+          "p_value": 1.766497848756645e-23,
+          "n_datasets": 41,
+          "n_models": 8,
+          "df": 7,
+          "average_ranks": {
+            "EGIS": 4.451219512195122,
+            "ARF": 2.8536585365853657,
+            "SRP": 3.682926829268293,
+            "HAT": 5.487804878048781,
+            "ROSE": 2.4146341463414633,
+            "ACDWM": 4.951219512195122,
+            "ERulesD2S": 7.512195121951219,
+            "CDCMS": 4.646341463414634
+          },
+          "significant": "True"
+        },
+        "critical_distance": 1.6397763976061923,
+        "pairwise_tests": [
+          {
+            "comparison": "EGIS vs ARF",
+            "model_1": "EGIS",
+            "model_2": "ARF",
+            "raw_p_value": 0.07568452621308097,
+            "adjusted_p_value": 0.5297916834915668,
+            "significant_raw": false,
+            "significant_bonferroni": false,
+            "mean_difference": -0.018445327796759278,
+            "cliffs_delta": -0.1719214753123141,
+            "effect_interpretation": "small",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs SRP",
+            "model_1": "EGIS",
+            "model_2": "SRP",
+            "raw_p_value": 0.08247574753477238,
+            "adjusted_p_value": 0.5773302327434067,
+            "significant_raw": false,
+            "significant_bonferroni": false,
+            "mean_difference": -0.010008285704490803,
+            "cliffs_delta": -0.11600237953599048,
+            "effect_interpretation": "negligible",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs HAT",
+            "model_1": "EGIS",
+            "model_2": "HAT",
+            "raw_p_value": 0.02744009119396651,
+            "adjusted_p_value": 0.19208063835776557,
+            "significant_raw": true,
+            "significant_bonferroni": false,
+            "mean_difference": 0.04423914230192849,
+            "cliffs_delta": 0.1802498512790006,
+            "effect_interpretation": "small",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ROSE",
+            "model_1": "EGIS",
+            "model_2": "ROSE",
+            "raw_p_value": 8.392604997741723e-05,
+            "adjusted_p_value": 0.0005874823498419207,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": -0.03317946672224304,
+            "cliffs_delta": -0.18381915526472337,
+            "effect_interpretation": "small",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ACDWM",
+            "model_1": "EGIS",
+            "model_2": "ACDWM",
+            "raw_p_value": 0.9534991321120138,
+            "adjusted_p_value": 1.0,
+            "significant_raw": false,
+            "significant_bonferroni": false,
+            "mean_difference": -0.001149263573582495,
+            "cliffs_delta": 0.13265913146936348,
+            "effect_interpretation": "negligible",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ERulesD2S",
+            "model_1": "EGIS",
+            "model_2": "ERulesD2S",
+            "raw_p_value": 9.094947017729282e-13,
+            "adjusted_p_value": 6.366462912410498e-12,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 0.25408282489874856,
+            "cliffs_delta": 0.8429506246281975,
+            "effect_interpretation": "large",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs CDCMS",
+            "model_1": "EGIS",
+            "model_2": "CDCMS",
+            "raw_p_value": 0.5908132054070738,
+            "adjusted_p_value": 1.0,
+            "significant_raw": false,
+            "significant_bonferroni": false,
+            "mean_difference": 0.013099705141540357,
+            "cliffs_delta": 0.030339083878643664,
+            "effect_interpretation": "negligible",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          }
+        ],
+        "model_summary": {
+          "EGIS": {
+            "mean": 0.859116409733893,
+            "std": 0.12473697096363835,
+            "median": 0.913253640702405,
+            "min": 0.5424533214845638,
+            "max": 1.0,
+            "n_datasets": 41
+          },
+          "ARF": {
+            "mean": 0.8775617375306523,
+            "std": 0.1405278014762567,
+            "median": 0.933510815467793,
+            "min": 0.511208107115449,
+            "max": 0.9979796179614112,
+            "n_datasets": 41
+          },
+          "SRP": {
+            "mean": 0.8691246954383838,
+            "std": 0.14980807912167207,
+            "median": 0.9214964102514968,
+            "min": 0.4765585704126909,
+            "max": 0.998338101875527,
+            "n_datasets": 41
+          },
+          "HAT": {
+            "mean": 0.8148772674319645,
+            "std": 0.15019806576863826,
+            "median": 0.8555613261679021,
+            "min": 0.4321260738934452,
+            "max": 0.9812643370152342,
+            "n_datasets": 41
+          },
+          "ROSE": {
+            "mean": 0.8922958764561362,
+            "std": 0.11094381622781428,
+            "median": 0.9215189332111908,
+            "min": 0.5940696148617285,
+            "max": 0.9994096359709408,
+            "n_datasets": 41
+          },
+          "ACDWM": {
+            "mean": 0.8602656733074756,
+            "std": 0.0928693942462997,
+            "median": 0.8905210493419777,
+            "min": 0.5747656115715795,
+            "max": 0.9583333333333334,
+            "n_datasets": 41
+          },
+          "ERulesD2S": {
+            "mean": 0.6050335848351446,
+            "std": 0.08663735316961532,
+            "median": 0.5616251699100879,
+            "min": 0.518390572102529,
+            "max": 0.7968630956543393,
+            "n_datasets": 41
+          },
+          "CDCMS": {
+            "mean": 0.8460167045923528,
+            "std": 0.15179789982832007,
+            "median": 0.9187532079419206,
+            "min": 0.5157136678816132,
+            "max": 1.0,
+            "n_datasets": 41
+          }
+        },
+        "average_rankings": {
+          "EGIS": 4.451219512195122,
+          "ARF": 2.8536585365853657,
+          "SRP": 3.682926829268293,
+          "HAT": 5.487804878048781,
+          "ROSE": 2.4146341463414633,
+          "ACDWM": 4.951219512195122,
+          "ERulesD2S": 7.512195121951219,
+          "CDCMS": 4.646341463414634
+        },
+        "wins_count": {
+          "EGIS": 4,
+          "ARF": 8,
+          "SRP": 7,
+          "HAT": 0,
+          "ROSE": 12,
+          "ACDWM": 4,
+          "ERulesD2S": 0,
+          "CDCMS": 5
+        },
+        "egis_wld": {
+          "ARF": {
+            "wins": 11,
+            "ties": 0,
+            "losses": 30
+          },
+          "SRP": {
+            "wins": 13,
+            "ties": 0,
+            "losses": 28
+          },
+          "HAT": {
+            "wins": 26,
+            "ties": 2,
+            "losses": 13
+          },
+          "ROSE": {
+            "wins": 7,
+            "ties": 2,
+            "losses": 32
+          },
+          "ACDWM": {
+            "wins": 24,
+            "ties": 0,
+            "losses": 17
+          },
+          "ERulesD2S": {
+            "wins": 41,
+            "ties": 0,
+            "losses": 0
+          },
+          "CDCMS": {
+            "wins": 21,
+            "ties": 3,
+            "losses": 17
+          }
+        }
+      },
+      {
+        "config_label": "EXP-1000-NP",
+        "n_datasets": 41,
+        "n_models": 8,
+        "models": [
+          "EGIS",
+          "ARF",
+          "SRP",
+          "HAT",
+          "ROSE",
+          "ACDWM",
+          "ERulesD2S",
+          "CDCMS"
+        ],
+        "friedman_test": {
+          "statistic": 136.16758640720315,
+          "p_value": 3.225670029439461e-26,
+          "n_datasets": 41,
+          "n_models": 8,
+          "df": 7,
+          "average_ranks": {
+            "EGIS": 3.6951219512195124,
+            "ARF": 2.8780487804878048,
+            "SRP": 3.7560975609756095,
+            "HAT": 5.2926829268292686,
+            "ROSE": 2.4146341463414633,
+            "ACDWM": 5.7560975609756095,
+            "ERulesD2S": 7.585365853658536,
+            "CDCMS": 4.621951219512195
+          },
+          "significant": "True"
+        },
+        "critical_distance": 1.6397763976061923,
+        "pairwise_tests": [
+          {
+            "comparison": "EGIS vs ARF",
+            "model_1": "EGIS",
+            "model_2": "ARF",
+            "raw_p_value": 0.16330074085908564,
+            "adjusted_p_value": 1.0,
+            "significant_raw": false,
+            "significant_bonferroni": false,
+            "mean_difference": -0.009401551036923977,
+            "cliffs_delta": -0.13265913146936348,
+            "effect_interpretation": "negligible",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs SRP",
+            "model_1": "EGIS",
+            "model_2": "SRP",
+            "raw_p_value": 0.8777524232682481,
+            "adjusted_p_value": 1.0,
+            "significant_raw": false,
+            "significant_bonferroni": false,
+            "mean_difference": 0.007397216851593596,
+            "cliffs_delta": -0.055324211778703156,
+            "effect_interpretation": "negligible",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs HAT",
+            "model_1": "EGIS",
+            "model_2": "HAT",
+            "raw_p_value": 0.0007453462476405548,
+            "adjusted_p_value": 0.0052174237334838836,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 0.05010409149174024,
+            "cliffs_delta": 0.19690660321237358,
+            "effect_interpretation": "small",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ROSE",
+            "model_1": "EGIS",
+            "model_2": "ROSE",
+            "raw_p_value": 4.900712156086229e-06,
+            "adjusted_p_value": 3.43049850926036e-05,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": -0.02307213844500699,
+            "cliffs_delta": -0.17906008328375966,
+            "effect_interpretation": "small",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ACDWM",
+            "model_1": "EGIS",
+            "model_2": "ACDWM",
+            "raw_p_value": 3.390559761852105e-06,
+            "adjusted_p_value": 2.3733918332964734e-05,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 0.05102743145105704,
+            "cliffs_delta": 0.4015466983938132,
+            "effect_interpretation": "medium",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ERulesD2S",
+            "model_1": "EGIS",
+            "model_2": "ERulesD2S",
+            "raw_p_value": 9.094947017729282e-13,
+            "adjusted_p_value": 6.366462912410498e-12,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 0.2698502740597687,
+            "cliffs_delta": 0.9262343842950624,
+            "effect_interpretation": "large",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs CDCMS",
+            "model_1": "EGIS",
+            "model_2": "CDCMS",
+            "raw_p_value": 0.09292576873190468,
+            "adjusted_p_value": 0.6504803811233327,
+            "significant_raw": false,
+            "significant_bonferroni": false,
+            "mean_difference": 0.027860129818644167,
+            "cliffs_delta": 0.08387864366448543,
+            "effect_interpretation": "negligible",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          }
+        ],
+        "model_summary": {
+          "EGIS": {
+            "mean": 0.8692237380111291,
+            "std": 0.11326969424387529,
+            "median": 0.9090909090909092,
+            "min": 0.5606025120900887,
+            "max": 1.0,
+            "n_datasets": 41
+          },
+          "ARF": {
+            "mean": 0.8786252890480531,
+            "std": 0.13946383707945428,
+            "median": 0.94094495647438,
+            "min": 0.5131277574652687,
+            "max": 0.9975415838438066,
+            "n_datasets": 41
+          },
+          "SRP": {
+            "mean": 0.8618265211595355,
+            "std": 0.15240390371866452,
+            "median": 0.92924625558398,
+            "min": 0.46353701730463,
+            "max": 0.998425015383538,
+            "n_datasets": 41
+          },
+          "HAT": {
+            "mean": 0.8191196465193891,
+            "std": 0.1462366064852613,
+            "median": 0.8549862528177754,
+            "min": 0.4922119322899676,
+            "max": 0.9796009232044502,
+            "n_datasets": 41
+          },
+          "ROSE": {
+            "mean": 0.8922958764561362,
+            "std": 0.1109438162278143,
+            "median": 0.9215189332111908,
+            "min": 0.5940696148617285,
+            "max": 0.9994096359709408,
+            "n_datasets": 41
+          },
+          "ACDWM": {
+            "mean": 0.818196306560072,
+            "std": 0.07805829569762626,
+            "median": 0.8300325187359915,
+            "min": 0.6397731813031771,
+            "max": 0.9166666666666666,
+            "n_datasets": 41
+          },
+          "ERulesD2S": {
+            "mean": 0.5993734639513604,
+            "std": 0.08405488320125216,
+            "median": 0.5724025312650313,
+            "min": 0.507993686868687,
+            "max": 0.780470622895623,
+            "n_datasets": 41
+          },
+          "CDCMS": {
+            "mean": 0.8413636081924848,
+            "std": 0.15201547756860379,
+            "median": 0.9072999856864082,
+            "min": 0.50202234974901,
+            "max": 1.0,
+            "n_datasets": 41
+          }
+        },
+        "average_rankings": {
+          "EGIS": 3.6951219512195124,
+          "ARF": 2.8780487804878048,
+          "SRP": 3.7560975609756095,
+          "HAT": 5.2926829268292686,
+          "ROSE": 2.4146341463414633,
+          "ACDWM": 5.7560975609756095,
+          "ERulesD2S": 7.585365853658536,
+          "CDCMS": 4.621951219512195
+        },
+        "wins_count": {
+          "EGIS": 4,
+          "ARF": 8,
+          "SRP": 7,
+          "HAT": 0,
+          "ROSE": 11,
+          "ACDWM": 5,
+          "ERulesD2S": 0,
+          "CDCMS": 5
+        },
+        "egis_wld": {
+          "ARF": {
+            "wins": 12,
+            "ties": 0,
+            "losses": 29
+          },
+          "SRP": {
+            "wins": 21,
+            "ties": 0,
+            "losses": 20
+          },
+          "HAT": {
+            "wins": 31,
+            "ties": 0,
+            "losses": 10
+          },
+          "ROSE": {
+            "wins": 7,
+            "ties": 1,
+            "losses": 33
+          },
+          "ACDWM": {
+            "wins": 35,
+            "ties": 0,
+            "losses": 6
+          },
+          "ERulesD2S": {
+            "wins": 41,
+            "ties": 0,
+            "losses": 0
+          },
+          "CDCMS": {
+            "wins": 27,
+            "ties": 2,
+            "losses": 12
+          }
+        }
+      },
+      {
+        "config_label": "EXP-2000-NP",
+        "n_datasets": 41,
+        "n_models": 8,
+        "models": [
+          "EGIS",
+          "ARF",
+          "SRP",
+          "HAT",
+          "ROSE",
+          "ACDWM",
+          "ERulesD2S",
+          "CDCMS"
+        ],
+        "friedman_test": {
+          "statistic": 145.8082510168507,
+          "p_value": 3.0788307321292794e-28,
+          "n_datasets": 41,
+          "n_models": 8,
+          "df": 7,
+          "average_ranks": {
+            "EGIS": 3.682926829268293,
+            "ARF": 2.926829268292683,
+            "SRP": 3.658536585365854,
+            "HAT": 4.975609756097561,
+            "ROSE": 2.3902439024390243,
+            "ACDWM": 6.2682926829268295,
+            "ERulesD2S": 7.609756097560975,
+            "CDCMS": 4.487804878048781
+          },
+          "significant": "True"
+        },
+        "critical_distance": 1.6397763976061923,
+        "pairwise_tests": [
+          {
+            "comparison": "EGIS vs ARF",
+            "model_1": "EGIS",
+            "model_2": "ARF",
+            "raw_p_value": 0.043748469753154495,
+            "adjusted_p_value": 0.30623928827208147,
+            "significant_raw": true,
+            "significant_bonferroni": false,
+            "mean_difference": -0.02275652486684298,
+            "cliffs_delta": -0.20047590719809638,
+            "effect_interpretation": "small",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs SRP",
+            "model_1": "EGIS",
+            "model_2": "SRP",
+            "raw_p_value": 0.5811243694488439,
+            "adjusted_p_value": 1.0,
+            "significant_raw": false,
+            "significant_bonferroni": false,
+            "mean_difference": -0.007098531040018959,
+            "cliffs_delta": -0.13503866745984533,
+            "effect_interpretation": "negligible",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs HAT",
+            "model_1": "EGIS",
+            "model_2": "HAT",
+            "raw_p_value": 0.006113076849942445,
+            "adjusted_p_value": 0.042791537949597114,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 0.034940910748313424,
+            "cliffs_delta": 0.11481261154074955,
+            "effect_interpretation": "negligible",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ROSE",
+            "model_1": "EGIS",
+            "model_2": "ROSE",
+            "raw_p_value": 2.449837211315753e-05,
+            "adjusted_p_value": 0.0001714886047921027,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": -0.037308282141327816,
+            "cliffs_delta": -0.2480666270077335,
+            "effect_interpretation": "small",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ACDWM",
+            "model_1": "EGIS",
+            "model_2": "ACDWM",
+            "raw_p_value": 3.2612802266072754e-08,
+            "adjusted_p_value": 2.2828961586250927e-07,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 0.11513308584660674,
+            "cliffs_delta": 0.6109458655562165,
+            "effect_interpretation": "large",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs ERulesD2S",
+            "model_1": "EGIS",
+            "model_2": "ERulesD2S",
+            "raw_p_value": 9.094947017729282e-13,
+            "adjusted_p_value": 6.366462912410498e-12,
+            "significant_raw": true,
+            "significant_bonferroni": true,
+            "mean_difference": 0.2566055821196863,
+            "cliffs_delta": 0.9298036882807853,
+            "effect_interpretation": "large",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          },
+          {
+            "comparison": "EGIS vs CDCMS",
+            "model_1": "EGIS",
+            "model_2": "CDCMS",
+            "raw_p_value": 0.22471533650341335,
+            "adjusted_p_value": 1.0,
+            "significant_raw": false,
+            "significant_bonferroni": false,
+            "mean_difference": 0.016477049109271925,
+            "cliffs_delta": 0.001784651992861392,
+            "effect_interpretation": "negligible",
+            "n_samples": 41,
+            "alpha_corrected": 0.0071428571428571435
+          }
+        ],
+        "model_summary": {
+          "EGIS": {
+            "mean": 0.8549875943148084,
+            "std": 0.1084682005723909,
+            "median": 0.8523679281865961,
+            "min": 0.6224629785477447,
+            "max": 1.0,
+            "n_datasets": 41
+          },
+          "ARF": {
+            "mean": 0.8777441191816512,
+            "std": 0.14023208212028174,
+            "median": 0.941300818341064,
+            "min": 0.5151171338627557,
+            "max": 0.9980365666253442,
+            "n_datasets": 41
+          },
+          "SRP": {
+            "mean": 0.8620861253548272,
+            "std": 0.15283290819900497,
+            "median": 0.9169454130357808,
+            "min": 0.4860834861277373,
+            "max": 0.9984880722455756,
+            "n_datasets": 41
+          },
+          "HAT": {
+            "mean": 0.8200466835664946,
+            "std": 0.14842201352663795,
+            "median": 0.8504694698491956,
+            "min": 0.3680388337050297,
+            "max": 0.984248302383786,
+            "n_datasets": 41
+          },
+          "ROSE": {
+            "mean": 0.8922958764561362,
+            "std": 0.1109438162278143,
+            "median": 0.9215189332111908,
+            "min": 0.5940696148617285,
+            "max": 0.9994096359709408,
+            "n_datasets": 41
+          },
+          "ACDWM": {
+            "mean": 0.7398545084682014,
+            "std": 0.06855463560869647,
+            "median": 0.7471991220914734,
+            "min": 0.6016230083160001,
+            "max": 0.8333333333333334,
+            "n_datasets": 41
+          },
+          "ERulesD2S": {
+            "mean": 0.598382012195122,
+            "std": 0.08236693814286646,
+            "median": 0.5610555555555555,
+            "min": 0.5120069444444445,
+            "max": 0.7674111111111112,
+            "n_datasets": 41
+          },
+          "CDCMS": {
+            "mean": 0.8385105452055364,
+            "std": 0.15344438976346286,
+            "median": 0.8985759819109568,
+            "min": 0.5032039851901859,
+            "max": 1.0,
+            "n_datasets": 41
+          }
+        },
+        "average_rankings": {
+          "EGIS": 3.682926829268293,
+          "ARF": 2.926829268292683,
+          "SRP": 3.658536585365854,
+          "HAT": 4.975609756097561,
+          "ROSE": 2.3902439024390243,
+          "ACDWM": 6.2682926829268295,
+          "ERulesD2S": 7.609756097560975,
+          "CDCMS": 4.487804878048781
+        },
+        "wins_count": {
+          "EGIS": 4,
+          "ARF": 7,
+          "SRP": 7,
+          "HAT": 0,
+          "ROSE": 13,
+          "ACDWM": 2,
+          "ERulesD2S": 0,
+          "CDCMS": 6
+        },
+        "egis_wld": {
+          "ARF": {
+            "wins": 12,
+            "ties": 2,
+            "losses": 27
+          },
+          "SRP": {
+            "wins": 20,
+            "ties": 1,
+            "losses": 20
+          },
+          "HAT": {
+            "wins": 30,
+            "ties": 1,
+            "losses": 10
+          },
+          "ROSE": {
+            "wins": 8,
+            "ties": 1,
+            "losses": 32
+          },
+          "ACDWM": {
+            "wins": 39,
+            "ties": 0,
+            "losses": 2
+          },
+          "ERulesD2S": {
+            "wins": 41,
+            "ties": 0,
+            "losses": 0
+          },
+          "CDCMS": {
+            "wins": 24,
+            "ties": 2,
+            "losses": 15
+          }
+        }
+      }
+    ]
+  },
+  "stratified": {
+    "timestamp": "2026-03-02T14:43:46.293666",
+    "analysis_type": "stratified_by_drift",
+    "drift_types": {
+      "abrupt": {
+        "n_datasets": 16,
+        "configurations": [
+          {
+            "config_label": "EXP-500-NP",
+            "n_datasets": 16,
+            "average_rankings": {
+              "EGIS": 4.0,
+              "ARF": 2.9375,
+              "SRP": 3.875,
+              "HAT": 5.6875,
+              "ROSE": 2.3125,
+              "ACDWM": 4.875,
+              "ERulesD2S": 7.1875,
+              "CDCMS": 5.125
+            },
+            "model_performance": {
+              "EGIS": {
+                "mean": 0.8539749863950469,
+                "std": 0.1189560726988004
+              },
+              "ARF": {
+                "mean": 0.8566460617502026,
+                "std": 0.14423965162107136
+              },
+              "SRP": {
+                "mean": 0.8374655604481958,
+                "std": 0.16430475740310257
+              },
+              "HAT": {
+                "mean": 0.7347512545730839,
+                "std": 0.21817854294340722
+              },
+              "ROSE": {
+                "mean": 0.8535741872651017,
+                "std": 0.1584780395872538
+              },
+              "ACDWM": {
+                "mean": 0.7537853407301675,
+                "std": 0.30473861151344445
+              },
+              "ERulesD2S": {
+                "mean": 0.5637316153663159,
+                "std": 0.13480487461619056
+              },
+              "CDCMS": {
+                "mean": 0.711036718033967,
+                "std": 0.31976465713395774
+              }
+            }
+          },
+          {
+            "config_label": "EXP-1000-NP",
+            "n_datasets": 16,
+            "average_rankings": {
+              "EGIS": 3.3125,
+              "ARF": 2.625,
+              "SRP": 3.625,
+              "HAT": 5.75,
+              "ROSE": 2.375,
+              "ACDWM": 5.6875,
+              "ERulesD2S": 7.25,
+              "CDCMS": 5.375
+            },
+            "model_performance": {
+              "EGIS": {
+                "mean": 0.861418110804744,
+                "std": 0.10747012049811103
+              },
+              "ARF": {
+                "mean": 0.8605870387864168,
+                "std": 0.1411821819166949
+              },
+              "SRP": {
+                "mean": 0.8344709184069288,
+                "std": 0.15931458677435267
+              },
+              "HAT": {
+                "mean": 0.7370088275957225,
+                "std": 0.2202486103224433
+              },
+              "ROSE": {
+                "mean": 0.8535741872651017,
+                "std": 0.1584780395872538
+              },
+              "ACDWM": {
+                "mean": 0.7065847459863924,
+                "std": 0.2848847900714813
+              },
+              "ERulesD2S": {
+                "mean": 0.5563730089210558,
+                "std": 0.1318443394683686
+              },
+              "CDCMS": {
+                "mean": 0.7033179196672958,
+                "std": 0.31891238403246824
+              }
+            }
+          },
+          {
+            "config_label": "EXP-2000-NP",
+            "n_datasets": 16,
+            "average_rankings": {
+              "EGIS": 3.625,
+              "ARF": 2.6875,
+              "SRP": 3.5,
+              "HAT": 4.9375,
+              "ROSE": 2.125,
+              "ACDWM": 6.3125,
+              "ERulesD2S": 7.25,
+              "CDCMS": 5.5625
+            },
+            "model_performance": {
+              "EGIS": {
+                "mean": 0.836559698550009,
+                "std": 0.10279566735900868
+              },
+              "ARF": {
+                "mean": 0.8472040539324246,
+                "std": 0.14841756104096765
+              },
+              "SRP": {
+                "mean": 0.827043959980859,
+                "std": 0.1646988316398452
+              },
+              "HAT": {
+                "mean": 0.7456742596100325,
+                "std": 0.2141821210133786
+              },
+              "ROSE": {
+                "mean": 0.8535741872651017,
+                "std": 0.1584780395872538
+              },
+              "ACDWM": {
+                "mean": 0.6323152900697713,
+                "std": 0.25533782942839933
+              },
+              "ERulesD2S": {
+                "mean": 0.5568135416666666,
+                "std": 0.13107489771827785
+              },
+              "CDCMS": {
+                "mean": 0.6969322585496691,
+                "std": 0.3180886056945637
+              }
+            }
+          }
+        ]
+      },
+      "gradual": {
+        "n_datasets": 11,
+        "configurations": [
+          {
+            "config_label": "EXP-500-NP",
+            "n_datasets": 11,
+            "average_rankings": {
+              "EGIS": 4.7272727272727275,
+              "ARF": 2.1818181818181817,
+              "SRP": 3.1818181818181817,
+              "HAT": 5.363636363636363,
+              "ROSE": 2.3636363636363638,
+              "ACDWM": 5.636363636363637,
+              "ERulesD2S": 7.090909090909091,
+              "CDCMS": 5.454545454545454
+            },
+            "model_performance": {
+              "EGIS": {
+                "mean": 0.8540782871392492,
+                "std": 0.12008347392084112
+              },
+              "ARF": {
+                "mean": 0.8600131702892809,
+                "std": 0.1389567576185363
+              },
+              "SRP": {
+                "mean": 0.8439384497564313,
+                "std": 0.15957300282220407
+              },
+              "HAT": {
+                "mean": 0.7565115199555689,
+                "std": 0.26189665961578446
+              },
+              "ROSE": {
+                "mean": 0.8426324922948772,
+                "std": 0.18682004452772555
+              },
+              "ACDWM": {
+                "mean": 0.7026141537293881,
+                "std": 0.3542054511589405
+              },
+              "ERulesD2S": {
+                "mean": 0.5519563502824005,
+                "std": 0.1445840321757915
+              },
+              "CDCMS": {
+                "mean": 0.7026164938672663,
+                "std": 0.3673759648802463
+              }
+            }
+          },
+          {
+            "config_label": "EXP-1000-NP",
+            "n_datasets": 11,
+            "average_rankings": {
+              "EGIS": 3.8181818181818183,
+              "ARF": 2.5454545454545454,
+              "SRP": 3.5454545454545454,
+              "HAT": 5.181818181818182,
+              "ROSE": 2.272727272727273,
+              "ACDWM": 6.454545454545454,
+              "ERulesD2S": 7.090909090909091,
+              "CDCMS": 5.090909090909091
+            },
+            "model_performance": {
+              "EGIS": {
+                "mean": 0.8651423375483891,
+                "std": 0.10745207921560615
+              },
+              "ARF": {
+                "mean": 0.8687745109703442,
+                "std": 0.13626401013216172
+              },
+              "SRP": {
+                "mean": 0.8448085684141575,
+                "std": 0.14889740935788637
+              },
+              "HAT": {
+                "mean": 0.758328082872591,
+                "std": 0.2602267439144463
+              },
+              "ROSE": {
+                "mean": 0.8426324922948772,
+                "std": 0.18682004452772555
+              },
+              "ACDWM": {
+                "mean": 0.6697621616725141,
+                "std": 0.33754510989439934
+              },
+              "ERulesD2S": {
+                "mean": 0.546836464755783,
+                "std": 0.148241715284167
+              },
+              "CDCMS": {
+                "mean": 0.7041521438348081,
+                "std": 0.36481097558320863
+              }
+            }
+          },
+          {
+            "config_label": "EXP-2000-NP",
+            "n_datasets": 11,
+            "average_rankings": {
+              "EGIS": 3.727272727272727,
+              "ARF": 2.5454545454545454,
+              "SRP": 3.4545454545454546,
+              "HAT": 5.0,
+              "ROSE": 2.3636363636363638,
+              "ACDWM": 6.636363636363637,
+              "ERulesD2S": 7.2727272727272725,
+              "CDCMS": 5.0
+            },
+            "model_performance": {
+              "EGIS": {
+                "mean": 0.85663679571499,
+                "std": 0.1089994891497702
+              },
+              "ARF": {
+                "mean": 0.8715345077758824,
+                "std": 0.12671276824575337
+              },
+              "SRP": {
+                "mean": 0.8452689999578621,
+                "std": 0.14759897821795143
+              },
+              "HAT": {
+                "mean": 0.7663912653062781,
+                "std": 0.24859197080861362
+              },
+              "ROSE": {
+                "mean": 0.8426324922948772,
+                "std": 0.18682004452772555
+              },
+              "ACDWM": {
+                "mean": 0.609885570701056,
+                "std": 0.3069554229689091
+              },
+              "ERulesD2S": {
+                "mean": 0.5439209595959595,
+                "std": 0.1428959123082924
+              },
+              "CDCMS": {
+                "mean": 0.7043016609192253,
+                "std": 0.36432589541566907
+              }
+            }
+          }
+        ]
+      },
+      "noisy": {
+        "n_datasets": 8,
+        "configurations": [
+          {
+            "config_label": "EXP-500-NP",
+            "n_datasets": 8,
+            "average_rankings": {
+              "EGIS": 4.375,
+              "ARF": 3.125,
+              "SRP": 3.375,
+              "HAT": 5.75,
+              "ROSE": 2.625,
+              "ACDWM": 4.5,
+              "ERulesD2S": 7.375,
+              "CDCMS": 4.875
+            },
+            "model_performance": {
+              "EGIS": {
+                "mean": 0.8456074091234567,
+                "std": 0.11600225913375692
+              },
+              "ARF": {
+                "mean": 0.8547017917790927,
+                "std": 0.15911651123562773
+              },
+              "SRP": {
+                "mean": 0.8471694437302493,
+                "std": 0.16720365727911501
+              },
+              "HAT": {
+                "mean": 0.7928145398393299,
+                "std": 0.13409365782872615
+              },
+              "ROSE": {
+                "mean": 0.8883835759913212,
+                "std": 0.09169527305680644
+              },
+              "ACDWM": {
+                "mean": 0.8489570145163415,
+                "std": 0.07672523857676795
+              },
+              "ERulesD2S": {
+                "mean": 0.5927953124015731,
+                "std": 0.0912066306715149
+              },
+              "CDCMS": {
+                "mean": 0.8181355728771305,
+                "std": 0.15193081787056914
+              }
+            }
+          },
+          {
+            "config_label": "EXP-1000-NP",
+            "n_datasets": 8,
+            "average_rankings": {
+              "EGIS": 3.875,
+              "ARF": 3.0,
+              "SRP": 3.375,
+              "HAT": 5.375,
+              "ROSE": 2.5,
+              "ACDWM": 5.375,
+              "ERulesD2S": 7.625,
+              "CDCMS": 4.875
+            },
+            "model_performance": {
+              "EGIS": {
+                "mean": 0.8506907840359541,
+                "std": 0.10254088806390606
+              },
+              "ARF": {
+                "mean": 0.8630692600592732,
+                "std": 0.15080061105507797
+              },
+              "SRP": {
+                "mean": 0.8354406026495913,
+                "std": 0.17491540135806385
+              },
+              "HAT": {
+                "mean": 0.7940002357659585,
+                "std": 0.1342730714306773
+              },
+              "ROSE": {
+                "mean": 0.8883835759913212,
+                "std": 0.09169527305680644
+              },
+              "ACDWM": {
+                "mean": 0.80378176075082,
+                "std": 0.05298857044851871
+              },
+              "ERulesD2S": {
+                "mean": 0.5831147975288601,
+                "std": 0.0869241027855518
+              },
+              "CDCMS": {
+                "mean": 0.8103299187780338,
+                "std": 0.14336417995658063
+              }
+            }
+          },
+          {
+            "config_label": "EXP-2000-NP",
+            "n_datasets": 8,
+            "average_rankings": {
+              "EGIS": 3.75,
+              "ARF": 3.0,
+              "SRP": 3.25,
+              "HAT": 5.125,
+              "ROSE": 2.375,
+              "ACDWM": 6.375,
+              "ERulesD2S": 7.5,
+              "CDCMS": 4.625
+            },
+            "model_performance": {
+              "EGIS": {
+                "mean": 0.835841224578915,
+                "std": 0.08291472735857257
+              },
+              "ARF": {
+                "mean": 0.8636613854696578,
+                "std": 0.15408953960847727
+              },
+              "SRP": {
+                "mean": 0.8509021340425353,
+                "std": 0.16343669917841108
+              },
+              "HAT": {
+                "mean": 0.7928690098202931,
+                "std": 0.135778934551587
+              },
+              "ROSE": {
+                "mean": 0.8883835759913212,
+                "std": 0.09169527305680644
+              },
+              "ACDWM": {
+                "mean": 0.7199493937144856,
+                "std": 0.04532247060669143
+              },
+              "ERulesD2S": {
+                "mean": 0.5851461805555556,
+                "std": 0.08326115280646283
+              },
+              "CDCMS": {
+                "mean": 0.7949413440263662,
+                "std": 0.13786230903720603
+              }
+            }
+          }
+        ]
+      },
+      "stationary": {
+        "n_datasets": 9,
+        "configurations": [
+          {
+            "config_label": "EXP-500-NP",
+            "n_datasets": 9,
+            "average_rankings": {
+              "EGIS": 3.9444444444444446,
+              "ARF": 3.2222222222222223,
+              "SRP": 2.888888888888889,
+              "HAT": 5.222222222222222,
+              "ROSE": 2.4444444444444446,
+              "ACDWM": 6.222222222222222,
+              "ERulesD2S": 7.0,
+              "CDCMS": 5.055555555555555
+            },
+            "model_performance": {
+              "EGIS": {
+                "mean": 0.8565448501656054,
+                "std": 0.16469591903608335
+              },
+              "ARF": {
+                "mean": 0.8473523556548572,
+                "std": 0.16170562646476289
+              },
+              "SRP": {
+                "mean": 0.8282905376627148,
+                "std": 0.21945048940198034
+              },
+              "HAT": {
+                "mean": 0.741581145478087,
+                "std": 0.32504371062980253
+              },
+              "ROSE": {
+                "mean": 0.8300351695771421,
+                "std": 0.2464388884066645
+              },
+              "ACDWM": {
+                "mean": 0.5733418228544688,
+                "std": 0.44721193239574686
+              },
+              "ERulesD2S": {
+                "mean": 0.5032123119176268,
+                "std": 0.17762926781865276
+              },
+              "CDCMS": {
+                "mean": 0.5925290071253801,
+                "std": 0.46809109686068695
+              }
+            }
+          },
+          {
+            "config_label": "EXP-1000-NP",
+            "n_datasets": 9,
+            "average_rankings": {
+              "EGIS": 3.7222222222222223,
+              "ARF": 3.2222222222222223,
+              "SRP": 3.3333333333333335,
+              "HAT": 5.111111111111111,
+              "ROSE": 2.4444444444444446,
+              "ACDWM": 6.222222222222222,
+              "ERulesD2S": 7.0,
+              "CDCMS": 4.944444444444445
+            },
+            "model_performance": {
+              "EGIS": {
+                "mean": 0.8663790368386272,
+                "std": 0.1601509167032172
+              },
+              "ARF": {
+                "mean": 0.8778243759113192,
+                "std": 0.13120969785885045
+              },
+              "SRP": {
+                "mean": 0.8527135661009635,
+                "std": 0.17165090622139775
+              },
+              "HAT": {
+                "mean": 0.7500491658292301,
+                "std": 0.3191401127052892
+              },
+              "ROSE": {
+                "mean": 0.8300351695771421,
+                "std": 0.2464388884066645
+              },
+              "ACDWM": {
+                "mean": 0.5584176509385004,
+                "std": 0.42897304965087907
+              },
+              "ERulesD2S": {
+                "mean": 0.499591816979317,
+                "std": 0.17471529298539562
+              },
+              "CDCMS": {
+                "mean": 0.5933381207231705,
+                "std": 0.4704229584372009
+              }
+            }
+          },
+          {
+            "config_label": "EXP-2000-NP",
+            "n_datasets": 9,
+            "average_rankings": {
+              "EGIS": 3.4444444444444446,
+              "ARF": 3.3333333333333335,
+              "SRP": 3.111111111111111,
+              "HAT": 5.333333333333333,
+              "ROSE": 2.7777777777777777,
+              "ACDWM": 6.333333333333333,
+              "ERulesD2S": 7.0,
+              "CDCMS": 4.666666666666667
+            },
+            "model_performance": {
+              "EGIS": {
+                "mean": 0.87974676011336,
+                "std": 0.14823760273781456
+              },
+              "ARF": {
+                "mean": 0.8800684987110947,
+                "std": 0.1340559872424625
+              },
+              "SRP": {
+                "mean": 0.8611495462647264,
+                "std": 0.16351358459269427
+              },
+              "HAT": {
+                "mean": 0.7371221622519264,
+                "std": 0.33443933644936946
+              },
+              "ROSE": {
+                "mean": 0.8300351695771421,
+                "std": 0.2464388884066645
+              },
+              "ACDWM": {
+                "mean": 0.5131386470085167,
+                "std": 0.39147034220791727
+              },
+              "ERulesD2S": {
+                "mean": 0.5044749999999999,
+                "std": 0.1750303821592681
+              },
+              "CDCMS": {
+                "mean": 0.592975891892029,
+                "std": 0.46918494678893835
+              }
+            }
+          }
+        ]
+      },
+      "real": {
+        "n_datasets": 4,
+        "configurations": [
+          {
+            "config_label": "EXP-500-NP",
+            "n_datasets": 4,
+            "average_rankings": {
+              "EGIS": 4.75,
+              "ARF": 2.5,
+              "SRP": 4.0,
+              "HAT": 4.25,
+              "ROSE": 2.75,
+              "ACDWM": 5.75,
+              "ERulesD2S": 8.0,
+              "CDCMS": 4.0
+            },
+            "model_performance": {
+              "EGIS": {
+                "mean": 0.8899531388749198,
+                "std": 0.12566988555720277
+              },
+              "ARF": {
+                "mean": 0.9414233727589004,
+                "std": 0.03780613026312407
+              },
+              "SRP": {
+                "mean": 0.928612578595935,
+                "std": 0.03588744659435547
+              },
+              "HAT": {
+                "mean": 0.9273671597383418,
+                "std": 0.044883497257236754
+              },
+              "ROSE": {
+                "mean": 0.8853324786343866,
+                "std": 0.15397826608921608
+              },
+              "ACDWM": {
+                "mean": 0.8824597352698991,
+                "std": 0.11235264639651006
+              },
+              "ERulesD2S": {
+                "mean": 0.6486082300690547,
+                "std": 0.0843834901936262
+              },
+              "CDCMS": {
+                "mean": 0.9258675800143985,
+                "std": 0.04591804625959589
+              }
+            }
+          },
+          {
+            "config_label": "EXP-1000-NP",
+            "n_datasets": 4,
+            "average_rankings": {
+              "EGIS": 3.75,
+              "ARF": 3.25,
+              "SRP": 4.0,
+              "HAT": 3.5,
+              "ROSE": 2.75,
+              "ACDWM": 6.75,
+              "ERulesD2S": 8.0,
+              "CDCMS": 4.0
+            },
+            "model_performance": {
+              "EGIS": {
+                "mean": 0.9124755174133268,
+                "std": 0.09840283410652
+              },
+              "ARF": {
+                "mean": 0.9384713040578302,
+                "std": 0.03185570666849037
+              },
+              "SRP": {
+                "mean": 0.9229680177342947,
+                "std": 0.04960458284644043
+              },
+              "HAT": {
+                "mean": 0.9286102043427534,
+                "std": 0.04944157547458828
+              },
+              "ROSE": {
+                "mean": 0.8853324786343866,
+                "std": 0.15397826608921608
+              },
+              "ACDWM": {
+                "mean": 0.8543239775824889,
+                "std": 0.09194936171089868
+              },
+              "ERulesD2S": {
+                "mean": 0.6496342111592112,
+                "std": 0.07935452073358751
+              },
+              "CDCMS": {
+                "mean": 0.918616300574864,
+                "std": 0.06235919136226612
+              }
+            }
+          },
+          {
+            "config_label": "EXP-2000-NP",
+            "n_datasets": 4,
+            "average_rankings": {
+              "EGIS": 3.5,
+              "ARF": 3.25,
+              "SRP": 4.25,
+              "HAT": 4.0,
+              "ROSE": 3.0,
+              "ACDWM": 6.75,
+              "ERulesD2S": 8.0,
+              "CDCMS": 3.25
+            },
+            "model_performance": {
+              "EGIS": {
+                "mean": 0.9084519678162611,
+                "std": 0.11474729592473551
+              },
+              "ARF": {
+                "mean": 0.9410138954358496,
+                "std": 0.036364751799123164
+              },
+              "SRP": {
+                "mean": 0.9265953083598545,
+                "std": 0.03859751192302517
+              },
+              "HAT": {
+                "mean": 0.9308394753689503,
+                "std": 0.04434838930666381
+              },
+              "ROSE": {
+                "mean": 0.8853324786343866,
+                "std": 0.15397826608921608
+              },
+              "ACDWM": {
+                "mean": 0.7826014888939431,
+                "std": 0.07119941083795443
+              },
+              "ERulesD2S": {
+                "mean": 0.6379399305555555,
+                "std": 0.0877134602719525
+              },
+              "CDCMS": {
+                "mean": 0.9460960418204032,
+                "std": 0.02188258589169775
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "penalty_comparison": {
+    "timestamp": "2026-03-02T14:43:46.611270",
+    "analysis_type": "egis_penalty_comparison",
+    "comparisons": [
+      {
+        "chunk_size": 500,
+        "no_penalty_label": "EXP-500-NP",
+        "with_penalty_label": "EXP-500-P",
+        "no_penalty_mean": 0.8560840921006306,
+        "no_penalty_std": 0.1225267731737595,
+        "with_penalty_mean": 0.854858416606841,
+        "with_penalty_std": 0.12110239436280928,
+        "mean_difference": 0.0012256754937896713,
+        "wilcoxon_p_value": 0.11538180754742122,
+        "significant": "False",
+        "cliffs_delta": 0.022135416666666668,
+        "effect_interpretation": "negligible",
+        "n_datasets": 48
+      },
+      {
+        "chunk_size": 1000,
+        "no_penalty_label": "EXP-1000-NP",
+        "with_penalty_label": "EXP-1000-P",
+        "no_penalty_mean": 0.8656686491540994,
+        "no_penalty_std": 0.11249074952060187,
+        "with_penalty_mean": 0.8662745715994457,
+        "with_penalty_std": 0.11236149276938044,
+        "mean_difference": -0.0006059224453461784,
+        "wilcoxon_p_value": 0.6464622026641696,
+        "significant": "False",
+        "cliffs_delta": -0.006076388888888889,
+        "effect_interpretation": "negligible",
+        "n_datasets": 48
+      },
+      {
+        "chunk_size": 2000,
+        "no_penalty_label": "EXP-2000-NP",
+        "with_penalty_label": "EXP-2000-P",
+        "no_penalty_mean": 0.8551295508037842,
+        "no_penalty_std": 0.10859701208383049,
+        "with_penalty_mean": 0.8472382517652356,
+        "with_penalty_std": 0.11268180805307283,
+        "mean_difference": 0.007891299038548445,
+        "wilcoxon_p_value": 0.0013159886566684275,
+        "significant": "True",
+        "cliffs_delta": 0.051215277777777776,
+        "effect_interpretation": "negligible",
+        "n_datasets": 48
+      }
+    ]
+  },
+  "metadata": {
+    "timestamp": "2026-03-02T14:43:46.808325",
+    "alpha": 0.05,
+    "n_total_records": 1302,
+    "n_unique_datasets": 48,
+    "models_analyzed": [
+      "EGIS",
+      "ARF",
+      "SRP",
+      "HAT",
+      "ROSE",
+      "ACDWM",
+      "ERulesD2S",
+      "CDCMS"
+    ],
+    "configurations": [
+      "EXP-500-NP",
+      "EXP-500-P",
+      "EXP-1000-NP",
+      "EXP-1000-P",
+      "EXP-2000-NP",
+      "EXP-2000-P",
+      "EXP-500-P03"
+    ],
+    "multiclass_datasets_excluded_in_binary": [
+      "LED_Abrupt_Simple",
+      "LED_Gradual_Simple",
+      "LED_Stationary",
+      "RBF_Stationary",
+      "WAVEFORM_Abrupt_Simple",
+      "WAVEFORM_Gradual_Simple",
+      "WAVEFORM_Stationary"
+    ]
+  }
+}

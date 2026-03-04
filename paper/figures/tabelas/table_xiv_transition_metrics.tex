@@ -1,0 +1,30 @@
+\begin{table}[ht]
+\centering
+\caption{Transition Metrics by Drift Type and Configuration}
+\label{tab:transition_metrics}
+\begin{tabular}{llcccc}
+\toprule
+Config & Drift Type & TCS & RIR & AMS & N \\
+\midrule
+chunk_1000 & abrupt & $0.968 \pm 0.150$ & $0.707 \pm 0.214$ & $0.261 \pm 0.187$ & 21 \\
+chunk_1000 & gradual & $0.975 \pm 0.132$ & $0.689 \pm 0.177$ & $0.286 \pm 0.142$ & 14 \\
+chunk_1000 & real & $1.000 \pm 0.000$ & $0.742 \pm 0.188$ & $0.258 \pm 0.188$ & 8 \\
+chunk_1000 & stationary & $0.942 \pm 0.194$ & $0.668 \pm 0.240$ & $0.274 \pm 0.214$ & 9 \\
+\midrule
+chunk_1000_penalty & abrupt & $0.968 \pm 0.150$ & $0.703 \pm 0.213$ & $0.266 \pm 0.186$ & 21 \\
+chunk_1000_penalty & gradual & $0.975 \pm 0.132$ & $0.696 \pm 0.181$ & $0.279 \pm 0.146$ & 14 \\
+chunk_1000_penalty & real & $1.000 \pm 0.000$ & $0.744 \pm 0.187$ & $0.256 \pm 0.187$ & 8 \\
+chunk_1000_penalty & stationary & $0.942 \pm 0.194$ & $0.666 \pm 0.238$ & $0.276 \pm 0.213$ & 9 \\
+\midrule
+chunk_500 & abrupt & $0.969 \pm 0.141$ & $0.723 \pm 0.187$ & $0.246 \pm 0.167$ & 21 \\
+chunk_500 & gradual & $0.981 \pm 0.092$ & $0.710 \pm 0.143$ & $0.271 \pm 0.138$ & 14 \\
+chunk_500 & real & $0.996 \pm 0.017$ & $0.715 \pm 0.176$ & $0.281 \pm 0.176$ & 8 \\
+chunk_500 & stationary & $0.957 \pm 0.156$ & $0.672 \pm 0.227$ & $0.285 \pm 0.223$ & 9 \\
+\midrule
+chunk_500_penalty & abrupt & $0.952 \pm 0.167$ & $0.711 \pm 0.233$ & $0.241 \pm 0.189$ & 21 \\
+chunk_500_penalty & gradual & $0.958 \pm 0.137$ & $0.711 \pm 0.162$ & $0.247 \pm 0.117$ & 14 \\
+chunk_500_penalty & real & $0.996 \pm 0.019$ & $0.702 \pm 0.180$ & $0.293 \pm 0.179$ & 8 \\
+chunk_500_penalty & stationary & $0.921 \pm 0.205$ & $0.668 \pm 0.267$ & $0.253 \pm 0.209$ & 9 \\
+\bottomrule
+\end{tabular}
+\end{table}

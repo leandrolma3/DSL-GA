@@ -1,0 +1,352 @@
+Rule Diff Analysis Report
+Source File: RulesHistory_SEA_Abrupt_Simple_Run1.txt
+Similarity Threshold: 0.35
+
+======================================================================
+--- Diff Chunk 0 -> Chunk 1 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 0):      nan
+  - Test Acc (Chunk 1):     nan
+  - Test F1 (Chunk 1):      nan
+Fitness:       1.094349 -> 1.292480
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((((((1 <= 6.0371) AND (0 <= 6.4780)) AND (0 > 4.6121)) AND (1 <= 2.7522)) AND (1 > 1.9870)) AND (0 <= 5.5464)) THEN Class 0
+  + New: IF ((((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 > 4.2272)) AND (0 <= 3.5217)) AND (0 > 2.8877)) AND (1 <= 5.0555)) THEN Class 0
+    (Similarity: 0.76)
+  - Old: IF (((((1 <= 6.0371) AND (0 <= 6.4780)) AND (0 <= 4.6121)) AND (1 <= 3.9583)) AND (1 <= 0.1598)) THEN Class 0
+  + New: IF (((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 <= 4.2272)) AND (0 <= 4.8002)) AND (1 <= 4.0305)) THEN Class 0
+    (Similarity: 0.74)
+  - Old: IF (((((1 <= 6.0371) AND (0 <= 6.4780)) AND (0 <= 4.6121)) AND (1 <= 3.9583)) AND (1 > 0.1598)) THEN Class 0
+  + New: IF (((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 <= 4.2272)) AND (0 <= 4.8002)) AND (1 > 4.0305)) THEN Class 0
+    (Similarity: 0.74)
+  - Old: IF ((((1 > 6.0371) AND (0 <= 0.9615)) AND (1 <= 7.4909)) AND (1 <= 7.2189)) THEN Class 0
+  + New: IF ((((1 > 5.7031) AND (0 <= 1.5038)) AND (1 <= 7.9181)) AND (1 <= 6.9406)) THEN Class 0
+    (Similarity: 0.76)
+
+  New Rules:
+  + IF ((((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 <= 4.2272)) AND (0 > 4.8002)) AND (1 <= 2.3633)) AND (2 <= 2.5034)) THEN Class 0
+  + IF ((((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 <= 4.2272)) AND (0 > 4.8002)) AND (1 <= 2.3633)) AND (2 > 2.5034)) THEN Class 0
+  + IF ((((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 > 4.2272)) AND (0 <= 3.5217)) AND (0 <= 2.8877)) AND (2 <= 0.9613)) THEN Class 0
+  + IF ((((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 > 4.2272)) AND (0 <= 3.5217)) AND (0 <= 2.8877)) AND (2 > 0.9613)) THEN Class 0
+  + IF (((((1 <= 5.7031) AND (0 > 5.8268)) AND (1 <= 1.4642)) AND (0 <= 7.3534)) AND (1 <= 1.2064)) THEN Class 0
+  + IF (((((1 <= 5.7031) AND (0 > 5.8268)) AND (1 <= 1.4642)) AND (0 <= 7.3534)) AND (1 > 1.2064)) THEN Class 0
+  + IF (((((1 > 5.7031) AND (0 <= 1.5038)) AND (1 <= 7.9181)) AND (1 > 6.9406)) AND (0 <= 0.7796)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((((((1 <= 6.0371) AND (0 <= 6.4780)) AND (0 <= 4.6121)) AND (1 > 3.9583)) AND (0 <= 3.8119)) AND (0 <= 2.6163)) AND (1 <= 5.9786)) THEN Class 0
+  - IF (((((((1 <= 6.0371) AND (0 <= 6.4780)) AND (0 <= 4.6121)) AND (1 > 3.9583)) AND (0 <= 3.8119)) AND (0 <= 2.6163)) AND (1 > 5.9786)) THEN Class 0
+  - IF (((((((1 <= 6.0371) AND (0 <= 6.4780)) AND (0 <= 4.6121)) AND (1 > 3.9583)) AND (0 <= 3.8119)) AND (0 > 2.6163)) AND (1 <= 5.1147)) THEN Class 0
+  - IF (((((1 <= 6.0371) AND (0 <= 6.4780)) AND (0 > 4.6121)) AND (1 <= 2.7522)) AND (1 <= 1.9870)) THEN Class 0
+  - IF ((((1 <= 6.0371) AND (0 > 6.4780)) AND (1 <= 1.2190)) AND (0 <= 7.7388)) THEN Class 0
+  - IF ((((1 > 6.0371) AND (0 <= 0.9615)) AND (1 <= 7.4909)) AND (1 > 7.2189)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((((1 <= 6.0371) AND (0 <= 6.4780)) AND (0 > 4.6121)) AND (1 <= 2.7522)) AND (1 > 1.9870)) AND (0 > 5.5464)) THEN Class 1
+  + New: IF ((((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 > 4.2272)) AND (0 <= 3.5217)) AND (0 > 2.8877)) AND (1 > 5.0555)) THEN Class 1
+    (Similarity: 0.75)
+  - Old: IF (((((1 <= 6.0371) AND (0 > 6.4780)) AND (1 <= 1.2190)) AND (0 > 7.7388)) AND (1 > 0.2035)) THEN Class 1
+  + New: IF (((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 <= 4.2272)) AND (0 > 4.8002)) AND (1 > 2.3633)) THEN Class 1
+    (Similarity: 0.75)
+  - Old: IF (((((1 <= 6.0371) AND (0 <= 6.4780)) AND (0 > 4.6121)) AND (1 > 2.7522)) AND (1 <= 3.0130)) THEN Class 1
+  + New: IF (((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 > 4.2272)) AND (0 > 3.5217)) AND (0 <= 3.7380)) THEN Class 1
+    (Similarity: 0.76)
+  - Old: IF (((((1 <= 6.0371) AND (0 <= 6.4780)) AND (0 > 4.6121)) AND (1 > 2.7522)) AND (1 > 3.0130)) THEN Class 1
+  + New: IF (((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 > 4.2272)) AND (0 > 3.5217)) AND (0 > 3.7380)) THEN Class 1
+    (Similarity: 0.76)
+  - Old: IF (((((1 <= 6.0371) AND (0 > 6.4780)) AND (1 <= 1.2190)) AND (0 > 7.7388)) AND (1 <= 0.2035)) THEN Class 1
+  + New: IF (((((1 <= 5.7031) AND (0 > 5.8268)) AND (1 <= 1.4642)) AND (0 > 7.3534)) AND (1 <= 0.1271)) THEN Class 1
+    (Similarity: 0.78)
+  - Old: IF (((((1 <= 6.0371) AND (0 <= 6.4780)) AND (0 <= 4.6121)) AND (1 > 3.9583)) AND (0 > 3.8119)) THEN Class 1
+  + New: IF (((((1 > 5.7031) AND (0 <= 1.5038)) AND (1 <= 7.9181)) AND (1 > 6.9406)) AND (0 > 0.7796)) THEN Class 1
+    (Similarity: 0.75)
+  - Old: IF ((((1 <= 6.0371) AND (0 > 6.4780)) AND (1 > 1.2190)) AND (2 <= 0.4232)) THEN Class 1
+  + New: IF ((((1 <= 5.7031) AND (0 > 5.8268)) AND (1 > 1.4642)) AND (0 <= 5.9526)) THEN Class 1
+    (Similarity: 0.75)
+  - Old: IF ((((1 <= 6.0371) AND (0 > 6.4780)) AND (1 > 1.2190)) AND (2 > 0.4232)) THEN Class 1
+  + New: IF ((((1 <= 5.7031) AND (0 > 5.8268)) AND (1 > 1.4642)) AND (0 > 5.9526)) THEN Class 1
+    (Similarity: 0.74)
+  - Old: IF ((((1 > 6.0371) AND (0 <= 0.9615)) AND (1 > 7.4909)) AND (0 <= 0.4041)) THEN Class 1
+  + New: IF ((((1 > 5.7031) AND (0 <= 1.5038)) AND (1 > 7.9181)) AND (1 <= 8.5997)) THEN Class 1
+    (Similarity: 0.75)
+  - Old: IF ((((1 > 6.0371) AND (0 <= 0.9615)) AND (1 > 7.4909)) AND (0 > 0.4041)) THEN Class 1
+  + New: IF ((((1 > 5.7031) AND (0 <= 1.5038)) AND (1 > 7.9181)) AND (1 > 8.5997)) THEN Class 1
+    (Similarity: 0.74)
+
+  New Rules:
+  + IF ((((((1 <= 5.7031) AND (0 > 5.8268)) AND (1 <= 1.4642)) AND (0 > 7.3534)) AND (1 > 0.1271)) AND (2 <= 2.1419)) THEN Class 1
+  + IF ((((((1 <= 5.7031) AND (0 > 5.8268)) AND (1 <= 1.4642)) AND (0 > 7.3534)) AND (1 > 0.1271)) AND (2 > 2.1419)) THEN Class 1
+  + IF ((1 > 5.7031) AND (0 > 1.5038)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((((1 <= 6.0371) AND (0 <= 6.4780)) AND (0 <= 4.6121)) AND (1 > 3.9583)) AND (0 <= 3.8119)) AND (0 > 2.6163)) AND (1 > 5.1147)) THEN Class 1
+  - IF ((((1 > 6.0371) AND (0 > 0.9615)) AND (0 <= 1.4601)) AND (1 <= 7.6510)) THEN Class 1
+  - IF ((((1 > 6.0371) AND (0 > 0.9615)) AND (0 <= 1.4601)) AND (1 > 7.6510)) THEN Class 1
+  - IF ((((1 > 6.0371) AND (0 > 0.9615)) AND (0 > 1.4601)) AND (2 <= 0.1560)) THEN Class 1
+  - IF ((((1 > 6.0371) AND (0 > 0.9615)) AND (0 > 1.4601)) AND (2 > 0.1560)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 1 -> Chunk 2 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 1):      nan
+  - Test Acc (Chunk 2):     nan
+  - Test F1 (Chunk 2):      nan
+Fitness:       1.292480 -> 1.287485
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 > 4.2272)) AND (0 <= 3.5217)) AND (0 > 2.8877)) AND (1 <= 5.0555)) THEN Class 0
+  + New: IF ((((((0 <= 5.1250) AND (1 <= 5.9906)) AND (1 > 4.0138)) AND (0 <= 3.4697)) AND (1 > 5.5371)) AND (0 <= 0.6200)) THEN Class 0
+    (Similarity: 0.75)
+  - Old: IF ((((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 > 4.2272)) AND (0 <= 3.5217)) AND (0 <= 2.8877)) AND (2 > 0.9613)) THEN Class 0
+  + New: IF ((((((0 <= 5.1250) AND (1 <= 5.9906)) AND (1 > 4.0138)) AND (0 <= 3.4697)) AND (1 > 5.5371)) AND (0 > 0.6200)) THEN Class 0
+    (Similarity: 0.74)
+  - Old: IF ((((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 > 4.2272)) AND (0 <= 3.5217)) AND (0 <= 2.8877)) AND (2 <= 0.9613)) THEN Class 0
+  + New: IF ((((((0 <= 5.1250) AND (1 > 5.9906)) AND (0 <= 1.2063)) AND (1 <= 7.5902)) AND (0 <= 1.1177)) AND (0 <= 0.7476)) THEN Class 0
+    (Similarity: 0.71)
+  - Old: IF (((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 <= 4.2272)) AND (0 <= 4.8002)) AND (1 <= 4.0305)) THEN Class 0
+  + New: IF (((((0 <= 5.1250) AND (1 <= 5.9906)) AND (1 <= 4.0138)) AND (1 > 3.7100)) AND (1 <= 3.9204)) THEN Class 0
+    (Similarity: 0.73)
+  - Old: IF (((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 <= 4.2272)) AND (0 <= 4.8002)) AND (1 > 4.0305)) THEN Class 0
+  + New: IF (((((0 <= 5.1250) AND (1 <= 5.9906)) AND (1 <= 4.0138)) AND (1 > 3.7100)) AND (1 > 3.9204)) THEN Class 0
+    (Similarity: 0.73)
+  - Old: IF (((((1 <= 5.7031) AND (0 > 5.8268)) AND (1 <= 1.4642)) AND (0 <= 7.3534)) AND (1 > 1.2064)) THEN Class 0
+  + New: IF (((((0 <= 5.1250) AND (1 > 5.9906)) AND (0 <= 1.2063)) AND (1 <= 7.5902)) AND (0 > 1.1177)) THEN Class 0
+    (Similarity: 0.73)
+  - Old: IF (((((1 > 5.7031) AND (0 <= 1.5038)) AND (1 <= 7.9181)) AND (1 > 6.9406)) AND (0 <= 0.7796)) THEN Class 0
+  + New: IF (((((0 > 5.1250) AND (1 <= 1.9257)) AND (0 <= 7.2856)) AND (0 > 6.7269)) AND (1 <= 1.2400)) THEN Class 0
+    (Similarity: 0.71)
+  - Old: IF ((((1 > 5.7031) AND (0 <= 1.5038)) AND (1 <= 7.9181)) AND (1 <= 6.9406)) THEN Class 0
+  + New: IF ((((0 > 5.1250) AND (1 <= 1.9257)) AND (0 <= 7.2856)) AND (0 <= 6.7269)) THEN Class 0
+    (Similarity: 0.72)
+
+  New Rules:
+  + IF ((((((0 <= 5.1250) AND (1 > 5.9906)) AND (0 <= 1.2063)) AND (1 <= 7.5902)) AND (0 <= 1.1177)) AND (0 > 0.7476)) THEN Class 0
+  + IF (((((0 <= 5.1250) AND (1 <= 5.9906)) AND (1 > 4.0138)) AND (0 <= 3.4697)) AND (1 <= 5.5371)) THEN Class 0
+  + IF ((((0 <= 5.1250) AND (1 <= 5.9906)) AND (1 <= 4.0138)) AND (1 <= 3.7100)) THEN Class 0
+  + IF ((((0 > 5.1250) AND (1 > 1.9257)) AND (1 <= 2.4009)) AND (0 <= 6.3583)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 <= 4.2272)) AND (0 > 4.8002)) AND (1 <= 2.3633)) AND (2 <= 2.5034)) THEN Class 0
+  - IF ((((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 <= 4.2272)) AND (0 > 4.8002)) AND (1 <= 2.3633)) AND (2 > 2.5034)) THEN Class 0
+  - IF (((((1 <= 5.7031) AND (0 > 5.8268)) AND (1 <= 1.4642)) AND (0 <= 7.3534)) AND (1 <= 1.2064)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 > 4.2272)) AND (0 > 3.5217)) AND (0 <= 3.7380)) THEN Class 1
+  + New: IF (((((0 <= 5.1250) AND (1 <= 5.9906)) AND (1 > 4.0138)) AND (0 > 3.4697)) AND (0 <= 3.8314)) THEN Class 1
+    (Similarity: 0.78)
+  - Old: IF (((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 > 4.2272)) AND (0 > 3.5217)) AND (0 > 3.7380)) THEN Class 1
+  + New: IF (((((0 <= 5.1250) AND (1 <= 5.9906)) AND (1 > 4.0138)) AND (0 > 3.4697)) AND (0 > 3.8314)) THEN Class 1
+    (Similarity: 0.78)
+  - Old: IF (((((1 <= 5.7031) AND (0 > 5.8268)) AND (1 <= 1.4642)) AND (0 > 7.3534)) AND (1 <= 0.1271)) THEN Class 1
+  + New: IF (((((0 <= 5.1250) AND (1 > 5.9906)) AND (0 <= 1.2063)) AND (1 > 7.5902)) AND (0 <= 0.3942)) THEN Class 1
+    (Similarity: 0.73)
+  - Old: IF (((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 <= 4.2272)) AND (0 > 4.8002)) AND (1 > 2.3633)) THEN Class 1
+  + New: IF (((((0 <= 5.1250) AND (1 > 5.9906)) AND (0 <= 1.2063)) AND (1 > 7.5902)) AND (0 > 0.3942)) THEN Class 1
+    (Similarity: 0.71)
+  - Old: IF (((((1 > 5.7031) AND (0 <= 1.5038)) AND (1 <= 7.9181)) AND (1 > 6.9406)) AND (0 > 0.7796)) THEN Class 1
+  + New: IF (((((0 > 5.1250) AND (1 <= 1.9257)) AND (0 <= 7.2856)) AND (0 > 6.7269)) AND (1 > 1.2400)) THEN Class 1
+    (Similarity: 0.71)
+  - Old: IF ((((1 <= 5.7031) AND (0 > 5.8268)) AND (1 > 1.4642)) AND (0 <= 5.9526)) THEN Class 1
+  + New: IF ((((0 <= 5.1250) AND (1 > 5.9906)) AND (0 > 1.2063)) AND (1 <= 6.0906)) THEN Class 1
+    (Similarity: 0.72)
+  - Old: IF ((((1 <= 5.7031) AND (0 > 5.8268)) AND (1 > 1.4642)) AND (0 > 5.9526)) THEN Class 1
+  + New: IF ((((0 <= 5.1250) AND (1 > 5.9906)) AND (0 > 1.2063)) AND (1 > 6.0906)) THEN Class 1
+    (Similarity: 0.71)
+  - Old: IF ((((1 > 5.7031) AND (0 <= 1.5038)) AND (1 > 7.9181)) AND (1 <= 8.5997)) THEN Class 1
+  + New: IF ((((0 > 5.1250) AND (1 <= 1.9257)) AND (0 > 7.2856)) AND (2 <= 0.6456)) THEN Class 1
+    (Similarity: 0.70)
+  - Old: IF ((((1 > 5.7031) AND (0 <= 1.5038)) AND (1 > 7.9181)) AND (1 > 8.5997)) THEN Class 1
+  + New: IF ((((0 > 5.1250) AND (1 <= 1.9257)) AND (0 > 7.2856)) AND (2 > 0.6456)) THEN Class 1
+    (Similarity: 0.70)
+
+  New Rules:
+  + IF ((((0 > 5.1250) AND (1 > 1.9257)) AND (1 <= 2.4009)) AND (0 > 6.3583)) THEN Class 1
+  + IF ((((0 > 5.1250) AND (1 > 1.9257)) AND (1 > 2.4009)) AND (1 <= 2.4982)) THEN Class 1
+  + IF ((((0 > 5.1250) AND (1 > 1.9257)) AND (1 > 2.4009)) AND (1 > 2.4982)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((1 <= 5.7031) AND (0 <= 5.8268)) AND (1 > 4.2272)) AND (0 <= 3.5217)) AND (0 > 2.8877)) AND (1 > 5.0555)) THEN Class 1
+  - IF ((((((1 <= 5.7031) AND (0 > 5.8268)) AND (1 <= 1.4642)) AND (0 > 7.3534)) AND (1 > 0.1271)) AND (2 <= 2.1419)) THEN Class 1
+  - IF ((((((1 <= 5.7031) AND (0 > 5.8268)) AND (1 <= 1.4642)) AND (0 > 7.3534)) AND (1 > 0.1271)) AND (2 > 2.1419)) THEN Class 1
+  - IF ((1 > 5.7031) AND (0 > 1.5038)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 2 -> Chunk 3 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 2):      nan
+  - Test Acc (Chunk 3):     nan
+  - Test F1 (Chunk 3):      nan
+Fitness:       1.287485 -> 1.090852
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((((((0 <= 5.1250) AND (1 > 5.9906)) AND (0 <= 1.2063)) AND (1 <= 7.5902)) AND (0 <= 1.1177)) AND (0 <= 0.7476)) THEN Class 0
+  + New: IF ((((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 <= 4.5944)) AND (1 <= 4.4170)) AND (0 <= 3.2424)) AND (1 <= 4.1886)) THEN Class 0
+    (Similarity: 0.72)
+  - Old: IF (((((0 <= 5.1250) AND (1 <= 5.9906)) AND (1 <= 4.0138)) AND (1 > 3.7100)) AND (1 <= 3.9204)) THEN Class 0
+  + New: IF (((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 <= 4.5944)) AND (1 > 4.4170)) AND (0 <= 2.3136)) THEN Class 0
+    (Similarity: 0.74)
+  - Old: IF (((((0 <= 5.1250) AND (1 <= 5.9906)) AND (1 > 4.0138)) AND (0 <= 3.4697)) AND (1 <= 5.5371)) THEN Class 0
+  + New: IF (((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 > 4.5944)) AND (1 <= 2.0243)) AND (0 <= 5.2159)) THEN Class 0
+    (Similarity: 0.72)
+  - Old: IF (((((0 <= 5.1250) AND (1 > 5.9906)) AND (0 <= 1.2063)) AND (1 <= 7.5902)) AND (0 > 1.1177)) THEN Class 0
+  + New: IF (((((1 <= 5.0595) AND (0 > 5.4389)) AND (1 <= 1.2296)) AND (0 <= 6.8004)) AND (2 > 5.7439)) THEN Class 0
+    (Similarity: 0.73)
+  - Old: IF ((((0 <= 5.1250) AND (1 <= 5.9906)) AND (1 <= 4.0138)) AND (1 <= 3.7100)) THEN Class 0
+  + New: IF ((((1 > 5.0595) AND (0 <= 0.9720)) AND (1 <= 7.0186)) AND (1 <= 6.5470)) THEN Class 0
+    (Similarity: 0.74)
+
+  New Rules:
+  + IF (((((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 <= 4.5944)) AND (1 <= 4.4170)) AND (0 <= 3.2424)) AND (1 > 4.1886)) AND (2 <= 3.5645)) THEN Class 0
+  + IF (((((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 <= 4.5944)) AND (1 <= 4.4170)) AND (0 <= 3.2424)) AND (1 > 4.1886)) AND (2 > 3.5645)) THEN Class 0
+  + IF (((((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 <= 4.5944)) AND (1 <= 4.4170)) AND (0 > 3.2424)) AND (1 <= 3.5677)) AND (1 <= 3.1140)) THEN Class 0
+  + IF (((((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 <= 4.5944)) AND (1 <= 4.4170)) AND (0 > 3.2424)) AND (1 <= 3.5677)) AND (1 > 3.1140)) THEN Class 0
+  + IF (((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 > 4.5944)) AND (1 <= 2.0243)) AND (0 > 5.2159)) THEN Class 0
+  + IF (((((1 <= 5.0595) AND (0 > 5.4389)) AND (1 <= 1.2296)) AND (0 <= 6.8004)) AND (2 <= 5.7439)) THEN Class 0
+  + IF ((((1 > 5.0595) AND (0 <= 0.9720)) AND (1 <= 7.0186)) AND (1 > 6.5470)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((((((0 <= 5.1250) AND (1 <= 5.9906)) AND (1 > 4.0138)) AND (0 <= 3.4697)) AND (1 > 5.5371)) AND (0 <= 0.6200)) THEN Class 0
+  - IF ((((((0 <= 5.1250) AND (1 <= 5.9906)) AND (1 > 4.0138)) AND (0 <= 3.4697)) AND (1 > 5.5371)) AND (0 > 0.6200)) THEN Class 0
+  - IF ((((((0 <= 5.1250) AND (1 > 5.9906)) AND (0 <= 1.2063)) AND (1 <= 7.5902)) AND (0 <= 1.1177)) AND (0 > 0.7476)) THEN Class 0
+  - IF (((((0 <= 5.1250) AND (1 <= 5.9906)) AND (1 <= 4.0138)) AND (1 > 3.7100)) AND (1 > 3.9204)) THEN Class 0
+  - IF (((((0 > 5.1250) AND (1 <= 1.9257)) AND (0 <= 7.2856)) AND (0 > 6.7269)) AND (1 <= 1.2400)) THEN Class 0
+  - IF ((((0 > 5.1250) AND (1 <= 1.9257)) AND (0 <= 7.2856)) AND (0 <= 6.7269)) THEN Class 0
+  - IF ((((0 > 5.1250) AND (1 > 1.9257)) AND (1 <= 2.4009)) AND (0 <= 6.3583)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((((0 <= 5.1250) AND (1 <= 5.9906)) AND (1 > 4.0138)) AND (0 > 3.4697)) AND (0 > 3.8314)) THEN Class 1
+  + New: IF (((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 <= 4.5944)) AND (1 > 4.4170)) AND (0 > 2.3136)) THEN Class 1
+    (Similarity: 0.71)
+  - Old: IF ((((0 <= 5.1250) AND (1 > 5.9906)) AND (0 > 1.2063)) AND (1 <= 6.0906)) THEN Class 1
+  + New: IF ((((1 <= 5.0595) AND (0 > 5.4389)) AND (1 > 1.2296)) AND (1 <= 1.4044)) THEN Class 1
+    (Similarity: 0.73)
+  - Old: IF ((((0 <= 5.1250) AND (1 > 5.9906)) AND (0 > 1.2063)) AND (1 > 6.0906)) THEN Class 1
+  + New: IF ((((1 <= 5.0595) AND (0 > 5.4389)) AND (1 > 1.2296)) AND (1 > 1.4044)) THEN Class 1
+    (Similarity: 0.73)
+
+  New Rules:
+  + IF ((((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 <= 4.5944)) AND (1 <= 4.4170)) AND (0 > 3.2424)) AND (1 > 3.5677)) THEN Class 1
+  + IF ((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 > 4.5944)) AND (1 > 2.0243)) THEN Class 1
+  + IF ((((1 <= 5.0595) AND (0 > 5.4389)) AND (1 <= 1.2296)) AND (0 > 6.8004)) THEN Class 1
+  + IF (((1 > 5.0595) AND (0 <= 0.9720)) AND (1 > 7.0186)) THEN Class 1
+  + IF (((1 > 5.0595) AND (0 > 0.9720)) AND (2 <= 0.0703)) THEN Class 1
+  + IF (((1 > 5.0595) AND (0 > 0.9720)) AND (2 > 0.0703)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((0 <= 5.1250) AND (1 <= 5.9906)) AND (1 > 4.0138)) AND (0 > 3.4697)) AND (0 <= 3.8314)) THEN Class 1
+  - IF (((((0 <= 5.1250) AND (1 > 5.9906)) AND (0 <= 1.2063)) AND (1 > 7.5902)) AND (0 <= 0.3942)) THEN Class 1
+  - IF (((((0 <= 5.1250) AND (1 > 5.9906)) AND (0 <= 1.2063)) AND (1 > 7.5902)) AND (0 > 0.3942)) THEN Class 1
+  - IF (((((0 > 5.1250) AND (1 <= 1.9257)) AND (0 <= 7.2856)) AND (0 > 6.7269)) AND (1 > 1.2400)) THEN Class 1
+  - IF ((((0 > 5.1250) AND (1 <= 1.9257)) AND (0 > 7.2856)) AND (2 <= 0.6456)) THEN Class 1
+  - IF ((((0 > 5.1250) AND (1 <= 1.9257)) AND (0 > 7.2856)) AND (2 > 0.6456)) THEN Class 1
+  - IF ((((0 > 5.1250) AND (1 > 1.9257)) AND (1 <= 2.4009)) AND (0 > 6.3583)) THEN Class 1
+  - IF ((((0 > 5.1250) AND (1 > 1.9257)) AND (1 > 2.4009)) AND (1 <= 2.4982)) THEN Class 1
+  - IF ((((0 > 5.1250) AND (1 > 1.9257)) AND (1 > 2.4009)) AND (1 > 2.4982)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 3 -> Chunk 4 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 3):      nan
+  - Test Acc (Chunk 4):     nan
+  - Test F1 (Chunk 4):      nan
+Fitness:       1.090852 -> 1.290600
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF (((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 <= 4.5944)) AND (1 > 4.4170)) AND (0 <= 2.3136)) THEN Class 0
+  + New: IF (((((1 <= 4.8025) AND (0 <= 5.2320)) AND (0 <= 3.9669)) AND (1 > 4.0053)) AND (0 <= 2.5258)) THEN Class 0
+    (Similarity: 0.78)
+  - Old: IF (((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 > 4.5944)) AND (1 <= 2.0243)) AND (0 <= 5.2159)) THEN Class 0
+  + New: IF (((((1 <= 4.8025) AND (0 <= 5.2320)) AND (0 > 3.9669)) AND (1 <= 2.7330)) AND (1 <= 2.1475)) THEN Class 0
+    (Similarity: 0.76)
+  - Old: IF (((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 > 4.5944)) AND (1 <= 2.0243)) AND (0 > 5.2159)) THEN Class 0
+  + New: IF (((((1 <= 4.8025) AND (0 <= 5.2320)) AND (0 > 3.9669)) AND (1 <= 2.7330)) AND (1 > 2.1475)) THEN Class 0
+    (Similarity: 0.76)
+  - Old: IF (((((1 <= 5.0595) AND (0 > 5.4389)) AND (1 <= 1.2296)) AND (0 <= 6.8004)) AND (2 <= 5.7439)) THEN Class 0
+  + New: IF (((((1 <= 4.8025) AND (0 > 5.2320)) AND (1 > 0.4034)) AND (1 <= 1.2007)) AND (0 <= 6.0839)) THEN Class 0
+    (Similarity: 0.76)
+  - Old: IF ((((1 > 5.0595) AND (0 <= 0.9720)) AND (1 <= 7.0186)) AND (1 <= 6.5470)) THEN Class 0
+  + New: IF ((((1 > 4.8025) AND (0 <= 1.5752)) AND (1 <= 6.7041)) AND (1 <= 6.0265)) THEN Class 0
+    (Similarity: 0.76)
+  - Old: IF ((((1 > 5.0595) AND (0 <= 0.9720)) AND (1 <= 7.0186)) AND (1 > 6.5470)) THEN Class 0
+  + New: IF ((((1 > 4.8025) AND (0 <= 1.5752)) AND (1 <= 6.7041)) AND (1 > 6.0265)) THEN Class 0
+    (Similarity: 0.76)
+
+  New Rules:
+  + IF (((((1 <= 4.8025) AND (0 <= 5.2320)) AND (0 <= 3.9669)) AND (1 <= 4.0053)) AND (2 <= 9.7690)) THEN Class 0
+  + IF (((((1 <= 4.8025) AND (0 <= 5.2320)) AND (0 <= 3.9669)) AND (1 <= 4.0053)) AND (2 > 9.7690)) THEN Class 0
+  + IF ((((1 <= 4.8025) AND (0 > 5.2320)) AND (1 <= 0.4034)) AND (0 <= 7.0277)) THEN Class 0
+  + IF ((((1 > 4.8025) AND (0 > 1.5752)) AND (0 <= 1.9849)) AND (1 <= 6.1848)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 <= 4.5944)) AND (1 <= 4.4170)) AND (0 <= 3.2424)) AND (1 > 4.1886)) AND (2 <= 3.5645)) THEN Class 0
+  - IF (((((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 <= 4.5944)) AND (1 <= 4.4170)) AND (0 <= 3.2424)) AND (1 > 4.1886)) AND (2 > 3.5645)) THEN Class 0
+  - IF (((((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 <= 4.5944)) AND (1 <= 4.4170)) AND (0 > 3.2424)) AND (1 <= 3.5677)) AND (1 <= 3.1140)) THEN Class 0
+  - IF (((((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 <= 4.5944)) AND (1 <= 4.4170)) AND (0 > 3.2424)) AND (1 <= 3.5677)) AND (1 > 3.1140)) THEN Class 0
+  - IF ((((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 <= 4.5944)) AND (1 <= 4.4170)) AND (0 <= 3.2424)) AND (1 <= 4.1886)) THEN Class 0
+  - IF (((((1 <= 5.0595) AND (0 > 5.4389)) AND (1 <= 1.2296)) AND (0 <= 6.8004)) AND (2 > 5.7439)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 <= 4.5944)) AND (1 > 4.4170)) AND (0 > 2.3136)) THEN Class 1
+  + New: IF (((((1 <= 4.8025) AND (0 <= 5.2320)) AND (0 <= 3.9669)) AND (1 > 4.0053)) AND (0 > 2.5258)) THEN Class 1
+    (Similarity: 0.78)
+  - Old: IF ((((1 <= 5.0595) AND (0 > 5.4389)) AND (1 <= 1.2296)) AND (0 > 6.8004)) THEN Class 1
+  + New: IF ((((1 <= 4.8025) AND (0 > 5.2320)) AND (1 <= 0.4034)) AND (0 > 7.0277)) THEN Class 1
+    (Similarity: 0.76)
+  - Old: IF ((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 > 4.5944)) AND (1 > 2.0243)) THEN Class 1
+  + New: IF ((((1 > 4.8025) AND (0 <= 1.5752)) AND (1 > 6.7041)) AND (0 > 0.2606)) THEN Class 1
+    (Similarity: 0.69)
+  - Old: IF (((1 > 5.0595) AND (0 > 0.9720)) AND (2 > 0.0703)) THEN Class 1
+  + New: IF (((1 > 4.8025) AND (0 > 1.5752)) AND (0 > 1.9849)) THEN Class 1
+    (Similarity: 0.72)
+
+  New Rules:
+  + IF (((((1 <= 4.8025) AND (0 <= 5.2320)) AND (0 > 3.9669)) AND (1 > 2.7330)) AND (0 <= 4.1506)) THEN Class 1
+  + IF (((((1 <= 4.8025) AND (0 <= 5.2320)) AND (0 > 3.9669)) AND (1 > 2.7330)) AND (0 > 4.1506)) THEN Class 1
+  + IF (((((1 <= 4.8025) AND (0 > 5.2320)) AND (1 > 0.4034)) AND (1 <= 1.2007)) AND (0 > 6.0839)) THEN Class 1
+  + IF (((((1 <= 4.8025) AND (0 > 5.2320)) AND (1 > 0.4034)) AND (1 > 1.2007)) AND (0 <= 5.4039)) THEN Class 1
+  + IF (((((1 <= 4.8025) AND (0 > 5.2320)) AND (1 > 0.4034)) AND (1 > 1.2007)) AND (0 > 5.4039)) THEN Class 1
+  + IF ((((1 > 4.8025) AND (0 <= 1.5752)) AND (1 > 6.7041)) AND (0 <= 0.2606)) THEN Class 1
+  + IF ((((1 > 4.8025) AND (0 > 1.5752)) AND (0 <= 1.9849)) AND (1 > 6.1848)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((1 <= 5.0595) AND (0 <= 5.4389)) AND (0 <= 4.5944)) AND (1 <= 4.4170)) AND (0 > 3.2424)) AND (1 > 3.5677)) THEN Class 1
+  - IF ((((1 <= 5.0595) AND (0 > 5.4389)) AND (1 > 1.2296)) AND (1 <= 1.4044)) THEN Class 1
+  - IF ((((1 <= 5.0595) AND (0 > 5.4389)) AND (1 > 1.2296)) AND (1 > 1.4044)) THEN Class 1
+  - IF (((1 > 5.0595) AND (0 <= 0.9720)) AND (1 > 7.0186)) THEN Class 1
+  - IF (((1 > 5.0595) AND (0 > 0.9720)) AND (2 <= 0.0703)) THEN Class 1
+
+======================================================================
+Overall Performance Summary (from History File)
+======================================================================
+Avg Train Accuracy: nan +/- nan (over 0 chunks)
+Avg Test Accuracy:  nan +/- nan (over 0 chunks)
+Avg Test F1:        nan +/- nan (over 0 chunks)
+======================================================================

@@ -1,0 +1,61 @@
+================================================================================
+COMANDOS PARA INSTALAR DEPENDÊNCIAS NO SERVIDOR
+================================================================================
+
+PASSO 1: Conectar ao servidor
+------------------------------
+ssh root@right-scotia-humor-toward.trycloudflare.com
+
+
+PASSO 2: Navegar para a pasta
+------------------------------
+cd /content/DSL-AG-hybrid
+
+
+PASSO 3: Instalar River
+------------------------
+pip install river
+
+
+PASSO 4: Instalar Levenshtein
+------------------------------
+pip install python-Levenshtein
+
+
+PASSO 5: Instalar outras dependências comuns (se necessário)
+-------------------------------------------------------------
+pip install numpy pandas scikit-learn pyyaml scipy
+
+
+PASSO 6: Verificar instalações
+-------------------------------
+python -c "import river; print('River:', river.__version__)"
+python -c "import Levenshtein; print('Levenshtein: OK')"
+
+
+================================================================================
+COMANDO ÚNICO (instala tudo de uma vez):
+================================================================================
+
+pip install river python-Levenshtein numpy pandas scikit-learn pyyaml scipy
+
+
+================================================================================
+DEPOIS DE INSTALAR, EXECUTE O TESTE:
+================================================================================
+
+cd /content/DSL-AG-hybrid && nohup python compare_gbml_vs_river.py --stream RBF_Abrupt_Severe --chunks 1 --chunk-size 6000 --seed 42 > test_output.log 2>&1 &
+
+
+================================================================================
+NOTAS:
+================================================================================
+
+✅ River: Biblioteca de machine learning para data streams
+✅ python-Levenshtein: Cálculo de distância de edição entre strings
+✅ As outras dependências são comuns em projetos de ML
+
+Se aparecer erro de permissão, use:
+pip install --user river python-Levenshtein
+
+================================================================================

@@ -1,0 +1,207 @@
+================================================================================
+TABELA COMPARATIVA - TODOS OS EXPERIMENTOS
+================================================================================
+Data: 2025-11-04
+Experimentos: Run3, Run4, Run5 (5 chunks cada)
+================================================================================
+
+METRICAS GERAIS
+--------------------------------------------------------------------------------
+                        Run3           Run4           Run5           Esperado*
+                     (Baseline)    (Layer1 Bug)    (Debug)      (Layer1 Fix)
+--------------------------------------------------------------------------------
+Tempo Total           9.9h          13.4h          12.9h          5.8-7.7h
+Tempo/Chunk         118.8min       160.8min       154.3min       69-92min
+Test G-mean          0.7763         0.7928         0.7852         0.78-0.80
+Std G-mean           0.0963         0.0976         0.1969         0.08-0.12
+Delta Train-Test       N/A            N/A          0.1352           <0.10
+--------------------------------------------------------------------------------
+* Layer1 Fix = projecao se Cache e Early Stop funcionarem
+--------------------------------------------------------------------------------
+
+
+COMPARACOES PERCENTUAIS
+--------------------------------------------------------------------------------
+Metrica                 Run3->Run4    Run3->Run5    Run4->Run5    Run5->Esperado
+--------------------------------------------------------------------------------
+Tempo                    +35.6%        +29.9%        -4.2%         -45-55%
+G-mean                   +2.1%         +1.1%         -1.0%         -0.5 a +2%
+Std                      +1.4%        +104.5%        +101.7%       -40-60%
+--------------------------------------------------------------------------------
+
+
+DIAGNOSTICO LAYER 1 - POR OTIMIZACAO
+--------------------------------------------------------------------------------
+Otimizacao                Status         Evidencias                   Impacto
+--------------------------------------------------------------------------------
+Cache SHA256              NAO FUNCIONA   0 hash logs                  -15-25%
+                                         0 cache hits/misses
+                                         Codigo no bloco serial
+
+Early Stop Adaptativo     NAO FUNCIONA   133x threshold=None          -10-20%
+                                         Nao passado aos workers
+                                         Descartes sempre 0
+
+Hill Climbing Seletivo    FUNCIONA       23 aplicacoes, 12 pulos      -5-10%
+                                         Economia 34.3%
+                                         Taxa aprovacao 27-52%
+--------------------------------------------------------------------------------
+Impacto total esperado se corrigido:                                 -40-55%
+--------------------------------------------------------------------------------
+
+
+METRICAS POR CHUNK - RUN5 (DEBUG)
+--------------------------------------------------------------------------------
+Chunk    Tempo      Train      Test       Delta     HC        HC         Early
+         (min)      G-mean     G-mean               Aplic     Pulado     Stop
+--------------------------------------------------------------------------------
+  0      94.6       0.9257     0.9014     +0.0243     2         0         133*
+  1     223.3       0.9407     0.9039     +0.0368     7         3          0
+  2     226.3       0.9441     0.4377     +0.5064     5         0          0
+  3      94.4       0.9345     0.8552     +0.0793     2         3          0
+  4     132.9       0.8568     0.8276     +0.0292     7         6          0
+--------------------------------------------------------------------------------
+Media   154.3       0.9204     0.7852     +0.1352    23        12         133
+Std       -         0.0362     0.1969        -        -         -          -
+--------------------------------------------------------------------------------
+* Early Stop = logs "Early stop DESATIVADO: threshold=None"
+  PROBLEMA: Threshold calculado mas nao chega aos workers paralelos
+--------------------------------------------------------------------------------
+
+
+PROBLEMAS IDENTIFICADOS - DETALHAMENTO
+--------------------------------------------------------------------------------
+Problema                       Localizacao         Severidade    Correcao
+--------------------------------------------------------------------------------
+1. Cache no bloco serial       ga.py 915-998       CRITICA       Mover para
+   (nao executa em paralelo)                                     bloco 858-906
+
+2. Early stop threshold        ga.py ~161          CRITICA       Adicionar aos
+   nao passado aos workers                                       worker args
+
+3. Chunk 2 com drift severo    -                   ALTA          Investigar
+   (Test G-mean = 0.4377)                                        fingerprint
+
+4. Variabilidade alta          -                   MEDIA         Early stop
+   (Std dobrou no Run5)                                          pode estabilizar
+--------------------------------------------------------------------------------
+
+
+CAUSA RAIZ CONSOLIDADA
+--------------------------------------------------------------------------------
+Layer 1 foi implementado APENAS no modo SERIAL (ga.py linhas 915-998)
+
+Todos os experimentos rodaram em modo PARALELO (use_parallel=True)
+
+Resultado:
+  - Bloco serial nunca executado
+  - Cache nunca inicializado
+  - Early stop threshold nunca passado aos workers
+  - Overhead de processamento paralelo SEM beneficios das otimizacoes
+  - Tempo PIOROU em 30% em vez de MELHORAR em 40-55%
+--------------------------------------------------------------------------------
+
+
+EVIDENCIAS DE DEBUG - RUN5
+--------------------------------------------------------------------------------
+Log Pattern                                 Esperado    Encontrado    Status
+--------------------------------------------------------------------------------
+[DEBUG L1] Hash gerado                        >100           0        AUSENTE
+[DEBUG L1] CACHE HIT                           >10           0        AUSENTE
+[DEBUG L1] CACHE MISS                         >100           0        AUSENTE
+[DEBUG L1 FITNESS] Early stop check            >50         500+       OK
+[DEBUG L1 FITNESS] EARLY STOP DESCARTE         >20           0        AUSENTE
+[DEBUG L1 FITNESS] Early stop DESATIVADO         0         133        PROBLEMA
+[EARLY STOP] Gen X: threshold=...              >20          30        OK
+[HC] Aplicando Hill Climbing                   >15          23        OK
+[HC] PULANDO Hill Climbing                     >10          12        OK
+--------------------------------------------------------------------------------
+Conclusao: Cache e Early Stop nao executam, HC funciona
+--------------------------------------------------------------------------------
+
+
+TIMELINE DOS EXPERIMENTOS
+--------------------------------------------------------------------------------
+Data           Run    Objetivo                           Resultado
+--------------------------------------------------------------------------------
+2025-10-28     Run3   Baseline Fase 1+2                  9.9h, G=0.7763
+2025-10-30     Run4   Testar Layer 1 completo            13.4h (+35.6%)
+2025-11-03     Run5   Debug Layer 1 com logging          12.9h (+29.9%)
+2025-11-04     -      Analise completa, causa raiz       Diagnosticado
+--------------------------------------------------------------------------------
+Proximo:       Run6   Layer 1 corrigido (paralelo)       ~6-7h esperado
+--------------------------------------------------------------------------------
+
+
+PLANO DE ACAO PRIORIZADO
+--------------------------------------------------------------------------------
+Fase    Objetivo                        Tempo      Complexidade    Prioridade
+--------------------------------------------------------------------------------
+A       Validar modo serial             1-2 dias   BAIXA           CRITICA
+        (use_parallel=false)
+
+B       Implementar Layer 1             3-5 dias   MEDIA-ALTA      CRITICA
+        no modo paralelo
+
+C       Experimento completo            1 dia      BAIXA           ALTA
+        Run6 (5+ chunks)
+
+D       Tunning threshold early         2-3 dias   MEDIA           MEDIA
+        stop e HC seletivo
+--------------------------------------------------------------------------------
+
+
+METRICAS DE SUCESSO - RUN6
+--------------------------------------------------------------------------------
+Criterio                                      Target              Baseline (Run5)
+--------------------------------------------------------------------------------
+Tempo total                                   < 7.5h              12.9h
+Reducao vs Run5                               >= 40%              -
+Reducao vs Run3                               >= 20%              -
+Cache hits (gen 2+)                           >= 8%               0%
+Early stop descartes (gen 2+)                 >= 5%               0%
+Test G-mean                                   >= 0.775            0.7852
+Std G-mean                                    < 0.15              0.1969
+Logs de cache aparecem                        SIM                 NAO
+Logs de early stop descartes aparecem         SIM                 NAO
+--------------------------------------------------------------------------------
+
+
+ALTERNATIVAS SE LAYER 1 FALHAR
+--------------------------------------------------------------------------------
+1. Otimizar Fase 2 (Concept Fingerprinting)
+   - Investigar por que Chunk 2 teve G-mean=0.4377
+   - Ajustar threshold similaridade (0.85 -> 0.80?)
+   - Melhorar seeding de regras
+
+2. Aumentar populacao (120 -> 180-200)
+   - Melhor exploracao
+   - Reducir geracoes para manter budget
+
+3. Ensemble de modelos elite
+   - Treinar 3-5 individuos elite por chunk
+   - Votacao majoritaria
+   - +20-30% tempo predicao, +2-5% G-mean esperado
+--------------------------------------------------------------------------------
+
+
+CONCLUSAO
+--------------------------------------------------------------------------------
+PROBLEMA IDENTIFICADO:  Layer 1 implementado apenas no modo serial
+                        Experimentos rodaram em modo paralelo
+
+IMPACTO OBSERVADO:      +30% tempo (em vez de -45% esperado)
+
+SOLUCAO PRIORITARIA:    Reimplementar Cache e Early Stop para modo paralelo
+
+PROXIMO PASSO:          FASE A - Validar modo serial funciona (1-2 dias)
+
+BENEFICIO ESPERADO:     -40-55% tempo (de 12.9h para 5.8-7.7h)
+                        Melhor que Run3 baseline em -22-42%
+
+STATUS:                 PRONTO PARA ACAO
+--------------------------------------------------------------------------------
+
+Autor: Analise consolidada de Runs 3, 4 e 5
+Data: 2025-11-04
+================================================================================

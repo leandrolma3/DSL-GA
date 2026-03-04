@@ -1,0 +1,135 @@
+Rule History for Stream: RANDOMTREE_Stationary, Run: 1
+========================================
+
+--- Chunk 0 (Trained) --- Test Perf (Chunk 1): TestGmean=0.6731, TestF1=0.6801
+ Train Perf (Chunk 0): TrainGmean=0.7204
+---
+  Fitness: 0.792908
+  Default Class: 1
+  Rules (15 total):
+    Class 0:
+      1: IF (x_cat_3 < 3.3868) THEN Class 0
+      2: IF ((((x_cat_3 > 3.5000) AND (x_cat_1 <= 0.5000)) AND (x_num_1 > 0.7902)) AND (x_num_2 <= 0.4495)) THEN Class 0
+      3: IF (((((x_cat_3 > 3.5000) AND (x_cat_1 > 1.5442)) AND (x_cat_1 <= 3.5000)) AND (x_cat_0 > 3.5000)) AND (x_num_3 > 0.8139)) THEN Class 0
+    Class 1:
+      1: IF ((((x_cat_3 > 3.5000) AND (x_cat_1 <= 0.5000)) AND (x_num_1 > 0.7902)) AND (x_num_2 > 0.4495)) THEN Class 1
+      2: IF ((x_cat_3 <= 1.5000) AND (x_cat_3 > 0.5000)) THEN Class 1
+      3: IF ((((((x_cat_3 <= 1.5000) AND (x_cat_3 > 0.5000)) AND (x_cat_4 > 1.5000)) AND (x_cat_1 > 1.5000)) AND (x_num_1 <= 0.8430)) AND (x_num_2 > 0.7596)) THEN Class 1
+      4: IF ((((((x_cat_3 <= 3.5000) AND (x_cat_3 > 1.5000)) AND (x_cat_1 > 1.5000)) AND (x_cat_1 > 2.5000)) AND (x_num_4 > 0.9158)) AND (x_num_3 <= 0.3684)) THEN Class 1
+      5: IF ((((((x_cat_3 <= 1.5000) AND (x_cat_3 > 0.5000)) AND (x_cat_4 <= 1.5000)) AND (x_num_3 <= 0.7650)) AND (x_cat_1 <= 1.5000)) AND (x_cat_0 <= 0.5000)) THEN Class 1
+      6: IF (((((((x_cat_3 <= 3.5000) AND (x_cat_3 > 1.5000)) AND (x_cat_1 <= 1.5000)) AND (x_num_4 <= 0.4330)) AND (x_num_3 <= 0.1892)) AND (x_cat_2 > 2.5000)) AND (x_num_2 <= 0.2150)) THEN Class 1
+      7: IF ((((((x_cat_3 <= 1.5000) AND (x_cat_3 > 0.5000)) AND (x_cat_4 > 1.5000)) AND (x_cat_1 <= 1.5000)) AND (x_cat_4 <= 2.5000)) AND (x_cat_0 <= 2.5000)) THEN Class 1
+      8: IF (((((((x_cat_3 <= 3.5000) AND (x_cat_3 > 1.5000)) AND (x_cat_1 <= 1.5000)) AND (x_num_4 <= 0.4330)) AND (x_num_3 <= 0.1892)) AND (x_cat_2 > 2.5000)) AND (x_num_2 > 0.2150)) THEN Class 1
+      9: IF (((((((x_cat_3 <= 3.5000) AND (x_cat_3 > 1.5000)) AND (x_cat_1 <= 1.5000)) AND (x_num_4 > 0.4330)) AND (x_cat_2 <= 1.5000)) AND (x_cat_3 > 2.5000)) AND (x_cat_2 > 0.5000)) THEN Class 1
+      10: IF (((x_cat_3 <= 0.5000) AND (x_cat_1 <= 3.5000)) AND (x_cat_1 > 0.5000)) THEN Class 1
+      11: IF (((((((x_cat_3 <= 3.5000) AND (x_cat_3 > 1.5000)) AND (x_cat_1 <= 1.5000)) AND (x_num_4 > 0.4330)) AND (x_cat_2 > 1.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_2 > 3.5000)) THEN Class 1
+      12: IF (((((x_cat_3 <= 0.5000) AND (x_cat_1 <= 3.5000)) AND (x_cat_1 > 0.5000)) AND (x_num_1 > 0.7563)) AND (x_cat_0 <= 0.5000)) THEN Class 1
+========================================
+
+--- Chunk 1 (Trained) --- Test Perf (Chunk 2): TestGmean=0.6741, TestF1=0.6830
+ Train Perf (Chunk 1): TrainGmean=0.6892
+---
+  Fitness: 0.959212
+  Default Class: 1
+  Rules (13 total):
+    Class 0:
+      1: IF ((x_cat_3 <= 0.5000) AND (x_cat_1 < 3.5000)) THEN Class 0
+      2: IF (((x_cat_3 < 3.5000) AND (x_cat_3 > 1.5000)) AND (x_cat_1 > 1.5000)) THEN Class 0
+      3: IF ((((x_cat_3 > 0.5000) AND (x_cat_1 <= 2.5000)) AND ((x_cat_4 > 0.5000) AND (x_cat_0 > 0.5000))) AND (((x_num_0 > 0.1651) AND (x_cat_1 > 0.5000)) AND ((x_num_1 > 0.1659) AND (x_cat_2 <= 3.5000)))) THEN Class 0
+    Class 1:
+      1: IF (((x_cat_3 <= 0.5000) AND ((x_cat_1 <= 3.5000) AND (x_cat_1 > 0.5000))) AND (((x_num_1 <= 0.7499) AND (x_num_3 > 0.2718)) AND ((x_num_2 <= 0.9468) AND (x_num_3 > 0.3401)))) THEN Class 1
+      2: IF ((((x_cat_3 > 3.5000) AND (x_cat_1 <= 3.5000)) AND (x_cat_1 <= 0.5000)) AND (x_num_2 > 0.8512)) THEN Class 1
+      3: IF (((x_cat_3 > 0.5000) AND ((x_cat_1 > 2.5000) AND (x_cat_3 <= 2.5000))) AND (((x_num_3 > 0.3427) AND (x_cat_3 > 1.5000)) AND ((x_cat_1 > 3.5000) AND (x_num_3 > 0.5143)))) THEN Class 1
+      4: IF ((((((x_cat_3 > 0.6513) AND (x_cat_1 <= 3.5000)) AND (x_cat_1 > 0.5000)) AND (x_num_1 <= 0.1553)) AND (x_num_4 > 0.8017)) AND (x_num_2 <= 0.5385)) THEN Class 1
+      5: IF (((x_cat_3 <= 3.5000) AND (x_cat_3 > 3.3277)) AND (x_cat_1 <= 1.5000)) THEN Class 1
+      6: IF (((x_cat_3 > 3.5000) AND (x_cat_1 > 3.5000)) AND (x_num_2 > 0.8352)) THEN Class 1
+      7: IF ((((x_cat_3 > 0.5000) AND (x_cat_1 <= 2.5000)) AND ((x_cat_4 > 0.5000) AND (x_cat_0 > 0.5000))) AND (((x_num_0 > 0.1651) AND (x_cat_1 <= 0.5000)) AND ((x_cat_3 > 3.5000) AND (x_num_3 > 0.1730)))) THEN Class 1
+      8: IF (((x_cat_1 > 1.8397) OR ((x_num_4 <= 0.5032) AND (x_cat_2 > 1.1723))) AND (((x_cat_2 < 1.4759) AND (((x_num_1 > 0.7343) OR (x_cat_3 <= 2.3740)) AND (x_cat_2 >= 1.2278))) AND (((x_cat_0 < 3.4990) AND ((x_cat_0 >= 3.0377) AND (x_num_1 <= 0.8623))) AND (((x_num_2 >= 0.3675) AND (x_num_0 < 0.2456)) AND ((x_num_3 <= 0.1211) AND (x_num_3 > 0.3678)))))) THEN Class 1
+      9: IF (((((x_cat_3 > 3.5000) AND (x_cat_1 <= 3.5000)) AND (x_cat_1 > 0.5000)) AND (x_num_1 <= 0.1553)) AND (x_num_4 > 0.8017)) THEN Class 1
+      10: IF (((x_num_1 < 0.1895) AND (x_num_1 > 0.1856)) AND ((x_num_3 < 0.8480) AND (x_cat_2 > 1.0793))) THEN Class 1
+========================================
+
+--- Chunk 2 (Trained) --- Test Perf (Chunk 3): TestGmean=0.6268, TestF1=0.6255
+ Train Perf (Chunk 2): TrainGmean=0.6589
+---
+  Fitness: 0.924759
+  Default Class: 0
+  Rules (16 total):
+    Class 0:
+      1: IF ((x_cat_3 <= 0.5000) AND (x_cat_1 > 3.5000)) THEN Class 0
+      2: IF ((x_cat_3 > 1.7854) AND (x_cat_1 > 0.6516)) THEN Class 0
+      3: IF ((((x_cat_3 > 0.5000) AND (x_cat_3 <= 3.5000)) AND ((x_cat_1 > 0.5000) AND ((x_num_4 > 0.1564) AND (x_cat_1 <= 2.5000)))) AND (((x_cat_1 > 1.5000) AND (x_cat_3 > 1.5000)) AND ((x_cat_3 <= 2.5000) AND ((x_num_0 > 0.1265) AND (x_num_3 > 0.1363))))) THEN Class 0
+    Class 1:
+      1: IF (((x_cat_3 > 3.5000) AND (x_cat_1 <= 0.5000)) AND (x_num_1 > 0.8762)) THEN Class 1
+      2: IF (((x_cat_3 > 3.5000) AND (x_cat_1 <= 3.5000)) AND ((x_num_1 <= 0.0940) AND (x_cat_1 <= 0.5000))) THEN Class 1
+      3: IF (((x_cat_3 > 3.9528) AND (x_cat_1 > 3.5000)) AND ((x_num_4 <= 0.9036) AND (x_num_2 <= 0.7741))) THEN Class 1
+      4: IF ((((((x_cat_3 > 3.5000) AND (x_cat_1 > 0.5000)) AND (x_cat_1 <= 3.5000)) AND (x_cat_0 <= 0.5000)) AND (x_num_4 <= 0.9043)) AND (x_num_2 <= 0.9005)) THEN Class 1
+      5: IF ((((((x_cat_3 <= 1.5000) AND (x_cat_3 > 0.5000)) AND (x_cat_4 <= 1.5000)) AND (x_num_1 > 0.1616)) AND (x_cat_4 > 0.5000)) AND (x_cat_1 > 2.5000)) THEN Class 1
+      6: IF ((x_cat_4 <= 2.0018) OR (x_num_2 >= 0.2395)) THEN Class 1
+      7: IF ((((x_cat_3 > 0.5000) AND (x_cat_3 <= 3.5000)) AND ((x_cat_1 > 0.5000) AND (x_num_4 > 0.1564))) AND (((x_cat_1 > 2.5000) AND (x_cat_3 <= 1.5000)) AND ((x_num_1 > 0.1641) AND (x_cat_4 <= 1.5000)))) THEN Class 1
+      8: IF ((((((x_cat_3 <= 1.5000) AND (x_cat_3 > 0.5000)) AND (x_cat_4 <= 1.5000)) AND (x_num_1 <= 0.1616)) AND (x_cat_4 > 0.5000)) AND (x_num_4 > 0.4430)) THEN Class 1
+      9: IF ((((((x_cat_3 > 3.5000) AND (x_cat_1 > 0.5000)) AND (x_cat_1 <= 3.5000)) AND (x_cat_0 <= 0.5000)) AND (x_num_4 <= 0.9043)) AND (x_num_2 > 0.9005)) THEN Class 1
+      10: IF (((x_cat_3 > 0.5000) AND (x_cat_3 > 3.5000)) AND ((x_num_1 <= 0.8832) AND ((x_cat_1 <= 3.5000) AND (x_cat_1 <= 0.5000)))) THEN Class 1
+      11: IF (((x_cat_3 <= 0.5000) AND ((x_cat_1 > 0.5000) AND (x_num_3 > 0.3378))) AND ((x_num_1 <= 0.7477) AND ((x_cat_1 <= 3.5000) AND (x_num_2 <= 0.9348)))) THEN Class 1
+      12: IF ((((((x_cat_3 <= 1.5000) AND (x_cat_3 > 0.5000)) AND (x_cat_4 > 1.5000)) AND (x_cat_1 <= 0.5000)) AND (x_cat_2 <= 2.5000)) AND (x_num_3 > 0.6273)) THEN Class 1
+      13: IF (((x_num_4 < 0.2385) AND (((x_cat_0 >= 0.4372) OR (x_cat_2 >= 1.7397)) AND (((x_cat_2 > 1.9545) AND (x_num_3 > 0.3645)) AND ((((((x_num_4 >= 0.4160) AND ((x_num_0 >= 0.6827) AND (x_num_2 <= 0.7282))) AND ((x_num_3 < 0.7319) AND (x_cat_1 <= 2.8474))) AND (x_cat_4 <= 1.7321)) AND ((x_num_0 <= 0.2289) AND ((((x_cat_1 <= 1.4046) AND (x_cat_3 < 2.8512)) AND ((x_num_0 >= 0.7883) OR (x_num_1 >= 0.8951))) AND (((x_cat_2 >= 3.1805) AND (x_num_4 < 0.3677)) AND ((x_cat_3 >= 1.3627) OR (x_num_3 > 0.7985)))))) AND ((x_cat_0 >= 1.0564) AND (x_cat_3 > 1.0483)))))) AND (x_num_2 <= 0.7302)) THEN Class 1
+========================================
+
+--- Chunk 3 (Trained) --- Test Perf (Chunk 4): TestGmean=0.7074, TestF1=0.7032
+ Train Perf (Chunk 3): TrainGmean=0.7793
+---
+  Fitness: 0.856687
+  Default Class: 0
+  Rules (25 total):
+    Class 0:
+      1: IF ((((x_cat_3 <= 3.5000) AND ((x_cat_4 > 1.5000) AND (x_num_3 > 0.2849))) AND ((x_cat_2 > 0.5000) AND ((x_cat_4 <= 3.5000) AND (x_cat_0 > 0.5000)))) AND (((x_num_2 > 0.5465) AND ((x_num_4 <= 0.8916) AND (x_cat_0 > 1.5000))) AND ((x_cat_2 <= 3.5000) AND ((x_num_3 > 0.3680) AND (x_num_2 > 0.7098))))) THEN Class 0
+      2: IF (((((((x_cat_3 > 3.5000) AND (x_cat_1 > 0.5000)) AND (x_cat_1 <= 3.5000)) AND (x_cat_0 > 1.1475)) AND (x_cat_0 > 2.5000)) AND (x_cat_0 > 3.5000)) AND (x_cat_2 > 0.5000)) THEN Class 0
+      3: IF (((((((x_cat_3 > 3.5000) AND (x_cat_1 > 0.5000)) AND (x_cat_1 <= 3.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_0 <= 2.5000)) AND (x_cat_1 > 1.5000)) AND (x_cat_0 > 1.5000)) THEN Class 0
+      4: IF (x_cat_3 <= 2.3323) THEN Class 0
+    Class 1:
+      1: IF ((((x_cat_3 <= 3.5000) AND (x_cat_4 > 1.5000)) AND ((x_num_3 > 0.2849) AND ((x_cat_2 <= 0.5000) AND (x_cat_1 <= 3.5000)))) AND (((x_num_0 > 0.2356) AND (x_num_3 <= 0.7803)) AND ((x_num_0 <= 0.8229) AND ((x_cat_3 <= 2.5000) AND (x_num_3 > 0.5589))))) THEN Class 1
+      2: IF (((((x_cat_3 > 3.5000) AND (x_cat_1 > 0.5000)) AND (x_cat_1 > 3.5000)) AND (x_num_3 > 0.1030)) AND (x_num_3 <= 0.9617)) THEN Class 1
+      3: IF (((((((x_cat_3 <= 3.5000) AND (x_cat_3 > 1.5000)) AND (x_cat_1 <= 1.5000)) AND (x_cat_2 <= 0.5000)) AND (x_num_3 <= 0.8353)) AND (x_num_0 > 0.1358)) AND (x_num_2 <= 0.8687)) THEN Class 1
+      4: IF ((((x_cat_3 <= 1.5000) AND (x_cat_3 > 0.5000)) AND (x_cat_4 <= 1.5000)) AND (x_num_1 > 0.0518)) THEN Class 1
+      5: IF ((((x_cat_3 <= 3.5000) AND (x_cat_4 <= 1.5000)) AND ((x_num_0 > 0.3443) AND (x_cat_3 > 0.5000))) AND (((x_num_4 <= 0.9405) AND (x_cat_3 <= 1.5000)) AND ((x_cat_2 <= 1.5000) AND (x_num_3 > 0.6004)))) THEN Class 1
+      6: IF ((((x_cat_3 <= 3.5000) AND (x_cat_4 > 1.5000)) AND ((x_num_3 > 0.2849) AND ((x_cat_2 > 0.5000) AND (x_cat_4 > 3.5000)))) AND (((x_num_4 > 0.1432) AND (x_cat_2 > 2.5000)) AND ((x_num_1 > 0.3796) AND ((x_num_1 <= 0.8172) AND (x_num_4 > 0.5097))))) THEN Class 1
+      7: IF (((((x_cat_3 <= 0.5000) AND (x_cat_1 <= 3.5000)) AND (x_cat_1 > 0.5000)) AND (x_num_1 <= 0.8419)) AND (x_num_2 <= 0.9456)) THEN Class 1
+      8: IF (((x_cat_3 > 3.5000) AND (x_cat_1 <= 0.5000)) AND ((x_num_1 <= 0.8323) AND (x_cat_0 > 0.5000))) THEN Class 1
+      9: IF ((((x_cat_3 > 3.5000) AND (x_cat_1 <= 0.5000)) AND (x_num_1 > 0.8323)) AND (x_num_1 > 0.9010)) THEN Class 1
+      10: IF (((((((x_cat_3 <= 3.5000) AND (x_cat_3 > 1.5000)) AND (x_cat_1 > 1.5000)) AND (x_cat_1 <= 2.5000)) AND (x_cat_3 > 2.5000)) AND (x_cat_4 <= 0.5000)) AND (x_cat_2 > 3.5000)) THEN Class 1
+      11: IF ((((x_cat_3 <= 3.5000) AND (x_cat_4 <= 1.5000)) AND ((x_num_0 > 0.3443) AND (x_cat_3 > 0.5000))) AND (((x_num_4 <= 0.9405) AND (x_cat_3 <= 1.5000)) AND ((x_cat_2 > 1.5000) AND (x_num_4 > 0.1586)))) THEN Class 1
+      12: IF ((((x_cat_3 <= 1.5000) AND (x_cat_3 > 0.5000)) AND (x_cat_4 > 1.5000)) AND (x_cat_1 > 1.5000)) THEN Class 1
+      13: IF ((((x_cat_3 > 3.5000) AND (x_cat_1 > 0.5000)) AND ((x_cat_0 <= 1.5000) AND (x_num_1 <= 0.9278))) AND (((x_cat_1 > 1.5000) AND (x_num_0 > 0.1796)) AND ((x_cat_2 <= 3.5000) AND (x_num_1 > 0.2024)))) THEN Class 1
+      14: IF ((((((x_cat_3 <= 1.5000) AND (x_cat_3 > 0.5000)) AND (x_cat_4 > 1.5000)) AND (x_cat_1 <= 1.5000)) AND (x_num_1 > 0.3038)) AND (x_num_4 > 0.5349)) THEN Class 1
+      15: IF (((((((x_cat_3 <= 3.5000) AND (x_cat_3 > 1.5000)) AND (x_cat_1 > 1.5000)) AND (x_cat_1 > 2.5000)) AND (x_cat_3 <= 2.5000)) AND (x_num_3 <= 0.5249)) AND (x_cat_1 <= 3.5000)) THEN Class 1
+      16: IF ((((((x_cat_3 <= 1.5000) AND (x_cat_3 > 0.5000)) AND (x_cat_4 > 1.5000)) AND (x_cat_1 > 1.5000)) AND (x_num_3 > 0.0854)) AND (x_cat_4 <= 2.5000)) THEN Class 1
+      17: IF (((((((x_cat_3 <= 3.5000) AND (x_cat_3 > 1.5000)) AND (x_cat_1 <= 1.5000)) AND (x_cat_2 > 0.5000)) AND (x_num_3 <= 0.7740)) AND (x_num_4 <= 0.7542)) AND (x_cat_3 <= 2.5000)) THEN Class 1
+      18: IF (((((x_cat_3 > 3.5000) AND (x_cat_1 > 0.5000)) AND (x_cat_1 <= 3.5000)) AND (x_cat_0 > 0.5000)) AND (x_cat_0 > 2.5000)) THEN Class 1
+      19: IF (((((((x_cat_3 <= 3.5000) AND (x_cat_3 > 1.5000)) AND (x_cat_1 <= 1.5000)) AND (x_cat_2 > 0.5000)) AND (x_num_3 <= 0.7740)) AND (x_num_4 > 0.7542)) AND (x_cat_0 <= 0.5000)) THEN Class 1
+      20: IF ((((x_cat_3 > 3.5000) AND (x_cat_1 <= 0.5000)) AND (x_num_1 <= 0.8323)) AND (x_cat_0 <= 0.5000)) THEN Class 1
+      21: IF ((((x_cat_3 > 3.5000) AND (x_cat_1 <= 0.5000)) AND (x_num_1 <= 0.8323)) AND (x_num_4 <= 0.1413)) THEN Class 1
+========================================
+
+--- Chunk 4 (Trained) --- Test Perf (Chunk 5): TestGmean=0.6640, TestF1=0.6625
+ Train Perf (Chunk 4): TrainGmean=0.6996
+---
+  Fitness: 0.969452
+  Default Class: 0
+  Rules (14 total):
+    Class 0:
+      1: IF ((((x_cat_3 > 3.5000) AND (x_cat_0 > 3.5000)) AND (x_num_1 > 0.1920)) AND (x_cat_1 > 0.5000)) THEN Class 0
+      2: IF (((x_cat_3 > 0.5000) AND ((x_num_1 <= 0.9158) AND (x_cat_1 > 1.5000))) AND ((x_cat_3 <= 3.5000) AND (x_cat_3 > 2.5000))) THEN Class 0
+      3: IF ((((x_cat_3 > 3.5000) AND (x_cat_0 > 3.5000)) AND (x_cat_1 > 0.5000)) AND (x_cat_1 <= 2.5000)) THEN Class 0
+      4: IF ((((x_cat_0 < 1.3348) OR ((((x_num_3 >= 0.2539) AND (x_cat_2 <= 1.5654)) AND (x_cat_0 < 3.5580)) AND (((x_num_3 >= 0.5366) OR (x_num_0 >= 0.1237)) AND ((x_num_3 > 0.5053) AND (x_cat_2 <= 1.6195))))) AND ((x_num_2 < 0.4407) OR (x_cat_3 < 0.6798))) AND (((((x_cat_2 <= 3.4032) AND ((x_cat_4 > 0.8320) AND (x_num_4 > 0.2408))) AND (((x_num_2 < 0.8751) AND (x_num_1 >= 0.6275)) AND (x_num_4 >= 0.7666))) AND ((((x_cat_2 <= 1.9221) AND (x_num_3 < 0.2011)) OR ((x_cat_4 >= 2.4346) AND (x_num_0 >= 0.3432))) AND (((x_cat_3 < 3.4673) AND (x_cat_0 < 2.1148)) AND ((x_cat_3 <= 1.3204) AND (x_cat_3 >= 2.5597))))) AND (((x_num_2 > 0.4028) AND (x_num_3 >= 0.8410)) AND ((x_num_1 < 0.3777) AND (x_num_0 <= 0.1117))))) THEN Class 0
+    Class 1:
+      1: IF (((x_cat_3 > 3.5000) AND (x_cat_0 > 3.5000)) AND (x_cat_1 <= 0.5000)) THEN Class 1
+      2: IF ((((x_cat_3 > 3.5000) AND (x_cat_0 > 3.5000)) AND (x_num_1 > 0.1920)) AND (x_cat_1 <= 0.5000)) THEN Class 1
+      3: IF (((x_cat_3 > 0.5000) AND ((x_num_1 <= 0.9158) AND (x_cat_1 > 2.5000))) AND ((x_cat_3 > 3.5000) AND ((x_cat_1 > 1.0899) AND (x_num_0 > 0.1660)))) THEN Class 1
+      4: IF (((x_cat_3 > 0.5000) AND ((x_num_1 <= 0.9158) AND (x_cat_1 > 0.9000))) AND ((x_cat_3 <= 3.5000) AND ((x_cat_3 <= 1.5000) AND (x_num_0 <= 0.8641)))) THEN Class 1
+      5: IF (((x_cat_3 > 0.5000) AND ((x_num_1 <= 0.9158) AND (x_cat_1 > 1.5000))) AND ((x_cat_3 > 3.5000) AND ((x_cat_0 <= 3.5000) AND (x_cat_1 <= 3.5000)))) THEN Class 1
+      6: IF (((((x_cat_3 <= 3.5000) AND (x_cat_3 > 1.5000)) AND (x_cat_1 <= 1.5000)) AND (x_cat_2 <= 1.5000)) AND (x_num_4 > 0.3924)) THEN Class 1
+      7: IF ((((x_cat_3 > 0.5000) AND (x_num_1 <= 0.9158)) AND ((x_cat_1 <= 2.5000) AND (x_cat_4 <= 1.5000))) AND ((x_cat_3 > 2.5000) AND ((x_cat_0 <= 3.5000) AND (x_num_2 <= 0.8728)))) THEN Class 1
+      8: IF ((((x_cat_3 > 0.5000) AND (x_num_1 <= 0.9158)) AND ((x_cat_1 > 1.5000) AND (x_cat_3 <= 3.5000))) AND (((x_cat_3 > 1.5000) AND (x_cat_3 <= 2.5000)) AND ((x_cat_1 > 2.5000) AND (x_num_3 > 0.5223)))) THEN Class 1
+      9: IF ((((x_cat_3 <= 1.5000) AND (x_cat_3 > 0.5000)) AND (x_cat_4 > 1.5000)) AND (x_num_3 > 0.4715)) THEN Class 1
+      10: IF (((x_cat_3 <= 0.5000) AND (x_cat_1 > 0.5000)) AND (x_cat_1 <= 3.5000)) THEN Class 1
+========================================

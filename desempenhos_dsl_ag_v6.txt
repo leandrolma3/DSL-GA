@@ -1,0 +1,65 @@
+dataset_names = ['SEA','Agrawal','Hyperplane','RBF','RandomTree','Sine','STAGGER','LED','Waveform','Friedman','RandomRBF']
+average_train_accuracies = [0.9659, 0.6701, 0.7751, 0.8411, 0.6799, 0.9456, 1.0, 0.6170, 0.7311, 0.6527, 0.8411]
+train_accuracy_stds = [0.0111, 0.0437, 0.0281, 0.0235, 0.0352, 0.0156, 0, 0.0779, 0.0176, 0.0207, 0.0235]
+average_test_accuracies = [0.9564, 0.6385, 0.7381, 0.8192, 0.6610, 0.9393, 1.0, 0.6051, 0.7033, 0.6121, 0.8192]
+test_accuracy_stds  = [0.0122, 0.0577, 0.0251, 0.0346, 0.0296, 0.0186, 0, 0.0856, 0.0254, 0.0216, 0.0346]
+
+
+Stream Name	Dataset Type	Avg Train Acc	Std Train Acc	Avg Test Acc	Std Test Acc	Avg Test F1	Std Test F1	Total Feats	Avg Used Feats
+
+        SEA          SEA         0.9659         0.0111        	0.9564        	0.0122       	0.9564       	0.0124            3          	2.9630
+        RBF          RBF         0.8411         0.0235        	0.8192        	0.0346       	0.8188       	0.0347           10          	9.0000
+    AGRAWAL      AGRAWAL         0.6701         0.0437        	0.6385        	0.0577       	0.6088       	0.0717            9          	6.3333
+    STAGGER      STAGGER         1.0000         0.0000        	1.0000        	0.0000       	1.0000       	0.0000            3          	3.0000
+       SINE         SINE         0.9456         0.0156        	0.9393        	0.0186       	0.9391       	0.0187            2          	2.0000
+ RANDOMTREE   RANDOMTREE         0.6799         0.0352        	0.6610        	0.0296       	0.5777       	0.0448           10          	6.4815
+ HYPERPLANE   HYPERPLANE         0.7751         0.0281        	0.7381        	0.0251       	0.7373       	0.0252           10          	7.5185
+   WAVEFORM     WAVEFORM         0.7311         0.0176        	0.7033        	0.0254       	0.7013       	0.0267           21         	15.9259
+   FRIEDMAN     FRIEDMAN         0.6527         0.0207        	0.6121        	0.0216       	0.6051       	0.0227           10         	10.0000
+
+
+Initialized population (Default) with 200 individuals (1 prev_best, 30 mutants, 4 memory, 42 prev_pop, 0 DT-seeded, 123 random).
+
+  # --- <<< ADDED: STAGGER Streams >>> ---
+  STAGGER_f1f2f3f2_Abrupt: # STA1 from paper
+    dataset_type: STAGGER
+    concept_sequence:
+      - {concept_id: 'f1', duration_chunks: 2}
+      - {concept_id: 'f2', duration_chunks: 2}
+      - {concept_id: 'f3', duration_chunks: 2}
+      - {concept_id: 'f2', duration_chunks: 2} # Recurrent
+      - {concept_id: 'f1', duration_chunks: 2} # Added another drift
+    drift_type: abrupt
+
+  # --- SEA Streams ---
+  SEA_Abrupt_Mild_Recurrent:
+    dataset_type: SEA
+    concept_sequence:
+      - {concept_id: 'f1', duration_chunks: 2}
+      - {concept_id: 'f3', duration_chunks: 4}
+      - {concept_id: 'f2', duration_chunks: 2}
+      - {concept_id: 'f1', duration_chunks: 4}
+    drift_type: abrupt
+
+  RBF_Severe_Gradual_Recurrent:
+    dataset_type: RBF
+    concept_sequence:
+      - {concept_id: 'c1', duration_chunks: 2}
+      - {concept_id: 'c2_swap', duration_chunks: 2} # Drift Severo
+      - {concept_id: 'c3_move', duration_chunks: 2} # Drift Moderado
+      - {concept_id: 'c1', duration_chunks: 1}      # Drift Recorrente (c3->c1)
+      - {concept_id: 'c5_move_swap', duration_chunks: 2} # Drift Severo
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+
+  # --- Sine Streams ---
+  Sine_f1f3f4f3_Gradual:
+    dataset_type: SINE  # Uses uppercase key
+    concept_sequence:
+      - {concept_id: 'f1', duration_chunks: 2}
+      - {concept_id: 'f3', duration_chunks: 2}
+      - {concept_id: 'f4', duration_chunks: 2}
+      - {concept_id: 'f3', duration_chunks: 2}  # Recurrent
+    drift_type: gradual
+    gradual_drift_width_chunks: 2
+    

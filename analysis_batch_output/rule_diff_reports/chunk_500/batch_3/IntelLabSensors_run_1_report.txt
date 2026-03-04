@@ -1,0 +1,913 @@
+Rule Diff Analysis Report
+Source File: RulesHistory_IntelLabSensors_Run1.txt
+Similarity Threshold: 0.35
+
+======================================================================
+--- Diff Chunk 0 -> Chunk 1 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 0):      nan
+  - Test Acc (Chunk 1):     nan
+  - Test F1 (Chunk 1):      nan
+Fitness:       0.025842 -> 0.032745
+Default Class: 29 -> 22
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light > 38.6400)) AND (light <= 55.2000)) AND (light > 40.4800)) AND (epoch > 39240.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((humidity <= 51.2187) AND ((light > 3.0446) AND (light <= 581.4400))) AND ((light > 117.7600) AND ((humidity > 43.2858) AND (temperature > 20.3118)))) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage <= 2.5436)) AND (epoch > 30649.0000)) AND (epoch <= 51695.5000)) AND (epoch <= 46717.5000)) THEN Class 2
+  + IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage <= 2.5436)) AND (epoch > 30649.0000)) AND (epoch <= 51695.5000)) AND (epoch > 46717.5000)) THEN Class 2
+
+  Deleted Rules:
+  - IF ((((light > 3.9100) AND (light <= 522.5600)) AND (epoch <= 55563.0000)) AND (humidity > 35.5418)) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage > 2.5436)) AND (light > 218.9600)) AND (humidity <= 33.8570)) AND (voltage > 2.6574)) THEN Class 3
+  + IF (((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light > 38.6400)) AND (light <= 55.2000)) AND (light <= 40.4800)) THEN Class 3
+  + IF (((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch <= 8429.5000)) AND (voltage > 2.6106)) AND (epoch <= 6016.0000)) AND (voltage <= 2.7182)) AND (temperature <= 20.0129)) AND (light <= 62.1000)) THEN Class 3
+
+  Deleted Rules:
+  - IF (((light <= 36.8000) AND (epoch <= 29229.5000)) AND (light <= 2.3822)) THEN Class 3
+
+=== Class 4 ===
+
+  New Rules:
+  + IF (((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch <= 8429.5000)) AND (voltage > 2.6106)) AND (epoch <= 6016.0000)) AND (voltage <= 2.7182)) AND (temperature > 20.0129)) AND (voltage <= 2.6814)) THEN Class 4
+
+  Deleted Rules:
+  - IF ((((humidity <= 51.2187) AND (light > 3.0446)) AND ((light <= 581.4400) AND ((light <= 117.7600) AND (light <= 106.7200)))) AND (((voltage <= 2.6455) AND (light > 15.6400)) AND ((light > 58.8800) AND ((light > 73.6000) AND (temperature > 21.8602))))) THEN Class 4
+
+=== Class 6 ===
+
+  New Rules:
+  + IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light <= 38.6400)) AND (light <= 16.1000)) AND (light <= 7.8200)) AND (epoch > 40732.5000)) AND (humidity > 41.0570)) THEN Class 6
+  + IF ((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch <= 8429.5000)) AND (voltage > 2.6106)) AND (epoch <= 6016.0000)) AND (voltage <= 2.7182)) AND (temperature <= 20.0129)) AND (light > 62.1000)) AND (epoch <= 4814.0000)) THEN Class 6
+  + IF (((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light > 787.5200)) AND (epoch <= 41381.0000)) AND (temperature <= 23.8202)) AND (epoch > 26054.0000)) THEN Class 6
+
+  Deleted Rules:
+  - IF ((((humidity <= 51.2187) AND (light > 3.0446)) AND ((light <= 581.4400) AND (light <= 117.7600))) AND (((light <= 106.7200) AND (voltage <= 2.6455)) AND ((light <= 15.6400) AND (light > 7.8200)))) THEN Class 6
+
+=== Class 7 ===
+
+  New Rules:
+  + IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage > 2.5436)) AND (light <= 218.9600)) AND (light <= 158.2400)) AND (light <= 107.6400)) THEN Class 7
+  + IF ((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light <= 38.6400)) AND (light <= 16.1000)) AND (light > 7.8200)) AND (epoch > 43088.0000)) THEN Class 7
+
+  Deleted Rules:
+  - IF ((((light <= 316.4800) AND (voltage <= 2.4695)) AND (humidity <= -3.8785)) AND (light > 6.9000)) THEN Class 7
+
+=== Class 8 ===
+
+  New Rules:
+  + IF ((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity > 29.0009)) AND (voltage > 2.3615)) AND (humidity <= 37.2650)) THEN Class 8
+  + IF ((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light > 1759.0400)) AND (humidity > 37.7792)) THEN Class 8
+
+  Deleted Rules:
+  - IF ((((voltage > 2.5879) AND (light > 106.7200)) AND (temperature <= 23.8839)) AND (humidity <= 43.3524)) THEN Class 8
+  - IF (((humidity <= 51.2187) AND (light > 3.0446)) AND ((light <= 581.4400) AND ((light <= 117.7600) AND (light > 106.7200)))) THEN Class 8
+
+=== Class 9 ===
+
+  New Rules:
+  + IF ((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light > 1759.0400)) AND (humidity <= 37.7792)) AND (voltage <= 2.6338)) AND (temperature > 26.0301)) THEN Class 9
+  + IF (((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch <= 8429.5000)) AND (voltage > 2.6106)) AND (epoch <= 6016.0000)) AND (voltage > 2.7182)) THEN Class 9
+
+  Deleted Rules:
+  - IF (((humidity <= 51.2187) AND (light > 3.0446)) AND ((light > 581.4400) AND ((light > 1817.9200) AND (voltage > 2.6456)))) THEN Class 9
+
+=== Class 10 ===
+
+  New Rules:
+  + IF ((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light > 38.6400)) AND (light > 55.2000)) THEN Class 10
+  + IF (((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch <= 8429.5000)) AND (voltage > 2.6106)) AND (epoch <= 6016.0000)) AND (voltage <= 2.7182)) AND (temperature > 20.0129)) AND (voltage > 2.6814)) THEN Class 10
+  + IF (((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature <= 18.5821)) THEN Class 10
+
+  Deleted Rules:
+  - IF ((((humidity <= 51.2187) AND (light > 3.0446)) AND ((light <= 581.4400) AND (light <= 117.7600))) AND (((light <= 106.7200) AND (voltage <= 2.6455)) AND ((light > 15.6400) AND ((light > 58.8800) AND (light <= 73.6000))))) THEN Class 10
+
+=== Class 11 ===
+
+  New Rules:
+  + IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity > 29.0009)) AND (voltage > 2.3615)) AND (humidity > 37.2650)) AND (humidity <= 48.2380)) AND (temperature <= 21.4878)) AND (epoch > 2951.5000)) AND (humidity <= 45.0772)) AND (voltage <= 2.6164)) AND (light <= 1.6100)) AND (humidity > 42.1327)) THEN Class 11
+
+  Deleted Rules:
+  - IF ((((light <= 316.4800) AND (voltage > 2.1174)) AND (epoch <= 8237.5000)) AND (epoch > 6455.0000)) THEN Class 11
+  - IF (((humidity <= 51.2187) AND ((light > 3.0446) AND (light > 581.4400))) AND ((light <= 1817.9200) AND ((voltage > 2.6338) AND (voltage <= 2.6814)))) THEN Class 11
+
+=== Class 12 ===
+
+  New Rules:
+  + IF (((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity > 29.0009)) AND (voltage > 2.3615)) AND (humidity > 37.2650)) AND (humidity > 48.2380)) THEN Class 12
+  + IF (((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light > 1759.0400)) AND (humidity <= 37.7792)) AND (voltage > 2.6338)) THEN Class 12
+
+  Deleted Rules:
+  - IF ((((humidity <= 51.2187) AND (light > 3.0446)) AND ((light <= 581.4400) AND (light <= 117.7600))) AND (((light <= 106.7200) AND (voltage <= 2.6455)) AND ((light > 15.6400) AND ((light <= 58.8800) AND (humidity > 42.7852))))) THEN Class 12
+
+=== Class 13 ===
+
+  New Rules:
+  + IF (((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light > 787.5200)) AND (epoch <= 41381.0000)) AND (temperature <= 23.8202)) AND (epoch <= 26054.0000)) THEN Class 13
+
+  Deleted Rules:
+  - IF (((((voltage > 2.4247) AND (light >= 828.1412)) AND (voltage < 2.1835)) AND (epoch > 22693.2911)) AND ((epoch > 51271.7009) AND (epoch < 12564.8747))) THEN Class 13
+  - IF ((((humidity <= 43.5856) AND (voltage <= 2.1636)) AND (epoch <= 55082.0000)) AND (voltage > 2.1326)) THEN Class 13
+
+=== Class 14 ===
+
+  New Rules:
+  + IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage <= 2.5436)) AND (epoch > 30649.0000)) AND (epoch > 51695.5000)) AND (light <= 125.1200)) THEN Class 14
+  + IF ((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light <= 38.6400)) AND (light > 16.1000)) AND (epoch > 31436.0000)) AND (epoch <= 37635.5000)) THEN Class 14
+
+  Deleted Rules:
+  - IF ((((humidity <= 51.2187) AND (light > 3.0446)) AND ((light <= 581.4400) AND (light > 117.7600))) AND (((humidity <= 43.2858) AND (temperature > 21.4143)) AND ((light > 242.8800) AND (epoch > 49879.5000)))) THEN Class 14
+
+=== Class 15 ===
+
+  New Rules:
+  + IF (((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch <= 8429.5000)) AND (voltage <= 2.6106)) THEN Class 15
+
+  Deleted Rules:
+  - IF ((((humidity <= 51.6816) AND (temperature > 15.8822)) AND (epoch <= 1797.0000)) AND (voltage <= 2.6634)) THEN Class 15
+
+=== Class 16 ===
+
+  New Rules:
+  + IF ((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light > 1759.0400)) AND (humidity <= 37.7792)) AND (voltage <= 2.6338)) AND (temperature <= 26.0301)) THEN Class 16
+
+  Deleted Rules:
+  - IF (((humidity <= 51.2187) AND (light > 3.0446)) AND ((light > 581.4400) AND ((light > 1817.9200) AND (voltage <= 2.6456)))) THEN Class 16
+
+=== Class 17 ===
+
+  Deleted Rules:
+  - IF ((((humidity <= 51.2187) AND (light > 3.0446)) AND ((light <= 581.4400) AND ((light <= 117.7600) AND (light <= 106.7200)))) AND (((voltage <= 2.6455) AND (light > 15.6400)) AND ((light <= 58.8800) AND ((humidity <= 42.7852) AND (temperature <= 23.0264))))) THEN Class 17
+
+=== Class 18 ===
+
+  New Rules:
+  + IF (((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage <= 2.5436)) AND (epoch <= 30649.0000)) THEN Class 18
+
+  Deleted Rules:
+  - IF (((humidity <= 51.2187) AND ((light > 3.0446) AND (light <= 581.4400))) AND (((light > 117.7600) AND (humidity <= 43.2858)) AND ((temperature <= 21.4143) AND (humidity <= 39.1783)))) THEN Class 18
+
+=== Class 19 ===
+
+  New Rules:
+  + IF ((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity <= 29.0009)) AND (humidity <= 8.0237)) AND (voltage > 2.2203)) THEN Class 19
+
+  Deleted Rules:
+  - IF ((((light <= 390.0800) AND (light > 257.6000)) AND (humidity <= 34.5338)) AND (humidity <= 26.4805)) THEN Class 19
+  - IF (((humidity <= 51.2187) AND ((light <= 3.0446) AND (temperature > 20.1550))) AND ((epoch > 30106.0000) AND ((light <= 2.0239) AND (light <= 0.6900)))) THEN Class 19
+
+=== Class 20 ===
+
+  New Rules:
+  + IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage > 2.5436)) AND (light > 218.9600)) AND (humidity > 33.8570)) AND (voltage > 2.6338)) THEN Class 20
+  + IF (((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light <= 38.6400)) AND (light > 16.1000)) AND (epoch <= 31436.0000)) THEN Class 20
+
+  Deleted Rules:
+  - IF (((humidity <= 51.2187) AND ((light > 3.0446) AND (light <= 581.4400))) AND (((light <= 117.7600) AND (light <= 106.7200)) AND ((voltage > 2.6455) AND (light <= 64.4000)))) THEN Class 20
+
+=== Class 21 ===
+
+  New Rules:
+  + IF ((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light <= 38.6400)) AND (light <= 16.1000)) AND (light <= 7.8200)) AND (epoch <= 40732.5000)) THEN Class 21
+
+  Deleted Rules:
+  - IF ((((humidity <= 51.2187) AND (light > 3.0446)) AND ((light <= 581.4400) AND ((light > 117.7600) AND (humidity <= 43.2858)))) AND (((temperature > 21.4143) AND (light > 242.8800)) AND ((epoch <= 49879.5000) AND ((humidity <= 34.6749) AND (temperature <= 28.1518))))) THEN Class 21
+  - IF ((((temperature > 17.9789) AND (((((light >= 1562.0524) AND (temperature >= 78.1037)) OR ((((humidity < 50.8819) AND (voltage >= 2.6981)) AND (voltage > 2.2010)) AND (light > 511.4617))) AND (((((humidity < 9.0473) AND ((light <= 355.1723) OR ((((((temperature >= 81.9805) AND (humidity <= 43.7260)) AND (light <= 1477.2326)) OR ((light < 1543.0074) AND ((voltage <= 2.2990) OR (epoch < 38085.0598)))) AND (((light >= 194.1841) OR (epoch > 51991.7573)) AND (((epoch >= 28146.8735) AND (light < 1619.5562)) AND (temperature < 41.0642)))) AND (((humidity > 6.3406) AND (epoch >= 29415.5543)) AND (humidity <= 7.8327))))) OR (voltage <= 2.2246)) AND ((epoch <= 28850.3645) AND ((temperature <= 100.7663) AND (voltage >= 2.7107)))) AND (temperature >= 34.6438))) AND (humidity < 3.9472))) AND (light <= 776.1614)) AND ((voltage <= 2.6334) AND (humidity >= 46.3269))) THEN Class 21
+  - IF (((light <= 84.6400) AND (light > 3.4500)) AND (light <= 4.8300)) THEN Class 21
+
+=== Class 22 ===
+
+  New Rules:
+  + IF ((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light <= 38.6400)) AND (light > 16.1000)) AND (epoch > 31436.0000)) AND (epoch > 37635.5000)) THEN Class 22
+
+  Deleted Rules:
+  - IF ((((humidity <= 51.2187) AND (light > 3.0446)) AND ((light <= 581.4400) AND ((light <= 117.7600) AND (light <= 106.7200)))) AND (((voltage <= 2.6455) AND (light > 15.6400)) AND ((light > 58.8800) AND ((light > 73.6000) AND (temperature <= 21.8602))))) THEN Class 22
+  - IF ((((light > 581.4400) AND (light <= 1817.9200)) AND (light <= 772.8000)) AND (temperature > 26.1575)) THEN Class 22
+
+=== Class 23 ===
+
+  New Rules:
+  + IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage > 2.5436)) AND (light <= 218.9600)) AND (light > 158.2400)) AND (epoch > 16495.0000)) THEN Class 23
+
+  Deleted Rules:
+  - IF (((((((humidity <= 51.6816) AND (temperature > 15.8822)) AND (epoch > 1797.0000)) AND (light > 3.0446)) AND (light <= 581.4400)) AND (light > 206.0800)) AND (light <= 242.8800)) THEN Class 23
+  - IF ((((humidity <= 51.2187) AND (light > 3.0446)) AND ((light <= 581.4400) AND ((light > 117.7600) AND (humidity <= 43.2858)))) AND (((temperature > 21.4143) AND (light > 242.8800)) AND ((epoch <= 49879.5000) AND ((humidity <= 34.6749) AND (temperature > 28.1518))))) THEN Class 23
+  - IF ((light <= 1.1500) AND (light > 0.6900)) THEN Class 23
+
+=== Class 24 ===
+
+  New Rules:
+  + IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage <= 2.5436)) AND (epoch > 30649.0000)) AND (epoch > 51695.5000)) AND (light > 125.1200)) THEN Class 24
+
+  Deleted Rules:
+  - IF ((((humidity <= 51.2187) AND (light > 3.0446)) AND ((light <= 581.4400) AND ((light > 117.7600) AND (humidity <= 43.2858)))) AND (((temperature > 21.4143) AND (light <= 242.8800)) AND ((temperature > 22.3943) AND ((voltage <= 2.5656) AND (epoch > 46287.0000))))) THEN Class 24
+
+=== Class 25 ===
+
+  New Rules:
+  + IF (((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity > 29.0009)) AND (voltage > 2.3615)) AND (humidity > 37.2650)) AND (humidity <= 48.2380)) AND (temperature <= 21.4878)) AND (epoch <= 2951.5000)) THEN Class 25
+
+  Deleted Rules:
+  - IF ((((light <= 772.8000) AND (epoch <= 32976.0000)) AND (temperature > 22.4286)) AND (temperature <= 22.8451)) THEN Class 25
+  - IF (((humidity <= 51.2187) AND ((light > 3.0446) AND (light > 581.4400))) AND (((light <= 1817.9200) AND (voltage <= 2.6338)) AND ((epoch > 31766.0000) AND (temperature > 22.6589)))) THEN Class 25
+
+=== Class 26 ===
+
+  New Rules:
+  + IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage > 2.5436)) AND (light <= 218.9600)) AND (light <= 158.2400)) AND (light > 107.6400)) THEN Class 26
+
+  Deleted Rules:
+  - IF ((((light > 699.2000) AND (voltage <= 2.6222)) AND (temperature > 24.5062)) AND (humidity > 32.1585)) THEN Class 26
+  - IF ((((light > 699.2000) AND (voltage <= 2.6222)) AND (temperature > 24.5062)) AND (voltage > 2.3113)) THEN Class 26
+
+=== Class 27 ===
+
+  New Rules:
+  + IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light <= 38.6400)) AND (light <= 16.1000)) AND (light <= 7.8200)) AND (epoch > 40732.5000)) AND (humidity <= 41.0570)) THEN Class 27
+  + IF ((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light <= 86.4800)) AND (voltage > 2.4442)) THEN Class 27
+
+  Deleted Rules:
+  - IF ((((humidity <= 51.2187) AND (light > 3.0446)) AND ((light <= 581.4400) AND (light > 117.7600))) AND (((humidity <= 43.2858) AND (temperature > 21.4143)) AND ((light <= 242.8800) AND ((temperature > 22.3943) AND (voltage > 2.5656))))) THEN Class 27
+
+=== Class 28 ===
+
+  New Rules:
+  + IF ((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity > 29.0009)) AND (voltage <= 2.3615)) AND (light > 2.5008)) AND (light > 2.5655)) AND (light <= 2.7548)) THEN Class 28
+  + IF ((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity > 29.0009)) AND (voltage <= 2.3615)) AND (light > 2.5008)) AND (light > 2.5655)) AND (light > 2.7548)) THEN Class 28
+
+  Deleted Rules:
+  - IF ((((((humidity <= 51.6816) AND (temperature > 15.8822)) AND (epoch > 1797.0000)) AND (light <= 3.0446)) AND (light > 2.6338)) AND (epoch <= 17670.5000)) THEN Class 28
+  - IF ((((light <= 3.0446) AND (light > 2.2415)) AND (light <= 2.6696)) AND (light <= 2.4046)) THEN Class 28
+
+=== Class 30 ===
+
+  New Rules:
+  + IF (((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity <= 29.0009)) AND (humidity > 8.0237)) THEN Class 30
+
+  Deleted Rules:
+  - IF (((humidity <= 51.2187) AND (light <= 3.0446)) AND ((temperature > 20.1550) AND ((epoch > 30106.0000) AND (light > 2.0239)))) THEN Class 30
+
+=== Class 42 ===
+
+  New Rules:
+  + IF (temperature <= 8.7870) THEN Class 42
+
+=== Class 43 ===
+
+  Deleted Rules:
+  - IF (humidity > 51.2187) THEN Class 43
+
+=== Class 44 ===
+
+  New Rules:
+  + IF (((temperature > 8.7870) AND (temperature <= 17.1513)) AND (temperature > 16.7152)) THEN Class 44
+
+  Deleted Rules:
+  - IF (((humidity <= 51.2187) AND (light <= 3.0446)) AND ((temperature <= 20.1550) AND ((temperature <= 19.1799) AND (voltage <= 2.5879)))) THEN Class 44
+
+=== Class 47 ===
+
+  Deleted Rules:
+  - IF (((((((humidity <= 51.6816) AND (temperature > 15.8822)) AND (epoch > 1797.0000)) AND (light <= 3.0446)) AND (light <= 2.6338)) AND (light <= 2.5167)) AND (light > 2.3065)) THEN Class 47
+
+=== Class 49 ===
+
+  New Rules:
+  + IF (((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity > 29.0009)) AND (voltage <= 2.3615)) AND (light <= 2.5008)) AND (humidity <= 47.1445)) THEN Class 49
+
+=== Class 53 ===
+
+  Deleted Rules:
+  - IF (humidity > 51.6816) THEN Class 53
+
+=== Class 54 ===
+
+  New Rules:
+  + IF (((temperature > 8.7870) AND (temperature <= 17.1513)) AND (temperature <= 16.7152)) THEN Class 54
+
+  Deleted Rules:
+  - IF ((humidity <= 51.6816) AND (temperature <= 15.8822)) THEN Class 54
+
+======================================================================
+--- Diff Chunk 1 -> Chunk 2 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 1):      nan
+  - Test Acc (Chunk 2):     nan
+  - Test F1 (Chunk 2):      nan
+Fitness:       0.032745 -> 0.381134
+Default Class: 22 -> 26
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  New Rules:
+  + IF (((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light <= 68.0800)) AND (humidity <= 41.4276)) AND (epoch <= 22554.5000)) AND (epoch <= 3705.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light > 38.6400)) AND (light <= 55.2000)) AND (light > 40.4800)) AND (epoch > 39240.5000)) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch > 33682.0000)) AND (epoch > 39853.0000)) AND (light > 82.8000)) AND (voltage <= 2.1997)) AND (epoch <= 54858.5000)) AND (voltage <= 2.1795)) THEN Class 2
+
+  Deleted Rules:
+  - IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage <= 2.5436)) AND (epoch > 30649.0000)) AND (epoch <= 51695.5000)) AND (epoch <= 46717.5000)) THEN Class 2
+  - IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage <= 2.5436)) AND (epoch > 30649.0000)) AND (epoch <= 51695.5000)) AND (epoch > 46717.5000)) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF ((((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light > 68.0800)) AND (light > 106.7200)) AND (light > 121.4400)) AND (light > 165.6000)) AND (temperature > 22.4874)) THEN Class 3
+  + IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch > 56053.0000)) AND (humidity > 43.6686)) AND (temperature <= 21.4878)) THEN Class 3
+  + IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light <= 68.0800)) AND (humidity <= 41.4276)) AND (epoch > 22554.5000)) THEN Class 3
+
+  Deleted Rules:
+  - IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage > 2.5436)) AND (light > 218.9600)) AND (humidity <= 33.8570)) AND (voltage > 2.6574)) THEN Class 3
+  - IF (((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light > 38.6400)) AND (light <= 55.2000)) AND (light <= 40.4800)) THEN Class 3
+  - IF (((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch <= 8429.5000)) AND (voltage > 2.6106)) AND (epoch <= 6016.0000)) AND (voltage <= 2.7182)) AND (temperature <= 20.0129)) AND (light <= 62.1000)) THEN Class 3
+
+=== Class 4 ===
+
+  New Rules:
+  + IF (((((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch <= 56053.0000)) AND (epoch > 5321.0000)) AND (epoch > 22806.5000)) AND (humidity > 36.7839)) AND (epoch <= 43533.0000)) AND (epoch <= 39800.0000)) THEN Class 4
+  + IF (((((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch <= 56053.0000)) AND (epoch > 5321.0000)) AND (epoch > 22806.5000)) AND (humidity > 36.7839)) AND (epoch > 43533.0000)) AND (voltage <= 2.4543)) THEN Class 4
+  + IF ((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch > 33682.0000)) AND (epoch > 39853.0000)) AND (light <= 82.8000)) AND (light <= 11.5000)) THEN Class 4
+  + IF (((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch > 33682.0000)) AND (epoch <= 39853.0000)) AND (epoch <= 36878.5000)) THEN Class 4
+
+  Deleted Rules:
+  - IF (((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch <= 8429.5000)) AND (voltage > 2.6106)) AND (epoch <= 6016.0000)) AND (voltage <= 2.7182)) AND (temperature > 20.0129)) AND (voltage <= 2.6814)) THEN Class 4
+
+=== Class 6 ===
+
+  New Rules:
+  + IF (((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch <= 56053.0000)) AND (epoch > 5321.0000)) AND (epoch > 22806.5000)) AND (humidity <= 36.7839)) THEN Class 6
+  + IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light > 610.8800)) AND (humidity <= 41.4273)) AND (epoch > 14394.5000)) AND (temperature > 22.6785)) AND (voltage <= 2.6455)) AND (light > 1111.3600)) AND (light <= 1435.2000)) THEN Class 6
+
+  Deleted Rules:
+  - IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light <= 38.6400)) AND (light <= 16.1000)) AND (light <= 7.8200)) AND (epoch > 40732.5000)) AND (humidity > 41.0570)) THEN Class 6
+  - IF ((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch <= 8429.5000)) AND (voltage > 2.6106)) AND (epoch <= 6016.0000)) AND (voltage <= 2.7182)) AND (temperature <= 20.0129)) AND (light > 62.1000)) AND (epoch <= 4814.0000)) THEN Class 6
+  - IF (((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light > 787.5200)) AND (epoch <= 41381.0000)) AND (temperature <= 23.8202)) AND (epoch > 26054.0000)) THEN Class 6
+
+=== Class 7 ===
+
+  New Rules:
+  + IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light > 68.0800)) AND (light <= 106.7200)) AND (epoch > 18539.5000)) THEN Class 7
+
+  Deleted Rules:
+  - IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage > 2.5436)) AND (light <= 218.9600)) AND (light <= 158.2400)) AND (light <= 107.6400)) THEN Class 7
+  - IF ((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light <= 38.6400)) AND (light <= 16.1000)) AND (light > 7.8200)) AND (epoch > 43088.0000)) THEN Class 7
+
+=== Class 8 ===
+
+  New Rules:
+  + IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light > 68.0800)) AND (light > 106.7200)) AND (light <= 121.4400)) THEN Class 8
+
+  Deleted Rules:
+  - IF ((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity > 29.0009)) AND (voltage > 2.3615)) AND (humidity <= 37.2650)) THEN Class 8
+  - IF ((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light > 1759.0400)) AND (humidity > 37.7792)) THEN Class 8
+
+=== Class 9 ===
+
+  New Rules:
+  + IF ((((((((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light <= 1.9882)) AND (humidity <= 50.2572)) AND (voltage <= 2.6693)) AND (voltage <= 2.5711)) AND (light > 0.6900)) AND (voltage > 2.1956)) AND (epoch <= 45403.5000)) AND (temperature > 21.3947)) THEN Class 9
+  + IF (((((((light <= 1817.9200) AND (light > 3.0586)) AND (light > 610.8800)) AND (humidity <= 41.4273)) AND (epoch <= 14394.5000)) AND (light <= 1346.8800)) AND (humidity > 34.2052)) THEN Class 9
+
+  Deleted Rules:
+  - IF ((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light > 1759.0400)) AND (humidity <= 37.7792)) AND (voltage <= 2.6338)) AND (temperature > 26.0301)) THEN Class 9
+  - IF (((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch <= 8429.5000)) AND (voltage > 2.6106)) AND (epoch <= 6016.0000)) AND (voltage > 2.7182)) THEN Class 9
+
+=== Class 10 ===
+
+  New Rules:
+  + IF (((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light <= 68.0800)) AND (humidity <= 41.4276)) AND (epoch <= 22554.5000)) AND (epoch > 3705.5000)) THEN Class 10
+  + IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch > 33682.0000)) AND (epoch > 39853.0000)) AND (light <= 82.8000)) AND (light > 11.5000)) AND (light > 51.0600)) THEN Class 10
+
+  Deleted Rules:
+  - IF ((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light > 38.6400)) AND (light > 55.2000)) THEN Class 10
+  - IF (((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch <= 8429.5000)) AND (voltage > 2.6106)) AND (epoch <= 6016.0000)) AND (voltage <= 2.7182)) AND (temperature > 20.0129)) AND (voltage > 2.6814)) THEN Class 10
+  - IF (((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature <= 18.5821)) THEN Class 10
+
+=== Class 11 ===
+
+  New Rules:
+  + IF (((((light <= 1817.9200) AND (light > 3.0586)) AND (light > 610.8800)) AND (humidity > 41.4273)) AND (temperature <= 22.2179)) THEN Class 11
+
+  Deleted Rules:
+  - IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity > 29.0009)) AND (voltage > 2.3615)) AND (humidity > 37.2650)) AND (humidity <= 48.2380)) AND (temperature <= 21.4878)) AND (epoch > 2951.5000)) AND (humidity <= 45.0772)) AND (voltage <= 2.6164)) AND (light <= 1.6100)) AND (humidity > 42.1327)) THEN Class 11
+
+=== Class 12 ===
+
+  New Rules:
+  + IF ((((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light > 68.0800)) AND (light > 106.7200)) AND (light > 121.4400)) AND (light > 165.6000)) AND (temperature <= 22.4874)) THEN Class 12
+  + IF ((((((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light <= 1.9882)) AND (humidity <= 50.2572)) AND (voltage <= 2.6693)) AND (voltage > 2.5711)) AND (humidity > 41.8431)) AND (humidity > 45.9830)) THEN Class 12
+
+  Deleted Rules:
+  - IF (((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity > 29.0009)) AND (voltage > 2.3615)) AND (humidity > 37.2650)) AND (humidity > 48.2380)) THEN Class 12
+  - IF (((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light > 1759.0400)) AND (humidity <= 37.7792)) AND (voltage > 2.6338)) THEN Class 12
+
+=== Class 13 ===
+
+  New Rules:
+  + IF ((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light > 1.9882)) AND (voltage > 2.3835)) THEN Class 13
+  + IF (((((light <= 1817.9200) AND (light > 3.0586)) AND (light > 610.8800)) AND (humidity > 41.4273)) AND (temperature > 22.2179)) THEN Class 13
+
+  Deleted Rules:
+  - IF (((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light > 787.5200)) AND (epoch <= 41381.0000)) AND (temperature <= 23.8202)) AND (epoch <= 26054.0000)) THEN Class 13
+
+=== Class 14 ===
+
+  New Rules:
+  + IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch > 33682.0000)) AND (epoch > 39853.0000)) AND (light > 82.8000)) AND (voltage > 2.1997)) AND (voltage <= 2.2286)) THEN Class 14
+  + IF (((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light <= 1.9882)) AND (humidity <= 50.2572)) AND (voltage > 2.6693)) THEN Class 14
+
+  Deleted Rules:
+  - IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage <= 2.5436)) AND (epoch > 30649.0000)) AND (epoch > 51695.5000)) AND (light <= 125.1200)) THEN Class 14
+  - IF ((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light <= 38.6400)) AND (light > 16.1000)) AND (epoch > 31436.0000)) AND (epoch <= 37635.5000)) THEN Class 14
+
+=== Class 15 ===
+
+  New Rules:
+  + IF ((light > 1817.9200) AND (humidity > 40.4155)) THEN Class 15
+
+  Deleted Rules:
+  - IF (((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch <= 8429.5000)) AND (voltage <= 2.6106)) THEN Class 15
+
+=== Class 16 ===
+
+  New Rules:
+  + IF ((((((((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light <= 1.9882)) AND (humidity <= 50.2572)) AND (voltage <= 2.6693)) AND (voltage <= 2.5711)) AND (light > 0.6900)) AND (voltage > 2.1956)) AND (epoch <= 45403.5000)) AND (temperature <= 21.3947)) THEN Class 16
+  + IF ((((light > 1817.9200) AND (humidity <= 40.4155)) AND (epoch <= 50687.5000)) AND (epoch <= 43072.0000)) THEN Class 16
+  + IF (((light > 1817.9200) AND (humidity <= 40.4155)) AND (epoch > 50687.5000)) THEN Class 16
+
+  Deleted Rules:
+  - IF ((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light > 1759.0400)) AND (humidity <= 37.7792)) AND (voltage <= 2.6338)) AND (temperature <= 26.0301)) THEN Class 16
+
+=== Class 17 ===
+
+  New Rules:
+  + IF (((((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch <= 56053.0000)) AND (epoch > 5321.0000)) AND (epoch > 22806.5000)) AND (humidity > 36.7839)) AND (epoch <= 43533.0000)) AND (epoch > 39800.0000)) THEN Class 17
+  + IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch <= 56053.0000)) AND (epoch > 5321.0000)) AND (epoch <= 22806.5000)) THEN Class 17
+
+=== Class 18 ===
+
+  New Rules:
+  + IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch <= 56053.0000)) AND (epoch <= 5321.0000)) THEN Class 18
+  + IF (((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch <= 33682.0000)) AND (voltage <= 2.5330)) AND (voltage > 2.2976)) THEN Class 18
+
+  Deleted Rules:
+  - IF (((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage <= 2.5436)) AND (epoch <= 30649.0000)) THEN Class 18
+
+=== Class 19 ===
+
+  New Rules:
+  + IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch > 33682.0000)) AND (epoch > 39853.0000)) AND (light > 82.8000)) AND (voltage > 2.1997)) AND (voltage > 2.2286)) AND (temperature > 27.3090)) THEN Class 19
+  + IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch <= 33682.0000)) AND (voltage > 2.5330)) AND (epoch <= 26176.5000)) AND (temperature <= 26.1330)) AND (humidity <= 31.9304)) THEN Class 19
+
+  Deleted Rules:
+  - IF ((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity <= 29.0009)) AND (humidity <= 8.0237)) AND (voltage > 2.2203)) THEN Class 19
+
+=== Class 20 ===
+
+  New Rules:
+  + IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light <= 68.0800)) AND (humidity > 41.4276)) AND (humidity <= 43.2675)) THEN Class 20
+  + IF (((((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light <= 1.9882)) AND (humidity <= 50.2572)) AND (voltage <= 2.6693)) AND (voltage > 2.5711)) AND (humidity <= 41.8431)) THEN Class 20
+
+  Deleted Rules:
+  - IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage > 2.5436)) AND (light > 218.9600)) AND (humidity > 33.8570)) AND (voltage > 2.6338)) THEN Class 20
+  - IF (((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light <= 38.6400)) AND (light > 16.1000)) AND (epoch <= 31436.0000)) THEN Class 20
+
+=== Class 21 ===
+
+  New Rules:
+  + IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch > 33682.0000)) AND (epoch > 39853.0000)) AND (light > 82.8000)) AND (voltage <= 2.1997)) AND (epoch <= 54858.5000)) AND (voltage > 2.1795)) THEN Class 21
+  + IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch > 56053.0000)) AND (humidity <= 43.6686)) THEN Class 21
+  + IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch <= 33682.0000)) AND (voltage > 2.5330)) AND (epoch <= 26176.5000)) AND (temperature > 26.1330)) AND (epoch <= 12890.5000)) THEN Class 21
+  + IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch <= 33682.0000)) AND (voltage > 2.5330)) AND (epoch <= 26176.5000)) AND (temperature > 26.1330)) AND (epoch > 12890.5000)) THEN Class 21
+
+  Deleted Rules:
+  - IF ((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light <= 38.6400)) AND (light <= 16.1000)) AND (light <= 7.8200)) AND (epoch <= 40732.5000)) THEN Class 21
+
+=== Class 22 ===
+
+  New Rules:
+  + IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light > 610.8800)) AND (humidity <= 41.4273)) AND (epoch > 14394.5000)) AND (temperature > 22.6785)) AND (voltage <= 2.6455)) AND (light <= 1111.3600)) AND (humidity <= 34.9872)) THEN Class 22
+  + IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light > 610.8800)) AND (humidity <= 41.4273)) AND (epoch > 14394.5000)) AND (temperature > 22.6785)) AND (voltage <= 2.6455)) AND (light > 1111.3600)) AND (light > 1435.2000)) THEN Class 22
+
+  Deleted Rules:
+  - IF ((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light <= 38.6400)) AND (light > 16.1000)) AND (epoch > 31436.0000)) AND (epoch > 37635.5000)) THEN Class 22
+
+=== Class 23 ===
+
+  New Rules:
+  + IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch <= 33682.0000)) AND (voltage > 2.5330)) AND (epoch <= 26176.5000)) AND (temperature <= 26.1330)) AND (humidity > 31.9304)) AND (light > 195.0400)) THEN Class 23
+
+  Deleted Rules:
+  - IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage > 2.5436)) AND (light <= 218.9600)) AND (light > 158.2400)) AND (epoch > 16495.0000)) THEN Class 23
+
+=== Class 24 ===
+
+  New Rules:
+  + IF (((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light > 68.0800)) AND (light > 106.7200)) AND (light > 121.4400)) AND (light <= 165.6000)) THEN Class 24
+  + IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light > 610.8800)) AND (humidity <= 41.4273)) AND (epoch > 14394.5000)) AND (temperature > 22.6785)) AND (voltage <= 2.6455)) AND (light <= 1111.3600)) AND (humidity > 34.9872)) THEN Class 24
+
+  Deleted Rules:
+  - IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage <= 2.5436)) AND (epoch > 30649.0000)) AND (epoch > 51695.5000)) AND (light > 125.1200)) THEN Class 24
+
+=== Class 25 ===
+
+  New Rules:
+  + IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch > 33682.0000)) AND (epoch > 39853.0000)) AND (light > 82.8000)) AND (voltage <= 2.1997)) AND (epoch > 54858.5000)) THEN Class 25
+
+  Deleted Rules:
+  - IF (((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity > 29.0009)) AND (voltage > 2.3615)) AND (humidity > 37.2650)) AND (humidity <= 48.2380)) AND (temperature <= 21.4878)) AND (epoch <= 2951.5000)) THEN Class 25
+
+=== Class 26 ===
+
+  Deleted Rules:
+  - IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light > 86.4800)) AND (voltage > 2.5436)) AND (light <= 218.9600)) AND (light <= 158.2400)) AND (light > 107.6400)) THEN Class 26
+
+=== Class 27 ===
+
+  New Rules:
+  + IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch > 56053.0000)) AND (humidity > 43.6686)) AND (temperature > 21.4878)) THEN Class 27
+  + IF ((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch <= 33682.0000)) AND (voltage > 2.5330)) AND (epoch > 26176.5000)) AND (voltage <= 2.6222)) THEN Class 27
+  + IF (((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch <= 33682.0000)) AND (voltage <= 2.5330)) AND (voltage <= 2.2976)) THEN Class 27
+  + IF ((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light <= 1.9882)) AND (humidity > 50.2572)) THEN Class 27
+
+  Deleted Rules:
+  - IF (((((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light <= 62.5600)) AND (light <= 38.6400)) AND (light <= 16.1000)) AND (light <= 7.8200)) AND (epoch > 40732.5000)) AND (humidity <= 41.0570)) THEN Class 27
+  - IF ((((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light > 3.0516)) AND (epoch > 8429.5000)) AND (light <= 1759.0400)) AND (light <= 787.5200)) AND (temperature > 18.5821)) AND (light > 62.5600)) AND (light <= 86.4800)) AND (voltage > 2.4442)) THEN Class 27
+
+=== Class 28 ===
+
+  New Rules:
+  + IF (((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light > 1.9882)) AND (voltage <= 2.3835)) AND (humidity > 41.8117)) THEN Class 28
+  + IF ((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light > 2.5656)) AND (light > 2.6455)) AND (epoch <= 24061.0000)) AND (temperature <= 18.0872)) THEN Class 28
+
+  Deleted Rules:
+  - IF ((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity > 29.0009)) AND (voltage <= 2.3615)) AND (light > 2.5008)) AND (light > 2.5655)) AND (light <= 2.7548)) THEN Class 28
+  - IF ((((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity > 29.0009)) AND (voltage <= 2.3615)) AND (light > 2.5008)) AND (light > 2.5655)) AND (light > 2.7548)) THEN Class 28
+
+=== Class 30 ===
+
+  New Rules:
+  + IF (((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light > 1.9882)) AND (voltage <= 2.3835)) AND (humidity <= 41.8117)) THEN Class 30
+
+  Deleted Rules:
+  - IF (((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity <= 29.0009)) AND (humidity > 8.0237)) THEN Class 30
+
+=== Class 42 ===
+
+  Deleted Rules:
+  - IF (temperature <= 8.7870) THEN Class 42
+
+=== Class 44 ===
+
+  Deleted Rules:
+  - IF (((temperature > 8.7870) AND (temperature <= 17.1513)) AND (temperature > 16.7152)) THEN Class 44
+
+=== Class 47 ===
+
+  New Rules:
+  + IF ((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light > 2.4243)) THEN Class 47
+
+=== Class 49 ===
+
+  Deleted Rules:
+  - IF (((((((temperature > 8.7870) AND (temperature > 17.1513)) AND (light <= 3.0516)) AND (humidity > 29.0009)) AND (voltage <= 2.3615)) AND (light <= 2.5008)) AND (humidity <= 47.1445)) THEN Class 49
+
+=== Class 54 ===
+
+  New Rules:
+  + IF ((((light <= 1817.9200) AND (light <= 3.0586)) AND (light > 2.5656)) AND (light <= 2.6455)) THEN Class 54
+
+  Deleted Rules:
+  - IF (((temperature > 8.7870) AND (temperature <= 17.1513)) AND (temperature <= 16.7152)) THEN Class 54
+
+======================================================================
+--- Diff Chunk 2 -> Chunk 3 ---
+======================================================================
+Performance:
+  - Train Acc (Chunk 2):      nan
+  - Test Acc (Chunk 3):     nan
+  - Test F1 (Chunk 3):      nan
+Fitness:       0.381134 -> 0.032817
+Default Class: 26 -> 26
+----------------------------------------------------------------------
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light <= 73.6000)) AND (light > 5.9800)) AND (light > 7.8200)) AND (light > 41.4000)) AND (voltage <= 2.6338)) AND (voltage <= 2.4748)) AND (light <= 51.9800)) THEN Class 1
+  + IF ((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light <= 73.6000)) AND (light > 5.9800)) AND (light > 7.8200)) AND (light > 41.4000)) AND (voltage > 2.6338)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light <= 68.0800)) AND (humidity <= 41.4276)) AND (epoch <= 22554.5000)) AND (epoch <= 3705.5000)) THEN Class 1
+
+=== Class 2 ===
+
+  New Rules:
+  + IF ((((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light > 117.7600)) AND (voltage <= 2.5879)) AND (epoch > 29358.0000)) AND (humidity <= 45.2257)) AND (light > 426.8800)) AND (temperature > 22.3845)) AND (epoch <= 46291.0000)) THEN Class 2
+  + IF ((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light > 117.7600)) AND (voltage > 2.5879)) AND (temperature <= 24.9374)) AND (light <= 172.9600)) AND (epoch <= 8291.5000)) THEN Class 2
+
+  Deleted Rules:
+  - IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch > 33682.0000)) AND (epoch > 39853.0000)) AND (light > 82.8000)) AND (voltage <= 2.1997)) AND (epoch <= 54858.5000)) AND (voltage <= 2.1795)) THEN Class 2
+
+=== Class 3 ===
+
+  New Rules:
+  + IF ((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light <= 73.6000)) AND (light > 5.9800)) AND (light > 7.8200)) AND (light <= 41.4000)) AND (voltage <= 2.5992)) AND (light > 17.4800)) AND (epoch > 41903.0000)) THEN Class 3
+
+  Deleted Rules:
+  - IF ((((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light > 68.0800)) AND (light > 106.7200)) AND (light > 121.4400)) AND (light > 165.6000)) AND (temperature > 22.4874)) THEN Class 3
+  - IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch > 56053.0000)) AND (humidity > 43.6686)) AND (temperature <= 21.4878)) THEN Class 3
+  - IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light <= 68.0800)) AND (humidity <= 41.4276)) AND (epoch > 22554.5000)) THEN Class 3
+
+=== Class 4 ===
+
+  New Rules:
+  + IF (((((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light > 117.7600)) AND (voltage <= 2.5879)) AND (epoch > 29358.0000)) AND (humidity <= 45.2257)) AND (light <= 426.8800)) AND (humidity <= 39.2463)) AND (temperature > 22.5070)) AND (humidity <= 34.8834)) THEN Class 4
+  + IF ((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light <= 117.7600)) AND (light <= 106.7200)) AND (voltage <= 2.5936)) AND (light > 86.4800)) AND (temperature <= 21.7083)) THEN Class 4
+  + IF (((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light <= 117.7600)) AND (light <= 106.7200)) AND (voltage <= 2.5936)) AND (light <= 86.4800)) THEN Class 4
+
+  Deleted Rules:
+  - IF (((((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch <= 56053.0000)) AND (epoch > 5321.0000)) AND (epoch > 22806.5000)) AND (humidity > 36.7839)) AND (epoch <= 43533.0000)) AND (epoch <= 39800.0000)) THEN Class 4
+  - IF (((((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch <= 56053.0000)) AND (epoch > 5321.0000)) AND (epoch > 22806.5000)) AND (humidity > 36.7839)) AND (epoch > 43533.0000)) AND (voltage <= 2.4543)) THEN Class 4
+  - IF ((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch > 33682.0000)) AND (epoch > 39853.0000)) AND (light <= 82.8000)) AND (light <= 11.5000)) THEN Class 4
+  - IF (((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch > 33682.0000)) AND (epoch <= 39853.0000)) AND (epoch <= 36878.5000)) THEN Class 4
+
+=== Class 6 ===
+
+  Deleted Rules:
+  - IF (((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch <= 56053.0000)) AND (epoch > 5321.0000)) AND (epoch > 22806.5000)) AND (humidity <= 36.7839)) THEN Class 6
+  - IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light > 610.8800)) AND (humidity <= 41.4273)) AND (epoch > 14394.5000)) AND (temperature > 22.6785)) AND (voltage <= 2.6455)) AND (light > 1111.3600)) AND (light <= 1435.2000)) THEN Class 6
+
+=== Class 7 ===
+
+  New Rules:
+  + IF ((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light <= 73.6000)) AND (light > 5.9800)) AND (light > 7.8200)) AND (light <= 41.4000)) AND (voltage <= 2.5992)) AND (light <= 17.4800)) AND (temperature > 22.7324)) THEN Class 7
+
+  Deleted Rules:
+  - IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light > 68.0800)) AND (light <= 106.7200)) AND (epoch > 18539.5000)) THEN Class 7
+
+=== Class 8 ===
+
+  New Rules:
+  + IF ((((((temperature > 8.5117) AND (light > 2.7422)) AND (light > 787.5200)) AND (humidity > 35.9908)) AND (voltage > 2.6222)) AND (temperature > 21.7181)) THEN Class 8
+  + IF (((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature <= 17.9598)) THEN Class 8
+
+  Deleted Rules:
+  - IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light > 68.0800)) AND (light > 106.7200)) AND (light <= 121.4400)) THEN Class 8
+
+=== Class 9 ===
+
+  New Rules:
+  + IF ((((temperature > 8.5117) AND (light <= 2.7422)) AND (humidity <= -3.8381)) AND (epoch > 51321.5000)) THEN Class 9
+
+  Deleted Rules:
+  - IF ((((((((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light <= 1.9882)) AND (humidity <= 50.2572)) AND (voltage <= 2.6693)) AND (voltage <= 2.5711)) AND (light > 0.6900)) AND (voltage > 2.1956)) AND (epoch <= 45403.5000)) AND (temperature > 21.3947)) THEN Class 9
+  - IF (((((((light <= 1817.9200) AND (light > 3.0586)) AND (light > 610.8800)) AND (humidity <= 41.4273)) AND (epoch <= 14394.5000)) AND (light <= 1346.8800)) AND (humidity > 34.2052)) THEN Class 9
+
+=== Class 10 ===
+
+  New Rules:
+  + IF (((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light > 117.7600)) AND (voltage <= 2.5879)) AND (epoch > 29358.0000)) AND (humidity <= 45.2257)) AND (light > 426.8800)) AND (temperature <= 22.3845)) THEN Class 10
+  + IF ((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light <= 73.6000)) AND (light <= 5.9800)) AND (epoch > 13851.5000)) AND (epoch <= 36134.0000)) AND (voltage > 2.5389)) THEN Class 10
+  + IF ((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light <= 73.6000)) AND (light <= 5.9800)) AND (epoch > 13851.5000)) AND (epoch > 36134.0000)) AND (voltage > 2.1597)) THEN Class 10
+
+  Deleted Rules:
+  - IF (((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light <= 68.0800)) AND (humidity <= 41.4276)) AND (epoch <= 22554.5000)) AND (epoch > 3705.5000)) THEN Class 10
+  - IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch > 33682.0000)) AND (epoch > 39853.0000)) AND (light <= 82.8000)) AND (light > 11.5000)) AND (light > 51.0600)) THEN Class 10
+
+=== Class 11 ===
+
+  New Rules:
+  + IF ((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light <= 73.6000)) AND (light <= 5.9800)) AND (epoch > 13851.5000)) AND (epoch <= 36134.0000)) AND (voltage <= 2.5389)) THEN Class 11
+
+  Deleted Rules:
+  - IF (((((light <= 1817.9200) AND (light > 3.0586)) AND (light > 610.8800)) AND (humidity > 41.4273)) AND (temperature <= 22.2179)) THEN Class 11
+
+=== Class 12 ===
+
+  New Rules:
+  + IF (((((((((((temperature > 8.5117) AND (light <= 2.7422)) AND (humidity > -3.8381)) AND (light <= 2.5992)) AND (light <= 2.3100)) AND (light <= 2.0158)) AND (humidity <= 45.7695)) AND (humidity <= 43.9671)) AND (temperature <= 22.3992)) AND (light <= 1.1500)) AND (voltage <= 2.5879)) THEN Class 12
+  + IF ((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light <= 73.6000)) AND (light > 5.9800)) AND (light > 7.8200)) AND (light <= 41.4000)) AND (voltage <= 2.5992)) AND (light <= 17.4800)) AND (temperature <= 22.7324)) THEN Class 12
+  + IF (((((((temperature > 8.5117) AND (light > 2.7422)) AND (light > 787.5200)) AND (humidity > 35.9908)) AND (voltage <= 2.6222)) AND (light <= 1729.6000)) AND (temperature <= 22.4727)) THEN Class 12
+
+  Deleted Rules:
+  - IF ((((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light > 68.0800)) AND (light > 106.7200)) AND (light > 121.4400)) AND (light > 165.6000)) AND (temperature <= 22.4874)) THEN Class 12
+  - IF ((((((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light <= 1.9882)) AND (humidity <= 50.2572)) AND (voltage <= 2.6693)) AND (voltage > 2.5711)) AND (humidity > 41.8431)) AND (humidity > 45.9830)) THEN Class 12
+
+=== Class 13 ===
+
+  New Rules:
+  + IF ((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light <= 73.6000)) AND (light > 5.9800)) AND (light > 7.8200)) AND (light > 41.4000)) AND (voltage <= 2.6338)) AND (voltage <= 2.4748)) AND (light > 51.9800)) THEN Class 13
+
+  Deleted Rules:
+  - IF ((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light > 1.9882)) AND (voltage > 2.3835)) THEN Class 13
+  - IF (((((light <= 1817.9200) AND (light > 3.0586)) AND (light > 610.8800)) AND (humidity > 41.4273)) AND (temperature > 22.2179)) THEN Class 13
+
+=== Class 14 ===
+
+  New Rules:
+  + IF ((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light > 117.7600)) AND (voltage <= 2.5879)) AND (epoch > 29358.0000)) AND (humidity > 45.2257)) AND (temperature <= 21.0272)) THEN Class 14
+
+  Deleted Rules:
+  - IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch > 33682.0000)) AND (epoch > 39853.0000)) AND (light > 82.8000)) AND (voltage > 2.1997)) AND (voltage <= 2.2286)) THEN Class 14
+  - IF (((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light <= 1.9882)) AND (humidity <= 50.2572)) AND (voltage > 2.6693)) THEN Class 14
+
+=== Class 15 ===
+
+  Deleted Rules:
+  - IF ((light > 1817.9200) AND (humidity > 40.4155)) THEN Class 15
+
+=== Class 16 ===
+
+  New Rules:
+  + IF ((((((((temperature > 8.5117) AND (light <= 2.7422)) AND (humidity > -3.8381)) AND (light <= 2.5992)) AND (light <= 2.3100)) AND (light <= 2.0158)) AND (humidity > 45.7695)) AND (voltage > 2.4046)) THEN Class 16
+  + IF ((((((temperature > 8.5117) AND (light > 2.7422)) AND (light > 787.5200)) AND (humidity > 35.9908)) AND (voltage <= 2.6222)) AND (light > 1729.6000)) THEN Class 16
+  + IF ((((((temperature > 8.5117) AND (light > 2.7422)) AND (light > 787.5200)) AND (humidity > 35.9908)) AND (voltage > 2.6222)) AND (temperature <= 21.7181)) THEN Class 16
+
+  Deleted Rules:
+  - IF ((((((((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light <= 1.9882)) AND (humidity <= 50.2572)) AND (voltage <= 2.6693)) AND (voltage <= 2.5711)) AND (light > 0.6900)) AND (voltage > 2.1956)) AND (epoch <= 45403.5000)) AND (temperature <= 21.3947)) THEN Class 16
+  - IF ((((light > 1817.9200) AND (humidity <= 40.4155)) AND (epoch <= 50687.5000)) AND (epoch <= 43072.0000)) THEN Class 16
+  - IF (((light > 1817.9200) AND (humidity <= 40.4155)) AND (epoch > 50687.5000)) THEN Class 16
+
+=== Class 17 ===
+
+  New Rules:
+  + IF ((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light <= 73.6000)) AND (light > 5.9800)) AND (light > 7.8200)) AND (light <= 41.4000)) AND (voltage <= 2.5992)) AND (light > 17.4800)) AND (epoch <= 41903.0000)) THEN Class 17
+  + IF ((((((((temperature > 8.5117) AND (light <= 2.7422)) AND (humidity > -3.8381)) AND (light <= 2.5992)) AND (light <= 2.3100)) AND (light <= 2.0158)) AND (humidity <= 45.7695)) AND (humidity > 43.9671)) THEN Class 17
+  + IF ((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light <= 73.6000)) AND (light > 5.9800)) AND (light <= 7.8200)) THEN Class 17
+
+  Deleted Rules:
+  - IF (((((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch <= 56053.0000)) AND (epoch > 5321.0000)) AND (epoch > 22806.5000)) AND (humidity > 36.7839)) AND (epoch <= 43533.0000)) AND (epoch > 39800.0000)) THEN Class 17
+  - IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch <= 56053.0000)) AND (epoch > 5321.0000)) AND (epoch <= 22806.5000)) THEN Class 17
+
+=== Class 18 ===
+
+  New Rules:
+  + IF (((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light > 117.7600)) AND (voltage <= 2.5879)) AND (epoch > 29358.0000)) AND (humidity > 45.2257)) AND (temperature > 21.0272)) AND (epoch > 33981.5000)) THEN Class 18
+  + IF ((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light <= 73.6000)) AND (light <= 5.9800)) AND (epoch <= 13851.5000)) THEN Class 18
+
+  Deleted Rules:
+  - IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch <= 56053.0000)) AND (epoch <= 5321.0000)) THEN Class 18
+  - IF (((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch <= 33682.0000)) AND (voltage <= 2.5330)) AND (voltage > 2.2976)) THEN Class 18
+
+=== Class 19 ===
+
+  New Rules:
+  + IF (((((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light > 117.7600)) AND (voltage <= 2.5879)) AND (epoch > 29358.0000)) AND (humidity <= 45.2257)) AND (light <= 426.8800)) AND (humidity <= 39.2463)) AND (temperature > 22.5070)) AND (humidity > 34.8834)) THEN Class 19
+  + IF ((((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light > 117.7600)) AND (voltage <= 2.5879)) AND (epoch > 29358.0000)) AND (humidity <= 45.2257)) AND (light <= 426.8800)) AND (humidity > 39.2463)) AND (epoch <= 56132.0000)) THEN Class 19
+
+  Deleted Rules:
+  - IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch > 33682.0000)) AND (epoch > 39853.0000)) AND (light > 82.8000)) AND (voltage > 2.1997)) AND (voltage > 2.2286)) AND (temperature > 27.3090)) THEN Class 19
+  - IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch <= 33682.0000)) AND (voltage > 2.5330)) AND (epoch <= 26176.5000)) AND (temperature <= 26.1330)) AND (humidity <= 31.9304)) THEN Class 19
+
+=== Class 20 ===
+
+  New Rules:
+  + IF ((((((((((((temperature > 8.5117) AND (light <= 2.7422)) AND (humidity > -3.8381)) AND (light <= 2.5992)) AND (light <= 2.3100)) AND (light <= 2.0158)) AND (humidity <= 45.7695)) AND (humidity <= 43.9671)) AND (temperature <= 22.3992)) AND (light <= 1.1500)) AND (voltage > 2.5879)) AND (epoch > 14445.5000)) THEN Class 20
+  + IF (((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light > 117.7600)) AND (voltage > 2.5879)) AND (temperature <= 24.9374)) AND (light > 172.9600)) AND (epoch > 17523.0000)) AND (light > 460.0000)) THEN Class 20
+  + IF (((((((temperature > 8.5117) AND (light > 2.7422)) AND (light > 787.5200)) AND (humidity <= 35.9908)) AND (humidity > 24.7633)) AND (epoch <= 18530.5000)) AND (humidity <= 29.6139)) THEN Class 20
+
+  Deleted Rules:
+  - IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light <= 68.0800)) AND (humidity > 41.4276)) AND (humidity <= 43.2675)) THEN Class 20
+  - IF (((((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light <= 1.9882)) AND (humidity <= 50.2572)) AND (voltage <= 2.6693)) AND (voltage > 2.5711)) AND (humidity <= 41.8431)) THEN Class 20
+
+=== Class 21 ===
+
+  New Rules:
+  + IF ((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light > 117.7600)) AND (voltage > 2.5879)) AND (temperature > 24.9374)) AND (epoch > 7499.5000)) AND (temperature <= 26.2163)) THEN Class 21
+
+  Deleted Rules:
+  - IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch > 33682.0000)) AND (epoch > 39853.0000)) AND (light > 82.8000)) AND (voltage <= 2.1997)) AND (epoch <= 54858.5000)) AND (voltage > 2.1795)) THEN Class 21
+  - IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch > 56053.0000)) AND (humidity <= 43.6686)) THEN Class 21
+  - IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch <= 33682.0000)) AND (voltage > 2.5330)) AND (epoch <= 26176.5000)) AND (temperature > 26.1330)) AND (epoch <= 12890.5000)) THEN Class 21
+  - IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch <= 33682.0000)) AND (voltage > 2.5330)) AND (epoch <= 26176.5000)) AND (temperature > 26.1330)) AND (epoch > 12890.5000)) THEN Class 21
+
+=== Class 22 ===
+
+  New Rules:
+  + IF ((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light <= 117.7600)) AND (light <= 106.7200)) AND (voltage <= 2.5936)) AND (light > 86.4800)) AND (temperature > 21.7083)) THEN Class 22
+
+  Deleted Rules:
+  - IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light > 610.8800)) AND (humidity <= 41.4273)) AND (epoch > 14394.5000)) AND (temperature > 22.6785)) AND (voltage <= 2.6455)) AND (light <= 1111.3600)) AND (humidity <= 34.9872)) THEN Class 22
+  - IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light > 610.8800)) AND (humidity <= 41.4273)) AND (epoch > 14394.5000)) AND (temperature > 22.6785)) AND (voltage <= 2.6455)) AND (light > 1111.3600)) AND (light > 1435.2000)) THEN Class 22
+
+=== Class 23 ===
+
+  New Rules:
+  + IF ((((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light > 117.7600)) AND (voltage > 2.5879)) AND (temperature <= 24.9374)) AND (light > 172.9600)) AND (epoch <= 17523.0000)) AND (humidity <= 37.8305)) AND (temperature <= 22.6246)) THEN Class 23
+
+  Deleted Rules:
+  - IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch <= 33682.0000)) AND (voltage > 2.5330)) AND (epoch <= 26176.5000)) AND (temperature <= 26.1330)) AND (humidity > 31.9304)) AND (light > 195.0400)) THEN Class 23
+
+=== Class 24 ===
+
+  New Rules:
+  + IF ((((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light > 117.7600)) AND (voltage <= 2.5879)) AND (epoch > 29358.0000)) AND (humidity <= 45.2257)) AND (light <= 426.8800)) AND (humidity > 39.2463)) AND (epoch > 56132.0000)) THEN Class 24
+  + IF ((((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light > 117.7600)) AND (voltage > 2.5879)) AND (temperature <= 24.9374)) AND (light > 172.9600)) AND (epoch <= 17523.0000)) AND (humidity <= 37.8305)) AND (temperature > 22.6246)) THEN Class 24
+  + IF (((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light > 117.7600)) AND (voltage > 2.5879)) AND (temperature <= 24.9374)) AND (light <= 172.9600)) AND (epoch > 8291.5000)) AND (light > 139.8400)) THEN Class 24
+  + IF ((((((temperature > 8.5117) AND (light > 2.7422)) AND (light > 787.5200)) AND (humidity <= 35.9908)) AND (humidity <= 24.7633)) AND (voltage <= 2.2121)) THEN Class 24
+
+  Deleted Rules:
+  - IF (((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage > 2.5879)) AND (light > 68.0800)) AND (light > 106.7200)) AND (light > 121.4400)) AND (light <= 165.6000)) THEN Class 24
+  - IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light > 610.8800)) AND (humidity <= 41.4273)) AND (epoch > 14394.5000)) AND (temperature > 22.6785)) AND (voltage <= 2.6455)) AND (light <= 1111.3600)) AND (humidity > 34.9872)) THEN Class 24
+
+=== Class 25 ===
+
+  New Rules:
+  + IF (((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light > 117.7600)) AND (voltage > 2.5879)) AND (temperature > 24.9374)) AND (epoch <= 7499.5000)) THEN Class 25
+  + IF (((((((temperature > 8.5117) AND (light > 2.7422)) AND (light > 787.5200)) AND (humidity <= 35.9908)) AND (humidity > 24.7633)) AND (epoch > 18530.5000)) AND (humidity <= 32.0842)) THEN Class 25
+
+  Deleted Rules:
+  - IF (((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch > 33682.0000)) AND (epoch > 39853.0000)) AND (light > 82.8000)) AND (voltage <= 2.1997)) AND (epoch > 54858.5000)) THEN Class 25
+
+=== Class 26 ===
+
+  New Rules:
+  + IF (((((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light > 117.7600)) AND (voltage > 2.5879)) AND (temperature <= 24.9374)) AND (light <= 172.9600)) AND (epoch > 8291.5000)) AND (light <= 139.8400)) THEN Class 26
+  + IF (((((((temperature > 8.5117) AND (light > 2.7422)) AND (light > 787.5200)) AND (humidity <= 35.9908)) AND (humidity > 24.7633)) AND (epoch <= 18530.5000)) AND (humidity > 29.6139)) THEN Class 26
+
+=== Class 27 ===
+
+  New Rules:
+  + IF (((((((((temperature > 8.5117) AND (light <= 2.7422)) AND (humidity > -3.8381)) AND (light <= 2.5992)) AND (light <= 2.3100)) AND (light <= 2.0158)) AND (humidity <= 45.7695)) AND (humidity <= 43.9671)) AND (temperature > 22.3992)) THEN Class 27
+  + IF (((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light <= 73.6000)) AND (light > 5.9800)) AND (light > 7.8200)) AND (light > 41.4000)) AND (voltage <= 2.6338)) AND (voltage > 2.4748)) THEN Class 27
+  + IF (((((((((temperature > 8.5117) AND (light > 2.7422)) AND (light <= 787.5200)) AND (light > 73.6000)) AND (temperature > 17.9598)) AND (light <= 117.7600)) AND (light <= 106.7200)) AND (voltage > 2.5936)) AND (temperature > 20.9880)) THEN Class 27
+
+  Deleted Rules:
+  - IF ((((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature <= 23.4821)) AND (light > 4.6000)) AND (light <= 537.2800)) AND (voltage <= 2.5879)) AND (epoch > 56053.0000)) AND (humidity > 43.6686)) AND (temperature > 21.4878)) THEN Class 27
+  - IF ((((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch <= 33682.0000)) AND (voltage > 2.5330)) AND (epoch > 26176.5000)) AND (voltage <= 2.6222)) THEN Class 27
+  - IF (((((((light <= 1817.9200) AND (light > 3.0586)) AND (light <= 610.8800)) AND (temperature > 23.4821)) AND (epoch <= 33682.0000)) AND (voltage <= 2.5330)) AND (voltage <= 2.2976)) THEN Class 27
+  - IF ((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light <= 1.9882)) AND (humidity > 50.2572)) THEN Class 27
+
+=== Class 28 ===
+
+  New Rules:
+  + IF ((((((temperature > 8.5117) AND (light <= 2.7422)) AND (humidity > -3.8381)) AND (light <= 2.5992)) AND (light <= 2.3100)) AND (light > 2.0158)) THEN Class 28
+
+  Deleted Rules:
+  - IF (((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light > 1.9882)) AND (voltage <= 2.3835)) AND (humidity > 41.8117)) THEN Class 28
+  - IF ((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light > 2.5656)) AND (light > 2.6455)) AND (epoch <= 24061.0000)) AND (temperature <= 18.0872)) THEN Class 28
+
+=== Class 30 ===
+
+  New Rules:
+  + IF ((((temperature > 8.5117) AND (light <= 2.7422)) AND (humidity <= -3.8381)) AND (epoch <= 51321.5000)) THEN Class 30
+
+  Deleted Rules:
+  - IF (((((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light <= 2.4243)) AND (light > 1.9882)) AND (voltage <= 2.3835)) AND (humidity <= 41.8117)) THEN Class 30
+
+=== Class 36 ===
+
+  New Rules:
+  + IF ((((temperature > 8.5117) AND (light <= 2.7422)) AND (humidity > -3.8381)) AND (light > 2.5992)) THEN Class 36
+
+=== Class 42 ===
+
+  New Rules:
+  + IF (temperature <= 8.5117) THEN Class 42
+
+=== Class 47 ===
+
+  Deleted Rules:
+  - IF ((((light <= 1817.9200) AND (light <= 3.0586)) AND (light <= 2.5656)) AND (light > 2.4243)) THEN Class 47
+
+=== Class 53 ===
+
+  New Rules:
+  + IF ((((((temperature > 8.5117) AND (light <= 2.7422)) AND (humidity > -3.8381)) AND (light <= 2.5992)) AND (light > 2.3100)) AND (humidity > 46.1803)) THEN Class 53
+
+=== Class 54 ===
+
+  New Rules:
+  + IF ((((((temperature > 8.5117) AND (light <= 2.7422)) AND (humidity > -3.8381)) AND (light <= 2.5992)) AND (light > 2.3100)) AND (humidity <= 46.1803)) THEN Class 54
+
+  Deleted Rules:
+  - IF ((((light <= 1817.9200) AND (light <= 3.0586)) AND (light > 2.5656)) AND (light <= 2.6455)) THEN Class 54
+
+======================================================================
+Overall Performance Summary (from History File)
+======================================================================
+Avg Train Accuracy: nan +/- nan (over 0 chunks)
+Avg Test Accuracy:  nan +/- nan (over 0 chunks)
+Avg Test F1:        nan +/- nan (over 0 chunks)
+======================================================================

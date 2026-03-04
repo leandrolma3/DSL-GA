@@ -1,0 +1,70 @@
+\begin{table*}[htbp]
+\centering
+\caption{Dataset Characteristics}
+\label{tab:datasets}
+\footnotesize
+\begin{tabular}{llcccc}
+\toprule
+Batch & Dataset & Generator & Features & Classes & Drift Type \\
+\midrule
+Abrupt Drift & SEA_Abrupt_Simple & SEA & 3 & 2 & Abrupt \\
+ & SEA_Abrupt_Chain & SEA & 3 & 2 & Abrupt \\
+ & SEA_Abrupt_Recurring & SEA & 3 & 2 & Abrupt \\
+ & AGRAWAL_Abrupt_Simple_Mild & AGRAWAL & 9 & 2 & Abrupt \\
+ & AGRAWAL_Abrupt_Simple_Severe & AGRAWAL & 9 & 2 & Abrupt \\
+ & AGRAWAL_Abrupt_Chain_Long & AGRAWAL & 9 & 2 & Abrupt \\
+ & RBF_Abrupt_Severe & RBF & 10 & 5 & Abrupt \\
+ & RBF_Abrupt_Blip & RBF & 10 & 5 & Abrupt \\
+ & STAGGER_Abrupt_Chain & STAGGER & 3 & 2 & Abrupt \\
+ & STAGGER_Abrupt_Recurring & STAGGER & 3 & 2 & Abrupt \\
+ & HYPERPLANE_Abrupt_Simple & HYPERPLANE & 10 & 2 & Abrupt \\
+ & RANDOMTREE_Abrupt_Simple & RANDOMTREE & 10 & 2 & Abrupt \\
+\midrule
+Gradual Drift & SEA_Gradual_Simple_Fast & SEA & 3 & 2 & Gradual \\
+ & SEA_Gradual_Simple_Slow & SEA & 3 & 2 & Gradual \\
+ & SEA_Gradual_Recurring & SEA & 3 & 2 & Gradual \\
+ & STAGGER_Gradual_Chain & STAGGER & 3 & 2 & Gradual \\
+ & RBF_Gradual_Moderate & RBF & 10 & 5 & Gradual \\
+ & RBF_Gradual_Severe & RBF & 10 & 5 & Gradual \\
+ & HYPERPLANE_Gradual_Simple & HYPERPLANE & 10 & 2 & Gradual \\
+ & RANDOMTREE_Gradual_Simple & RANDOMTREE & 10 & 2 & Gradual \\
+ & LED_Gradual_Simple & LED & 24 & 10 & Gradual \\
+\midrule
+Drift with Noise & SEA_Abrupt_Chain_Noise & SEA & 3 & 2 & Abrupt Noise \\
+ & STAGGER_Abrupt_Chain_Noise & STAGGER & 3 & 2 & Abrupt Noise \\
+ & AGRAWAL_Abrupt_Simple_Severe_Noise & AGRAWAL & 9 & 2 & Abrupt Noise \\
+ & SINE_Abrupt_Recurring_Noise & SINE & 2 & 2 & Abrupt Noise \\
+ & RBF_Abrupt_Blip_Noise & RBF & 10 & 5 & Abrupt Noise \\
+ & RBF_Gradual_Severe_Noise & RBF & 10 & 5 & Gradual Noise \\
+ & HYPERPLANE_Gradual_Noise & HYPERPLANE & 10 & 2 & Gradual Noise \\
+ & RANDOMTREE_Gradual_Noise & RANDOMTREE & 10 & 2 & Gradual Noise \\
+\midrule
+Mixed Generators & SINE_Abrupt_Simple & SINE & 2 & 2 & Abrupt \\
+ & SINE_Gradual_Recurring & SINE & 2 & 2 & Gradual \\
+ & LED_Abrupt_Simple & LED & 24 & 10 & Abrupt \\
+ & WAVEFORM_Abrupt_Simple & WAVEFORM & 40 & 3 & Abrupt \\
+ & WAVEFORM_Gradual_Simple & WAVEFORM & 40 & 3 & Gradual \\
+ & RANDOMTREE_Abrupt_Recurring & RANDOMTREE & 10 & 2 & Abrupt \\
+\midrule
+Real-world & Electricity & Real & 8 & 2 & Real \\
+ & Shuttle & Real & 9 & 7 & Real \\
+ & CovType & Real & 54 & 7 & Real \\
+ & PokerHand & Real & 10 & 10 & Real \\
+ & IntelLabSensors & Real & 4 & 2 & Real \\
+\midrule
+Stationary & SEA_Stationary & SEA & 3 & 2 & Stationary \\
+ & AGRAWAL_Stationary & AGRAWAL & 9 & 2 & Stationary \\
+ & RBF_Stationary & RBF & 10 & 5 & Stationary \\
+ & LED_Stationary & LED & 24 & 10 & Stationary \\
+ & HYPERPLANE_Stationary & HYPERPLANE & 10 & 2 & Stationary \\
+ & RANDOMTREE_Stationary & RANDOMTREE & 10 & 2 & Stationary \\
+\midrule
+Stationary & STAGGER_Stationary & STAGGER & 3 & 2 & Stationary \\
+ & WAVEFORM_Stationary & WAVEFORM & 40 & 3 & Stationary \\
+ & SINE_Stationary & SINE & 2 & 2 & Stationary \\
+ & AssetNegotiation_F2 & AssetNegotiation & 5 & 2 & Stationary \\
+ & AssetNegotiation_F3 & AssetNegotiation & 5 & 2 & Stationary \\
+ & AssetNegotiation_F4 & AssetNegotiation & 5 & 2 & Stationary \\
+\bottomrule
+\end{tabular}
+\end{table*}

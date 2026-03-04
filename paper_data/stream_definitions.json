@@ -1,0 +1,900 @@
+{
+  "Electricity": {
+    "dataset_type": "ELECTRICITY"
+  },
+  "Shuttle": {
+    "dataset_type": "SHUTTLE"
+  },
+  "CovType": {
+    "dataset_type": "COVERTYPE"
+  },
+  "PokerHand": {
+    "dataset_type": "POKER"
+  },
+  "IntelLabSensors": {
+    "dataset_type": "INTELLABSENSORS"
+  },
+  "SEA_Stationary": {
+    "dataset_type": "SEA"
+  },
+  "AGRAWAL_Stationary": {
+    "dataset_type": "AGRAWAL"
+  },
+  "RBF_Stationary": {
+    "dataset_type": "RBF",
+    "params_override": {
+      "n_features": 50,
+      "n_classes": 4
+    }
+  },
+  "LED_Stationary": {
+    "dataset_type": "LED"
+  },
+  "HYPERPLANE_Stationary": {
+    "dataset_type": "HYPERPLANE"
+  },
+  "RANDOMTREE_Stationary": {
+    "dataset_type": "RANDOMTREE"
+  },
+  "STAGGER_Stationary": {
+    "dataset_type": "STAGGER"
+  },
+  "WAVEFORM_Stationary": {
+    "dataset_type": "WAVEFORM"
+  },
+  "SINE_Stationary": {
+    "dataset_type": "SINE"
+  },
+  "AssetNegotiation_F2": {
+    "dataset_type": "ASSETNEGOTIATION",
+    "params_override": {
+      "classification_function": 1
+    }
+  },
+  "AssetNegotiation_F3": {
+    "dataset_type": "ASSETNEGOTIATION",
+    "params_override": {
+      "classification_function": 2
+    }
+  },
+  "AssetNegotiation_F4": {
+    "dataset_type": "ASSETNEGOTIATION",
+    "params_override": {
+      "classification_function": 3
+    }
+  },
+  "SINE_Abrupt_Simple": {
+    "dataset_type": "SINE",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "f1_sum",
+        "duration_chunks": 6
+      },
+      {
+        "concept_id": "f2_prod",
+        "duration_chunks": 6
+      }
+    ]
+  },
+  "SINE_Gradual_Recurring": {
+    "dataset_type": "SINE",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 2,
+    "concept_sequence": [
+      {
+        "concept_id": "f1_sum",
+        "duration_chunks": 4
+      },
+      {
+        "concept_id": "f3_sum_alt",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "f1_sum",
+        "duration_chunks": 4
+      }
+    ]
+  },
+  "SINE_Abrupt_Recurring_Noise": {
+    "dataset_type": "SINE",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "f1_sum",
+        "duration_chunks": 4
+      },
+      {
+        "concept_id": "f2_prod",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "f1_sum",
+        "duration_chunks": 4
+      }
+    ],
+    "noise_config": {
+      "enabled": true,
+      "attribute_ratio": 0.45,
+      "noise_level": 0.1
+    }
+  },
+  "SEA_Abrupt_Simple": {
+    "dataset_type": "SEA",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 3
+      },
+      {
+        "concept_id": "f3",
+        "duration_chunks": 3
+      }
+    ]
+  },
+  "SEA_Abrupt_Chain": {
+    "dataset_type": "SEA",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 2
+      },
+      {
+        "concept_id": "f2",
+        "duration_chunks": 2
+      },
+      {
+        "concept_id": "f4",
+        "duration_chunks": 2
+      }
+    ]
+  },
+  "AGRAWAL_Abrupt_Simple_Mild": {
+    "dataset_type": "AGRAWAL",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 3
+      },
+      {
+        "concept_id": "f2",
+        "duration_chunks": 3
+      }
+    ]
+  },
+  "AGRAWAL_Abrupt_Simple_Severe": {
+    "dataset_type": "AGRAWAL",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 3
+      },
+      {
+        "concept_id": "f6",
+        "duration_chunks": 3
+      }
+    ]
+  },
+  "RBF_Abrupt_Severe": {
+    "dataset_type": "RBF",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "c1",
+        "duration_chunks": 3
+      },
+      {
+        "concept_id": "c2_severe",
+        "duration_chunks": 3
+      }
+    ]
+  },
+  "STAGGER_Abrupt_Chain": {
+    "dataset_type": "STAGGER",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 2
+      },
+      {
+        "concept_id": "f2",
+        "duration_chunks": 2
+      },
+      {
+        "concept_id": "f3",
+        "duration_chunks": 2
+      }
+    ]
+  },
+  "HYPERPLANE_Abrupt_Simple": {
+    "dataset_type": "HYPERPLANE",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "plane1",
+        "duration_chunks": 3
+      },
+      {
+        "concept_id": "plane2",
+        "duration_chunks": 3
+      }
+    ]
+  },
+  "SEA_Gradual_Simple_Fast": {
+    "dataset_type": "SEA",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 1,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "f3",
+        "duration_chunks": 5
+      }
+    ]
+  },
+  "SEA_Gradual_Simple_Slow": {
+    "dataset_type": "SEA",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 3,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 6
+      },
+      {
+        "concept_id": "f3",
+        "duration_chunks": 6
+      }
+    ]
+  },
+  "AGRAWAL_Gradual_Chain": {
+    "dataset_type": "AGRAWAL",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 2,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 3
+      },
+      {
+        "concept_id": "f3",
+        "duration_chunks": 3
+      },
+      {
+        "concept_id": "f5",
+        "duration_chunks": 3
+      },
+      {
+        "concept_id": "f7",
+        "duration_chunks": 3
+      }
+    ]
+  },
+  "RBF_Gradual_Moderate": {
+    "dataset_type": "RBF",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 2,
+    "concept_sequence": [
+      {
+        "concept_id": "c1",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "c3_moderate",
+        "duration_chunks": 5
+      }
+    ]
+  },
+  "RANDOMTREE_Gradual_Simple": {
+    "dataset_type": "RANDOMTREE",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 2,
+    "concept_sequence": [
+      {
+        "concept_id": "tree1",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "tree2",
+        "duration_chunks": 5
+      }
+    ]
+  },
+  "WAVEFORM_Gradual_Simple": {
+    "dataset_type": "WAVEFORM",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 2,
+    "concept_sequence": [
+      {
+        "concept_id": "wave1",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "wave2",
+        "duration_chunks": 5
+      }
+    ]
+  },
+  "LED_Gradual_Simple": {
+    "dataset_type": "LED",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 2,
+    "concept_sequence": [
+      {
+        "concept_id": "c1_no_noise",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "c2_with_noise",
+        "duration_chunks": 5
+      }
+    ]
+  },
+  "SEA_Abrupt_Recurring": {
+    "dataset_type": "SEA",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 2
+      },
+      {
+        "concept_id": "f3",
+        "duration_chunks": 2
+      },
+      {
+        "concept_id": "f1",
+        "duration_chunks": 2
+      }
+    ]
+  },
+  "AGRAWAL_Gradual_Recurring": {
+    "dataset_type": "AGRAWAL",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 2,
+    "concept_sequence": [
+      {
+        "concept_id": "f2",
+        "duration_chunks": 4
+      },
+      {
+        "concept_id": "f7",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "f2",
+        "duration_chunks": 4
+      }
+    ]
+  },
+  "RBF_Abrupt_Blip": {
+    "dataset_type": "RBF",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "c1",
+        "duration_chunks": 2
+      },
+      {
+        "concept_id": "c3_moderate",
+        "duration_chunks": 2
+      },
+      {
+        "concept_id": "c1",
+        "duration_chunks": 2
+      }
+    ]
+  },
+  "STAGGER_Mixed_Recurring": {
+    "dataset_type": "STAGGER",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 2,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 3
+      },
+      {
+        "concept_id": "f2",
+        "duration_chunks": 3,
+        "drift_type_override": "gradual"
+      },
+      {
+        "concept_id": "f3",
+        "duration_chunks": 3
+      },
+      {
+        "concept_id": "f1",
+        "duration_chunks": 3
+      }
+    ]
+  },
+  "RBF_Severe_Gradual_Recurrent": {
+    "dataset_type": "RBF",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 2,
+    "concept_sequence": [
+      {
+        "concept_id": "c1",
+        "duration_chunks": 3
+      },
+      {
+        "concept_id": "c2_severe",
+        "duration_chunks": 4
+      },
+      {
+        "concept_id": "c1",
+        "duration_chunks": 3
+      }
+    ]
+  },
+  "SEA_Abrupt_Chain_Noise": {
+    "dataset_type": "SEA",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 3
+      },
+      {
+        "concept_id": "f2",
+        "duration_chunks": 3
+      },
+      {
+        "concept_id": "f4",
+        "duration_chunks": 3
+      }
+    ],
+    "noise_config": {
+      "enabled": true,
+      "attribute_ratio": 0.45,
+      "noise_level": 0.1
+    }
+  },
+  "AGRAWAL_Gradual_Recurring_Noise": {
+    "dataset_type": "AGRAWAL",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 2,
+    "concept_sequence": [
+      {
+        "concept_id": "f2",
+        "duration_chunks": 4
+      },
+      {
+        "concept_id": "f7",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "f2",
+        "duration_chunks": 4
+      }
+    ],
+    "noise_config": {
+      "enabled": true,
+      "attribute_ratio": 0.45,
+      "noise_level": 0.1
+    }
+  },
+  "RBF_Abrupt_Blip_Noise": {
+    "dataset_type": "RBF",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "c1",
+        "duration_chunks": 6
+      },
+      {
+        "concept_id": "c3_moderate",
+        "duration_chunks": 1
+      },
+      {
+        "concept_id": "c1",
+        "duration_chunks": 6
+      }
+    ],
+    "noise_config": {
+      "enabled": true,
+      "attribute_ratio": 0.45,
+      "noise_level": 0.1
+    }
+  },
+  "HYPERPLANE_Gradual_Noise": {
+    "dataset_type": "HYPERPLANE",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 3,
+    "concept_sequence": [
+      {
+        "concept_id": "plane1",
+        "duration_chunks": 6
+      },
+      {
+        "concept_id": "plane2",
+        "duration_chunks": 6
+      }
+    ],
+    "noise_config": {
+      "enabled": true,
+      "attribute_ratio": 0.45,
+      "noise_level": 0.1
+    }
+  },
+  "AGRAWAL_Abrupt_Chain_Long": {
+    "dataset_type": "AGRAWAL",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 2
+      },
+      {
+        "concept_id": "f2",
+        "duration_chunks": 2
+      },
+      {
+        "concept_id": "f3",
+        "duration_chunks": 1
+      },
+      {
+        "concept_id": "f4",
+        "duration_chunks": 1
+      }
+    ]
+  },
+  "RANDOMTREE_Abrupt_Simple": {
+    "dataset_type": "RANDOMTREE",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "tree1",
+        "duration_chunks": 3
+      },
+      {
+        "concept_id": "tree2",
+        "duration_chunks": 3
+      }
+    ]
+  },
+  "LED_Abrupt_Simple": {
+    "dataset_type": "LED",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "c1_no_noise",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "c2_with_noise",
+        "duration_chunks": 5
+      }
+    ]
+  },
+  "WAVEFORM_Abrupt_Simple": {
+    "dataset_type": "WAVEFORM",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "wave1",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "wave2",
+        "duration_chunks": 5
+      }
+    ]
+  },
+  "STAGGER_Gradual_Chain": {
+    "dataset_type": "STAGGER",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 2,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 4
+      },
+      {
+        "concept_id": "f2",
+        "duration_chunks": 4
+      },
+      {
+        "concept_id": "f3",
+        "duration_chunks": 4
+      }
+    ]
+  },
+  "HYPERPLANE_Gradual_Simple": {
+    "dataset_type": "HYPERPLANE",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 3,
+    "concept_sequence": [
+      {
+        "concept_id": "plane1",
+        "duration_chunks": 6
+      },
+      {
+        "concept_id": "plane2",
+        "duration_chunks": 6
+      }
+    ]
+  },
+  "RBF_Gradual_Severe": {
+    "dataset_type": "RBF",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 2,
+    "concept_sequence": [
+      {
+        "concept_id": "c1",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "c2_severe",
+        "duration_chunks": 5
+      }
+    ]
+  },
+  "AGRAWAL_Gradual_Mild_to_Severe": {
+    "dataset_type": "AGRAWAL",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 2,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 4
+      },
+      {
+        "concept_id": "f2",
+        "duration_chunks": 4
+      },
+      {
+        "concept_id": "f6",
+        "duration_chunks": 4
+      }
+    ]
+  },
+  "STAGGER_Abrupt_Recurring": {
+    "dataset_type": "STAGGER",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 2
+      },
+      {
+        "concept_id": "f3",
+        "duration_chunks": 2
+      },
+      {
+        "concept_id": "f1",
+        "duration_chunks": 2
+      }
+    ]
+  },
+  "SEA_Gradual_Recurring": {
+    "dataset_type": "SEA",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 2,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 4
+      },
+      {
+        "concept_id": "f4",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "f1",
+        "duration_chunks": 4
+      }
+    ]
+  },
+  "AGRAWAL_Gradual_Blip": {
+    "dataset_type": "AGRAWAL",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 1,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 6
+      },
+      {
+        "concept_id": "f9",
+        "duration_chunks": 1
+      },
+      {
+        "concept_id": "f1",
+        "duration_chunks": 6
+      }
+    ]
+  },
+  "RANDOMTREE_Abrupt_Recurring": {
+    "dataset_type": "RANDOMTREE",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "tree1",
+        "duration_chunks": 4
+      },
+      {
+        "concept_id": "tree2",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "tree1",
+        "duration_chunks": 4
+      }
+    ]
+  },
+  "STAGGER_Abrupt_Chain_Noise": {
+    "dataset_type": "STAGGER",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 4
+      },
+      {
+        "concept_id": "f2",
+        "duration_chunks": 4
+      },
+      {
+        "concept_id": "f3",
+        "duration_chunks": 4
+      }
+    ],
+    "noise_config": {
+      "enabled": true,
+      "attribute_ratio": 0.45,
+      "noise_level": 0.1
+    }
+  },
+  "RBF_Gradual_Severe_Noise": {
+    "dataset_type": "RBF",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 2,
+    "concept_sequence": [
+      {
+        "concept_id": "c1",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "c2_severe",
+        "duration_chunks": 5
+      }
+    ],
+    "noise_config": {
+      "enabled": true,
+      "attribute_ratio": 0.45,
+      "noise_level": 0.1
+    }
+  },
+  "RANDOMTREE_Gradual_Noise": {
+    "dataset_type": "RANDOMTREE",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 2,
+    "concept_sequence": [
+      {
+        "concept_id": "tree1",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "tree2",
+        "duration_chunks": 5
+      }
+    ],
+    "noise_config": {
+      "enabled": true,
+      "attribute_ratio": 0.45,
+      "noise_level": 0.1
+    }
+  },
+  "AGRAWAL_Abrupt_Simple_Severe_Noise": {
+    "dataset_type": "AGRAWAL",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "f6",
+        "duration_chunks": 5
+      }
+    ],
+    "noise_config": {
+      "enabled": true,
+      "attribute_ratio": 0.45,
+      "noise_level": 0.1
+    }
+  },
+  "Bartosz_RandomTree_drift": {
+    "dataset_type": "RANDOMTREE",
+    "drift_type": "gradual",
+    "gradual_drift_width_chunks": 2,
+    "concept_sequence": [
+      {
+        "concept_id": "tree1",
+        "duration_chunks": 5
+      },
+      {
+        "concept_id": "tree2",
+        "duration_chunks": 5
+      }
+    ]
+  },
+  "Bartosz_Agrawal_recurring_drift": {
+    "dataset_type": "AGRAWAL",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 3
+      },
+      {
+        "concept_id": "f6",
+        "duration_chunks": 4
+      },
+      {
+        "concept_id": "f1",
+        "duration_chunks": 3
+      }
+    ]
+  },
+  "Bartosz_SEA_drift_noise": {
+    "dataset_type": "SEA",
+    "drift_type": "abrupt",
+    "gradual_drift_width_chunks": 0,
+    "concept_sequence": [
+      {
+        "concept_id": "f1",
+        "duration_chunks": 2
+      },
+      {
+        "concept_id": "f2",
+        "duration_chunks": 2
+      },
+      {
+        "concept_id": "f3",
+        "duration_chunks": 2
+      },
+      {
+        "concept_id": "f4",
+        "duration_chunks": 2
+      }
+    ],
+    "noise_config": {
+      "enabled": true,
+      "attribute_ratio": 0.45,
+      "noise_level": 0.1
+    }
+  }
+}

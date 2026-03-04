@@ -1,0 +1,1236 @@
+Rule Diff Analysis Report
+Source File: RulesHistory_Electricity_Run1.txt
+Similarity Threshold: 0.35
+
+======================================================================
+--- Diff Chunk 0 -> Chunk 1 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 0):   0.9285
+  - Test G-Mean (Chunk 1):  0.8582
+  - Test F1 (Chunk 1):      0.8585
+Fitness:       1.021290 -> 1.003363
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((((((nswprice <= 0.1053) AND (nswprice > 0.0800)) AND (date <= 0.0006)) AND (date <= 0.0005)) AND (period <= 0.7234)) AND (period <= 0.4787)) THEN Class 0
+  + IF ((nswprice <= 0.0800) AND (nswprice > 0.0780)) THEN Class 0
+  + IF ((nswprice <= 0.0800) AND (nswprice > 0.0780)) THEN Class 0
+  + IF ((nswprice <= 0.2334) AND (nswdemand <= 0.1163)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((nswprice <= 0.1263) AND ((nswprice <= 0.0488) AND (date > 0.0001))) THEN Class 0
+  - IF ((vicprice > 0.0035) AND (date >= 0.0001)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((((((nswprice <= 0.1263) AND (nswprice > 0.0443)) AND (date > 0.0002)) AND (nswprice > 0.0583)) AND (date <= 0.0003)) AND (date > 0.0002)) AND (period <= 0.9043)) THEN Class 1
+  + New: IF (((((((nswprice <= 0.1053) AND (nswprice > 0.0800)) AND (date > 0.0006)) AND (nswdemand <= 0.4773)) AND (date <= 0.0008)) AND (nswdemand <= 0.2997)) AND (date > 0.0007)) THEN Class 1
+    (Similarity: 0.75)
+  - Old: IF (((((nswprice <= 0.1263) AND (nswprice > 0.0443)) AND (date <= 0.0002)) AND (day <= 4.5000)) AND (nswprice > 0.0449)) THEN Class 1
+  + New: IF (((((nswprice <= 0.1053) AND (nswprice > 0.0800)) AND (date <= 0.0006)) AND (date <= 0.0005)) AND (period > 0.7234)) THEN Class 1
+    (Similarity: 0.82)
+  - Old: IF ((((nswprice <= 0.1263) AND (nswprice > 0.0443)) AND (date <= 0.0002)) AND (date > 0.0001)) THEN Class 1
+  + New: IF ((((nswprice <= 0.1053) AND (nswprice > 0.0800)) AND (date <= 0.0006)) AND (date > 0.0005)) THEN Class 1
+    (Similarity: 0.92)
+
+  New Rules:
+  + IF (((((nswprice <= 0.1053) AND (nswprice > 0.0800)) AND (date > 0.0006)) AND (nswdemand > 0.4773)) AND (date > 0.0007)) THEN Class 1
+  + IF (((nswprice > 0.1053) AND (nswprice <= 0.1192)) AND (nswdemand <= 0.4422)) THEN Class 1
+  + IF (((nswprice > 0.1192) AND (date <= 0.0005)) AND (nswprice > 0.1328)) THEN Class 1
+  + IF (((nswprice > 0.1192) AND (date <= 0.0005)) AND (period <= 0.7766)) THEN Class 1
+  + IF (((nswprice > 0.1192) AND (date <= 0.0005)) AND (period <= 0.7766)) THEN Class 1
+  + IF (((nswprice > 0.1192) AND (date <= 0.0005)) AND (period > 0.7766)) THEN Class 1
+  + IF (((nswprice > 0.1192) AND (date > 0.0005)) AND (date > 0.0006)) THEN Class 1
+  + IF (((nswprice > 0.1192) AND (date > 0.0005)) AND (nswdemand <= 0.3470)) THEN Class 1
+  + IF (((nswprice > 0.1192) AND (date > 0.0005)) AND (nswdemand > 0.3470)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((((nswprice <= 0.1263) AND (nswprice > 0.0443)) AND (date > 0.0002)) AND (nswprice > 0.0583)) AND (date > 0.0003)) AND (nswprice > 0.1109)) AND (period <= 0.6064)) AND (date > 0.0004)) THEN Class 1
+  - IF ((((((((nswprice <= 0.1263) AND (nswprice > 0.0443)) AND (date > 0.0002)) AND (nswprice > 0.0583)) AND (date > 0.0003)) AND (nswprice > 0.1109)) AND (period > 0.6064)) AND (nswprice > 0.1207)) THEN Class 1
+  - IF ((((((nswprice <= 0.1263) AND (nswprice > 0.0443)) AND (date <= 0.0002)) AND (day > 4.5000)) AND (period <= 0.7340)) AND (period > 0.4574)) THEN Class 1
+  - IF (((((nswprice <= 0.1263) AND (nswprice > 0.0443)) AND (date <= 0.0002)) AND (day <= 4.5000)) AND (nswprice <= 0.0449)) THEN Class 1
+  - IF ((((nswprice <= 0.1263) AND (nswprice > 0.0443)) AND (date <= 0.0002)) AND (day > 4.5000)) THEN Class 1
+  - IF (((nswprice <= 0.1263) AND (nswprice <= 0.0488)) AND ((date <= 0.0001) AND ((nswprice > 0.0434) AND (nswprice > 0.0449)))) THEN Class 1
+  - IF (((nswprice <= 0.1263) AND (nswprice > 0.0488)) AND ((date <= 0.0003) AND ((day <= 4.5000) AND (period <= 0.9255)))) THEN Class 1
+  - IF (nswprice > 0.1263) THEN Class 1
+
+======================================================================
+--- Diff Chunk 1 -> Chunk 2 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 1):   0.9780
+  - Test G-Mean (Chunk 2):  0.4272
+  - Test F1 (Chunk 2):      0.7729
+Fitness:       1.003363 -> 1.100000
+Default Class: 0 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((nswprice <= 0.2334) AND (nswdemand <= 0.1163)) THEN Class 0
+  + New: IF ((nswprice <= 0.0552) AND (nswdemand <= 0.1359)) THEN Class 0
+    (Similarity: 0.85)
+
+  New Rules:
+  + IF (((nswprice > 0.0552) AND (date <= 0.0010)) AND (nswdemand <= 0.4128)) THEN Class 0
+  + IF (((nswprice > 0.0552) AND (date <= 0.0010)) AND (nswprice <= 0.1004)) THEN Class 0
+  + IF (((nswprice > 0.0552) AND (date <= 0.0010)) AND (period <= 0.2234)) THEN Class 0
+  + IF ((nswprice < 0.1696) OR (day > 3.5227)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((((((nswprice <= 0.1053) AND (nswprice > 0.0800)) AND (date <= 0.0006)) AND (date <= 0.0005)) AND (period <= 0.7234)) AND (period <= 0.4787)) THEN Class 0
+  - IF ((nswprice <= 0.0800) AND (nswprice > 0.0780)) THEN Class 0
+  - IF ((nswprice <= 0.0800) AND (nswprice > 0.0780)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((nswprice > 0.1192) AND (date > 0.0005)) AND (date > 0.0006)) THEN Class 1
+  + New: IF (((nswprice > 0.0552) AND (date > 0.0010)) AND (date <= 0.0010)) THEN Class 1
+    (Similarity: 0.86)
+  - Old: IF (((nswprice > 0.1192) AND (date > 0.0005)) AND (nswdemand <= 0.3470)) THEN Class 1
+  + New: IF (((nswprice > 0.0552) AND (date > 0.0010)) AND (nswdemand <= 0.1953)) THEN Class 1
+    (Similarity: 0.87)
+  - Old: IF (((nswprice > 0.1192) AND (date <= 0.0005)) AND (nswprice > 0.1328)) THEN Class 1
+  + New: IF (((nswprice > 0.0552) AND (date > 0.0010)) AND (nswprice > 0.0674)) THEN Class 1
+    (Similarity: 0.84)
+  - Old: IF (((nswprice > 0.1192) AND (date <= 0.0005)) AND (period <= 0.7766)) THEN Class 1
+  + New: IF (((nswprice > 0.0552) AND (date > 0.0010)) AND (period <= 0.0745)) THEN Class 1
+    (Similarity: 0.85)
+
+  New Rules:
+  + IF (((date >= 0.0031) AND (nswprice > 0.0640)) AND ((((transfer < 0.4149) AND (((vicdemand > 0.4229) AND (((period <= 0.2799) AND (transfer >= 0.4149)) AND (period >= 0.1796))) OR ((((date >= 0.0034) AND (nswdemand >= 0.5036)) AND (day >= 2.4694)) AND ((((nswdemand >= 0.4855) AND ((transfer >= 0.4149) AND ((day > 2.3584) AND ((nswprice <= 0.1124) OR (((period > 0.8218) AND ((date < 0.0023) AND (day >= 3.5869))) AND (day > 4.5363)))))) OR (day >= 5.1044)) AND (period >= 0.7418))))) OR ((transfer >= 0.4149) OR ((period > 0.6393) AND (nswdemand > 0.2875)))) AND (((vicprice < 0.0035) AND ((day < 2.6650) AND (date < 0.0026))) OR ((day >= 2.2227) AND ((((((nswdemand >= 0.2086) AND ((((period <= 0.6966) AND (((vicdemand < 0.4229) OR ((transfer >= 0.4149) AND (nswdemand < 0.2840))) AND ((nswdemand <= 0.1760) OR (vicprice <= 0.0035)))) AND (vicprice >= 0.0035)) AND ((nswdemand >= 0.1466) OR (date <= 0.0029)))) AND ((nswprice >= 0.1619) AND (day > 1.7604))) AND (nswdemand <= 0.3838)) AND ((date >= 0.0024) AND (vicprice <= 0.0035))) AND (nswprice >= 0.1550)))))) THEN Class 1
+  + IF (((day < 5.3424) AND ((date <= 0.0026) AND ((nswprice < 0.1039) AND (date > 0.0024)))) AND ((nswdemand < 0.6165) AND (day <= 5.0663))) THEN Class 1
+  + IF (((nswprice > 0.0552) AND (date > 0.0010)) AND (day <= 1.5000)) THEN Class 1
+  + IF (((nswprice > 0.0552) AND (date > 0.0010)) AND (nswprice <= 0.0758)) THEN Class 1
+  + IF (((period >= 0.3090) AND (transfer >= 0.4149)) AND (nswdemand < 0.1624)) THEN Class 1
+  + IF ((day >= 4.9460) AND ((day < 2.9069) AND ((date <= 0.0028) AND (((((date < 0.0037) AND (transfer <= 0.4149)) AND ((date >= 0.0015) AND (nswprice <= 0.0821))) AND (((nswdemand < 0.1665) AND (period < 0.4986)) OR ((vicdemand <= 0.4229) AND (nswdemand >= 0.3744)))) AND (((nswdemand >= 0.2992) OR ((vicprice > 0.0035) AND (date > 0.0028))) AND (day < 3.7101)))))) THEN Class 1
+  + IF ((period > 0.4808) AND ((vicprice < 0.0035) AND ((vicprice >= 0.0035) OR ((((date > 0.0027) OR (transfer < 0.4149)) AND (nswprice >= 0.1578)) AND (((((((date > 0.0035) AND (nswdemand < 0.2946)) OR (period >= 0.3513)) AND (((((day <= 2.1383) OR (date >= 0.0025)) AND ((vicprice > 0.0035) AND ((((transfer >= 0.4149) AND (period >= 0.7034)) AND (period < 0.6410)) AND (((vicdemand < 0.4229) AND (vicdemand > 0.4229)) OR (nswdemand >= 0.2559))))) AND (transfer < 0.4149)) AND (day > 3.2297))) AND ((((vicprice < 0.0035) AND ((((date > 0.0017) AND (vicdemand > 0.4229)) AND ((((day > 2.6399) AND (nswprice > 0.0801)) AND (transfer > 0.4149)) AND (date <= 0.0039))) AND (((((vicdemand > 0.4229) AND (nswprice >= 0.0813)) AND (nswdemand <= 0.5886)) AND ((date <= 0.0034) AND (vicdemand >= 0.4229))) AND ((((date >= 0.0026) AND (nswdemand < 0.5969)) AND (transfer >= 0.4149)) OR (((vicprice >= 0.0035) AND (period > 0.7920)) AND ((date >= 0.0030) AND (vicdemand > 0.4229))))))) OR (((transfer <= 0.4149) AND (((((nswdemand < 0.6010) AND (nswprice >= 0.1485)) AND (nswprice <= 0.0792)) AND (date >= 0.0019)) AND (((vicdemand <= 0.4229) AND (nswprice < 0.1376)) AND ((day <= 6.3234) AND ((nswdemand < 0.3432) AND (vicdemand < 0.4229)))))) AND ((((transfer > 0.4149) AND ((vicprice < 0.0035) OR ((vicprice > 0.0035) AND (nswprice <= 0.0717)))) AND ((vicprice > 0.0035) OR (vicdemand < 0.4229))) AND (nswdemand >= 0.5278)))) OR (nswdemand >= 0.3338))) AND (date < 0.0039)) AND (vicprice < 0.0035)))))) THEN Class 1
+  + IF ((vicdemand >= 0.4229) AND ((nswdemand >= 0.6056) AND (((vicdemand > 0.4229) OR ((nswprice > 0.1407) AND (transfer <= 0.4149))) AND (day <= 5.6324)))) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((((nswprice <= 0.1053) AND (nswprice > 0.0800)) AND (date > 0.0006)) AND (nswdemand <= 0.4773)) AND (date <= 0.0008)) AND (nswdemand <= 0.2997)) AND (date > 0.0007)) THEN Class 1
+  - IF (((((nswprice <= 0.1053) AND (nswprice > 0.0800)) AND (date <= 0.0006)) AND (date <= 0.0005)) AND (period > 0.7234)) THEN Class 1
+  - IF (((((nswprice <= 0.1053) AND (nswprice > 0.0800)) AND (date > 0.0006)) AND (nswdemand > 0.4773)) AND (date > 0.0007)) THEN Class 1
+  - IF ((((nswprice <= 0.1053) AND (nswprice > 0.0800)) AND (date <= 0.0006)) AND (date > 0.0005)) THEN Class 1
+  - IF (((nswprice > 0.1053) AND (nswprice <= 0.1192)) AND (nswdemand <= 0.4422)) THEN Class 1
+  - IF (((nswprice > 0.1192) AND (date <= 0.0005)) AND (period <= 0.7766)) THEN Class 1
+  - IF (((nswprice > 0.1192) AND (date <= 0.0005)) AND (period > 0.7766)) THEN Class 1
+  - IF (((nswprice > 0.1192) AND (date > 0.0005)) AND (nswdemand > 0.3470)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 2 -> Chunk 3 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 2):   1.0000
+  - Test G-Mean (Chunk 3):  0.5905
+  - Test F1 (Chunk 3):      0.5748
+Fitness:       1.100000 -> 1.003240
+Default Class: 1 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF (((nswprice > 0.0552) AND (date <= 0.0010)) AND (nswprice <= 0.1004)) THEN Class 0
+  + New: IF (((nswprice > 0.0789) AND (period <= 0.3085)) AND (day <= 4.5000)) THEN Class 0
+    (Similarity: 0.67)
+
+  Deleted Rules:
+  - IF (((nswprice > 0.0552) AND (date <= 0.0010)) AND (nswdemand <= 0.4128)) THEN Class 0
+  - IF (((nswprice > 0.0552) AND (date <= 0.0010)) AND (period <= 0.2234)) THEN Class 0
+  - IF ((nswprice < 0.1696) OR (day > 3.5227)) THEN Class 0
+  - IF ((nswprice <= 0.0552) AND (nswdemand <= 0.1359)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((nswprice > 0.0552) AND (date > 0.0010)) AND (day <= 1.5000)) THEN Class 1
+  + New: IF (((nswprice <= 0.0634) AND (nswdemand <= 0.1715)) AND (day <= 6.5000)) THEN Class 1
+    (Similarity: 0.74)
+  - Old: IF (((nswprice > 0.0552) AND (date > 0.0010)) AND (date <= 0.0010)) THEN Class 1
+  + New: IF (((nswprice > 0.0789) AND (period <= 0.3085)) AND (date <= 0.0047)) THEN Class 1
+    (Similarity: 0.76)
+
+  New Rules:
+  + IF (((((nswprice <= 0.0789) AND (nswprice > 0.0634)) AND (date <= 0.0046)) AND (nswprice <= 0.0666)) AND (date <= 0.0045)) THEN Class 1
+  + IF (((((nswprice <= 0.0789) AND (nswprice > 0.0634)) AND (date > 0.0046)) AND (date > 0.0048)) AND (nswdemand > 0.4511)) THEN Class 1
+  + IF (((((nswprice > 0.0789) AND (period > 0.3085)) AND (date < 0.0047)) AND (period <= 0.9468)) AND (period >= 0.3723)) THEN Class 1
+  + IF (((((nswprice > 0.0789) AND (period > 0.3085)) AND (date <= 0.0047)) AND (period <= 0.9468)) AND (period <= 0.3723)) THEN Class 1
+  + IF (((((nswprice > 0.0789) AND (period > 0.3085)) AND (date > 0.0047)) AND (date > 0.0048)) AND (nswdemand <= 0.5368)) THEN Class 1
+  + IF (((((nswprice > 0.0789) AND (period > 0.8632)) AND (date <= 0.0047)) AND (period <= 0.9468)) AND (period <= 0.3723)) THEN Class 1
+  + IF (((((nswprice >= 0.0789) AND (period > 0.3085)) AND (date > 0.0047)) AND (date > 0.0045)) AND (nswdemand > 0.5368)) THEN Class 1
+  + IF ((((nswprice <= 0.0789) AND (nswprice > 0.0634)) AND (date <= 0.0046)) AND (nswprice > 0.0666)) THEN Class 1
+  + IF ((((nswprice > 0.0789) AND (period > 0.3085)) AND (date <= 0.0047)) AND (period > 0.9468)) THEN Class 1
+  + IF ((((period > 0.6526) AND (date < 0.0046)) AND (((((((vicdemand > 0.4229) AND (vicprice <= 0.0035)) OR ((date > 0.0046) OR (((day < 3.0280) OR (nswdemand <= 0.6585)) AND (((vicdemand > 0.4229) OR (((((nswprice >= 0.1347) OR (nswprice <= 0.1456)) AND (transfer > 0.4149)) AND (((nswprice <= 0.1620) AND (vicdemand >= 0.4229)) AND ((nswprice <= 0.1064) AND (period > 0.4557)))) AND (((vicdemand > 0.4229) AND ((vicdemand < 0.4229) AND (vicprice <= 0.0035))) AND (nswdemand <= 0.5903)))) AND (nswprice <= 0.1800))))) OR (((((nswprice < 0.0732) OR (period >= 0.7619)) AND (vicdemand < 0.4229)) AND (((vicdemand <= 0.4229) AND ((((period >= 0.6255) OR (((vicprice > 0.0035) AND (period < 0.2971)) AND (vicdemand >= 0.4229))) OR ((((vicprice >= 0.0035) AND (transfer >= 0.4149)) AND (vicdemand > 0.4229)) AND (((nswprice >= 0.0952) AND (period <= 0.3804)) AND ((transfer > 0.4149) AND (date >= 0.0046))))) OR (((day > 3.0930) AND (nswprice > 0.1494)) AND ((period < 0.3664) AND (((vicprice < 0.0035) AND (day > 4.0218)) AND ((nswprice >= 0.1188) AND (period > 0.4621))))))) AND ((vicprice <= 0.0035) OR (((day >= 3.0114) AND ((day < 3.4315) AND (((period > 0.2138) OR (nswprice >= 0.1719)) OR (date < 0.0047)))) AND (((((nswdemand <= 0.5603) AND (period <= 0.1584)) OR (nswdemand < 0.4162)) AND (nswdemand > 0.3353)) AND (nswdemand > 0.7568)))))) AND (transfer <= 0.4149))) AND (((day > 4.7952) AND (vicdemand > 0.4229)) AND ((vicprice > 0.0035) AND ((nswdemand > 0.7369) AND (period <= 0.8593))))) AND (((period <= 0.7628) AND (day < 2.0219)) AND (((transfer >= 0.4149) AND (nswprice <= 0.0722)) AND (period < 0.3256)))) AND (((vicprice < 0.0035) AND ((((date <= 0.0046) OR (date >= 0.0048)) AND (date < 0.0048)) OR (((day <= 3.2315) AND (((transfer < 0.4149) AND (((vicdemand >= 0.4229) AND (transfer < 0.4149)) AND (((((transfer <= 0.4149) AND (period >= 0.4378)) AND (period <= 0.5793)) OR (((nswprice <= 0.1735) AND (nswdemand < 0.3466)) AND ((vicdemand >= 0.4229) OR (transfer < 0.4149)))) AND ((nswdemand <= 0.7069) OR (vicprice < 0.0035))))) AND ((vicprice > 0.0035) AND (((period < 0.8726) AND (date < 0.0047)) AND ((nswprice < 0.0635) AND (transfer <= 0.4149)))))) AND ((nswprice <= 0.1783) AND ((((((((nswdemand <= 0.7611) AND (vicprice > 0.0035)) OR (day >= 5.2608)) AND ((nswprice > 0.1731) AND ((day > 5.8743) AND (nswdemand < 0.3389)))) AND (period < 0.8239)) AND (((((vicdemand < 0.4229) AND (day >= 2.2529)) AND ((vicprice <= 0.0035) AND (nswdemand <= 0.3260))) AND (day < 3.0786)) OR (day > 5.9999))) AND ((vicdemand >= 0.4229) AND (period > 0.4596))) AND (day > 2.1532)))))) AND ((((period < 0.3465) OR ((nswdemand > 0.7160) AND ((((((transfer < 0.4149) AND (((nswdemand > 0.7200) AND (period < 0.8494)) AND (vicprice <= 0.0035))) AND ((nswdemand > 0.4811) OR ((nswdemand > 0.3006) AND ((date >= 0.0047) AND (transfer <= 0.4149))))) AND (((vicprice < 0.0035) OR (((date < 0.0046) OR (nswdemand <= 0.2332)) OR (date >= 0.0047))) AND (transfer >= 0.4149))) AND (vicdemand < 0.4229)) AND (((date > 0.0048) AND ((nswprice <= 0.1153) AND (transfer <= 0.4149))) AND ((date <= 0.0047) AND ((transfer > 0.4149) AND (vicdemand < 0.4229))))))) AND (date <= 0.0047)) OR (((((transfer >= 0.4149) AND (period >= 0.4061)) AND (transfer <= 0.4149)) AND ((((nswdemand <= 0.1836) AND ((((day <= 3.4169) AND ((date > 0.0045) AND (day > 5.8206))) AND ((vicprice >= 0.0035) AND (nswdemand <= 0.2514))) OR (day >= 5.0628))) AND ((transfer <= 0.4149) AND (period <= 0.3562))) AND (vicprice >= 0.0035))) OR (vicdemand < 0.4229)))))) AND (((((nswdemand >= 0.7408) OR ((period >= 0.4652) AND (((nswdemand > 0.4765) AND (nswprice > 0.0817)) AND (((nswprice <= 0.1058) AND (date > 0.0045)) AND ((date >= 0.0046) AND ((((date > 0.0046) OR (transfer <= 0.4149)) AND (vicdemand <= 0.4229)) AND (((day >= 5.6630) OR (date >= 0.0045)) AND ((period <= 0.2472) AND (transfer <= 0.4149))))))))) AND ((period <= 0.3953) AND ((((((((((period < 0.4047) OR (day <= 4.1106)) AND ((nswdemand > 0.4592) OR (day >= 5.4009))) AND ((((period <= 0.8717) AND (nswprice >= 0.1820)) AND ((vicprice > 0.0035) AND (day > 2.6948))) AND (nswprice <= 0.0660))) AND (((((nswdemand > 0.6893) OR (period > 0.8901)) AND (nswdemand >= 0.3458)) AND ((vicprice >= 0.0035) AND (period > 0.6421))) OR (vicdemand < 0.4229))) AND (day >= 2.9086)) OR (vicprice <= 0.0035)) OR (day > 5.9270)) AND (day >= 5.0298)) AND ((((((vicprice < 0.0035) OR ((((nswdemand < 0.7548) AND (day < 5.3222)) AND (((transfer <= 0.4149) AND (nswprice >= 0.1431)) OR ((transfer < 0.4149) AND (vicdemand >= 0.4229)))) OR (transfer > 0.4149))) AND (nswprice >= 0.1341)) AND ((vicdemand >= 0.4229) AND (nswprice > 0.1330))) AND ((date < 0.0047) AND (nswdemand >= 0.7652))) AND (vicprice <= 0.0035))))) AND (vicdemand < 0.4229)) OR ((((date > 0.0045) OR ((transfer <= 0.4149) OR (((((((vicdemand > 0.4229) AND (((period < 0.4407) AND (day < 3.0620)) AND (((nswprice <= 0.0757) AND (nswprice > 0.1408)) AND ((nswprice >= 0.1958) OR (vicdemand > 0.4229))))) OR (date <= 0.0047)) AND ((nswprice > 0.1094) AND (((vicprice >= 0.0035) AND (period <= 0.1812)) AND (date > 0.0045)))) AND ((((((vicdemand > 0.4229) OR ((day > 4.8238) AND (day <= 4.6128))) OR (((day > 4.6138) AND (vicprice < 0.0035)) AND ((vicdemand >= 0.4229) AND (vicprice <= 0.0035)))) AND ((((vicprice <= 0.0035) AND (vicdemand < 0.4229)) OR ((nswdemand >= 0.5440) AND (period <= 0.1115))) AND ((day < 3.8191) AND ((vicdemand >= 0.4229) OR (transfer >= 0.4149))))) AND (period < 0.3824)) OR (nswdemand >= 0.5348))) AND ((transfer < 0.4149) AND ((transfer >= 0.4149) AND ((nswprice >= 0.1023) AND (vicdemand >= 0.4229))))) AND (period >= 0.6229)))) OR (((vicprice <= 0.0035) AND (transfer > 0.4149)) AND (day <= 4.6779))) AND (vicdemand < 0.4229)))) THEN Class 1
+  + IF ((nswprice >= 0.0646) AND ((nswprice >= 0.1614) AND ((((vicdemand < 0.4229) AND ((date <= 0.0045) AND (nswdemand < 0.5174))) OR (((vicdemand <= 0.4229) AND (day > 3.7706)) OR (((date <= 0.0048) AND (nswdemand < 0.1960)) AND ((vicprice > 0.0035) AND (((vicdemand >= 0.4229) OR ((vicdemand <= 0.4229) AND ((transfer <= 0.4149) AND (day <= 3.6687)))) AND (nswprice <= 0.0795)))))) AND (vicdemand > 0.4229)))) THEN Class 1
+
+  Deleted Rules:
+  - IF (((date >= 0.0031) AND (nswprice > 0.0640)) AND ((((transfer < 0.4149) AND (((vicdemand > 0.4229) AND (((period <= 0.2799) AND (transfer >= 0.4149)) AND (period >= 0.1796))) OR ((((date >= 0.0034) AND (nswdemand >= 0.5036)) AND (day >= 2.4694)) AND ((((nswdemand >= 0.4855) AND ((transfer >= 0.4149) AND ((day > 2.3584) AND ((nswprice <= 0.1124) OR (((period > 0.8218) AND ((date < 0.0023) AND (day >= 3.5869))) AND (day > 4.5363)))))) OR (day >= 5.1044)) AND (period >= 0.7418))))) OR ((transfer >= 0.4149) OR ((period > 0.6393) AND (nswdemand > 0.2875)))) AND (((vicprice < 0.0035) AND ((day < 2.6650) AND (date < 0.0026))) OR ((day >= 2.2227) AND ((((((nswdemand >= 0.2086) AND ((((period <= 0.6966) AND (((vicdemand < 0.4229) OR ((transfer >= 0.4149) AND (nswdemand < 0.2840))) AND ((nswdemand <= 0.1760) OR (vicprice <= 0.0035)))) AND (vicprice >= 0.0035)) AND ((nswdemand >= 0.1466) OR (date <= 0.0029)))) AND ((nswprice >= 0.1619) AND (day > 1.7604))) AND (nswdemand <= 0.3838)) AND ((date >= 0.0024) AND (vicprice <= 0.0035))) AND (nswprice >= 0.1550)))))) THEN Class 1
+  - IF (((day < 5.3424) AND ((date <= 0.0026) AND ((nswprice < 0.1039) AND (date > 0.0024)))) AND ((nswdemand < 0.6165) AND (day <= 5.0663))) THEN Class 1
+  - IF (((nswprice > 0.0552) AND (date > 0.0010)) AND (nswdemand <= 0.1953)) THEN Class 1
+  - IF (((nswprice > 0.0552) AND (date > 0.0010)) AND (nswprice <= 0.0758)) THEN Class 1
+  - IF (((nswprice > 0.0552) AND (date > 0.0010)) AND (nswprice > 0.0674)) THEN Class 1
+  - IF (((nswprice > 0.0552) AND (date > 0.0010)) AND (period <= 0.0745)) THEN Class 1
+  - IF (((period >= 0.3090) AND (transfer >= 0.4149)) AND (nswdemand < 0.1624)) THEN Class 1
+  - IF ((day >= 4.9460) AND ((day < 2.9069) AND ((date <= 0.0028) AND (((((date < 0.0037) AND (transfer <= 0.4149)) AND ((date >= 0.0015) AND (nswprice <= 0.0821))) AND (((nswdemand < 0.1665) AND (period < 0.4986)) OR ((vicdemand <= 0.4229) AND (nswdemand >= 0.3744)))) AND (((nswdemand >= 0.2992) OR ((vicprice > 0.0035) AND (date > 0.0028))) AND (day < 3.7101)))))) THEN Class 1
+  - IF ((period > 0.4808) AND ((vicprice < 0.0035) AND ((vicprice >= 0.0035) OR ((((date > 0.0027) OR (transfer < 0.4149)) AND (nswprice >= 0.1578)) AND (((((((date > 0.0035) AND (nswdemand < 0.2946)) OR (period >= 0.3513)) AND (((((day <= 2.1383) OR (date >= 0.0025)) AND ((vicprice > 0.0035) AND ((((transfer >= 0.4149) AND (period >= 0.7034)) AND (period < 0.6410)) AND (((vicdemand < 0.4229) AND (vicdemand > 0.4229)) OR (nswdemand >= 0.2559))))) AND (transfer < 0.4149)) AND (day > 3.2297))) AND ((((vicprice < 0.0035) AND ((((date > 0.0017) AND (vicdemand > 0.4229)) AND ((((day > 2.6399) AND (nswprice > 0.0801)) AND (transfer > 0.4149)) AND (date <= 0.0039))) AND (((((vicdemand > 0.4229) AND (nswprice >= 0.0813)) AND (nswdemand <= 0.5886)) AND ((date <= 0.0034) AND (vicdemand >= 0.4229))) AND ((((date >= 0.0026) AND (nswdemand < 0.5969)) AND (transfer >= 0.4149)) OR (((vicprice >= 0.0035) AND (period > 0.7920)) AND ((date >= 0.0030) AND (vicdemand > 0.4229))))))) OR (((transfer <= 0.4149) AND (((((nswdemand < 0.6010) AND (nswprice >= 0.1485)) AND (nswprice <= 0.0792)) AND (date >= 0.0019)) AND (((vicdemand <= 0.4229) AND (nswprice < 0.1376)) AND ((day <= 6.3234) AND ((nswdemand < 0.3432) AND (vicdemand < 0.4229)))))) AND ((((transfer > 0.4149) AND ((vicprice < 0.0035) OR ((vicprice > 0.0035) AND (nswprice <= 0.0717)))) AND ((vicprice > 0.0035) OR (vicdemand < 0.4229))) AND (nswdemand >= 0.5278)))) OR (nswdemand >= 0.3338))) AND (date < 0.0039)) AND (vicprice < 0.0035)))))) THEN Class 1
+  - IF ((vicdemand >= 0.4229) AND ((nswdemand >= 0.6056) AND (((vicdemand > 0.4229) OR ((nswprice > 0.1407) AND (transfer <= 0.4149))) AND (day <= 5.6324)))) THEN Class 1
+
+======================================================================
+--- Diff Chunk 3 -> Chunk 4 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 3):   0.9129
+  - Test G-Mean (Chunk 4):  0.6536
+  - Test F1 (Chunk 4):      0.6757
+Fitness:       1.003240 -> 1.033960
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((nswprice <= 0.0464) AND (day <= 1.5000)) THEN Class 0
+  + IF ((nswprice <= 0.0464) AND (nswdemand <= 0.1848)) THEN Class 0
+  + IF ((nswprice <= 0.0464) AND (period <= 0.0532)) THEN Class 0
+  + IF (nswdemand < 0.6771) THEN Class 0
+  + IF (nswprice <= 0.0464) THEN Class 0
+  + IF (nswprice <= 0.0464) THEN Class 0
+
+  Deleted Rules:
+  - IF (((nswprice > 0.0789) AND (period <= 0.3085)) AND (day <= 4.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((((nswprice > 0.0789) AND (period > 0.3085)) AND (date < 0.0047)) AND (period <= 0.9468)) AND (period >= 0.3723)) THEN Class 1
+  + New: IF (((((nswprice > 0.0593) AND (day <= 4.5000)) AND (nswprice > 0.0850)) AND (nswprice <= 0.0926)) AND (period > 0.7766)) THEN Class 1
+    (Similarity: 0.67)
+  - Old: IF ((((nswprice > 0.0789) AND (period > 0.3085)) AND (date <= 0.0047)) AND (period > 0.9468)) THEN Class 1
+  + New: IF ((((nswprice > 0.0593) AND (day > 4.5000)) AND (period <= 0.7979)) AND (period <= 0.2234)) THEN Class 1
+    (Similarity: 0.68)
+  - Old: IF (((((nswprice <= 0.0789) AND (nswprice > 0.0634)) AND (date <= 0.0046)) AND (nswprice <= 0.0666)) AND (date <= 0.0045)) THEN Class 1
+  + New: IF (((nswprice > 0.0464) AND ((nswprice <= 0.0850) AND (date <= 0.0052))) AND ((date > 0.0050) AND ((nswprice <= 0.0586) AND (date <= 0.0051)))) THEN Class 1
+    (Similarity: 0.67)
+  - Old: IF (((((nswprice <= 0.0789) AND (nswprice > 0.0634)) AND (date > 0.0046)) AND (date > 0.0048)) AND (nswdemand > 0.4511)) THEN Class 1
+  + New: IF (((nswprice > 0.0464) AND (nswprice <= 0.0850)) AND ((date <= 0.0052) AND ((date > 0.0050) AND (nswprice > 0.0685)))) THEN Class 1
+    (Similarity: 0.72)
+
+  New Rules:
+  + IF ((((((nswprice > 0.0593) AND (day <= 4.5000)) AND (nswprice > 0.0850)) AND (nswprice <= 0.0926)) AND (period > 0.7766)) AND (nswdemand <= 0.5574)) THEN Class 1
+  + IF (((((nswprice > 0.0593) AND (day <= 4.5000)) AND (nswprice > 0.0850)) AND (nswprice > 0.0926)) AND (day > 1.5000)) THEN Class 1
+  + IF ((((nswprice > 0.0593) AND (day > 4.5000)) AND (period <= 0.8404)) AND (nswdemand > 0.1940)) THEN Class 1
+  + IF (((nswprice > 0.0464) AND ((nswprice <= 0.0850) AND (date <= 0.0052))) AND ((date > 0.0050) AND ((nswprice > 0.0586) AND (period <= 0.8191)))) THEN Class 1
+  + IF (((nswprice > 0.0464) AND ((nswprice > 0.0850) AND (date > 0.0049))) AND ((period <= 0.8830) AND ((nswprice > 0.0871) AND (date > 0.0052)))) THEN Class 1
+  + IF ((nswprice > 0.0464) AND ((nswprice > 0.0850) AND (nswprice > 0.0912))) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((nswprice > 0.0789) AND (period > 0.3085)) AND (date <= 0.0047)) AND (period <= 0.9468)) AND (period <= 0.3723)) THEN Class 1
+  - IF (((((nswprice > 0.0789) AND (period > 0.3085)) AND (date > 0.0047)) AND (date > 0.0048)) AND (nswdemand <= 0.5368)) THEN Class 1
+  - IF (((((nswprice > 0.0789) AND (period > 0.8632)) AND (date <= 0.0047)) AND (period <= 0.9468)) AND (period <= 0.3723)) THEN Class 1
+  - IF (((((nswprice >= 0.0789) AND (period > 0.3085)) AND (date > 0.0047)) AND (date > 0.0045)) AND (nswdemand > 0.5368)) THEN Class 1
+  - IF ((((nswprice <= 0.0789) AND (nswprice > 0.0634)) AND (date <= 0.0046)) AND (nswprice > 0.0666)) THEN Class 1
+  - IF ((((period > 0.6526) AND (date < 0.0046)) AND (((((((vicdemand > 0.4229) AND (vicprice <= 0.0035)) OR ((date > 0.0046) OR (((day < 3.0280) OR (nswdemand <= 0.6585)) AND (((vicdemand > 0.4229) OR (((((nswprice >= 0.1347) OR (nswprice <= 0.1456)) AND (transfer > 0.4149)) AND (((nswprice <= 0.1620) AND (vicdemand >= 0.4229)) AND ((nswprice <= 0.1064) AND (period > 0.4557)))) AND (((vicdemand > 0.4229) AND ((vicdemand < 0.4229) AND (vicprice <= 0.0035))) AND (nswdemand <= 0.5903)))) AND (nswprice <= 0.1800))))) OR (((((nswprice < 0.0732) OR (period >= 0.7619)) AND (vicdemand < 0.4229)) AND (((vicdemand <= 0.4229) AND ((((period >= 0.6255) OR (((vicprice > 0.0035) AND (period < 0.2971)) AND (vicdemand >= 0.4229))) OR ((((vicprice >= 0.0035) AND (transfer >= 0.4149)) AND (vicdemand > 0.4229)) AND (((nswprice >= 0.0952) AND (period <= 0.3804)) AND ((transfer > 0.4149) AND (date >= 0.0046))))) OR (((day > 3.0930) AND (nswprice > 0.1494)) AND ((period < 0.3664) AND (((vicprice < 0.0035) AND (day > 4.0218)) AND ((nswprice >= 0.1188) AND (period > 0.4621))))))) AND ((vicprice <= 0.0035) OR (((day >= 3.0114) AND ((day < 3.4315) AND (((period > 0.2138) OR (nswprice >= 0.1719)) OR (date < 0.0047)))) AND (((((nswdemand <= 0.5603) AND (period <= 0.1584)) OR (nswdemand < 0.4162)) AND (nswdemand > 0.3353)) AND (nswdemand > 0.7568)))))) AND (transfer <= 0.4149))) AND (((day > 4.7952) AND (vicdemand > 0.4229)) AND ((vicprice > 0.0035) AND ((nswdemand > 0.7369) AND (period <= 0.8593))))) AND (((period <= 0.7628) AND (day < 2.0219)) AND (((transfer >= 0.4149) AND (nswprice <= 0.0722)) AND (period < 0.3256)))) AND (((vicprice < 0.0035) AND ((((date <= 0.0046) OR (date >= 0.0048)) AND (date < 0.0048)) OR (((day <= 3.2315) AND (((transfer < 0.4149) AND (((vicdemand >= 0.4229) AND (transfer < 0.4149)) AND (((((transfer <= 0.4149) AND (period >= 0.4378)) AND (period <= 0.5793)) OR (((nswprice <= 0.1735) AND (nswdemand < 0.3466)) AND ((vicdemand >= 0.4229) OR (transfer < 0.4149)))) AND ((nswdemand <= 0.7069) OR (vicprice < 0.0035))))) AND ((vicprice > 0.0035) AND (((period < 0.8726) AND (date < 0.0047)) AND ((nswprice < 0.0635) AND (transfer <= 0.4149)))))) AND ((nswprice <= 0.1783) AND ((((((((nswdemand <= 0.7611) AND (vicprice > 0.0035)) OR (day >= 5.2608)) AND ((nswprice > 0.1731) AND ((day > 5.8743) AND (nswdemand < 0.3389)))) AND (period < 0.8239)) AND (((((vicdemand < 0.4229) AND (day >= 2.2529)) AND ((vicprice <= 0.0035) AND (nswdemand <= 0.3260))) AND (day < 3.0786)) OR (day > 5.9999))) AND ((vicdemand >= 0.4229) AND (period > 0.4596))) AND (day > 2.1532)))))) AND ((((period < 0.3465) OR ((nswdemand > 0.7160) AND ((((((transfer < 0.4149) AND (((nswdemand > 0.7200) AND (period < 0.8494)) AND (vicprice <= 0.0035))) AND ((nswdemand > 0.4811) OR ((nswdemand > 0.3006) AND ((date >= 0.0047) AND (transfer <= 0.4149))))) AND (((vicprice < 0.0035) OR (((date < 0.0046) OR (nswdemand <= 0.2332)) OR (date >= 0.0047))) AND (transfer >= 0.4149))) AND (vicdemand < 0.4229)) AND (((date > 0.0048) AND ((nswprice <= 0.1153) AND (transfer <= 0.4149))) AND ((date <= 0.0047) AND ((transfer > 0.4149) AND (vicdemand < 0.4229))))))) AND (date <= 0.0047)) OR (((((transfer >= 0.4149) AND (period >= 0.4061)) AND (transfer <= 0.4149)) AND ((((nswdemand <= 0.1836) AND ((((day <= 3.4169) AND ((date > 0.0045) AND (day > 5.8206))) AND ((vicprice >= 0.0035) AND (nswdemand <= 0.2514))) OR (day >= 5.0628))) AND ((transfer <= 0.4149) AND (period <= 0.3562))) AND (vicprice >= 0.0035))) OR (vicdemand < 0.4229)))))) AND (((((nswdemand >= 0.7408) OR ((period >= 0.4652) AND (((nswdemand > 0.4765) AND (nswprice > 0.0817)) AND (((nswprice <= 0.1058) AND (date > 0.0045)) AND ((date >= 0.0046) AND ((((date > 0.0046) OR (transfer <= 0.4149)) AND (vicdemand <= 0.4229)) AND (((day >= 5.6630) OR (date >= 0.0045)) AND ((period <= 0.2472) AND (transfer <= 0.4149))))))))) AND ((period <= 0.3953) AND ((((((((((period < 0.4047) OR (day <= 4.1106)) AND ((nswdemand > 0.4592) OR (day >= 5.4009))) AND ((((period <= 0.8717) AND (nswprice >= 0.1820)) AND ((vicprice > 0.0035) AND (day > 2.6948))) AND (nswprice <= 0.0660))) AND (((((nswdemand > 0.6893) OR (period > 0.8901)) AND (nswdemand >= 0.3458)) AND ((vicprice >= 0.0035) AND (period > 0.6421))) OR (vicdemand < 0.4229))) AND (day >= 2.9086)) OR (vicprice <= 0.0035)) OR (day > 5.9270)) AND (day >= 5.0298)) AND ((((((vicprice < 0.0035) OR ((((nswdemand < 0.7548) AND (day < 5.3222)) AND (((transfer <= 0.4149) AND (nswprice >= 0.1431)) OR ((transfer < 0.4149) AND (vicdemand >= 0.4229)))) OR (transfer > 0.4149))) AND (nswprice >= 0.1341)) AND ((vicdemand >= 0.4229) AND (nswprice > 0.1330))) AND ((date < 0.0047) AND (nswdemand >= 0.7652))) AND (vicprice <= 0.0035))))) AND (vicdemand < 0.4229)) OR ((((date > 0.0045) OR ((transfer <= 0.4149) OR (((((((vicdemand > 0.4229) AND (((period < 0.4407) AND (day < 3.0620)) AND (((nswprice <= 0.0757) AND (nswprice > 0.1408)) AND ((nswprice >= 0.1958) OR (vicdemand > 0.4229))))) OR (date <= 0.0047)) AND ((nswprice > 0.1094) AND (((vicprice >= 0.0035) AND (period <= 0.1812)) AND (date > 0.0045)))) AND ((((((vicdemand > 0.4229) OR ((day > 4.8238) AND (day <= 4.6128))) OR (((day > 4.6138) AND (vicprice < 0.0035)) AND ((vicdemand >= 0.4229) AND (vicprice <= 0.0035)))) AND ((((vicprice <= 0.0035) AND (vicdemand < 0.4229)) OR ((nswdemand >= 0.5440) AND (period <= 0.1115))) AND ((day < 3.8191) AND ((vicdemand >= 0.4229) OR (transfer >= 0.4149))))) AND (period < 0.3824)) OR (nswdemand >= 0.5348))) AND ((transfer < 0.4149) AND ((transfer >= 0.4149) AND ((nswprice >= 0.1023) AND (vicdemand >= 0.4229))))) AND (period >= 0.6229)))) OR (((vicprice <= 0.0035) AND (transfer > 0.4149)) AND (day <= 4.6779))) AND (vicdemand < 0.4229)))) THEN Class 1
+  - IF (((nswprice <= 0.0634) AND (nswdemand <= 0.1715)) AND (day <= 6.5000)) THEN Class 1
+  - IF (((nswprice > 0.0789) AND (period <= 0.3085)) AND (date <= 0.0047)) THEN Class 1
+  - IF ((nswprice >= 0.0646) AND ((nswprice >= 0.1614) AND ((((vicdemand < 0.4229) AND ((date <= 0.0045) AND (nswdemand < 0.5174))) OR (((vicdemand <= 0.4229) AND (day > 3.7706)) OR (((date <= 0.0048) AND (nswdemand < 0.1960)) AND ((vicprice > 0.0035) AND (((vicdemand >= 0.4229) OR ((vicdemand <= 0.4229) AND ((transfer <= 0.4149) AND (day <= 3.6687)))) AND (nswprice <= 0.0795)))))) AND (vicdemand > 0.4229)))) THEN Class 1
+
+======================================================================
+--- Diff Chunk 4 -> Chunk 5 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 4):   0.9520
+  - Test G-Mean (Chunk 5):  0.8051
+  - Test F1 (Chunk 5):      0.8162
+Fitness:       1.033960 -> 1.120486
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((nswprice <= 0.0464) AND (period <= 0.0532)) THEN Class 0
+  + New: IF ((nswprice <= 0.0747) AND (nswprice <= 0.0639)) THEN Class 0
+    (Similarity: 0.77)
+
+  New Rules:
+  + IF ((((nswprice > 0.0747) AND (nswprice <= 0.0818)) AND (date > 0.0087)) AND (date <= 0.0088)) THEN Class 0
+  + IF (((nswprice <= 0.0747) AND (nswprice > 0.0639)) AND (day <= 1.5000)) THEN Class 0
+  + IF (((nswprice <= 0.0747) AND (nswprice > 0.0639)) AND (day > 1.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((nswprice <= 0.0464) AND (day <= 1.5000)) THEN Class 0
+  - IF ((nswprice <= 0.0464) AND (nswdemand <= 0.1848)) THEN Class 0
+  - IF (nswdemand < 0.6771) THEN Class 0
+  - IF (nswprice <= 0.0464) THEN Class 0
+  - IF (nswprice <= 0.0464) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((nswprice > 0.0464) AND (nswprice <= 0.0850)) AND ((date <= 0.0052) AND ((date > 0.0050) AND (nswprice > 0.0685)))) THEN Class 1
+  + New: IF ((((nswprice > 0.0747) AND (nswprice > 0.0818)) AND (date > 0.0087)) AND (nswprice > 0.0908)) THEN Class 1
+    (Similarity: 0.68)
+  - Old: IF ((nswprice > 0.0464) AND ((nswprice > 0.0850) AND (nswprice > 0.0912))) THEN Class 1
+  + New: IF (((nswprice > 0.0747) AND (nswprice > 0.0818)) AND (date <= 0.0087)) THEN Class 1
+    (Similarity: 0.70)
+
+  New Rules:
+  + IF ((((nswprice > 0.0747) AND (nswprice <= 0.0818)) AND (date <= 0.0087)) AND (day <= 2.5000)) THEN Class 1
+  + IF ((((nswprice > 0.0747) AND (nswprice <= 0.0818)) AND (date <= 0.0087)) AND (day > 2.5000)) THEN Class 1
+  + IF ((((nswprice > 0.0747) AND (nswprice <= 0.0818)) AND (date > 0.0087)) AND (date > 0.0088)) THEN Class 1
+  + IF ((((nswprice > 0.0747) AND (nswprice > 0.0818)) AND (date > 0.0087)) AND (nswprice <= 0.0908)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((nswprice > 0.0593) AND (day <= 4.5000)) AND (nswprice > 0.0850)) AND (nswprice <= 0.0926)) AND (period > 0.7766)) AND (nswdemand <= 0.5574)) THEN Class 1
+  - IF (((((nswprice > 0.0593) AND (day <= 4.5000)) AND (nswprice > 0.0850)) AND (nswprice <= 0.0926)) AND (period > 0.7766)) THEN Class 1
+  - IF (((((nswprice > 0.0593) AND (day <= 4.5000)) AND (nswprice > 0.0850)) AND (nswprice > 0.0926)) AND (day > 1.5000)) THEN Class 1
+  - IF ((((nswprice > 0.0593) AND (day > 4.5000)) AND (period <= 0.7979)) AND (period <= 0.2234)) THEN Class 1
+  - IF ((((nswprice > 0.0593) AND (day > 4.5000)) AND (period <= 0.8404)) AND (nswdemand > 0.1940)) THEN Class 1
+  - IF (((nswprice > 0.0464) AND ((nswprice <= 0.0850) AND (date <= 0.0052))) AND ((date > 0.0050) AND ((nswprice <= 0.0586) AND (date <= 0.0051)))) THEN Class 1
+  - IF (((nswprice > 0.0464) AND ((nswprice <= 0.0850) AND (date <= 0.0052))) AND ((date > 0.0050) AND ((nswprice > 0.0586) AND (period <= 0.8191)))) THEN Class 1
+  - IF (((nswprice > 0.0464) AND ((nswprice > 0.0850) AND (date > 0.0049))) AND ((period <= 0.8830) AND ((nswprice > 0.0871) AND (date > 0.0052)))) THEN Class 1
+
+======================================================================
+--- Diff Chunk 5 -> Chunk 6 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 5):   0.9818
+  - Test G-Mean (Chunk 6):  0.8242
+  - Test F1 (Chunk 6):      0.8349
+Fitness:       1.120486 -> 0.856776
+Default Class: 0 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF (((nswprice <= 0.0747) AND (nswprice > 0.0639)) AND (day > 1.5000)) THEN Class 0
+  + New: IF ((nswprice <= 0.0781) AND ((nswprice <= 0.0676) AND (nswdemand > 0.2559))) THEN Class 0
+    (Similarity: 0.72)
+
+  New Rules:
+  + IF (nswprice < 0.0963) THEN Class 0
+
+  Deleted Rules:
+  - IF ((((nswprice > 0.0747) AND (nswprice <= 0.0818)) AND (date > 0.0087)) AND (date <= 0.0088)) THEN Class 0
+  - IF (((nswprice <= 0.0747) AND (nswprice > 0.0639)) AND (day <= 1.5000)) THEN Class 0
+  - IF ((nswprice <= 0.0747) AND (nswprice <= 0.0639)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice > 0.0747) AND (nswprice > 0.0818)) AND (date > 0.0087)) AND (nswprice <= 0.0908)) THEN Class 1
+  + New: IF ((((nswprice > 0.0814) AND (nswprice <= 0.0972)) AND (day > 4.5000)) AND (nswprice <= 0.0822)) THEN Class 1
+    (Similarity: 0.82)
+  - Old: IF ((((nswprice > 0.0747) AND (nswprice <= 0.0818)) AND (date > 0.0087)) AND (date > 0.0088)) THEN Class 1
+  + New: IF ((((nswprice > 0.1439) AND (nswprice <= 0.0972)) AND (day > 4.5000)) AND (date <= 0.0091)) THEN Class 1
+    (Similarity: 0.81)
+  - Old: IF ((((nswprice > 0.0747) AND (nswprice <= 0.0818)) AND (date <= 0.0087)) AND (day <= 2.5000)) THEN Class 1
+  + New: IF (((nswprice > 0.0781) AND (nswprice <= 0.0972)) AND ((day > 4.5000) AND (day <= 5.5000))) THEN Class 1
+    (Similarity: 0.80)
+  - Old: IF ((((nswprice > 0.0747) AND (nswprice <= 0.0818)) AND (date <= 0.0087)) AND (day > 2.5000)) THEN Class 1
+  + New: IF (((nswprice > 0.0781) AND (nswprice <= 0.0972)) AND ((day > 4.5000) AND (day > 5.5000))) THEN Class 1
+    (Similarity: 0.80)
+  - Old: IF (((nswprice > 0.0747) AND (nswprice > 0.0818)) AND (date <= 0.0087)) THEN Class 1
+  + New: IF (((nswprice > 0.0972) AND (period > 0.9043)) AND (date <= 0.0090)) THEN Class 1
+    (Similarity: 0.78)
+
+  New Rules:
+  + IF (((((nswprice <= 0.0814) AND (nswprice > 0.0611)) AND (day > 4.5000)) AND (date <= 0.0091)) AND (period <= 0.5213)) THEN Class 1
+  + IF (((((nswprice > 0.0814) AND (nswprice <= 0.0972)) AND (day <= 4.5000)) AND (day <= 2.5000)) AND (period <= 0.9468)) THEN Class 1
+  + IF ((((nswprice > 0.0814) AND (nswprice <= 0.0972)) AND (day > 4.5000)) AND (nswdemand <= 0.4780)) THEN Class 1
+  + IF ((((nswprice > 0.0972) AND (period <= 0.9043)) AND (period <= 0.3511)) AND (nswdemand <= 0.7063)) THEN Class 1
+  + IF (((nswprice > 0.0781) AND (nswprice > 0.0972)) AND ((period <= 0.9043) AND (period > 0.3511))) THEN Class 1
+  + IF (((period > 0.8364) AND (date > 0.0091)) AND (period <= 0.1073)) THEN Class 1
+  + IF ((nswprice > 0.0781) AND ((day > 4.5000) AND (nswprice > 0.0818))) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((nswprice > 0.0747) AND (nswprice > 0.0818)) AND (date > 0.0087)) AND (nswprice > 0.0908)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 6 -> Chunk 7 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 6):   0.9402
+  - Test G-Mean (Chunk 7):  0.5744
+  - Test F1 (Chunk 7):      0.7851
+Fitness:       0.856776 -> 1.092916
+Default Class: 1 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((nswprice <= 0.0781) AND ((nswprice <= 0.0676) AND (nswdemand > 0.2559))) THEN Class 0
+  + New: IF (((nswprice <= 0.0456) AND (nswprice > 0.0441)) AND (period > 0.3085)) THEN Class 0
+    (Similarity: 0.69)
+
+  New Rules:
+  + IF ((((nswprice > 0.0456) AND (period > 0.2021)) AND (nswprice <= 0.0597)) AND (date > 0.0096)) THEN Class 0
+  + IF (((nswprice <= 0.0456) AND (nswprice > 0.0441)) AND (period <= 0.3085)) THEN Class 0
+  + IF (((nswprice > 0.0456) AND (period <= 0.2021)) AND (period > 0.0532)) THEN Class 0
+  + IF ((nswprice <= 0.0456) AND (nswprice <= 0.0441)) THEN Class 0
+
+  Deleted Rules:
+  - IF (nswprice < 0.0963) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice > 0.0972) AND (period <= 0.9043)) AND (period <= 0.3511)) AND (nswdemand <= 0.7063)) THEN Class 1
+  + New: IF ((((nswprice > 0.0456) AND (period <= 0.2021)) AND (period <= 0.0532)) AND (nswdemand <= 0.5385)) THEN Class 1
+    (Similarity: 0.87)
+  - Old: IF (((nswprice > 0.0972) AND (period > 0.9043)) AND (date <= 0.0090)) THEN Class 1
+  + New: IF (((nswprice > 0.0456) AND (period > 0.2021)) AND (nswprice > 0.0597)) THEN Class 1
+    (Similarity: 0.75)
+
+  New Rules:
+  + IF ((((nswprice > 0.0456) AND (period <= 0.2021)) AND (period <= 0.0532)) AND (nswdemand > 0.5385)) THEN Class 1
+  + IF ((((nswprice > 0.0456) AND (period > 0.2021)) AND (nswprice <= 0.0597)) AND (date <= 0.0096)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((nswprice <= 0.0814) AND (nswprice > 0.0611)) AND (day > 4.5000)) AND (date <= 0.0091)) AND (period <= 0.5213)) THEN Class 1
+  - IF (((((nswprice > 0.0814) AND (nswprice <= 0.0972)) AND (day <= 4.5000)) AND (day <= 2.5000)) AND (period <= 0.9468)) THEN Class 1
+  - IF ((((nswprice > 0.0814) AND (nswprice <= 0.0972)) AND (day > 4.5000)) AND (nswdemand <= 0.4780)) THEN Class 1
+  - IF ((((nswprice > 0.0814) AND (nswprice <= 0.0972)) AND (day > 4.5000)) AND (nswprice <= 0.0822)) THEN Class 1
+  - IF ((((nswprice > 0.1439) AND (nswprice <= 0.0972)) AND (day > 4.5000)) AND (date <= 0.0091)) THEN Class 1
+  - IF (((nswprice > 0.0781) AND (nswprice <= 0.0972)) AND ((day > 4.5000) AND (day <= 5.5000))) THEN Class 1
+  - IF (((nswprice > 0.0781) AND (nswprice <= 0.0972)) AND ((day > 4.5000) AND (day > 5.5000))) THEN Class 1
+  - IF (((nswprice > 0.0781) AND (nswprice > 0.0972)) AND ((period <= 0.9043) AND (period > 0.3511))) THEN Class 1
+  - IF (((period > 0.8364) AND (date > 0.0091)) AND (period <= 0.1073)) THEN Class 1
+  - IF ((nswprice > 0.0781) AND ((day > 4.5000) AND (nswprice > 0.0818))) THEN Class 1
+
+======================================================================
+--- Diff Chunk 7 -> Chunk 8 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 7):   0.9935
+  - Test G-Mean (Chunk 8):  0.8116
+  - Test F1 (Chunk 8):      0.8692
+Fitness:       1.092916 -> 1.012343
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice > 0.0456) AND (period > 0.2021)) AND (nswprice <= 0.0597)) AND (date > 0.0096)) THEN Class 0
+  + New: IF ((((nswprice <= 0.0522) AND (nswprice > 0.0481)) AND (day <= 5.5000)) AND (date > 0.0133)) THEN Class 0
+    (Similarity: 0.67)
+
+  Deleted Rules:
+  - IF (((nswprice <= 0.0456) AND (nswprice > 0.0441)) AND (period <= 0.3085)) THEN Class 0
+  - IF (((nswprice <= 0.0456) AND (nswprice > 0.0441)) AND (period > 0.3085)) THEN Class 0
+  - IF (((nswprice > 0.0456) AND (period <= 0.2021)) AND (period > 0.0532)) THEN Class 0
+  - IF ((nswprice <= 0.0456) AND (nswprice <= 0.0441)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice > 0.0456) AND (period > 0.2021)) AND (nswprice <= 0.0597)) AND (date <= 0.0096)) THEN Class 1
+  + New: IF ((((nswprice > 0.0522) AND (nswprice <= 0.0605)) AND (date <= 0.0132)) AND (date <= 0.0130)) THEN Class 1
+    (Similarity: 0.70)
+  - Old: IF ((((nswprice > 0.0456) AND (period <= 0.2021)) AND (period <= 0.0532)) AND (nswdemand <= 0.5385)) THEN Class 1
+  + New: IF ((((nswprice > 0.0522) AND (nswprice <= 0.0605)) AND (date <= 0.0132)) AND (day <= 4.5000)) THEN Class 1
+    (Similarity: 0.68)
+  - Old: IF ((((nswprice > 0.0456) AND (period <= 0.2021)) AND (period <= 0.0532)) AND (nswdemand > 0.5385)) THEN Class 1
+  + New: IF ((((nswprice > 0.0522) AND (nswprice <= 0.0605)) AND (date <= 0.0132)) AND (day > 4.5000)) THEN Class 1
+    (Similarity: 0.68)
+
+  New Rules:
+  + IF ((((((nswprice <= 0.0481) AND (day <= 1.5000)) AND (nswprice > 0.0414)) AND (date > 0.0115)) AND (period <= 0.7447)) AND (period <= 0.3936)) THEN Class 1
+  + IF ((((((nswprice <= 0.0481) AND (day <= 1.5000)) AND (nswprice > 0.0414)) AND (date > 0.0115)) AND (period <= 0.7447)) AND (period > 0.3936)) THEN Class 1
+  + IF ((((((nswprice <= 0.0522) AND (nswprice > 0.0481)) AND (day <= 5.5000)) AND (day > 1.5000)) AND (date <= 0.0133)) AND (period <= 0.2128)) THEN Class 1
+  + IF (((((nswprice <= 0.0481) AND (day <= 1.5000)) AND (nswprice > 0.0414)) AND (date <= 0.0115)) AND (period > 0.7979)) THEN Class 1
+  + IF ((((nswprice <= 0.0522) AND (nswprice > 0.0481)) AND (day <= 5.5000)) AND (day <= 1.5000)) THEN Class 1
+  + IF (((nswprice <= 0.0522) AND (nswprice > 0.0481)) AND (day > 5.5000)) THEN Class 1
+  + IF (nswprice >= 0.0605) THEN Class 1
+
+  Deleted Rules:
+  - IF (((nswprice > 0.0456) AND (period > 0.2021)) AND (nswprice > 0.0597)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 8 -> Chunk 9 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 8):   0.9760
+  - Test G-Mean (Chunk 9):  0.8346
+  - Test F1 (Chunk 9):      0.8217
+Fitness:       1.012343 -> 1.135930
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice <= 0.0522) AND (nswprice > 0.0481)) AND (day <= 5.5000)) AND (date > 0.0133)) THEN Class 0
+  + New: IF ((((nswprice <= 0.0684) AND (nswprice > 0.0456)) AND (date <= 0.0136)) AND (nswprice > 0.0670)) THEN Class 0
+    (Similarity: 0.77)
+
+  New Rules:
+  + IF ((((nswprice <= 0.0684) AND (nswprice > 0.0456)) AND (date <= 0.0136)) AND (nswprice <= 0.0670)) THEN Class 0
+  + IF ((((nswprice <= 0.0684) AND (nswprice > 0.0456)) AND (date > 0.0136)) AND (nswprice <= 0.0459)) THEN Class 0
+  + IF (((nswprice > 0.0684) AND (nswprice <= 0.0782)) AND (date <= 0.0134)) THEN Class 0
+  + IF ((nswprice <= 0.0684) AND (nswprice <= 0.0456)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice > 0.0522) AND (nswprice <= 0.0605)) AND (date <= 0.0132)) AND (date <= 0.0130)) THEN Class 1
+  + New: IF ((((nswprice > 0.0684) AND (nswprice <= 0.0782)) AND (date > 0.0134)) AND (date <= 0.0135)) THEN Class 1
+    (Similarity: 0.89)
+  - Old: IF (((nswprice <= 0.0522) AND (nswprice > 0.0481)) AND (day > 5.5000)) THEN Class 1
+  + New: IF (((nswprice > 0.0684) AND (nswprice > 0.0782)) AND (date > 0.0134)) THEN Class 1
+    (Similarity: 0.79)
+
+  New Rules:
+  + IF ((((nswprice <= 0.0684) AND (nswprice > 0.0456)) AND (date > 0.0136)) AND (nswprice > 0.0459)) THEN Class 1
+  + IF ((((nswprice > 0.0684) AND (nswprice <= 0.0782)) AND (date > 0.0134)) AND (date > 0.0135)) THEN Class 1
+  + IF ((((nswprice > 0.0684) AND (nswprice > 0.0782)) AND (date <= 0.0134)) AND (nswprice <= 0.0938)) THEN Class 1
+  + IF ((((nswprice > 0.0684) AND (nswprice > 0.0782)) AND (date <= 0.0134)) AND (nswprice > 0.0938)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((nswprice <= 0.0481) AND (day <= 1.5000)) AND (nswprice > 0.0414)) AND (date > 0.0115)) AND (period <= 0.7447)) AND (period <= 0.3936)) THEN Class 1
+  - IF ((((((nswprice <= 0.0481) AND (day <= 1.5000)) AND (nswprice > 0.0414)) AND (date > 0.0115)) AND (period <= 0.7447)) AND (period > 0.3936)) THEN Class 1
+  - IF ((((((nswprice <= 0.0522) AND (nswprice > 0.0481)) AND (day <= 5.5000)) AND (day > 1.5000)) AND (date <= 0.0133)) AND (period <= 0.2128)) THEN Class 1
+  - IF (((((nswprice <= 0.0481) AND (day <= 1.5000)) AND (nswprice > 0.0414)) AND (date <= 0.0115)) AND (period > 0.7979)) THEN Class 1
+  - IF ((((nswprice <= 0.0522) AND (nswprice > 0.0481)) AND (day <= 5.5000)) AND (day <= 1.5000)) THEN Class 1
+  - IF ((((nswprice > 0.0522) AND (nswprice <= 0.0605)) AND (date <= 0.0132)) AND (day <= 4.5000)) THEN Class 1
+  - IF ((((nswprice > 0.0522) AND (nswprice <= 0.0605)) AND (date <= 0.0132)) AND (day > 4.5000)) THEN Class 1
+  - IF (nswprice >= 0.0605) THEN Class 1
+
+======================================================================
+--- Diff Chunk 9 -> Chunk 10 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 9):   0.9769
+  - Test G-Mean (Chunk 10):  0.7410
+  - Test F1 (Chunk 10):      0.7279
+Fitness:       1.135930 -> 0.876306
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice <= 0.0684) AND (nswprice > 0.0456)) AND (date <= 0.0136)) AND (nswprice > 0.0670)) THEN Class 0
+  + New: IF ((((nswprice > 0.0611) AND (period <= 0.2447)) AND (date <= 0.0140)) AND (nswprice > 0.0623)) THEN Class 0
+    (Similarity: 0.80)
+  - Old: IF ((((nswprice <= 0.0684) AND (nswprice > 0.0456)) AND (date <= 0.0136)) AND (nswprice <= 0.0670)) THEN Class 0
+  + New: IF ((((nswprice > 0.0611) AND (period <= 0.2447)) AND (date <= 0.0140)) AND (period <= 0.0532)) THEN Class 0
+    (Similarity: 0.73)
+
+  New Rules:
+  + IF ((((nswprice > 0.0611) AND (period <= 0.2447)) AND (date <= 0.0140)) AND (nswdemand <= 0.3320)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((((nswprice <= 0.0684) AND (nswprice > 0.0456)) AND (date > 0.0136)) AND (nswprice <= 0.0459)) THEN Class 0
+  - IF (((nswprice > 0.0684) AND (nswprice <= 0.0782)) AND (date <= 0.0134)) THEN Class 0
+  - IF ((nswprice <= 0.0684) AND (nswprice <= 0.0456)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice > 0.0684) AND (nswprice > 0.0782)) AND (date <= 0.0134)) AND (nswprice > 0.0938)) THEN Class 1
+  + New: IF (((((nswprice > 0.0611) AND (period > 0.2447)) AND (date <= 0.0140)) AND (nswprice > 0.0923)) AND (nswprice > 0.0992)) THEN Class 1
+    (Similarity: 0.65)
+  - Old: IF ((((nswprice <= 0.0684) AND (nswprice > 0.0456)) AND (date > 0.0136)) AND (nswprice > 0.0459)) THEN Class 1
+  + New: IF ((((nswprice <= 0.0611) AND (nswprice > 0.0494)) AND (date > 0.0140)) AND (period > 0.6064)) THEN Class 1
+    (Similarity: 0.83)
+  - Old: IF ((((nswprice > 0.0684) AND (nswprice > 0.0782)) AND (date <= 0.0134)) AND (nswprice <= 0.0938)) THEN Class 1
+  + New: IF ((((nswprice > 0.0611) AND (period > 0.2447)) AND (date > 0.0140)) AND (period <= 0.8404)) THEN Class 1
+    (Similarity: 0.73)
+  - Old: IF (((nswprice > 0.0684) AND (nswprice > 0.0782)) AND (date > 0.0134)) THEN Class 1
+  + New: IF (((nswprice > 0.0611) AND (period <= 0.2447)) AND (date > 0.0140)) THEN Class 1
+    (Similarity: 0.76)
+
+  New Rules:
+  + IF (((((((nswprice > 0.0611) AND (period > 0.2447)) AND (date <= 0.0140)) AND (nswprice <= 0.0923)) AND (date <= 0.0139)) AND (nswprice > 0.0752)) AND (period <= 0.3936)) THEN Class 1
+  + IF (((((((nswprice > 0.0611) AND (period > 0.2447)) AND (date <= 0.0140)) AND (nswprice <= 0.0923)) AND (date > 0.0139)) AND (date <= 0.0139)) AND (nswprice <= 0.0793)) THEN Class 1
+  + IF (((((((nswprice > 0.0611) AND (period > 0.2447)) AND (date <= 0.0140)) AND (nswprice <= 0.0923)) AND (date > 0.0139)) AND (date <= 0.0139)) AND (nswprice > 0.0793)) THEN Class 1
+  + IF (((((((nswprice > 0.0611) AND (period > 0.2447)) AND (date <= 0.0140)) AND (nswprice <= 0.0923)) AND (date > 0.0139)) AND (date > 0.0139)) AND (nswdemand <= 0.5640)) THEN Class 1
+  + IF (((((nswprice > 0.0611) AND (period > 0.2447)) AND (date <= 0.0140)) AND (nswprice > 0.0923)) AND (nswprice <= 0.0992)) THEN Class 1
+  + IF (((((nswprice > 0.0611) AND (period > 0.2447)) AND (date <= 0.0140)) AND (nswprice > 0.0923)) AND (nswprice > 0.0623)) THEN Class 1
+  + IF (((((nswprice > 0.0611) AND (period > 0.2447)) AND (date > 0.0140)) AND (period > 0.8404)) AND (nswdemand <= 0.5170)) THEN Class 1
+  + IF (((((nswprice > 0.0611) AND (period > 0.2447)) AND (date > 0.0140)) AND (period > 0.8404)) AND (nswdemand > 0.5170)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((nswprice > 0.0684) AND (nswprice <= 0.0782)) AND (date > 0.0134)) AND (date <= 0.0135)) THEN Class 1
+  - IF ((((nswprice > 0.0684) AND (nswprice <= 0.0782)) AND (date > 0.0134)) AND (date > 0.0135)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 10 -> Chunk 11 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 10):   0.9489
+  - Test G-Mean (Chunk 11):  0.6621
+  - Test F1 (Chunk 11):      0.6561
+Fitness:       0.876306 -> 0.981730
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice > 0.0611) AND (period <= 0.2447)) AND (date <= 0.0140)) AND (nswdemand <= 0.3320)) THEN Class 0
+  + New: IF ((((nswprice <= 0.0748) AND (date > 0.0177)) AND (nswprice <= 0.0583)) AND (nswdemand <= 0.2334)) THEN Class 0
+    (Similarity: 0.70)
+  - Old: IF ((((nswprice > 0.0611) AND (period <= 0.2447)) AND (date <= 0.0140)) AND (nswprice > 0.0623)) THEN Class 0
+  + New: IF ((((nswprice <= 0.0748) AND (date > 0.0177)) AND (nswprice <= 0.0583)) AND (nswprice <= 0.0458)) THEN Class 0
+    (Similarity: 0.68)
+  - Old: IF ((((nswprice > 0.0611) AND (period <= 0.2447)) AND (date <= 0.0140)) AND (period <= 0.0532)) THEN Class 0
+  + New: IF ((((nswprice <= 0.0748) AND (date > 0.0177)) AND (nswprice <= 0.0583)) AND (period <= 0.3511)) THEN Class 0
+    (Similarity: 0.69)
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((((nswprice > 0.0611) AND (period > 0.2447)) AND (date <= 0.0140)) AND (nswprice > 0.0923)) AND (nswprice > 0.0992)) THEN Class 1
+  + New: IF (((((nswprice <= 0.0748) AND (date <= 0.0177)) AND (nswdemand <= 0.6018)) AND (nswprice > 0.0735)) AND (date > 0.0176)) THEN Class 1
+    (Similarity: 0.67)
+  - Old: IF (((((nswprice > 0.0611) AND (period > 0.2447)) AND (date > 0.0140)) AND (period > 0.8404)) AND (nswdemand <= 0.5170)) THEN Class 1
+  + New: IF (((((nswprice > 0.0748) AND (nswdemand > 0.3604)) AND (nswprice > 0.0875)) AND (period > 0.2979)) AND (day <= 1.5000)) THEN Class 1
+    (Similarity: 0.68)
+  - Old: IF (((((nswprice > 0.0611) AND (period > 0.2447)) AND (date > 0.0140)) AND (period > 0.8404)) AND (nswdemand > 0.5170)) THEN Class 1
+  + New: IF (((((nswprice > 0.0748) AND (nswdemand > 0.3604)) AND (nswprice > 0.0875)) AND (period > 0.2979)) AND (day > 1.5000)) THEN Class 1
+    (Similarity: 0.68)
+  - Old: IF ((((nswprice > 0.0611) AND (period > 0.2447)) AND (date > 0.0140)) AND (period <= 0.8404)) THEN Class 1
+  + New: IF ((((nswprice > 0.0748) AND (nswdemand > 0.3604)) AND (nswprice > 0.0875)) AND (period <= 0.2979)) THEN Class 1
+    (Similarity: 0.71)
+
+  New Rules:
+  + IF ((((((nswprice > 0.0748) AND (nswdemand > 0.3604)) AND (nswprice <= 0.0875)) AND (day > 3.5000)) AND (day <= 6.5000)) AND (period <= 0.8830)) THEN Class 1
+  + IF (((((nswprice > 0.0748) AND (nswdemand > 0.3604)) AND (nswprice <= 0.0875)) AND (day > 3.5000)) AND (day > 6.5000)) THEN Class 1
+  + IF ((((nswprice <= 0.0748) AND (date <= 0.0177)) AND (nswdemand > 0.6018)) AND (period <= 0.6277)) THEN Class 1
+  + IF ((((nswprice > 0.0748) AND (nswdemand > 0.3604)) AND (nswprice <= 0.0875)) AND (day > 3.5000)) THEN Class 1
+  + IF (((nswprice <= 0.0748) AND (date > 0.0177)) AND (nswprice > 0.0583)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((((nswprice > 0.0611) AND (period > 0.2447)) AND (date <= 0.0140)) AND (nswprice <= 0.0923)) AND (date <= 0.0139)) AND (nswprice > 0.0752)) AND (period <= 0.3936)) THEN Class 1
+  - IF (((((((nswprice > 0.0611) AND (period > 0.2447)) AND (date <= 0.0140)) AND (nswprice <= 0.0923)) AND (date > 0.0139)) AND (date <= 0.0139)) AND (nswprice <= 0.0793)) THEN Class 1
+  - IF (((((((nswprice > 0.0611) AND (period > 0.2447)) AND (date <= 0.0140)) AND (nswprice <= 0.0923)) AND (date > 0.0139)) AND (date <= 0.0139)) AND (nswprice > 0.0793)) THEN Class 1
+  - IF (((((((nswprice > 0.0611) AND (period > 0.2447)) AND (date <= 0.0140)) AND (nswprice <= 0.0923)) AND (date > 0.0139)) AND (date > 0.0139)) AND (nswdemand <= 0.5640)) THEN Class 1
+  - IF (((((nswprice > 0.0611) AND (period > 0.2447)) AND (date <= 0.0140)) AND (nswprice > 0.0923)) AND (nswprice <= 0.0992)) THEN Class 1
+  - IF (((((nswprice > 0.0611) AND (period > 0.2447)) AND (date <= 0.0140)) AND (nswprice > 0.0923)) AND (nswprice > 0.0623)) THEN Class 1
+  - IF ((((nswprice <= 0.0611) AND (nswprice > 0.0494)) AND (date > 0.0140)) AND (period > 0.6064)) THEN Class 1
+  - IF (((nswprice > 0.0611) AND (period <= 0.2447)) AND (date > 0.0140)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 11 -> Chunk 12 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 11):   0.9707
+  - Test G-Mean (Chunk 12):  0.5154
+  - Test F1 (Chunk 12):      0.5111
+Fitness:       0.981730 -> 1.052519
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice <= 0.0748) AND (date > 0.0177)) AND (nswprice <= 0.0583)) AND (period <= 0.3511)) THEN Class 0
+  + New: IF ((((nswprice > 0.0764) AND (nswprice <= 0.0787)) AND (nswdemand > 0.4377)) AND (period <= 0.0306)) THEN Class 0
+    (Similarity: 0.68)
+
+  New Rules:
+  + IF (((((((nswprice <= 0.0764) AND (nswprice > 0.0683)) AND (day <= 6.5000)) AND (date > 0.0179)) AND (period <= 0.2872)) AND (period >= 0.2234)) AND (nswdemand > 0.3880)) THEN Class 0
+  + IF (((((nswprice <= 0.0683) AND (period <= 0.9255)) AND (period > 0.0319)) AND (date >= 0.0178)) AND (period <= 0.2021)) THEN Class 0
+  + IF (((nswprice <= 0.0683) AND (period <= 0.9255)) AND (period <= 0.0532)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((((nswprice <= 0.0748) AND (date > 0.0177)) AND (nswprice <= 0.0583)) AND (nswdemand <= 0.2334)) THEN Class 0
+  - IF ((((nswprice <= 0.0748) AND (date > 0.0177)) AND (nswprice <= 0.0583)) AND (nswprice <= 0.0458)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((((nswprice > 0.0748) AND (nswdemand > 0.3604)) AND (nswprice <= 0.0875)) AND (day > 3.5000)) AND (day <= 6.5000)) AND (period <= 0.8830)) THEN Class 1
+  + New: IF ((((((nswprice <= 0.0764) AND (nswprice > 0.0683)) AND (day <= 6.5000)) AND (date > 0.0179)) AND (period <= 0.2872)) AND (period > 0.2234)) THEN Class 1
+    (Similarity: 0.65)
+  - Old: IF ((((nswprice <= 0.0748) AND (date <= 0.0177)) AND (nswdemand > 0.6018)) AND (period <= 0.6277)) THEN Class 1
+  + New: IF ((((nswprice > 0.0764) AND (nswprice <= 0.0787)) AND (nswdemand > 0.4377)) AND (period > 0.5532)) THEN Class 1
+    (Similarity: 0.76)
+  - Old: IF (((nswprice <= 0.0748) AND (date > 0.0177)) AND (nswprice > 0.0583)) THEN Class 1
+  + New: IF (((nswprice <= 0.0683) AND (period > 0.9255)) AND (nswprice <= 0.0568)) THEN Class 1
+    (Similarity: 0.76)
+
+  New Rules:
+  + IF (((((nswprice <= 0.0764) AND (nswprice > 0.0683)) AND (day <= 6.5000)) AND (date <= 0.0179)) AND (period > 0.4681)) THEN Class 1
+  + IF ((((nswprice <= 0.0764) AND (nswprice > 0.0683)) AND (day > 6.5000)) AND (period <= 0.3723)) THEN Class 1
+  + IF ((((nswprice <= 0.0764) AND (nswprice > 0.0683)) AND (day > 6.5000)) AND (period > 0.3723)) THEN Class 1
+  + IF (((nswprice > 0.0764) AND (nswprice <= 0.0787)) AND (nswdemand <= 0.4377)) THEN Class 1
+  + IF (((nswprice > 0.0787) AND (nswprice <= 0.0807)) AND (period <= 0.5426)) THEN Class 1
+  + IF (((nswprice > 0.0787) AND (nswprice <= 0.0807)) AND (period > 0.5426)) THEN Class 1
+  + IF ((nswprice > 0.0807) AND (period <= 0.0106)) THEN Class 1
+  + IF ((nswprice > 0.0807) AND (period > 0.0106)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((nswprice <= 0.0748) AND (date <= 0.0177)) AND (nswdemand <= 0.6018)) AND (nswprice > 0.0735)) AND (date > 0.0176)) THEN Class 1
+  - IF (((((nswprice > 0.0748) AND (nswdemand > 0.3604)) AND (nswprice <= 0.0875)) AND (day > 3.5000)) AND (day > 6.5000)) THEN Class 1
+  - IF (((((nswprice > 0.0748) AND (nswdemand > 0.3604)) AND (nswprice > 0.0875)) AND (period > 0.2979)) AND (day <= 1.5000)) THEN Class 1
+  - IF (((((nswprice > 0.0748) AND (nswdemand > 0.3604)) AND (nswprice > 0.0875)) AND (period > 0.2979)) AND (day > 1.5000)) THEN Class 1
+  - IF ((((nswprice > 0.0748) AND (nswdemand > 0.3604)) AND (nswprice <= 0.0875)) AND (day > 3.5000)) THEN Class 1
+  - IF ((((nswprice > 0.0748) AND (nswdemand > 0.3604)) AND (nswprice > 0.0875)) AND (period <= 0.2979)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 12 -> Chunk 13 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 12):   0.9567
+  - Test G-Mean (Chunk 13):  0.7265
+  - Test F1 (Chunk 13):      0.7709
+Fitness:       1.052519 -> 1.048694
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((nswprice <= 0.0657) AND (nswprice > 0.0587)) AND (day > 6.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((((((nswprice <= 0.0764) AND (nswprice > 0.0683)) AND (day <= 6.5000)) AND (date > 0.0179)) AND (period <= 0.2872)) AND (period >= 0.2234)) AND (nswdemand > 0.3880)) THEN Class 0
+  - IF (((((nswprice <= 0.0683) AND (period <= 0.9255)) AND (period > 0.0319)) AND (date >= 0.0178)) AND (period <= 0.2021)) THEN Class 0
+  - IF ((((nswprice > 0.0764) AND (nswprice <= 0.0787)) AND (nswdemand > 0.4377)) AND (period <= 0.0306)) THEN Class 0
+  - IF (((nswprice <= 0.0683) AND (period <= 0.9255)) AND (period <= 0.0532)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((((nswprice <= 0.0764) AND (nswprice > 0.0683)) AND (day <= 6.5000)) AND (date <= 0.0179)) AND (period > 0.4681)) THEN Class 1
+  + New: IF (((((nswprice <= 0.0657) AND (nswprice > 0.0587)) AND (day <= 6.5000)) AND (day > 3.0000)) AND (nswdemand <= 0.3468)) THEN Class 1
+    (Similarity: 0.79)
+  - Old: IF ((((nswprice > 0.0764) AND (nswprice <= 0.0787)) AND (nswdemand > 0.4377)) AND (period > 0.5532)) THEN Class 1
+  + New: IF ((((nswprice > 0.0657) AND (nswdemand <= 0.3428)) AND (period > 0.6383)) AND (period <= 0.7128)) THEN Class 1
+    (Similarity: 0.70)
+  - Old: IF (((nswprice <= 0.0683) AND (period > 0.9255)) AND (nswprice <= 0.0568)) THEN Class 1
+  + New: IF (((nswprice <= 0.0587) AND (period <= 0.0532)) AND (nswprice > 0.0536)) THEN Class 1
+    (Similarity: 0.83)
+  - Old: IF ((nswprice > 0.0807) AND (period > 0.0106)) THEN Class 1
+  + New: IF ((nswprice > 0.0657) AND (nswdemand > 0.2211)) THEN Class 1
+    (Similarity: 0.72)
+  - Old: IF ((nswprice > 0.0807) AND (period <= 0.0106)) THEN Class 1
+  + New: IF ((nswprice >= 0.0958) AND (date <= 0.0184)) THEN Class 1
+    (Similarity: 0.73)
+
+  New Rules:
+  + IF ((((((((nswprice <= 0.0587) AND (period > 0.0532)) AND (nswdemand <= 0.5401)) AND (period <= 0.9255)) AND (nswprice > 0.0544)) AND (nswprice <= 0.0548)) AND (nswdemand > 0.2844)) AND (nswdemand <= 0.4125)) THEN Class 1
+  + IF ((((nswprice > 0.0657) AND (nswdemand <= 0.3428)) AND (period <= 0.6383)) AND (date > 0.0185)) THEN Class 1
+  + IF (((nswprice <= 0.0587) AND (period > 0.0532)) AND (nswdemand > 0.5401)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((nswprice <= 0.0764) AND (nswprice > 0.0683)) AND (day <= 6.5000)) AND (date > 0.0179)) AND (period <= 0.2872)) AND (period > 0.2234)) THEN Class 1
+  - IF ((((nswprice <= 0.0764) AND (nswprice > 0.0683)) AND (day > 6.5000)) AND (period <= 0.3723)) THEN Class 1
+  - IF ((((nswprice <= 0.0764) AND (nswprice > 0.0683)) AND (day > 6.5000)) AND (period > 0.3723)) THEN Class 1
+  - IF (((nswprice > 0.0764) AND (nswprice <= 0.0787)) AND (nswdemand <= 0.4377)) THEN Class 1
+  - IF (((nswprice > 0.0787) AND (nswprice <= 0.0807)) AND (period <= 0.5426)) THEN Class 1
+  - IF (((nswprice > 0.0787) AND (nswprice <= 0.0807)) AND (period > 0.5426)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 13 -> Chunk 14 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 13):   0.9447
+  - Test G-Mean (Chunk 14):  0.7890
+  - Test F1 (Chunk 14):      0.7965
+Fitness:       1.048694 -> 1.012300
+Default Class: 0 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((nswprice <= 0.0537) AND (nswdemand > 0.4720)) THEN Class 0
+  + IF (nswprice < 0.0594) THEN Class 0
+
+  Deleted Rules:
+  - IF (((nswprice <= 0.0657) AND (nswprice > 0.0587)) AND (day > 6.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((((nswprice <= 0.0657) AND (nswprice > 0.0587)) AND (day <= 6.5000)) AND (day > 3.0000)) AND (nswdemand <= 0.3468)) THEN Class 1
+  + New: IF ((((((nswprice <= 0.0577) AND (nswprice > 0.0537)) AND (date <= 0.0221)) AND (day > 3.5000)) AND (period > 0.7553)) AND (date <= 0.0220)) THEN Class 1
+    (Similarity: 0.70)
+  - Old: IF ((((nswprice > 0.0657) AND (nswdemand <= 0.3428)) AND (period > 0.6383)) AND (period <= 0.7128)) THEN Class 1
+  + New: IF ((((nswprice > 0.0726) AND (nswdemand <= 0.5354)) AND (date <= 0.0219)) AND (nswprice <= 0.0748)) THEN Class 1
+    (Similarity: 0.71)
+  - Old: IF ((((nswprice > 0.0657) AND (nswdemand <= 0.3428)) AND (period <= 0.6383)) AND (date > 0.0185)) THEN Class 1
+  + New: IF ((((nswprice > 0.0726) AND (nswdemand <= 0.5354)) AND (date <= 0.0219)) AND (nswprice > 0.0748)) THEN Class 1
+    (Similarity: 0.72)
+  - Old: IF (((nswprice <= 0.0587) AND (period <= 0.0532)) AND (nswprice > 0.0536)) THEN Class 1
+  + New: IF (((nswprice > 0.0726) AND (date <= 0.0219)) AND (period > 0.7128)) THEN Class 1
+    (Similarity: 0.66)
+
+  New Rules:
+  + IF (((((((nswprice <= 0.0577) AND (nswprice > 0.0537)) AND (date <= 0.0221)) AND (day > 3.5000)) AND (period <= 0.7553)) AND (period > 0.1809)) AND (nswprice <= 0.0568)) THEN Class 1
+  + IF (((nswprice > 0.0537) AND ((nswprice <= 0.0726) AND (day > 3.5000))) AND ((nswprice > 0.0568) AND ((period <= 0.7553) AND (period > 0.1809)))) THEN Class 1
+  + IF (((nswprice > 0.0537) AND (day <= 3.5000)) AND ((nswprice > 0.0726) AND ((period > 0.7128) AND (day <= 1.5000)))) THEN Class 1
+  + IF ((nswprice > 0.0537) AND ((nswprice > 0.0726) AND (date > 0.0219))) THEN Class 1
+  + IF ((nswprice > 0.0726) AND ((date <= 0.0219) AND (period <= 0.7128))) THEN Class 1
+  + IF ((nswprice > 0.0726) AND ((date <= 0.0219) AND (period <= 0.7128))) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((((nswprice <= 0.0587) AND (period > 0.0532)) AND (nswdemand <= 0.5401)) AND (period <= 0.9255)) AND (nswprice > 0.0544)) AND (nswprice <= 0.0548)) AND (nswdemand > 0.2844)) AND (nswdemand <= 0.4125)) THEN Class 1
+  - IF (((nswprice <= 0.0587) AND (period > 0.0532)) AND (nswdemand > 0.5401)) THEN Class 1
+  - IF ((nswprice > 0.0657) AND (nswdemand > 0.2211)) THEN Class 1
+  - IF ((nswprice >= 0.0958) AND (date <= 0.0184)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 14 -> Chunk 15 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 14):   0.9135
+  - Test G-Mean (Chunk 15):  0.6864
+  - Test F1 (Chunk 15):      0.7404
+Fitness:       1.012300 -> 1.098837
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((((nswprice <= 0.0683) AND (nswprice > 0.0596)) AND (date > 0.0223)) AND (nswprice <= 0.0655)) THEN Class 0
+  + IF ((((nswprice <= 0.0683) AND (nswprice > 0.0596)) AND (date > 0.0223)) AND (nswprice > 0.0655)) THEN Class 0
+  + IF ((((nswprice > 0.0683) AND (nswprice <= 0.0813)) AND (date > 0.0225)) AND (nswprice <= 0.0811)) THEN Class 0
+  + IF (((nswprice <= 0.0683) AND (nswprice <= 0.0596)) AND (day <= 1.5000)) THEN Class 0
+  + IF (((nswprice <= 0.0683) AND (nswprice <= 0.0596)) AND (day > 1.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((nswprice <= 0.0537) AND (nswdemand > 0.4720)) THEN Class 0
+  - IF (nswprice < 0.0594) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice > 0.0726) AND (nswdemand <= 0.5354)) AND (date <= 0.0219)) AND (nswprice <= 0.0748)) THEN Class 1
+  + New: IF ((((nswprice <= 0.0683) AND (nswprice > 0.0596)) AND (date <= 0.0223)) AND (period <= 0.8085)) THEN Class 1
+    (Similarity: 0.70)
+  - Old: IF ((((nswprice > 0.0726) AND (nswdemand <= 0.5354)) AND (date <= 0.0219)) AND (nswprice > 0.0748)) THEN Class 1
+  + New: IF ((((nswprice > 0.0683) AND (nswprice <= 0.0813)) AND (date > 0.0225)) AND (nswprice > 0.0811)) THEN Class 1
+    (Similarity: 0.79)
+  - Old: IF ((nswprice > 0.0537) AND ((nswprice > 0.0726) AND (date > 0.0219))) THEN Class 1
+  + New: IF (((nswprice > 0.0683) AND (nswprice <= 0.0813)) AND (date <= 0.0225)) THEN Class 1
+    (Similarity: 0.77)
+  - Old: IF (((nswprice > 0.0726) AND (date <= 0.0219)) AND (period > 0.7128)) THEN Class 1
+  + New: IF (((nswprice > 0.0683) AND (nswprice > 0.0813)) AND (period > 0.9468)) THEN Class 1
+    (Similarity: 0.75)
+
+  New Rules:
+  + IF ((((nswprice <= 0.0683) AND (nswprice > 0.0596)) AND (date <= 0.0223)) AND (period > 0.8085)) THEN Class 1
+  + IF (((nswprice > 0.0683) AND (nswprice > 0.0813)) AND (period <= 0.9468)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((((nswprice <= 0.0577) AND (nswprice > 0.0537)) AND (date <= 0.0221)) AND (day > 3.5000)) AND (period <= 0.7553)) AND (period > 0.1809)) AND (nswprice <= 0.0568)) THEN Class 1
+  - IF ((((((nswprice <= 0.0577) AND (nswprice > 0.0537)) AND (date <= 0.0221)) AND (day > 3.5000)) AND (period > 0.7553)) AND (date <= 0.0220)) THEN Class 1
+  - IF (((nswprice > 0.0537) AND ((nswprice <= 0.0726) AND (day > 3.5000))) AND ((nswprice > 0.0568) AND ((period <= 0.7553) AND (period > 0.1809)))) THEN Class 1
+  - IF (((nswprice > 0.0537) AND (day <= 3.5000)) AND ((nswprice > 0.0726) AND ((period > 0.7128) AND (day <= 1.5000)))) THEN Class 1
+  - IF ((nswprice > 0.0726) AND ((date <= 0.0219) AND (period <= 0.7128))) THEN Class 1
+  - IF ((nswprice > 0.0726) AND ((date <= 0.0219) AND (period <= 0.7128))) THEN Class 1
+
+======================================================================
+--- Diff Chunk 15 -> Chunk 16 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 15):   0.9776
+  - Test G-Mean (Chunk 16):  0.8969
+  - Test F1 (Chunk 16):      0.8961
+Fitness:       1.098837 -> 1.009855
+Default Class: 1 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((((nswprice > 0.0761) AND (date > 0.0231)) AND (nswprice <= 0.0964)) AND (nswdemand > 0.4313)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((((nswprice <= 0.0683) AND (nswprice > 0.0596)) AND (date > 0.0223)) AND (nswprice <= 0.0655)) THEN Class 0
+  - IF ((((nswprice <= 0.0683) AND (nswprice > 0.0596)) AND (date > 0.0223)) AND (nswprice > 0.0655)) THEN Class 0
+  - IF ((((nswprice > 0.0683) AND (nswprice <= 0.0813)) AND (date > 0.0225)) AND (nswprice <= 0.0811)) THEN Class 0
+  - IF (((nswprice <= 0.0683) AND (nswprice <= 0.0596)) AND (day <= 1.5000)) THEN Class 0
+  - IF (((nswprice <= 0.0683) AND (nswprice <= 0.0596)) AND (day > 1.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice <= 0.0683) AND (nswprice > 0.0596)) AND (date <= 0.0223)) AND (period <= 0.8085)) THEN Class 1
+  + New: IF (((((nswprice <= 0.0761) AND (nswprice > 0.0674)) AND (day > 3.5000)) AND (date <= 0.0229)) AND (nswdemand <= 0.2269)) THEN Class 1
+    (Similarity: 0.68)
+  - Old: IF (((nswprice > 0.0683) AND (nswprice <= 0.0813)) AND (date <= 0.0225)) THEN Class 1
+  + New: IF ((((nswprice > 0.0761) AND (date <= 0.0231)) AND (nswprice <= 0.0860)) AND (date <= 0.0230)) THEN Class 1
+    (Similarity: 0.70)
+  - Old: IF ((((nswprice > 0.0683) AND (nswprice <= 0.0813)) AND (date > 0.0225)) AND (nswprice > 0.0811)) THEN Class 1
+  + New: IF ((((nswprice > 0.0761) AND (date > 0.0231)) AND (nswprice > 0.0964)) AND (nswprice > 0.1077)) THEN Class 1
+    (Similarity: 0.69)
+  - Old: IF (((nswprice > 0.0683) AND (nswprice > 0.0813)) AND (period > 0.9468)) THEN Class 1
+  + New: IF (((nswprice > 0.0761) AND (date <= 0.0231)) AND (nswprice > 0.0860)) THEN Class 1
+    (Similarity: 0.65)
+
+  New Rules:
+  + IF ((((((nswprice > 0.0761) AND (date <= 0.0231)) AND (nswprice <= 0.0860)) AND (date <= 0.0230)) AND (day > 2.5000)) AND (date <= 0.0229)) THEN Class 1
+  + IF ((((((nswprice > 0.0761) AND (date <= 0.0231)) AND (nswprice <= 0.0860)) AND (date <= 0.0230)) AND (day > 2.5000)) AND (date > 0.0229)) THEN Class 1
+  + IF ((((nswprice > 0.0761) AND (date <= 0.0231)) AND (nswprice > 0.0860)) AND (date <= 0.0227)) THEN Class 1
+  + IF ((((nswprice > 0.0761) AND (date > 0.0231)) AND (nswprice > 0.0964)) AND (nswprice <= 0.1077)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((nswprice <= 0.0683) AND (nswprice > 0.0596)) AND (date <= 0.0223)) AND (period > 0.8085)) THEN Class 1
+  - IF (((nswprice > 0.0683) AND (nswprice > 0.0813)) AND (period <= 0.9468)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 16 -> Chunk 17 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 16):   0.9684
+  - Test G-Mean (Chunk 17):  0.5330
+  - Test F1 (Chunk 17):      0.5707
+Fitness:       1.009855 -> 1.073524
+Default Class: 0 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((((((nswprice > 0.0710) AND (nswprice <= 0.0750)) AND (period <= 0.3830)) AND (nswprice > 0.0721)) AND (date <= 0.0265)) AND (nswdemand > 0.3347)) THEN Class 0
+  + IF ((((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date <= 0.0266)) AND (nswprice <= 0.0829)) AND (nswdemand > 0.4470)) AND (period <= 0.3936)) THEN Class 0
+  + IF (((((nswprice > 0.0710) AND (nswprice <= 0.0750)) AND (period <= 0.3830)) AND (nswprice > 0.0721)) AND (date > 0.0265)) THEN Class 0
+  + IF (((((nswprice > 0.0710) AND (nswprice <= 0.0750)) AND (period > 0.3830)) AND (nswdemand > 0.3451)) AND (date > 0.0265)) THEN Class 0
+  + IF (((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date > 0.0266)) AND (period <= 0.4787)) AND (nswdemand <= 0.3506)) THEN Class 0
+  + IF (((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date > 0.0266)) AND (period > 0.4787)) AND (nswdemand > 0.4306)) THEN Class 0
+  + IF (((nswprice <= 0.0710) AND (nswprice > 0.0680)) AND (period <= 0.2021)) THEN Class 0
+  + IF (((nswprice <= 0.0710) AND (nswprice > 0.0680)) AND (period > 0.2021)) THEN Class 0
+  + IF ((nswprice <= 0.0710) AND (nswprice <= 0.0680)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((((nswprice > 0.0761) AND (date > 0.0231)) AND (nswprice <= 0.0964)) AND (nswdemand > 0.4313)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((((nswprice <= 0.0761) AND (nswprice > 0.0674)) AND (day > 3.5000)) AND (date <= 0.0229)) AND (nswdemand <= 0.2269)) THEN Class 1
+  + New: IF (((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date <= 0.0266)) AND (nswprice <= 0.0829)) AND (nswdemand <= 0.4470)) THEN Class 1
+    (Similarity: 0.77)
+  - Old: IF ((((nswprice > 0.0761) AND (date > 0.0231)) AND (nswprice > 0.0964)) AND (nswprice <= 0.1077)) THEN Class 1
+  + New: IF ((((nswprice > 0.0710) AND (nswprice <= 0.0750)) AND (period <= 0.3830)) AND (nswprice <= 0.0721)) THEN Class 1
+    (Similarity: 0.70)
+  - Old: IF ((((nswprice > 0.0761) AND (date <= 0.0231)) AND (nswprice > 0.0860)) AND (date <= 0.0227)) THEN Class 1
+  + New: IF ((((nswprice > 0.0710) AND (nswprice <= 0.0750)) AND (period > 0.3830)) AND (nswdemand <= 0.3451)) THEN Class 1
+    (Similarity: 0.68)
+  - Old: IF ((((nswprice > 0.0761) AND (date > 0.0231)) AND (nswprice > 0.0964)) AND (nswprice > 0.1077)) THEN Class 1
+  + New: IF ((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date <= 0.0266)) AND (nswprice > 0.0829)) THEN Class 1
+    (Similarity: 0.71)
+
+  New Rules:
+  + IF (((((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date <= 0.0266)) AND (nswprice <= 0.0829)) AND (nswdemand > 0.4470)) AND (period > 0.3936)) AND (nswdemand <= 0.4590)) THEN Class 1
+  + IF (((((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date <= 0.0266)) AND (nswprice <= 0.0829)) AND (nswdemand > 0.4470)) AND (period > 0.3936)) AND (nswdemand > 0.4590)) THEN Class 1
+  + IF ((((((nswprice > 0.0710) AND (nswprice <= 0.0750)) AND (period <= 0.3830)) AND (nswprice > 0.0721)) AND (date <= 0.0265)) AND (nswdemand <= 0.3347)) THEN Class 1
+  + IF (((((nswprice > 0.0710) AND (nswprice <= 0.0750)) AND (period > 0.3830)) AND (nswdemand > 0.3451)) AND (date <= 0.0265)) THEN Class 1
+  + IF (((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date > 0.0266)) AND (period <= 0.4787)) AND (nswdemand > 0.3506)) THEN Class 1
+  + IF (((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date > 0.0266)) AND (period > 0.4787)) AND (nswdemand <= 0.4306)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((nswprice > 0.0761) AND (date <= 0.0231)) AND (nswprice <= 0.0860)) AND (date <= 0.0230)) AND (day > 2.5000)) AND (date <= 0.0229)) THEN Class 1
+  - IF ((((((nswprice > 0.0761) AND (date <= 0.0231)) AND (nswprice <= 0.0860)) AND (date <= 0.0230)) AND (day > 2.5000)) AND (date > 0.0229)) THEN Class 1
+  - IF ((((nswprice > 0.0761) AND (date <= 0.0231)) AND (nswprice <= 0.0860)) AND (date <= 0.0230)) THEN Class 1
+  - IF (((nswprice > 0.0761) AND (date <= 0.0231)) AND (nswprice > 0.0860)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 17 -> Chunk 18 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 17):   0.9759
+  - Test G-Mean (Chunk 18):  0.5827
+  - Test F1 (Chunk 18):      0.6064
+Fitness:       1.073524 -> 1.040369
+Default Class: 1 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((((nswprice <= 0.0786) AND (nswprice > 0.0596)) AND (date > 0.0268)) AND (day <= 2.5000)) THEN Class 0
+  + IF ((period <= 0.5473) AND (((((nswdemand <= 0.5640) AND (date >= 0.0270)) AND (day >= 6.1113)) AND (((nswdemand <= 0.3579) AND (transfer < 0.4149)) AND (((vicdemand >= 0.4229) AND ((vicprice <= 0.0035) AND ((vicprice <= 0.0035) AND ((((day < 3.5231) AND (vicprice <= 0.0035)) AND ((transfer >= 0.4149) AND (date >= 0.0268))) OR ((vicdemand > 0.4229) AND (transfer <= 0.4149)))))) OR (((((nswprice <= 0.0596) AND (((period < 0.1004) AND (date <= 0.0269)) AND ((date >= 0.0270) OR (vicdemand < 0.4229)))) AND ((period <= 0.3664) AND ((vicprice >= 0.0035) OR ((transfer <= 0.4149) AND (date >= 0.0269))))) AND ((period < 0.1764) AND (transfer < 0.4149))) AND (date > 0.0270))))) AND ((((((((((transfer >= 0.4149) AND (date <= 0.0269)) AND (day <= 5.8176)) AND (nswdemand >= 0.1621)) AND ((((date < 0.0268) AND (vicprice <= 0.0035)) AND ((date <= 0.0270) OR (vicprice >= 0.0035))) OR (date < 0.0269))) AND (vicprice > 0.0035)) AND (vicprice >= 0.0035)) OR (nswdemand > 0.4637)) AND (((((((vicprice <= 0.0035) AND ((vicprice < 0.0035) OR (nswprice >= 0.1136))) AND (nswprice >= 0.0547)) OR (((nswdemand > 0.4697) AND ((date > 0.0267) AND (nswdemand > 0.3026))) AND (day < 4.3336))) AND ((transfer < 0.4149) AND ((date > 0.0269) AND (period < 0.1341)))) AND ((((((vicprice < 0.0035) AND (vicdemand > 0.4229)) AND (date <= 0.0268)) OR (period < 0.5212)) OR (period >= 0.7716)) AND ((vicdemand < 0.4229) AND (period <= 0.3133)))) AND (((day >= 5.1850) AND (nswprice >= 0.0575)) AND (((day >= 4.4259) AND (((vicprice > 0.0035) AND (date < 0.0270)) AND ((transfer > 0.4149) AND ((transfer > 0.4149) AND (period < 0.7870))))) AND ((nswprice <= 0.1323) AND (((nswprice > 0.1219) AND (period > 0.1777)) AND (nswprice >= 0.0587))))))) AND ((period < 0.2928) AND ((vicprice < 0.0035) AND (((vicprice >= 0.0035) AND (date < 0.0268)) AND (((nswdemand >= 0.4098) AND ((vicprice < 0.0035) AND (transfer <= 0.4149))) AND (((((day > 3.1684) AND (period <= 0.1344)) AND ((date <= 0.0268) AND (nswdemand >= 0.2527))) AND (((transfer >= 0.4149) AND (vicprice < 0.0035)) AND ((transfer > 0.4149) OR (vicprice <= 0.0035)))) OR (((vicdemand < 0.4229) AND ((vicdemand > 0.4229) AND (period < 0.3825))) AND ((vicdemand < 0.4229) AND (vicprice >= 0.0035))))))))))) THEN Class 0
+
+  Deleted Rules:
+  - IF ((((((nswprice > 0.0710) AND (nswprice <= 0.0750)) AND (period <= 0.3830)) AND (nswprice > 0.0721)) AND (date <= 0.0265)) AND (nswdemand > 0.3347)) THEN Class 0
+  - IF ((((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date <= 0.0266)) AND (nswprice <= 0.0829)) AND (nswdemand > 0.4470)) AND (period <= 0.3936)) THEN Class 0
+  - IF (((((nswprice > 0.0710) AND (nswprice <= 0.0750)) AND (period <= 0.3830)) AND (nswprice > 0.0721)) AND (date > 0.0265)) THEN Class 0
+  - IF (((((nswprice > 0.0710) AND (nswprice <= 0.0750)) AND (period > 0.3830)) AND (nswdemand > 0.3451)) AND (date > 0.0265)) THEN Class 0
+  - IF (((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date > 0.0266)) AND (period <= 0.4787)) AND (nswdemand <= 0.3506)) THEN Class 0
+  - IF (((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date > 0.0266)) AND (period > 0.4787)) AND (nswdemand > 0.4306)) THEN Class 0
+  - IF (((nswprice <= 0.0710) AND (nswprice > 0.0680)) AND (period <= 0.2021)) THEN Class 0
+  - IF (((nswprice <= 0.0710) AND (nswprice > 0.0680)) AND (period > 0.2021)) THEN Class 0
+  - IF ((nswprice <= 0.0710) AND (nswprice <= 0.0680)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date <= 0.0266)) AND (nswprice <= 0.0829)) AND (nswdemand <= 0.4470)) THEN Class 1
+  + New: IF (((((nswprice <= 0.0786) AND (nswprice > 0.0596)) AND (date <= 0.0268)) AND (nswprice > 0.0627)) AND (period <= 0.2660)) THEN Class 1
+    (Similarity: 0.82)
+  - Old: IF (((((nswprice > 0.0710) AND (nswprice <= 0.0750)) AND (period > 0.3830)) AND (nswdemand > 0.3451)) AND (date <= 0.0265)) THEN Class 1
+  + New: IF (((((nswprice > 0.0786) AND (nswprice <= 0.1015)) AND (day <= 3.5000)) AND (day <= 2.5000)) AND (date <= 0.0271)) THEN Class 1
+    (Similarity: 0.72)
+  - Old: IF (((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date > 0.0266)) AND (period > 0.4787)) AND (nswdemand <= 0.4306)) THEN Class 1
+  + New: IF (((((nswprice > 0.0786) AND (nswprice <= 0.1015)) AND (day > 3.5000)) AND (date > 0.0270)) AND (nswdemand <= 0.3001)) THEN Class 1
+    (Similarity: 0.77)
+  - Old: IF (((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date > 0.0266)) AND (period <= 0.4787)) AND (nswdemand > 0.3506)) THEN Class 1
+  + New: IF (((((nswprice > 0.0786) AND (nswprice <= 0.1015)) AND (day > 3.5000)) AND (date > 0.0270)) AND (nswdemand > 0.3001)) THEN Class 1
+    (Similarity: 0.76)
+  - Old: IF ((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date <= 0.0266)) AND (nswprice > 0.0829)) THEN Class 1
+  + New: IF ((((nswprice <= 0.0786) AND (nswprice > 0.0596)) AND (date <= 0.0268)) AND (nswprice > 0.0627)) THEN Class 1
+    (Similarity: 0.89)
+
+  New Rules:
+  + IF ((((((nswprice <= 0.0786) AND (nswprice > 0.0596)) AND (date > 0.0268)) AND (date <= 0.0271)) AND (day > 6.5000)) AND (period <= 0.5638)) THEN Class 1
+  + IF (((((nswprice <= 0.0786) AND (nswprice > 0.0596)) AND (date <= 0.0268)) AND (nswprice > 0.0627)) AND (period > 0.2660)) THEN Class 1
+  + IF ((((nswprice <= 0.0786) AND (nswprice > 0.0596)) AND (date > 0.0268)) AND (date > 0.0271)) THEN Class 1
+  + IF ((((nswprice > 0.0786) AND (nswprice <= 0.1015)) AND (day <= 3.5000)) AND (day > 2.5000)) THEN Class 1
+  + IF (nswprice > 0.1015) THEN Class 1
+
+  Deleted Rules:
+  - IF (((((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date <= 0.0266)) AND (nswprice <= 0.0829)) AND (nswdemand > 0.4470)) AND (period > 0.3936)) AND (nswdemand <= 0.4590)) THEN Class 1
+  - IF (((((((nswprice > 0.0710) AND (nswprice > 0.0750)) AND (date <= 0.0266)) AND (nswprice <= 0.0829)) AND (nswdemand > 0.4470)) AND (period > 0.3936)) AND (nswdemand > 0.4590)) THEN Class 1
+  - IF ((((((nswprice > 0.0710) AND (nswprice <= 0.0750)) AND (period <= 0.3830)) AND (nswprice > 0.0721)) AND (date <= 0.0265)) AND (nswdemand <= 0.3347)) THEN Class 1
+  - IF ((((nswprice > 0.0710) AND (nswprice <= 0.0750)) AND (period <= 0.3830)) AND (nswprice <= 0.0721)) THEN Class 1
+  - IF ((((nswprice > 0.0710) AND (nswprice <= 0.0750)) AND (period > 0.3830)) AND (nswdemand <= 0.3451)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 18 -> Chunk 19 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 18):   0.9456
+  - Test G-Mean (Chunk 19):  0.7739
+  - Test F1 (Chunk 19):      0.7817
+Fitness:       1.040369 -> 1.064840
+Default Class: 0 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice <= 0.0786) AND (nswprice > 0.0596)) AND (date > 0.0268)) AND (day <= 2.5000)) THEN Class 0
+  + New: IF ((((nswprice > 0.0696) AND (nswdemand <= 0.3633)) AND (date <= 0.0273)) AND (day > 5.5000)) THEN Class 0
+    (Similarity: 0.75)
+
+  New Rules:
+  + IF (((nswprice <= 0.0696) AND (nswprice > 0.0651)) AND (period <= 0.2234)) THEN Class 0
+  + IF ((nswprice <= 0.0696) AND ((nswprice <= 0.0651) AND (period > 0.0319))) THEN Class 0
+  + IF ((nswprice <= 0.0696) AND (nswprice <= 0.0651)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((period <= 0.5473) AND (((((nswdemand <= 0.5640) AND (date >= 0.0270)) AND (day >= 6.1113)) AND (((nswdemand <= 0.3579) AND (transfer < 0.4149)) AND (((vicdemand >= 0.4229) AND ((vicprice <= 0.0035) AND ((vicprice <= 0.0035) AND ((((day < 3.5231) AND (vicprice <= 0.0035)) AND ((transfer >= 0.4149) AND (date >= 0.0268))) OR ((vicdemand > 0.4229) AND (transfer <= 0.4149)))))) OR (((((nswprice <= 0.0596) AND (((period < 0.1004) AND (date <= 0.0269)) AND ((date >= 0.0270) OR (vicdemand < 0.4229)))) AND ((period <= 0.3664) AND ((vicprice >= 0.0035) OR ((transfer <= 0.4149) AND (date >= 0.0269))))) AND ((period < 0.1764) AND (transfer < 0.4149))) AND (date > 0.0270))))) AND ((((((((((transfer >= 0.4149) AND (date <= 0.0269)) AND (day <= 5.8176)) AND (nswdemand >= 0.1621)) AND ((((date < 0.0268) AND (vicprice <= 0.0035)) AND ((date <= 0.0270) OR (vicprice >= 0.0035))) OR (date < 0.0269))) AND (vicprice > 0.0035)) AND (vicprice >= 0.0035)) OR (nswdemand > 0.4637)) AND (((((((vicprice <= 0.0035) AND ((vicprice < 0.0035) OR (nswprice >= 0.1136))) AND (nswprice >= 0.0547)) OR (((nswdemand > 0.4697) AND ((date > 0.0267) AND (nswdemand > 0.3026))) AND (day < 4.3336))) AND ((transfer < 0.4149) AND ((date > 0.0269) AND (period < 0.1341)))) AND ((((((vicprice < 0.0035) AND (vicdemand > 0.4229)) AND (date <= 0.0268)) OR (period < 0.5212)) OR (period >= 0.7716)) AND ((vicdemand < 0.4229) AND (period <= 0.3133)))) AND (((day >= 5.1850) AND (nswprice >= 0.0575)) AND (((day >= 4.4259) AND (((vicprice > 0.0035) AND (date < 0.0270)) AND ((transfer > 0.4149) AND ((transfer > 0.4149) AND (period < 0.7870))))) AND ((nswprice <= 0.1323) AND (((nswprice > 0.1219) AND (period > 0.1777)) AND (nswprice >= 0.0587))))))) AND ((period < 0.2928) AND ((vicprice < 0.0035) AND (((vicprice >= 0.0035) AND (date < 0.0268)) AND (((nswdemand >= 0.4098) AND ((vicprice < 0.0035) AND (transfer <= 0.4149))) AND (((((day > 3.1684) AND (period <= 0.1344)) AND ((date <= 0.0268) AND (nswdemand >= 0.2527))) AND (((transfer >= 0.4149) AND (vicprice < 0.0035)) AND ((transfer > 0.4149) OR (vicprice <= 0.0035)))) OR (((vicdemand < 0.4229) AND ((vicdemand > 0.4229) AND (period < 0.3825))) AND ((vicdemand < 0.4229) AND (vicprice >= 0.0035))))))))))) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice > 0.0786) AND (nswprice <= 0.1015)) AND (day <= 3.5000)) AND (day > 2.5000)) THEN Class 1
+  + New: IF ((((nswprice > 0.0696) AND (nswdemand <= 0.3633)) AND (date <= 0.0273)) AND (day <= 5.5000)) THEN Class 1
+    (Similarity: 0.76)
+
+  New Rules:
+  + IF ((((nswprice > 0.0696) AND (nswdemand > 0.3633)) AND (nswdemand <= 0.4745)) AND (day <= 3.5000)) THEN Class 1
+  + IF ((((nswprice > 0.0696) AND (nswdemand > 0.3633)) AND (nswdemand <= 0.4745)) AND (day > 3.5000)) THEN Class 1
+  + IF ((((nswprice > 0.0696) AND (nswdemand > 0.3633)) AND (nswdemand > 0.4745)) AND (period <= 0.7128)) THEN Class 1
+  + IF ((nswprice > 0.0696) AND ((nswdemand <= 0.4509) AND (date > 0.0275))) THEN Class 1
+  + IF ((nswprice > 0.0696) AND ((nswdemand <= 0.4509) AND (date > 0.0275))) THEN Class 1
+  + IF ((nswprice > 0.0696) AND ((nswdemand > 0.4509) AND (period <= 0.6915))) THEN Class 1
+  + IF ((nswprice > 0.0696) AND ((nswdemand > 0.4509) AND (period <= 0.6915))) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((nswprice <= 0.0786) AND (nswprice > 0.0596)) AND (date > 0.0268)) AND (date <= 0.0271)) AND (day > 6.5000)) AND (period <= 0.5638)) THEN Class 1
+  - IF (((((nswprice <= 0.0786) AND (nswprice > 0.0596)) AND (date <= 0.0268)) AND (nswprice > 0.0627)) AND (period <= 0.2660)) THEN Class 1
+  - IF (((((nswprice <= 0.0786) AND (nswprice > 0.0596)) AND (date <= 0.0268)) AND (nswprice > 0.0627)) AND (period > 0.2660)) THEN Class 1
+  - IF (((((nswprice > 0.0786) AND (nswprice <= 0.1015)) AND (day <= 3.5000)) AND (day <= 2.5000)) AND (date <= 0.0271)) THEN Class 1
+  - IF (((((nswprice > 0.0786) AND (nswprice <= 0.1015)) AND (day > 3.5000)) AND (date > 0.0270)) AND (nswdemand <= 0.3001)) THEN Class 1
+  - IF (((((nswprice > 0.0786) AND (nswprice <= 0.1015)) AND (day > 3.5000)) AND (date > 0.0270)) AND (nswdemand > 0.3001)) THEN Class 1
+  - IF ((((nswprice <= 0.0786) AND (nswprice > 0.0596)) AND (date <= 0.0268)) AND (nswprice > 0.0627)) THEN Class 1
+  - IF ((((nswprice <= 0.0786) AND (nswprice > 0.0596)) AND (date > 0.0268)) AND (date > 0.0271)) THEN Class 1
+  - IF (nswprice > 0.1015) THEN Class 1
+
+======================================================================
+--- Diff Chunk 19 -> Chunk 20 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 19):   0.9702
+  - Test G-Mean (Chunk 20):  0.7808
+  - Test F1 (Chunk 20):      0.8129
+Fitness:       1.064840 -> 1.118975
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice > 0.0696) AND (nswdemand <= 0.3633)) AND (date <= 0.0273)) AND (day > 5.5000)) THEN Class 0
+  + New: IF ((((nswprice <= 0.0772) AND (nswprice > 0.0718)) AND (date > 0.0310)) AND (date > 0.0311)) THEN Class 0
+    (Similarity: 0.68)
+  - Old: IF ((nswprice <= 0.0696) AND ((nswprice <= 0.0651) AND (period > 0.0319))) THEN Class 0
+  + New: IF (((nswprice <= 0.0772) AND (nswprice <= 0.0718)) AND (nswprice > 0.0714)) THEN Class 0
+    (Similarity: 0.75)
+  - Old: IF (((nswprice <= 0.0696) AND (nswprice > 0.0651)) AND (period <= 0.2234)) THEN Class 0
+  + New: IF (((nswprice <= 0.0772) AND (nswprice > 0.0718)) AND (date <= 0.0310)) THEN Class 0
+    (Similarity: 0.77)
+
+  New Rules:
+  + IF (((nswprice <= 0.0772) AND (nswprice <= 0.0718)) AND (nswprice <= 0.0714)) THEN Class 0
+  + IF (((nswprice > 0.0772) AND (nswprice <= 0.0800)) AND (nswdemand > 0.3393)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((nswprice <= 0.0696) AND (nswprice <= 0.0651)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice > 0.0696) AND (nswdemand <= 0.3633)) AND (date <= 0.0273)) AND (day <= 5.5000)) THEN Class 1
+  + New: IF ((((nswprice <= 0.0772) AND (nswprice > 0.0718)) AND (date > 0.0310)) AND (date <= 0.0311)) THEN Class 1
+    (Similarity: 0.68)
+  - Old: IF ((((nswprice > 0.0696) AND (nswdemand > 0.3633)) AND (nswdemand <= 0.4745)) AND (day <= 3.5000)) THEN Class 1
+  + New: IF ((((nswprice > 0.0772) AND (nswprice <= 0.0800)) AND (nswdemand <= 0.3393)) AND (day <= 6.5000)) THEN Class 1
+    (Similarity: 0.79)
+  - Old: IF ((((nswprice > 0.0696) AND (nswdemand > 0.3633)) AND (nswdemand <= 0.4745)) AND (day > 3.5000)) THEN Class 1
+  + New: IF ((((nswprice > 0.0772) AND (nswprice <= 0.0800)) AND (nswdemand <= 0.3393)) AND (day > 6.5000)) THEN Class 1
+    (Similarity: 0.79)
+
+  New Rules:
+  + IF (((nswprice > 0.0772) AND (nswprice > 0.0800)) AND (nswdemand <= 0.2613)) THEN Class 1
+  + IF (((nswprice > 0.0772) AND (nswprice > 0.0800)) AND (nswdemand > 0.2613)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((nswprice > 0.0696) AND (nswdemand > 0.3633)) AND (nswdemand > 0.4745)) AND (period <= 0.7128)) THEN Class 1
+  - IF ((nswprice > 0.0696) AND ((nswdemand <= 0.4509) AND (date > 0.0275))) THEN Class 1
+  - IF ((nswprice > 0.0696) AND ((nswdemand <= 0.4509) AND (date > 0.0275))) THEN Class 1
+  - IF ((nswprice > 0.0696) AND ((nswdemand > 0.4509) AND (period <= 0.6915))) THEN Class 1
+  - IF ((nswprice > 0.0696) AND ((nswdemand > 0.4509) AND (period <= 0.6915))) THEN Class 1
+
+======================================================================
+--- Diff Chunk 20 -> Chunk 21 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 20):   0.9839
+  - Test G-Mean (Chunk 21):  0.7423
+  - Test F1 (Chunk 21):      0.7917
+Fitness:       1.118975 -> 0.976325
+Default Class: 1 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF (((nswprice > 0.0772) AND (nswprice <= 0.0800)) AND (nswdemand > 0.3393)) THEN Class 0
+  + New: IF (((nswprice <= 0.0670) AND (nswprice > 0.0642)) AND (nswdemand > 0.3993)) THEN Class 0
+    (Similarity: 0.86)
+
+  New Rules:
+  + IF ((((((nswprice > 0.0670) AND (nswprice <= 0.0749)) AND (day <= 5.5000)) AND (day > 1.5000)) AND (date <= 0.0315)) AND (date > 0.0312)) THEN Class 0
+  + IF ((nswprice <= 0.0670) AND (nswprice <= 0.0642)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((((nswprice <= 0.0772) AND (nswprice > 0.0718)) AND (date > 0.0310)) AND (date > 0.0311)) THEN Class 0
+  - IF (((nswprice <= 0.0772) AND (nswprice <= 0.0718)) AND (nswprice <= 0.0714)) THEN Class 0
+  - IF (((nswprice <= 0.0772) AND (nswprice <= 0.0718)) AND (nswprice > 0.0714)) THEN Class 0
+  - IF (((nswprice <= 0.0772) AND (nswprice > 0.0718)) AND (date <= 0.0310)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice > 0.0772) AND (nswprice <= 0.0800)) AND (nswdemand <= 0.3393)) AND (day > 6.5000)) THEN Class 1
+  + New: IF ((((nswprice <= 0.0670) AND (nswprice > 0.0642)) AND (nswdemand <= 0.3993)) AND (nswdemand > 0.3671)) THEN Class 1
+    (Similarity: 0.78)
+  - Old: IF ((((nswprice > 0.0772) AND (nswprice <= 0.0800)) AND (nswdemand <= 0.3393)) AND (day <= 6.5000)) THEN Class 1
+  + New: IF ((((nswprice > 0.0670) AND (nswprice <= 0.0749)) AND (day <= 5.5000)) AND (day <= 1.5000)) THEN Class 1
+    (Similarity: 0.81)
+  - Old: IF ((((nswprice <= 0.0772) AND (nswprice > 0.0718)) AND (date > 0.0310)) AND (date <= 0.0311)) THEN Class 1
+  + New: IF ((((nswprice > 0.0670) AND (nswprice <= 0.0749)) AND (day > 5.5000)) AND (period <= 0.3723)) THEN Class 1
+    (Similarity: 0.74)
+  - Old: IF (((nswprice > 0.0772) AND (nswprice > 0.0800)) AND (nswdemand > 0.2613)) THEN Class 1
+  + New: IF (((nswprice > 0.0670) AND (nswprice > 0.0749)) AND (nswprice > 0.1021)) THEN Class 1
+    (Similarity: 0.79)
+
+  New Rules:
+  + IF ((((((nswprice > 0.0670) AND (nswprice <= 0.0749)) AND (day <= 5.5000)) AND (day > 1.5000)) AND (date <= 0.0315)) AND (date <= 0.0312)) THEN Class 1
+  + IF ((((((nswprice > 0.0670) AND (nswprice > 0.0749)) AND (nswprice <= 0.1021)) AND (date <= 0.0313)) AND (nswprice > 0.0986)) AND (period <= 0.4468)) THEN Class 1
+  + IF ((((((nswprice > 0.0670) AND (nswprice > 0.0749)) AND (nswprice <= 0.1021)) AND (date <= 0.0313)) AND (nswprice > 0.0986)) AND (period > 0.4468)) THEN Class 1
+  + IF (((((nswprice > 0.0670) AND (nswprice <= 0.0749)) AND (day <= 5.5000)) AND (day > 1.5000)) AND (date > 0.0315)) THEN Class 1
+  + IF (((((nswprice > 0.0670) AND (nswprice > 0.0749)) AND (nswprice <= 0.1021)) AND (date <= 0.0313)) AND (nswprice <= 0.0986)) THEN Class 1
+  + IF (((((nswprice > 0.0670) AND (nswprice > 0.0749)) AND (nswprice <= 0.1021)) AND (date > 0.0313)) AND (nswdemand <= 0.5146)) THEN Class 1
+  + IF (((((nswprice > 0.0670) AND (nswprice > 0.0749)) AND (nswprice <= 0.1021)) AND (date > 0.0313)) AND (nswdemand > 0.5146)) THEN Class 1
+  + IF ((((nswprice <= 0.0670) AND (nswprice > 0.0642)) AND (nswdemand <= 0.3993)) AND (nswdemand <= 0.3671)) THEN Class 1
+  + IF ((((nswprice > 0.0670) AND (nswprice <= 0.0749)) AND (day > 5.5000)) AND (period > 0.3723)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((nswprice > 0.0772) AND (nswprice > 0.0800)) AND (nswdemand <= 0.2613)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 21 -> Chunk 22 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 21):   0.9809
+  - Test G-Mean (Chunk 22):  0.8784
+  - Test F1 (Chunk 22):      0.9003
+Fitness:       0.976325 -> 1.135433
+Default Class: 0 -> 0
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF (((nswprice <= 0.0670) AND (nswprice > 0.0642)) AND (nswdemand > 0.3993)) THEN Class 0
+  + New: IF (((nswprice > 0.0602) AND (nswprice <= 0.0712)) AND (date > 0.0320)) THEN Class 0
+    (Similarity: 0.74)
+  - Old: IF ((nswprice <= 0.0670) AND (nswprice <= 0.0642)) THEN Class 0
+  + New: IF ((nswprice <= 0.0602) AND (nswdemand <= 0.2330)) THEN Class 0
+    (Similarity: 0.75)
+
+  New Rules:
+  + IF ((((nswprice <= 0.0602) AND (nswdemand > 0.2330)) AND (nswprice <= 0.0574)) AND (nswprice <= 0.0569)) THEN Class 0
+  + IF ((((nswprice <= 0.0602) AND (nswdemand > 0.2330)) AND (nswprice > 0.0574)) AND (date <= 0.0318)) THEN Class 0
+  + IF ((((nswprice <= 0.0602) AND (nswdemand > 0.2330)) AND (nswprice > 0.0574)) AND (date > 0.0318)) THEN Class 0
+  + IF ((((nswprice > 0.0602) AND (nswprice <= 0.0712)) AND (date <= 0.0320)) AND (nswdemand <= 0.2601)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((((((nswprice > 0.0670) AND (nswprice <= 0.0749)) AND (day <= 5.5000)) AND (day > 1.5000)) AND (date <= 0.0315)) AND (date > 0.0312)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((((nswprice <= 0.0670) AND (nswprice > 0.0642)) AND (nswdemand <= 0.3993)) AND (nswdemand > 0.3671)) THEN Class 1
+  + New: IF ((((nswprice > 0.0602) AND (nswprice <= 0.0712)) AND (date <= 0.0320)) AND (nswdemand > 0.2601)) THEN Class 1
+    (Similarity: 0.79)
+  - Old: IF (((nswprice > 0.0670) AND (nswprice > 0.0749)) AND (nswprice > 0.1021)) THEN Class 1
+  + New: IF (((nswprice > 0.0602) AND (nswprice > 0.0712)) AND (nswdemand > 0.0985)) THEN Class 1
+    (Similarity: 0.81)
+
+  New Rules:
+  + IF ((((nswprice <= 0.0602) AND (nswdemand > 0.2330)) AND (nswprice <= 0.0574)) AND (nswprice > 0.0569)) THEN Class 1
+  + IF (((nswprice > 0.0602) AND (nswprice > 0.0712)) AND (nswdemand <= 0.0985)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((((((nswprice > 0.0670) AND (nswprice <= 0.0749)) AND (day <= 5.5000)) AND (day > 1.5000)) AND (date <= 0.0315)) AND (date <= 0.0312)) THEN Class 1
+  - IF ((((((nswprice > 0.0670) AND (nswprice > 0.0749)) AND (nswprice <= 0.1021)) AND (date <= 0.0313)) AND (nswprice > 0.0986)) AND (period <= 0.4468)) THEN Class 1
+  - IF ((((((nswprice > 0.0670) AND (nswprice > 0.0749)) AND (nswprice <= 0.1021)) AND (date <= 0.0313)) AND (nswprice > 0.0986)) AND (period > 0.4468)) THEN Class 1
+  - IF (((((nswprice > 0.0670) AND (nswprice <= 0.0749)) AND (day <= 5.5000)) AND (day > 1.5000)) AND (date > 0.0315)) THEN Class 1
+  - IF (((((nswprice > 0.0670) AND (nswprice > 0.0749)) AND (nswprice <= 0.1021)) AND (date <= 0.0313)) AND (nswprice <= 0.0986)) THEN Class 1
+  - IF (((((nswprice > 0.0670) AND (nswprice > 0.0749)) AND (nswprice <= 0.1021)) AND (date > 0.0313)) AND (nswdemand <= 0.5146)) THEN Class 1
+  - IF (((((nswprice > 0.0670) AND (nswprice > 0.0749)) AND (nswprice <= 0.1021)) AND (date > 0.0313)) AND (nswdemand > 0.5146)) THEN Class 1
+  - IF ((((nswprice <= 0.0670) AND (nswprice > 0.0642)) AND (nswdemand <= 0.3993)) AND (nswdemand <= 0.3671)) THEN Class 1
+  - IF ((((nswprice > 0.0670) AND (nswprice <= 0.0749)) AND (day <= 5.5000)) AND (day <= 1.5000)) THEN Class 1
+  - IF ((((nswprice > 0.0670) AND (nswprice <= 0.0749)) AND (day > 5.5000)) AND (period <= 0.3723)) THEN Class 1
+  - IF ((((nswprice > 0.0670) AND (nswprice <= 0.0749)) AND (day > 5.5000)) AND (period > 0.3723)) THEN Class 1
+
+======================================================================
+Overall Performance Summary (from History File)
+======================================================================
+Avg Train G-Mean:   0.9630 +/- 0.0231 (over 23 chunks)
+Avg Test G-Mean:    0.7143 +/- 0.1243 (over 23 chunks)
+Avg Test F1:        0.7528 +/- 0.1049 (over 23 chunks)
+======================================================================

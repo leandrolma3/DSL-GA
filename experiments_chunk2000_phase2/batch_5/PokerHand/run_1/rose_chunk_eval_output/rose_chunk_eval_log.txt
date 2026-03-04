@@ -1,0 +1,27 @@
+Command: java -Xmx4g -javaagent:rose_jars/sizeofag-1.0.4.jar -cp rose_jars/ROSE-1.0.jar:rose_jars/MOA-dependencies.jar moa.DoTask EvaluateInterleavedTestThenTrain -e (WindowAUCMultiClassImbalancedPerformanceEvaluator) -s (ArffFileStream -f /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_chunk2000_phase2/batch_5/PokerHand/run_1/rose_arff/PokerHand.arff) -l (moa.classifiers.meta.imbalanced.ROSE) -f 2000 -d /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_chunk2000_phase2/batch_5/PokerHand/run_1/rose_chunk_eval_output/rose_chunk_eval_results.csv
+
+STDOUT:
+learning evaluation instances,evaluation time (cpu seconds),model cost (RAM-Hours),classified instances,PMAUC,WMAUC,EWMAUC,Accuracy,Kappa,G-Mean,Classes,CM[0][0],CM[0][1],CM[0][2],CM[0][3],CM[0][4],CM[0][5],CM[0][6],CM[1][0],CM[1][1],CM[1][2],CM[1][3],CM[1][4],CM[1][5],CM[1][6],CM[2][0],CM[2][1],CM[2][2],CM[2][3],CM[2][4],CM[2][5],CM[2][6],CM[3][0],CM[3][1],CM[3][2],CM[3][3],CM[3][4],CM[3][5],CM[3][6],CM[4][0],CM[4][1],CM[4][2],CM[4][3],CM[4][4],CM[4][5],CM[4][6],CM[5][0],CM[5][1],CM[5][2],CM[5][3],CM[5][4],CM[5][5],CM[5][6],CM[6][0],CM[6][1],CM[6][2],CM[6][3],CM[6][4],CM[6][5],CM[6][6],model training instances,model serialized size (bytes)
+2000.0,1.079482957,2.3982437324416097E-7,2000.0,0.27911954541449424,1.0,0.9999999999999998,0.424,-0.05615208590036973,0.0,7.0,129.0,135.0,16.0,6.0,2.0,3.0,0.0,105.0,83.0,13.0,4.0,4.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2000.0,881944.0
+4000.0,1.845919869,4.460459513804461E-7,4000.0,0.43040278532198684,1.0,0.9999999999999998,0.496,0.008077086580700008,0.0,7.0,217.0,164.0,24.0,5.0,1.0,0.0,1.0,40.0,27.0,5.0,0.0,0.0,0.0,0.0,5.0,5.0,3.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,4000.0,1041144.0
+6000.0,2.382135306,5.971812021701927E-7,6000.0,0.36333449139888313,0.341,0.7857142857142856,0.46,-0.017692777396666505,0.0,7.0,170.0,145.0,19.0,4.0,3.0,0.0,1.0,78.0,60.0,14.0,4.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,6000.0,1089504.0
+
+
+STDERR:
+
+{M}assive {O}nline {A}nalysis
+Version:  21.07 July 2021
+Copyright: (C) 2007-2021 University of Waikato, Hamilton, New Zealand
+Web: http://moa.cms.waikato.ac.nz/
+
+- 0.00s [running] Preparing option stream...                                   
+\ 0.99s [running] 28.19% Evaluating learner...                                 
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by sizeof.agent.SizeOfAgent (file:/content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/rose_jars/MOA-dependencies.jar) to field java.util.HashMap.table
+WARNING: Please consider reporting this to the maintainers of sizeof.agent.SizeOfAgent
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+| 1.98s [running] 72.07% Evaluating learner...                                 
+                                                                               
+Task completed in 2.43s (CPU time)
+

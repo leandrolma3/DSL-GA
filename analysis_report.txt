@@ -1,0 +1,243 @@
+================================================================================
+ANALISE COMPLETA - EXPERIMENTO EXPANDIDO
+================================================================================
+
+================================================================================
+CARREGANDO RESULTADOS
+================================================================================
+Arquivos CSV encontrados: 9
+  Carregado: AGRAWAL_Abrupt_Simple_Severe (15 linhas)
+  Carregado: AGRAWAL_Gradual_Chain (20 linhas)
+  Carregado: HYPERPLANE_Abrupt_Simple (15 linhas)
+  Carregado: RBF_Abrupt_Severe (15 linhas)
+  Carregado: RBF_Gradual_Moderate (15 linhas)
+  Carregado: SEA_Abrupt_Recurring (15 linhas)
+  Carregado: SEA_Abrupt_Simple (15 linhas)
+  Carregado: SEA_Gradual_Simple_Fast (15 linhas)
+  Carregado: STAGGER_Abrupt_Chain (15 linhas)
+
+Total de linhas: 140
+Datasets carregados: 9
+
+================================================================================
+ESTATISTICAS POR MODELO
+================================================================================
+
+RESUMO GERAL
+--------------------------------------------------------------------------------
+
+Modelo          N        G-mean               Accuracy             F1                  
+--------------------------------------------------------------------------------
+GBML            28       0.7982 ± 0.1998      0.8023 ± 0.1811      0.8038 ± 0.1872     
+ACDWM           28       0.7912 ± 0.2030      0.7909 ± 0.1826      0.7923 ± 0.1903     
+ARF             28       0.7560 ± 0.2616      0.8187 ± 0.1744      0.8110 ± 0.1881     
+SRP             28       0.7238 ± 0.2703      0.8113 ± 0.1698      0.8003 ± 0.1842     
+HAT             28       0.6871 ± 0.3030      0.7801 ± 0.1687      0.7674 ± 0.1865     
+
+================================================================================
+RANKING FINAL (G-MEAN MEDIO)
+================================================================================
+
+Posicao    Modelo          G-mean Medio   
+----------------------------------------
+1          GBML            0.7982
+2          ACDWM           0.7912
+3          ARF             0.7560
+4          SRP             0.7238
+5          HAT             0.6871
+
+================================================================================
+DESEMPENHO POR DATASET
+================================================================================
+
+AGRAWAL_Abrupt_Simple_Severe
+------------------------------------------------------------
+Modelo          G-mean medio         N    
+GBML            0.8262 ± 0.2600     3    
+ARF             0.7775 ± 0.2377     3    
+ACDWM           0.6812 ± 0.2724     3    
+SRP             0.6683 ± 0.2340     3    
+HAT             0.4855 ± 0.4253     3    
+
+AGRAWAL_Gradual_Chain
+------------------------------------------------------------
+Modelo          G-mean medio         N    
+ACDWM           0.7704 ± 0.0802     4    
+GBML            0.7155 ± 0.0452     4    
+ARF             0.3843 ± 0.2670     4    
+SRP             0.3039 ± 0.2562     4    
+HAT             0.2887 ± 0.3334     4    
+
+HYPERPLANE_Abrupt_Simple
+------------------------------------------------------------
+Modelo          G-mean medio         N    
+ARF             0.7300 ± 0.0872     3    
+SRP             0.7104 ± 0.0922     3    
+HAT             0.7092 ± 0.0916     3    
+GBML            0.7057 ± 0.0898     3    
+ACDWM           0.6626 ± 0.1262     3    
+
+RBF_Abrupt_Severe
+------------------------------------------------------------
+Modelo          G-mean medio         N    
+SRP             0.7631 ± 0.2365     3    
+ACDWM           0.7630 ± 0.2233     3    
+ARF             0.7319 ± 0.2540     3    
+GBML            0.7040 ± 0.2466     3    
+HAT             0.6769 ± 0.1251     3    
+
+RBF_Gradual_Moderate
+------------------------------------------------------------
+Modelo          G-mean medio         N    
+SRP             0.8502 ± 0.0394     3    
+ARF             0.8432 ± 0.0385     3    
+ACDWM           0.8002 ± 0.1056     3    
+GBML            0.8001 ± 0.0922     3    
+HAT             0.7414 ± 0.0874     3    
+
+SEA_Abrupt_Recurring
+------------------------------------------------------------
+Modelo          G-mean medio         N    
+ACDWM           0.9461 ± 0.0398     3    
+GBML            0.9411 ± 0.0432     3    
+HAT             0.9381 ± 0.0387     3    
+ARF             0.9377 ± 0.0524     3    
+SRP             0.8877 ± 0.0552     3    
+
+SEA_Abrupt_Simple
+------------------------------------------------------------
+Modelo          G-mean medio         N    
+GBML            0.9701 ± 0.0224     3    
+ARF             0.9701 ± 0.0209     3    
+ACDWM           0.9605 ± 0.0267     3    
+HAT             0.9541 ± 0.0131     3    
+SRP             0.9366 ± 0.0585     3    
+
+SEA_Gradual_Simple_Fast
+------------------------------------------------------------
+Modelo          G-mean medio         N    
+ARF             0.9746 ± 0.0085     3    
+GBML            0.9698 ± 0.0133     3    
+ACDWM           0.9649 ± 0.0168     3    
+SRP             0.9554 ± 0.0268     3    
+HAT             0.9437 ± 0.0232     3    
+
+STAGGER_Abrupt_Chain
+------------------------------------------------------------
+Modelo          G-mean medio         N    
+ACDWM           0.5788 ± 0.3952     3    
+ARF             0.5788 ± 0.3952     3    
+GBML            0.5788 ± 0.3952     3    
+HAT             0.5788 ± 0.3952     3    
+SRP             0.5788 ± 0.3952     3    
+
+================================================================================
+ANALISE POR TIPO DE DRIFT
+================================================================================
+
+DESEMPENHO POR TIPO DE DRIFT
+------------------------------------------------------------
+
+Abrupt Drift:
+  Datasets: 6
+  Avaliacoes: 90
+
+  Modelo          G-mean Medio   
+  ARF             0.7877
+  GBML            0.7876
+  ACDWM           0.7654
+  SRP             0.7575
+  HAT             0.7238
+
+Gradual Drift:
+  Datasets: 3
+  Avaliacoes: 50
+
+  Modelo          G-mean Medio   
+  ACDWM           0.8377
+  GBML            0.8172
+  ARF             0.6991
+  SRP             0.6632
+  HAT             0.6210
+
+================================================================================
+ANALISE POR GERADOR DE DADOS
+================================================================================
+
+AGRAWAL
+------------------------------------------------------------
+Datasets: 2
+Avaliacoes: 35
+
+Modelo          G-mean Medio        
+GBML            0.7630 ± 0.1645
+ACDWM           0.7322 ± 0.1738
+ARF             0.5528 ± 0.3141
+SRP             0.4601 ± 0.2984
+HAT             0.3731 ± 0.3563
+
+HYPERPLANE
+------------------------------------------------------------
+Datasets: 1
+Avaliacoes: 15
+
+Modelo          G-mean Medio        
+ARF             0.7300 ± 0.0872
+SRP             0.7104 ± 0.0922
+HAT             0.7092 ± 0.0916
+GBML            0.7057 ± 0.0898
+ACDWM           0.6626 ± 0.1262
+
+RBF
+------------------------------------------------------------
+Datasets: 2
+Avaliacoes: 30
+
+Modelo          G-mean Medio        
+SRP             0.8066 ± 0.1590
+ARF             0.7875 ± 0.1736
+ACDWM           0.7816 ± 0.1575
+GBML            0.7521 ± 0.1746
+HAT             0.7091 ± 0.1028
+
+SEA
+------------------------------------------------------------
+Datasets: 3
+Avaliacoes: 45
+
+Modelo          G-mean Medio        
+ARF             0.9608 ± 0.0334
+GBML            0.9603 ± 0.0291
+ACDWM           0.9572 ± 0.0268
+HAT             0.9453 ± 0.0245
+SRP             0.9266 ± 0.0521
+
+STAGGER
+------------------------------------------------------------
+Datasets: 1
+Avaliacoes: 15
+
+Modelo          G-mean Medio        
+ACDWM           0.5788 ± 0.3952
+ARF             0.5788 ± 0.3952
+GBML            0.5788 ± 0.3952
+HAT             0.5788 ± 0.3952
+SRP             0.5788 ± 0.3952
+
+Resultados consolidados salvos em: experiment_results_consolidated.csv
+Total de linhas: 140
+Colunas: train_chunk, test_chunk, chunk, model, accuracy, f1_weighted, f1_macro, gmean, model_type, n_rules, n_nodes, n_features_used, memory_size, n_models, dataset, drift_type, generator
+
+================================================================================
+GERANDO TABELA LATEX
+================================================================================
+Tabela LaTeX salva em: results_table.tex
+
+================================================================================
+ANALISE CONCLUIDA
+================================================================================
+
+Arquivos gerados:
+  - experiment_results_consolidated.csv
+  - results_table.tex
+

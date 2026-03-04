@@ -1,0 +1,664 @@
+Rule Diff Analysis Report
+Source File: RulesHistory_AGRAWAL_Stationary_Run1.txt
+Similarity Threshold: 0.35
+
+======================================================================
+--- Diff Chunk 0 -> Chunk 1 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 0):   1.0000
+  - Test G-Mean (Chunk 1):  1.0000
+  - Test F1 (Chunk 1):      1.0000
+Fitness:       1.100000 -> 1.230400
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue <= 25085.3223)) THEN Class 0
+  - IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue > 25085.3223)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((age > 39.5000) AND (age > 59.5000)) THEN Class 1
+  + New: IF ((age <= 59.5000) AND (age <= 39.5000)) THEN Class 1
+    (Similarity: 0.85)
+
+  New Rules:
+  + IF ((age > 59.5000) AND (hvalue <= 25663.7832)) THEN Class 1
+  + IF ((age > 59.5000) AND (hvalue > 25663.7832)) THEN Class 1
+
+  Deleted Rules:
+  - IF (age <= 39.5000) THEN Class 1
+
+======================================================================
+--- Diff Chunk 1 -> Chunk 2 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 1):   1.0000
+  - Test G-Mean (Chunk 2):  1.0000
+  - Test F1 (Chunk 2):      1.0000
+Fitness:       1.230400 -> 1.229800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue <= 26530.4648)) THEN Class 0
+  + IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue > 26530.4648)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((age <= 59.5000) AND (age <= 39.5000)) THEN Class 1
+  + New: IF ((age > 39.5000) AND (age > 59.5000)) THEN Class 1
+    (Similarity: 0.85)
+
+  New Rules:
+  + IF (age <= 39.5000) THEN Class 1
+
+  Deleted Rules:
+  - IF ((age > 59.5000) AND (hvalue <= 25663.7832)) THEN Class 1
+  - IF ((age > 59.5000) AND (hvalue > 25663.7832)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 2 -> Chunk 3 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 2):   1.0000
+  - Test G-Mean (Chunk 3):  1.0000
+  - Test F1 (Chunk 3):      1.0000
+Fitness:       1.229800 -> 1.106800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue <= 26530.4648)) THEN Class 0
+  - IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue > 26530.4648)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((age > 39.5000) AND (age > 59.5000)) THEN Class 1
+  + New: IF ((age > 59.5000) AND (car > 2.5000)) THEN Class 1
+    (Similarity: 0.84)
+
+  New Rules:
+  + IF (((age <= 59.5000) AND (age <= 39.5000)) AND (hvalue <= 25661.3965)) THEN Class 1
+  + IF (((age <= 59.5000) AND (age <= 39.5000)) AND (hvalue > 25661.3965)) THEN Class 1
+  + IF ((age > 59.5000) AND (car <= 2.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF (age <= 39.5000) THEN Class 1
+
+======================================================================
+--- Diff Chunk 3 -> Chunk 4 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 3):   1.0000
+  - Test G-Mean (Chunk 4):  1.0000
+  - Test F1 (Chunk 4):      1.0000
+Fitness:       1.106800 -> 1.229800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue <= 25460.3457)) THEN Class 0
+  + IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue > 25460.3457)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((age > 59.5000) AND (car > 2.5000)) THEN Class 1
+  + New: IF ((age > 39.5000) AND (age > 59.5000)) THEN Class 1
+    (Similarity: 0.84)
+
+  New Rules:
+  + IF (age <= 39.5000) THEN Class 1
+
+  Deleted Rules:
+  - IF (((age <= 59.5000) AND (age <= 39.5000)) AND (hvalue <= 25661.3965)) THEN Class 1
+  - IF (((age <= 59.5000) AND (age <= 39.5000)) AND (hvalue > 25661.3965)) THEN Class 1
+  - IF ((age > 59.5000) AND (car <= 2.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 4 -> Chunk 5 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 4):   1.0000
+  - Test G-Mean (Chunk 5):  1.0000
+  - Test F1 (Chunk 5):      1.0000
+Fitness:       1.229800 -> 1.229800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((age > 39.5000) AND (age <= 59.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue <= 25460.3457)) THEN Class 0
+  - IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue > 25460.3457)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF (age <= 39.5000) THEN Class 1
+
+  New Rules:
+  + IF (((age > 39.5000) AND (age > 59.5000)) AND (hvalue <= 29019.4492)) THEN Class 1
+  + IF (((age > 39.5000) AND (age > 59.5000)) AND (hvalue > 29019.4492)) THEN Class 1
+
+  Deleted Rules:
+  - IF ((age > 39.5000) AND (age > 59.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 5 -> Chunk 6 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 5):   1.0000
+  - Test G-Mean (Chunk 6):  1.0000
+  - Test F1 (Chunk 6):      1.0000
+Fitness:       1.229800 -> 1.265800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((age > 39.5000) AND (age <= 59.5000)) THEN Class 0
+  + New: IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+    (Similarity: 0.84)
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF (age <= 39.5000) THEN Class 1
+
+  Deleted Rules:
+  - IF (((age > 39.5000) AND (age > 59.5000)) AND (hvalue <= 29019.4492)) THEN Class 1
+  - IF (((age > 39.5000) AND (age > 59.5000)) AND (hvalue > 29019.4492)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 6 -> Chunk 7 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 6):   1.0000
+  - Test G-Mean (Chunk 7):  1.0000
+  - Test F1 (Chunk 7):      1.0000
+Fitness:       1.265800 -> 1.265800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Unchanged Rules:
+    IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF (age <= 39.5000) THEN Class 1
+
+======================================================================
+--- Diff Chunk 7 -> Chunk 8 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 7):   1.0000
+  - Test G-Mean (Chunk 8):  1.0000
+  - Test F1 (Chunk 8):      1.0000
+Fitness:       1.265800 -> 1.139800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue <= 25310.5293)) THEN Class 0
+  + IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue > 25310.5293)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF (age <= 39.5000) THEN Class 1
+
+  New Rules:
+  + IF ((age > 39.5000) AND (age > 59.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 8 -> Chunk 9 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 8):   1.0000
+  - Test G-Mean (Chunk 9):  1.0000
+  - Test F1 (Chunk 9):      1.0000
+Fitness:       1.139800 -> 1.229800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue <= 25310.5293)) THEN Class 0
+  + New: IF (((age <= 59.5000) AND (age > 39.5000)) AND (hvalue <= 25962.0059)) THEN Class 0
+    (Similarity: 0.81)
+  - Old: IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue > 25310.5293)) THEN Class 0
+  + New: IF (((age <= 59.5000) AND (age > 39.5000)) AND (hvalue > 25962.0059)) THEN Class 0
+    (Similarity: 0.80)
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((age > 39.5000) AND (age > 59.5000)) THEN Class 1
+  + New: IF ((age <= 59.5000) AND (age <= 39.5000)) THEN Class 1
+    (Similarity: 0.85)
+  - Old: IF (age <= 39.5000) THEN Class 1
+  + New: IF (age > 59.5000) THEN Class 1
+    (Similarity: 0.81)
+
+======================================================================
+--- Diff Chunk 9 -> Chunk 10 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 9):   1.0000
+  - Test G-Mean (Chunk 10):  1.0000
+  - Test F1 (Chunk 10):      1.0000
+Fitness:       1.229800 -> 1.265800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((age <= 59.5000) AND (age > 39.5000)) AND (hvalue <= 25962.0059)) THEN Class 0
+  - IF (((age <= 59.5000) AND (age > 39.5000)) AND (hvalue > 25962.0059)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (age > 59.5000) THEN Class 1
+  + New: IF (age <= 39.5000) THEN Class 1
+    (Similarity: 0.81)
+
+  Deleted Rules:
+  - IF ((age <= 59.5000) AND (age <= 39.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 10 -> Chunk 11 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 10):   1.0000
+  - Test G-Mean (Chunk 11):  1.0000
+  - Test F1 (Chunk 11):      1.0000
+Fitness:       1.265800 -> 1.016800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((age <= 59.5000) AND (age > 39.5000)) AND (hvalue <= 25515.7344)) THEN Class 0
+  + IF (((age <= 59.5000) AND (age > 39.5000)) AND (hvalue > 25515.7344)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((age <= 59.5000) AND (age <= 39.5000)) THEN Class 1
+  + IF ((age > 59.5000) AND (car <= 1.5000)) THEN Class 1
+  + IF ((age > 59.5000) AND (car > 1.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF (age <= 39.5000) THEN Class 1
+
+======================================================================
+--- Diff Chunk 11 -> Chunk 12 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 11):   1.0000
+  - Test G-Mean (Chunk 12):  1.0000
+  - Test F1 (Chunk 12):      1.0000
+Fitness:       1.016800 -> 1.265800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((age <= 59.5000) AND (age > 39.5000)) AND (hvalue <= 25515.7344)) THEN Class 0
+  - IF (((age <= 59.5000) AND (age > 39.5000)) AND (hvalue > 25515.7344)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF (age <= 39.5000) THEN Class 1
+
+  Deleted Rules:
+  - IF ((age <= 59.5000) AND (age <= 39.5000)) THEN Class 1
+  - IF ((age > 59.5000) AND (car <= 1.5000)) THEN Class 1
+  - IF ((age > 59.5000) AND (car > 1.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 12 -> Chunk 13 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 12):   1.0000
+  - Test G-Mean (Chunk 13):  1.0000
+  - Test F1 (Chunk 13):      1.0000
+Fitness:       1.265800 -> 1.139800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+  + New: IF ((age > 39.5000) AND (age <= 59.5000)) THEN Class 0
+    (Similarity: 0.84)
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF (age <= 39.5000) THEN Class 1
+
+  New Rules:
+  + IF (((age > 39.5000) AND (age > 59.5000)) AND (hvalue <= 27078.3965)) THEN Class 1
+  + IF (((age > 39.5000) AND (age > 59.5000)) AND (hvalue > 27078.3965)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 13 -> Chunk 14 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 13):   1.0000
+  - Test G-Mean (Chunk 14):  1.0000
+  - Test F1 (Chunk 14):      1.0000
+Fitness:       1.139800 -> 1.229800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((age <= 59.5000) AND (age > 39.5000)) AND (hvalue <= 27562.0039)) THEN Class 0
+  + IF (((age <= 59.5000) AND (age > 39.5000)) AND (hvalue > 27562.0039)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((age > 39.5000) AND (age <= 59.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (age <= 39.5000) THEN Class 1
+  + New: IF (age > 59.5000) THEN Class 1
+    (Similarity: 0.81)
+
+  New Rules:
+  + IF ((age <= 59.5000) AND (age <= 39.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF (((age > 39.5000) AND (age > 59.5000)) AND (hvalue <= 27078.3965)) THEN Class 1
+  - IF (((age > 39.5000) AND (age > 59.5000)) AND (hvalue > 27078.3965)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 14 -> Chunk 15 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 14):   1.0000
+  - Test G-Mean (Chunk 15):  1.0000
+  - Test F1 (Chunk 15):      1.0000
+Fitness:       1.229800 -> 1.265800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((age <= 59.5000) AND (age > 39.5000)) AND (hvalue <= 27562.0039)) THEN Class 0
+  - IF (((age <= 59.5000) AND (age > 39.5000)) AND (hvalue > 27562.0039)) THEN Class 0
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (age > 59.5000) THEN Class 1
+  + New: IF (age <= 39.5000) THEN Class 1
+    (Similarity: 0.81)
+
+  Deleted Rules:
+  - IF ((age <= 59.5000) AND (age <= 39.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 15 -> Chunk 16 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 15):   1.0000
+  - Test G-Mean (Chunk 16):  1.0000
+  - Test F1 (Chunk 16):      1.0000
+Fitness:       1.265800 -> 1.139800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue <= 30533.2715)) THEN Class 0
+  + IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue > 30533.2715)) THEN Class 0
+
+  Deleted Rules:
+  - IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  Unchanged Rules:
+    IF (age <= 39.5000) THEN Class 1
+
+  New Rules:
+  + IF ((age > 39.5000) AND (age > 59.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 16 -> Chunk 17 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 16):   1.0000
+  - Test G-Mean (Chunk 17):  1.0000
+  - Test F1 (Chunk 17):      1.0000
+Fitness:       1.139800 -> 1.106800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue <= 30533.2715)) THEN Class 0
+  + New: IF (((age <= 59.5000) AND (age > 39.5000)) AND (hvalue <= 27046.7637)) THEN Class 0
+    (Similarity: 0.78)
+  - Old: IF (((age > 39.5000) AND (age <= 59.5000)) AND (hvalue > 30533.2715)) THEN Class 0
+  + New: IF (((age <= 59.5000) AND (age > 39.5000)) AND (hvalue > 27046.7637)) THEN Class 0
+    (Similarity: 0.77)
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF ((age > 39.5000) AND (age > 59.5000)) THEN Class 1
+  + New: IF ((age <= 59.5000) AND (age <= 39.5000)) THEN Class 1
+    (Similarity: 0.85)
+
+  New Rules:
+  + IF ((age > 59.5000) AND (car <= 1.5000)) THEN Class 1
+  + IF ((age > 59.5000) AND (car > 1.5000)) THEN Class 1
+
+  Deleted Rules:
+  - IF (age <= 39.5000) THEN Class 1
+
+======================================================================
+--- Diff Chunk 17 -> Chunk 18 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 17):   1.0000
+  - Test G-Mean (Chunk 18):  1.0000
+  - Test F1 (Chunk 18):      1.0000
+Fitness:       1.106800 -> 1.265800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  New Rules:
+  + IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+
+  Deleted Rules:
+  - IF (((age <= 59.5000) AND (age > 39.5000)) AND (hvalue <= 27046.7637)) THEN Class 0
+  - IF (((age <= 59.5000) AND (age > 39.5000)) AND (hvalue > 27046.7637)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF (age <= 39.5000) THEN Class 1
+
+  Deleted Rules:
+  - IF ((age <= 59.5000) AND (age <= 39.5000)) THEN Class 1
+  - IF ((age > 59.5000) AND (car <= 1.5000)) THEN Class 1
+  - IF ((age > 59.5000) AND (car > 1.5000)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 18 -> Chunk 19 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 18):   1.0000
+  - Test G-Mean (Chunk 19):  1.0000
+  - Test F1 (Chunk 19):      1.0000
+Fitness:       1.265800 -> 1.140400
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Unchanged Rules:
+    IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF ((age <= 59.5000) AND (age <= 39.5000)) THEN Class 1
+  + IF ((age > 59.5000) AND (hvalue <= 25228.1406)) THEN Class 1
+  + IF ((age > 59.5000) AND (hvalue > 25228.1406)) THEN Class 1
+
+  Deleted Rules:
+  - IF (age <= 39.5000) THEN Class 1
+
+======================================================================
+--- Diff Chunk 19 -> Chunk 20 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 19):   1.0000
+  - Test G-Mean (Chunk 20):  1.0000
+  - Test F1 (Chunk 20):      1.0000
+Fitness:       1.140400 -> 1.265800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Unchanged Rules:
+    IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+
+=== Class 1 ===
+
+  New Rules:
+  + IF (age <= 39.5000) THEN Class 1
+
+  Deleted Rules:
+  - IF ((age <= 59.5000) AND (age <= 39.5000)) THEN Class 1
+  - IF ((age > 59.5000) AND (hvalue <= 25228.1406)) THEN Class 1
+  - IF ((age > 59.5000) AND (hvalue > 25228.1406)) THEN Class 1
+
+======================================================================
+--- Diff Chunk 20 -> Chunk 21 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 20):   1.0000
+  - Test G-Mean (Chunk 21):  1.0000
+  - Test F1 (Chunk 21):      1.0000
+Fitness:       1.265800 -> 1.265800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+  + New: IF ((age > 39.5000) AND (age <= 59.5000)) THEN Class 0
+    (Similarity: 0.84)
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (age <= 39.5000) THEN Class 1
+  + New: IF (age > 59.5000) THEN Class 1
+    (Similarity: 0.81)
+
+======================================================================
+--- Diff Chunk 21 -> Chunk 22 ---
+======================================================================
+Performance:
+  - Train G-Mean (Chunk 21):   1.0000
+  - Test G-Mean (Chunk 22):  1.0000
+  - Test F1 (Chunk 22):      1.0000
+Fitness:       1.265800 -> 1.265800
+Default Class: 1 -> 1
+----------------------------------------------------------------------
+
+=== Class 0 ===
+
+  Modified Rules:
+  - Old: IF ((age > 39.5000) AND (age <= 59.5000)) THEN Class 0
+  + New: IF ((age <= 59.5000) AND (age > 39.5000)) THEN Class 0
+    (Similarity: 0.84)
+
+=== Class 1 ===
+
+  Modified Rules:
+  - Old: IF (age > 59.5000) THEN Class 1
+  + New: IF (age <= 39.5000) THEN Class 1
+    (Similarity: 0.81)
+
+======================================================================
+Overall Performance Summary (from History File)
+======================================================================
+Avg Train G-Mean:   1.0000 +/- 0.0000 (over 23 chunks)
+Avg Test G-Mean:    1.0000 +/- 0.0000 (over 23 chunks)
+Avg Test F1:        1.0000 +/- 0.0000 (over 23 chunks)
+======================================================================

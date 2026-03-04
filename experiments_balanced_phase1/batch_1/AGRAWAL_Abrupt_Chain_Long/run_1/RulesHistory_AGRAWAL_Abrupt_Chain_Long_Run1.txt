@@ -1,0 +1,116 @@
+Rule History for Stream: AGRAWAL_Abrupt_Chain_Long, Run: 1
+========================================
+
+--- Chunk 0 (Trained) --- Test Perf (Chunk 1): TestGmean=0.9800, TestF1=0.9844
+ Train Perf (Chunk 0): TrainGmean=0.9829
+---
+  Fitness: 1.081578
+  Default Class: 0
+  Rules (9 total):
+    Class 0:
+      1: IF (salary >= 125022.9883) THEN Class 0
+      2: IF (salary > 125022.9883) THEN Class 0
+      3: IF (((salary <= 44442.8828) AND (age > 59.5000)) AND (salary <= 24857.6367)) THEN Class 0
+    Class 1:
+      1: IF (((((salary <= 125022.9883) AND (salary > 44442.8828)) AND (salary <= 100042.1445)) AND (age <= 39.5000)) AND (salary > 50035.5039)) THEN Class 1
+      2: IF (((((((salary <= 125022.9883) AND (salary > 44442.8828)) AND (salary <= 100042.1445)) AND (age > 39.5000)) AND (age > 55.5000)) AND (commission > 5036.2935)) AND (age > 59.5000)) THEN Class 1
+      3: IF (((((salary <= 125022.9883) AND (salary > 44442.8828)) AND (salary > 100042.1445)) AND (age <= 59.5000)) AND (age > 39.5000)) THEN Class 1
+      4: IF ((((((salary <= 125022.9883) AND (salary > 44442.8828)) AND (salary <= 100042.1445)) AND (age > 39.5000)) AND (age <= 55.5000)) AND (commission <= 5152.3579)) THEN Class 1
+      5: IF (((salary <= 44442.8828) AND (age > 59.5000)) AND (salary > 24857.6367)) THEN Class 1
+      6: IF (((salary <= 125022.9883) AND (salary > 24997.8711)) AND ((age > 58.5000) AND ((commission > 10295.5591) AND (age > 59.5000)))) THEN Class 1
+========================================
+
+--- Chunk 1 (Trained) --- Test Perf (Chunk 2): TestGmean=0.5013, TestF1=0.5015
+ Train Perf (Chunk 1): TrainGmean=0.9996
+---
+  Fitness: 1.232543
+  Default Class: 0
+  Rules (14 total):
+    Class 0:
+      1: IF ((salary > 125051.1367) AND (age <= 20.5000)) THEN Class 0
+      2: IF ((salary > 125051.1367) AND (salary <= 125929.0742)) THEN Class 0
+      3: IF ((salary > 125051.1367) AND (hyears <= 1.5000)) THEN Class 0
+      4: IF (((salary <= 49986.2871) AND (age > 59.5000)) AND (salary <= 24921.4697)) THEN Class 0
+      5: IF ((salary > 25571.5701) AND (salary <= 125929.0742)) THEN Class 0
+    Class 1:
+      1: IF ((((((salary <= 125051.1367) AND (salary > 49986.2871)) AND (age <= 58.5000)) AND (salary > 71911.3594)) AND (salary <= 99942.9492)) AND (commission <= 16487.4604)) THEN Class 1
+      2: IF (((salary <= 49986.2871) AND (age > 59.5000)) AND (salary > 24921.4697)) THEN Class 1
+      3: IF (((((salary <= 125051.1367) AND (salary > 49986.2871)) AND (age > 58.5000)) AND (commission > 10746.5229)) AND (age > 59.5000)) THEN Class 1
+      4: IF ((((((salary <= 125051.1367) AND (salary > 49986.2871)) AND (age <= 58.5000)) AND (salary > 71911.3594)) AND (salary > 99942.9492)) AND (age > 39.5000)) THEN Class 1
+      5: IF (((salary <= 49986.2871) AND (age > 59.5000)) AND (salary > 24921.4697)) THEN Class 1
+      6: IF (((((((salary <= 125051.1367) AND (salary > 49986.2871)) AND (age <= 58.5000)) AND (salary > 71911.3594)) AND (salary <= 99942.9492)) AND (commission > 16487.4604)) AND (age <= 40.5000)) THEN Class 1
+      7: IF (((((salary <= 125051.1367) AND (salary > 49986.2871)) AND (age <= 58.5000)) AND (salary <= 71911.3594)) AND (age <= 39.5000)) THEN Class 1
+      8: IF ((((((salary <= 125051.1367) AND (salary > 49986.2871)) AND (age <= 58.5000)) AND (salary <= 71911.3594)) AND (age <= 39.5000)) AND (commission > 13149.9819)) THEN Class 1
+      9: IF (((((salary <= 125051.1367) AND (salary > 49986.2871)) AND (age > 58.5000)) AND (commission <= 10746.5229)) AND (age <= 59.5000)) THEN Class 1
+========================================
+
+--- Chunk 2 (Trained) --- Test Perf (Chunk 3): TestGmean=1.0000, TestF1=1.0000
+ Train Perf (Chunk 2): TrainGmean=1.0000
+---
+  Fitness: 1.100000
+  Default Class: 0
+  Rules (8 total):
+    Class 0:
+      1: IF ((elevel > 0.5000) AND ((age <= 39.5000) AND (elevel > 1.5000))) THEN Class 0
+    Class 1:
+      1: IF (((elevel > 0.5000) AND (age > 39.5000)) AND ((elevel <= 3.5000) AND (age <= 59.5000))) THEN Class 1
+      2: IF (((((elevel > 1.1348) AND (age > 39.5000)) AND (elevel > 3.5000)) AND (age > 59.5000)) AND (hyears > 1.5000)) THEN Class 1
+      3: IF (((((elevel > 0.5000) AND (age > 39.5000)) AND (elevel > 3.5000)) AND (age > 59.5000)) AND (loan > 18228.0303)) THEN Class 1
+      4: IF ((elevel <= 0.5000) AND (age <= 39.5000)) THEN Class 1
+      5: IF (((elevel > 0.5000) AND (age <= 39.5000)) AND (elevel <= 1.5000)) THEN Class 1
+      6: IF (((elevel > 0.5000) AND (age > 39.5000)) AND ((elevel <= 3.5000) AND ((age > 59.5000) AND (elevel > 1.5000)))) THEN Class 1
+      7: IF (((((elevel > 0.5000) AND (age > 39.5000)) AND (elevel > 3.5000)) AND (age > 59.5000)) AND (loan <= 18228.0303)) THEN Class 1
+========================================
+
+--- Chunk 3 (Trained) --- Test Perf (Chunk 4): TestGmean=0.5264, TestF1=0.5262
+ Train Perf (Chunk 3): TrainGmean=1.0000
+---
+  Fitness: 1.246800
+  Default Class: 0
+  Rules (11 total):
+    Class 0:
+      1: IF ((((elevel > 0.5000) AND (age <= 39.5000)) AND (elevel > 1.5000)) AND (elevel <= 2.5000)) THEN Class 0
+      2: IF ((((elevel > 0.5000) AND (age > 39.5000)) AND (elevel <= 1.5000)) AND (age > 59.5000)) THEN Class 0
+      3: IF ((((elevel > 0.5000) AND (age <= 39.5000)) AND (elevel > 1.5000)) AND (age <= 20.5000)) THEN Class 0
+      4: IF ((((elevel > 0.5000) AND (age <= 39.5000)) AND (elevel > 1.5000)) AND (hyears <= 1.5000)) THEN Class 0
+      5: IF ((((elevel > 0.5000) AND (age <= 39.5000)) AND (elevel > 1.5000)) AND (loan <= 10074.4531)) THEN Class 0
+    Class 1:
+      1: IF (((((elevel > 0.5000) AND (age > 39.5000)) AND (elevel > 1.5000)) AND (elevel <= 3.5000)) AND (age > 40.5000)) THEN Class 1
+      2: IF (((elevel > 0.5000) AND (age <= 39.5000)) AND (elevel <= 1.5000)) THEN Class 1
+      3: IF (((((elevel > 0.5000) AND (age > 39.5000)) AND (elevel > 1.5000)) AND (elevel > 3.5000)) AND (age > 59.5000)) THEN Class 1
+      4: IF ((elevel <= 0.5000) AND (age <= 39.0000)) THEN Class 1
+      5: IF ((((elevel > 0.5000) AND (age > 39.5000)) AND (elevel <= 1.5000)) AND (age <= 59.5000)) THEN Class 1
+      6: IF (((((elevel > 0.5000) AND (age > 39.5000)) AND (elevel > 1.5000)) AND (elevel <= 3.5000)) AND (age <= 40.5000)) THEN Class 1
+========================================
+
+--- Chunk 4 (Trained) --- Test Perf (Chunk 5): TestGmean=0.5665, TestF1=0.6559
+ Train Perf (Chunk 4): TrainGmean=0.9785
+---
+  Fitness: 1.076856
+  Default Class: 0
+  Rules (22 total):
+    Class 0:
+      1: IF (((salary > 122350.4492) AND (salary <= 124783.6914)) AND (salary > 124178.5664)) THEN Class 0
+      2: IF (((salary <= 49951.0684) AND (elevel > 1.5000)) AND (commission <= 11988.6641)) THEN Class 0
+      3: IF ((car < 3.5410) AND (((hvalue > 473763.8188) AND (loan < 422691.2742)) AND ((((((elevel <= 1.9620) AND (commission <= 59479.9660)) AND (age <= 26.4474)) AND (((zipcode < 5.8088) AND (car >= 3.3855)) AND ((elevel <= 1.4487) AND (hyears >= 9.1476)))) OR ((((car > 16.8410) OR (elevel > 1.7221)) AND ((hvalue >= 863385.0598) AND (commission > 56493.4196))) AND (elevel > 1.4988))) AND (((((zipcode <= 4.1266) AND (loan > 336546.2485)) AND ((age >= 50.7962) OR (hyears >= 8.9398))) AND (hyears < 17.0403)) AND ((((zipcode <= 2.9437) OR (elevel < 3.0722)) AND ((loan > 59361.5523) AND (loan <= 108533.9256))) OR (((hyears > 26.2346) AND (salary <= 132776.8844)) AND (car <= 11.3735))))))) THEN Class 0
+      4: IF (((salary <= 49951.0684) AND (elevel > 1.5000)) AND (loan <= 15866.0234)) THEN Class 0
+      5: IF (((salary <= 49951.0684) AND (elevel > 1.5000)) AND (age <= 21.5000)) THEN Class 0
+      6: IF (((salary <= 49951.0684) AND (elevel > 2.9189)) AND (salary <= 21132.9072)) THEN Class 0
+      7: IF (((salary <= 49951.0684) AND (elevel > 1.5000)) AND (car <= 1.5000)) THEN Class 0
+    Class 1:
+      1: IF ((((salary <= 100011.6211) AND (salary > 49951.0684)) AND (elevel > 1.5000)) AND (elevel <= 3.5000)) THEN Class 1
+      2: IF (((((salary <= 100011.6211) AND (salary > 49951.0684)) AND (elevel > 1.5000)) AND (elevel <= 3.5000)) AND (age > 21.5000)) THEN Class 1
+      3: IF (((((salary <= 100011.6211) AND (salary > 49951.0684)) AND (elevel <= 1.5000)) AND (salary <= 74930.2070)) AND (elevel > 0.5000)) THEN Class 1
+      4: IF (((((salary <= 100011.6211) AND (salary > 49951.0684)) AND (elevel > 1.5000)) AND (elevel > 3.5000)) AND (commission <= 14027.5195)) THEN Class 1
+      5: IF (((((((salary <= 100011.6211) AND (salary > 49951.0684)) AND (elevel <= 1.5000)) AND (salary > 74930.2070)) AND (age <= 59.5000)) AND (age > 39.5000)) AND (hvalue > 33308.0703)) THEN Class 1
+      6: IF (((((salary <= 49951.0684) AND (elevel <= 1.5000)) AND (age > 39.5000)) AND (age > 59.5000)) AND (salary > 24704.5186)) THEN Class 1
+      7: IF ((((((salary <= 100011.6211) AND (salary > 49951.0684)) AND (elevel <= 1.5000)) AND (salary <= 74930.2070)) AND (elevel <= 0.5000)) AND (age <= 40.0000)) THEN Class 1
+      8: IF (((((salary <= 49951.0684) AND (elevel <= 1.5000)) AND (age <= 39.5000)) AND (salary > 25403.4434)) AND (elevel <= 0.5000)) THEN Class 1
+      9: IF (((((((salary <= 100011.6211) AND (salary > 49951.0684)) AND (elevel > 1.5000)) AND (elevel > 3.5000)) AND (commission > 14027.5195)) AND (age <= 60.0000)) AND (age <= 38.0000)) THEN Class 1
+      10: IF ((((((salary > 100011.6211) AND (salary <= 122350.4492)) AND (elevel > 0.5000)) AND (elevel > 3.5000)) AND (age <= 59.5000)) AND (age > 39.5000)) THEN Class 1
+      11: IF (((((((salary <= 100011.6211) AND (salary > 49951.0684)) AND (elevel > 1.5000)) AND (elevel > 3.5000)) AND (commission > 14027.5195)) AND (age > 60.0000)) AND (age <= 62.5000)) THEN Class 1
+      12: IF (((((((salary <= 100011.6211) AND (salary > 49951.0684)) AND (elevel <= 1.5000)) AND (salary <= 74930.2070)) AND (elevel <= 0.5000)) AND (age > 40.0000)) AND (age > 59.5000)) THEN Class 1
+      13: IF (((((((salary <= 100011.6211) AND (salary > 49951.0684)) AND (elevel <= 1.5000)) AND (salary > 74930.2070)) AND (age <= 59.5000)) AND (age > 39.5000)) AND (hvalue <= 33308.0703)) THEN Class 1
+      14: IF (((((((salary <= 100011.6211) AND (salary > 49951.0684)) AND (elevel > 1.5000)) AND (elevel > 3.5000)) AND (commission > 14027.5195)) AND (age > 60.0000)) AND (age > 62.5000)) THEN Class 1
+      15: IF (((((salary <= 49951.0684) AND (elevel <= 1.5000)) AND (age <= 39.5000)) AND (salary > 25403.4434)) AND (elevel > 0.5000)) THEN Class 1
+========================================

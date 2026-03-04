@@ -1,0 +1,103 @@
+================================================================================
+COMO USAR O UPLOAD
+================================================================================
+
+🚀 USO SIMPLES:
+
+1. Duplo clique em: upload.bat
+
+2. Digite a senha do servidor quando solicitado (5 vezes total):
+   - 1x para criar diretório
+   - 4x para enviar arquivos (ga_operators.py, ga.py, main.py, config.yaml)
+
+3. Pronto! Arquivos enviados.
+
+================================================================================
+EXEMPLO DE EXECUÇÃO
+================================================================================
+
+========================================
+Upload SSH - DSL-AG-hybrid
+Servidor: root@right-scotia-humor-toward.trycloudflare.com
+========================================
+
+NOTA: Você precisará digitar a senha para cada arquivo
+
+[1/2] Criando diretório remoto...
+Digite a senha:
+[digite sua senha]
+OK - Diretório pronto
+
+[2/2] Enviando arquivos...
+
+  [1/4] Enviando: ga_operators.py (78.5 KB)
+      Digite a senha:
+[digite sua senha]
+      ✓ Enviado com sucesso
+
+  [2/4] Enviando: ga.py (45.2 KB)
+      Digite a senha:
+[digite sua senha]
+      ✓ Enviado com sucesso
+
+  [3/4] Enviando: main.py (52.3 KB)
+      Digite a senha:
+[digite sua senha]
+      ✓ Enviado com sucesso
+
+  [4/4] Enviando: config.yaml (18.7 KB)
+      Digite a senha:
+[digite sua senha]
+      ✓ Enviado com sucesso
+
+========================================
+✓ SUCESSO: 4/4 arquivos enviados
+========================================
+
+Configuração do Sistema:
+  • Hill Climbing Inteligente: ATIVADO
+  • Crossover Balanceado: ATIVADO
+
+================================================================================
+OBSERVAÇÕES
+================================================================================
+
+⚠️ É NORMAL pedir senha várias vezes
+   Windows sem chave SSH requer senha para cada operação SCP
+
+✅ A senha é a mesma que você usa para: ssh root@right-scotia-humor-toward.trycloudflare.com
+
+💡 Para evitar digitar senha várias vezes, você pode configurar chave SSH
+   (mas é opcional - o upload funciona com senha)
+
+================================================================================
+ARQUIVOS ENVIADOS
+================================================================================
+
+✓ ga_operators.py    - Operadores genéticos (Crossover Balanceado)
+✓ ga.py              - Loop principal do GA
+✓ main.py            - Configuração e execução
+✓ config.yaml        - Parâmetros (HC + Crossover ATIVADOS)
+
+Destino: ~/DSL-AG-hybrid/
+
+================================================================================
+PRÓXIMOS PASSOS NO SERVIDOR
+================================================================================
+
+1. Conectar:
+   ssh root@right-scotia-humor-toward.trycloudflare.com
+
+2. Navegar:
+   cd ~/DSL-AG-hybrid
+
+3. Verificar arquivos:
+   ls -lh ga_operators.py ga.py main.py config.yaml
+
+4. Verificar configuração:
+   grep "use_balanced_crossover\|hc_hierarchical_enabled" config.yaml
+
+5. Executar experimento:
+   python compare_gbml_vs_river.py --stream RBF_Abrupt_Severe --chunks 1 --chunk-size 6000 --seed 42
+
+================================================================================

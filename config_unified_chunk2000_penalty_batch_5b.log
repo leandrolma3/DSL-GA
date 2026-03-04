@@ -1,0 +1,1263 @@
+2026-02-06 14:32:56 [INFO    ] root: Configuration loaded successfully from /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/config_test_drift_recovery.yaml
+2026-02-06 14:32:56 [INFO    ] root: Configuration loaded successfully from /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/config_test_drift_recovery.yaml
+2026-02-06 14:32:56 [INFO    ] main: ===== Starting Experiment Execution with Loaded Configuration =====
+2026-02-06 14:32:56 [INFO    ] main: Using configuration file: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/config_test_drift_recovery.yaml
+2026-02-06 14:32:56 [INFO    ] main: Relative base_results_dir resolved: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000_penalty/batch_5
+2026-02-06 14:32:56 [INFO    ] main: Execution mode set to: 'unified_pregenerated'
+2026-02-06 14:32:56 [INFO    ] main: Running in UNIFIED PREGENERATED mode. Found 5 experiments to run.
+2026-02-06 14:32:56 [INFO    ] main: Pre-generated chunks directory: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/unified_chunks/chunk_2000
+2026-02-06 14:32:57 [INFO    ] main: [RESUME] SKIPPING 'Electricity': Already complete (5/5 chunks)
+2026-02-06 14:32:57 [INFO    ] main: [RESUME] SKIPPING 'Shuttle': Already complete (5/5 chunks)
+2026-02-06 14:32:58 [INFO    ] main: [RESUME] SKIPPING 'CovType': Already complete (5/5 chunks)
+2026-02-06 14:33:00 [INFO    ] main: [RESUME] SKIPPING 'PokerHand': Already complete (5/5 chunks)
+2026-02-06 14:33:00 [INFO    ] main: ====== Processing Experiment ID: IntelLabSensors (Runs: 1) ======
+2026-02-06 14:33:00 [INFO    ] main: --- Starting Experiment: ID='IntelLabSensors', Run=1, Mode=Drift Simulation ---
+2026-02-06 14:33:00 [INFO    ] main: Using Random Seed: 43
+2026-02-06 14:33:00 [INFO    ] root: Results will be saved in: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000_penalty/batch_5/IntelLabSensors/run_1
+2026-02-06 14:33:00 [WARNING ] main: Concept difference data file not found at /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/results/concept_heatmaps/concept_differences.json. Penalty reduction based on drift severity might be affected.
+2026-02-06 14:33:00 [INFO    ] main: Pre-generated Chunks Mode - Inferred Base Type: IntelLabSensors
+2026-02-06 14:33:00 [INFO    ] main: Loading pre-generated chunks from: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/unified_chunks/chunk_2000/IntelLabSensors
+2026-02-06 14:33:03 [INFO    ] root: Loaded 6 chunks from /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/unified_chunks/chunk_2000/IntelLabSensors
+2026-02-06 14:33:03 [INFO    ] main: Loaded 6 pre-generated chunks successfully
+2026-02-06 14:33:03 [INFO    ] root: Converting data types for all chunks...
+2026-02-06 14:33:03 [INFO    ] root: Data type conversion finished.
+2026-02-06 14:33:03 [INFO    ] root: Stream Properties: 5 attrs (5 num, 0 cat), 39 classes: [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 36, 42, 43, 44, 47, 49, 53, 54, 56]
+2026-02-06 14:33:03 [INFO    ] root: Categorical features: []
+2026-02-06 14:33:03 [INFO    ] root: Numeric features: ['epoch', 'humidity', 'light', 'temperature', 'voltage']
+2026-02-06 14:33:03 [WARNING ] main: [RESUME] Detected 2 chunks already processed
+2026-02-06 14:33:03 [WARNING ] main: [RESUME] Last completed: chunk 1
+2026-02-06 14:33:03 [WARNING ] main: [RESUME] Resuming from: chunk 2
+2026-02-06 14:33:03 [INFO    ] main: [RESUME] Loaded checkpoint individual from chunk 1
+2026-02-06 14:33:04 [INFO    ] main: [RESUME] Loaded 2 partial metrics
+2026-02-06 14:33:04 [INFO    ] main: [RESUME] Loaded 2 individuals from checkpoints
+2026-02-06 14:33:04 [WARNING ] main: 
+2026-02-06 14:33:04 [WARNING ] main: ######################################################################
+2026-02-06 14:33:04 [WARNING ] main: EXPERIMENTO INICIADO
+2026-02-06 14:33:04 [WARNING ] main: ######################################################################
+2026-02-06 14:33:04 [WARNING ] main: Timestamp: 2026-02-06 14:33:04
+2026-02-06 14:33:04 [WARNING ] main: Total de chunks a processar: 5
+2026-02-06 14:33:04 [WARNING ] main: [RESUME] Iniciando do chunk: 2 (chunks 0-1 já processados)
+2026-02-06 14:33:04 [WARNING ] main: 
+2026-02-06 14:33:04 [WARNING ] main: 
+2026-02-06 14:33:04 [WARNING ] main: ======================================================================
+2026-02-06 14:33:04 [WARNING ] main: CHUNK 2 - INÍCIO
+2026-02-06 14:33:04 [WARNING ] main: ======================================================================
+2026-02-06 14:33:04 [WARNING ] main: Timestamp: 2026-02-06 14:33:04
+2026-02-06 14:33:04 [WARNING ] main: Train: Chunk 2 | Test: Chunk 3
+2026-02-06 14:33:04 [INFO    ] root: ===== Processing Chunk 2 (Train) / Chunk 3 (Test) =====
+2026-02-06 14:33:04 [INFO    ] root: Salvando chunk de teste (chunk 3) para depuração.
+2026-02-06 14:33:04 [INFO    ] root: Chunk 3 (test) salvo com sucesso em: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000_penalty/batch_5/IntelLabSensors/run_1/chunk_data/chunk_3_test.csv
+2026-02-06 14:33:04 [WARNING ] main: 
+2026-02-06 14:33:04 [WARNING ] main: [FASE 2] Chunk 2 - Calculando concept fingerprint...
+2026-02-06 14:33:04 [WARNING ] main: [FASE 2]   ✓ Fingerprint calculada: 2000 instâncias
+2026-02-06 14:33:04 [WARNING ] main: [FASE 2]   - Mean shape: (5,)
+2026-02-06 14:33:04 [WARNING ] main: [FASE 2]   - Std shape: (5,)
+2026-02-06 14:33:04 [WARNING ] main: [FASE 2]   - Class distribution shape: (55,)
+2026-02-06 14:33:04 [WARNING ] main: [FASE 2] Chunk 2 - Detectando conceito recorrente...
+2026-02-06 14:33:04 [WARNING ] main: [FASE 2]   Conceitos conhecidos: []
+2026-02-06 14:33:04 [WARNING ] main: [FASE 2]   Threshold similaridade: 0.85
+2026-02-06 14:33:04 [WARNING ] main: [FASE 2]   ✓ NOVO CONCEITO: 'concept_2'
+2026-02-06 14:33:04 [INFO    ] root: 🆕 Chunk 2: NOVO conceito detectado (ID: 'concept_2')
+2026-02-06 14:33:04 [WARNING ] main: [FASE 2] Chunk 2 - Criando entrada para novo conceito 'concept_2'
+2026-02-06 14:33:04 [WARNING ] main: [FASE 2]   ✓ Conceito 'concept_2' inicializado
+2026-02-06 14:33:04 [INFO    ] main: Classifying performance: current_acc_input=0.0000, history_len=2, history_tail=[0.0, 0.0], abs_bad_thr=0.60
+2026-02-06 14:33:04 [INFO    ] main: Chunk 2: Performance label='bad'.
+2026-02-06 14:33:04 [INFO    ] main: Performance label is 'bad' for chunk 2. Reducing change penalties.
+2026-02-06 14:33:04 [INFO    ] main: Recovery mode: Using max_generations_recovery: 25 for chunk 2
+2026-02-06 14:33:04 [INFO    ] main: Explicit drift adaptation activated for chunk 2.
+2026-02-06 14:33:04 [INFO    ] main:   Mutation rate will be overridden to 0.5 for 10 generations.
+2026-02-06 14:33:04 [INFO    ] main:   Memory abandoned. Overriding/setting initialization strategy to: 'full_random'.
+2026-02-06 14:33:04 [INFO    ] main:   Max depth temporarily increased to: 15 (multiplier: 1.5).
+2026-02-06 14:33:04 [INFO    ] main:   Max rules per class temporarily increased to: 22 (multiplier: 1.5).
+2026-02-06 14:33:04 [INFO    ] main: Starting GA training on chunk 2 with MaxGen: 25, MaxDepth: 15, MaxRules: 22, InitStrategy: full_random
+2026-02-06 14:33:04 [INFO    ] main: Chunk 2: Using drift_severity='STABLE' from previous chunk for GA adaptation
+2026-02-06 14:33:04 [WARNING ] main: Chunk 2: Previous chunk had very low G-mean (0.000) - assuming SEVERE drift preventively
+2026-02-06 14:33:04 [INFO    ] root: Starting GA run: Pop=120, MaxGen=25, Elit=0.10, Parallel=True, InitStrategy=full_random
+2026-02-06 14:33:04 [INFO    ] root:   Crossover Balanceado Inteligente ATIVADO (70% qualidade + 30% diversidade)
+2026-02-06 14:33:04 [INFO    ] root:   Mutation override: Rate=0.5 for 10 generations.
+2026-02-06 14:33:04 [INFO    ] root: Initializing population with strategy 'full_random' and performance 'bad'.
+2026-02-06 14:33:04 [INFO    ] root: Construindo o 'Pool de Genes' com a estratégia 'Focus Training' usando Decision Tree...
+2026-02-06 14:33:04 [WARNING ] root: Nenhuma instância da Classe 29 encontrada (Fonte: Chunk Atual). Seeding para esta classe será pulado.
+2026-02-06 14:33:04 [WARNING ] root: Nenhuma instância da Classe 31 encontrada (Fonte: Chunk Atual). Seeding para esta classe será pulado.
+2026-02-06 14:33:04 [WARNING ] root: Nenhuma instância da Classe 42 encontrada (Fonte: Chunk Atual). Seeding para esta classe será pulado.
+2026-02-06 14:33:04 [WARNING ] root: Nenhuma instância da Classe 47 encontrada (Fonte: Chunk Atual). Seeding para esta classe será pulado.
+2026-02-06 14:33:04 [WARNING ] root: Nenhuma instância da Classe 56 encontrada (Fonte: Chunk Atual). Seeding para esta classe será pulado.
+2026-02-06 14:33:04 [INFO    ] root: Estratégia de reset ativada. Usando 'Seeding Multi-Profundidade'.
+2026-02-06 14:33:04 [INFO    ] root:   -> SEVERE DRIFT DETECTED: Seeding AGRESSIVO ativado (90% seeding, 95% injection)
+2026-02-06 14:33:04 [INFO    ] root:      PRIORIDADE MAXIMA - Seeding adaptativo DESABILITADO para este chunk
+2026-02-06 14:33:04 [INFO    ] root:   -> Seeding Probabilístico ATIVADO: Injetando 95% das regras DT
+2026-02-06 14:33:11 [INFO    ] root: População de reset criada: 120 indivíduos (108 semeados, 12 aleatórios).
+2026-02-06 14:33:11 [INFO    ] root: Parallel enabled. Using cores: 2
+2026-02-06 14:33:11 [WARNING ] root: [DEBUG L1] Gen 1: Avaliando 120 individuos (cache size=0)
+2026-02-06 14:33:11 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash f8a073b47de10d5b... no cache
+2026-02-06 14:33:11 [WARNING ] root: [DEBUG L1] Gen 1: CACHE MISS #1 - avaliando hash f8a073b47de10d5b...
+2026-02-06 14:33:11 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash f8a073b47de10d5b... no cache
+2026-02-06 14:33:11 [WARNING ] root: [DEBUG L1] Gen 1: CACHE MISS #2 - avaliando hash f8a073b47de10d5b...
+2026-02-06 14:33:11 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash f8a073b47de10d5b... no cache
+2026-02-06 14:33:11 [WARNING ] root: [DEBUG L1] Gen 1: CACHE MISS #3 - avaliando hash f8a073b47de10d5b...
+2026-02-06 14:33:11 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash f8a073b47de10d5b... no cache
+2026-02-06 14:33:11 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash f8a073b47de10d5b... no cache
+2026-02-06 14:33:12 [WARNING ] root: [DEBUG L1 FITNESS] Early stop DESATIVADO: threshold=0.0
+2026-02-06 14:33:12 [WARNING ] root: [DEBUG L1 FITNESS] Early stop DESATIVADO: threshold=0.0
+2026-02-06 14:45:13 [WARNING ] root: [DEBUG L1] Gen 1: cache_hits=0, cache_misses=120, early_stopped=0
+2026-02-06 14:45:13 [WARNING ] root:    [CACHE] Gen 1: Hits=0/120 (0.0%)
+2026-02-06 14:45:25 [WARNING ] root: 
+2026-02-06 14:45:25 [WARNING ] root:    [GEN 1] Best: Fit=0.5187, Gmean=0.472 | Avg: Fit=0.2170, Gmean=0.192 | Div=0.746 | Stag=0
+2026-02-06 14:45:25 [INFO    ] root: Gen 1: Preservando 1 elites do pool híbrido (ordenados por G-mean).
+2026-02-06 15:01:50 [WARNING ] root:    [EARLY STOP] Gen 2: threshold=0.472 (50%=0.236, mediana top-12)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Gen 2: Avaliando 120 individuos (cache size=16)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 845d7bb716207ad8... (rules_len=63581)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash 845d7bb716207ad8... no cache
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Gen 2: CACHE HIT #1 - hash 845d7bb716207ad8...
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 62df9df6837bc398... (rules_len=48700)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash 62df9df6837bc398... no cache
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Gen 2: CACHE MISS #1 - avaliando hash 62df9df6837bc398...
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: f4a4910016994c00... (rules_len=47365)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash f4a4910016994c00... no cache
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Gen 2: CACHE MISS #2 - avaliando hash f4a4910016994c00...
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: b87f5b0bb811629c... (rules_len=38394)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash b87f5b0bb811629c... no cache
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Gen 2: CACHE MISS #3 - avaliando hash b87f5b0bb811629c...
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 432d7c1a63e05489... (rules_len=44479)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash 432d7c1a63e05489... no cache
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 5eece9f53a9eb973... (rules_len=50956)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 587b3ea3e0735c98... (rules_len=26423)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: b58f375f1bb60a7e... (rules_len=47595)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 4d33d89c02740d50... (rules_len=30242)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 93e6cdd0aa068791... (rules_len=47791)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: f60b7113ac46d8e0... (rules_len=27915)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 4c44e70cbddc71ae... (rules_len=28752)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: c2ff37f87f2fbb02... (rules_len=40884)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: cec4e768db37ce9d... (rules_len=22387)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: cd127e5124439434... (rules_len=47063)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 64a69d125e6eb1f7... (rules_len=57084)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 717e99737eb80761... (rules_len=22220)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 259539e1aefde82f... (rules_len=35210)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 91e5216df0239554... (rules_len=54857)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 154ac09768c4904c... (rules_len=51202)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: e06c184cd87a4aed... (rules_len=44068)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 62c5682b2f8934d9... (rules_len=40021)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: c4fbbe3af19062f2... (rules_len=52151)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 1be365c850293de4... (rules_len=23287)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: adbff9e5f4e63b1e... (rules_len=51831)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 9426b560e44657b3... (rules_len=41570)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 06184761e85b3ec9... (rules_len=55242)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 22d1bfec4aff11fb... (rules_len=47719)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 0b065896ca286d67... (rules_len=40817)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: dee9520adf492e9c... (rules_len=62368)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 7f092eecd7769fc8... (rules_len=56428)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: aca4997e9e27c94e... (rules_len=49419)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 1ccd8d0b9a0f59f8... (rules_len=38230)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 67d095b1ac398287... (rules_len=31024)
+2026-02-06 15:01:50 [WARNING ] root: [DEBUG L1] Hash gerado: 1e96574e1b4845b3... (rules_len=39941)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 95327fe4af40a27c... (rules_len=47605)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: fa8954b7ddf8f2af... (rules_len=24096)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 27350453165e27e2... (rules_len=43631)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: ced203970ed3c09c... (rules_len=45900)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 18dc47e501862064... (rules_len=56050)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: bc47d2e1f303503e... (rules_len=26494)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: c14dd4b21767a3ca... (rules_len=54873)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 03e1a10661eefeb9... (rules_len=42083)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: e989966ce32915d3... (rules_len=25001)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 0b6d5d4513742580... (rules_len=48590)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: d9bebe910f116628... (rules_len=24132)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: bfc9bdd4ec12f575... (rules_len=51427)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 86a5e85a076b423a... (rules_len=41324)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 864412cf53794ed2... (rules_len=43648)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 9c797f4ee6031823... (rules_len=55984)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 9cc9bdedd0bb7a56... (rules_len=39021)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 7815175c2aeda65b... (rules_len=48850)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 25200fb5174c7592... (rules_len=51237)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 04d493593bf39a2c... (rules_len=57679)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 976fc634cf6f76db... (rules_len=47098)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 986507e25203dc7b... (rules_len=55998)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 20c597964a311548... (rules_len=41982)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 87e55912f290335c... (rules_len=36603)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: ae439ac32c365168... (rules_len=9247)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 776fb48764345fbc... (rules_len=46233)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 2e9ac47eeb38b9d5... (rules_len=39243)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 8834a9aaa15e9b90... (rules_len=37738)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: ae94edff5ca08109... (rules_len=46016)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: cea9e9e4e9ece50f... (rules_len=45671)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 4ef98e44119558af... (rules_len=49335)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 7621261cd7083186... (rules_len=25110)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: b670725191eb09a3... (rules_len=27051)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 72a08436117a0306... (rules_len=50223)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 90024868f6feae0e... (rules_len=7672)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 085552ddb23d288a... (rules_len=25153)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 8351ece296aa148a... (rules_len=24372)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: a72f79e8f26a4440... (rules_len=51584)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: b995287eb365e30a... (rules_len=45847)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 23e5148df1d2e981... (rules_len=44860)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 2a8ea4c09c5d71df... (rules_len=46214)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: ce5ff7064e135e27... (rules_len=53875)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 7d302519a2aff6e8... (rules_len=27431)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: d93cc25b3dccb613... (rules_len=22707)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: be01ce9c3b35b94f... (rules_len=51034)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 176e6f9b8bb552ea... (rules_len=49918)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: cec1795b9ebb829e... (rules_len=49362)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 833085f164158951... (rules_len=42982)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 9dae6bfd5c7a02f2... (rules_len=46523)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: cc2b47ddabbdf605... (rules_len=39659)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: fcab313a2ce2a012... (rules_len=51511)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 8f77dc5f244d44c3... (rules_len=46454)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 2a399265665735a0... (rules_len=58561)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 4b87b98c45568a97... (rules_len=49464)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 44fae19b8853afad... (rules_len=47551)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: e087682081064d53... (rules_len=37214)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: eab782a739c4a661... (rules_len=39649)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: e7259fe5635aac33... (rules_len=42752)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 6b0563da70310e4b... (rules_len=23996)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 12bbfdda8d18ac23... (rules_len=44008)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 1a5f261145d8bed9... (rules_len=27070)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 6b255a35cc07b35b... (rules_len=41664)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 26833d6098adb114... (rules_len=48289)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 183f883532708a8a... (rules_len=48358)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 5c742764dd3feec1... (rules_len=53844)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 8889d7842f68a5d0... (rules_len=50859)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 68d5c0b130c5ae7a... (rules_len=42365)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: b8ee99ce603ec338... (rules_len=51172)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 9b3134b64817fc48... (rules_len=39002)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 5c69f677373faa53... (rules_len=49678)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: b95c4c0f0844a496... (rules_len=28878)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 5a5b0653b6adc7e8... (rules_len=8663)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 996cbb9a870dc10e... (rules_len=28870)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 794b8ca94340e556... (rules_len=48717)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 635361b8c2a7152f... (rules_len=41453)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 07dc750281e52e65... (rules_len=21622)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 9ded83b340c0d5fc... (rules_len=46661)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 50179ae793e66994... (rules_len=43515)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: d7bf7bc5a338383a... (rules_len=36392)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: ca90a0ab326e9ade... (rules_len=37823)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 39e34d4cea084260... (rules_len=42680)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 04cb5e71368c654e... (rules_len=44713)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: f58451300842c6ba... (rules_len=24069)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 18c760f660c133b0... (rules_len=51387)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 0cd1c5387d1448fb... (rules_len=49658)
+2026-02-06 15:01:51 [WARNING ] root: [DEBUG L1] Hash gerado: 9f51005933ed00a5... (rules_len=46462)
+Gen 1/25 - BestFit: 0.5187 (G-mean: 0.472) | AvgFit: 0.2170 (G-mean: 0.192) | (Diversity: 0.746) | (RuleAct: 85.2) | Mut: 0.500 | Tourn: 3 | Stagn: 0 | Time: 734.51s2026-02-06 15:01:52 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.472, partial_size=400/2000
+2026-02-06 15:01:52 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.472, partial_size=400/2000
+2026-02-06 15:01:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:01:53 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.000 < 0.236
+2026-02-06 15:01:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:01:53 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.000 < 0.236
+2026-02-06 15:01:59 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.472, partial_size=400/2000
+2026-02-06 15:02:00 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:02:00 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.000 < 0.236
+2026-02-06 15:02:06 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.472, partial_size=400/2000
+2026-02-06 15:02:06 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.472, partial_size=400/2000
+2026-02-06 15:02:07 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:02:07 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.000 < 0.236
+2026-02-06 15:02:07 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:02:07 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.000 < 0.236
+2026-02-06 15:02:18 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.472, partial_size=400/2000
+2026-02-06 15:02:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:02:19 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.000 < 0.236
+2026-02-06 15:02:21 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.472, partial_size=400/2000
+2026-02-06 15:02:22 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:02:22 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.000 < 0.236
+2026-02-06 15:02:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.472, partial_size=400/2000
+2026-02-06 15:02:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:02:30 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.000 < 0.236
+2026-02-06 15:02:34 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.472, partial_size=400/2000
+2026-02-06 15:02:35 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:02:35 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.000 < 0.236
+2026-02-06 15:02:39 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.472, partial_size=400/2000
+2026-02-06 15:02:40 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:02:40 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.000 < 0.236
+2026-02-06 15:02:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:02:54 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:02:59 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:03:02 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:03:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:03:15 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:03:18 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:03:22 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:03:30 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:03:35 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.236 (should_discard=True)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 62df9df6837bc398... (rules_len=48700)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: f4a4910016994c00... (rules_len=47365)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: b87f5b0bb811629c... (rules_len=38394)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 432d7c1a63e05489... (rules_len=44479)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 5eece9f53a9eb973... (rules_len=50956)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 587b3ea3e0735c98... (rules_len=26423)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: b58f375f1bb60a7e... (rules_len=47595)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 4d33d89c02740d50... (rules_len=30242)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 93e6cdd0aa068791... (rules_len=47791)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: f60b7113ac46d8e0... (rules_len=27915)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 4c44e70cbddc71ae... (rules_len=28752)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: c2ff37f87f2fbb02... (rules_len=40884)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: cec4e768db37ce9d... (rules_len=22387)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: cd127e5124439434... (rules_len=47063)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 64a69d125e6eb1f7... (rules_len=57084)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 717e99737eb80761... (rules_len=22220)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 259539e1aefde82f... (rules_len=35210)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 91e5216df0239554... (rules_len=54857)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 154ac09768c4904c... (rules_len=51202)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: e06c184cd87a4aed... (rules_len=44068)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 62c5682b2f8934d9... (rules_len=40021)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: c4fbbe3af19062f2... (rules_len=52151)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 1be365c850293de4... (rules_len=23287)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: adbff9e5f4e63b1e... (rules_len=51831)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 9426b560e44657b3... (rules_len=41570)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 06184761e85b3ec9... (rules_len=55242)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 22d1bfec4aff11fb... (rules_len=47719)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 0b065896ca286d67... (rules_len=40817)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: dee9520adf492e9c... (rules_len=62368)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 7f092eecd7769fc8... (rules_len=56428)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: aca4997e9e27c94e... (rules_len=49419)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 1ccd8d0b9a0f59f8... (rules_len=38230)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 67d095b1ac398287... (rules_len=31024)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 1e96574e1b4845b3... (rules_len=39941)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 95327fe4af40a27c... (rules_len=47605)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: fa8954b7ddf8f2af... (rules_len=24096)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 27350453165e27e2... (rules_len=43631)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: ced203970ed3c09c... (rules_len=45900)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 18dc47e501862064... (rules_len=56050)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: bc47d2e1f303503e... (rules_len=26494)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: c14dd4b21767a3ca... (rules_len=54873)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 03e1a10661eefeb9... (rules_len=42083)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: e989966ce32915d3... (rules_len=25001)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 0b6d5d4513742580... (rules_len=48590)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: d9bebe910f116628... (rules_len=24132)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: bfc9bdd4ec12f575... (rules_len=51427)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 86a5e85a076b423a... (rules_len=41324)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 864412cf53794ed2... (rules_len=43648)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 9c797f4ee6031823... (rules_len=55984)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 9cc9bdedd0bb7a56... (rules_len=39021)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 7815175c2aeda65b... (rules_len=48850)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 25200fb5174c7592... (rules_len=51237)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 04d493593bf39a2c... (rules_len=57679)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 976fc634cf6f76db... (rules_len=47098)
+2026-02-06 15:12:45 [WARNING ] root: [DEBUG L1] Hash gerado: 986507e25203dc7b... (rules_len=55998)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 20c597964a311548... (rules_len=41982)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 87e55912f290335c... (rules_len=36603)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: ae439ac32c365168... (rules_len=9247)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 776fb48764345fbc... (rules_len=46233)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 2e9ac47eeb38b9d5... (rules_len=39243)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 8834a9aaa15e9b90... (rules_len=37738)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: ae94edff5ca08109... (rules_len=46016)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: cea9e9e4e9ece50f... (rules_len=45671)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 4ef98e44119558af... (rules_len=49335)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 7621261cd7083186... (rules_len=25110)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: b670725191eb09a3... (rules_len=27051)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 72a08436117a0306... (rules_len=50223)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 90024868f6feae0e... (rules_len=7672)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 085552ddb23d288a... (rules_len=25153)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 8351ece296aa148a... (rules_len=24372)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: a72f79e8f26a4440... (rules_len=51584)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: b995287eb365e30a... (rules_len=45847)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 23e5148df1d2e981... (rules_len=44860)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 2a8ea4c09c5d71df... (rules_len=46214)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: ce5ff7064e135e27... (rules_len=53875)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 7d302519a2aff6e8... (rules_len=27431)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: d93cc25b3dccb613... (rules_len=22707)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: be01ce9c3b35b94f... (rules_len=51034)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 176e6f9b8bb552ea... (rules_len=49918)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: cec1795b9ebb829e... (rules_len=49362)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 833085f164158951... (rules_len=42982)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 9dae6bfd5c7a02f2... (rules_len=46523)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: cc2b47ddabbdf605... (rules_len=39659)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: fcab313a2ce2a012... (rules_len=51511)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 8f77dc5f244d44c3... (rules_len=46454)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 2a399265665735a0... (rules_len=58561)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 4b87b98c45568a97... (rules_len=49464)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 44fae19b8853afad... (rules_len=47551)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: e087682081064d53... (rules_len=37214)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: eab782a739c4a661... (rules_len=39649)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: e7259fe5635aac33... (rules_len=42752)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 6b0563da70310e4b... (rules_len=23996)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 12bbfdda8d18ac23... (rules_len=44008)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 1a5f261145d8bed9... (rules_len=27070)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 6b255a35cc07b35b... (rules_len=41664)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 26833d6098adb114... (rules_len=48289)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 183f883532708a8a... (rules_len=48358)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 5c742764dd3feec1... (rules_len=53844)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 8889d7842f68a5d0... (rules_len=50859)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 68d5c0b130c5ae7a... (rules_len=42365)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: b8ee99ce603ec338... (rules_len=51172)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 9b3134b64817fc48... (rules_len=39002)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 5c69f677373faa53... (rules_len=49678)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: b95c4c0f0844a496... (rules_len=28878)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 5a5b0653b6adc7e8... (rules_len=8663)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 996cbb9a870dc10e... (rules_len=28870)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 794b8ca94340e556... (rules_len=48717)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 635361b8c2a7152f... (rules_len=41453)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 07dc750281e52e65... (rules_len=21622)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 9ded83b340c0d5fc... (rules_len=46661)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 50179ae793e66994... (rules_len=43515)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: d7bf7bc5a338383a... (rules_len=36392)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: ca90a0ab326e9ade... (rules_len=37823)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 39e34d4cea084260... (rules_len=42680)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 04cb5e71368c654e... (rules_len=44713)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: f58451300842c6ba... (rules_len=24069)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 18c760f660c133b0... (rules_len=51387)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 0cd1c5387d1448fb... (rules_len=49658)
+2026-02-06 15:12:46 [WARNING ] root: [DEBUG L1] Hash gerado: 9f51005933ed00a5... (rules_len=46462)
+2026-02-06 15:12:46 [WARNING ] root: Gen 2: Only 0/119 individuals evaluated successfully in parallel.
+2026-02-06 15:12:46 [ERROR   ] root: Gen 2: Parallel eval failed for all. Stopping.
+2026-02-06 15:12:46 [INFO    ] root: GA run finished after 2 generations.
+2026-02-06 15:12:46 [WARNING ] root: 
+2026-02-06 15:12:46 [WARNING ] root: [CACHE FINAL] Hits=0, Misses=120, Hit Rate=0.0%
+2026-02-06 15:12:46 [WARNING ] root: [CACHE FINAL] Zero collisions (SHA256 funcionando perfeitamente)
+2026-02-06 15:12:47 [WARNING ] main: [FASE 2] Chunk 2 - Salvando memória do conceito 'concept_2'
+2026-02-06 15:12:47 [WARNING ] main: [FASE 2]   → Salvando 1 indivíduos
+2026-02-06 15:12:47 [WARNING ] main: [FASE 2]   ✓ Memória do conceito 'concept_2' atualizada (last_seen: 2)
+2026-02-06 15:12:47 [INFO    ] root: 💾 Memória do conceito 'concept_2' atualizada com 1 indivíduos
+2026-02-06 15:12:48 [INFO    ] root: Melhor indivíduo do chunk 2 salvo em: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000_penalty/batch_5/IntelLabSensors/run_1/chunk_data/best_individual_trained_on_chunk_2.pkl
+2026-02-06 15:12:48 [INFO    ] root: Finished GA training on chunk 2.
+2026-02-06 15:12:48 [INFO    ] root: Starting evaluation on test chunk 3...
+2026-02-06 15:12:48 [INFO    ] root: Starting periodic evaluation. Period size: 2000
+2026-02-06 15:12:54 [WARNING ] main: 
+2026-02-06 15:12:54 [WARNING ] main: ======================================================================
+2026-02-06 15:12:54 [WARNING ] main: CHUNK 2 - FINAL
+2026-02-06 15:12:54 [WARNING ] main: ======================================================================
+2026-02-06 15:12:54 [WARNING ] main: Tempo total: 2390.7s (39.8min)
+2026-02-06 15:12:54 [WARNING ] main: Train G-mean: 0.4716
+2026-02-06 15:12:54 [WARNING ] main: Test G-mean:  0.0000
+2026-02-06 15:12:54 [WARNING ] main: Test F1:      0.2592
+2026-02-06 15:12:54 [WARNING ] main: Delta:        -0.4716
+2026-02-06 15:12:54 [WARNING ] main: Best Fitness: 0.5187
+2026-02-06 15:12:54 [INFO    ] root: Chunk 2 Results: TrainGmean0.4716, TestGmean=0.0000, TestF1=0.2592
+2026-02-06 15:12:54 [INFO    ] root: Chunk 2: Best Individual Fitness=0.5187
+2026-02-06 15:12:54 [INFO    ] main: ✓ STABLE: 0.000 → 0.000 (drop: 0.0%)
+2026-02-06 15:12:54 [INFO    ] main:    → Inheritance INCREASED to 65% (stable performance)
+2026-02-06 15:12:59 [INFO    ] root: Chunk 2 processed in 2395.80 seconds. Total instances tested: 1997
+2026-02-06 15:12:59 [WARNING ] main: 
+2026-02-06 15:12:59 [WARNING ] main: ======================================================================
+2026-02-06 15:12:59 [WARNING ] main: CHUNK 3 - INÍCIO
+2026-02-06 15:12:59 [WARNING ] main: ======================================================================
+2026-02-06 15:12:59 [WARNING ] main: Timestamp: 2026-02-06 15:12:59
+2026-02-06 15:12:59 [WARNING ] main: Train: Chunk 3 | Test: Chunk 4
+2026-02-06 15:12:59 [INFO    ] root: ===== Processing Chunk 3 (Train) / Chunk 4 (Test) =====
+2026-02-06 15:12:59 [INFO    ] root: Salvando chunk de teste (chunk 4) para depuração.
+2026-02-06 15:12:59 [INFO    ] root: Chunk 4 (test) salvo com sucesso em: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000_penalty/batch_5/IntelLabSensors/run_1/chunk_data/chunk_4_test.csv
+2026-02-06 15:12:59 [WARNING ] main: 
+2026-02-06 15:12:59 [WARNING ] main: [FASE 2] Chunk 3 - Calculando concept fingerprint...
+2026-02-06 15:12:59 [WARNING ] main: [FASE 2]   ✓ Fingerprint calculada: 1997 instâncias
+2026-02-06 15:12:59 [WARNING ] main: [FASE 2]   - Mean shape: (5,)
+2026-02-06 15:12:59 [WARNING ] main: [FASE 2]   - Std shape: (5,)
+2026-02-06 15:12:59 [WARNING ] main: [FASE 2]   - Class distribution shape: (55,)
+2026-02-06 15:12:59 [WARNING ] main: [FASE 2] Chunk 3 - Detectando conceito recorrente...
+2026-02-06 15:12:59 [WARNING ] main: [FASE 2]   Conceitos conhecidos: ['concept_2']
+2026-02-06 15:12:59 [WARNING ] main: [FASE 2]   Threshold similaridade: 0.85
+2026-02-06 15:12:59 [WARNING ] root: [FASE 2] Similaridades calculadas:
+2026-02-06 15:12:59 [WARNING ] root: [FASE 2]   concept_2: 0.9822
+2026-02-06 15:12:59 [WARNING ] root: [FASE 2] ✓ MATCH: 'concept_2' (sim=0.9822 >= 0.85)
+2026-02-06 15:12:59 [INFO    ] root: ✓ CONCEITO RECORRENTE DETECTADO: 'concept_2' (similaridade: 0.982)
+2026-02-06 15:12:59 [WARNING ] main: [FASE 2]   ✓ CONCEITO RECORRENTE: 'concept_2'
+2026-02-06 15:12:59 [INFO    ] root: 📌 Chunk 3: RECUPERANDO memória do conceito 'concept_2' (recorrente)
+2026-02-06 15:12:59 [WARNING ] main: [FASE 2] Validando match com amostra do test set...
+2026-02-06 15:13:00 [WARNING ] main: [FASE 2]   Validation G-mean: 0.0000
+2026-02-06 15:13:00 [WARNING ] main: [FASE 2]   ✗ MATCH REJEITADO: validation G-mean 0.0000 < 0.70
+2026-02-06 15:13:00 [WARNING ] main: [FASE 2]   → Tratando como NOVO CONCEITO
+2026-02-06 15:13:00 [INFO    ] main: Classifying performance: current_acc_input=0.0000, history_len=3, history_tail=[0.0, 0.0, np.float64(0.0)], abs_bad_thr=0.60
+2026-02-06 15:13:00 [INFO    ] main: Chunk 3: Performance label='bad'.
+2026-02-06 15:13:00 [INFO    ] main: Performance label is 'bad' for chunk 3. Reducing change penalties.
+2026-02-06 15:13:00 [INFO    ] main: Recovery mode: Using max_generations_recovery: 25 for chunk 3
+2026-02-06 15:13:00 [WARNING ] main: PERFORMANCE CRITICAL (Acc: 0.000, Bad Chunks: 1). Abandoning best_ever_memory.
+2026-02-06 15:13:00 [INFO    ] main: Explicit drift adaptation activated for chunk 3.
+2026-02-06 15:13:00 [INFO    ] main:   Mutation rate will be overridden to 0.5 for 10 generations.
+2026-02-06 15:13:00 [INFO    ] main:   Memory abandoned. Overriding/setting initialization strategy to: 'full_random'.
+2026-02-06 15:13:00 [INFO    ] main:   Max depth temporarily increased to: 15 (multiplier: 1.5).
+2026-02-06 15:13:00 [INFO    ] main:   Max rules per class temporarily increased to: 22 (multiplier: 1.5).
+2026-02-06 15:13:00 [INFO    ] main: Starting GA training on chunk 3 with MaxGen: 25, MaxDepth: 15, MaxRules: 22, InitStrategy: full_random
+2026-02-06 15:13:00 [INFO    ] main: Chunk 3: Using drift_severity='STABLE' from previous chunk for GA adaptation
+2026-02-06 15:13:00 [WARNING ] main: Chunk 3: Previous chunk had very low G-mean (0.000) - assuming SEVERE drift preventively
+2026-02-06 15:13:00 [INFO    ] root: Starting GA run: Pop=120, MaxGen=25, Elit=0.10, Parallel=True, InitStrategy=full_random
+2026-02-06 15:13:00 [INFO    ] root:   Crossover Balanceado Inteligente ATIVADO (70% qualidade + 30% diversidade)
+2026-02-06 15:13:00 [INFO    ] root:   Mutation override: Rate=0.5 for 10 generations.
+2026-02-06 15:13:00 [INFO    ] root: Initializing population with strategy 'full_random' and performance 'bad'.
+2026-02-06 15:13:00 [INFO    ] root: Construindo o 'Pool de Genes' com a estratégia 'Focus Training' usando Decision Tree...
+2026-02-06 15:13:00 [WARNING ] root: Nenhuma instância da Classe 29 encontrada (Fonte: Chunk Atual). Seeding para esta classe será pulado.
+2026-02-06 15:13:00 [WARNING ] root: Nenhuma instância da Classe 44 encontrada (Fonte: Chunk Atual). Seeding para esta classe será pulado.
+2026-02-06 15:13:00 [WARNING ] root: Nenhuma instância da Classe 47 encontrada (Fonte: Chunk Atual). Seeding para esta classe será pulado.
+2026-02-06 15:13:00 [WARNING ] root: Nenhuma instância da Classe 56 encontrada (Fonte: Chunk Atual). Seeding para esta classe será pulado.
+2026-02-06 15:13:00 [INFO    ] root: Estratégia de reset ativada. Usando 'Seeding Multi-Profundidade'.
+2026-02-06 15:13:00 [INFO    ] root:   -> SEVERE DRIFT DETECTED: Seeding AGRESSIVO ativado (90% seeding, 95% injection)
+2026-02-06 15:13:00 [INFO    ] root:      PRIORIDADE MAXIMA - Seeding adaptativo DESABILITADO para este chunk
+2026-02-06 15:13:00 [INFO    ] root:   -> Seeding Probabilístico ATIVADO: Injetando 95% das regras DT
+2026-02-06 15:13:07 [INFO    ] root: População de reset criada: 120 indivíduos (108 semeados, 12 aleatórios).
+2026-02-06 15:13:07 [INFO    ] root: Parallel enabled. Using cores: 2
+
+2026-02-06 15:13:07 [WARNING ] root: [DEBUG L1] Gen 1: Avaliando 120 individuos (cache size=0)
+2026-02-06 15:13:07 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash 07def0c28887d077... no cache
+2026-02-06 15:13:07 [WARNING ] root: [DEBUG L1] Gen 1: CACHE MISS #1 - avaliando hash 07def0c28887d077...
+2026-02-06 15:13:07 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash 07def0c28887d077... no cache
+2026-02-06 15:13:07 [WARNING ] root: [DEBUG L1] Gen 1: CACHE MISS #2 - avaliando hash 07def0c28887d077...
+2026-02-06 15:13:07 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash 07def0c28887d077... no cache
+2026-02-06 15:13:07 [WARNING ] root: [DEBUG L1] Gen 1: CACHE MISS #3 - avaliando hash 07def0c28887d077...
+2026-02-06 15:13:07 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash 07def0c28887d077... no cache
+2026-02-06 15:13:07 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash 07def0c28887d077... no cache
+2026-02-06 15:13:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop DESATIVADO: threshold=0.0
+2026-02-06 15:13:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop DESATIVADO: threshold=0.0
+2026-02-06 15:25:17 [WARNING ] root: [DEBUG L1] Gen 1: cache_hits=0, cache_misses=120, early_stopped=0
+2026-02-06 15:25:17 [WARNING ] root:    [CACHE] Gen 1: Hits=0/120 (0.0%)
+2026-02-06 15:25:23 [WARNING ] root: 
+2026-02-06 15:25:23 [WARNING ] root:    [GEN 1] Best: Fit=0.5363, Gmean=0.490 | Avg: Fit=0.1325, Gmean=0.110 | Div=0.562 | Stag=0
+2026-02-06 15:25:23 [INFO    ] root: Gen 1: Preservando 1 elites do pool híbrido (ordenados por G-mean).
+2026-02-06 15:42:50 [WARNING ] root:    [EARLY STOP] Gen 2: threshold=0.490 (50%=0.245, mediana top-12)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Gen 2: Avaliando 120 individuos (cache size=16)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 8b3d24c1bdc424d6... (rules_len=66785)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash 8b3d24c1bdc424d6... no cache
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Gen 2: CACHE HIT #1 - hash 8b3d24c1bdc424d6...
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 2ee8166e7090231a... (rules_len=46551)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash 2ee8166e7090231a... no cache
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Gen 2: CACHE MISS #1 - avaliando hash 2ee8166e7090231a...
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 6348aead58adc650... (rules_len=42995)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash 6348aead58adc650... no cache
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Gen 2: CACHE MISS #2 - avaliando hash 6348aead58adc650...
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: e0d48bf1e03c92c2... (rules_len=45517)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash e0d48bf1e03c92c2... no cache
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Gen 2: CACHE MISS #3 - avaliando hash e0d48bf1e03c92c2...
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: d78ba7dea011a8b9... (rules_len=54025)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash d78ba7dea011a8b9... no cache
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: f08bc236478b4673... (rules_len=51076)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: b84a58b88d78de8d... (rules_len=53228)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 6dd2a70b9c6f2da1... (rules_len=39872)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: bb0754aca54b861c... (rules_len=18837)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: b70089258e6c04d0... (rules_len=54212)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 84d237d76cf84bbb... (rules_len=53083)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: ad67352062a435c4... (rules_len=52247)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 52fd31b17f1e3b2d... (rules_len=51923)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: cdec316b7b8d7df1... (rules_len=44626)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 91ba4c31f187a7e0... (rules_len=41855)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 8a12ad219b936355... (rules_len=24656)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 1b6aca02e3474237... (rules_len=54830)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 68219446cee90269... (rules_len=41913)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: bccd55bb496e3735... (rules_len=20481)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 87f1a75375055e75... (rules_len=50932)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 0817e53c1043d1dd... (rules_len=21751)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 3d85bb3463fdaeb2... (rules_len=44063)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: fffcb08e0716c025... (rules_len=41827)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: f545c831afb19273... (rules_len=55295)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: c737b68042c022e5... (rules_len=43468)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 791c219081b74090... (rules_len=50428)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: a3d3ddc04901431e... (rules_len=53472)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 73d6a8d58d6aecab... (rules_len=20382)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 2649e10816805981... (rules_len=45705)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 5e49ad12b38ec7ab... (rules_len=50188)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: a37b08aec0b93c4f... (rules_len=50674)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 316ac312802b77f9... (rules_len=43393)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 13cf415ae469a816... (rules_len=40295)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 51eac8720978d08d... (rules_len=44068)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 8a43b496213968eb... (rules_len=40011)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: f14f9f4aff92ba28... (rules_len=46161)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 6574b1bc25dedbfc... (rules_len=18838)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 3b4adb3623265877... (rules_len=49388)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 3d5d8b4b8113663d... (rules_len=43268)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: cd7bc07f5aa4999a... (rules_len=52196)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: a0a52af943a96a0a... (rules_len=55470)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 47790f93d23396bc... (rules_len=52988)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 3bb81df060d71a5c... (rules_len=50333)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 216917acac13a49e... (rules_len=39918)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: beeab2bd078675aa... (rules_len=45038)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 9087bfd7b507f7a2... (rules_len=42345)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 13f9c158065a5787... (rules_len=43948)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 79f8b026e2d3ed77... (rules_len=20540)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: db2043f9c5243a0e... (rules_len=46027)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: bbcb23f2c4f01b23... (rules_len=42796)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 73c1b91fafdb4e50... (rules_len=53730)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 0c9581d97e3bad51... (rules_len=45657)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 25cf2bbdf4ab4b12... (rules_len=53826)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 859c686f8155b89b... (rules_len=40953)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: ba759e221a25d389... (rules_len=49223)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: ddf989af1cf02baa... (rules_len=45342)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 1e5a2c35c7f94064... (rules_len=23830)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: f5f6b17024c3b00e... (rules_len=7240)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: f7be410cb662db61... (rules_len=20381)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 196eeffa50acfecf... (rules_len=41774)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 86897534094de207... (rules_len=18543)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 07b88419403defd9... (rules_len=46518)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 3a9f224503ed1780... (rules_len=63134)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: f8c7342fb442cc74... (rules_len=46671)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 4b48ddd2c3ce3640... (rules_len=19018)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 7d7c93956b2ea695... (rules_len=50688)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 632ad9ad061a2961... (rules_len=49848)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: c55a5c51ce34ef6c... (rules_len=45860)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 04bed496725c3c44... (rules_len=40823)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: cf0456d88c7f7385... (rules_len=42958)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: bdbf875ac2fda961... (rules_len=46901)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: af2457f66acce142... (rules_len=51443)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: d8374befd5f8c470... (rules_len=32091)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 2bec0aa1c0351432... (rules_len=55417)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: dfc483b320cff080... (rules_len=19826)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 8f9b29d758e32118... (rules_len=56101)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 68f76519f66489fe... (rules_len=18030)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 031c5324584959b1... (rules_len=48271)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 3dab8777e0be11da... (rules_len=54619)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: e50132abe0414f8e... (rules_len=51804)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: c20dcc509ade6c61... (rules_len=42588)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 1c21ad7af9181cae... (rules_len=43372)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 6afd0b6cec2d6e16... (rules_len=41201)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 918baef3d83b0886... (rules_len=50272)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: d9066c7d7605a6b0... (rules_len=53675)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 07bdcf79b52bcbd2... (rules_len=46010)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: fa6118bcea80ac0a... (rules_len=53282)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 7d4cf218769c8fe3... (rules_len=49951)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: c8d4f2e403e4b9d8... (rules_len=45959)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: e8aa3cb06d816082... (rules_len=46547)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 9374fdf024fcb54a... (rules_len=66345)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: da8d572132d62e47... (rules_len=28809)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: a2549410a80f0105... (rules_len=20322)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: f907b344c4bc4510... (rules_len=39279)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: a30b3768edb7f6f9... (rules_len=44034)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 04dbd9b8b6b1a842... (rules_len=45089)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 6c81bd4f75beffdf... (rules_len=23084)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 8c7ab672a38081af... (rules_len=53787)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 3b20a225100b271b... (rules_len=44343)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 74eabb525a5c9a56... (rules_len=57001)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: b89c497a4e926dd6... (rules_len=27880)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: be2f90fb544bb465... (rules_len=20212)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: b9dc9ef4c893cb19... (rules_len=43073)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 040806f7a78b20d6... (rules_len=43580)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 974002e85ae0efb8... (rules_len=41213)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 0c31025c1308eb38... (rules_len=50403)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 0dced994decc745a... (rules_len=30172)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 368d2aa1616d479f... (rules_len=54610)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 76117ef6ef791faf... (rules_len=21296)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 703999ef92f10325... (rules_len=46624)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 107ac66a223c7f9a... (rules_len=45177)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: b5d7b99ee8db4994... (rules_len=21633)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 43723d48c939c4c4... (rules_len=49644)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 05d2cf4d7a2c85c9... (rules_len=49731)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 6e2a3cd1101b4009... (rules_len=41977)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 2ae6262fa6e26be3... (rules_len=48195)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 2ed90d317fd2e098... (rules_len=48336)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 0c20cefd215c6b90... (rules_len=49388)
+2026-02-06 15:42:50 [WARNING ] root: [DEBUG L1] Hash gerado: 72aaafa3b3badb60... (rules_len=18808)
+2026-02-06 15:42:51 [WARNING ] root: [DEBUG L1] Hash gerado: 2c1f56d289939ecb... (rules_len=21686)
+Gen 1/25 - BestFit: 0.5363 (G-mean: 0.490) | AvgFit: 0.1325 (G-mean: 0.110) | (Diversity: 0.562) | (RuleAct: 85.4) | Mut: 0.500 | Tourn: 4 | Stagn: 0 | Time: 735.48s2026-02-06 15:42:51 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.490, partial_size=399/1997
+2026-02-06 15:42:51 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.490, partial_size=399/1997
+2026-02-06 15:42:52 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:42:52 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.000 < 0.245
+2026-02-06 15:42:53 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:42:53 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.000 < 0.245
+2026-02-06 15:43:05 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.490, partial_size=399/1997
+2026-02-06 15:43:06 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:43:06 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.000 < 0.245
+2026-02-06 15:43:08 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.490, partial_size=399/1997
+2026-02-06 15:43:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:43:09 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.000 < 0.245
+2026-02-06 15:43:18 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.490, partial_size=399/1997
+2026-02-06 15:43:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:43:19 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.000 < 0.245
+2026-02-06 15:43:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.490, partial_size=399/1997
+2026-02-06 15:43:20 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:43:20 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.000 < 0.245
+2026-02-06 15:43:26 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.490, partial_size=399/1997
+2026-02-06 15:43:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:43:28 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.000 < 0.245
+2026-02-06 15:43:31 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.490, partial_size=399/1997
+2026-02-06 15:43:32 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:43:32 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.000 < 0.245
+2026-02-06 15:43:39 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.490, partial_size=399/1997
+2026-02-06 15:43:39 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:43:39 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.000 < 0.245
+2026-02-06 15:43:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:43:47 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.490, partial_size=399/1997
+2026-02-06 15:43:48 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:43:48 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.000 < 0.245
+2026-02-06 15:43:59 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:44:01 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:44:11 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:44:16 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:44:23 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:44:28 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:44:34 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:44:36 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:44:50 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.245 (should_discard=True)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 2ee8166e7090231a... (rules_len=46551)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 6348aead58adc650... (rules_len=42995)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: e0d48bf1e03c92c2... (rules_len=45517)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: d78ba7dea011a8b9... (rules_len=54025)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: f08bc236478b4673... (rules_len=51076)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: b84a58b88d78de8d... (rules_len=53228)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 6dd2a70b9c6f2da1... (rules_len=39872)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: bb0754aca54b861c... (rules_len=18837)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: b70089258e6c04d0... (rules_len=54212)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 84d237d76cf84bbb... (rules_len=53083)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: ad67352062a435c4... (rules_len=52247)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 52fd31b17f1e3b2d... (rules_len=51923)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: cdec316b7b8d7df1... (rules_len=44626)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 91ba4c31f187a7e0... (rules_len=41855)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 8a12ad219b936355... (rules_len=24656)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 1b6aca02e3474237... (rules_len=54830)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 68219446cee90269... (rules_len=41913)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: bccd55bb496e3735... (rules_len=20481)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 87f1a75375055e75... (rules_len=50932)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 0817e53c1043d1dd... (rules_len=21751)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 3d85bb3463fdaeb2... (rules_len=44063)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: fffcb08e0716c025... (rules_len=41827)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: f545c831afb19273... (rules_len=55295)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: c737b68042c022e5... (rules_len=43468)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 791c219081b74090... (rules_len=50428)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: a3d3ddc04901431e... (rules_len=53472)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 73d6a8d58d6aecab... (rules_len=20382)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 2649e10816805981... (rules_len=45705)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 5e49ad12b38ec7ab... (rules_len=50188)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: a37b08aec0b93c4f... (rules_len=50674)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 316ac312802b77f9... (rules_len=43393)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 13cf415ae469a816... (rules_len=40295)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 51eac8720978d08d... (rules_len=44068)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: 8a43b496213968eb... (rules_len=40011)
+2026-02-06 15:54:55 [WARNING ] root: [DEBUG L1] Hash gerado: f14f9f4aff92ba28... (rules_len=46161)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 6574b1bc25dedbfc... (rules_len=18838)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 3b4adb3623265877... (rules_len=49388)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 3d5d8b4b8113663d... (rules_len=43268)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: cd7bc07f5aa4999a... (rules_len=52196)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: a0a52af943a96a0a... (rules_len=55470)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 47790f93d23396bc... (rules_len=52988)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 3bb81df060d71a5c... (rules_len=50333)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 216917acac13a49e... (rules_len=39918)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: beeab2bd078675aa... (rules_len=45038)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 9087bfd7b507f7a2... (rules_len=42345)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 13f9c158065a5787... (rules_len=43948)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 79f8b026e2d3ed77... (rules_len=20540)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: db2043f9c5243a0e... (rules_len=46027)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: bbcb23f2c4f01b23... (rules_len=42796)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 73c1b91fafdb4e50... (rules_len=53730)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 0c9581d97e3bad51... (rules_len=45657)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 25cf2bbdf4ab4b12... (rules_len=53826)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 859c686f8155b89b... (rules_len=40953)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: ba759e221a25d389... (rules_len=49223)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: ddf989af1cf02baa... (rules_len=45342)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 1e5a2c35c7f94064... (rules_len=23830)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: f5f6b17024c3b00e... (rules_len=7240)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: f7be410cb662db61... (rules_len=20381)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 196eeffa50acfecf... (rules_len=41774)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 86897534094de207... (rules_len=18543)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 07b88419403defd9... (rules_len=46518)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 3a9f224503ed1780... (rules_len=63134)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: f8c7342fb442cc74... (rules_len=46671)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 4b48ddd2c3ce3640... (rules_len=19018)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 7d7c93956b2ea695... (rules_len=50688)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 632ad9ad061a2961... (rules_len=49848)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: c55a5c51ce34ef6c... (rules_len=45860)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 04bed496725c3c44... (rules_len=40823)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: cf0456d88c7f7385... (rules_len=42958)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: bdbf875ac2fda961... (rules_len=46901)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: af2457f66acce142... (rules_len=51443)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: d8374befd5f8c470... (rules_len=32091)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 2bec0aa1c0351432... (rules_len=55417)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: dfc483b320cff080... (rules_len=19826)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 8f9b29d758e32118... (rules_len=56101)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 68f76519f66489fe... (rules_len=18030)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 031c5324584959b1... (rules_len=48271)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 3dab8777e0be11da... (rules_len=54619)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: e50132abe0414f8e... (rules_len=51804)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: c20dcc509ade6c61... (rules_len=42588)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 1c21ad7af9181cae... (rules_len=43372)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 6afd0b6cec2d6e16... (rules_len=41201)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 918baef3d83b0886... (rules_len=50272)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: d9066c7d7605a6b0... (rules_len=53675)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 07bdcf79b52bcbd2... (rules_len=46010)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: fa6118bcea80ac0a... (rules_len=53282)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 7d4cf218769c8fe3... (rules_len=49951)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: c8d4f2e403e4b9d8... (rules_len=45959)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: e8aa3cb06d816082... (rules_len=46547)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 9374fdf024fcb54a... (rules_len=66345)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: da8d572132d62e47... (rules_len=28809)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: a2549410a80f0105... (rules_len=20322)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: f907b344c4bc4510... (rules_len=39279)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: a30b3768edb7f6f9... (rules_len=44034)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 04dbd9b8b6b1a842... (rules_len=45089)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 6c81bd4f75beffdf... (rules_len=23084)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 8c7ab672a38081af... (rules_len=53787)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 3b20a225100b271b... (rules_len=44343)
+2026-02-06 15:54:56 [WARNING ] root: [DEBUG L1] Hash gerado: 74eabb525a5c9a56... (rules_len=57001)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: b89c497a4e926dd6... (rules_len=27880)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: be2f90fb544bb465... (rules_len=20212)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: b9dc9ef4c893cb19... (rules_len=43073)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: 040806f7a78b20d6... (rules_len=43580)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: 974002e85ae0efb8... (rules_len=41213)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: 0c31025c1308eb38... (rules_len=50403)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: 0dced994decc745a... (rules_len=30172)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: 368d2aa1616d479f... (rules_len=54610)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: 76117ef6ef791faf... (rules_len=21296)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: 703999ef92f10325... (rules_len=46624)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: 107ac66a223c7f9a... (rules_len=45177)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: b5d7b99ee8db4994... (rules_len=21633)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: 43723d48c939c4c4... (rules_len=49644)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: 05d2cf4d7a2c85c9... (rules_len=49731)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: 6e2a3cd1101b4009... (rules_len=41977)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: 2ae6262fa6e26be3... (rules_len=48195)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: 2ed90d317fd2e098... (rules_len=48336)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: 0c20cefd215c6b90... (rules_len=49388)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: 72aaafa3b3badb60... (rules_len=18808)
+2026-02-06 15:54:57 [WARNING ] root: [DEBUG L1] Hash gerado: 2c1f56d289939ecb... (rules_len=21686)
+2026-02-06 15:54:57 [WARNING ] root: Gen 2: Only 0/119 individuals evaluated successfully in parallel.
+2026-02-06 15:54:57 [ERROR   ] root: Gen 2: Parallel eval failed for all. Stopping.
+2026-02-06 15:54:57 [INFO    ] root: GA run finished after 2 generations.
+2026-02-06 15:54:57 [WARNING ] root: 
+2026-02-06 15:54:57 [WARNING ] root: [CACHE FINAL] Hits=0, Misses=120, Hit Rate=0.0%
+2026-02-06 15:54:57 [WARNING ] root: [CACHE FINAL] Zero collisions (SHA256 funcionando perfeitamente)
+2026-02-06 15:54:57 [WARNING ] main: [FASE 2] Chunk 3 - Salvando memória do conceito 'concept_2'
+2026-02-06 15:54:57 [WARNING ] main: [FASE 2]   → Salvando 1 indivíduos
+2026-02-06 15:54:57 [WARNING ] main: [FASE 2]   ✓ Memória do conceito 'concept_2' atualizada (last_seen: 3)
+2026-02-06 15:54:57 [INFO    ] root: 💾 Memória do conceito 'concept_2' atualizada com 1 indivíduos
+2026-02-06 15:54:57 [INFO    ] root: Melhor indivíduo do chunk 3 salvo em: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000_penalty/batch_5/IntelLabSensors/run_1/chunk_data/best_individual_trained_on_chunk_3.pkl
+2026-02-06 15:54:57 [INFO    ] root: Finished GA training on chunk 3.
+2026-02-06 15:54:57 [INFO    ] root: Starting evaluation on test chunk 4...
+2026-02-06 15:54:57 [INFO    ] root: Starting periodic evaluation. Period size: 2000
+2026-02-06 15:55:05 [WARNING ] main: 
+2026-02-06 15:55:05 [WARNING ] main: ======================================================================
+2026-02-06 15:55:05 [WARNING ] main: CHUNK 3 - FINAL
+2026-02-06 15:55:05 [WARNING ] main: ======================================================================
+2026-02-06 15:55:05 [WARNING ] main: Tempo total: 2525.8s (42.1min)
+2026-02-06 15:55:05 [WARNING ] main: Train G-mean: 0.4903
+2026-02-06 15:55:05 [WARNING ] main: Test G-mean:  0.0000
+2026-02-06 15:55:05 [WARNING ] main: Test F1:      0.2677
+2026-02-06 15:55:05 [WARNING ] main: Delta:        -0.4903
+2026-02-06 15:55:05 [WARNING ] main: Best Fitness: 0.5363
+2026-02-06 15:55:05 [INFO    ] root: Chunk 3 Results: TrainGmean0.4903, TestGmean=0.0000, TestF1=0.2677
+2026-02-06 15:55:05 [INFO    ] root: Chunk 3: Best Individual Fitness=0.5363
+2026-02-06 15:55:05 [INFO    ] main: ✓ STABLE: 0.000 → 0.000 (drop: 0.0%)
+2026-02-06 15:55:05 [INFO    ] main:    → Inheritance INCREASED to 65% (stable performance)
+2026-02-06 15:55:11 [INFO    ] root: Chunk 3 processed in 2531.29 seconds. Total instances tested: 3997
+2026-02-06 15:55:11 [WARNING ] main: 
+2026-02-06 15:55:11 [WARNING ] main: ======================================================================
+2026-02-06 15:55:11 [WARNING ] main: CHUNK 4 - INÍCIO
+2026-02-06 15:55:11 [WARNING ] main: ======================================================================
+2026-02-06 15:55:11 [WARNING ] main: Timestamp: 2026-02-06 15:55:11
+2026-02-06 15:55:11 [WARNING ] main: Train: Chunk 4 | Test: Chunk 5
+2026-02-06 15:55:11 [INFO    ] root: ===== Processing Chunk 4 (Train) / Chunk 5 (Test) =====
+2026-02-06 15:55:11 [INFO    ] root: Salvando chunk de teste (chunk 5) para depuração.
+2026-02-06 15:55:11 [INFO    ] root: Chunk 5 (test) salvo com sucesso em: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000_penalty/batch_5/IntelLabSensors/run_1/chunk_data/chunk_5_test.csv
+2026-02-06 15:55:11 [WARNING ] main: 
+2026-02-06 15:55:11 [WARNING ] main: [FASE 2] Chunk 4 - Calculando concept fingerprint...
+2026-02-06 15:55:11 [WARNING ] main: [FASE 2]   ✓ Fingerprint calculada: 2000 instâncias
+2026-02-06 15:55:11 [WARNING ] main: [FASE 2]   - Mean shape: (5,)
+2026-02-06 15:55:11 [WARNING ] main: [FASE 2]   - Std shape: (5,)
+2026-02-06 15:55:11 [WARNING ] main: [FASE 2]   - Class distribution shape: (55,)
+2026-02-06 15:55:11 [WARNING ] main: [FASE 2] Chunk 4 - Detectando conceito recorrente...
+2026-02-06 15:55:11 [WARNING ] main: [FASE 2]   Conceitos conhecidos: ['concept_2']
+2026-02-06 15:55:11 [WARNING ] main: [FASE 2]   Threshold similaridade: 0.85
+2026-02-06 15:55:11 [WARNING ] root: [FASE 2] Similaridades calculadas:
+2026-02-06 15:55:11 [WARNING ] root: [FASE 2]   concept_2: 0.9797
+2026-02-06 15:55:11 [WARNING ] root: [FASE 2] ✓ MATCH: 'concept_2' (sim=0.9797 >= 0.85)
+2026-02-06 15:55:11 [INFO    ] root: ✓ CONCEITO RECORRENTE DETECTADO: 'concept_2' (similaridade: 0.980)
+2026-02-06 15:55:11 [WARNING ] main: [FASE 2]   ✓ CONCEITO RECORRENTE: 'concept_2'
+2026-02-06 15:55:11 [INFO    ] root: 📌 Chunk 4: RECUPERANDO memória do conceito 'concept_2' (recorrente)
+2026-02-06 15:55:11 [WARNING ] main: [FASE 2] Validando match com amostra do test set...
+2026-02-06 15:55:11 [WARNING ] main: [FASE 2]   Validation G-mean: 0.0000
+2026-02-06 15:55:11 [WARNING ] main: [FASE 2]   ✗ MATCH REJEITADO: validation G-mean 0.0000 < 0.70
+2026-02-06 15:55:11 [WARNING ] main: [FASE 2]   → Tratando como NOVO CONCEITO
+2026-02-06 15:55:11 [INFO    ] main: Classifying performance: current_acc_input=0.0000, history_len=4, history_tail=[0.0, 0.0, np.float64(0.0), np.float64(0.0)], abs_bad_thr=0.60
+2026-02-06 15:55:11 [INFO    ] main: Chunk 4: Performance label='bad'.
+2026-02-06 15:55:11 [INFO    ] main: Performance label is 'bad' for chunk 4. Reducing change penalties.
+2026-02-06 15:55:11 [INFO    ] main: Recovery mode: Using max_generations_recovery: 25 for chunk 4
+2026-02-06 15:55:12 [WARNING ] main: PERFORMANCE CRITICAL (Acc: 0.000, Bad Chunks: 1). Abandoning best_ever_memory.
+2026-02-06 15:55:12 [INFO    ] main: Explicit drift adaptation activated for chunk 4.
+2026-02-06 15:55:12 [INFO    ] main:   Mutation rate will be overridden to 0.5 for 10 generations.
+2026-02-06 15:55:12 [INFO    ] main:   Memory abandoned. Overriding/setting initialization strategy to: 'full_random'.
+2026-02-06 15:55:12 [INFO    ] main:   Max depth temporarily increased to: 15 (multiplier: 1.5).
+2026-02-06 15:55:12 [INFO    ] main:   Max rules per class temporarily increased to: 22 (multiplier: 1.5).
+2026-02-06 15:55:12 [INFO    ] main: Starting GA training on chunk 4 with MaxGen: 25, MaxDepth: 15, MaxRules: 22, InitStrategy: full_random
+2026-02-06 15:55:12 [INFO    ] main: Chunk 4: Using drift_severity='STABLE' from previous chunk for GA adaptation
+2026-02-06 15:55:12 [WARNING ] main: Chunk 4: Previous chunk had very low G-mean (0.000) - assuming SEVERE drift preventively
+2026-02-06 15:55:12 [INFO    ] root: Starting GA run: Pop=120, MaxGen=25, Elit=0.10, Parallel=True, InitStrategy=full_random
+2026-02-06 15:55:12 [INFO    ] root:   Crossover Balanceado Inteligente ATIVADO (70% qualidade + 30% diversidade)
+2026-02-06 15:55:12 [INFO    ] root:   Mutation override: Rate=0.5 for 10 generations.
+2026-02-06 15:55:12 [INFO    ] root: Initializing population with strategy 'full_random' and performance 'bad'.
+2026-02-06 15:55:12 [INFO    ] root: Construindo o 'Pool de Genes' com a estratégia 'Focus Training' usando Decision Tree...
+2026-02-06 15:55:12 [WARNING ] root: Nenhuma instância da Classe 29 encontrada (Fonte: Chunk Atual). Seeding para esta classe será pulado.
+2026-02-06 15:55:12 [WARNING ] root: Nenhuma instância da Classe 31 encontrada (Fonte: Chunk Atual). Seeding para esta classe será pulado.
+2026-02-06 15:55:12 [WARNING ] root: Nenhuma instância da Classe 56 encontrada (Fonte: Chunk Atual). Seeding para esta classe será pulado.
+2026-02-06 15:55:12 [INFO    ] root: Estratégia de reset ativada. Usando 'Seeding Multi-Profundidade'.
+2026-02-06 15:55:12 [INFO    ] root:   -> SEVERE DRIFT DETECTED: Seeding AGRESSIVO ativado (90% seeding, 95% injection)
+2026-02-06 15:55:12 [INFO    ] root:      PRIORIDADE MAXIMA - Seeding adaptativo DESABILITADO para este chunk
+2026-02-06 15:55:12 [INFO    ] root:   -> Seeding Probabilístico ATIVADO: Injetando 95% das regras DT
+2026-02-06 15:55:18 [INFO    ] root: População de reset criada: 120 indivíduos (108 semeados, 12 aleatórios).
+2026-02-06 15:55:18 [INFO    ] root: Parallel enabled. Using cores: 2
+
+2026-02-06 15:55:18 [WARNING ] root: [DEBUG L1] Gen 1: Avaliando 120 individuos (cache size=0)
+2026-02-06 15:55:18 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash 39b8230392ec038b... no cache
+2026-02-06 15:55:18 [WARNING ] root: [DEBUG L1] Gen 1: CACHE MISS #1 - avaliando hash 39b8230392ec038b...
+2026-02-06 15:55:18 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash 39b8230392ec038b... no cache
+2026-02-06 15:55:18 [WARNING ] root: [DEBUG L1] Gen 1: CACHE MISS #2 - avaliando hash 39b8230392ec038b...
+2026-02-06 15:55:18 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash 39b8230392ec038b... no cache
+2026-02-06 15:55:18 [WARNING ] root: [DEBUG L1] Gen 1: CACHE MISS #3 - avaliando hash 39b8230392ec038b...
+2026-02-06 15:55:18 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash 39b8230392ec038b... no cache
+2026-02-06 15:55:18 [WARNING ] root: [DEBUG L1] Gen 1: Procurando hash 39b8230392ec038b... no cache
+2026-02-06 15:55:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop DESATIVADO: threshold=0.0
+2026-02-06 15:55:19 [WARNING ] root: [DEBUG L1 FITNESS] Early stop DESATIVADO: threshold=0.0
+2026-02-06 16:06:37 [WARNING ] root: [DEBUG L1] Gen 1: cache_hits=0, cache_misses=120, early_stopped=0
+2026-02-06 16:06:37 [WARNING ] root:    [CACHE] Gen 1: Hits=0/120 (0.0%)
+2026-02-06 16:06:48 [WARNING ] root: 
+2026-02-06 16:06:48 [WARNING ] root:    [GEN 1] Best: Fit=0.5360, Gmean=0.491 | Avg: Fit=0.2070, Gmean=0.185 | Div=0.727 | Stag=0
+2026-02-06 16:06:48 [INFO    ] root: Gen 1: Preservando 1 elites do pool híbrido (ordenados por G-mean).
+2026-02-06 16:23:36 [WARNING ] root:    [EARLY STOP] Gen 2: threshold=0.491 (50%=0.246, mediana top-12)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Gen 2: Avaliando 120 individuos (cache size=16)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: b5bf5ca01b3df0e0... (rules_len=58661)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash b5bf5ca01b3df0e0... no cache
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Gen 2: CACHE HIT #1 - hash b5bf5ca01b3df0e0...
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: ee95be81a85b4d88... (rules_len=19849)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash ee95be81a85b4d88... no cache
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Gen 2: CACHE MISS #1 - avaliando hash ee95be81a85b4d88...
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 547d0385a7c295db... (rules_len=48548)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash 547d0385a7c295db... no cache
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Gen 2: CACHE MISS #2 - avaliando hash 547d0385a7c295db...
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 2ba5b8821c30d718... (rules_len=47808)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash 2ba5b8821c30d718... no cache
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Gen 2: CACHE MISS #3 - avaliando hash 2ba5b8821c30d718...
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 892c8a38031c5e76... (rules_len=49109)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Gen 2: Procurando hash 892c8a38031c5e76... no cache
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: cf161cf85a288475... (rules_len=37510)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 359b0e59442a7341... (rules_len=41732)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 444053d79718103b... (rules_len=40562)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 5f52fd9061773e93... (rules_len=19423)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 55346d4e59bdea80... (rules_len=41681)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: d5baa267e9615ea9... (rules_len=43155)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 7d540daa8f1e67b9... (rules_len=41293)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 31dab0786e27ca77... (rules_len=11526)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 20ae418cf2c4bfa5... (rules_len=42939)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: e282f6eff013935b... (rules_len=44115)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 9e6428b72b167cd0... (rules_len=20127)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 1f3818d83ac13606... (rules_len=19662)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 9939777d426fdc9d... (rules_len=18009)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 420ef5fe30332f05... (rules_len=40143)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: cfd9150cee1200bc... (rules_len=44062)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: d180d830a906cffb... (rules_len=47783)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: ac98f348857a3656... (rules_len=44867)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: bef4ad3703c16e4d... (rules_len=44303)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 506ef9b2380c91f2... (rules_len=50885)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 0a613c5ea010990d... (rules_len=39842)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 36f46c0f7f4b05f2... (rules_len=39217)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: e87f086d38b06069... (rules_len=44736)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 5ac65b1102c085e9... (rules_len=42066)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 7cfa6a39a493581e... (rules_len=48721)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: e9cbbc751532c0e7... (rules_len=54350)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 87dbd93b6e3362c8... (rules_len=45433)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: e044a1bb83f7552b... (rules_len=38164)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 8c2952f041b10749... (rules_len=19291)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 289eae773a6d8350... (rules_len=19025)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: cba16c3d8dd1da04... (rules_len=51133)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 9e7bb094b286b2d9... (rules_len=53851)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 73c38a0ed5fe6ce6... (rules_len=43674)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: a0c47459c89ea55f... (rules_len=39540)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 62c1dbf1f87d6da0... (rules_len=43280)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 5799b1197bb9f9da... (rules_len=31113)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 2e3bd2834cdf6af9... (rules_len=41421)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: da0405ce2441424c... (rules_len=13372)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 8732a759aaae2ac0... (rules_len=24050)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 3b40147184cceda0... (rules_len=45506)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: f4fe1ae61bc44f12... (rules_len=54213)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 30b1def25486805e... (rules_len=42798)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 97c815dffd5bba23... (rules_len=39277)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 74e7b030c4c23b7b... (rules_len=21191)
+2026-02-06 16:23:36 [WARNING ] root: [DEBUG L1] Hash gerado: 0fbce7dfe352c3fd... (rules_len=19474)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 436c9e1751b51a57... (rules_len=46320)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 70b069ad18c7958c... (rules_len=54352)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: e19c343e8eb3f7fa... (rules_len=42044)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: ed40f34765dedbd5... (rules_len=46332)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: aaf9ab3f1282616d... (rules_len=42556)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 53451d041afde5b2... (rules_len=44217)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 37a440302e7db731... (rules_len=43148)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: e557dea24ffd315c... (rules_len=49142)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: c595e97e2bdc07e5... (rules_len=38989)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 2cc02c2539089d81... (rules_len=52035)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 14a41d6c5d100e50... (rules_len=35632)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 0978c5ab8fcf1143... (rules_len=41252)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 463e0f9f57dad890... (rules_len=13848)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 57a23f708c747d89... (rules_len=10184)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 42be4bb86a441a19... (rules_len=44075)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 342871ccbc1c7971... (rules_len=42947)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 0637779e72d8ffe0... (rules_len=45830)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 4e557a25602025a8... (rules_len=17627)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: e1f28c6cb0028b80... (rules_len=47571)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 35428122d8d68ba4... (rules_len=47931)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 2d392b8deb9df8e3... (rules_len=21671)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: de1b63338c1074f5... (rules_len=49300)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: e97cd604b0ec093f... (rules_len=26599)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: de0771dd98b5ad3c... (rules_len=37285)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 6ce07b359d1d8189... (rules_len=46584)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 732704f9cf092f73... (rules_len=43452)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: f05fc616f4252c42... (rules_len=19280)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 198498be4ba737f3... (rules_len=38484)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: cdae35d64e343c3c... (rules_len=50522)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 1dda032e6d531aaa... (rules_len=38977)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 026b299fd878a364... (rules_len=45990)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 62b66498973a0235... (rules_len=18212)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: ef3492d128e65ed0... (rules_len=43654)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 163709e447b9dc29... (rules_len=18696)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 71d913f2573f2a70... (rules_len=50576)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 1db64e74e0f5a492... (rules_len=45596)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: f5fde6af429f335e... (rules_len=42177)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 69040b2b40630404... (rules_len=47660)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: d594394759f1a6fe... (rules_len=43625)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 18ad43633b56a3e3... (rules_len=43203)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 00658084ecda80c3... (rules_len=37445)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 37e9e1175c9a6c2b... (rules_len=37072)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 53632b9f821aa655... (rules_len=43880)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: b71c35795d7c4980... (rules_len=22614)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 1b8ffca9b35d271f... (rules_len=47540)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 56d9c697ab37185e... (rules_len=24803)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 30338e9d27e18079... (rules_len=26156)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 0c1e12083a28019e... (rules_len=55850)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: ff416e486d534a00... (rules_len=44012)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 2e778d19c01a7d04... (rules_len=48264)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 4ad2fcc5967f3ab0... (rules_len=19701)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: ceacc7913f03018d... (rules_len=49111)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 8b5a6ab7479e174d... (rules_len=39819)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 005096b34f8dba7d... (rules_len=17662)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: b910e6ef8c1104a1... (rules_len=48373)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 1f48cd28f5ae8f65... (rules_len=20237)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 8a82d5ae24403b97... (rules_len=21229)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 3d7bcaf4a601c45a... (rules_len=40851)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 320505e754b4407c... (rules_len=42469)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 957db1fea87cbe4d... (rules_len=40701)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 2863b92ea5d55a62... (rules_len=38914)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: a00762b405a9ee29... (rules_len=46386)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: a6b8b5cbcd6c7ff6... (rules_len=48139)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: f7830ef4509b3a1f... (rules_len=36575)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: fbc51527dbab7cef... (rules_len=51868)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: cdb8e9cb5bdfed7a... (rules_len=37789)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 1c01ba9af5b454c5... (rules_len=47906)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: bcf067099965c842... (rules_len=50486)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: d285dc4b46114e2d... (rules_len=46007)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: ee9e8cdb9abf6dce... (rules_len=24281)
+2026-02-06 16:23:37 [WARNING ] root: [DEBUG L1] Hash gerado: 73e0ee952a92e299... (rules_len=36756)
+Gen 1/25 - BestFit: 0.5360 (G-mean: 0.491) | AvgFit: 0.2070 (G-mean: 0.185) | (Diversity: 0.727) | (RuleAct: 89.6) | Mut: 0.500 | Tourn: 3 | Stagn: 0 | Time: 689.92s2026-02-06 16:23:38 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.491, partial_size=400/2000
+2026-02-06 16:23:39 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #1: threshold=0.491, partial_size=400/2000
+2026-02-06 16:23:39 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:23:39 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.000 < 0.246
+2026-02-06 16:23:39 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:23:39 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #1: 0.000 < 0.246
+2026-02-06 16:23:44 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.491, partial_size=400/2000
+2026-02-06 16:23:44 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #2: threshold=0.491, partial_size=400/2000
+2026-02-06 16:23:45 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:23:45 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.000 < 0.246
+2026-02-06 16:23:45 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:23:45 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #2: 0.000 < 0.246
+2026-02-06 16:23:50 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.491, partial_size=400/2000
+2026-02-06 16:23:51 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:23:51 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.000 < 0.246
+2026-02-06 16:23:57 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #3: threshold=0.491, partial_size=400/2000
+2026-02-06 16:23:58 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:23:58 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #3: 0.000 < 0.246
+2026-02-06 16:24:02 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.491, partial_size=400/2000
+2026-02-06 16:24:03 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:24:03 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.000 < 0.246
+2026-02-06 16:24:09 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #4: threshold=0.491, partial_size=400/2000
+2026-02-06 16:24:10 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:24:10 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #4: 0.000 < 0.246
+2026-02-06 16:24:14 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.491, partial_size=400/2000
+2026-02-06 16:24:15 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:24:15 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.000 < 0.246
+2026-02-06 16:24:23 [WARNING ] root: [DEBUG L1 FITNESS] Early stop check #5: threshold=0.491, partial_size=400/2000
+2026-02-06 16:24:24 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:24:24 [WARNING ] root: [DEBUG L1 FITNESS] EARLY STOP DESCARTE #5: 0.000 < 0.246
+2026-02-06 16:24:27 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:24:34 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:24:39 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:24:46 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:24:51 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:24:58 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:25:04 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:25:04 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:25:16 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:25:16 [WARNING ] root: [DEBUG L1 FITNESS] Early stop eval: partial_gmean=0.000 vs threshold_50%=0.246 (should_discard=True)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: ee95be81a85b4d88... (rules_len=19849)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 547d0385a7c295db... (rules_len=48548)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 2ba5b8821c30d718... (rules_len=47808)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 892c8a38031c5e76... (rules_len=49109)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: cf161cf85a288475... (rules_len=37510)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 359b0e59442a7341... (rules_len=41732)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 444053d79718103b... (rules_len=40562)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 5f52fd9061773e93... (rules_len=19423)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 55346d4e59bdea80... (rules_len=41681)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: d5baa267e9615ea9... (rules_len=43155)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 7d540daa8f1e67b9... (rules_len=41293)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 31dab0786e27ca77... (rules_len=11526)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 20ae418cf2c4bfa5... (rules_len=42939)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: e282f6eff013935b... (rules_len=44115)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 9e6428b72b167cd0... (rules_len=20127)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 1f3818d83ac13606... (rules_len=19662)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 9939777d426fdc9d... (rules_len=18009)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 420ef5fe30332f05... (rules_len=40143)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: cfd9150cee1200bc... (rules_len=44062)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: d180d830a906cffb... (rules_len=47783)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: ac98f348857a3656... (rules_len=44867)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: bef4ad3703c16e4d... (rules_len=44303)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 506ef9b2380c91f2... (rules_len=50885)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 0a613c5ea010990d... (rules_len=39842)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 36f46c0f7f4b05f2... (rules_len=39217)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: e87f086d38b06069... (rules_len=44736)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 5ac65b1102c085e9... (rules_len=42066)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 7cfa6a39a493581e... (rules_len=48721)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: e9cbbc751532c0e7... (rules_len=54350)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 87dbd93b6e3362c8... (rules_len=45433)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: e044a1bb83f7552b... (rules_len=38164)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 8c2952f041b10749... (rules_len=19291)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 289eae773a6d8350... (rules_len=19025)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: cba16c3d8dd1da04... (rules_len=51133)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 9e7bb094b286b2d9... (rules_len=53851)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 73c38a0ed5fe6ce6... (rules_len=43674)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: a0c47459c89ea55f... (rules_len=39540)
+2026-02-06 16:34:35 [WARNING ] root: [DEBUG L1] Hash gerado: 62c1dbf1f87d6da0... (rules_len=43280)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 5799b1197bb9f9da... (rules_len=31113)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 2e3bd2834cdf6af9... (rules_len=41421)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: da0405ce2441424c... (rules_len=13372)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 8732a759aaae2ac0... (rules_len=24050)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 3b40147184cceda0... (rules_len=45506)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: f4fe1ae61bc44f12... (rules_len=54213)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 30b1def25486805e... (rules_len=42798)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 97c815dffd5bba23... (rules_len=39277)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 74e7b030c4c23b7b... (rules_len=21191)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 0fbce7dfe352c3fd... (rules_len=19474)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 436c9e1751b51a57... (rules_len=46320)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 70b069ad18c7958c... (rules_len=54352)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: e19c343e8eb3f7fa... (rules_len=42044)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: ed40f34765dedbd5... (rules_len=46332)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: aaf9ab3f1282616d... (rules_len=42556)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 53451d041afde5b2... (rules_len=44217)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 37a440302e7db731... (rules_len=43148)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: e557dea24ffd315c... (rules_len=49142)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: c595e97e2bdc07e5... (rules_len=38989)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 2cc02c2539089d81... (rules_len=52035)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 14a41d6c5d100e50... (rules_len=35632)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 0978c5ab8fcf1143... (rules_len=41252)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 463e0f9f57dad890... (rules_len=13848)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 57a23f708c747d89... (rules_len=10184)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 42be4bb86a441a19... (rules_len=44075)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 342871ccbc1c7971... (rules_len=42947)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 0637779e72d8ffe0... (rules_len=45830)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 4e557a25602025a8... (rules_len=17627)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: e1f28c6cb0028b80... (rules_len=47571)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 35428122d8d68ba4... (rules_len=47931)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 2d392b8deb9df8e3... (rules_len=21671)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: de1b63338c1074f5... (rules_len=49300)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: e97cd604b0ec093f... (rules_len=26599)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: de0771dd98b5ad3c... (rules_len=37285)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 6ce07b359d1d8189... (rules_len=46584)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 732704f9cf092f73... (rules_len=43452)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: f05fc616f4252c42... (rules_len=19280)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 198498be4ba737f3... (rules_len=38484)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: cdae35d64e343c3c... (rules_len=50522)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 1dda032e6d531aaa... (rules_len=38977)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 026b299fd878a364... (rules_len=45990)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 62b66498973a0235... (rules_len=18212)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: ef3492d128e65ed0... (rules_len=43654)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 163709e447b9dc29... (rules_len=18696)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 71d913f2573f2a70... (rules_len=50576)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 1db64e74e0f5a492... (rules_len=45596)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: f5fde6af429f335e... (rules_len=42177)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 69040b2b40630404... (rules_len=47660)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: d594394759f1a6fe... (rules_len=43625)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 18ad43633b56a3e3... (rules_len=43203)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 00658084ecda80c3... (rules_len=37445)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 37e9e1175c9a6c2b... (rules_len=37072)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 53632b9f821aa655... (rules_len=43880)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: b71c35795d7c4980... (rules_len=22614)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 1b8ffca9b35d271f... (rules_len=47540)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 56d9c697ab37185e... (rules_len=24803)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 30338e9d27e18079... (rules_len=26156)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 0c1e12083a28019e... (rules_len=55850)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: ff416e486d534a00... (rules_len=44012)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 2e778d19c01a7d04... (rules_len=48264)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 4ad2fcc5967f3ab0... (rules_len=19701)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: ceacc7913f03018d... (rules_len=49111)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 8b5a6ab7479e174d... (rules_len=39819)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 005096b34f8dba7d... (rules_len=17662)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: b910e6ef8c1104a1... (rules_len=48373)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 1f48cd28f5ae8f65... (rules_len=20237)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 8a82d5ae24403b97... (rules_len=21229)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 3d7bcaf4a601c45a... (rules_len=40851)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 320505e754b4407c... (rules_len=42469)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 957db1fea87cbe4d... (rules_len=40701)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: 2863b92ea5d55a62... (rules_len=38914)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: a00762b405a9ee29... (rules_len=46386)
+2026-02-06 16:34:36 [WARNING ] root: [DEBUG L1] Hash gerado: a6b8b5cbcd6c7ff6... (rules_len=48139)
+2026-02-06 16:34:37 [WARNING ] root: [DEBUG L1] Hash gerado: f7830ef4509b3a1f... (rules_len=36575)
+2026-02-06 16:34:37 [WARNING ] root: [DEBUG L1] Hash gerado: fbc51527dbab7cef... (rules_len=51868)
+2026-02-06 16:34:37 [WARNING ] root: [DEBUG L1] Hash gerado: cdb8e9cb5bdfed7a... (rules_len=37789)
+2026-02-06 16:34:37 [WARNING ] root: [DEBUG L1] Hash gerado: 1c01ba9af5b454c5... (rules_len=47906)
+2026-02-06 16:34:37 [WARNING ] root: [DEBUG L1] Hash gerado: bcf067099965c842... (rules_len=50486)
+2026-02-06 16:34:37 [WARNING ] root: [DEBUG L1] Hash gerado: d285dc4b46114e2d... (rules_len=46007)
+2026-02-06 16:34:37 [WARNING ] root: [DEBUG L1] Hash gerado: ee9e8cdb9abf6dce... (rules_len=24281)
+2026-02-06 16:34:37 [WARNING ] root: [DEBUG L1] Hash gerado: 73e0ee952a92e299... (rules_len=36756)
+2026-02-06 16:34:37 [WARNING ] root: Gen 2: Only 0/119 individuals evaluated successfully in parallel.
+2026-02-06 16:34:37 [ERROR   ] root: Gen 2: Parallel eval failed for all. Stopping.
+2026-02-06 16:34:37 [INFO    ] root: GA run finished after 2 generations.
+2026-02-06 16:34:37 [WARNING ] root: 
+2026-02-06 16:34:37 [WARNING ] root: [CACHE FINAL] Hits=0, Misses=120, Hit Rate=0.0%
+2026-02-06 16:34:37 [WARNING ] root: [CACHE FINAL] Zero collisions (SHA256 funcionando perfeitamente)
+2026-02-06 16:34:37 [WARNING ] main: [FASE 2] Chunk 4 - Salvando memória do conceito 'concept_2'
+2026-02-06 16:34:37 [WARNING ] main: [FASE 2]   → Salvando 1 indivíduos
+2026-02-06 16:34:37 [WARNING ] main: [FASE 2]   ✓ Memória do conceito 'concept_2' atualizada (last_seen: 4)
+2026-02-06 16:34:37 [INFO    ] root: 💾 Memória do conceito 'concept_2' atualizada com 1 indivíduos
+2026-02-06 16:34:37 [INFO    ] root: Melhor indivíduo do chunk 4 salvo em: /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000_penalty/batch_5/IntelLabSensors/run_1/chunk_data/best_individual_trained_on_chunk_4.pkl
+2026-02-06 16:34:37 [INFO    ] root: Finished GA training on chunk 4.
+2026-02-06 16:34:37 [INFO    ] root: Starting evaluation on test chunk 5...
+2026-02-06 16:34:37 [INFO    ] root: Starting periodic evaluation. Period size: 2000
+2026-02-06 16:34:44 [WARNING ] main: 
+2026-02-06 16:34:44 [WARNING ] main: ======================================================================
+2026-02-06 16:34:44 [WARNING ] main: CHUNK 4 - FINAL
+2026-02-06 16:34:44 [WARNING ] main: ======================================================================
+2026-02-06 16:34:44 [WARNING ] main: Tempo total: 2373.5s (39.6min)
+2026-02-06 16:34:44 [WARNING ] main: Train G-mean: 0.4915
+2026-02-06 16:34:44 [WARNING ] main: Test G-mean:  0.0000
+2026-02-06 16:34:44 [WARNING ] main: Test F1:      0.2511
+2026-02-06 16:34:44 [WARNING ] main: Delta:        -0.4915
+2026-02-06 16:34:44 [WARNING ] main: Best Fitness: 0.5360
+2026-02-06 16:34:44 [INFO    ] root: Chunk 4 Results: TrainGmean0.4915, TestGmean=0.0000, TestF1=0.2511
+2026-02-06 16:34:44 [INFO    ] root: Chunk 4: Best Individual Fitness=0.5360
+2026-02-06 16:34:44 [INFO    ] main: ✓ STABLE: 0.000 → 0.000 (drop: 0.0%)
+2026-02-06 16:34:44 [INFO    ] main:    → Inheritance INCREASED to 65% (stable performance)
+2026-02-06 16:34:49 [INFO    ] root: Chunk 4 processed in 2378.82 seconds. Total instances tested: 5995
+2026-02-06 16:34:49 [WARNING ] main: 
+2026-02-06 16:34:49 [WARNING ] main: ######################################################################
+2026-02-06 16:34:49 [WARNING ] main: EXPERIMENTO FINALIZADO
+2026-02-06 16:34:49 [WARNING ] main: ######################################################################
+2026-02-06 16:34:49 [WARNING ] main: Tempo total: 7305.9s (2.03h)
+2026-02-06 16:34:49 [WARNING ] main: Média por chunk: 1461.2s
+2026-02-06 16:34:49 [WARNING ] main: Chunks processados: 5
+2026-02-06 16:34:49 [WARNING ] main: Avg Test G-mean: 0.0000
+2026-02-06 16:34:49 [WARNING ] main: Std Test G-mean: 0.0000
+2026-02-06 16:34:49 [WARNING ] main: Timestamp final: 2026-02-06 16:34:49
+2026-02-06 16:34:49 [WARNING ] main: 
+2026-02-06 16:34:49 [INFO    ] root: Finished processing 5 chunk transitions for run 1.
+2026-02-06 16:34:51 [INFO    ] root: GA evolution plots saved individually per chunk.
+2026-02-06 16:34:51 [INFO    ] main: Generating rule components heatmap for IntelLabSensors...
+2026-02-06 16:34:52 [INFO    ] main: Generating rule components radar plot for IntelLabSensors...
+2026-02-06 16:34:52 [INFO    ] main: Periodic g-mean plot saved to /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000_penalty/batch_5/IntelLabSensors/run_1/G-meanPlot_Periodic_IntelLabSensors_Run1.png
+2026-02-06 16:34:52 [INFO    ] main: Rule history saved to /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000_penalty/batch_5/IntelLabSensors/run_1/RulesHistory_IntelLabSensors_Run1.txt
+2026-02-06 16:34:52 [INFO    ] root: --- Run 1 Summary (Stream: IntelLabSensors) ---
+2026-02-06 16:34:52 [INFO    ] root: Avg Train Gmean (Final Gen): 0.2907
+2026-02-06 16:34:52 [INFO    ] root: Avg Test Gmean (Overall Chunk): 0.0000
+2026-02-06 16:34:52 [INFO    ] root: Avg Test F1 (Overall Chunk): 0.2425
+2026-02-06 16:34:52 [INFO    ] root: Run 1 duration: 7312.47 seconds
+2026-02-06 16:34:52 [INFO    ] root: --- End Experiment Run: Stream='IntelLabSensors', Run=1 ---
+2026-02-06 16:34:52 [INFO    ] main: Saving results for Stream 'IntelLabSensors', Run 1 to /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000_penalty/batch_5/IntelLabSensors/run_1
+2026-02-06 16:34:52 [INFO    ] main: All available results saved successfully for Stream 'IntelLabSensors', Run 1.
+/usr/local/lib/python3.12/dist-packages/numpy/lib/_nanfunctions_impl.py:2035: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+2026-02-06 16:34:53 [INFO    ] main: Aggregating results for experiment: IntelLabSensors
+2026-02-06 16:34:53 [INFO    ] main: Aggregating results for experiment: IntelLabSensors
+2026-02-06 16:34:53 [INFO    ] main: Generating mosaic plot for IntelLabSensors...
+2026-02-06 16:34:54 [INFO    ] main: ====== Finished Stream: IntelLabSensors in 7314.20 seconds ======
+2026-02-06 16:34:54 [INFO    ] main: ====== Generating Final Summary Reports ======
+2026-02-06 16:34:54 [INFO    ] main: Overall performance plot by type saved to /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000_penalty/batch_5/Overall_Performance_by_Type.png
+2026-02-06 16:34:54 [INFO    ] root: Performance summary table saved to /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_unified/chunk_2000_penalty/batch_5/performance_summary_table.csv
+2026-02-06 16:34:54 [INFO    ] main: Total experiment duration: 7318.31 seconds.
+2026-02-06 16:34:54 [INFO    ] main: ===== Experiment Execution Finished =====
+
+
+================================================================================
+Overall Performance Summary Table
+================================================================================
+    Stream Name    Dataset Type  Avg Train Acc  Std Train Acc  Avg Test Acc  Std Test Acc  Avg Test F1  Std Test F1  Total Feats  Avg Used Feats
+IntelLabSensors IntelLabSensors         0.2907         0.2374           0.0           0.0       0.2425        0.026            5             5.0
+================================================================================
+
+
+================================================================================
+Feature Usage Summary
+================================================================================
+Stream: IntelLabSensors
+  Total Features Available: 5
+  Average Features Used (across chunks/runs): 5.00
+------------------------------
+================================================================================
+

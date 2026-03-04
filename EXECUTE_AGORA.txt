@@ -1,0 +1,72 @@
+===============================================================================
+  EXECUTE AGORA - Guia de 4 Passos
+===============================================================================
+
+Host atual: frozen-about-ball-indicating.trycloudflare.com
+
+===============================================================================
+PASSO 1: Montar Google Drive (NO NOTEBOOK COLAB - UMA VEZ)
+===============================================================================
+
+Abra o notebook Colab no navegador e execute:
+
+    from google.colab import drive
+    drive.mount('/content/drive')
+
+Autorize quando solicitado.
+
+===============================================================================
+PASSO 2: Upload de Arquivos (NO POWERSHELL)
+===============================================================================
+
+No diretorio do projeto, execute:
+
+    upload.bat
+
+Isso vai enviar 11 arquivos. Voce precisara digitar a senha 'root' varias vezes.
+
+===============================================================================
+PASSO 3: Setup e Execucao (VIA SSH)
+===============================================================================
+
+Conecte via SSH:
+
+    ssh frozen-about-ball-indicating.trycloudflare.com
+
+Digite a senha: root
+
+Dentro do SSH, execute:
+
+    cd /content/DSL-AG-hybrid
+    python3 setup_colab_remote.py
+    /root/run_experiment.sh python3 compare_gbml_vs_river.py --stream RBF_Abrupt_Severe --chunks 1
+
+===============================================================================
+PASSO 4: Ver Resultados
+===============================================================================
+
+Ainda dentro do SSH:
+
+    tail -50 /content/drive/MyDrive/DSL-AG-hybrid/experiments/ssh_session_*/logs/*.log
+
+Ou acesse via navegador:
+
+    https://drive.google.com
+    -> MyDrive/DSL-AG-hybrid/experiments/
+
+===============================================================================
+RESUMO ULTRA-RAPIDO
+===============================================================================
+
+# Terminal 1 (PowerShell):
+cd "C:\Users\Leandro Almeida\Downloads\DSL-AG-hybrid"
+upload.bat
+
+# Terminal 2 (SSH):
+ssh frozen-about-ball-indicating.trycloudflare.com
+cd /content/DSL-AG-hybrid
+python3 setup_colab_remote.py
+/root/run_experiment.sh python3 compare_gbml_vs_river.py --stream RBF_Abrupt_Severe --chunks 1
+tail -50 /content/drive/MyDrive/DSL-AG-hybrid/experiments/ssh_session_*/logs/*.log
+
+===============================================================================

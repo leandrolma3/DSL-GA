@@ -1,0 +1,27 @@
+Command: java -Xmx4g -javaagent:rose_jars/sizeofag-1.0.4.jar -cp rose_jars/ROSE-1.0.jar:rose_jars/MOA-dependencies.jar moa.DoTask EvaluateInterleavedTestThenTrain -e (WindowAUCImbalancedPerformanceEvaluator) -s (ArffFileStream -f /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_chunk2000_phase1/batch_2/HYPERPLANE_Gradual_Simple/run_1/rose_arff/HYPERPLANE_Gradual_Simple.arff) -l (moa.classifiers.meta.imbalanced.ROSE) -f 2000 -d /content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/experiments_chunk2000_phase1/batch_2/HYPERPLANE_Gradual_Simple/run_1/rose_chunk_eval_output/rose_chunk_eval_results.csv
+
+STDOUT:
+learning evaluation instances,evaluation time (cpu seconds),model cost (RAM-Hours),classified instances,pAUC,sAUC,Accuracy,Kappa,Periodical holdout AUC,Pos/Neg ratio,G-Mean,Recall,KappaM,Classes,CM[0][0],CM[0][1],CM[1][0],CM[1][1],model training instances,model serialized size (bytes)
+2000.0,0.957615336,3.405693027575314E-7,2000.0,0.8496345868451264,0.38127604516102453,0.78,0.5600686292938303,0.8772637747994427,0.9880715705765407,0.7799499340267844,0.7947686116700201,0.5473251028806585,2.0,385.0,102.0,118.0,395.0,2000.0,1396296.0
+4000.0,1.549197211,5.87332829617949E-7,4000.0,0.8718631969784265,0.4216602665194831,0.787,0.5739318290926549,0.8621041429965915,1.032520325203252,0.7869933645147731,0.7874015748031497,0.5639713408393041,2.0,387.0,108.0,105.0,400.0,4000.0,1612384.0
+6000.0,2.35717394,9.137131825069276E-7,6000.0,0.8603106208816929,0.3540937575696599,0.778,0.5560621512988182,0.8208895520238728,1.028397565922921,0.7780736842593989,0.7692307692307693,0.5496957403651116,2.0,388.0,117.0,105.0,390.0,6000.0,1561448.0
+
+
+STDERR:
+
+{M}assive {O}nline {A}nalysis
+Version:  21.07 July 2021
+Copyright: (C) 2007-2021 University of Waikato, Hamilton, New Zealand
+Web: http://moa.cms.waikato.ac.nz/
+
+- 0.00s [running] Preparing option stream...                                   
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by sizeof.agent.SizeOfAgent (file:/content/drive/Othercomputers/Laptop-CIn/Downloads/DSL-AG-hybrid/rose_jars/MOA-dependencies.jar) to field java.util.HashMap.table
+WARNING: Please consider reporting this to the maintainers of sizeof.agent.SizeOfAgent
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+\ 0.99s [running] 33.63% Evaluating learner...                                 
+| 1.99s [running] 78.73% Evaluating learner...                                 
+                                                                               
+Task completed in 2.43s (CPU time)
+

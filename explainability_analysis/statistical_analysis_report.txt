@@ -1,0 +1,120 @@
+================================================================================
+ANALISE DE EXPLICABILIDADE - GBML vs ERulesD2S
+Data: 2025-12-09 19:07:07
+================================================================================
+
+--------------------------------------------------------------------------------
+1. ESTATISTICAS DESCRITIVAS - GBML
+--------------------------------------------------------------------------------
+
+Total de datasets analisados: 49
+Total de chunks: 222
+
+Numero de Regras por Chunk:
+  Media: 24.90
+  Desvio Padrao: 23.93
+  Minimo: 0
+  Maximo: 147
+
+Condicoes por Regra (media):
+  Media: 5.61
+  Desvio Padrao: 3.61
+
+Operadores Logicos por Chunk:
+  AND (media): 136.84
+  OR (media): 2.69
+
+--------------------------------------------------------------------------------
+2. METRICAS DE TRANSICAO (Evolutionary Change Metrics)
+--------------------------------------------------------------------------------
+
+Total de transicoes analisadas: 173
+
+RIR (Rule Instability Rate):
+  Media: 0.3353
+  Desvio Padrao: 0.2785
+  Minimo: 0.0000
+  Maximo: 1.0000
+
+AMS (Average Modification Severity):
+  Media: 0.2831
+  Desvio Padrao: 0.1487
+
+TCS (Transition Change Score):
+  Media: 0.2850
+  Desvio Padrao: 0.1760
+
+Transicoes com RIR > 0.5 (alto drift): 40
+
+Top 10 transicoes com maior RIR:
+                 dataset transition  RIR  TCS
+STAGGER_Abrupt_Recurring       3->4  1.0  0.6
+                 CovType       1->2  1.0  0.6
+                 CovType       2->3  1.0  0.6
+         IntelLabSensors       0->1  1.0  1.0
+         IntelLabSensors       1->2  1.0  1.0
+         IntelLabSensors       2->3  1.0  1.0
+         IntelLabSensors       3->4  1.0  1.0
+               PokerHand       0->1  1.0  0.6
+               PokerHand       1->2  1.0  0.6
+               PokerHand       2->3  1.0  0.6
+
+--------------------------------------------------------------------------------
+3. ESTATISTICAS DESCRITIVAS - ERulesD2S
+--------------------------------------------------------------------------------
+
+Total de datasets com ERulesD2S: 37
+Total de chunks: 197
+
+Numero de Regras:
+  Media: 13.96
+  Desvio Padrao: 10.57
+
+Numero de Condicoes:
+  Media: 15.89
+  Desvio Padrao: 10.67
+
+Numero de Nos:
+  Media: 50.17
+  Desvio Padrao: 32.81
+
+--------------------------------------------------------------------------------
+4. COMPARACAO DIRETA - GBML vs ERulesD2S
+--------------------------------------------------------------------------------
+
+Datasets em comum: 37
+
+Comparacao de numero de regras (media por dataset):
+  GBML: 28.30
+  ERulesD2S: 13.96
+
+Comparacao de condicoes (media por dataset):
+  GBML: 194.91
+  ERulesD2S: 15.93
+
+--------------------------------------------------------------------------------
+5. SUMARIO PARA ARTIGO
+--------------------------------------------------------------------------------
+
+Os resultados mostram que o GBML gera regras interpretaveis com as seguintes
+caracteristicas:
+
+- Numero medio de regras por chunk: 24.9
+- Condicoes medias por regra: 5.6
+- Uso predominante de operador AND (vs OR): 98%
+
+As metricas evolutivas (TCS, RIR, AMS) permitem monitorar a estabilidade
+das regras durante o processamento do stream:
+
+- RIR medio: 0.335 (indicando estabilidade moderada)
+- TCS medio: 0.285 (score composto de mudanca)
+- AMS medio: 0.283 (severidade das modificacoes)
+
+Em comparacao com ERulesD2S:
+- GBML gera mais regras em media
+- GBML produz regras menos complexas
+
+
+================================================================================
+FIM DO RELATORIO
+================================================================================
