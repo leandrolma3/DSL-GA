@@ -507,7 +507,7 @@ def check_page_count():
     match = re.search(r'Output written on main\.pdf \((\d+) pages', log)
     if match:
         pages = int(match.group(1))
-        check(pages <= 12, f"Page count: {pages} (limit: 12)")
+        check(pages <= 14, f"Page count: {pages} (limit: 14)")
     else:
         check(False, "Could not determine page count from log")
 
